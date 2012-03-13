@@ -1,0 +1,10 @@
+{
+    "id": "appeartest-usertemplatewebapp-1",
+    "type": "userTemplateWebapp",
+    "name": "My Duty Plan",
+    "username": "appeartester",
+    "templateWebappId": "duty-plan",
+    "status": "toBePublished",
+    "sortOrder": "5"
+
+}

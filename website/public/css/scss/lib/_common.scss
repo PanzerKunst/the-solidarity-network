@@ -1,0 +1,75 @@
+
+@import "lib/css3";
+
+$bgColor: #f0efe8;
+$bgBorder: #ddd;
+
+$orange: #F18A26;
+$red: #BE2D07;
+
+$soft-green: #99CC00;
+$green: #009900;
+
+$fontDarkGrey: #3F3F3F;
+
+
+@mixin nav-list() {
+
+	display: inline-block;
+
+	li {
+		display: block;
+		float: left;
+	}
+
+	a {
+		
+	}
+
+	.active a {
+		color: $fontDarkGrey;
+	}
+}
+
+
+/* Image replacement */
+
+@mixin ir() {
+	display: block; 
+	text-indent: -999em; 
+	overflow: hidden; 
+	background-repeat: no-repeat; 
+	text-align: left; 
+	direction: ltr;
+
+	border: 0;
+}
+
+@mixin clearfix() {
+    zoom: 1;
+
+    &:before, &:after {
+        content: "";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin bg-wrapper() {
+	background: $bgColor;
+	@include box-shadow( 0px, 1px, 1px, #777 );
+	@include border-radius( 6px );
+}
+
+@mixin big-column-border() {
+    border: solid 1px #F2F2F2;
+    border-top: none;
+}
+
+@mixin button() {
+	
+
+}

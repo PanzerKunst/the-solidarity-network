@@ -1,0 +1,16 @@
+{
+    "name": "Christophe Bram",
+    "email": "cbrfoo.com",
+    "organisation": "Appear",
+    "title": "developer",
+    "interestReason": "Research",
+    "deviceCount": "1-50",
+    "deploymentDate": "More than 1 year",
+    "isDeviceTypeAndroidSmartphone": false,
+    "isDeviceTypeAndroidTablet": false,
+    "isDeviceTypeIPhone": false,
+    "isDeviceTypeIPad": false,
+    "isDeviceTypeWEH": false,
+    "isDeviceTypeWindowsPhone7": false,
+    "otherDeviceTypes": "Blackberry, Windows CE"
+}
