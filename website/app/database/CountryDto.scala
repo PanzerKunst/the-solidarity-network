@@ -13,7 +13,11 @@ object CountryDto {
     DB.withConnection {
       implicit c =>
 
-        val query = SQL("select id, name from country;")
+        val query = SQL("""
+          select id, name
+          from country
+          order by name;
+          """)
 
         query().map(row =>
           new Country(

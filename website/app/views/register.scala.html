@@ -44,7 +44,7 @@
     window.addEvent("domready", function () {
         new CBR.Controllers.Register({
             el: "#content",
-            countries: @common.JsonUtil.serialize(countries)
+            countries: @Html(common.JsonUtil.serialize(countries))
         })
         .run();
     });
