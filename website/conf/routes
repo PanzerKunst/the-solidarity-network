@@ -2,16 +2,13 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-# Ignore favicon requests
-GET     /favicon.ico                                404
-
-# Map static resources from the /app/public folder to the /public path
-GET     /public/                                    staticDir:public
-GET     /img/                                       staticDir:public/img
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
 
 # Boilerplate
-GET     /crossdomain.xml                            staticFile:/public/crossdomain.xml
-GET     /robots.txt                                 staticFile:/public/robots.txt
+GET     /crossdomain.xml            controllers.Assets.at(path="/public", file="crossdomain.xml")
+GET     /robots.txt                 controllers.Assets.at(path="/public", file="robots.txt")
 
-# Pages
-GET     /                                           Application.home
+# Home page
+GET     /                           controllers.Application.index
+GET     /register                   controllers.Application.register

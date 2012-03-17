@@ -1,0 +1,97 @@
+@(title: String, page: String)(content: Html)(javascript: Html)
+
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>@title</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Icon -->
+    <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <!--
+        Stylesheets
+    -->
+
+    <!-- Fonts -->
+
+    @if(play.Play.isDev) {
+
+    <!-- Global -->
+    <link rel="stylesheet" href="@routes.Assets.at("stylesheets/h5bp/style.css")">
+    <link rel="stylesheet" href="@routes.Assets.at("stylesheets/main.css")">
+
+    <!-- Rest -->
+    <link rel="stylesheet" href="@routes.Assets.at("stylesheets/index.css")">
+
+    } else {
+
+    <!-- Merged Stylesheets -->
+    <link rel="stylesheet" href="@routes.Assets.at("stylesheets/site.merged.min.css")">
+
+    }
+
+    <!-- Modernizr -->
+    <script src="@routes.Assets.at("javascripts/libs/h5bp/modernizr-2.0.6.min.js")"></script>
+
+</head>
+
+<body id="@page" >
+
+    <div id="container">
+
+        <header></header>
+
+        <div id="content" role="content">
+            @content
+        </div>
+
+        <footer></footer>
+
+    </div>
+
+    @if(play.Play.isDev) {
+
+    <!-- Libs -->
+    <script src="@routes.Assets.at("javascripts/libs/jquery-1.7.1.js")"></script>
+    <script type="text/javascript">jQuery.noConflict();</script>
+    <script src="@routes.Assets.at("javascripts/libs/mootools-core-1.4.5-full-nocompat.js")"></script>
+    <script src="@routes.Assets.at("javascripts/libs/mustache.js")"></script>
+
+    <!-- Global -->
+    <script src="@routes.Assets.at("javascripts/global.js")"></script>
+
+    <!-- Services -->
+
+    <!-- Models -->
+
+    <!-- Controllers -->
+    <script src="@routes.Assets.at("javascripts/controllers/base-controller.js")"></script>
+    <script src="@routes.Assets.at("javascripts/controllers/register-controller.js")"></script>
+
+    } else {
+
+    <!-- Merged js -->
+    <script src="@routes.Assets.at("javascripts/dist/site.merged.min.js")"></script>
+
+    }
+
+    @javascript
+
+    <!--[if lt IE 8 ]>
+        TODO: display specific "oldie" page
+    <![endif]-->
+
+</body>
+</html>

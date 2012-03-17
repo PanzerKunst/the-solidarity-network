@@ -1,7 +1,4 @@
 
-/website/test-result
-/website/logs
-/website/lib
+/website/out
 /website/tmp
-/website/modules
-/website/public/css/scss/.sass-cache
+/website/target

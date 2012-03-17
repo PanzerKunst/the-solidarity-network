@@ -3,4 +3,4 @@
 
 User-agent: *
 
-Disallow: /db/
+Disallow: /

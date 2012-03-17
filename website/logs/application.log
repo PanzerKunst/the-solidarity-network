@@ -1,0 +1,21 @@
+2012-03-17 02:32:09,722 - [INFO] - from play in main 
+Listening for HTTP on port 9000...
+
+2012-03-17 02:32:13,712 - [INFO] - from play in play-akka.actor.default-dispatcher-2 
+database [default] connected at jdbc:mysql://localhost/thesolidaritynetwork
+
+2012-03-17 02:32:14,001 - [INFO] - from play in play-akka.actor.default-dispatcher-2 
+Application started (Dev)
+
+2012-03-17 02:32:45,634 - [INFO] - from play in play-akka.actor.default-dispatcher-4 
+database [default] connected at jdbc:mysql://localhost/thesolidaritynetwork
+
+2012-03-17 02:32:45,640 - [INFO] - from play in play-akka.actor.default-dispatcher-4 
+Application started (Dev)
+
+2012-03-17 02:40:11,586 - [INFO] - from play in play-akka.actor.default-dispatcher-5 
+database [default] connected at jdbc:mysql://localhost/thesolidaritynetwork
+
+2012-03-17 02:40:11,595 - [INFO] - from play in play-akka.actor.default-dispatcher-5 
+Application started (Dev)
+

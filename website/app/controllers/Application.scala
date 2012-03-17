@@ -1,31 +1,24 @@
 package controllers
 
-import play.mvc.Controller
-import views.Application._
-import models.User
+import play.api.mvc._
+import database.{CountryDto, UserDto}
+import common.JsonUtil
 
 object Application extends Controller {
 
-  def home() = {
-    html.home()
+  def index = Action {
+    val user = UserDto.getUserOfUsername("blackbird")
+
+    Ok(views.html.index(user))
   }
 
-  def loggedInUser(): Option[User] = {
-    val username = session.get("username")
-    val name = session.get("name")
-    if (username == null || name == null)
-      None
-    else
-      Some(new User(username, name))
+  def register = Action {
+
+    // TODO: remove
+    val countries = CountryDto.getAll
+    val json = JsonUtil.serialize(countries)
+
+    Ok(views.html.register(CountryDto.getAll))
   }
 
-  def isLoggedIn: Boolean = {
-    session.get("username") != null
-  }
-
-  private def doNotCachePage {
-    response.setHeader("Cache-Control", "no-store")
-    response.setHeader("Pragma", "no-cache")
-    response.setHeader("Expires", "0")
-  }
 }

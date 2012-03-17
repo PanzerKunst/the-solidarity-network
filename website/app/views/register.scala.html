@@ -1,0 +1,52 @@
+@(countries: java.util.List[Country])
+@main("Register", "register") {
+<!--
+    Content
+-->
+
+} {
+<!--
+    Javascript
+-->
+
+<script id="content-template" type="text/html">
+    <form>
+        <input id="first-name" type="text" placeholder="Your first name"/>
+
+        <input id="last-name" type="text" placeholder="Your last name"/>
+
+        <input id="email" type="text" placeholder="email@@address.com"/>
+
+        <input id="username" type="text" placeholder="Desired username"/>
+        <a id="check-username-availability">Available?</a>
+
+        <input id="password" type="password" placeholder="Password"/>
+
+        <fieldset>
+            <input id="street-address" type="text" placeholder="Street address"/>
+
+            <input id="post-code" type="text" placeholder="Postal code"/>
+
+            <input id="city" type="text" placeholder="City"/>
+
+            <select>
+                {{#countries}}
+                <option value="{{id}}">{{name}}</option>
+                {{/countries}}
+            </select>
+        </fieldset>
+
+    </form>
+</script>
+
+
+<script type="text/javascript">
+    window.addEvent("domready", function () {
+        new CBR.Controllers.Register({
+            el: "#content",
+            countries: @common.JsonUtil.serialize(countries)
+        })
+        .run();
+    });
+</script>
+}

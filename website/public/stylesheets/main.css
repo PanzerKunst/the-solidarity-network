@@ -1,0 +1,38 @@
+/* Image replacement */
+/* Base Element styles  */
+body {
+  font-size: 13px;
+  webkit-font-smoothing: antialiased; }
+
+html {
+  overflow-y: scroll;
+  overflow-x: hidden; }
+
+/* Base Element styles */
+h1, h2, h3, h4, h5 {
+  display: block;
+  margin-bottom: 20px; }
+
+h1 {
+  font-size: 30px;
+  font-weight: normal; }
+
+h2 {
+  font-size: 18px;
+  font-weight: bold; }
+
+h3 {
+  font-size: 15px;
+  font-weight: bold; }
+
+a, a:visited {
+  font-weight: bold;
+  color: #be2d07;
+  cursor: pointer;
+  text-decoration: none; }
+  a:hover, a:visited:hover {
+    color: #f18a26; }
+
+p {
+  color: #3f3f3f;
+  margin-bottom: 15px; }
