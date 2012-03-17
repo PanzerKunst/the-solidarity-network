@@ -1,23 +1,15 @@
 package controllers
 
 import play.api.mvc._
-import database.{CountryDto, UserDto}
-import common.JsonUtil
+import database.CountryDto
 
 object Application extends Controller {
 
   def index = Action {
-    val user = UserDto.getUserOfUsername("blackbird")
-
-    Ok(views.html.index(user))
+    Ok(views.html.index())
   }
 
   def register = Action {
-
-    // TODO: remove
-    val countries = CountryDto.getAll
-    val json = JsonUtil.serialize(countries)
-
     Ok(views.html.register(CountryDto.getAll))
   }
 

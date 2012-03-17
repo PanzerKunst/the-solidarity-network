@@ -1,4 +1,4 @@
-CBR.Controllers.MustacheController = new Class({
+CBR.Controllers.TemplateController = new Class({
     initialize: function (options) {
         this.options = options;
     },

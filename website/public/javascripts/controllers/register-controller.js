@@ -1,5 +1,5 @@
 CBR.Controllers.Register = new Class({
-    Extends: CBR.Controllers.MustacheController,
+    Extends: CBR.Controllers.TemplateController,
 
     initialize: function(options) {
         this.parent(options);
