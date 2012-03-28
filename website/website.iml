@@ -18,7 +18,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/play/play_2.9.1/2.0/jars/play_2.9.1.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/play/play_2.9.1/2.0/jars/play_2.9.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -27,7 +27,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/play/templates_2.9.1/2.0/jars/templates_2.9.1.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/play/templates_2.9.1/2.0/jars/templates_2.9.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -63,7 +63,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/play/anorm_2.9.1/2.0/jars/anorm_2.9.1.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/play/anorm_2.9.1/2.0/jars/anorm_2.9.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -72,7 +72,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/io.netty/netty/3.3.0.Final/bundles/netty.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/io.netty/netty/3.3.0.Final/bundles/netty.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -81,7 +81,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.slf4j/slf4j-api/1.6.4/jars/slf4j-api.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.slf4j/slf4j-api/1.6.4/jars/slf4j-api.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -90,7 +90,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.slf4j/jul-to-slf4j/1.6.4/jars/jul-to-slf4j.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.slf4j/jul-to-slf4j/1.6.4/jars/jul-to-slf4j.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -99,7 +99,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.slf4j/jcl-over-slf4j/1.6.4/jars/jcl-over-slf4j.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.slf4j/jcl-over-slf4j/1.6.4/jars/jcl-over-slf4j.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -108,7 +108,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/ch.qos.logback/logback-core/1.0.0/jars/logback-core.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/ch.qos.logback/logback-core/1.0.0/jars/logback-core.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -117,7 +117,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/ch.qos.logback/logback-classic/1.0.0/jars/logback-classic.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/ch.qos.logback/logback-classic/1.0.0/jars/logback-classic.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -126,7 +126,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/com.typesafe.akka/akka-actor/2.0/jars/akka-actor.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/com.typesafe.akka/akka-actor/2.0/jars/akka-actor.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -135,7 +135,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/com.typesafe.akka/akka-slf4j/2.0/jars/akka-slf4j.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/com.typesafe.akka/akka-slf4j/2.0/jars/akka-slf4j.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -144,7 +144,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/com.google.guava/guava/10.0.1/jars/guava.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/com.google.guava/guava/10.0.1/jars/guava.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -153,7 +153,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/com.google.code.findbugs/jsr305/1.3.9/jars/jsr305.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/com.google.code.findbugs/jsr305/1.3.9/jars/jsr305.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -162,7 +162,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.avaje/ebean/2.7.3/jars/ebean.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.avaje/ebean/2.7.3/jars/ebean.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -171,7 +171,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.hibernate.javax.persistence/hibernate-jpa-2.0-api/1.0.1.Final/jars/hibernate-jpa-2.0-api.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.hibernate.javax.persistence/hibernate-jpa-2.0-api/1.0.1.Final/jars/hibernate-jpa-2.0-api.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -180,7 +180,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/com.h2database/h2/1.3.158/jars/h2.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/com.h2database/h2/1.3.158/jars/h2.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -189,7 +189,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.scala-tools/scala-stm_2.9.1/0.4/jars/scala-stm_2.9.1.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.scala-tools/scala-stm_2.9.1/0.4/jars/scala-stm_2.9.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -198,7 +198,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/com.jolbox/bonecp/0.7.1.RELEASE/bundles/bonecp.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/com.jolbox/bonecp/0.7.1.RELEASE/bundles/bonecp.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -207,7 +207,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.yaml/snakeyaml/1.9/bundles/snakeyaml.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.yaml/snakeyaml/1.9/bundles/snakeyaml.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -216,7 +216,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.hibernate/hibernate-validator/4.2.0.Final/jars/hibernate-validator.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.hibernate/hibernate-validator/4.2.0.Final/jars/hibernate-validator.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -225,7 +225,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/javax.validation/validation-api/1.0.0.GA/jars/validation-api.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/javax.validation/validation-api/1.0.0.GA/jars/validation-api.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -234,7 +234,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.springframework/spring-context/3.0.7.RELEASE/jars/spring-context.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.springframework/spring-context/3.0.7.RELEASE/jars/spring-context.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -243,7 +243,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.springframework/spring-core/3.0.7.RELEASE/jars/spring-core.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.springframework/spring-core/3.0.7.RELEASE/jars/spring-core.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -252,7 +252,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.springframework/spring-beans/3.0.7.RELEASE/jars/spring-beans.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.springframework/spring-beans/3.0.7.RELEASE/jars/spring-beans.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -261,7 +261,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/joda-time/joda-time/2.0/jars/joda-time.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/joda-time/joda-time/2.0/jars/joda-time.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -270,7 +270,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.joda/joda-convert/1.1/jars/joda-convert.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.joda/joda-convert/1.1/jars/joda-convert.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -279,7 +279,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/javassist/javassist/3.12.1.GA/jars/javassist.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/javassist/javassist/3.12.1.GA/jars/javassist.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -288,7 +288,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/commons-lang/commons-lang/2.6/jars/commons-lang.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/commons-lang/commons-lang/2.6/jars/commons-lang.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -297,7 +297,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/com.ning/async-http-client/1.7.0/jars/async-http-client.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/com.ning/async-http-client/1.7.0/jars/async-http-client.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -306,7 +306,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/oauth.signpost/signpost-core/1.2.1.1/jars/signpost-core.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/oauth.signpost/signpost-core/1.2.1.1/jars/signpost-core.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -315,7 +315,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/commons-codec/commons-codec/1.3/jars/commons-codec.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/commons-codec/commons-codec/1.3/jars/commons-codec.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -324,7 +324,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/com.codahale/jerkson_2.9.1/0.5.0/jars/jerkson_2.9.1.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/com.codahale/jerkson_2.9.1/0.5.0/jars/jerkson_2.9.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -333,7 +333,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.codehaus.jackson/jackson-core-asl/1.9.5/jars/jackson-core-asl.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.codehaus.jackson/jackson-core-asl/1.9.5/jars/jackson-core-asl.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -342,7 +342,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.codehaus.jackson/jackson-mapper-asl/1.9.5/jars/jackson-mapper-asl.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.codehaus.jackson/jackson-mapper-asl/1.9.5/jars/jackson-mapper-asl.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -351,7 +351,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.reflections/reflections/0.9.6/jars/reflections.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.reflections/reflections/0.9.6/jars/reflections.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -360,7 +360,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/javax.servlet/javax.servlet-api/3.0.1/jars/javax.servlet-api.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/javax.servlet/javax.servlet-api/3.0.1/jars/javax.servlet-api.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -369,7 +369,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/javax.transaction/jta/1.1/jars/jta.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/javax.transaction/jta/1.1/jars/jta.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -378,7 +378,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/tyrex/tyrex/1.0.1/jars/tyrex.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/tyrex/tyrex/1.0.1/jars/tyrex.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -387,7 +387,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/jaxen/jaxen/1.1.3/jars/jaxen.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/jaxen/jaxen/1.1.3/jars/jaxen.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -396,7 +396,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/net.sf.ehcache/ehcache-core/2.5.0/jars/ehcache-core.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/net.sf.ehcache/ehcache-core/2.5.0/jars/ehcache-core.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -405,7 +405,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/./sbt/boot/scala-2.9.1/lib/scala-library.jar!/" />
+          <root url="jar://E:/servers/play-2.0/framework/sbt/boot/scala-2.9.1/lib/scala-library.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -414,7 +414,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/play/play_2.9.1/2.0/jars/play_2.9.1.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/play/play_2.9.1/2.0/jars/play_2.9.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -423,7 +423,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/play/templates_2.9.1/2.0/jars/templates_2.9.1.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/play/templates_2.9.1/2.0/jars/templates_2.9.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -459,7 +459,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/play/anorm_2.9.1/2.0/jars/anorm_2.9.1.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/play/anorm_2.9.1/2.0/jars/anorm_2.9.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -468,7 +468,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/io.netty/netty/3.3.0.Final/bundles/netty.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/io.netty/netty/3.3.0.Final/bundles/netty.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -477,7 +477,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.slf4j/slf4j-api/1.6.4/jars/slf4j-api.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.slf4j/slf4j-api/1.6.4/jars/slf4j-api.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -486,7 +486,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.slf4j/jul-to-slf4j/1.6.4/jars/jul-to-slf4j.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.slf4j/jul-to-slf4j/1.6.4/jars/jul-to-slf4j.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -495,7 +495,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.slf4j/jcl-over-slf4j/1.6.4/jars/jcl-over-slf4j.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.slf4j/jcl-over-slf4j/1.6.4/jars/jcl-over-slf4j.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -504,7 +504,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/ch.qos.logback/logback-core/1.0.0/jars/logback-core.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/ch.qos.logback/logback-core/1.0.0/jars/logback-core.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -513,7 +513,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/ch.qos.logback/logback-classic/1.0.0/jars/logback-classic.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/ch.qos.logback/logback-classic/1.0.0/jars/logback-classic.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -522,7 +522,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/com.typesafe.akka/akka-actor/2.0/jars/akka-actor.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/com.typesafe.akka/akka-actor/2.0/jars/akka-actor.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -531,7 +531,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/com.typesafe.akka/akka-slf4j/2.0/jars/akka-slf4j.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/com.typesafe.akka/akka-slf4j/2.0/jars/akka-slf4j.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -540,7 +540,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/com.google.guava/guava/10.0.1/jars/guava.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/com.google.guava/guava/10.0.1/jars/guava.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -549,7 +549,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/com.google.code.findbugs/jsr305/1.3.9/jars/jsr305.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/com.google.code.findbugs/jsr305/1.3.9/jars/jsr305.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -558,7 +558,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.avaje/ebean/2.7.3/jars/ebean.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.avaje/ebean/2.7.3/jars/ebean.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -567,7 +567,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.hibernate.javax.persistence/hibernate-jpa-2.0-api/1.0.1.Final/jars/hibernate-jpa-2.0-api.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.hibernate.javax.persistence/hibernate-jpa-2.0-api/1.0.1.Final/jars/hibernate-jpa-2.0-api.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -576,7 +576,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/com.h2database/h2/1.3.158/jars/h2.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/com.h2database/h2/1.3.158/jars/h2.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -585,7 +585,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.scala-tools/scala-stm_2.9.1/0.4/jars/scala-stm_2.9.1.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.scala-tools/scala-stm_2.9.1/0.4/jars/scala-stm_2.9.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -594,7 +594,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/com.jolbox/bonecp/0.7.1.RELEASE/bundles/bonecp.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/com.jolbox/bonecp/0.7.1.RELEASE/bundles/bonecp.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -603,7 +603,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.yaml/snakeyaml/1.9/bundles/snakeyaml.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.yaml/snakeyaml/1.9/bundles/snakeyaml.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -612,7 +612,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.hibernate/hibernate-validator/4.2.0.Final/jars/hibernate-validator.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.hibernate/hibernate-validator/4.2.0.Final/jars/hibernate-validator.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -621,7 +621,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/javax.validation/validation-api/1.0.0.GA/jars/validation-api.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/javax.validation/validation-api/1.0.0.GA/jars/validation-api.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -630,7 +630,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.springframework/spring-context/3.0.7.RELEASE/jars/spring-context.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.springframework/spring-context/3.0.7.RELEASE/jars/spring-context.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -639,7 +639,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.springframework/spring-core/3.0.7.RELEASE/jars/spring-core.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.springframework/spring-core/3.0.7.RELEASE/jars/spring-core.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -648,7 +648,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.springframework/spring-beans/3.0.7.RELEASE/jars/spring-beans.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.springframework/spring-beans/3.0.7.RELEASE/jars/spring-beans.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -657,7 +657,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/joda-time/joda-time/2.0/jars/joda-time.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/joda-time/joda-time/2.0/jars/joda-time.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -666,7 +666,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.joda/joda-convert/1.1/jars/joda-convert.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.joda/joda-convert/1.1/jars/joda-convert.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -675,7 +675,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/javassist/javassist/3.12.1.GA/jars/javassist.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/javassist/javassist/3.12.1.GA/jars/javassist.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -684,7 +684,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/commons-lang/commons-lang/2.6/jars/commons-lang.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/commons-lang/commons-lang/2.6/jars/commons-lang.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -693,7 +693,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/com.ning/async-http-client/1.7.0/jars/async-http-client.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/com.ning/async-http-client/1.7.0/jars/async-http-client.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -702,7 +702,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/oauth.signpost/signpost-core/1.2.1.1/jars/signpost-core.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/oauth.signpost/signpost-core/1.2.1.1/jars/signpost-core.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -711,7 +711,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/com.codahale/jerkson_2.9.1/0.5.0/jars/jerkson_2.9.1.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/com.codahale/jerkson_2.9.1/0.5.0/jars/jerkson_2.9.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -720,7 +720,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.codehaus.jackson/jackson-core-asl/1.9.5/jars/jackson-core-asl.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.codehaus.jackson/jackson-core-asl/1.9.5/jars/jackson-core-asl.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -729,7 +729,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.codehaus.jackson/jackson-mapper-asl/1.9.5/jars/jackson-mapper-asl.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.codehaus.jackson/jackson-mapper-asl/1.9.5/jars/jackson-mapper-asl.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -738,7 +738,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.reflections/reflections/0.9.6/jars/reflections.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.reflections/reflections/0.9.6/jars/reflections.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -747,7 +747,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/javax.servlet/javax.servlet-api/3.0.1/jars/javax.servlet-api.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/javax.servlet/javax.servlet-api/3.0.1/jars/javax.servlet-api.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -756,7 +756,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/javax.transaction/jta/1.1/jars/jta.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/javax.transaction/jta/1.1/jars/jta.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -765,7 +765,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/tyrex/tyrex/1.0.1/jars/tyrex.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/tyrex/tyrex/1.0.1/jars/tyrex.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -774,7 +774,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/jaxen/jaxen/1.1.3/jars/jaxen.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/jaxen/jaxen/1.1.3/jars/jaxen.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -783,7 +783,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/net.sf.ehcache/ehcache-core/2.5.0/jars/ehcache-core.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/net.sf.ehcache/ehcache-core/2.5.0/jars/ehcache-core.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -792,7 +792,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/play/play-test_2.9.1/2.0/jars/play-test_2.9.1.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/play/play-test_2.9.1/2.0/jars/play-test_2.9.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -801,7 +801,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.specs2/specs2_2.9.1/1.7.1/jars/specs2_2.9.1.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.specs2/specs2_2.9.1/1.7.1/jars/specs2_2.9.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -810,7 +810,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.specs2/specs2-scalaz-core_2.9.1/6.0.1/jars/specs2-scalaz-core_2.9.1.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.specs2/specs2-scalaz-core_2.9.1/6.0.1/jars/specs2-scalaz-core_2.9.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -819,7 +819,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/com.novocode/junit-interface/0.8/jars/junit-interface.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/com.novocode/junit-interface/0.8/jars/junit-interface.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -828,7 +828,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/junit/junit/4.8.2/jars/junit.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/junit/junit/4.8.2/jars/junit.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -837,7 +837,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.scala-tools.testing/test-interface/0.5/jars/test-interface.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.scala-tools.testing/test-interface/0.5/jars/test-interface.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -846,7 +846,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.fluentlenium/fluentlenium-festassert/0.5.6/jars/fluentlenium-festassert.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.fluentlenium/fluentlenium-festassert/0.5.6/jars/fluentlenium-festassert.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -855,7 +855,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.fluentlenium/fluentlenium-core/0.5.6/jars/fluentlenium-core.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.fluentlenium/fluentlenium-core/0.5.6/jars/fluentlenium-core.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -864,7 +864,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.seleniumhq.selenium/selenium-java/2.16.1/jars/selenium-java.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.seleniumhq.selenium/selenium-java/2.16.1/jars/selenium-java.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -873,7 +873,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.seleniumhq.selenium/selenium-android-driver/2.16.1/jars/selenium-android-driver.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.seleniumhq.selenium/selenium-android-driver/2.16.1/jars/selenium-android-driver.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -882,7 +882,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.seleniumhq.selenium/selenium-remote-driver/2.16.1/jars/selenium-remote-driver.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.seleniumhq.selenium/selenium-remote-driver/2.16.1/jars/selenium-remote-driver.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -891,7 +891,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/cglib/cglib-nodep/2.1_3/jars/cglib-nodep.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/cglib/cglib-nodep/2.1_3/jars/cglib-nodep.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -900,7 +900,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.json/json/20080701/jars/json.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.json/json/20080701/jars/json.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -909,7 +909,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.seleniumhq.selenium/selenium-api/2.16.1/jars/selenium-api.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.seleniumhq.selenium/selenium-api/2.16.1/jars/selenium-api.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -918,7 +918,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.apache.httpcomponents/httpclient/4.1.2/jars/httpclient.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.apache.httpcomponents/httpclient/4.1.2/jars/httpclient.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -927,7 +927,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.apache.httpcomponents/httpcore/4.1.3/jars/httpcore.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.apache.httpcomponents/httpcore/4.1.3/jars/httpcore.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -936,7 +936,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/commons-logging/commons-logging/1.1.1/jars/commons-logging.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/commons-logging/commons-logging/1.1.1/jars/commons-logging.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -945,7 +945,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/commons-codec/commons-codec/1.4/jars/commons-codec.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/commons-codec/commons-codec/1.4/jars/commons-codec.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -954,7 +954,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.apache.commons/commons-exec/1.1/jars/commons-exec.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.apache.commons/commons-exec/1.1/jars/commons-exec.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -963,7 +963,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/net.java.dev.jna/jna/3.4.0/jars/jna.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/net.java.dev.jna/jna/3.4.0/jars/jna.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -972,7 +972,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/net.java.dev.jna/platform/3.4.0/jars/platform.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/net.java.dev.jna/platform/3.4.0/jars/platform.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -981,7 +981,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.seleniumhq.selenium/selenium-chrome-driver/2.16.1/jars/selenium-chrome-driver.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.seleniumhq.selenium/selenium-chrome-driver/2.16.1/jars/selenium-chrome-driver.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -990,7 +990,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.seleniumhq.selenium/selenium-htmlunit-driver/2.16.1/jars/selenium-htmlunit-driver.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.seleniumhq.selenium/selenium-htmlunit-driver/2.16.1/jars/selenium-htmlunit-driver.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -999,7 +999,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/net.sourceforge.htmlunit/htmlunit/2.9/jars/htmlunit.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/net.sourceforge.htmlunit/htmlunit/2.9/jars/htmlunit.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -1008,7 +1008,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/xalan/xalan/2.7.1/jars/xalan.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/xalan/xalan/2.7.1/jars/xalan.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -1017,7 +1017,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/xalan/serializer/2.7.1/jars/serializer.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/xalan/serializer/2.7.1/jars/serializer.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -1026,7 +1026,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/xml-apis/xml-apis/1.3.04/jars/xml-apis.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/xml-apis/xml-apis/1.3.04/jars/xml-apis.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -1035,7 +1035,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/commons-collections/commons-collections/3.2.1/jars/commons-collections.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/commons-collections/commons-collections/3.2.1/jars/commons-collections.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -1044,7 +1044,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.apache.httpcomponents/httpmime/4.1.2/jars/httpmime.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.apache.httpcomponents/httpmime/4.1.2/jars/httpmime.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -1053,7 +1053,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/net.sourceforge.htmlunit/htmlunit-core-js/2.9/jars/htmlunit-core-js.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/net.sourceforge.htmlunit/htmlunit-core-js/2.9/jars/htmlunit-core-js.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -1062,7 +1062,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/xerces/xercesImpl/2.9.1/jars/xercesImpl.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/xerces/xercesImpl/2.9.1/jars/xercesImpl.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -1071,7 +1071,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/net.sourceforge.nekohtml/nekohtml/1.9.15/jars/nekohtml.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/net.sourceforge.nekohtml/nekohtml/1.9.15/jars/nekohtml.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -1080,7 +1080,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/net.sourceforge.cssparser/cssparser/0.9.5/jars/cssparser.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/net.sourceforge.cssparser/cssparser/0.9.5/jars/cssparser.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -1089,7 +1089,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.w3c.css/sac/1.3/jars/sac.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.w3c.css/sac/1.3/jars/sac.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -1098,7 +1098,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/commons-io/commons-io/2.0.1/jars/commons-io.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/commons-io/commons-io/2.0.1/jars/commons-io.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -1107,7 +1107,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.seleniumhq.selenium/selenium-firefox-driver/2.16.1/jars/selenium-firefox-driver.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.seleniumhq.selenium/selenium-firefox-driver/2.16.1/jars/selenium-firefox-driver.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -1116,7 +1116,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.seleniumhq.selenium/selenium-ie-driver/2.16.1/jars/selenium-ie-driver.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.seleniumhq.selenium/selenium-ie-driver/2.16.1/jars/selenium-ie-driver.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -1125,7 +1125,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.seleniumhq.selenium/selenium-iphone-driver/2.16.1/jars/selenium-iphone-driver.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.seleniumhq.selenium/selenium-iphone-driver/2.16.1/jars/selenium-iphone-driver.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -1134,7 +1134,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.seleniumhq.selenium/selenium-support/2.16.1/jars/selenium-support.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.seleniumhq.selenium/selenium-support/2.16.1/jars/selenium-support.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -1143,7 +1143,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.easytesting/fest-assert/1.4/jars/fest-assert.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.easytesting/fest-assert/1.4/jars/fest-assert.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -1152,7 +1152,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://e:/servers/play-2.0/framework/../repository/local/org.easytesting/fest-util/1.1.6/jars/fest-util.jar!/" />
+          <root url="jar://E:/servers/play-2.0/repository/local/org.easytesting/fest-util/1.1.6/jars/fest-util.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

@@ -8,6 +8,8 @@ import scala.collection.JavaConversions._
 
 
 object CountryDto {
+  val all = getAll
+
   def getAll: java.util.List[Country] = {
 
     DB.withConnection {
@@ -26,5 +28,9 @@ object CountryDto {
           )
         ).toList
     }
+  }
+
+  def getOfId(id: Long) = {
+    all.filter(c => c.id == id)
   }
 }

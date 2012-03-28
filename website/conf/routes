@@ -12,3 +12,6 @@ GET     /robots.txt                 controllers.Assets.at(path="/public", file="
 # Home page
 GET     /                           controllers.Application.index
 GET     /register                   controllers.Application.register
+
+# API
+POST    /api/user                   controllers.api.UserApi.createUser

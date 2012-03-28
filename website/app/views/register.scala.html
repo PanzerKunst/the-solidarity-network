@@ -1,5 +1,5 @@
 @(countries: java.util.List[Country])
-@main("Register", "register") {
+@main("Solidarity Network - Register", "register") {
 <!--
     Content
 -->
@@ -29,19 +29,19 @@
 
             <input id="city" type="text" placeholder="City"/>
 
-            <select>
+            <select id="country">
                 {{#countries}}
                 <option value="{{id}}">{{name}}</option>
                 {{/countries}}
             </select>
         </fieldset>
+        
+        <a id="register-anchor">
+            <span>Register</span>
+        </a>
 
     </form>
 </script>
-
-<!-- To Load Content into an Element (via XHR) -->
-<!-- document.id('myElement').load('ajax/script.html');
--->
 
 <script type="text/javascript">
     window.addEvent("domready", function () {
