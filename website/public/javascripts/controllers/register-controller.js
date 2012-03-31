@@ -13,7 +13,7 @@ CBR.Controllers.Register = new Class({
             )
         );
 
-        jQuery("#register-anchor").click(this.doRegister);
+        jQuery("#register-button").click(this.doRegister);
     },
 
     doRegister: function (e) {

@@ -1,44 +1,39 @@
 package common
 
-import java.io.{InputStreamReader, InputStream}
-import com.google.gson.{JsonParser, JsonElement, JsonSyntaxException, Gson}
+import java.io.InputStream
+import org.codehaus.jackson.JsonNode
+import org.codehaus.jackson.map.ObjectMapper
+import org.codehaus.jackson.node.ObjectNode
+import com.codahale.jerkson.ScalaModule
 
 object JsonUtil {
   def parse[T](inputStream: InputStream, classOfT: Class[T]) = {
-    val obj = new Gson().fromJson(new InputStreamReader(inputStream, "UTF-8"), classOfT)
-    if (obj == null) {
-      throw new JsonSyntaxException("Invalid JSON")
-    }
-    obj
+    createObjectMapper().readValue(inputStream, classOfT)
   }
 
   def parse[T](json: String, classOfT: Class[T]) = {
-    val obj = new Gson().fromJson(json, classOfT)
-    if (obj == null) {
-      throw new JsonSyntaxException("Invalid JSON: " + json)
-    }
-    obj
-  }
-
-  def parse[T](json: JsonElement, classOfT: Class[T]) = {
-    new Gson().fromJson(json, classOfT)
-  }
-
-  def parse(inputStream: InputStream): JsonElement = {
-    new JsonParser().parse(new InputStreamReader(inputStream, "UTF-8"))
-  }
-
-  def parse(json: String): JsonElement = {
-    new JsonParser().parse(json)
+    createObjectMapper().readValue(json, classOfT)
   }
 
   def serialize(obj: AnyRef): String = {
-    new Gson().toJson(obj)
+    createObjectMapper().writeValueAsString(obj)
   }
 
-  def serialize(obj: JsonElement): String = {
-    new Gson().toJson(obj)
+  def parse(inputStream: InputStream): JsonNode = {
+    createObjectMapper().readTree(inputStream)
+  }
+
+  def parse(json: String): JsonNode = {
+    createObjectMapper().readTree(json)
+  }
+
+  def copyObjectNode(obj: ObjectNode): ObjectNode = {
+    createObjectMapper().readTree(obj.traverse()).asInstanceOf[ObjectNode]
+  }
+
+  private def createObjectMapper() = {
+    val mapper = new ObjectMapper()
+    mapper.registerModule(new ScalaModule(this.getClass.getClassLoader))
+    mapper
   }
 }
-
-

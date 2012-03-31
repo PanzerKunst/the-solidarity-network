@@ -4,13 +4,12 @@ import anorm._
 import play.api.db.DB
 import play.api.Play.current
 import models.Country
-import scala.collection.JavaConversions._
 
 
 object CountryDto {
   val all = getAll
 
-  def getAll: java.util.List[Country] = {
+  def getAll: List[Country] = {
 
     DB.withConnection {
       implicit c =>
@@ -26,7 +25,7 @@ object CountryDto {
             row[Long]("id"),
             row[String]("name")
           )
-        ).toList
+        ) toList
     }
   }
 
