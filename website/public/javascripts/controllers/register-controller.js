@@ -13,6 +13,10 @@ CBR.Controllers.Register = new Class({
             )
         );
 
+        this.$usernameField = jQuery("#username");
+        this.$usernameTakenParagraph = jQuery("#username-taken");
+
+
         this.initValidation();
 
         jQuery("#register-button").click(jQuery.proxy(this.doRegister, this));
@@ -40,7 +44,7 @@ CBR.Controllers.Register = new Class({
     doRegister: function (e) {
         e.preventDefault();
 
-        if (this.validator.isValid()) {
+        if (this.validator.isValid() && this.isUsernameAvailable()) {
             var user = new CBR.User({
                 username: jQuery("#username").val(),
                 lastName: jQuery("#last-name").val(),
@@ -68,20 +72,19 @@ CBR.Controllers.Register = new Class({
     },
 
     checkIfUsernameIsAlreadyTakenOnBlur: function() {
-        var $usernameField = jQuery("#username");
-        var $usernameTakenParagraph = jQuery("#username-taken");
+        var self = this;
 
-        $usernameField.blur(function () {
-            $usernameTakenParagraph.slideUp(200, "easeInQuad");
+        this.$usernameField.blur(function () {
+            self.$usernameTakenParagraph.slideUp(200, "easeInQuad");
 
             new Request({
                 urlEncoded: false,
-                url: "/api/users?username=" + $usernameField.val(),
+                url: "/api/users?username=" + self.$usernameField.val(),
                 onSuccess: function (responseText, responseXML) {
-                    $usernameTakenParagraph.slideDown(200, "easeOutQuad");
+                    self.$usernameTakenParagraph.slideDown(200, "easeOutQuad");
                 },
                 onFailure: function (xhr) {
-                    if (xhr.status == 404)
+                    if (xhr.status === 404)
                         console.log("username available :)");
                     else
                         alert("AJAX fail :(");
@@ -89,5 +92,15 @@ CBR.Controllers.Register = new Class({
             }).get();
 
         });
+    },
+
+    isUsernameAvailable: function() {
+        var xhr = new Request({
+            urlEncoded: false,
+            async: false,
+            url: "/api/users?username=" + this.$usernameField.val()
+        }).get();
+
+        return xhr.status === 404;
     }
 });
