@@ -12,26 +12,31 @@ object UserDto {
     DB.withConnection {
       implicit c =>
 
-        val firstRow = SQL("""
+        val stream = SQL("""
           select id, first_name, last_name, username, email, password, street_address, post_code, city, country_id
           from user
           """ + DbUtil.generateWhereClause(filters) + ";"
         )
           .apply()
-          .head
 
-        new User(
-          firstRow[Long]("id"),
-          firstRow[String]("first_name"),
-          firstRow[String]("last_name"),
-          firstRow[String]("username"),
-          firstRow[String]("email"),
-          firstRow[String]("password"),
-          firstRow[String]("street-address"),
-          firstRow[String]("post-code"),
-          firstRow[String]("city"),
-          firstRow[Long]("country_id")
-        )
+        if (stream.isEmpty)
+          null
+        else {
+          val firstRow = stream.head
+
+          new User(
+            firstRow[Long]("id"),
+            firstRow[String]("first_name"),
+            firstRow[String]("last_name"),
+            firstRow[String]("username"),
+            firstRow[String]("email"),
+            firstRow[String]("password"),
+            firstRow[String]("street_address"),
+            firstRow[String]("post_code"),
+            firstRow[String]("city"),
+            firstRow[Long]("country_id")
+          )
+        }
     }
   }
 

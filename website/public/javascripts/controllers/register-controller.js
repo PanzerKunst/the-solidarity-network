@@ -13,34 +13,81 @@ CBR.Controllers.Register = new Class({
             )
         );
 
-        jQuery("#register-button").click(this.doRegister);
+        this.initValidation();
+
+        jQuery("#register-button").click(jQuery.proxy(this.doRegister, this));
+    },
+
+    initValidation: function() {
+        jQuery(".field-error").hide();
+        jQuery("#username-taken").hide();
+
+        this.validator = new CBR.Services.Validator({
+            fieldIds: [
+                "first-name",
+                "last-name",
+                "email",
+                "username",
+                "password",
+                "city",
+                "country"
+            ]
+        });
+
+        this.checkIfUsernameIsAlreadyTakenOnBlur();
     },
 
     doRegister: function (e) {
         e.preventDefault();
 
-        var user = new CBR.User({
-            username: jQuery("#username").val(),
-            lastName: jQuery("#last-name").val(),
-            firstName: jQuery("#first-name").val(),
-            email: jQuery("#email").val(),
-            password: jQuery("#password").val(),
-            streetAddress: jQuery("#street-address").val(),
-            postCode: jQuery("#post-code").val(),
-            city: jQuery("#city").val(),
-            countryId: jQuery('#country').val()
-        });
+        if (this.validator.isValid()) {
+            var user = new CBR.User({
+                username: jQuery("#username").val(),
+                lastName: jQuery("#last-name").val(),
+                firstName: jQuery("#first-name").val(),
+                email: jQuery("#email").val(),
+                password: jQuery("#password").val(),
+                streetAddress: jQuery("#street-address").val(),
+                postCode: jQuery("#post-code").val(),
+                city: jQuery("#city").val(),
+                countryId: jQuery('#country').val()
+            });
 
-        new Request({
-            urlEncoded: false,
-            url: "/api/user",
-            data: CBR.JsonUtil.stringifyModel(user),
-            onSuccess: function (responseText, responseXML) {
-                console.log("Registration successful :)");
-            },
-            onFailure: function (xhr) {
-                alert("AJAX fail :(");
-            }
-        }).post();
+            new Request({
+                urlEncoded: false,
+                url: "/api/users",
+                data: CBR.JsonUtil.stringifyModel(user),
+                onSuccess: function (responseText, responseXML) {
+                    console.log("Registration successful :)");
+                },
+                onFailure: function (xhr) {
+                    alert("AJAX fail :(");
+                }
+            }).post();
+        }
+    },
+
+    checkIfUsernameIsAlreadyTakenOnBlur: function() {
+        var $usernameField = jQuery("#username");
+        var $usernameTakenParagraph = jQuery("#username-taken");
+
+        $usernameField.blur(function () {
+            $usernameTakenParagraph.slideUp(200, "easeInQuad");
+
+            new Request({
+                urlEncoded: false,
+                url: "/api/users?username=" + $usernameField.val(),
+                onSuccess: function (responseText, responseXML) {
+                    $usernameTakenParagraph.slideDown(200, "easeOutQuad");
+                },
+                onFailure: function (xhr) {
+                    if (xhr.status == 404)
+                        console.log("username available :)");
+                    else
+                        alert("AJAX fail :(");
+                }
+            }).get();
+
+        });
     }
 });

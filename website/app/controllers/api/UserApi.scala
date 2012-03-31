@@ -14,4 +14,19 @@ object UserApi extends Controller {
 
       Ok
   }
+
+  def getUsers(optionalUsername: Option[String]) = Action {
+    request =>
+
+      val filters = optionalUsername match {
+        case Some(username) => Map("username" -> username)
+      }
+
+      val users = UserDto.getAUserWhere(filters)
+
+      if (users != null)
+        Ok(JsonUtil.serialize(users))
+      else
+        NotFound
+  }
 }

@@ -11,29 +11,82 @@
 
 <script id="content-template" type="text/html">
     <form>
-        <input id="first-name" type="text" placeholder="Your first name"/>
+        <div class="field">
+            <label for="first-name">First name <span>*</span></label>
+            <input id="first-name" type="text"/>
 
-        <input id="last-name" type="text" placeholder="Your last name"/>
+            <p class="field-error" data-check="empty">You need to indicate your first name...</p>
+        </div>
 
-        <input id="email" type="text" placeholder="email@@address.com"/>
+        <div class="field">
+            <label for="last-name">Last name <span>*</span></label>
+            <input id="last-name" type="text"/>
 
-        <input id="username" type="text" placeholder="Desired username"/>
-        <a id="check-username-availability">Available?</a>
+            <p class="field-error" data-check="empty">You need to indicate your last name...</p>
+        </div>
 
-        <input id="password" type="password" placeholder="Password"/>
+        <div class="field">
+            <label for="email">E-mail address <span>*</span></label>
+            <input id="email" type="text" placeholder="email@@address.com"/>
+
+            <p class="field-error" data-check="empty">Please indicate your e-mail address. We'll use it to inform you of
+                user messages and help requests</p>
+
+            <p class="field-error" data-check="email">Would you mind checking that e-mail address? Looks wrong to
+                me...</p>
+        </div>
+
+        <div class="field">
+            <label for="username">Username <span>*</span></label>
+            <input id="username" type="text"/>
+            <a id="check-username-availability">Available?</a>
+
+            <p class="field-error" data-check="empty">Please choose a username, it'll identify you to other users</p>
+
+            <p class="field-error" data-check="username">Sorry, but only the following characters are allowed:
+                <em>a-z</em>, <em>A-Z</em>, <em>0-9</em>, <em>-</em>, <em>_</em></p>
+
+            <p class="field-error" id="username-taken" style="display: none">Sad news: this username is already taken :/
+                Please try with another one</p>
+        </div>
+
+        <div class="field">
+            <label for="password">Password <span>*</span></label>
+            <input id="password" type="password"/>
+
+            <p class="field-error" data-check="empty">Hum... you'll need a password to login!</p>
+        </div>
 
         <fieldset>
-            <input id="street-address" type="text" placeholder="Street address"/>
+            <div class="field">
+                <label for="street-address">Street address</label>
+                <input id="street-address" type="text"/>
+            </div>
 
-            <input id="post-code" type="text" placeholder="Postal code"/>
+            <div class="field">
+                <label for="post-code">Post code</label>
+                <input id="post-code" type="text"/>
+            </div>
 
-            <input id="city" type="text" placeholder="City"/>
+            <div class="field">
+                <label for="city">City <span>*</span></label>
+                <input id="city" type="text"/>
 
-            <select id="country">
-                {{#countries}}
-                <option value="{{id}}">{{name}}</option>
-                {{/countries}}
-            </select>
+                <p class="field-error" data-check="empty">Please indicate your city. Otherwise, we wouldn't know which
+                    other users are near you.</p>
+            </div>
+
+            <div class="field">
+                <label for="country">Country <span>*</span></label>
+                <select id="country">
+                    <option value="-1"></option>
+                    {{#countries}}
+                    <option value="{{id}}">{{name}}</option>
+                    {{/countries}}
+                </select>
+
+                <p class="field-error" data-check="empty">Where exactly is your city located?</p>
+            </div>
         </fieldset>
 
         <a id="register-button">

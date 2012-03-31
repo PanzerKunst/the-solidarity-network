@@ -7,7 +7,7 @@ CREATE TABLE `country` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 
 CREATE TABLE `user` (
@@ -24,15 +24,16 @@ CREATE TABLE `user` (
   PRIMARY KEY (`id`,`username`,`email`) USING BTREE,
   KEY `FK_country` (`country_id`),
   CONSTRAINT `FK_country` FOREIGN KEY (`country_id`) REFERENCES `country` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 
 insert into country(name) values("Greece");
 insert into country(name) values("Sweden");
 
-select * from user;
 select * from country;
 
 insert into user(first_name, last_name, username, email, password, street_address, post_code, city, country_id)
 values("Christophe", "Bram", "blackbird", "cbramdit@gmail.com", "tigrou", "Heleneborgsgatan 6C", "11732", "Stockholm",
   (select id from country where name = "Sweden"));
+
+select * from user;

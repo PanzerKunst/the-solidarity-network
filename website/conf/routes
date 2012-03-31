@@ -14,4 +14,5 @@ GET     /                           controllers.Application.index
 GET     /register                   controllers.Application.register
 
 # API
-POST    /api/user                   controllers.api.UserApi.createUser
+POST    /api/users                  controllers.api.UserApi.createUser
+GET     /api/users                  controllers.api.UserApi.getUsers(username: Option[String])
