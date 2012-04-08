@@ -12,7 +12,10 @@ GET     /robots.txt                 controllers.Assets.at(path="/public", file="
 # Home page
 GET     /                           controllers.Application.index
 GET     /register                   controllers.Application.register
+GET     /login                      controllers.Application.login
+GET     /home                       controllers.Application.home
 
 # API
 POST    /api/users                  controllers.api.UserApi.createUser
 GET     /api/users                  controllers.api.UserApi.getUsers(username: Option[String])
+POST    /api/authenticate           controllers.api.AuthApi.authenticate

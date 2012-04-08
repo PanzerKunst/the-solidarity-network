@@ -22,11 +22,9 @@ object UserApi extends Controller {
         case Some(username) => Map("username" -> username)
       }
 
-      val users = UserDto.getAUserWhere(filters)
-
-      if (users != null)
-        Ok(JsonUtil.serialize(users))
-      else
-        NotFound
+      UserDto.getAUserWhere(filters) match {
+        case Some(user) => Ok(JsonUtil.serialize(user))
+        case None => NotFound
+      }
   }
 }

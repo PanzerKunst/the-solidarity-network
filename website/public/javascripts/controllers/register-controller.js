@@ -20,6 +20,7 @@ CBR.Controllers.Register = new Class({
         this.initValidation();
 
         jQuery("#register-button").click(jQuery.proxy(this.doRegister, this));
+        jQuery("form").submit(jQuery.proxy(this.doRegister, this));
     },
 
     initValidation: function() {

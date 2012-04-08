@@ -3,12 +3,11 @@ package database
 import anorm._
 import models.User
 import play.api.db.DB
-import collection.immutable.HashMap
 import play.api.Play.current
 
 
 object UserDto {
-  def getAUserWhere(filters: Map[String, String] = new HashMap[String, String]()): User = {
+  def getAUserWhere(filters: Map[String, String] = Map()): Option[User] = {
     DB.withConnection {
       implicit c =>
 
@@ -20,11 +19,11 @@ object UserDto {
           .apply()
 
         if (stream.isEmpty)
-          null
+          None
         else {
           val firstRow = stream.head
 
-          new User(
+          Some(new User(
             firstRow[Long]("id"),
             firstRow[String]("first_name"),
             firstRow[String]("last_name"),
@@ -35,7 +34,7 @@ object UserDto {
             firstRow[String]("post_code"),
             firstRow[String]("city"),
             firstRow[Long]("country_id")
-          )
+          ))
         }
     }
   }
