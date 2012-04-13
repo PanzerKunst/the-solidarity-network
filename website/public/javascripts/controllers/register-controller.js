@@ -16,7 +16,6 @@ CBR.Controllers.Register = new Class({
         this.$usernameField = jQuery("#username");
         this.$usernameTakenParagraph = jQuery("#username-taken");
 
-
         this.initValidation();
 
         jQuery("#register-button").click(jQuery.proxy(this.doRegister, this));

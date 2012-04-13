@@ -1,4 +1,4 @@
-﻿use thesolidaritynetwork;
+use thesolidaritynetwork;
 
 drop table user;
 drop table country;

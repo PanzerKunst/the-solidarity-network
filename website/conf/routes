@@ -9,11 +9,13 @@ GET     /assets/*file               controllers.Assets.at(path="/public", file)
 GET     /crossdomain.xml            controllers.Assets.at(path="/public", file="crossdomain.xml")
 GET     /robots.txt                 controllers.Assets.at(path="/public", file="robots.txt")
 
-# Home page
+# Pages
 GET     /                           controllers.Application.index
 GET     /register                   controllers.Application.register
 GET     /login                      controllers.Application.login
+GET     /logout                     controllers.Application.logout
 GET     /home                       controllers.Application.home
+GET     /my-profile                 controllers.Application.myProfile
 
 # API
 POST    /api/users                  controllers.api.UserApi.createUser

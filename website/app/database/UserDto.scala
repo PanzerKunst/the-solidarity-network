@@ -25,9 +25,9 @@ object UserDto {
 
           Some(new User(
             firstRow[Long]("id"),
+            firstRow[String]("username"),
             firstRow[String]("first_name"),
             firstRow[String]("last_name"),
-            firstRow[String]("username"),
             firstRow[String]("email"),
             firstRow[String]("password"),
             firstRow[String]("street_address"),
@@ -44,14 +44,14 @@ object UserDto {
       implicit c =>
 
         SQL("""insert into user(first_name, last_name, username, email, password, street_address, post_code, city, country_id)
-      values("""" + user.firstName + """","""" +
-          user.lastName + """","""" +
-          user.username + """","""" +
-          user.email + """","""" +
-          user.password + """","""" +
-          user.streetAddress + """","""" +
-          user.postCode + """","""" +
-          user.city + """",""" +
+      values("""" + DbUtil.backslashQuotes(user.firstName) + """","""" +
+          DbUtil.backslashQuotes(user.lastName) + """","""" +
+          DbUtil.backslashQuotes(user.username) + """","""" +
+          DbUtil.backslashQuotes(user.email) + """","""" +
+          DbUtil.backslashQuotes(user.password) + """","""" +
+          DbUtil.backslashQuotes(user.streetAddress) + """","""" +
+          DbUtil.backslashQuotes(user.postCode) + """","""" +
+          DbUtil.backslashQuotes(user.city) + """",""" +
           user.countryId + ");"
         )
           .execute()

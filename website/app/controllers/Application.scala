@@ -18,10 +18,22 @@ object Application extends Controller {
     Ok(views.html.login())
   }
 
+  def logout = Action {
+    Redirect(routes.Application.index).withNewSession
+  }
+
   def home = Action {
     implicit request =>
       loggedInUser(session) match {
         case Some(user) => Ok(views.html.home(user))
+        case None => Redirect(routes.Application.login)
+      }
+  }
+
+  def myProfile = Action {
+    implicit request =>
+      loggedInUser(session) match {
+        case Some(user) => Ok(views.html.myProfile(user))
         case None => Redirect(routes.Application.login)
       }
   }
