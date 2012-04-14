@@ -2,15 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6a692bc-d147-471b-bee0-2af12beb41f5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Application.scala" afterPath="$PROJECT_DIR$/app/controllers/Application.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/api/UserApi.scala" afterPath="$PROJECT_DIR$/app/controllers/api/UserApi.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/DbUtil.scala" afterPath="$PROJECT_DIR$/app/database/DbUtil.scala" />
+      <change type="DELETED" beforePath="E:\Pro\the-solidarity-network\website\public\javascripts\libs\h5bp\modernizr-2.0.6.min.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/home.scala.html" afterPath="$PROJECT_DIR$/app/views/home.scala.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/main.scala.html" afterPath="$PROJECT_DIR$/app/views/main.scala.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/routes" afterPath="$PROJECT_DIR$/conf/routes" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/common/json-util.js" afterPath="$PROJECT_DIR$/public/javascripts/common/json-util.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/controllers/login-controller.js" afterPath="$PROJECT_DIR$/public/javascripts/controllers/login-controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/global.js" afterPath="$PROJECT_DIR$/public/javascripts/global.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/services/validator.js" afterPath="$PROJECT_DIR$/public/javascripts/services/validator.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/crossdomain.xml" afterPath="$PROJECT_DIR$/public/crossdomain.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/controllers/create-help-request-controller.js" afterPath="$PROJECT_DIR$/public/javascripts/controllers/create-help-request-controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/robots.txt" afterPath="$PROJECT_DIR$/public/robots.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/h5bp/style.css" afterPath="$PROJECT_DIR$/public/stylesheets/h5bp/style.css" />
     </list>
     <ignored path="website.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -72,55 +70,64 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="createHelpRequest.scala.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="createHelpRequest.scala.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/createHelpRequest.scala.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="74" selection-start="362" selection-end="362" vertical-scroll-proportion="0.346395">
+            <state line="10" column="10" selection-start="178" selection-end="178" vertical-scroll-proportion="-6.5384617">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Application.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/Application.scala">
+      <file leaf-file-name="home.scala.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/home.scala.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="0" selection-start="668" selection-end="704" vertical-scroll-proportion="0.0">
+            <state line="10" column="4" selection-start="219" selection-end="219" vertical-scroll-proportion="-6.5384617">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="validator.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/javascripts/services/validator.js">
+      <file leaf-file-name="login-controller.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/login-controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="136" column="9" selection-start="4163" selection-end="4163" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HelpRequestApi.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/api/HelpRequestApi.scala">
+      <file leaf-file-name="register-controller.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/register-controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="7" selection-start="203" selection-end="203" vertical-scroll-proportion="0.0">
+            <state line="89" column="0" selection-start="2776" selection-end="2907" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AuthApi.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/api/AuthApi.scala">
+      <file leaf-file-name="create-help-request-controller.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/create-help-request-controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="7" selection-start="192" selection-end="192" vertical-scroll-proportion="0.0">
+            <state line="50" column="103" selection-start="1568" selection-end="1568" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserApi.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/api/UserApi.scala">
+      <file leaf-file-name="main.scala.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/main.scala.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="0" selection-start="504" selection-end="556" vertical-scroll-proportion="0.0">
+            <state line="57" column="84" selection-start="1958" selection-end="1991" vertical-scroll-proportion="1.5504">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/conf/routes">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="28" selection-start="1208" selection-end="1208" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -144,24 +151,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DbUtil.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/database/DbUtil.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="76" selection-start="167" selection-end="167" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="json-util.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/javascripts/common/json-util.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="19" selection-start="310" selection-end="310" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindManager">
@@ -176,15 +165,12 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/public/javascripts/controllers/login-controller.js" />
         <option value="$PROJECT_DIR$/conf/routes" />
         <option value="$PROJECT_DIR$/app/models/HelpRequest.scala" />
         <option value="$PROJECT_DIR$/public/javascripts/models/help-request.js" />
-        <option value="$PROJECT_DIR$/public/javascripts/controllers/create-help-request-controller.js" />
         <option value="$PROJECT_DIR$/public/javascripts/global.js" />
         <option value="$PROJECT_DIR$/public/javascripts/common/json-util.js" />
         <option value="$PROJECT_DIR$/public/javascripts/jquery-no-conflict.js" />
-        <option value="$PROJECT_DIR$/app/views/main.scala.html" />
         <option value="$PROJECT_DIR$/app/database/HelpRequestDto.scala" />
         <option value="$PROJECT_DIR$/public/javascripts/services/validator.js" />
         <option value="$PROJECT_DIR$/app/database/DbUtil.scala" />
@@ -192,6 +178,9 @@
         <option value="$PROJECT_DIR$/app/controllers/api/UserApi.scala" />
         <option value="$PROJECT_DIR$/app/controllers/api/HelpRequestApi.scala" />
         <option value="$PROJECT_DIR$/app/views/createHelpRequest.scala.html" />
+        <option value="$PROJECT_DIR$/app/views/home.scala.html" />
+        <option value="$PROJECT_DIR$/public/javascripts/controllers/create-help-request-controller.js" />
+        <option value="$PROJECT_DIR$/app/views/main.scala.html" />
       </list>
     </option>
   </component>
@@ -848,55 +837,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/register.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="14" selection-start="622" selection-end="622" vertical-scroll-proportion="-5.8846154">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/global.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="189" selection-end="189" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/common/jquery.no-conflict.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="21" selection-end="21" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/main.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="101" column="0" selection-start="3222" selection-end="3222" vertical-scroll-proportion="-38.76923">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conf/routes">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="26" selection-start="869" selection-end="886" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/create-help-request-controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="0" selection-start="787" selection-end="787" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/common/json-util.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="19" selection-start="310" selection-end="310" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/services/validator.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="136" column="9" selection-start="4163" selection-end="4163" vertical-scroll-proportion="0.0">
@@ -955,7 +895,56 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/createHelpRequest.scala.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="74" selection-start="362" selection-end="362" vertical-scroll-proportion="0.346395">
+        <state line="10" column="10" selection-start="178" selection-end="178" vertical-scroll-proportion="-6.5384617">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/routes">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="28" selection-start="1208" selection-end="1208" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/home.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="4" selection-start="219" selection-end="219" vertical-scroll-proportion="-6.5384617">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/login-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/register-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="89" column="0" selection-start="2776" selection-end="2907" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/create-help-request-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="103" selection-start="1568" selection-end="1568" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/login.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/main.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="84" selection-start="1958" selection-end="1991" vertical-scroll-proportion="1.5504">
           <folding />
         </state>
       </provider>

@@ -47,7 +47,10 @@ CBR.Controllers.CreateHelpRequest = new Class({
                     console.log("Request saved :)");
                 },
                 onFailure: function (xhr) {
-                    alert("AJAX fail :(");
+                    if (xhr.status === 401)
+                        alert("Seems like you are not logged-in. Please log in again and retry, thanks!");
+                    else
+                        alert("AJAX fail :(");
                 }
             }).post();
         }
