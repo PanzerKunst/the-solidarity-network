@@ -1,0 +1,17 @@
+{
+    "debug": true,
+    "forin": true,
+    "eqnul": true,
+    "noarg": true,
+    "noempty": true,
+    "eqeqeq": true,
+    "boss": true,
+    "loopfunc": true,
+    "evil": true,
+    "laxbreak": true,
+    "bitwise": true,
+    "nonew": true,
+    "browser": true,
+    "jquery": true,
+    "mootools": true
+}

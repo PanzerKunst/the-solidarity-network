@@ -38,7 +38,7 @@
     } else {
 
     <!-- Merged Stylesheets -->
-    <link rel="stylesheet" href="@routes.Assets.at("stylesheets/site.merged.min.css")">
+    <link rel="stylesheet" href="@routes.Assets.at("stylesheets/merged.min.css")">
 
     }
 
@@ -66,7 +66,8 @@
     <!-- Libs -->
     <script src="@routes.Assets.at("javascripts/libs/jquery-1.7.1.js")"></script>
     <script src="@routes.Assets.at("javascripts/libs/jquery.easing.js")"></script>
-    <script type="text/javascript">jQuery.noConflict();</script>
+    <script src="@routes.Assets.at("javascripts/common/jquery.no-conflict.js")"></script>
+
     <script src="@routes.Assets.at("javascripts/libs/mootools-core-1.4.5-full-nocompat.js")"></script>
     <script src="@routes.Assets.at("javascripts/libs/mustache.js")"></script>
 
@@ -82,16 +83,18 @@
     <!-- Models -->
     <script src="@routes.Assets.at("javascripts/models/json-serializable-model.js")"></script>
     <script src="@routes.Assets.at("javascripts/models/user.js")"></script>
+    <script src="@routes.Assets.at("javascripts/models/help-request.js")"></script>
 
     <!-- Controllers -->
     <script src="@routes.Assets.at("javascripts/controllers/template-controller.js")"></script>
     <script src="@routes.Assets.at("javascripts/controllers/login-controller.js")"></script>
     <script src="@routes.Assets.at("javascripts/controllers/register-controller.js")"></script>
+    <script src="@routes.Assets.at("javascripts/controllers/create-help-request-controller.js")"></script>
 
     } else {
 
     <!-- Merged js -->
-    <script src="@routes.Assets.at("javascripts/dist/site.merged.min.js")"></script>
+    <script src="@routes.Assets.at("javascripts/dist/merged.min.js")"></script>
 
     }
 

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+
+This build.xml is used for merging and compressing Javascript and CSS files used for Appear
+
+Dependencies: 
+	yuicompressor-2.4.7.jar
+	ant-contrib.jar
+
+Basic usage:
+
+	ant main	- updates merged and compressed files for all Javascript and CSS
+
+@author Hjörtur Hilmarsson 
+-->
+<project name="JS and CSS compressor" basedir="." default="main">
+    <property name="compressor.dir" value="build/lib/yuicompressor-2.4.7.jar" />
+    <property name="antcontrib.dir" value="build/lib/ant-contrib.jar" />
+    <property name="src.js.dir" value="${basedir}/website/public/javascripts" />
+    <property name="src.css.dir" value="${basedir}/website/public/stylesheets" />
+    <property name="dist.js.dir" value="${basedir}/website/public/dist/javascripts" />
+    <property name="dist.css.dir" value="${basedir}/website/public/dist/stylesheets" />
+    <property name="non-lib.js.file" value="${basedir}/website/tmp/non-lib.js" />
+
+    <taskdef resource="net/sf/antcontrib/antcontrib.properties">
+        <classpath>
+            <pathelement location="${antcontrib.dir}" />
+        </classpath>
+    </taskdef>
+    
+    <property name="dist.merged.file.js" value="${dist.js.dir}/merged.js" />
+    <property name="dist.compressed.file.js" value="${dist.js.dir}/merged.min.js" />
+    <property name="dist.merged.file.css" value="${dist.css.dir}/merged.css" />
+    <property name="dist.compressed.file.css" value="${dist.css.dir}/merged.min.css" />
+
+    <target name="make-dirs">
+        <mkdir dir="${dist.js.dir}" />
+        <mkdir dir="${dist.css.dir}" />
+    </target>
+    
+    <target name="clean-css">
+        <delete>
+            <fileset dir="${dist.css.dir}" includes="**/*" />
+        </delete>
+    </target>
+    
+    <target name="clean-js">
+        <delete file="${non-lib.js.file}" />
+        <delete>
+            <fileset dir="${dist.js.dir}" includes="**/*" />
+        </delete>
+    </target>
+    
+    <!-- Concat all css files. Add all files you wish to merge. Remember order matters! -->
+    <target name="merge-css">
+        <concat destfile="${dist.merged.file.css}" fixlastline="yes" append="no">
+            <filelist dir="${src.css.dir}" files="
+                h5bp/style.css
+                main.css
+                index.css" />
+        </concat>
+    </target>
+
+    <!-- Compress a merged css file. This step should occur after merge -->
+    <target name="compress-css" depends="merge-css">
+        <java jar="${compressor.dir}" fork="true">
+            <arg value="${dist.merged.file.css}" />
+            <arg value="-o" />
+            <arg value="${dist.compressed.file.css}" />
+        </java>
+    </target>
+    
+    <!-- Merges all javascript files into one. Remember, order matters! -->
+    <target name="merge-js">
+        <concat destfile="${dist.merged.file.js}" fixlastline="yes" append="no">
+            <filelist id="js-files" dir="${src.js.dir}" files="
+                libs/jquery-1.7.1.js
+                libs/jquery.easing.js
+                common/jquery.no-conflict.js
+                libs/mootools-core-1.4.5-full-nocompat.js
+                libs/mustache.js
+                global.js
+                common/json-util.js
+                services/validator.js
+                models/json-serializable-model.js
+                models/user.js
+                models/help-request.js
+                controllers/template-controller.js
+                controllers/login-controller.js
+                controllers/register-controller.js
+                controllers/create-help-request-controller.js" />
+        </concat>
+    </target>
+    
+    <!-- Comment out console.log commands from merged script -->
+    <target name="clean-merged-js" depends="merge-js" description="Comment out console.log lines">
+        <echo>Commenting out console.log lines</echo>
+        <replaceregexp file="${dist.merged.file.js}" match="(console.log\(.*\))" replace="/\*\1\*/" flags="g" />
+    </target>
+    
+    <!-- Performs a jsHint code quality check on the non-lib JS files -->
+    <target name="jshint-js" description="Performs a jsHint code quality check on the non-lib JS files">
+        <echo>jsHint code quality check</echo>
+        <concat destfile="${non-lib.js.file}" fixlastline="yes" append="no">
+            <filelist id="non-lib-js-files" dir="${src.js.dir}" files="
+                global.js
+                common/json-util.js
+                services/validator.js
+                models/json-serializable-model.js
+                models/user.js
+                models/help-request.js
+                controllers/template-controller.js
+                controllers/login-controller.js
+                controllers/register-controller.js
+                controllers/create-help-request-controller.js" />
+        </concat>
+        <exec executable="cmd" failonerror="true">
+            <arg value="/c" />
+            <arg value="jshint" />
+            <arg value="${non-lib.js.file}"/>
+            <arg value="--config"/>
+            <arg value="jshint-config.json"/>
+        </exec>
+    </target>
+    
+    <!-- Compress the merged common javascript file -->
+    <target name="compress-js" depends="clean-merged-js">
+        <java jar="${compressor.dir}" fork="true">
+            <arg value="${dist.merged.file.js}" />
+            <arg line="--line-break" />
+            <arg line="4000" />
+            <arg value="-o" />
+            <arg value="${dist.compressed.file.js}" />
+        </java>
+    </target>
+    
+    <!-- run css tasks only -->
+    <target name="main-css" depends="clean-css, compress-css"></target>
+    
+    <!-- run javascript tasks only -->
+    <target name="main-js" depends="clean-js, jshint-js, compress-js"></target>
+    
+    <!-- run all tasks -->
+    <target name="main" depends="make-dirs, main-css, main-js"></target>
+</project>

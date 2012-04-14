@@ -4,27 +4,38 @@ import models.User
 import common.JsonUtil
 import database.UserDto
 import play.api.mvc.{AnyContentAsText, Action, Controller}
+import controllers.Application
 
 object UserApi extends Controller {
-  def createUser = Action {
-    request =>
+  def create = Action {
+    implicit request =>
 
-      val req: AnyContentAsText = request.body.asInstanceOf[AnyContentAsText]
-      UserDto.create(JsonUtil.parse(req.txt, classOf[User]))
+      Application.loggedInUser(session) match {
+        case Some(user) => {
+          val req: AnyContentAsText = request.body.asInstanceOf[AnyContentAsText]
+          UserDto.create(JsonUtil.parse(req.txt, classOf[User]))
+          Ok
+        }
+        case None => Unauthorized
+      }
 
-      Ok
   }
 
   def getUsers(optionalUsername: Option[String]) = Action {
-    request =>
+    implicit request =>
 
-      val filters = optionalUsername match {
-        case Some(username) => Map("username" -> username)
-      }
+      Application.loggedInUser(session) match {
+        case Some(user) => {
+          val filters = optionalUsername match {
+            case Some(username) => Map("username" -> username)
+          }
 
-      UserDto.getAUserWhere(filters) match {
-        case Some(user) => Ok(JsonUtil.serialize(user))
-        case None => NotFound
+          UserDto.getAUserWhere(filters) match {
+            case Some(user) => Ok(JsonUtil.serialize(user))
+            case None => NotFound
+          }
+        }
+        case None => Unauthorized
       }
   }
 }

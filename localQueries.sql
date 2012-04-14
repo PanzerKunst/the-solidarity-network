@@ -1,5 +1,6 @@
 use thesolidaritynetwork;
 
+drop table help_request;
 drop table user;
 drop table country;
 
@@ -7,7 +8,7 @@ CREATE TABLE `country` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 CREATE TABLE `user` (
@@ -22,9 +23,18 @@ CREATE TABLE `user` (
   `city` varchar(45) NOT NULL,
   `country_id` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`,`username`,`email`) USING BTREE,
-  KEY `FK_country` (`country_id`),
   CONSTRAINT `FK_country` FOREIGN KEY (`country_id`) REFERENCES `country` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+Create table `help_request`(  
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `description` text NOT NULL,
+  `requester_id` int(10) unsigned NOT NULL,
+  `expiry_date` date NOT NULL,
+  primary key (`id`),
+  constraint `fk_requester` foreign key (`requester_id`) references `user`(`id`)
+) ENGINE=InnoDB DEFAULT charset=utf8;
 
 
 insert into country(name) values("Greece");
@@ -37,3 +47,5 @@ values("Christophe", "Bram", "blackbird", "cbramdit@gmail.com", "tigrou", "Helen
   (select id from country where name = "Sweden"));
 
 select * from user;
+
+select * from help_request;

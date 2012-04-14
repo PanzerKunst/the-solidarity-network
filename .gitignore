@@ -3,3 +3,5 @@
 /website/tmp
 /website/target
 /website/logs
+
+/website/public/dist

@@ -38,7 +38,15 @@ object Application extends Controller {
       }
   }
 
-  private def loggedInUser(session: Session): Option[User] = {
+  def createHelpRequest = Action {
+    implicit request =>
+      loggedInUser(session) match {
+        case Some(user) => Ok(views.html.createHelpRequest())
+        case None => Redirect(routes.Application.login)
+      }
+  }
+
+  def loggedInUser(session: Session): Option[User] = {
     session.get("userId") match {
       case Some(userId) => UserDto.getAUserWhere(Map("id" -> userId))
       case None => None

@@ -16,8 +16,10 @@ GET     /login                      controllers.Application.login
 GET     /logout                     controllers.Application.logout
 GET     /home                       controllers.Application.home
 GET     /my-profile                 controllers.Application.myProfile
+GET     /help-requests/new          controllers.Application.createHelpRequest
 
 # API
-POST    /api/users                  controllers.api.UserApi.createUser
+POST    /api/users                  controllers.api.UserApi.create
 GET     /api/users                  controllers.api.UserApi.getUsers(username: Option[String])
 POST    /api/authenticate           controllers.api.AuthApi.authenticate
+POST    /api/help-requests          controllers.api.HelpRequestApi.create

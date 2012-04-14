@@ -20,19 +20,19 @@ CBR.Controllers.Login = new Class({
     doLogin: function (e) {
         e.preventDefault();
 
-        var authInfo = {
+        var user = {
             password: jQuery("#password").val()
         };
         var usernameOrEmail = jQuery("#username-or-email").val();
         if (usernameOrEmail.indexOf("@") > 0)
-            authInfo.email = usernameOrEmail;
+            user.email = usernameOrEmail;
         else
-            authInfo.username = usernameOrEmail;
+            user.username = usernameOrEmail;
 
         new Request({
             urlEncoded: false,
             url: "/api/authenticate",
-            data: JSON.stringify(authInfo),
+            data: JSON.stringify(user),
             onSuccess: function (responseText, responseXML) {
                 location.replace("/home");
             },
