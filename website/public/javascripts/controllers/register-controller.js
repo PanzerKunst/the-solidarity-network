@@ -14,7 +14,9 @@ CBR.Controllers.Register = new Class({
         );
 
         this.$usernameField = jQuery("#username");
+        this.$emailField = jQuery("#email");
         this.$usernameTakenParagraph = jQuery("#username-taken");
+        this.$emailAlreadyRegisteredParagraph = jQuery("#email-already-registered");
 
         this.initValidation();
 
@@ -39,17 +41,18 @@ CBR.Controllers.Register = new Class({
         });
 
         this.checkIfUsernameIsAlreadyTakenOnBlur();
+        this.checkIfEmailIsAlreadyRegisteredOnBlur();
     },
 
     doRegister: function (e) {
         e.preventDefault();
 
-        if (this.validator.isValid() && this.isUsernameAvailable()) {
+        if (this.validator.isValid() && this.isUsernameAvailable() && this.isEmailNotRegisteredYet()) {
             var user = new CBR.User({
-                username: jQuery("#username").val(),
+                username: this.$usernameField.val(),
                 lastName: jQuery("#last-name").val(),
                 firstName: jQuery("#first-name").val(),
-                email: jQuery("#email").val(),
+                email: this.$emailField.val().toLowerCase(),
                 password: jQuery("#password").val(),
                 streetAddress: jQuery("#street-address").val(),
                 postCode: jQuery("#post-code").val(),
@@ -94,11 +97,44 @@ CBR.Controllers.Register = new Class({
         });
     },
 
+    checkIfEmailIsAlreadyRegisteredOnBlur: function() {
+        var self = this;
+
+        this.$emailField.blur(function () {
+            self.$emailAlreadyRegisteredParagraph.slideUp(200, "easeInQuad");
+
+            new Request({
+                urlEncoded: false,
+                url: "/api/users?email=" + self.$emailField.val().toLowerCase(),
+                onSuccess: function (responseText, responseXML) {
+                    self.$emailAlreadyRegisteredParagraph.slideDown(200, "easeOutQuad");
+                },
+                onFailure: function (xhr) {
+                    if (xhr.status === 404)
+                        console.log("email not registered yet :)");
+                    else
+                        alert("AJAX fail :(");
+                }
+            }).get();
+
+        });
+    },
+
     isUsernameAvailable: function() {
         var xhr = new Request({
             urlEncoded: false,
             async: false,
             url: "/api/users?username=" + this.$usernameField.val()
+        }).get();
+
+        return xhr.status === 404;
+    },
+
+    isEmailNotRegisteredYet: function() {
+        var xhr = new Request({
+            urlEncoded: false,
+            async: false,
+            url: "/api/users?email=" + this.$emailField.val().toLowerCase()
         }).get();
 
         return xhr.status === 404;

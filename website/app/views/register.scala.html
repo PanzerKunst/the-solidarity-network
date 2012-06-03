@@ -13,11 +13,13 @@
     <form>
         <div class="field">
             <input id="first-name" type="text" placeholder="First name *"/>
+
             <p class="field-error" data-check="empty">You need to indicate your first name...</p>
         </div>
 
         <div class="field">
             <input id="last-name" type="text" placeholder="Last name *"/>
+
             <p class="field-error" data-check="empty">You need to indicate your last name...</p>
         </div>
 
@@ -29,6 +31,9 @@
 
             <p class="field-error" data-check="email">Would you mind checking that e-mail address? Looks wrong to
                 me...</p>
+
+            <p class="field-error" id="email-already-registered" style="display: none">This e-mail is already registered
+                in our system. You should try resetting your password on the Login page.</p>
         </div>
 
         <div class="field">
@@ -46,6 +51,7 @@
 
         <div class="field">
             <input id="password" type="password" placeholder="Password *"/>
+
             <p class="field-error" data-check="empty">Hum... you'll need a password to login!</p>
         </div>
 
@@ -81,7 +87,7 @@
             <span>Register</span>
         </a>
 
-        <input type="submit" style="visibility: hidden" />
+        <input type="submit" style="visibility: hidden"/>
 
     </form>
 </script>
