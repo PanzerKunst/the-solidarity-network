@@ -1,0 +1,50 @@
+@main("Solidarity Network - View help request", "viewHelpRequest") {
+<!--
+    Content
+-->
+<section>
+    <span>Description</span>
+</section>
+} {
+<!--
+    Javascript
+-->
+<script id="content-template" type="text/html">
+    <form>
+        <div class="field">
+            <textarea id="description" type="text" placeholder="Description *"/>
+            <p class="field-error" data-check="empty">Please describe how people can help you.</p>
+        </div>
+
+        <div class="field">
+            <input id="expiry-date" type="text" placeholder="Expiry date *"/>
+
+            <p class="field-error" data-check="empty">In order to avoid obsolete requests, an expiry date must be
+                set.</p>
+
+            <p class="field-error" data-check="in-future">Your help request would already be expired... please select a
+                date in the future</p>
+
+            <p class="field-error" data-check="in-max-2-weeks">In order to avoid obsolete requests, the maximum expiry
+                date is two weeks.<br/>
+                If nobody was able to help you after two weeks, feel free to submit a new request.</p>
+        </div>
+
+
+        <a id="submit-button">
+            <span>Submit</span>
+        </a>
+
+        <input type="submit" style="visibility: hidden"/>
+    </form>
+</script>
+
+<script type="text/javascript">
+    window.addEvent("domready", function () {
+        new CBR.Controllers.CreateHelpRequest({
+            el: "#content"
+        })
+                .run();
+    });
+</script>
+}

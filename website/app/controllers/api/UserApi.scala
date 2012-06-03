@@ -18,24 +18,19 @@ object UserApi extends Controller {
         }
         case None => Unauthorized
       }
-
   }
 
   def getUsers(optionalUsername: Option[String]) = Action {
     implicit request =>
 
-      Application.loggedInUser(session) match {
-        case Some(user) => {
-          val filters = optionalUsername match {
-            case Some(username) => Map("username" -> username)
-          }
+      val filters = optionalUsername match {
+        case Some(username) => Some(Map("username" -> username))
+        case None => None
+      }
 
-          UserDto.getAUserWhere(filters) match {
-            case Some(user) => Ok(JsonUtil.serialize(user))
-            case None => NotFound
-          }
-        }
-        case None => Unauthorized
+      UserDto.getAUserWhere(filters) match {
+        case Some(user) => Ok(JsonUtil.serialize(user))
+        case None => NotFound
       }
   }
 }

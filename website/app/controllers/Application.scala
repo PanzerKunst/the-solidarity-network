@@ -46,9 +46,13 @@ object Application extends Controller {
       }
   }
 
+  def helpDashboard = Action {
+    Ok
+  }
+
   def loggedInUser(session: Session): Option[User] = {
     session.get("userId") match {
-      case Some(userId) => UserDto.getAUserWhere(Map("id" -> userId))
+      case Some(userId) => UserDto.getAUserWhere(Some(Map("id" -> userId)))
       case None => None
     }
   }

@@ -7,7 +7,7 @@ import play.api.Play.current
 
 
 object UserDto {
-  def getAUserWhere(filters: Map[String, String] = Map()): Option[User] = {
+  def getAUserWhere(filters: Option[Map[String, String]]): Option[User] = {
     DB.withConnection {
       implicit c =>
 

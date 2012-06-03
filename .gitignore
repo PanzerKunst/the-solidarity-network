@@ -1,7 +1,7 @@
 
-/website/out
-/website/tmp
 /website/target
 /website/logs
 
 /website/public/dist
+/website/project/project
+/website/project/target

@@ -13,14 +13,14 @@ object AuthApi extends Controller {
       val req: AnyContentAsText = request.body.asInstanceOf[AnyContentAsText]
       val user = JsonUtil.parse(req.txt, classOf[User])
 
-      val filter = new HashMap[String, String]
-      filter += "password" -> user.password
+      val filters = new HashMap[String, String]
+      filters += "password" -> user.password
       if (user.username != null)
-        filter += "username" -> user.username
+        filters += "username" -> user.username
       else if (user.email != null)
-        filter += "email" -> user.email
+        filters += "email" -> user.email
 
-      UserDto.getAUserWhere(filter toMap) match {
+      UserDto.getAUserWhere(Some(filters toMap)) match {
         case Some(user) => Ok.withSession(
           session + ("userId" -> user.id.toString)
         )
