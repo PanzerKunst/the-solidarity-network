@@ -2,41 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6a692bc-d147-471b-bee0-2af12beb41f5" name="Default" comment="">
-      <change type="DELETED" beforePath="E:\Pro\the-solidarity-network\website\project\project\target\config-classes\$092688fe140ee98e95f3$.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\Pro\the-solidarity-network\website\project\project\target\config-classes\$092688fe140ee98e95f3.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\Pro\the-solidarity-network\website\project\project\target\config-classes\$0c6c324cf4f9260c414f$$anonfun$$sbtdef$1.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\Pro\the-solidarity-network\website\project\project\target\config-classes\$0c6c324cf4f9260c414f$.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\Pro\the-solidarity-network\website\project\project\target\config-classes\$0c6c324cf4f9260c414f.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\Pro\the-solidarity-network\website\project\project\target\config-classes\$6be1ee97832913ac8e4c$.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\Pro\the-solidarity-network\website\project\project\target\config-classes\$6be1ee97832913ac8e4c.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\Pro\the-solidarity-network\website\project\project\target\config-classes\$77fe7c8b43dbbf936ef9$$anonfun$$sbtdef$1.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\Pro\the-solidarity-network\website\project\project\target\config-classes\$77fe7c8b43dbbf936ef9$.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\Pro\the-solidarity-network\website\project\project\target\config-classes\$77fe7c8b43dbbf936ef9.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\Pro\the-solidarity-network\website\project\project\target\config-classes\$9d272dc4e89067911834$$anonfun$$sbtdef$1.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\Pro\the-solidarity-network\website\project\project\target\config-classes\$9d272dc4e89067911834$.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\Pro\the-solidarity-network\website\project\project\target\config-classes\$9d272dc4e89067911834.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\Pro\the-solidarity-network\website\project\project\target\config-classes\$d1866c24d77b18c11525$$anonfun$$sbtdef$1.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\Pro\the-solidarity-network\website\project\project\target\config-classes\$d1866c24d77b18c11525$.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\Pro\the-solidarity-network\website\project\project\target\config-classes\$d1866c24d77b18c11525.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/scala-2.9.1/sbt-0.11.2/cache/compile/compile" afterPath="$PROJECT_DIR$/project/target/scala-2.9.1/sbt-0.11.2/cache/compile/compile" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/scala-2.9.1/sbt-0.11.2/cache/update/inputs" afterPath="$PROJECT_DIR$/project/target/scala-2.9.1/sbt-0.11.2/cache/update/inputs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/scala-2.9.1/sbt-0.11.2/cache/update/output" afterPath="$PROJECT_DIR$/project/target/scala-2.9.1/sbt-0.11.2/cache/update/output" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/streams/$global/compilers/$global/out" afterPath="$PROJECT_DIR$/project/target/streams/$global/compilers/$global/out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/streams/$global/ivy-configuration/$global/out" afterPath="$PROJECT_DIR$/project/target/streams/$global/ivy-configuration/$global/out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/streams/$global/update/$global/out" afterPath="$PROJECT_DIR$/project/target/streams/$global/update/$global/out" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/streams/compile/compile/$global/out" afterPath="$PROJECT_DIR$/project/target/streams/compile/compile/$global/out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.gitignore" afterPath="$PROJECT_DIR$/../.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Application.scala" afterPath="$PROJECT_DIR$/app/controllers/Application.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/api/AuthApi.scala" afterPath="$PROJECT_DIR$/app/controllers/api/AuthApi.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/api/UserApi.scala" afterPath="$PROJECT_DIR$/app/controllers/api/UserApi.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/DbUtil.scala" afterPath="$PROJECT_DIR$/app/database/DbUtil.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/UserDto.scala" afterPath="$PROJECT_DIR$/app/database/UserDto.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/home.scala.html" afterPath="$PROJECT_DIR$/app/views/home.scala.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/main.scala.html" afterPath="$PROJECT_DIR$/app/views/main.scala.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/routes" afterPath="$PROJECT_DIR$/conf/routes" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/plugins.sbt" afterPath="$PROJECT_DIR$/project/plugins.sbt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website.iml" afterPath="$PROJECT_DIR$/website.iml" />
     </list>
     <ignored path="website.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -842,7 +812,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1186" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32959402" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -857,7 +827,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24012807" sideWeight="0.67153996" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32846004" sideWeight="0.6579509" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32846004" sideWeight="0.6579509" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294347" sideWeight="0.4957265" order="1" side_tool="false" content_ui="tabs" />
