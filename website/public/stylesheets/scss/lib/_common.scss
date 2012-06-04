@@ -1,40 +1,8 @@
-
 @import "css3";
+@import "utils";
 
-$bgColor: #f0efe8;
-$bgBorder: #ddd;
-
-$orange: #F18A26;
 $red: #BE2D07;
-
-$soft-green: #99CC00;
-$green: #009900;
-
+$orange: #F18A26;
 $fontDarkGrey: #3F3F3F;
 
-
-/* Image replacement */
-
-@mixin imgRepl() {
-	display: block; 
-	text-indent: -999em; 
-	overflow: hidden; 
-	background-repeat: no-repeat; 
-	text-align: left; 
-	direction: ltr;
-
-	border: 0;
-}
-
-@mixin clearfix() {
-    zoom: 1;
-
-    &:before, &:after {
-        content: "";
-        display: table;
-    }
-
-    &:after {
-        clear: both;
-    }
-}
+$baseline: 13px;

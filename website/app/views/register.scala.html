@@ -12,19 +12,25 @@
 <script id="content-template" type="text/html">
     <form>
         <div class="field">
-            <input id="first-name" type="text" placeholder="First name *"/>
+            <label for="first-name">First name <span>*</span></label>
+            <input id="first-name" type="text" />
+            <span class="validation-icon"></span>
 
             <p class="field-error" data-check="empty">You need to indicate your first name...</p>
         </div>
 
         <div class="field">
-            <input id="last-name" type="text" placeholder="Last name *"/>
+            <label for="last-name">Last name <span>*</span></label>
+            <input id="last-name" type="text" />
+            <span class="validation-icon"></span>
 
             <p class="field-error" data-check="empty">You need to indicate your last name...</p>
         </div>
 
         <div class="field">
-            <input id="email" type="text" placeholder="E-mail address *"/>
+            <label for="email">e-mail address <span>*</span></label>
+            <input id="email" type="text" />
+            <span class="validation-icon"></span>
 
             <p class="field-error" data-check="empty">Please indicate your e-mail address. We'll use it to inform you of
                 user messages and help requests.</p>
@@ -37,7 +43,9 @@
         </div>
 
         <div class="field">
-            <input id="username" type="text" placeholder="Username *"/>
+            <label for="username">Username <span>*</span></label>
+            <input id="username" type="text" />
+            <span class="validation-icon"></span>
             <a id="check-username-availability">Available?</a>
 
             <p class="field-error" data-check="empty">Please choose a username, it'll identify you to other users.</p>
@@ -50,34 +58,42 @@
         </div>
 
         <div class="field">
-            <input id="password" type="password" placeholder="Password *"/>
+            <label for="password">Password <span>*</span></label>
+            <input id="password" type="password" />
+            <span class="validation-icon"></span>
 
             <p class="field-error" data-check="empty">Hum... you'll need a password to login!</p>
         </div>
 
         <fieldset>
             <div class="field">
-                <input id="street-address" type="text" placeholder="Street address"/>
+                <label for="street-address">Street address</label>
+                <input id="street-address" type="text" />
             </div>
 
             <div class="field">
-                <input id="post-code" type="text" placeholder="Post code"/>
+                <label for="post-code">Post code</label>
+                <input id="post-code" type="text" />
             </div>
 
             <div class="field">
-                <input id="city" type="text" placeholder="City *"/>
+                <label for="city">City <span>*</span></label>
+                <input id="city" type="text" />
+                <span class="validation-icon"></span>
 
                 <p class="field-error" data-check="empty">Please indicate your city. Otherwise, we wouldn't know which
                     other users live nearby.</p>
             </div>
 
             <div class="field">
+                <label for="country">Country <span>*</span></label>
                 <select id="country">
-                    <option value="">Country *</option>
+                    <option value=""></option>
                     {{#countries}}
                     <option value="{{id}}">{{name}}</option>
                     {{/countries}}
                 </select>
+                <span class="validation-icon"></span>
 
                 <p class="field-error" data-check="empty">Where exactly is your city located?</p>
             </div>
@@ -97,8 +113,7 @@
         new CBR.Controllers.Register({
             el: "#content",
             countries: @Html(common.JsonUtil.serialize(countries))
-        })
-        .run();
+        }).run();
     });
 </script>
 }

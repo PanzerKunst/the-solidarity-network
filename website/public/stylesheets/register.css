@@ -1,0 +1,9 @@
+body#register .validation-icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background-size: 1em 1em; }
+body#register .valid > .validation-icon {
+  background-image: url("/assets/images/valid.png"); }
+body#register .invalid > .validation-icon {
+  background-image: url("/assets/images/invalid.png"); }

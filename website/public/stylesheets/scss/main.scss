@@ -1,58 +1,43 @@
-
 @import "lib/common";
-
-
 
 /* Base Element styles  */
 
 body {
-    font-size: 13px;
-
-    webkit-font-smoothing: antialiased;
+  font-size: $baseline;
 }
-
-
-html {
-    overflow-y: scroll;
-    overflow-x: hidden;
-}
-
 
 /* Base Element styles */
 
 h1, h2, h3, h4, h5 {
-    display: block;
-    margin-bottom:20px;
+  margin-bottom: 2em;
 }
 
 h1 {
-    font-size: 30px;
-    font-weight: normal;
+  font-size: 2em;
+  font-weight: normal;
 }
 
 h2 {
-    font-size: 18px;
-    font-weight: bold;
+  font-size: 1.6em;
 }
 
 h3 {
-    font-size: 15px;
-    font-weight: bold;
+  font-size: 1.3em;
 }
 
 a, a:visited {
-    font-weight: bold;
-    color: $red;
+  font-weight: bold;
+  color: $red;
 
-    cursor: pointer;
-    text-decoration: none;
+  cursor: pointer;
+  text-decoration: none;
 
-    &:hover {
-        color: $orange;
-    }
+  &:hover {
+    color: $orange;
+  }
 }
 
 p {
-    color:$fontDarkGrey;
-    margin-bottom: 15px;
+  color: $fontDarkGrey;
+  margin-bottom: 1em;
 }

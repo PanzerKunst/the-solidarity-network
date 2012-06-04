@@ -108,6 +108,7 @@ CBR.Services.Validator = new Class({
 
         // Empty?
         if (this.isToCheckIfEmpty($field) && !$field.val()) {
+            this.flagInvalid($field);
             this.get$empty($field).slideDown(200, "easeOutQuad");
             return false;
         }
@@ -116,6 +117,7 @@ CBR.Services.Validator = new Class({
 
         // Email?
         if (this.isToCheckIfEmail($field) && !this.isValidEmail($field.val())) {
+            this.flagInvalid($field);
             this.get$email($field).slideDown(200, "easeOutQuad");
             return false;
         }
@@ -124,6 +126,7 @@ CBR.Services.Validator = new Class({
 
         // Username?
         if (this.isToCheckIfUsername($field) && !this.isValidUsername($field.val())) {
+            this.flagInvalid($field);
             this.get$username($field).slideDown(200, "easeOutQuad");
             return false;
         }
@@ -132,6 +135,7 @@ CBR.Services.Validator = new Class({
 
         // In the future?
         if (this.isToCheckIfInFuture($field) && !this.isInFuture($field.val())) {
+            this.flagInvalid($field);
             this.get$inFuture($field).slideDown(200, "easeOutQuad");
             return false;
         }
@@ -140,11 +144,14 @@ CBR.Services.Validator = new Class({
 
         // In max 2 weeks?
         if (this.isToCheckIfInMaxTwoWeeks($field) && !this.isInMaxTwoWeeks($field.val())) {
+            this.flagInvalid($field);
             this.get$inMaxTwoWeeks($field).slideDown(200, "easeOutQuad");
             return false;
         }
         else
             this.get$inMaxTwoWeeks($field).slideUp(200, "easeInQuad");
+
+        this.flagValid($field);
 
         return true;
     },
@@ -173,5 +180,17 @@ CBR.Services.Validator = new Class({
         $field.change(function () {
             self.validateField($field);
         });
+    },
+
+    flagValid: function($field) {
+        var $wrapper = $field.parent();
+        $wrapper.removeClass("invalid");
+        $wrapper.addClass("valid");
+    },
+
+    flagInvalid: function($field) {
+        var $wrapper = $field.parent();
+        $wrapper.removeClass("valid");
+        $wrapper.addClass("invalid");
     }
 });

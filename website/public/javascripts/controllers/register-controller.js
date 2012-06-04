@@ -24,7 +24,7 @@ CBR.Controllers.Register = new Class({
         jQuery("form").submit(jQuery.proxy(this.doRegister, this));
     },
 
-    initValidation: function() {
+    initValidation: function () {
         jQuery(".field-error").hide();
         jQuery("#username-taken").hide();
 
@@ -74,53 +74,58 @@ CBR.Controllers.Register = new Class({
         }
     },
 
-    checkIfUsernameIsAlreadyTakenOnBlur: function() {
+    checkIfUsernameIsAlreadyTakenOnBlur: function () {
         var self = this;
 
         this.$usernameField.blur(function () {
             self.$usernameTakenParagraph.slideUp(200, "easeInQuad");
 
-            new Request({
-                urlEncoded: false,
-                url: "/api/users?username=" + self.$usernameField.val(),
-                onSuccess: function (responseText, responseXML) {
-                    self.$usernameTakenParagraph.slideDown(200, "easeOutQuad");
-                },
-                onFailure: function (xhr) {
-                    if (xhr.status === 404)
-                        console.log("username available :)");
-                    else
-                        alert("AJAX fail :(");
-                }
-            }).get();
-
+            if (self.$usernameField.val() !== "") {
+                new Request({
+                    urlEncoded: false,
+                    url: "/api/users?username=" + self.$usernameField.val(),
+                    onSuccess: function (responseText, responseXML) {
+                        self.$usernameTakenParagraph.slideDown(200, "easeOutQuad");
+                    },
+                    onFailure: function (xhr) {
+                        if (xhr.status === 404)
+                            console.log("username available :)");
+                        else
+                            alert("AJAX fail :(");
+                    }
+                }).get();
+            }
         });
     },
 
-    checkIfEmailIsAlreadyRegisteredOnBlur: function() {
+    checkIfEmailIsAlreadyRegisteredOnBlur: function () {
         var self = this;
 
         this.$emailField.blur(function () {
             self.$emailAlreadyRegisteredParagraph.slideUp(200, "easeInQuad");
 
-            new Request({
-                urlEncoded: false,
-                url: "/api/users?email=" + self.$emailField.val().toLowerCase(),
-                onSuccess: function (responseText, responseXML) {
-                    self.$emailAlreadyRegisteredParagraph.slideDown(200, "easeOutQuad");
-                },
-                onFailure: function (xhr) {
-                    if (xhr.status === 404)
-                        console.log("email not registered yet :)");
-                    else
-                        alert("AJAX fail :(");
-                }
-            }).get();
-
+            if (self.$emailField.val() !== "") {
+                new Request({
+                    urlEncoded: false,
+                    url: "/api/users?email=" + self.$emailField.val().toLowerCase(),
+                    onSuccess: function (responseText, responseXML) {
+                        self.$emailAlreadyRegisteredParagraph.slideDown(200, "easeOutQuad");
+                    },
+                    onFailure: function (xhr) {
+                        if (xhr.status === 404)
+                            console.log("email not registered yet :)");
+                        else
+                            alert("AJAX fail :(");
+                    }
+                }).get();
+            }
         });
     },
 
-    isUsernameAvailable: function() {
+    isUsernameAvailable: function () {
+        if (this.$usernameField.val() === "")
+            return true;
+
         var xhr = new Request({
             urlEncoded: false,
             async: false,
@@ -130,7 +135,10 @@ CBR.Controllers.Register = new Class({
         return xhr.status === 404;
     },
 
-    isEmailNotRegisteredYet: function() {
+    isEmailNotRegisteredYet: function () {
+        if (this.$emailField.val() === "")
+            return true;
+
         var xhr = new Request({
             urlEncoded: false,
             async: false,

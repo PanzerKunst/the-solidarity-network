@@ -5,3 +5,5 @@
 /website/public/dist
 /website/project/project
 /website/project/target
+/website/tmp
+/website/public/stylesheets/scss/.sass-cache
