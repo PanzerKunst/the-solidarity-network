@@ -20,8 +20,8 @@ object UserApi extends Controller {
       var filtersMap = Map[String, String]()
 
       if (request.queryString.contains("username")) {
-        val usernam = request.queryString.get("username").get.head
-        filtersMap += ("username" -> usernam)
+        val username = request.queryString.get("username").get.head
+        filtersMap += ("username" -> username)
       }
 
       if (request.queryString.contains("email")) {

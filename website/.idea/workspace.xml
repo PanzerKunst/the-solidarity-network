@@ -3,14 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="b6a692bc-d147-471b-bee0-2af12beb41f5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/api/AuthApi.scala" afterPath="$PROJECT_DIR$/app/controllers/api/AuthApi.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/api/UserApi.scala" afterPath="$PROJECT_DIR$/app/controllers/api/UserApi.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/CountryDto.scala" afterPath="$PROJECT_DIR$/app/database/CountryDto.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/HelpRequestDto.scala" afterPath="$PROJECT_DIR$/app/database/HelpRequestDto.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/UserDto.scala" afterPath="$PROJECT_DIR$/app/database/UserDto.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/main.scala.html" afterPath="$PROJECT_DIR$/app/views/main.scala.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/routes" afterPath="$PROJECT_DIR$/conf/routes" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/login.scala.html" afterPath="$PROJECT_DIR$/app/views/login.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/controllers/login-controller.js" afterPath="$PROJECT_DIR$/public/javascripts/controllers/login-controller.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/controllers/register-controller.js" afterPath="$PROJECT_DIR$/public/javascripts/controllers/register-controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/scss/index.scss" afterPath="$PROJECT_DIR$/public/stylesheets/scss/index.scss" />
     </list>
     <ignored path="website.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -72,46 +69,55 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="UserApi.scala" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="UserApi.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/api/UserApi.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="27" selection-start="1122" selection-end="1122" vertical-scroll-proportion="0.71385545">
+            <state line="23" column="45" selection-start="655" selection-end="655" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/conf/routes">
+      <file leaf-file-name="login.scala.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/login.scala.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="27" selection-start="1177" selection-end="1177" vertical-scroll-proportion="0.0">
+            <state line="23" column="84" selection-start="680" selection-end="680" vertical-scroll-proportion="0.6128527">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Application.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/Application.scala">
+      <file leaf-file-name="home.scala.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/home.scala.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="3" selection-start="273" selection-end="273" vertical-scroll-proportion="0.0">
+            <state line="17" column="1" selection-start="263" selection-end="263" vertical-scroll-proportion="-11.115385">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CountryDto.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/database/CountryDto.scala">
+      <file leaf-file-name="myProfile.scala.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/myProfile.scala.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="16" selection-start="593" selection-end="593" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HelpRequestDto.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/database/HelpRequestDto.scala">
+      <file leaf-file-name="login-controller.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/login-controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="7" selection-start="141" selection-end="141" vertical-scroll-proportion="0.0">
+            <state line="23" column="8" selection-start="607" selection-end="607" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AuthApi.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/api/AuthApi.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="31" column="0" selection-start="843" selection-end="843" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -120,16 +126,25 @@
       <file leaf-file-name="UserDto.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/database/UserDto.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="14" selection-start="614" selection-end="614" vertical-scroll-proportion="-11.92">
+            <state line="38" column="12" selection-start="1119" selection-end="1119" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DbUtil.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/database/DbUtil.scala">
+      <file leaf-file-name="User.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/User.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="20" selection-start="283" selection-end="283" vertical-scroll-proportion="0.0">
+            <state line="17" column="0" selection-start="366" selection-end="366" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="register-controller.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/register-controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="0" selection-start="630" selection-end="630" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -138,25 +153,7 @@
       <file leaf-file-name="register.scala.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/register.scala.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="0" selection-start="131" selection-end="131" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="register.scss" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/stylesheets/scss/register.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="0" selection-start="24" selection-end="39" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.scss" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/stylesheets/scss/main.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="11" column="47" selection-start="179" selection-end="179" vertical-scroll-proportion="-7.1923075">
               <folding />
             </state>
           </provider>
@@ -177,22 +174,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/public/stylesheets/scss/lib/_common.scss" />
-        <option value="$PROJECT_DIR$/public/stylesheets/scss/main.scss" />
-        <option value="$PROJECT_DIR$/app/views/register.scala.html" />
         <option value="$PROJECT_DIR$/public/stylesheets/scss/register.scss" />
         <option value="$PROJECT_DIR$/public/javascripts/services/validator.js" />
         <option value="$PROJECT_DIR$/app/common/JsonUtil.scala" />
-        <option value="$PROJECT_DIR$/public/javascripts/controllers/register-controller.js" />
         <option value="$PROJECT_DIR$/public/stylesheets/scss/index.scss" />
         <option value="$PROJECT_DIR$/app/views/main.scala.html" />
         <option value="$PROJECT_DIR$/app/controllers/ControllerUtil.scala" />
         <option value="$PROJECT_DIR$/app/database/CountryDto.scala" />
         <option value="$PROJECT_DIR$/app/database/HelpRequestDto.scala" />
         <option value="$PROJECT_DIR$/app/database/DbUtil.scala" />
-        <option value="$PROJECT_DIR$/app/controllers/api/UserApi.scala" />
         <option value="$PROJECT_DIR$/conf/routes" />
         <option value="$PROJECT_DIR$/app/database/UserDto.scala" />
+        <option value="$PROJECT_DIR$/public/javascripts/controllers/register-controller.js" />
+        <option value="$PROJECT_DIR$/app/controllers/api/UserApi.scala" />
+        <option value="$PROJECT_DIR$/app/controllers/api/AuthApi.scala" />
+        <option value="$PROJECT_DIR$/public/javascripts/controllers/login-controller.js" />
+        <option value="$PROJECT_DIR$/app/views/login.scala.html" />
       </list>
     </option>
   </component>
@@ -244,16 +241,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="PackagesPane">
         <subPane>
           <PATH>
@@ -680,6 +667,16 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -696,12 +693,12 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="Repository.Attach.Sources" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="Downloaded.Files.Path" value="E:\Pro\the-solidarity-network\website\lib" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="Downloaded.Files.Path" value="E:\Pro\the-solidarity-network\website\lib" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -712,6 +709,18 @@
     </key>
   </component>
   <component name="RunManager" selected="Remote.Debug Play">
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
     <configuration default="true" type="Specs2RunConfiguration" factoryName="Specs2">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <extension name="scalaCoverage" />
@@ -725,18 +734,6 @@
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
         <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
@@ -778,17 +775,6 @@
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
-    <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
-      <JSDebuggerConfigurationSettings>
-        <option name="engineId" value="embedded" />
-        <option name="fileUrl" />
-      </JSDebuggerConfigurationSettings>
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -812,6 +798,17 @@
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
         <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
@@ -883,18 +880,18 @@
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32959402" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294347" sideWeight="0.49359658" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294347" sideWeight="0.48932764" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39766082" sideWeight="0.77481323" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32846004" sideWeight="0.35965848" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39766082" sideWeight="0.76840985" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32846004" sideWeight="0.36499467" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294347" sideWeight="0.49786553" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23906083" sideWeight="0.67153996" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32846004" sideWeight="0.6366062" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23852721" sideWeight="0.67153996" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32846004" sideWeight="0.63127" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294347" sideWeight="0.4764957" order="7" side_tool="false" content_ui="tabs" />
@@ -961,38 +958,14 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/controllers/api/AuthApi.scala">
+    <entry file="file://$PROJECT_DIR$/app/database/HelpRequestDto.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="7" selection-start="192" selection-end="192" vertical-scroll-proportion="0.0" />
+        <state line="8" column="7" selection-start="141" selection-end="141" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/api/HelpRequestApi.scala">
+    <entry file="file://$PROJECT_DIR$/app/database/DbUtil.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="42" selection-start="238" selection-end="238" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/scss/index.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="1" selection-start="39" selection-end="39" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/main.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="0" selection-start="1320" selection-end="1320" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/index.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/register.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="131" selection-end="131" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="10" column="20" selection-start="283" selection-end="283" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/stylesheets/scss/register.scss">
@@ -1005,58 +978,84 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/conf/routes">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="27" selection-start="1177" selection-end="1177" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/Application.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="3" selection-start="273" selection-end="273" vertical-scroll-proportion="0.0">
+        <state line="19" column="0" selection-start="329" selection-end="329" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://E:/servers/play-2.0.1/repository/local/play/play_2.9.1/2.0.1/jars/play_2.9.1.jar!/play/api/LoggerLike.class">
+    <entry file="file://$PROJECT_DIR$/app/models/User.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="6" selection-start="953" selection-end="953" vertical-scroll-proportion="0.37245697">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/HelpRequestDto.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="7" selection-start="141" selection-end="141" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/CountryDto.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="16" selection-start="593" selection-end="593" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/DbUtil.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="20" selection-start="283" selection-end="283" vertical-scroll-proportion="0.0">
+        <state line="17" column="0" selection-start="366" selection-end="366" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/database/UserDto.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="14" selection-start="614" selection-end="614" vertical-scroll-proportion="-11.92">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conf/routes">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="27" selection-start="1177" selection-end="1177" vertical-scroll-proportion="0.0">
+        <state line="38" column="12" selection-start="1119" selection-end="1119" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/api/UserApi.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="27" selection-start="1122" selection-end="1122" vertical-scroll-proportion="0.71385545">
+        <state line="23" column="45" selection-start="655" selection-end="655" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/api/AuthApi.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="0" selection-start="843" selection-end="843" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/home.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="1" selection-start="263" selection-end="263" vertical-scroll-proportion="-11.115385">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/register.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="47" selection-start="179" selection-end="179" vertical-scroll-proportion="-7.1923075">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/myProfile.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/register-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="0" selection-start="630" selection-end="630" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/login-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="8" selection-start="607" selection-end="607" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/login.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="84" selection-start="680" selection-end="680" vertical-scroll-proportion="0.6128527">
           <folding />
         </state>
       </provider>

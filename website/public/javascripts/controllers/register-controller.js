@@ -26,7 +26,8 @@ CBR.Controllers.Register = new Class({
 
     initValidation: function () {
         jQuery(".field-error").hide();
-        jQuery("#username-taken").hide();
+        this.$usernameTakenParagraph.hide();
+        this.$emailAlreadyRegisteredParagraph.hide();
 
         this.validator = new CBR.Services.Validator({
             fieldIds: [

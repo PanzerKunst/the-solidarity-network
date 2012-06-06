@@ -3,7 +3,6 @@ package controllers.api
 import common.JsonUtil
 import database.UserDto
 import play.api.mvc.{AnyContentAsText, Action, Controller}
-import collection.mutable.HashMap
 import models.User
 
 object AuthApi extends Controller {
@@ -13,19 +12,20 @@ object AuthApi extends Controller {
       val req: AnyContentAsText = request.body.asInstanceOf[AnyContentAsText]
       val user = JsonUtil.parse(req.txt, classOf[User])
 
-      val filters = new HashMap[String, String]
-      filters += "password" -> user.password
-      if (user.username != null)
-        filters += "username" -> user.username
-      else if (user.email != null)
-        filters += "email" -> user.email
+      var filtersMap = Map[String, String]()
 
-      UserDto.getAUserWhere(Some(filters toMap)) match {
+      if (user.username != null)
+        filtersMap += ("username" -> user.username)
+      else if (user.email != null)
+        filtersMap += ("email" -> user.email)
+
+      filtersMap += ("password" -> user.password)
+
+      UserDto.getAUserWhere(Some(filtersMap)) match {
         case Some(user) => Ok.withSession(
           session + ("userId" -> user.id.toString)
         )
         case None => NotFound
       }
   }
-
 }
