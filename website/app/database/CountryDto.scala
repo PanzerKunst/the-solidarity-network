@@ -4,6 +4,7 @@ import anorm._
 import play.api.db.DB
 import play.api.Play.current
 import models.Country
+import play.api.Logger
 
 
 object CountryDto {
@@ -14,13 +15,17 @@ object CountryDto {
     DB.withConnection {
       implicit c =>
 
-        val query = SQL("""
+        val query = """
           select id, name
           from country
           order by name;
-          """)
+                    """
 
-        query().map(row =>
+        Logger.info("CountryDto.getAll(): " + query)
+
+        val sql = SQL(query)
+
+        sql().map(row =>
           new Country(
             row[Long]("id"),
             row[String]("name")

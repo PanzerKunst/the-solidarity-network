@@ -20,6 +20,6 @@ GET     /help                       controllers.Application.helpDashboard
 
 # API
 POST    /api/users                  controllers.api.UserApi.create
-GET     /api/users                  controllers.api.UserApi.getUsers(username: Option[String])
+GET     /api/users                  controllers.api.UserApi.getUsers
 POST    /api/authenticate           controllers.api.AuthApi.authenticate
 POST    /api/help-requests          controllers.api.HelpRequestApi.create

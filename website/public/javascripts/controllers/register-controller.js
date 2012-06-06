@@ -85,6 +85,11 @@ CBR.Controllers.Register = new Class({
                     urlEncoded: false,
                     url: "/api/users?username=" + self.$usernameField.val(),
                     onSuccess: function (responseText, responseXML) {
+
+                        var $wrapper = self.$usernameField.parent();
+                        $wrapper.removeClass("valid");
+                        $wrapper.addClass("invalid");
+
                         self.$usernameTakenParagraph.slideDown(200, "easeOutQuad");
                     },
                     onFailure: function (xhr) {
@@ -109,6 +114,11 @@ CBR.Controllers.Register = new Class({
                     urlEncoded: false,
                     url: "/api/users?email=" + self.$emailField.val().toLowerCase(),
                     onSuccess: function (responseText, responseXML) {
+
+                        var $wrapper = self.$emailAlreadyRegisteredParagraph.parent();
+                        $wrapper.removeClass("valid");
+                        $wrapper.addClass("invalid");
+
                         self.$emailAlreadyRegisteredParagraph.slideDown(200, "easeOutQuad");
                     },
                     onFailure: function (xhr) {

@@ -4,6 +4,7 @@ import anorm._
 import models.User
 import play.api.db.DB
 import play.api.Play.current
+import play.api.Logger
 
 
 object UserDto {
@@ -11,12 +12,13 @@ object UserDto {
     DB.withConnection {
       implicit c =>
 
-        val stream = SQL("""
+        val query = """
           select id, first_name, last_name, username, email, password, street_address, post_code, city, country_id
-          from user
-          """ + DbUtil.generateWhereClause(filters) + ";"
-        )
-          .apply()
+          from user """ + DbUtil.generateWhereClause(filters) + ";"
+
+        Logger.info("UserDto.getAUserWhere():" + query)
+
+        val stream = SQL(query).apply()
 
         if (stream.isEmpty)
           None
@@ -43,7 +45,8 @@ object UserDto {
     DB.withConnection {
       implicit c =>
 
-        SQL("""insert into user(first_name, last_name, username, email, password, street_address, post_code, city, country_id)
+        val query = """
+                       insert into user(first_name, last_name, username, email, password, street_address, post_code, city, country_id)
       values("""" + DbUtil.backslashQuotes(user.firstName) + """","""" +
           DbUtil.backslashQuotes(user.lastName) + """","""" +
           DbUtil.backslashQuotes(user.username) + """","""" +
@@ -53,8 +56,10 @@ object UserDto {
           DbUtil.backslashQuotes(user.postCode) + """","""" +
           DbUtil.backslashQuotes(user.city) + """",""" +
           user.countryId + ");"
-        )
-          .execute()
+
+        Logger.info("UserDto.create():" + query)
+
+        SQL(query).execute()
     }
   }
 }
