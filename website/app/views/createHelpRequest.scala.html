@@ -1,5 +1,10 @@
 @main("Solidarity Network - New help request", "createHelpRequest") {
 <!--
+    Header
+-->
+
+} {
+<!--
     Content
 -->
 
@@ -41,8 +46,7 @@
     window.addEvent("domready", function () {
         new CBR.Controllers.CreateHelpRequest({
             el: "#content"
-        })
-                .run();
+        }).run();
     });
 </script>
 }

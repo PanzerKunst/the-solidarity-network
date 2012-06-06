@@ -18,13 +18,13 @@ CBR.Controllers.Register = new Class({
         this.$usernameTakenParagraph = jQuery("#username-taken");
         this.$emailAlreadyRegisteredParagraph = jQuery("#email-already-registered");
 
-        this.initValidation();
+        this._initValidation();
 
-        jQuery("#register-button").click(jQuery.proxy(this.doRegister, this));
-        jQuery("form").submit(jQuery.proxy(this.doRegister, this));
+        jQuery("#register-button").click(jQuery.proxy(this._doRegister, this));
+        jQuery("form").submit(jQuery.proxy(this._doRegister, this));
     },
 
-    initValidation: function () {
+    _initValidation: function () {
         jQuery(".field-error").hide();
         this.$usernameTakenParagraph.hide();
         this.$emailAlreadyRegisteredParagraph.hide();
@@ -41,14 +41,14 @@ CBR.Controllers.Register = new Class({
             ]
         });
 
-        this.checkIfUsernameIsAlreadyTakenOnBlur();
-        this.checkIfEmailIsAlreadyRegisteredOnBlur();
+        this._checkIfUsernameIsAlreadyTakenOnBlur();
+        this._checkIfEmailIsAlreadyRegisteredOnBlur();
     },
 
-    doRegister: function (e) {
+    _doRegister: function (e) {
         e.preventDefault();
 
-        if (this.validator.isValid() && this.isUsernameAvailable() && this.isEmailNotRegisteredYet()) {
+        if (this.validator.isValid() && this._isUsernameAvailable() && this._isEmailNotRegisteredYet()) {
             var user = new CBR.User({
                 username: this.$usernameField.val(),
                 lastName: jQuery("#last-name").val(),
@@ -75,7 +75,7 @@ CBR.Controllers.Register = new Class({
         }
     },
 
-    checkIfUsernameIsAlreadyTakenOnBlur: function () {
+    _checkIfUsernameIsAlreadyTakenOnBlur: function () {
         var self = this;
 
         this.$usernameField.blur(function () {
@@ -104,7 +104,7 @@ CBR.Controllers.Register = new Class({
         });
     },
 
-    checkIfEmailIsAlreadyRegisteredOnBlur: function () {
+    _checkIfEmailIsAlreadyRegisteredOnBlur: function () {
         var self = this;
 
         this.$emailField.blur(function () {
@@ -133,7 +133,7 @@ CBR.Controllers.Register = new Class({
         });
     },
 
-    isUsernameAvailable: function () {
+    _isUsernameAvailable: function () {
         if (this.$usernameField.val() === "")
             return true;
 
@@ -146,7 +146,7 @@ CBR.Controllers.Register = new Class({
         return xhr.status === 404;
     },
 
-    isEmailNotRegisteredYet: function () {
+    _isEmailNotRegisteredYet: function () {
         if (this.$emailField.val() === "")
             return true;
 

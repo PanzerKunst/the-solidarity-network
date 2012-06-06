@@ -8,72 +8,82 @@ CBR.Services.Validator = new Class({
     initialize: function (options) {
         this.options = options;
 
-        for (var i=0; i<this.getFieldIds().length; i++) {
-            var $field = jQuery("#" + this.getFieldIds()[i]);
-            this.addBlurEvent($field);
-            this.addValueChangedEvent($field);
+        for (var i=0; i<this._getFieldIds().length; i++) {
+            var $field = jQuery("#" + this._getFieldIds()[i]);
+            this._addBlurEvent($field);
+            this._addValueChangedEvent($field);
         }
     },
 
-    getFieldIds: function() {
+    isValid: function() {
+        var result = true;
+
+        for (var i=0; i<this._getFieldIds().length; i++)
+            if (!this._validateField(jQuery("#" + this._getFieldIds()[i])))
+                result = false;
+
+        return result;
+    },
+
+    _getFieldIds: function() {
         return this.options.fieldIds;
     },
 
-    get$empty: function ($field) {
-        return this.get$error($field, this.checkEmpty);
+    _get$empty: function ($field) {
+        return this._get$error($field, this.checkEmpty);
     },
 
-    get$email: function ($field) {
-        return this.get$error($field, this.checkEmail);
+    _get$email: function ($field) {
+        return this._get$error($field, this.checkEmail);
     },
 
-    get$username: function ($field) {
-        return this.get$error($field, this.checkUsername);
+    _get$username: function ($field) {
+        return this._get$error($field, this.checkUsername);
     },
 
-    get$inFuture: function ($field) {
-        return this.get$error($field, this.checkDateInFuture);
+    _get$inFuture: function ($field) {
+        return this._get$error($field, this.checkDateInFuture);
     },
 
-    get$inMaxTwoWeeks: function ($field) {
-        return this.get$error($field, this.checkDateInMaxTwoWeeks);
+    _get$inMaxTwoWeeks: function ($field) {
+        return this._get$error($field, this.checkDateInMaxTwoWeeks);
     },
 
-    get$error: function ($field, checkType) {
+    _get$error: function ($field, checkType) {
         return $field.parent().find("p[data-check=" + checkType + "]");
     },
 
-    isToCheckIfEmpty: function ($field) {
-        return this.get$empty($field).length === 1;
+    _isToCheckIfEmpty: function ($field) {
+        return this._get$empty($field).length === 1;
     },
 
-    isToCheckIfEmail: function ($field) {
-        return this.get$email($field).length === 1;
+    _isToCheckIfEmail: function ($field) {
+        return this._get$email($field).length === 1;
     },
 
-    isToCheckIfUsername: function ($field) {
-        return this.get$username($field).length === 1;
+    _isToCheckIfUsername: function ($field) {
+        return this._get$username($field).length === 1;
     },
 
-    isToCheckIfInFuture: function ($field) {
-        return this.get$inFuture($field).length === 1;
+    _isToCheckIfInFuture: function ($field) {
+        return this._get$inFuture($field).length === 1;
     },
 
-    isToCheckIfInMaxTwoWeeks: function ($field) {
-        return this.get$inMaxTwoWeeks($field).length === 1;
+    _isToCheckIfInMaxTwoWeeks: function ($field) {
+        return this._get$inMaxTwoWeeks($field).length === 1;
     },
 
-    isValidEmail: function (email) {
+    _isValidEmail: function (email) {
         var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
         return reg.test(email);
     },
 
-    isValidUsername: function (username) {
+    _isValidUsername: function (username) {
         var reg = /^([A-Za-z0-9_\-])+$/;
         return reg.test(username);
     },
 
-    isInFuture: function (dateStr) {
+    _isInFuture: function (dateStr) {
         var yearMonthDay = dateStr.split("-");
         var year = parseInt(yearMonthDay[0], 10);
         var month = parseInt(yearMonthDay[1], 10);
@@ -88,7 +98,7 @@ CBR.Services.Validator = new Class({
         return nbDaysDifference > 0;
     },
 
-    isInMaxTwoWeeks: function (dateStr) {
+    _isInMaxTwoWeeks: function (dateStr) {
         var yearMonthDay = dateStr.split("-");
         var year = parseInt(yearMonthDay[0], 10);
         var month = parseInt(yearMonthDay[1], 10);
@@ -104,91 +114,81 @@ CBR.Services.Validator = new Class({
         return nbDaysDifference >= 0;
     },
 
-    validateField: function($field) {
+    _validateField: function($field) {
 
         // Empty?
-        if (this.isToCheckIfEmpty($field) && !$field.val()) {
-            this.flagInvalid($field);
-            this.get$empty($field).slideDown(200, "easeOutQuad");
+        if (this._isToCheckIfEmpty($field) && !$field.val()) {
+            this._flagInvalid($field);
+            this._get$empty($field).slideDown(200, "easeOutQuad");
             return false;
         }
         else
-            this.get$empty($field).slideUp(200, "easeInQuad");
+            this._get$empty($field).slideUp(200, "easeInQuad");
 
         // Email?
-        if (this.isToCheckIfEmail($field) && !this.isValidEmail($field.val())) {
-            this.flagInvalid($field);
-            this.get$email($field).slideDown(200, "easeOutQuad");
+        if (this._isToCheckIfEmail($field) && !this._isValidEmail($field.val())) {
+            this._flagInvalid($field);
+            this._get$email($field).slideDown(200, "easeOutQuad");
             return false;
         }
         else
-            this.get$email($field).slideUp(200, "easeInQuad");
+            this._get$email($field).slideUp(200, "easeInQuad");
 
         // Username?
-        if (this.isToCheckIfUsername($field) && !this.isValidUsername($field.val())) {
-            this.flagInvalid($field);
-            this.get$username($field).slideDown(200, "easeOutQuad");
+        if (this._isToCheckIfUsername($field) && !this._isValidUsername($field.val())) {
+            this._flagInvalid($field);
+            this._get$username($field).slideDown(200, "easeOutQuad");
             return false;
         }
         else
-            this.get$username($field).slideUp(200, "easeInQuad");
+            this._get$username($field).slideUp(200, "easeInQuad");
 
         // In the future?
-        if (this.isToCheckIfInFuture($field) && !this.isInFuture($field.val())) {
-            this.flagInvalid($field);
-            this.get$inFuture($field).slideDown(200, "easeOutQuad");
+        if (this._isToCheckIfInFuture($field) && !this._isInFuture($field.val())) {
+            this._flagInvalid($field);
+            this._get$inFuture($field).slideDown(200, "easeOutQuad");
             return false;
         }
         else
-            this.get$inFuture($field).slideUp(200, "easeInQuad");
+            this._get$inFuture($field).slideUp(200, "easeInQuad");
 
         // In max 2 weeks?
-        if (this.isToCheckIfInMaxTwoWeeks($field) && !this.isInMaxTwoWeeks($field.val())) {
-            this.flagInvalid($field);
-            this.get$inMaxTwoWeeks($field).slideDown(200, "easeOutQuad");
+        if (this._isToCheckIfInMaxTwoWeeks($field) && !this._isInMaxTwoWeeks($field.val())) {
+            this._flagInvalid($field);
+            this._get$inMaxTwoWeeks($field).slideDown(200, "easeOutQuad");
             return false;
         }
         else
-            this.get$inMaxTwoWeeks($field).slideUp(200, "easeInQuad");
+            this._get$inMaxTwoWeeks($field).slideUp(200, "easeInQuad");
 
-        this.flagValid($field);
+        this._flagValid($field);
 
         return true;
     },
 
-    isValid: function() {
-        var result = true;
-
-        for (var i=0; i<this.getFieldIds().length; i++)
-            if (!this.validateField(jQuery("#" + this.getFieldIds()[i])))
-                result = false;
-
-        return result;
-    },
-
-    addBlurEvent: function ($field) {
+    _addBlurEvent: function ($field) {
         var self = this;
 
         $field.blur(function () {
-            self.validateField($field);
+            self._validateField($field);
         });
     },
 
-    addValueChangedEvent: function ($field) {
+    _addValueChangedEvent: function ($field) {
         var self = this;
 
         $field.change(function () {
-            self.validateField($field);
+            self._validateField($field);
         });
     },
 
-    flagValid: function($field) {
+    _flagValid: function($field) {
         var $wrapper = $field.parent();
         $wrapper.removeClass("invalid");
         $wrapper.addClass("valid");
     },
 
-    flagInvalid: function($field) {
+    _flagInvalid: function($field) {
         var $wrapper = $field.parent();
         $wrapper.removeClass("valid");
         $wrapper.addClass("invalid");

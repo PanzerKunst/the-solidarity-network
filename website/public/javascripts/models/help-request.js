@@ -4,15 +4,15 @@ CBR.HelpRequest = new Class({
     options: {  // Defaults
     },
 
-    GetId: function() {
+    getId: function() {
         return this.options.id;
     },
 
-    GetDescription: function() {
+    getDescription: function() {
         return this.options.description;
     },
 
-    GetExpiryDate: function() {
+    getExpiryDate: function() {
         return this.options.expiryDate;
     }
 });

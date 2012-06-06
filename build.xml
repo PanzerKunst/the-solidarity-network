@@ -57,7 +57,7 @@ Basic usage:
             <filelist dir="${src.css.dir}" files="
                 h5bp/style.css
                 main.css
-                index.css" />
+                register.css" />
         </concat>
     </target>
 
@@ -86,6 +86,7 @@ Basic usage:
                 models/user.js
                 models/help-request.js
                 controllers/template-controller.js
+                controllers/nav-controller.js
                 controllers/login-controller.js
                 controllers/register-controller.js
                 controllers/create-help-request-controller.js" />
@@ -110,6 +111,7 @@ Basic usage:
                 models/user.js
                 models/help-request.js
                 controllers/template-controller.js
+                controllers/nav-controller.js
                 controllers/login-controller.js
                 controllers/register-controller.js
                 controllers/create-help-request-controller.js" />

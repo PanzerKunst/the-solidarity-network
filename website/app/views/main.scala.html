@@ -1,4 +1,4 @@
-@(title: String, page: String)(content: Html)(javascript: Html)
+@(title: String, page: String)(header: Html)(content: Html)(javascript: Html)
 
 <!doctype html>
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
@@ -60,7 +60,7 @@ Create your own custom Modernizr build: www.modernizr.com/download/ -->
     <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 
     <header>
-
+        @header
     </header>
 
     <div id="content" role="main">
@@ -97,6 +97,7 @@ Create your own custom Modernizr build: www.modernizr.com/download/ -->
 
     <!-- Controllers -->
     <script src="@routes.Assets.at("javascripts/controllers/template-controller.js")"></script>
+    <script src="@routes.Assets.at("javascripts/controllers/nav-controller.js")"></script>
     <script src="@routes.Assets.at("javascripts/controllers/login-controller.js")"></script>
     <script src="@routes.Assets.at("javascripts/controllers/register-controller.js")"></script>
     <script src="@routes.Assets.at("javascripts/controllers/create-help-request-controller.js")"></script>

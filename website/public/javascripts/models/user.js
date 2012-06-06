@@ -4,43 +4,43 @@ CBR.User = new Class({
     options: {  // Defaults
     },
 
-    GetId: function() {
+    getId: function() {
         return this.options.id;
     },
 
-    GetUsername: function() {
+    getUsername: function() {
         return this.options.username;
     },
 
-    GetFirstName: function() {
+    getFirstName: function() {
         return this.options.firstName;
     },
 
-    GetLastName: function() {
+    getLastName: function() {
         return this.options.lastName;
     },
 
-    GetEmail: function() {
+    getEmail: function() {
         return this.options.email;
     },
 
-    GetPassword: function() {
+    getPassword: function() {
         return this.options.password;
     },
 
-    GetStreetAddress: function() {
+    getStreetAddress: function() {
         return this.options.streetAddress;
     },
 
-    GetPostCode: function() {
+    getPostCode: function() {
         return this.options.postCode;
     },
 
-    GetCity: function() {
+    getCity: function() {
         return this.options.city;
     },
 
-    GetCountryId: function() {
+    getCountryId: function() {
         return this.options.countryId;
     }
 });

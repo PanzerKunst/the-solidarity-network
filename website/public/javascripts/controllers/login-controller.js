@@ -13,15 +13,15 @@ CBR.Controllers.Login = new Class({
             )
         );
 
-        this.initValidation();
+        this._initValidation();
 
-        jQuery("#login-button").click(jQuery.proxy(this.doLogin, this));
-        jQuery("form").submit(jQuery.proxy(this.doLogin, this));
+        jQuery("#login-button").click(jQuery.proxy(this._doLogin, this));
+        jQuery("form").submit(jQuery.proxy(this._doLogin, this));
     },
 
-    initValidation: function () {
+    _initValidation: function () {
         jQuery(".field-error").hide();
-        
+
         this.validator = new CBR.Services.Validator({
             fieldIds: [
                 "username-or-email",
@@ -30,7 +30,7 @@ CBR.Controllers.Login = new Class({
         });
     },
 
-    doLogin: function (e) {
+    _doLogin: function (e) {
         e.preventDefault();
 
         if (this.validator.isValid()) {

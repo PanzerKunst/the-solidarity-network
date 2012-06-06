@@ -2,12 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6a692bc-d147-471b-bee0-2af12beb41f5" name="Default" comment="">
+      <change type="DELETED" beforePath="E:\Pro\the-solidarity-network\website\public\stylesheets\index.css" afterPath="" />
+      <change type="DELETED" beforePath="E:\Pro\the-solidarity-network\website\public\stylesheets\scss\index.scss" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Wireframes/Home.bmml" afterPath="$PROJECT_DIR$/../Wireframes/Home.bmml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build.xml" afterPath="$PROJECT_DIR$/../build.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/api/AuthApi.scala" afterPath="$PROJECT_DIR$/app/controllers/api/AuthApi.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/api/UserApi.scala" afterPath="$PROJECT_DIR$/app/controllers/api/UserApi.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/createHelpRequest.scala.html" afterPath="$PROJECT_DIR$/app/views/createHelpRequest.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/home.scala.html" afterPath="$PROJECT_DIR$/app/views/home.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/index.scala.html" afterPath="$PROJECT_DIR$/app/views/index.scala.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/login.scala.html" afterPath="$PROJECT_DIR$/app/views/login.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/main.scala.html" afterPath="$PROJECT_DIR$/app/views/main.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/myProfile.scala.html" afterPath="$PROJECT_DIR$/app/views/myProfile.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/register.scala.html" afterPath="$PROJECT_DIR$/app/views/register.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/viewHelpRequest.scala.html" afterPath="$PROJECT_DIR$/app/views/viewHelpRequest.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/controllers/create-help-request-controller.js" afterPath="$PROJECT_DIR$/public/javascripts/controllers/create-help-request-controller.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/controllers/login-controller.js" afterPath="$PROJECT_DIR$/public/javascripts/controllers/login-controller.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/controllers/register-controller.js" afterPath="$PROJECT_DIR$/public/javascripts/controllers/register-controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/models/help-request.js" afterPath="$PROJECT_DIR$/public/javascripts/models/help-request.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/models/user.js" afterPath="$PROJECT_DIR$/public/javascripts/models/user.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/services/validator.js" afterPath="$PROJECT_DIR$/public/javascripts/services/validator.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/main.css" afterPath="$PROJECT_DIR$/public/stylesheets/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/scss/main.scss" afterPath="$PROJECT_DIR$/public/stylesheets/scss/main.scss" />
     </list>
     <ignored path="website.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -69,73 +84,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="UserApi.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/api/UserApi.scala">
+      <file leaf-file-name="nav-controller.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/nav-controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="45" selection-start="655" selection-end="655" vertical-scroll-proportion="0.0">
+            <state line="26" column="0" selection-start="670" selection-end="670" vertical-scroll-proportion="0.6666667">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.scala.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/login.scala.html">
+      <file leaf-file-name="validator.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/javascripts/services/validator.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="84" selection-start="680" selection-end="680" vertical-scroll-proportion="0.6128527">
+            <state line="139" column="69" selection-start="4212" selection-end="4243" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.scala.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/home.scala.html">
+      <file leaf-file-name="main.scss" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/stylesheets/scss/main.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="1" selection-start="263" selection-end="263" vertical-scroll-proportion="-11.115385">
+            <state line="52" column="20" selection-start="536" selection-end="536" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="myProfile.scala.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/myProfile.scala.html">
+      <file leaf-file-name="register.scss" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/stylesheets/scss/register.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login-controller.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/login-controller.js">
+      <file leaf-file-name="nav.scala.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/nav.scala.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="8" selection-start="607" selection-end="607" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AuthApi.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/api/AuthApi.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="0" selection-start="843" selection-end="843" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserDto.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/database/UserDto.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="12" selection-start="1119" selection-end="1119" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/User.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="0" selection-start="366" selection-end="366" vertical-scroll-proportion="0.0">
+            <state line="16" column="0" selection-start="643" selection-end="643" vertical-scroll-proportion="-10.461538">
               <folding />
             </state>
           </provider>
@@ -144,7 +132,25 @@
       <file leaf-file-name="register-controller.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/register-controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="0" selection-start="630" selection-end="630" vertical-scroll-proportion="0.0">
+            <state line="7" column="22" selection-start="186" selection-end="186" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.scala.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/home.scala.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="42" selection-start="591" selection-end="591" vertical-scroll-proportion="-19.26923">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.scala.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/main.scala.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="105" column="0" selection-start="4113" selection-end="4113" vertical-scroll-proportion="-14.192307">
               <folding />
             </state>
           </provider>
@@ -153,7 +159,7 @@
       <file leaf-file-name="register.scala.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/register.scala.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="47" selection-start="179" selection-end="179" vertical-scroll-proportion="-7.1923075">
+            <state line="122" column="9" selection-start="4082" selection-end="4330" vertical-scroll-proportion="-19.923077">
               <folding />
             </state>
           </provider>
@@ -174,22 +180,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/public/stylesheets/scss/register.scss" />
-        <option value="$PROJECT_DIR$/public/javascripts/services/validator.js" />
-        <option value="$PROJECT_DIR$/app/common/JsonUtil.scala" />
-        <option value="$PROJECT_DIR$/public/stylesheets/scss/index.scss" />
-        <option value="$PROJECT_DIR$/app/views/main.scala.html" />
-        <option value="$PROJECT_DIR$/app/controllers/ControllerUtil.scala" />
-        <option value="$PROJECT_DIR$/app/database/CountryDto.scala" />
-        <option value="$PROJECT_DIR$/app/database/HelpRequestDto.scala" />
-        <option value="$PROJECT_DIR$/app/database/DbUtil.scala" />
-        <option value="$PROJECT_DIR$/conf/routes" />
-        <option value="$PROJECT_DIR$/app/database/UserDto.scala" />
-        <option value="$PROJECT_DIR$/public/javascripts/controllers/register-controller.js" />
-        <option value="$PROJECT_DIR$/app/controllers/api/UserApi.scala" />
-        <option value="$PROJECT_DIR$/app/controllers/api/AuthApi.scala" />
-        <option value="$PROJECT_DIR$/public/javascripts/controllers/login-controller.js" />
+        <option value="$PROJECT_DIR$/app/views/index.scala.html" />
         <option value="$PROJECT_DIR$/app/views/login.scala.html" />
+        <option value="$PROJECT_DIR$/app/views/myProfile.scala.html" />
+        <option value="$PROJECT_DIR$/app/views/register.scala.html" />
+        <option value="$PROJECT_DIR$/app/views/viewHelpRequest.scala.html" />
+        <option value="$PROJECT_DIR$/public/javascripts/services/validator.js" />
+        <option value="$PROJECT_DIR$/public/javascripts/models/user.js" />
+        <option value="$PROJECT_DIR$/public/javascripts/models/help-request.js" />
+        <option value="$PROJECT_DIR$/public/javascripts/controllers/register-controller.js" />
+        <option value="$PROJECT_DIR$/public/javascripts/controllers/login-controller.js" />
+        <option value="$PROJECT_DIR$/public/javascripts/controllers/create-help-request-controller.js" />
+        <option value="$PROJECT_DIR$/app/views/nav.scala.html" />
+        <option value="$PROJECT_DIR$/public/stylesheets/scss/main.scss" />
+        <option value="$PROJECT_DIR$/app/views/home.scala.html" />
+        <option value="$PROJECT_DIR$/app/views/main.scala.html" />
+        <option value="$PROJECT_DIR$/public/javascripts/controllers/nav-controller.js" />
       </list>
     </option>
   </component>
@@ -270,6 +276,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tmp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -433,54 +453,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="libs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javascripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="libs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="h5bp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javascripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -522,6 +494,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dist" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -880,18 +870,18 @@
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32959402" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294347" sideWeight="0.48932764" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3294347" sideWeight="0.4850587" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39766082" sideWeight="0.76840985" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32846004" sideWeight="0.36499467" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3294347" sideWeight="0.511206" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294347" sideWeight="0.49786553" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23852721" sideWeight="0.67153996" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32846004" sideWeight="0.63127" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23852721" sideWeight="0.6705653" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32846004" sideWeight="0.63127" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294347" sideWeight="0.4764957" order="7" side_tool="false" content_ui="tabs" />
@@ -958,104 +948,100 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/database/HelpRequestDto.scala">
+    <entry file="file://$PROJECT_DIR$/public/javascripts/common/json-util.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="7" selection-start="141" selection-end="141" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/DbUtil.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="20" selection-start="283" selection-end="283" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/scss/register.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="24" selection-end="39" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/scss/main.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conf/routes">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="27" selection-start="1177" selection-end="1177" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/Application.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="329" selection-end="329" vertical-scroll-proportion="0.0">
+        <state line="14" column="0" selection-start="322" selection-end="322" vertical-scroll-proportion="0.35897437">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/User.scala">
+    <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/create-help-request-controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="366" selection-end="366" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/UserDto.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="12" selection-start="1119" selection-end="1119" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/api/UserApi.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="45" selection-start="655" selection-end="655" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/api/AuthApi.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="0" selection-start="843" selection-end="843" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/home.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="1" selection-start="263" selection-end="263" vertical-scroll-proportion="-11.115385">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/register.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="47" selection-start="179" selection-end="179" vertical-scroll-proportion="-7.1923075">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/myProfile.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/register-controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="630" selection-end="630" vertical-scroll-proportion="0.0">
+        <state line="30" column="6" selection-start="790" selection-end="790" vertical-scroll-proportion="0.6666667">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/login-controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="8" selection-start="607" selection-end="607" vertical-scroll-proportion="0.0">
+        <state line="15" column="31" selection-start="379" selection-end="379" vertical-scroll-proportion="-0.2820513">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/login.scala.html">
+    <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/template-controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="84" selection-start="680" selection-end="680" vertical-scroll-proportion="0.6128527">
+        <state line="8" column="3" selection-start="0" selection-end="200" vertical-scroll-proportion="0.20512821">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/services/validator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="139" column="69" selection-start="4212" selection-end="4243" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/register.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="122" column="9" selection-start="4082" selection-end="4330" vertical-scroll-proportion="-19.923077">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/home.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="42" selection-start="591" selection-end="591" vertical-scroll-proportion="-19.26923">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/scss/main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="20" selection-start="536" selection-end="536" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/models/help-request.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="0" selection-start="252" selection-end="252" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/scss/register.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/main.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="105" column="0" selection-start="4113" selection-end="4113" vertical-scroll-proportion="-14.192307">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/nav.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="0" selection-start="643" selection-end="643" vertical-scroll-proportion="-10.461538">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/register-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="22" selection-start="186" selection-end="186" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/nav-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="0" selection-start="670" selection-end="670" vertical-scroll-proportion="0.6666667">
           <folding />
         </state>
       </provider>

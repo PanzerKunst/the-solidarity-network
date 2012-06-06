@@ -13,13 +13,13 @@ CBR.Controllers.CreateHelpRequest = new Class({
             )
         );
 
-        this.initValidation();
+        this._initValidation();
 
-        jQuery("#submit-button").click(jQuery.proxy(this.doCreate, this));
-        jQuery("form").submit(jQuery.proxy(this.doCreate, this));
+        jQuery("#submit-button").click(jQuery.proxy(this._doCreate, this));
+        jQuery("form").submit(jQuery.proxy(this._doCreate, this));
     },
 
-    initValidation: function () {
+    _initValidation: function () {
         jQuery(".field-error").hide();
 
         this.validator = new CBR.Services.Validator({
@@ -30,7 +30,7 @@ CBR.Controllers.CreateHelpRequest = new Class({
         });
     },
 
-    doCreate: function (e) {
+    _doCreate: function (e) {
         e.preventDefault();
 
         if (this.validator.isValid()) {

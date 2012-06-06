@@ -1,18 +1,35 @@
 @(user: User)
 @main("Solidarity Network - Home", "home") {
 <!--
+    Header
+-->
+@nav(user)
+
+} {
+<!--
     Content
 -->
+
 <p>Welcome back, @user.firstName!</p>
-<a href="/my-profile">My profile</a>
-<a href="/help">Help dashboard</a>
+<div>
+    <a href="/help">Help dashboard</a>
+    <a href="/my-profile">My profile</a>
+    <a href="/messages">Messages</a>
+</div>
 
-<h1>Help requests near me</h1>
-<ul>
+<a>Subscribe to the RSS feed of help requests near me</a>
 
-</ul>
+<span>Display the website in:</span>
+<select>
+    <option value="eng">English</option>
+</select>
 } {
 <!--
     Javascript
 -->
-}
+
+<script type="text/javascript">
+    window.addEvent("domready", function () {
+        new CBR.Controllers.NavController().run();
+    });
+</script>}

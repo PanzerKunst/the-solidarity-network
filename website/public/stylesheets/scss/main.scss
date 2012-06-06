@@ -1,12 +1,10 @@
 @import "lib/common";
 
-/* Base Element styles  */
+// Base Element styles
 
 body {
   font-size: $baseline;
 }
-
-/* Base Element styles */
 
 h1, h2, h3, h4, h5 {
   margin-bottom: 2em;
@@ -40,4 +38,22 @@ a, a:visited {
 p {
   color: $fontDarkGrey;
   margin-bottom: 1em;
+}
+
+#content {
+  clear: both;
+}
+
+// Navigation
+
+#header-nav > ul > li {
+  float: left;
+
+  > span {
+    cursor: pointer;
+  }
+}
+
+.sub-nav {
+  display: none;
 }

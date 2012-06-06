@@ -36,7 +36,7 @@
         <text>Menu</text>
       </controlProperties>
     </control>
-    <control controlID="10" controlTypeID="com.balsamiq.mockups::Label" x="1221" y="176" w="-1" h="-1" measuredW="40" measuredH="21" zOrder="8" locked="false" isInGroup="-1">
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::Label" x="1221" y="176" w="-1" h="-1" measuredW="39" measuredH="21" zOrder="8" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Home</text>
       </controlProperties>
@@ -91,14 +91,14 @@
         <text>Messages</text>
       </controlProperties>
     </control>
-    <control controlID="24" controlTypeID="com.balsamiq.mockups::TextArea" x="134" y="99" w="244" h="90" measuredW="200" measuredH="140" zOrder="17" locked="false" isInGroup="-1">
+    <control controlID="24" controlTypeID="com.balsamiq.mockups::TextArea" x="134" y="99" w="244" h="107" measuredW="200" measuredH="140" zOrder="17" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>-%20Help%20requests%20near%20me%0A-%20Submit%20a%20help%20request%0A-%20Search%20help%20requests%0A-%20My%20help%20requests%0A-%20Help%20requests%20I%20responded%20to</text>
+        <text>-%20Help%20dashboard%0A-%20Help%20requests%20near%20me%0A-%20Submit%20a%20help%20request%0A-%20Search%20help%20requests%0A-%20My%20help%20requests%0A-%20Help%20requests%20I%20responded%20to</text>
       </controlProperties>
     </control>
-    <control controlID="25" controlTypeID="com.balsamiq.mockups::TextArea" x="554" y="99" w="179" h="59" measuredW="200" measuredH="140" zOrder="18" locked="false" isInGroup="-1">
+    <control controlID="25" controlTypeID="com.balsamiq.mockups::TextArea" x="554" y="99" w="179" h="74" measuredW="200" measuredH="140" zOrder="18" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>-%20Inbox%0A-%20Write%20a%20message%0A-%20Sent%20messages</text>
+        <text>-%20Messages%0A-%20Inbox%0A-%20Write%20a%20message%0A-%20Sent%20messages</text>
       </controlProperties>
     </control>
     <control controlID="26" controlTypeID="com.balsamiq.mockups::Link" x="646" y="306" w="-1" h="-1" measuredW="64" measuredH="21" zOrder="21" locked="false" isInGroup="-1">

@@ -1,8 +1,6 @@
-/* Base Element styles  */
 body {
   font-size: 13px; }
 
-/* Base Element styles */
 h1, h2, h3, h4, h5 {
   margin-bottom: 2em; }
 
@@ -27,3 +25,14 @@ a, a:visited {
 p {
   color: #3f3f3f;
   margin-bottom: 1em; }
+
+#content {
+  clear: both; }
+
+#header-nav > ul > li {
+  float: left; }
+  #header-nav > ul > li > span {
+    cursor: pointer; }
+
+.sub-nav {
+  display: none; }
