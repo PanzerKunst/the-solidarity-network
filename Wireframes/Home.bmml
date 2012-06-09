@@ -116,9 +116,9 @@
         <text>My%20profile</text>
       </controlProperties>
     </control>
-    <control controlID="29" controlTypeID="com.balsamiq.mockups::TextArea" x="376" y="99" w="179" h="23" measuredW="200" measuredH="140" zOrder="24" locked="false" isInGroup="-1">
+    <control controlID="29" controlTypeID="com.balsamiq.mockups::TextArea" x="376" y="99" w="179" h="43" measuredW="200" measuredH="140" zOrder="24" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>-%20Edit</text>
+        <text>-%20My%20profile%0A-%20Edit</text>
       </controlProperties>
     </control>
   </controls>

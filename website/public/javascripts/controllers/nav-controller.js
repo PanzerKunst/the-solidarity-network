@@ -13,11 +13,16 @@ CBR.Controllers.NavController = new Class({
         var $title = jQuery("#header-nav span");
 
         $title.click(function () {
-            var $subNav = $title.parent().find("> ul");
+            // Close all open
+            jQuery(".sub-nav").slideUp(200, "easeInQuad");
+
+            var $li = jQuery(this).parent();
+
+            var $subNav = $li.find("> ul");
             if ($subNav.is(":visible"))
-                self._closeDropDown($title.parent());
+                self._closeDropDown($li);
             else
-                self._openDropDown($title.parent());
+                self._openDropDown($li);
         });
     },
 

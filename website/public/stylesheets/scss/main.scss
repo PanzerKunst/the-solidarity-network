@@ -46,11 +46,23 @@ p {
 
 // Navigation
 
-#header-nav > ul > li {
-  float: left;
+#header-nav > ul {
+  margin: 0 auto;
+  width: 80%;
 
-  > span {
-    cursor: pointer;
+  > li {
+    width: 16.6%;
+    float: left;
+    position: relative;
+
+    > span {
+      cursor: pointer;
+    }
+
+    > ul {
+      position: absolute;
+      background-color: white;
+    }
   }
 }
 

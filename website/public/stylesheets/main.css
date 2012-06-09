@@ -29,10 +29,18 @@ p {
 #content {
   clear: both; }
 
-#header-nav > ul > li {
-  float: left; }
-  #header-nav > ul > li > span {
-    cursor: pointer; }
+#header-nav > ul {
+  margin: 0 auto;
+  width: 80%; }
+  #header-nav > ul > li {
+    width: 16.6%;
+    float: left;
+    position: relative; }
+    #header-nav > ul > li > span {
+      cursor: pointer; }
+    #header-nav > ul > li > ul {
+      position: absolute;
+      background-color: white; }
 
 .sub-nav {
   display: none; }
