@@ -47,7 +47,11 @@ object Application extends Controller {
   }
 
   def helpDashboard = Action {
-    Ok
+    implicit request =>
+      loggedInUser(session) match {
+        case Some(user) => Ok(views.html.helpDashboard(user))
+        case None => Redirect(routes.Application.login)
+      }
   }
 
   def loggedInUser(session: Session): Option[User] = {

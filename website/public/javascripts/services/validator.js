@@ -167,18 +167,18 @@ CBR.Services.Validator = new Class({
     },
 
     _addBlurEvent: function ($field) {
-        var self = this;
+        var _this = this;
 
         $field.blur(function () {
-            self._validateField($field);
+            _this._validateField($field);
         });
     },
 
     _addValueChangedEvent: function ($field) {
-        var self = this;
+        var _this = this;
 
         $field.change(function () {
-            self._validateField($field);
+            _this._validateField($field);
         });
     },
 

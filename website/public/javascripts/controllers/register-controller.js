@@ -76,22 +76,22 @@ CBR.Controllers.Register = new Class({
     },
 
     _checkIfUsernameIsAlreadyTakenOnBlur: function () {
-        var self = this;
+        var _this = this;
 
         this.$usernameField.blur(function () {
-            self.$usernameTakenParagraph.slideUp(200, "easeInQuad");
+            _this.$usernameTakenParagraph.slideUp(200, "easeInQuad");
 
-            if (self.$usernameField.val() !== "") {
+            if (_this.$usernameField.val() !== "") {
                 new Request({
                     urlEncoded: false,
-                    url: "/api/users?username=" + self.$usernameField.val(),
+                    url: "/api/users?username=" + _this.$usernameField.val(),
                     onSuccess: function (responseText, responseXML) {
 
-                        var $wrapper = self.$usernameField.parent();
+                        var $wrapper = _this.$usernameField.parent();
                         $wrapper.removeClass("valid");
                         $wrapper.addClass("invalid");
 
-                        self.$usernameTakenParagraph.slideDown(200, "easeOutQuad");
+                        _this.$usernameTakenParagraph.slideDown(200, "easeOutQuad");
                     },
                     onFailure: function (xhr) {
                         if (xhr.status === 404)
@@ -105,22 +105,22 @@ CBR.Controllers.Register = new Class({
     },
 
     _checkIfEmailIsAlreadyRegisteredOnBlur: function () {
-        var self = this;
+        var _this = this;
 
         this.$emailField.blur(function () {
-            self.$emailAlreadyRegisteredParagraph.slideUp(200, "easeInQuad");
+            _this.$emailAlreadyRegisteredParagraph.slideUp(200, "easeInQuad");
 
-            if (self.$emailField.val() !== "") {
+            if (_this.$emailField.val() !== "") {
                 new Request({
                     urlEncoded: false,
-                    url: "/api/users?email=" + self.$emailField.val().toLowerCase(),
+                    url: "/api/users?email=" + _this.$emailField.val().toLowerCase(),
                     onSuccess: function (responseText, responseXML) {
 
-                        var $wrapper = self.$emailAlreadyRegisteredParagraph.parent();
+                        var $wrapper = _this.$emailAlreadyRegisteredParagraph.parent();
                         $wrapper.removeClass("valid");
                         $wrapper.addClass("invalid");
 
-                        self.$emailAlreadyRegisteredParagraph.slideDown(200, "easeOutQuad");
+                        _this.$emailAlreadyRegisteredParagraph.slideDown(200, "easeOutQuad");
                     },
                     onFailure: function (xhr) {
                         if (xhr.status === 404)

@@ -1,5 +1,5 @@
 @(user: User)
-@main("Solidarity Network - Home", "home") {
+@main("Solidarity Network - Help dashboard", "helpDashboard") {
 <!--
     Header
 -->
@@ -10,11 +10,11 @@
     Content
 -->
 
-<p>Welcome back, @user.firstName!</p>
 <div>
-    <a href="/help">Help dashboard</a>
-    <a href="/my-profile">My profile</a>
-    <a href="/messages">Messages</a>
+    <a href="/help-requests/new">Submit a help request</a>
+    <a href="/help-requests">Search help requests</a>
+    <a href="/help-requests?by=@user.username">My help requests</a>
+    <a href="/help-requests?respondedBy=@user.username">Help requests I responded to</a>
 </div>
 
 <a>Subscribe to the RSS feed of help requests near me</a>

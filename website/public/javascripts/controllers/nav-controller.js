@@ -8,7 +8,7 @@ CBR.Controllers.NavController = new Class({
     },
 
     _initDropDowns: function () {
-        var self = this;
+        var _this = this;
 
         var $title = jQuery("#header-nav span");
 
@@ -20,9 +20,9 @@ CBR.Controllers.NavController = new Class({
 
             var $subNav = $li.find("> ul");
             if ($subNav.is(":visible"))
-                self._closeDropDown($li);
+                _this._closeDropDown($li);
             else
-                self._openDropDown($li);
+                _this._openDropDown($li);
         });
     },
 
