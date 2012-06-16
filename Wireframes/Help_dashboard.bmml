@@ -124,5 +124,15 @@
         <text>Log%20out</text>
       </controlProperties>
     </control>
+    <control controlID="37" controlTypeID="com.balsamiq.mockups::Link" x="458" y="685" w="-1" h="-1" measuredW="138" measuredH="21" zOrder="25" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Help%20requests%20near%20me</text>
+      </controlProperties>
+    </control>
+    <control controlID="38" controlTypeID="com.balsamiq.mockups::Icon" x="434" y="683" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="26" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>RSSIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
   </controls>
 </mockup>

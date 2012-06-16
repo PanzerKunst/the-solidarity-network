@@ -3,6 +3,7 @@
 <!--
     Header
 -->
+@nav(None)
 
 } {
 <!--
@@ -15,6 +16,8 @@
 -->
 
 <script id="content-template" type="text/html">
+    <h1>Register to the Solidarity Network</h1>
+
     <form>
         <div class="field">
             <label for="first-name">First name <span>*</span></label>
@@ -43,7 +46,7 @@
             <p class="field-error" data-check="email">Would you mind checking that e-mail address? Looks wrong to
                 me...</p>
 
-            <p class="field-error" id="email-already-registered" style="display: none">This e-mail is already registered
+            <p class="field-error" id="email-already-registered">This e-mail is already registered
                 in our system. You should try resetting your password on the Login page.</p>
         </div>
 
@@ -58,7 +61,7 @@
             <p class="field-error" data-check="username">Sorry, but only the following characters are allowed:
                 <em>a-z</em>, <em>A-Z</em>, <em>0-9</em>, <em>-</em>, <em>_</em></p>
 
-            <p class="field-error" id="username-taken" style="display: none">Sad news: this username is already taken :/
+            <p class="field-error" id="username-taken">Sad news: this username is already taken :/
                 Please try another one.</p>
         </div>
 

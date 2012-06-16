@@ -3,7 +3,7 @@
 <!--
     Header
 -->
-@nav(user)
+@nav(Some(user))
 
 } {
 <!--
@@ -17,14 +17,12 @@
     <a href="/messages">Messages</a>
 </div>
 
-<a>Subscribe to the RSS feed of help requests near me</a>
-
-<article id="website-language-selection">
+<div id="website-language-selection">
     <label for="language-select">Display the website in:</label>
     <select id="language-select">
         <option value="eng">English</option>
     </select>
-</article>
+</div>
 } {
 <!--
     Javascript

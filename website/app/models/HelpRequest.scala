@@ -7,17 +7,19 @@ import java.util.Date
 class HelpRequest {
 
   def this(id: Long,
-  title: String,
-           description: String,
            requesterId: Long,
+           title: String,
+           description: String,
+           creationDate: Date,
            expiryDate: Date) = {
 
     this()
 
     this.id = id
+    this.requesterId = requesterId
     this.title = title
     this.description = description
-    this.requesterId = requesterId
+    this.creationDate = creationDate
     this.expiryDate = expiryDate
   }
 
@@ -32,6 +34,9 @@ class HelpRequest {
 
   @JsonProperty
   var requesterId: Long = _
+
+  @JsonProperty
+  var creationDate: Date = _
 
   @JsonProperty
   var expiryDate: Date = _

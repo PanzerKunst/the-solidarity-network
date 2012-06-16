@@ -1,0 +1,23 @@
+@import "lib/common";
+
+body#help-dashboard {
+  #content {
+    .actions {
+      margin: 10em 0;
+
+      > a {
+        width: 50%;
+        display: inline-block;  // For "width" to be registered
+
+        text-align: center;
+      }
+    }
+
+    #rss-feed {
+      width: 100%;
+      display: inline-block;  // For "width" to be registered
+
+      text-align: center;
+    }
+  }
+}

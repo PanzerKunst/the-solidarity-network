@@ -32,6 +32,7 @@ Create table `help_request`(
   `title` varchar(100) NOT NULL,
   `description` text NOT NULL,
   `requester_id` int(10) unsigned NOT NULL,
+  `creation_date` date NOT NULL,
   `expiry_date` date NOT NULL,
   primary key (`id`),
   constraint `fk_requester` foreign key (`requester_id`) references `user`(`id`)

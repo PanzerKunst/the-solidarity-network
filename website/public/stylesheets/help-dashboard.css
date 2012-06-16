@@ -1,0 +1,10 @@
+body#help-dashboard #content .actions {
+  margin: 10em 0; }
+  body#help-dashboard #content .actions > a {
+    width: 50%;
+    display: inline-block;
+    text-align: center; }
+body#help-dashboard #content #rss-feed {
+  width: 100%;
+  display: inline-block;
+  text-align: center; }
