@@ -7,6 +7,7 @@ import java.util.Date
 class HelpRequest {
 
   def this(id: Long,
+  title: String,
            description: String,
            requesterId: Long,
            expiryDate: Date) = {
@@ -14,6 +15,7 @@ class HelpRequest {
     this()
 
     this.id = id
+    this.title = title
     this.description = description
     this.requesterId = requesterId
     this.expiryDate = expiryDate
@@ -21,6 +23,9 @@ class HelpRequest {
 
   @JsonProperty
   var id: Long = _
+
+  @JsonProperty
+  var title: String = _
 
   @JsonProperty
   var description: String = _

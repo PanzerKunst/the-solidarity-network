@@ -13,6 +13,7 @@ h1, h2, h3, h4, h5 {
 h1 {
   font-size: 2em;
   font-weight: normal;
+  text-align: center;
 }
 
 h2 {
@@ -42,26 +43,36 @@ p {
 
 #content {
   clear: both;
+  width: 80%;
+  margin: 0 auto;
 }
+
 
 // Navigation
 
-#header-nav > ul {
-  margin: 0 auto;
-  width: 80%;
-
-  > li {
-    width: 16.6%;
+#header-nav {
+  > a {
     float: left;
-    position: relative;
+    width: 15%;
+  }
 
-    > span {
-      cursor: pointer;
-    }
+  > ul {
+    float: left;
+    width: 70%;
 
-    > ul {
-      position: absolute;
-      background-color: white;
+    > li {
+      width: 16.6%;
+      float: left;
+      position: relative;
+
+      > span {
+        cursor: pointer;
+      }
+
+      > ul {
+        position: absolute;
+        background-color: white;
+      }
     }
   }
 }

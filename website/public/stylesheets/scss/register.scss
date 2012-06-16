@@ -2,22 +2,7 @@
 @import "lib/common";
 
 body#register {
-  .validation-icon {
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    background-size: 1em 1em;
-  }
-
-  .valid {
-    > .validation-icon {
-      background-image: url("/assets/images/valid.png");
-    }
-  }
-
-  .invalid {
-    > .validation-icon {
-      background-image: url("/assets/images/invalid.png");
-    }
+  form {
+    margin-top: 3em;
   }
 }

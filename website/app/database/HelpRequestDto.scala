@@ -12,8 +12,9 @@ object HelpRequestDto {
       implicit c =>
 
         val query = """
-                       insert into help_request(description, requester_id, expiry_date)
-      values("""" + DbUtil.backslashQuotes(helpRequest.description) + """",""" +
+                       insert into help_request(title, description, requester_id, expiry_date)
+      values("""" + DbUtil.backslashQuotes(helpRequest.title) + """","""" +
+          DbUtil.backslashQuotes(helpRequest.description) + """",""" +
           helpRequest.requesterId + ""","""" +
           DbUtil.dateToString(helpRequest.expiryDate) + """");"""
 

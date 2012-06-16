@@ -17,6 +17,8 @@ GET     /logout                     controllers.Application.logout
 GET     /home                       controllers.Application.home
 GET     /my-profile                 controllers.Application.myProfile
 GET     /help                       controllers.Application.helpDashboard
+GET     /help-requests              controllers.Application.searchHelpRequests
+GET     /help-requests/new          controllers.Application.createHelpRequest
 
 # API
 POST    /api/users                  controllers.api.UserApi.create

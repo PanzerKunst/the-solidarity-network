@@ -5,6 +5,7 @@ import play.api.mvc.{AnyContentAsText, Action, Controller}
 import database.HelpRequestDto
 import models.HelpRequest
 import controllers.Application
+import play.api.Logger
 
 object HelpRequestApi extends Controller {
   def create = Action {
@@ -18,7 +19,10 @@ object HelpRequestApi extends Controller {
           HelpRequestDto.create(helpRequest)
           Ok
         }
-        case None => Unauthorized
+        case None => {
+          Logger.info("Help request creation attempt while not logged-in")
+          Unauthorized
+        }
       }
   }
 }

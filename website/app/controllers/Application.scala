@@ -41,7 +41,15 @@ object Application extends Controller {
   def createHelpRequest = Action {
     implicit request =>
       loggedInUser(session) match {
-        case Some(user) => Ok(views.html.createHelpRequest())
+        case Some(user) => Ok(views.html.createHelpRequest(user))
+        case None => Redirect(routes.Application.login)
+      }
+  }
+
+  def searchHelpRequests = Action {
+    implicit request =>
+      loggedInUser(session) match {
+        case Some(user) => Ok(views.html.searchHelpRequests(user))
         case None => Redirect(routes.Application.login)
       }
   }

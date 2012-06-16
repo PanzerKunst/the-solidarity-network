@@ -1,5 +1,5 @@
 @(user: User)
-@main("Solidarity Network - New help request", "createHelpRequest") {
+@main("Solidarity Network - Search help requests", "searchHelpRequests") {
 <!--
     Header
 -->
@@ -15,21 +15,19 @@
     Javascript
 -->
 <script id="content-template" type="text/html">
-    <h1>Submit a help request</h1>
+    <h1>Searc help requests</h1>
 
     <form>
         <div class="field">
             <label for="title">Title <span>*</span></label>
-            <input id="title" type="text"/>
-            <span class="validation-icon"></span>
+            <textarea id="title" type="text"/>
 
             <p class="field-error" data-check="empty">Your request needs a title.</p>
         </div>
 
         <div class="field">
             <label for="description">Description <span>*</span></label>
-            <textarea id="description"/>
-            <span class="validation-icon"></span>
+            <textarea id="description" type="text"/>
 
             <p class="field-error" data-check="empty">Please describe how people can help you.</p>
         </div>
@@ -60,8 +58,6 @@
 
 <script type="text/javascript">
     window.addEvent("domready", function () {
-        new CBR.Controllers.NavController().run();
-
         new CBR.Controllers.CreateHelpRequest({
             el: "#content"
         }).run();

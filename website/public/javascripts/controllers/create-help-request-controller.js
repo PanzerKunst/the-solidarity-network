@@ -24,6 +24,7 @@ CBR.Controllers.CreateHelpRequest = new Class({
 
         this.validator = new CBR.Services.Validator({
             fieldIds: [
+                "title",
                 "description",
                 "expiry-date"
             ]
@@ -35,6 +36,7 @@ CBR.Controllers.CreateHelpRequest = new Class({
 
         if (this.validator.isValid()) {
             var helpRequest = new CBR.HelpRequest({
+                title: jQuery("#title").val(),
                 description: jQuery("#description").val(),
                 expiryDate: jQuery("#expiry-date").val()
             });
@@ -44,11 +46,11 @@ CBR.Controllers.CreateHelpRequest = new Class({
                 url: "/api/help-requests",
                 data: CBR.JsonUtil.stringifyModel(helpRequest),
                 onSuccess: function (responseText, responseXML) {
-                    console.log("Request saved :)");
+                    location.replace("/help");
                 },
                 onFailure: function (xhr) {
                     if (xhr.status === 401)
-                        alert("Seems like you are not logged-in. Please log in again and retry, thanks!");
+                        location.replace("/login");
                     else
                         alert("AJAX fail :(");
                 }

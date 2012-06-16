@@ -29,6 +29,7 @@ CREATE TABLE `user` (
 
 Create table `help_request`(  
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) NOT NULL,
   `description` text NOT NULL,
   `requester_id` int(10) unsigned NOT NULL,
   `expiry_date` date NOT NULL,

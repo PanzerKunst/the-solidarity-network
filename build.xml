@@ -57,6 +57,7 @@ Basic usage:
             <filelist dir="${src.css.dir}" files="
                 h5bp/style.css
                 main.css
+                form.css
                 register.css" />
         </concat>
     </target>
