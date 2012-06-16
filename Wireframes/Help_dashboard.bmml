@@ -91,7 +91,7 @@
         <text>city%3DStockholm%20country%3DSweden</text>
       </controlProperties>
     </control>
-    <control controlID="31" controlTypeID="com.balsamiq.mockups::TextArea" x="1188" y="494" w="282" h="89" measuredW="200" measuredH="140" zOrder="16" locked="false" isInGroup="-1">
+    <control controlID="31" controlTypeID="com.balsamiq.mockups::TextArea" x="1188" y="494" w="282" h="191" measuredW="200" measuredH="140" zOrder="16" locked="false" isInGroup="-1">
       <controlProperties>
         <borderColor>16777215</borderColor>
         <text/>
@@ -130,6 +130,16 @@
       </controlProperties>
     </control>
     <control controlID="38" controlTypeID="com.balsamiq.mockups::Icon" x="434" y="683" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="26" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>RSSIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="39" controlTypeID="com.balsamiq.mockups::Link" x="1272" y="646" w="-1" h="-1" measuredW="138" measuredH="21" zOrder="27" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Help%20requests%20near%20me</text>
+      </controlProperties>
+    </control>
+    <control controlID="40" controlTypeID="com.balsamiq.mockups::Icon" x="1248" y="644" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="28" locked="false" isInGroup="-1">
       <controlProperties>
         <icon>RSSIcon%7Csmall</icon>
       </controlProperties>

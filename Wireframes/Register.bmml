@@ -10,73 +10,43 @@
         <text>Forum%2C%20About%20us</text>
       </controlProperties>
     </control>
-    <control controlID="6" controlTypeID="com.balsamiq.mockups::Link" x="452" y="488" w="-1" h="-1" measuredW="138" measuredH="21" zOrder="2" locked="false" isInGroup="-1">
-      <controlProperties>
-        <text>Help%20requests%20near%20me</text>
-      </controlProperties>
-    </control>
-    <control controlID="8" controlTypeID="com.balsamiq.mockups::iPhone" x="1188" y="72" w="-1" h="-1" measuredW="282" measuredH="510" zOrder="3" locked="false" isInGroup="-1"/>
-    <control controlID="9" controlTypeID="com.balsamiq.mockups::Button" x="1383" y="173" w="-1" h="-1" measuredW="55" measuredH="27" zOrder="4" locked="false" isInGroup="-1">
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::iPhone" x="1188" y="72" w="-1" h="-1" measuredW="282" measuredH="510" zOrder="2" locked="false" isInGroup="-1"/>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::Button" x="1383" y="173" w="-1" h="-1" measuredW="55" measuredH="27" zOrder="3" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Menu</text>
       </controlProperties>
     </control>
-    <control controlID="10" controlTypeID="com.balsamiq.mockups::Label" x="1221" y="176" w="-1" h="-1" measuredW="40" measuredH="21" zOrder="5" locked="false" isInGroup="-1">
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::Label" x="1221" y="176" w="-1" h="-1" measuredW="57" measuredH="21" zOrder="4" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>Home</text>
+        <text>Register</text>
       </controlProperties>
     </control>
-    <control controlID="11" controlTypeID="com.balsamiq.mockups::Link" x="1299" y="270" w="-1" h="-1" measuredW="61" measuredH="21" zOrder="6" locked="false" isInGroup="-1">
-      <controlProperties>
-        <text>My%20Profile</text>
-      </controlProperties>
-    </control>
-    <control controlID="12" controlTypeID="com.balsamiq.mockups::Link" x="1281" y="227" w="-1" h="-1" measuredW="97" measuredH="21" zOrder="7" locked="false" isInGroup="-1">
-      <controlProperties>
-        <text>Help%20dashboard</text>
-      </controlProperties>
-    </control>
-    <control controlID="13" controlTypeID="com.balsamiq.mockups::Link" x="1272" y="393" w="-1" h="-1" measuredW="138" measuredH="21" zOrder="8" locked="false" isInGroup="-1">
-      <controlProperties>
-        <text>Help%20requests%20near%20me</text>
-      </controlProperties>
-    </control>
-    <control controlID="14" controlTypeID="com.balsamiq.mockups::Icon" x="1248" y="391" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="9" locked="false" isInGroup="-1">
-      <controlProperties>
-        <icon>RSSIcon%7Csmall</icon>
-      </controlProperties>
-    </control>
-    <control controlID="15" controlTypeID="com.balsamiq.mockups::ComboBox" x="452" y="526" w="-1" h="-1" measuredW="70" measuredH="23" zOrder="10" locked="false" isInGroup="-1">
+    <control controlID="15" controlTypeID="com.balsamiq.mockups::ComboBox" x="452" y="526" w="-1" h="-1" measuredW="70" measuredH="23" zOrder="5" locked="false" isInGroup="-1">
       <controlProperties>
         <text>English</text>
       </controlProperties>
     </control>
-    <control controlID="17" controlTypeID="com.balsamiq.mockups::Icon" x="428" y="525" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="11" locked="false" isInGroup="-1">
+    <control controlID="17" controlTypeID="com.balsamiq.mockups::Icon" x="428" y="525" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="6" locked="false" isInGroup="-1">
       <controlProperties>
         <icon>FlagIcon%7Csmall</icon>
       </controlProperties>
     </control>
-    <control controlID="18" controlTypeID="com.balsamiq.mockups::ComboBox" x="1272" y="425" w="-1" h="-1" measuredW="70" measuredH="23" zOrder="12" locked="false" isInGroup="-1">
+    <control controlID="18" controlTypeID="com.balsamiq.mockups::ComboBox" x="1272" y="425" w="-1" h="-1" measuredW="70" measuredH="23" zOrder="7" locked="false" isInGroup="-1">
       <controlProperties>
         <text>English</text>
       </controlProperties>
     </control>
-    <control controlID="19" controlTypeID="com.balsamiq.mockups::Icon" x="1248" y="424" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="13" locked="false" isInGroup="-1">
+    <control controlID="19" controlTypeID="com.balsamiq.mockups::Icon" x="1248" y="424" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="8" locked="false" isInGroup="-1">
       <controlProperties>
         <icon>FlagIcon%7Csmall</icon>
       </controlProperties>
     </control>
-    <control controlID="27" controlTypeID="com.balsamiq.mockups::Link" x="1297" y="317" w="-1" h="-1" measuredW="64" measuredH="21" zOrder="14" locked="false" isInGroup="-1">
-      <controlProperties>
-        <text>Messages</text>
-      </controlProperties>
-    </control>
-    <control controlID="30" controlTypeID="com.balsamiq.mockups::Image" x="13" y="78" w="115" h="64" measuredW="77" measuredH="79" zOrder="15" locked="false" isInGroup="-1">
+    <control controlID="30" controlTypeID="com.balsamiq.mockups::Image" x="13" y="78" w="115" h="64" measuredW="77" measuredH="79" zOrder="9" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Home</text>
       </controlProperties>
     </control>
-    <control controlID="31" controlTypeID="com.balsamiq.mockups::Link" x="962" y="82" w="-1" h="-1" measuredW="39" measuredH="21" zOrder="16" locked="false" isInGroup="-1">
+    <control controlID="31" controlTypeID="com.balsamiq.mockups::Link" x="962" y="82" w="-1" h="-1" measuredW="39" measuredH="21" zOrder="10" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Log%20in</text>
       </controlProperties>
