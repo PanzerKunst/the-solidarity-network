@@ -1,9 +1,9 @@
 @(user: User)
-@main("Solidarity Network - Search help requests", "searchHelpRequests") {
+@main("Solidarity Network - Search help requests", "search-help-requests") {
 <!--
     Header
 -->
-@nav(user)
+@nav(Some(user))
 
 } {
 <!--
@@ -15,50 +15,66 @@
     Javascript
 -->
 <script id="content-template" type="text/html">
-    <h1>Searc help requests</h1>
+    <h1>Search help requests</h1>
 
     <form>
         <div class="field">
-            <label for="title">Title <span>*</span></label>
-            <textarea id="title" type="text"/>
+            <input id="query" type="text"/>
 
-            <p class="field-error" data-check="empty">Your request needs a title.</p>
+            <p class="field-error" data-check="search-keywords">Keywords are optional. Only "city", "country",
+                "firstName", "lastName" and "username" are treated as keywords.</p>
         </div>
 
-        <div class="field">
-            <label for="description">Description <span>*</span></label>
-            <textarea id="description" type="text"/>
-
-            <p class="field-error" data-check="empty">Please describe how people can help you.</p>
-        </div>
-
-        <div class="field">
-            <label for="expiry-date">Expiry date <span>*</span></label>
-            <input id="expiry-date" type="text" placeholder="yyyy-mm-dd"/>
-
-            <p class="field-error" data-check="empty">In order to avoid obsolete requests, an expiry date must be
-                set.</p>
-
-            <p class="field-error" data-check="in-future">Your help request would already be expired... please select a
-                date in the future</p>
-
-            <p class="field-error" data-check="in-max-2-weeks">In order to avoid obsolete requests, the maximum expiry
-                date is two weeks.<br/>
-                If nobody was able to help you after two weeks, feel free to submit a new request.</p>
-        </div>
-
-
-        <a id="submit-button">
-            <span>Submit</span>
+        <a id="search-button">
+            <span>Search</span>
         </a>
 
         <input type="submit" style="visibility: hidden"/>
     </form>
+
+    <div id="search-results"></div>
+</script>
+
+<script id="search-results-template" type="text/html">
+    <table>
+        <th>By</th>
+        <th>Title & description</th>
+        <th>Submitted</th>
+        <th>Expires</th>
+
+        {{#helpRequests}}
+        <tr>
+            <!-- By -->
+            <td>
+                <span>{{requester.username}}</span>
+                <span>{{requester.firstName}}</span>
+                <span>{{requester.lastName}}</span>
+                <span>{{requester.city}}</span>
+            </td>
+
+            <!-- Title & description -->
+            <td>
+                <h3>{{title}}</h3>
+                <p>{{description}}</p>
+            </td>
+
+            <!-- Submitted -->
+            <td>
+                <span>{{creationDate}}</span>
+            </td>
+
+            <!-- Expires -->
+            <td>
+                <span>{{expiryDate}}</span>
+            </td>
+        </tr>
+        {{/helpRequests}}
+    </table>
 </script>
 
 <script type="text/javascript">
     window.addEvent("domready", function () {
-        new CBR.Controllers.CreateHelpRequest({
+        new CBR.Controllers.SearchHelpRequests({
             el: "#content"
         }).run();
     });

@@ -1,8 +1,9 @@
-@(user: User)
+@(user: Option[User])
 <nav id="header-nav">
     <a href="/home">Home</a>
 
     <ul>
+        @if(user.isDefined) {
         <li>
             <span>Help dashboard</span>
             <ul class="sub-nav">
@@ -10,8 +11,8 @@
                 <li><a href="/help">Help requests near me</a></li>
                 <li><a href="/help-requests/new">Submit a help request</a></li>
                 <li><a href="/help-requests">Search help requests</a></li>
-                <li><a href="/help-requests?by=@user.username">My help requests</a></li>
-                <li><a href="/help-requests?respondedBy=@user.username">Help requests I responded to</a></li>
+                <li><a href="/help-requests?by=@user.get.username">My help requests</a></li>
+                <li><a href="/help-requests?respondedBy=@user.get.username">Help requests I responded to</a></li>
             </ul>
         </li>
 
@@ -32,11 +33,16 @@
                 <li><a href="/messages/sent">Sent messages</a></li>
             </ul>
         </li>
+        }
 
         <li><a href="/forum">Forum</a></li>
 
         <li><a href="/about-us">About us</a></li>
     </ul>
 
+    @if(user.isDefined) {
     <a href="/logout">Log out</a>
+    } else {
+    <a href="/login">Log in</a>
+    }
 </nav>
