@@ -26,7 +26,7 @@
         <text>Menu</text>
       </controlProperties>
     </control>
-    <control controlID="10" controlTypeID="com.balsamiq.mockups::Label" x="1221" y="176" w="-1" h="-1" measuredW="40" measuredH="21" zOrder="6" locked="false" isInGroup="-1">
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::Label" x="1221" y="176" w="-1" h="-1" measuredW="39" measuredH="21" zOrder="6" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Home</text>
       </controlProperties>
@@ -71,7 +71,7 @@
         <text>Messages</text>
       </controlProperties>
     </control>
-    <control controlID="24" controlTypeID="com.balsamiq.mockups::TextArea" x="134" y="99" w="220" h="128" measuredW="200" measuredH="140" zOrder="13" locked="false" isInGroup="-1">
+    <control controlID="24" controlTypeID="com.balsamiq.mockups::TextArea" x="134" y="99" w="220" h="107" measuredW="200" measuredH="140" zOrder="13" locked="false" isInGroup="-1">
       <controlProperties>
         <text>-%20Help%20dashboard%0A-%20Help%20requests%20near%20me%0A-%20Submit%20a%20help%20request%0A-%20Search%20help%20requests%0A-%20My%20help%20requests%0A-%20Help%20requests%20I%20responded%20to</text>
       </controlProperties>
@@ -106,7 +106,7 @@
         <text>Home</text>
       </controlProperties>
     </control>
-    <control controlID="31" controlTypeID="com.balsamiq.mockups::Link" x="962" y="82" w="-1" h="-1" measuredW="50" measuredH="21" zOrder="22" locked="false" isInGroup="-1">
+    <control controlID="31" controlTypeID="com.balsamiq.mockups::Link" x="962" y="82" w="-1" h="-1" measuredW="49" measuredH="21" zOrder="22" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Log%20out</text>
       </controlProperties>
