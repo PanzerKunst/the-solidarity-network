@@ -1,5 +1,5 @@
 // Function to calculate relative EM value for target relative to container
-@function -tns-em($targetPx, $contextPx) {
+@function -tsn-em($targetPx, $contextPx) {
   @return $targetPx / $contextPx * 1em;
 }
 

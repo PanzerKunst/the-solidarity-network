@@ -1,14 +1,14 @@
+@import "lib/common";
+
 form {
-  label {
-    display: inline-block;
-    width: 9em;
+  .field {
+    margin-bottom: 0.5em;
   }
 
   .validation-icon {
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    background-size: 1em 1em;
+    width: $validationIconWidth;
+    height: $validationIconHeight;
+    background-size: $validationIconWidth $validationIconHeight;
   }
 
   .valid {

@@ -252,5 +252,10 @@
         <text/>
       </controlProperties>
     </control>
+    <control controlID="72" controlTypeID="com.balsamiq.mockups::Link" x="659" y="299" w="-1" h="-1" measuredW="65" measuredH="21" zOrder="51" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Available%3F</text>
+      </controlProperties>
+    </control>
   </controls>
 </mockup>

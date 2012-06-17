@@ -12,13 +12,26 @@
 <h1>Help dashboard</h1>
 
 <div class="actions">
-    <a href="/help-requests/new">Submit a help request</a><a href="/help-requests">Search help requests</a>
+    <span>
+        <a href="/help-requests/new">Submit a help request</a>
+    </span><!--
+ --><span>
+        <a href="/help-requests">Search help requests</a>
+    </span>
+
 </div>
 <div class="actions">
-    <a href="/help-requests?by=@user.username">My help requests</a><a href="/help-requests?respondedBy=@user.username">Help requests I responded to</a>
+    <span>
+        <a href="/help-requests?by=@user.username">My help requests</a>
+    </span><!--
+ --><span>
+        <a href="/help-requests?respondedBy=@user.username">Help requests I responded to</a>
+    </span>
 </div>
 
-<a id="rss-feed">Help requests near me</a>
+<div id="rss-feed-wrapper">
+    <a id="rss-feed">Help requests near me</a>
+</div>
 } {
 <!--
     Javascript

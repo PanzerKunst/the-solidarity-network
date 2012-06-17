@@ -41,6 +41,10 @@ p {
   margin-bottom: 1em;
 }
 
+a, span, label {
+  display: inline-block;  // For "width" declaration to work
+}
+
 #content {
   clear: both;
   width: 80%;

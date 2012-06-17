@@ -27,6 +27,9 @@ p {
   color: #3f3f3f;
   margin-bottom: 1em; }
 
+a, span, label {
+  display: inline-block; }
+
 #content {
   clear: both;
   width: 80%;
