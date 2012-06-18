@@ -1,0 +1,22 @@
+header {
+  background-color: #f5f5f5;
+  padding-bottom: 10em; }
+
+#header-nav > span {
+  float: left;
+  width: 15%; }
+#header-nav > ul {
+  float: left;
+  width: 70%; }
+  #header-nav > ul > li {
+    width: 20%;
+    float: left;
+    position: relative; }
+    #header-nav > ul > li > span {
+      cursor: pointer; }
+    #header-nav > ul > li > ul {
+      position: absolute;
+      background-color: #f5f5f5; }
+
+.sub-nav {
+  display: none; }

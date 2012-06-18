@@ -1,7 +1,5 @@
 @import "lib/common";
 
-// Base Element styles
-
 body {
   font-size: $baseline;
 }
@@ -51,38 +49,10 @@ a, span, label {
   margin: 0 auto;
 }
 
-
-// Navigation
-
-$menuWidth: 70%;
-
-#header-nav {
-  > a {
-    float: left;
-    width: ((100 - $menuWidth) / 2);
-  }
-
-  > ul {
-    float: left;
-    width: $menuWidth;
-
-    > li {
-      width: (100% / 5);
-      float: left;
-      position: relative;
-
-      > span {
-        cursor: pointer;
-      }
-
-      > ul {
-        position: absolute;
-        background-color: white;
-      }
-    }
-  }
+#rss-feed-wrapper {
+  text-align: center;
 }
 
-.sub-nav {
-  display: none;
+#website-language-selection {
+  text-align: center;
 }

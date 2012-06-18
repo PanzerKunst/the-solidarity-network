@@ -51,12 +51,12 @@
         <icon>FlagIcon%7Csmall</icon>
       </controlProperties>
     </control>
-    <control controlID="18" controlTypeID="com.balsamiq.mockups::ComboBox" x="1272" y="425" w="-1" h="-1" measuredW="70" measuredH="23" zOrder="11" locked="false" isInGroup="-1">
+    <control controlID="18" controlTypeID="com.balsamiq.mockups::ComboBox" x="1305" y="425" w="-1" h="-1" measuredW="70" measuredH="23" zOrder="11" locked="false" isInGroup="-1">
       <controlProperties>
         <text>English</text>
       </controlProperties>
     </control>
-    <control controlID="19" controlTypeID="com.balsamiq.mockups::Icon" x="1248" y="424" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="12" locked="false" isInGroup="-1">
+    <control controlID="19" controlTypeID="com.balsamiq.mockups::Icon" x="1281" y="424" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="12" locked="false" isInGroup="-1">
       <controlProperties>
         <icon>FlagIcon%7Csmall</icon>
       </controlProperties>
@@ -101,12 +101,7 @@
         <text>-%20My%20profile%0A-%20Edit</text>
       </controlProperties>
     </control>
-    <control controlID="30" controlTypeID="com.balsamiq.mockups::Image" x="13" y="78" w="115" h="64" measuredW="77" measuredH="79" zOrder="21" locked="false" isInGroup="-1">
-      <controlProperties>
-        <text>Home</text>
-      </controlProperties>
-    </control>
-    <control controlID="31" controlTypeID="com.balsamiq.mockups::Link" x="962" y="82" w="-1" h="-1" measuredW="49" measuredH="21" zOrder="22" locked="false" isInGroup="-1">
+    <control controlID="31" controlTypeID="com.balsamiq.mockups::Link" x="962" y="82" w="-1" h="-1" measuredW="49" measuredH="21" zOrder="21" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Log%20out</text>
       </controlProperties>

@@ -9,12 +9,18 @@
 <!--
     Content
 -->
+<h1>Welcome back, @user.firstName!</h1>
 
-<p>Welcome back, @user.firstName!</p>
-<div>
-    <a href="/help">Help dashboard</a>
-    <a href="/my-profile">My profile</a>
-    <a href="/messages">Messages</a>
+<div class="actions">
+    <span>
+        <a href="/help">Help dashboard</a>
+    </span><!--
+ --><span>
+        <a href="/my-profile">My profile</a>
+    </span><!--
+ --><span>
+        <a href="/messages">Messages</a>
+    </span>
 </div>
 
 <div id="website-language-selection">
@@ -32,4 +38,5 @@
     window.addEvent("domready", function () {
         new CBR.Controllers.NavController().run();
     });
-</script>}
+</script>
+}

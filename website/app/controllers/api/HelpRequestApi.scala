@@ -25,4 +25,22 @@ object HelpRequestApi extends Controller {
         }
       }
   }
+
+  def get = Action {
+    implicit request =>
+
+      var filtersMap = Map[String, String]()
+
+      val filters = if (filtersMap.size == 0)
+        None
+      else
+        Some(filtersMap)
+
+      val matchingHelpRequests = HelpRequestDto.get(filters)
+
+      if (matchingHelpRequests.isEmpty)
+        NotFound
+      else
+        Ok(JsonUtil.serialize(matchingHelpRequests))
+  }
 }

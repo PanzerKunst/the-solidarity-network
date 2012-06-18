@@ -15,8 +15,10 @@
 -->
 
 <script id="content-template" type="text/html">
+    <h1>Login</h1>
+
     <form>
-        <p id="auth-failed" style="display: none">Wrong credentials. Please try again!</p>
+        <p id="auth-failed" style="display: none">Wrong credentials :( Please try again!</p>
 
         <div class="field">
             <input id="username-or-email" type="text" placeholder="Username or e-mail *"/>
@@ -30,11 +32,13 @@
             <p class="field-error" data-check="empty">Oops, you forgot the password!</p>
         </div>
 
-        <a id="login-button">
-            <span>Login</span>
-        </a>
+        <span id="submit-button-wrapper">
+            <a id="login-button">
+                <span>Log in</span>
+            </a>
 
-        <input type="submit" style="visibility: hidden" />
+            <input type="submit" style="visibility: hidden" />
+        </span>
 
     </form>
 </script>

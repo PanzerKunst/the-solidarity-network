@@ -64,7 +64,14 @@ object Application extends Controller {
 
   def loggedInUser(session: Session): Option[User] = {
     session.get("userId") match {
-      case Some(userId) => UserDto.getAUserWhere(Some(Map("id" -> userId)))
+      case Some(userId) => {
+        val matchingUsers = UserDto.get(Some(Map("id" -> userId)))
+
+        if (matchingUsers.isEmpty)
+          None
+        else
+          Some(matchingUsers.head)
+      }
       case None => None
     }
   }

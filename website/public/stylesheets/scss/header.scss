@@ -1,0 +1,39 @@
+@import "lib/common";
+
+header {
+  background-color: $headerBg;
+  padding-bottom: 10em;
+}
+
+$menuWidth: 70%;
+
+#header-nav {
+  > span {
+    float: left;
+    width: ((100 - $menuWidth) / 2);
+  }
+
+  > ul {
+    float: left;
+    width: $menuWidth;
+
+    > li {
+      width: (100% / 5);
+      float: left;
+      position: relative;
+
+      > span {
+        cursor: pointer;
+      }
+
+      > ul {
+        position: absolute;
+        background-color: $headerBg;
+      }
+    }
+  }
+}
+
+.sub-nav {
+  display: none;
+}

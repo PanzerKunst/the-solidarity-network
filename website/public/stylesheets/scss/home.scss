@@ -1,12 +1,12 @@
 @import "lib/common";
 
-body#help-dashboard {
+body#home {
   #content {
     .actions {
       margin: 10em 0;
 
       > span {
-        width: 50%;
+        width: (100% / 3);
         text-align: center;
       }
     }

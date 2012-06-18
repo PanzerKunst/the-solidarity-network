@@ -21,11 +21,13 @@ object AuthApi extends Controller {
 
       filtersMap += ("password" -> user.password)
 
-      UserDto.getAUserWhere(Some(filtersMap)) match {
-        case Some(user) => Ok.withSession(
-          session + ("userId" -> user.id.toString)
+      val matchingUsers = UserDto.get(Some(filtersMap))
+
+      if (matchingUsers.isEmpty)
+        NotFound
+      else
+        Ok.withSession(
+          session + ("userId" -> matchingUsers.head.id.toString)
         )
-        case None => NotFound
-      }
   }
 }

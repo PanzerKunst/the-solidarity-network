@@ -1,0 +1,22 @@
+@import "lib/common";
+
+body#login {
+  #content {
+    $inputWidth: 12em;
+    $extraSpaceForInputPaddingAndBorder: 1em;
+
+    .field {
+      width: $inputWidth + $extraSpaceForInputPaddingAndBorder;
+      margin-left: auto;
+      margin-right: auto;
+
+      > input {
+        width: $inputWidth;
+      }
+    }
+
+    #auth-failed {
+      text-align: center;
+    }
+  }
+}

@@ -4,11 +4,8 @@ body#register #content .field {
   margin-right: auto; }
   body#register #content .field > label {
     width: 9em; }
-  body#register #content .field > input, body#register #content .field > select {
+  body#register #content .field > input,
+  body#register #content .field > select {
     width: 12em; }
 body#register #content #check-username-availability {
   width: 6em; }
-body#register #content #register-button-wrapper {
-  width: 100%;
-  text-align: center;
-  margin-top: 2em; }

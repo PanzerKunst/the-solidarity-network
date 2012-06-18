@@ -34,6 +34,7 @@ CBR.Controllers.Register = new Class({
                 "first-name",
                 "last-name",
                 "email",
+                "email-confirmation",
                 "username",
                 "password",
                 "city",
@@ -66,7 +67,7 @@ CBR.Controllers.Register = new Class({
                 url: "/api/users",
                 data: CBR.JsonUtil.stringifyModel(user),
                 onSuccess: function (responseText, responseXML) {
-                    console.log("Registration successful :)");
+                    location.replace("/login");
                 },
                 onFailure: function (xhr) {
                     alert("AJAX fail :(");
@@ -84,7 +85,7 @@ CBR.Controllers.Register = new Class({
             if (_this.$usernameField.val() !== "") {
                 new Request({
                     urlEncoded: false,
-                    url: "/api/users?username=" + _this.$usernameField.val(),
+                    url: "/api/users/first?username=" + _this.$usernameField.val(),
                     onSuccess: function (responseText, responseXML) {
 
                         var $wrapper = _this.$usernameField.parent();
@@ -113,7 +114,7 @@ CBR.Controllers.Register = new Class({
             if (_this.$emailField.val() !== "") {
                 new Request({
                     urlEncoded: false,
-                    url: "/api/users?email=" + _this.$emailField.val().toLowerCase(),
+                    url: "/api/users/first?email=" + _this.$emailField.val().toLowerCase(),
                     onSuccess: function (responseText, responseXML) {
 
                         var $wrapper = _this.$emailAlreadyRegisteredParagraph.parent();
@@ -140,7 +141,7 @@ CBR.Controllers.Register = new Class({
         var xhr = new Request({
             urlEncoded: false,
             async: false,
-            url: "/api/users?username=" + this.$usernameField.val()
+            url: "/api/users/first?username=" + this.$usernameField.val()
         }).get();
 
         return xhr.status === 404;
@@ -153,7 +154,7 @@ CBR.Controllers.Register = new Class({
         var xhr = new Request({
             urlEncoded: false,
             async: false,
-            url: "/api/users?email=" + this.$emailField.val().toLowerCase()
+            url: "/api/users/first?email=" + this.$emailField.val().toLowerCase()
         }).get();
 
         return xhr.status === 404;

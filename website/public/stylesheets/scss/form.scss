@@ -22,4 +22,19 @@ form {
       background-image: url("/assets/images/invalid.png");
     }
   }
+
+  .field-error {
+    font-style: italic;
+  }
+}
+
+#submit-button-wrapper {
+  width: 100%;
+  text-align: center;
+
+  margin-top: 2em;
+
+  > input[type=submit] {
+    display: block;
+  }
 }

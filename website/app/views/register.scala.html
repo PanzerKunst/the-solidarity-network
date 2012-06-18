@@ -51,6 +51,17 @@
         </div>
 
         <div class="field">
+            <label for="email-confirmation">Confirm e-mail <span>*</span></label><!--
+         --><input id="email-confirmation" type="text"/><!--
+         --><span class="validation-icon"></span>
+
+            <p class="field-error" data-check="empty">Registering with an incorrect e-mail address would be frustrating
+                for both of us</p>
+
+            <p class="field-error" id="emails-do-not-match">The e-mails do not match!</p>
+        </div>
+
+        <div class="field">
             <label for="username">Username <span>*</span></label><!--
          --><input id="username" type="text"/><!--
          --><span class="validation-icon"></span><!--
@@ -96,26 +107,32 @@
             <div class="field">
                 <label for="country">Country <span>*</span></label><!--
              --><select id="country">
-                    <option value=""></option>
-                    {{#countries}}
-                    <option value="{{id}}">{{name}}</option>
-                    {{/countries}}
-                </select><!--
+                <option value=""></option>
+                {{#countries}}
+                <option value="{{id}}">{{name}}</option>
+                {{/countries}}
+            </select><!--
              --><span class="validation-icon"></span>
 
                 <p class="field-error" data-check="empty">Where exactly is your city located?</p>
             </div>
         </fieldset>
 
-        <span id="register-button-wrapper">
+        <span id="submit-button-wrapper">
             <a id="register-button">
                 <span>Register</span>
             </a>
+
+            <input type="submit" style="visibility: hidden"/>
         </span>
-
-        <input type="submit" style="visibility: hidden"/>
-
     </form>
+
+    <div id="website-language-selection">
+        <label for="language-select">Display the website in:</label>
+        <select id="language-select">
+            <option value="eng">English</option>
+        </select>
+    </div>
 </script>
 
 <script type="text/javascript">
@@ -123,7 +140,8 @@
         new CBR.Controllers.Register({
             el: "#content",
             countries: @Html(common.JsonUtil.serialize(countries))
-        }).run();
-    });
+    }).run();
+    })
+    ;
 </script>
 }

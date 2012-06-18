@@ -8,7 +8,7 @@ import play.api.Logger
 
 
 object UserDto {
-  def getAUserWhere(filters: Option[Map[String, String]]): Option[User] = {
+  def get(filters: Option[Map[String, String]]): List[User] = {
     DB.withConnection {
       implicit c =>
 
@@ -16,28 +16,22 @@ object UserDto {
           select id, first_name, last_name, username, email, password, street_address, post_code, city, country_id
           from user """ + DbUtil.generateWhereClause(filters) + ";"
 
-        Logger.info("UserDto.getAUserWhere():" + query)
+        Logger.info("UserDto.getUsersWhere():" + query)
 
-        val stream = SQL(query).apply()
-
-        if (stream.isEmpty)
-          None
-        else {
-          val firstRow = stream.head
-
-          Some(new User(
-            firstRow[Long]("id"),
-            firstRow[String]("username"),
-            firstRow[String]("first_name"),
-            firstRow[String]("last_name"),
-            firstRow[String]("email"),
-            firstRow[String]("password"),
-            firstRow[String]("street_address"),
-            firstRow[String]("post_code"),
-            firstRow[String]("city"),
-            firstRow[Long]("country_id")
-          ))
-        }
+        SQL(query)().map(row =>
+          new User(
+            row[Long]("id"),
+            row[String]("username"),
+            row[String]("first_name"),
+            row[String]("last_name"),
+            row[String]("email"),
+            row[String]("password"),
+            row[String]("street_address"),
+            row[String]("post_code"),
+            row[String]("city"),
+            row[Long]("country_id")
+          )
+        ).toList
     }
   }
 

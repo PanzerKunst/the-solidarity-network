@@ -1,14 +1,13 @@
 @import "lib/common";
 
-body#register {
+body#create-help-request {
   #content {
     $labelWidth: 9em;
     $inputWidth: 12em;
-    $checkUsernameAvailabilityWidth: 6em;
     $extraSpaceForInputPaddingAndBorder: 1em;
 
     .field {
-      width: $labelWidth + $inputWidth + $validationIconWidth + $checkUsernameAvailabilityWidth + $extraSpaceForInputPaddingAndBorder;
+      width: $labelWidth + $inputWidth + $validationIconWidth + $extraSpaceForInputPaddingAndBorder;
       margin-left: auto;
       margin-right: auto;
 
@@ -17,13 +16,9 @@ body#register {
       }
 
       > input,
-      > select {
+      > textarea {
         width: $inputWidth;
       }
-    }
-
-    #check-username-availability {
-      width: $checkUsernameAvailabilityWidth;
     }
   }
 }

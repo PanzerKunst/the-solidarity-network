@@ -8,3 +8,12 @@ form .valid > .validation-icon {
   background-image: url("/assets/images/valid.png"); }
 form .invalid > .validation-icon {
   background-image: url("/assets/images/invalid.png"); }
+form .field-error {
+  font-style: italic; }
+
+#submit-button-wrapper {
+  width: 100%;
+  text-align: center;
+  margin-top: 2em; }
+  #submit-button-wrapper > input[type=submit] {
+    display: block; }

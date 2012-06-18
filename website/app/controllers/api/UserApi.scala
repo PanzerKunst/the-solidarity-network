@@ -14,7 +14,7 @@ object UserApi extends Controller {
       Ok
   }
 
-  def getUsers() = Action {
+  def getFirst = Action {
     implicit request =>
 
       var filtersMap = Map[String, String]()
@@ -34,9 +34,11 @@ object UserApi extends Controller {
       else
         Some(filtersMap)
 
-      UserDto.getAUserWhere(filters) match {
-        case Some(user) => Ok(JsonUtil.serialize(user))
-        case None => NotFound
-      }
+      val matchingUsers = UserDto.get(filters)
+
+      if (matchingUsers.isEmpty)
+        NotFound
+      else
+        Ok(JsonUtil.serialize(matchingUsers.head))
   }
 }

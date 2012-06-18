@@ -1,6 +1,10 @@
 @(user: Option[User])
 <nav id="header-nav">
-    <a href="/home">Home</a>
+    <span>
+        @if(user.isDefined) {
+        <a href="/home">Home</a>
+        }
+    </span>
 
     <ul>
         @if(user.isDefined) {
@@ -20,7 +24,7 @@
             <span>My profile</span>
             <ul class="sub-nav">
                 <li><a href="/my-profile">My profile</a></li>
-                <li><a href="/my-profile/edit">Edit</a></li>
+                <li><a href="/my-profile/edit">Edit profile</a></li>
             </ul>
         </li>
 
@@ -40,9 +44,11 @@
         <li><a href="/about-us">About us</a></li>
     </ul>
 
-    @if(user.isDefined) {
-    <a href="/logout">Log out</a>
-    } else {
-    <a href="/login">Log in</a>
-    }
+    <span>
+        @if(user.isDefined) {
+        <a href="/logout">Log out</a>
+        } else {
+        <a href="/login">Login</a>
+        }
+    </span>
 </nav>

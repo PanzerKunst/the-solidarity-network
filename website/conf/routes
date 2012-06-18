@@ -22,6 +22,7 @@ GET     /help-requests/new          controllers.Application.createHelpRequest
 
 # API
 POST    /api/users                  controllers.api.UserApi.create
-GET     /api/users                  controllers.api.UserApi.getUsers
+GET     /api/users/first            controllers.api.UserApi.getFirst
 POST    /api/authenticate           controllers.api.AuthApi.authenticate
 POST    /api/help-requests          controllers.api.HelpRequestApi.create
+GET     /api/help-requests          controllers.api.HelpRequestApi.get
