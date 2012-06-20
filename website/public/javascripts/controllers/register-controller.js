@@ -6,7 +6,7 @@ CBR.Controllers.Register = new Class({
     },
 
     run: function () {
-        this.getEl().html(
+        this.getEl().append(
             Mustache.to_html(
                 jQuery("#content-template").html(),
                 this.options
@@ -50,7 +50,7 @@ CBR.Controllers.Register = new Class({
         e.preventDefault();
 
         if (this.validator.isValid() && this._isUsernameAvailable() && this._isEmailNotRegisteredYet()) {
-            var user = new CBR.User({
+            var user = new CBR.Models.User({
                 username: this.$usernameField.val(),
                 lastName: jQuery("#last-name").val(),
                 firstName: jQuery("#first-name").val(),

@@ -5,7 +5,6 @@ body#register {
     $labelWidth: 9em;
     $inputWidth: 12em;
     $checkUsernameAvailabilityWidth: 6em;
-    $extraSpaceForInputPaddingAndBorder: 1em;
 
     .field {
       width: $labelWidth + $inputWidth + $validationIconWidth + $checkUsernameAvailabilityWidth + $extraSpaceForInputPaddingAndBorder;

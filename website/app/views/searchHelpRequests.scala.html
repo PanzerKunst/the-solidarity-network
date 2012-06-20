@@ -18,16 +18,18 @@
     <h1>Search help requests</h1>
 
     <form>
-        <div class="field">
-            <input id="query" type="text"/>
+        <div class="centered">
+            <div class="field">
+                <input id="query" type="text"/>
 
-            <p class="field-error" data-check="search-keywords">Keywords are optional. Only "city", "country",
-                "firstName", "lastName" and "username" are treated as keywords.</p>
+                <p class="field-error" data-check="search-keywords">Keywords are optional. Only "city", "country",
+                    "firstName", "lastName" and "username" are treated as keywords.</p>
+            </div>
+
+            <a id="search-button">
+                <span>Search</span>
+            </a>
         </div>
-
-        <a id="search-button">
-            <span>Search</span>
-        </a>
 
         <input type="submit" style="visibility: hidden"/>
     </form>
@@ -46,10 +48,10 @@
         <tr>
             <!-- By -->
             <td>
-                <span>{{requester.username}}</span>
-                <span>{{requester.firstName}}</span>
-                <span>{{requester.lastName}}</span>
-                <span>{{requester.city}}</span>
+                <span class="requester-username">{{requester.username}}</span>
+                <span class="requester-first-name">{{requester.firstName}}</span>
+                <span class="requester-last-name">{{requester.lastName}}</span>
+                <span class="requester-city">{{requester.city}}</span>
             </td>
 
             <!-- Title & description -->
@@ -60,12 +62,12 @@
 
             <!-- Submitted -->
             <td>
-                <span>{{creationDate}}</span>
+                <span class="creation-date">{{creationDate}}</span>
             </td>
 
             <!-- Expires -->
             <td>
-                <span>{{expiryDate}}</span>
+                <span class="expiry-date">{{expiryDate}}</span>
             </td>
         </tr>
         {{/helpRequests}}

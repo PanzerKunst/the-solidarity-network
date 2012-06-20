@@ -6,7 +6,7 @@ CBR.Controllers.SearchHelpRequests = new Class({
     },
 
     run: function () {
-        this.getEl().html(
+        this.getEl().append(
             Mustache.to_html(
                 jQuery("#content-template").html(),
                 this.options
@@ -15,7 +15,7 @@ CBR.Controllers.SearchHelpRequests = new Class({
 
         this._initValidation();
 
-        jQuery("#submit-button").click(jQuery.proxy(this._doSearch, this));
+        jQuery("#search-button").click(jQuery.proxy(this._doSearch, this));
         jQuery("form").submit(jQuery.proxy(this._doSearch, this));
     },
 
@@ -33,16 +33,22 @@ CBR.Controllers.SearchHelpRequests = new Class({
         e.preventDefault();
 
         if (this.validator.isValid()) {
-            var helpRequest = new CBR.HelpRequest({
+            var helpRequest = new CBR.Models.HelpRequest({
                 // TODO
             });
 
             new Request({
                 urlEncoded: false,
                 url: "/api/help-requests",
-                data: CBR.JsonUtil.stringifyModel(helpRequest),
                 onSuccess: function (responseText, responseXML) {
-                    // TODO: render results template
+                    jQuery("#search-results").append(
+                        Mustache.to_html(
+                            jQuery("#search-results-template").html(),
+                            {
+                                helpRequests: JSON.parse(responseText)
+                            }
+                        )
+                    );
                 },
                 onFailure: function (xhr) {
                     if (xhr.status === 401)

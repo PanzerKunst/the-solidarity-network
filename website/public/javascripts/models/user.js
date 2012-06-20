@@ -1,5 +1,5 @@
-CBR.User = new Class({
-    Extends: CBR.JsonSerializableModel,
+CBR.Models.User = new Class({
+    Extends: CBR.Models.JsonSerializableModel,
 
     options: {  // Defaults
     },

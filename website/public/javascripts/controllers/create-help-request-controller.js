@@ -6,7 +6,7 @@ CBR.Controllers.CreateHelpRequest = new Class({
     },
 
     run: function () {
-        this.getEl().html(
+        this.getEl().append(
             Mustache.to_html(
                 jQuery("#content-template").html(),
                 this.options
@@ -35,7 +35,7 @@ CBR.Controllers.CreateHelpRequest = new Class({
         e.preventDefault();
 
         if (this.validator.isValid()) {
-            var helpRequest = new CBR.HelpRequest({
+            var helpRequest = new CBR.Models.HelpRequest({
                 title: jQuery("#title").val(),
                 description: jQuery("#description").val(),
                 expiryDate: jQuery("#expiry-date").val()

@@ -1,5 +1,5 @@
-CBR.HelpRequest = new Class({
-    Extends: CBR.JsonSerializableModel,
+CBR.Models.HelpRequest = new Class({
+    Extends: CBR.Models.JsonSerializableModel,
 
     options: {  // Defaults
     },

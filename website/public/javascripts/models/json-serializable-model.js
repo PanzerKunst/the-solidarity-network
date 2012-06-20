@@ -1,4 +1,4 @@
-CBR.JsonSerializableModel = new Class({
+CBR.Models.JsonSerializableModel = new Class({
     initialize: function (options) {
         this.options = options;
     },

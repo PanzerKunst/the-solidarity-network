@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-
-This build.xml is used for merging and compressing Javascript and CSS files used for Appear
-
 Dependencies: 
 	yuicompressor-2.4.7.jar
 	ant-contrib.jar
-
-Basic usage:
-
-	ant main	- updates merged and compressed files for all Javascript and CSS
 
 @author Hjörtur Hilmarsson 
 -->
@@ -57,8 +50,14 @@ Basic usage:
             <filelist dir="${src.css.dir}" files="
                 h5bp/style.css
                 main.css
+                header.css
                 form.css
-                register.css" />
+                register.css
+                login.css
+                home.css
+                help-dashboard.css
+                create-help-request.css
+                search-help-requests.css" />
         </concat>
     </target>
 
@@ -90,7 +89,8 @@ Basic usage:
                 controllers/nav-controller.js
                 controllers/login-controller.js
                 controllers/register-controller.js
-                controllers/create-help-request-controller.js" />
+                controllers/create-help-request-controller.js
+                controllers/search-help-requests-controller.js" />
         </concat>
     </target>
     
@@ -115,7 +115,8 @@ Basic usage:
                 controllers/nav-controller.js
                 controllers/login-controller.js
                 controllers/register-controller.js
-                controllers/create-help-request-controller.js" />
+                controllers/create-help-request-controller.js
+                controllers/search-help-requests-controller.js" />
         </concat>
         <exec executable="cmd" failonerror="true">
             <arg value="/c" />

@@ -6,6 +6,7 @@ import database.HelpRequestDto
 import models.HelpRequest
 import controllers.Application
 import play.api.Logger
+import models.frontend.FrontendHelpRequest
 
 object HelpRequestApi extends Controller {
   def create = Action {
@@ -40,7 +41,10 @@ object HelpRequestApi extends Controller {
 
       if (matchingHelpRequests.isEmpty)
         NotFound
-      else
-        Ok(JsonUtil.serialize(matchingHelpRequests))
+      else {
+        val frontendHelpRequests = for (hr <- matchingHelpRequests) yield new FrontendHelpRequest(hr)
+        Ok(JsonUtil.serialize(frontendHelpRequests))
+      }
+
   }
 }
