@@ -5,3 +5,6 @@ var CBR = CBR || {};
 CBR.Models = CBR.Models || {};
 CBR.Controllers = CBR.Controllers || {};
 CBR.Services = CBR.Services || {};
+
+// Because jsHint doesn't know Mustache
+var Mustache = Mustache || {};

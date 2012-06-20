@@ -10,8 +10,10 @@
     "evil": true,
     "laxbreak": true,
     "bitwise": true,
+    "undef": true,
     "nonew": true,
     "browser": true,
+    "devel": true,
     "jquery": true,
     "mootools": true
 }
