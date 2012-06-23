@@ -3,15 +3,30 @@ package controllers
 import play.api.mvc._
 import models.User
 import database.{UserDto, CountryDto}
+import services.I18nService
+import scala.collection.mutable
 
 object Application extends Controller {
+
+  private val defaultLanguageCode = "en"
 
   def index = Action {
     Ok(views.html.index())
   }
 
   def register = Action {
-    Ok(views.html.register(CountryDto.getAll))
+    implicit request =>
+
+      var i18n: mutable.Map[String, String] = null
+      var languageCode = defaultLanguageCode
+
+      if (request.queryString.contains("lang")) {
+        languageCode = request.queryString.get("lang").get.head
+        i18n = I18nService.get("register", languageCode)
+      } else
+        i18n = I18nService.get("register", defaultLanguageCode)
+
+      Ok(views.html.register(i18n, CountryDto.getAll, languageCode))
   }
 
   def login = Action {

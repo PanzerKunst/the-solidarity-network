@@ -1,4 +1,4 @@
-@(countries: List[Country])
+@(i18n: collection.mutable.Map[String, String], countries: List[Country], languageCode: String)
 @main("Solidarity Network - Register", "register") {
 <!--
     Header
@@ -16,7 +16,7 @@
 -->
 
 <script id="content-template" type="text/html">
-    <h1>Register to the Solidarity Network</h1>
+    <h1>@i18n("register.title")</h1>
 
     <form>
         <div class="field">
@@ -128,9 +128,10 @@
     </form>
 
     <div id="website-language-selection">
-        <label for="language-select">Display the website in:</label>
-        <select id="language-select">
-            <option value="eng">English</option>
+        <label for="language">Display the website in:</label>
+        <select id="language">
+            <option value="en">English</option>
+            <option value="fr">Fran&ccedil;ais</option>
         </select>
     </div>
 </script>
@@ -139,9 +140,9 @@
     window.addEvent("domready",function () {
         new CBR.Controllers.Register({
             el: "#content",
-            countries: @Html(common.JsonUtil.serialize(countries))
-    }).run();
-    })
-    ;
+            countries: @Html(common.JsonUtil.serialize(countries)),
+            languageCode: "@languageCode"
+        }).run();
+    });
 </script>
 }

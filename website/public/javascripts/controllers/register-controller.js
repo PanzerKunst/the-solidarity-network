@@ -15,13 +15,22 @@ CBR.Controllers.Register = new Class({
 
         this.$usernameField = jQuery("#username");
         this.$emailField = jQuery("#email");
+        this.$languageSelect = jQuery("#language");
         this.$usernameTakenParagraph = jQuery("#username-taken");
         this.$emailAlreadyRegisteredParagraph = jQuery("#email-already-registered");
+
+        this.$languageSelect.val(this._getLanguageCode());
 
         this._initValidation();
 
         jQuery("#register-button").click(jQuery.proxy(this._doRegister, this));
         jQuery("form").submit(jQuery.proxy(this._doRegister, this));
+
+        this.$languageSelect.change(jQuery.proxy(this._changeLanguage, this));
+    },
+
+    _getLanguageCode: function () {
+        return this.options.languageCode;
     },
 
     _initValidation: function () {
@@ -42,8 +51,8 @@ CBR.Controllers.Register = new Class({
             ]
         });
 
-        this._checkIfUsernameIsAlreadyTakenOnBlur();
-        this._checkIfEmailIsAlreadyRegisteredOnBlur();
+        this.$usernameField.blur(jQuery.proxy(this._checkIfUsernameIsAlreadyTaken, this));
+        this.$emailField.blur(jQuery.proxy(this._checkIfEmailIsAlreadyRegistered, this));
     },
 
     _doRegister: function (e) {
@@ -77,64 +86,60 @@ CBR.Controllers.Register = new Class({
         }
     },
 
-    _checkIfUsernameIsAlreadyTakenOnBlur: function () {
-        var _this = this;
+    _checkIfUsernameIsAlreadyTaken: function (e) {
+        e.preventDefault();
 
-        this.$usernameField.blur(function () {
-            _this.$usernameTakenParagraph.slideUp(200, "easeInQuad");
+        this.$usernameTakenParagraph.slideUp(200, "easeInQuad");
 
-            if (_this.$usernameField.val() !== "") {
-                new Request({
-                    urlEncoded: false,
-                    headers: { "Content-Type": "application/json" },
-                    url: "/api/users/first?username=" + _this.$usernameField.val(),
-                    onSuccess: function (responseText, responseXML) {
+        if (this.$usernameField.val() !== "") {
+            new Request({
+                urlEncoded: false,
+                headers: { "Content-Type": "application/json" },
+                url: "/api/users/first?username=" + this.$usernameField.val(),
+                onSuccess: function (responseText, responseXML) {
 
-                        var $wrapper = _this.$usernameField.parent();
-                        $wrapper.removeClass("valid");
-                        $wrapper.addClass("invalid");
+                    var $wrapper = this.$usernameField.parent();
+                    $wrapper.removeClass("valid");
+                    $wrapper.addClass("invalid");
 
-                        _this.$usernameTakenParagraph.slideDown(200, "easeOutQuad");
-                    },
-                    onFailure: function (xhr) {
-                        if (xhr.status === 404)
-                            console.log("username available :)");
-                        else
-                            alert("AJAX fail :(");
-                    }
-                }).get();
-            }
-        });
+                    this.$usernameTakenParagraph.slideDown(200, "easeOutQuad");
+                },
+                onFailure: function (xhr) {
+                    if (xhr.status === 404)
+                        console.log("username available :)");
+                    else
+                        alert("AJAX fail :(");
+                }
+            }).get();
+        }
     },
 
-    _checkIfEmailIsAlreadyRegisteredOnBlur: function () {
-        var _this = this;
+    _checkIfEmailIsAlreadyRegistered: function (e) {
+        e.preventDefault();
 
-        this.$emailField.blur(function () {
-            _this.$emailAlreadyRegisteredParagraph.slideUp(200, "easeInQuad");
+        this.$emailAlreadyRegisteredParagraph.slideUp(200, "easeInQuad");
 
-            if (_this.$emailField.val() !== "") {
-                new Request({
-                    urlEncoded: false,
-                    headers: { "Content-Type": "application/json" },
-                    url: "/api/users/first?email=" + _this.$emailField.val().toLowerCase(),
-                    onSuccess: function (responseText, responseXML) {
+        if (this.$emailField.val() !== "") {
+            new Request({
+                urlEncoded: false,
+                headers: { "Content-Type": "application/json" },
+                url: "/api/users/first?email=" + this.$emailField.val().toLowerCase(),
+                onSuccess: function (responseText, responseXML) {
 
-                        var $wrapper = _this.$emailAlreadyRegisteredParagraph.parent();
-                        $wrapper.removeClass("valid");
-                        $wrapper.addClass("invalid");
+                    var $wrapper = this.$emailAlreadyRegisteredParagraph.parent();
+                    $wrapper.removeClass("valid");
+                    $wrapper.addClass("invalid");
 
-                        _this.$emailAlreadyRegisteredParagraph.slideDown(200, "easeOutQuad");
-                    },
-                    onFailure: function (xhr) {
-                        if (xhr.status === 404)
-                            console.log("email not registered yet :)");
-                        else
-                            alert("AJAX fail :(");
-                    }
-                }).get();
-            }
-        });
+                    this.$emailAlreadyRegisteredParagraph.slideDown(200, "easeOutQuad");
+                },
+                onFailure: function (xhr) {
+                    if (xhr.status === 404)
+                        console.log("email not registered yet :)");
+                    else
+                        alert("AJAX fail :(");
+                }
+            }).get();
+        }
     },
 
     _isUsernameAvailable: function () {
@@ -163,5 +168,13 @@ CBR.Controllers.Register = new Class({
         }).get();
 
         return xhr.status === 404;
+    },
+
+    _changeLanguage: function(e) {
+        e.preventDefault();
+
+        var languageCode = e.currentTarget.value;
+
+        location.replace("/register?lang=" + languageCode);
     }
 });

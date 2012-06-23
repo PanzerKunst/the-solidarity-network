@@ -411,5 +411,15 @@
         <text>sun.%20apr.%2022%2C%202012%2C%2014%3A33</text>
       </controlProperties>
     </control>
+    <control controlID="209" controlTypeID="com.balsamiq.mockups::StickyNote" x="144" y="476" w="175" h="123" measuredW="109" measuredH="123" zOrder="81" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Follow%20the%20user%27s%20activity.%20On%20Home%20page%2C%20and%20optionally%20by%20email</text>
+      </controlProperties>
+    </control>
+    <control controlID="211" controlTypeID="com.balsamiq.mockups::CheckBox" x="432" y="629" w="-1" h="-1" measuredW="197" measuredH="22" zOrder="82" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Subscribe%20to%20future%20responses</text>
+      </controlProperties>
+    </control>
   </controls>
 </mockup>
