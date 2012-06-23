@@ -76,6 +76,8 @@
 
 <script type="text/javascript">
     window.addEvent("domready", function () {
+        new CBR.Controllers.NavController().run();
+
         new CBR.Controllers.SearchHelpRequests({
             el: "#content"
         }).run();

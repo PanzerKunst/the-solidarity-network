@@ -49,6 +49,7 @@ Dependencies:
         <concat destfile="${dist.merged.file.css}" fixlastline="yes" append="no">
             <filelist dir="${src.css.dir}" files="
                 h5bp/style.css
+                responsive.css
                 main.css
                 header.css
                 form.css

@@ -43,6 +43,7 @@ CBR.Controllers.CreateHelpRequest = new Class({
 
             new Request({
                 urlEncoded: false,
+                headers: { "Content-Type": "application/json" },
                 url: "/api/help-requests",
                 data: CBR.JsonUtil.stringifyModel(helpRequest),
                 onSuccess: function (responseText, responseXML) {

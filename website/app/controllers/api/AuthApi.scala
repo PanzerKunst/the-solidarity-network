@@ -2,15 +2,14 @@ package controllers.api
 
 import common.JsonUtil
 import database.UserDto
-import play.api.mvc.{AnyContentAsText, Action, Controller}
+import play.api.mvc.{Action, Controller}
 import models.User
 
 object AuthApi extends Controller {
-  def authenticate = Action {
+  def authenticate = Action(parse.json) {
     implicit request =>
 
-      val req: AnyContentAsText = request.body.asInstanceOf[AnyContentAsText]
-      val user = JsonUtil.parse(req.txt, classOf[User])
+      val user = JsonUtil.parse(request.body.toString, classOf[User])
 
       var filtersMap = Map[String, String]()
 

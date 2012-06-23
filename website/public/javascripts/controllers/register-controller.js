@@ -64,6 +64,7 @@ CBR.Controllers.Register = new Class({
 
             new Request({
                 urlEncoded: false,
+                headers: { "Content-Type": "application/json" },
                 url: "/api/users",
                 data: CBR.JsonUtil.stringifyModel(user),
                 onSuccess: function (responseText, responseXML) {
@@ -85,6 +86,7 @@ CBR.Controllers.Register = new Class({
             if (_this.$usernameField.val() !== "") {
                 new Request({
                     urlEncoded: false,
+                    headers: { "Content-Type": "application/json" },
                     url: "/api/users/first?username=" + _this.$usernameField.val(),
                     onSuccess: function (responseText, responseXML) {
 
@@ -114,6 +116,7 @@ CBR.Controllers.Register = new Class({
             if (_this.$emailField.val() !== "") {
                 new Request({
                     urlEncoded: false,
+                    headers: { "Content-Type": "application/json" },
                     url: "/api/users/first?email=" + _this.$emailField.val().toLowerCase(),
                     onSuccess: function (responseText, responseXML) {
 
@@ -140,6 +143,7 @@ CBR.Controllers.Register = new Class({
 
         var xhr = new Request({
             urlEncoded: false,
+            headers: { "Content-Type": "application/json" },
             async: false,
             url: "/api/users/first?username=" + this.$usernameField.val()
         }).get();
@@ -153,6 +157,7 @@ CBR.Controllers.Register = new Class({
 
         var xhr = new Request({
             urlEncoded: false,
+            headers: { "Content-Type": "application/json" },
             async: false,
             url: "/api/users/first?email=" + this.$emailField.val().toLowerCase()
         }).get();

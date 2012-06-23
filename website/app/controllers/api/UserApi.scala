@@ -3,14 +3,13 @@ package controllers.api
 import models.User
 import common.JsonUtil
 import database.UserDto
-import play.api.mvc.{AnyContentAsText, Action, Controller}
+import play.api.mvc.{Action, Controller}
 
 object UserApi extends Controller {
-  def create = Action {
+  def create = Action(parse.json) {
     implicit request =>
 
-      val req: AnyContentAsText = request.body.asInstanceOf[AnyContentAsText]
-      UserDto.create(JsonUtil.parse(req.txt, classOf[User]))
+      UserDto.create(JsonUtil.parse(request.body.toString, classOf[User]))
       Ok
   }
 

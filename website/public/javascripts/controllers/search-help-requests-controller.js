@@ -39,6 +39,7 @@ CBR.Controllers.SearchHelpRequests = new Class({
 
             new Request({
                 urlEncoded: false,
+                headers: { "Content-Type": "application/json" },
                 url: "/api/help-requests",
                 onSuccess: function (responseText, responseXML) {
                     jQuery("#search-results").append(

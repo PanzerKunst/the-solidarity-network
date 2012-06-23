@@ -45,6 +45,7 @@ CBR.Controllers.Login = new Class({
 
             new Request({
                 urlEncoded: false,
+                headers: { "Content-Type": "application/json" },
                 url: "/api/authenticate",
                 data: CBR.JsonUtil.stringifyModel(user),
                 onSuccess: function (responseText, responseXML) {

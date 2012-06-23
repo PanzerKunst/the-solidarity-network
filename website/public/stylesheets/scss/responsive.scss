@@ -7,11 +7,10 @@ body {
 
 #content {
   width: 100%;
+  margin: 0 auto;
 
   // In some cases we don’t want the size to exceed a certain width on bigger screens to make sure the content is always readable
   max-width: 1024px;
-
-  margin: 0 auto;
 
   // When the page is full width we don’t want the content to be crammed to the edges of the screen so lets add some spacing on the sides
   padding-left: 1em;
@@ -27,10 +26,6 @@ body {
 }
 
 // Prevent blurry images
-img,
-object,
-embed,
-video {
+img {
   max-width: 100%;
-  display: block;
 }
