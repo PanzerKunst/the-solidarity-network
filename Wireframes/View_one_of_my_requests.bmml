@@ -107,44 +107,85 @@
         <text>View%20full%20profile</text>
       </controlProperties>
     </control>
-    <control controlID="177" controlTypeID="com.balsamiq.mockups::Button" x="533" y="375" w="123" h="27" measuredW="110" measuredH="27" zOrder="22" locked="false" isInGroup="-1">
-      <controlProperties>
-        <text>Mark%20as%20closed</text>
-      </controlProperties>
-    </control>
-    <control controlID="178" controlTypeID="com.balsamiq.mockups::Button" x="686" y="375" w="74" h="27" measuredW="63" measuredH="27" zOrder="23" locked="false" isInGroup="-1">
+    <control controlID="178" controlTypeID="com.balsamiq.mockups::Button" x="518" y="375" w="74" h="27" measuredW="63" measuredH="27" zOrder="22" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Delete</text>
       </controlProperties>
     </control>
-    <control controlID="179" controlTypeID="com.balsamiq.mockups::Button" x="1292" y="705" w="74" h="27" measuredW="46" measuredH="27" zOrder="24" locked="false" isInGroup="-1">
+    <control controlID="179" controlTypeID="com.balsamiq.mockups::Button" x="1292" y="705" w="74" h="27" measuredW="46" measuredH="27" zOrder="23" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Edit</text>
       </controlProperties>
     </control>
-    <control controlID="180" controlTypeID="com.balsamiq.mockups::Button" x="1270" y="739" w="114" h="27" measuredW="110" measuredH="27" zOrder="25" locked="false" isInGroup="-1">
-      <controlProperties>
-        <text>Mark%20as%20closed</text>
-      </controlProperties>
-    </control>
-    <control controlID="181" controlTypeID="com.balsamiq.mockups::Button" x="1292" y="774" w="74" h="27" measuredW="63" measuredH="27" zOrder="26" locked="false" isInGroup="-1">
+    <control controlID="181" controlTypeID="com.balsamiq.mockups::Button" x="1292" y="746" w="74" h="27" measuredW="63" measuredH="27" zOrder="24" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Delete</text>
       </controlProperties>
     </control>
-    <control controlID="182" controlTypeID="com.balsamiq.mockups::ButtonBar" x="134" y="78" w="801" h="29" measuredW="448" measuredH="29" zOrder="27" locked="false" isInGroup="-1">
+    <control controlID="182" controlTypeID="com.balsamiq.mockups::ButtonBar" x="134" y="78" w="801" h="29" measuredW="448" measuredH="29" zOrder="25" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Help%20dashboard%2C%20My%20profile%2C%20Messages%2C%20Forum%2C%20About%20us</text>
       </controlProperties>
     </control>
-    <control controlID="183" controlTypeID="com.balsamiq.mockups::Image" x="13" y="78" w="115" h="64" measuredW="77" measuredH="79" zOrder="28" locked="false" isInGroup="-1">
+    <control controlID="183" controlTypeID="com.balsamiq.mockups::Image" x="13" y="78" w="115" h="64" measuredW="77" measuredH="79" zOrder="26" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Home</text>
       </controlProperties>
     </control>
-    <control controlID="184" controlTypeID="com.balsamiq.mockups::Link" x="962" y="82" w="-1" h="-1" measuredW="49" measuredH="21" zOrder="29" locked="false" isInGroup="-1">
+    <control controlID="184" controlTypeID="com.balsamiq.mockups::Link" x="962" y="82" w="-1" h="-1" measuredW="49" measuredH="21" zOrder="27" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Log%20out</text>
+      </controlProperties>
+    </control>
+    <control controlID="185" controlTypeID="com.balsamiq.mockups::Image" x="438" y="470" w="60" h="60" measuredW="77" measuredH="79" zOrder="28" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Pic</text>
+      </controlProperties>
+    </control>
+    <control controlID="186" controlTypeID="com.balsamiq.mockups::Label" x="438" y="430" w="-1" h="-1" measuredW="150" measuredH="37" zOrder="29" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>28</size>
+        <text>Responses%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="187" controlTypeID="com.balsamiq.mockups::Label" x="503" y="467" w="-1" h="-1" measuredW="224" measuredH="21" zOrder="30" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Damien%20Bram%2C%20aka%20%22docteur_benway%22%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="188" controlTypeID="com.balsamiq.mockups::Label" x="505" y="490" w="389" h="71" measuredW="1311" measuredH="21" zOrder="31" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipisicing%20elit%2C%20sed%20do%20eiusmod%20tempor%20incididunt%20ut%20labore%20et%20dolore%20magna%20aliqua.%20Ut%20enim%20ad%20minim%20veniam%2C%20quis%20nostrud%20exercitation%20ullamco%20laboris%20nisi%20ut%20aliquip%20ex%20ea%20commodo%20consequat%3F</text>
+      </controlProperties>
+    </control>
+    <control controlID="189" controlTypeID="com.balsamiq.mockups::HRule" x="468" y="570" w="388" h="-1" measuredW="100" measuredH="5" zOrder="32" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>10066329</color>
+      </controlProperties>
+    </control>
+    <control controlID="190" controlTypeID="com.balsamiq.mockups::Image" x="438" y="592" w="60" h="60" measuredW="77" measuredH="79" zOrder="33" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Pic</text>
+      </controlProperties>
+    </control>
+    <control controlID="191" controlTypeID="com.balsamiq.mockups::Label" x="503" y="589" w="-1" h="-1" measuredW="192" measuredH="21" zOrder="34" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Christophe%20Bram%2C%20aka%20%22blackbird%22</text>
+      </controlProperties>
+    </control>
+    <control controlID="192" controlTypeID="com.balsamiq.mockups::Label" x="505" y="612" w="389" h="71" measuredW="1307" measuredH="21" zOrder="35" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipisicing%20elit%2C%20sed%20do%20eiusmod%20tempor%20incididunt%20ut%20labore%20et%20dolore%20magna%20aliqua.%20Ut%20enim%20ad%20minim%20veniam%2C%20quis%20nostrud%20exercitation%20ullamco%20laboris%20nisi%20ut%20aliquip%20ex%20ea%20commodo%20consequat.</text>
+      </controlProperties>
+    </control>
+    <control controlID="193" controlTypeID="com.balsamiq.mockups::Label" x="744" y="467" w="-1" h="-1" measuredW="150" measuredH="21" zOrder="36" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>sun.%20apr.%2022%2C%202012%2C%2014%3A03</text>
+      </controlProperties>
+    </control>
+    <control controlID="194" controlTypeID="com.balsamiq.mockups::Label" x="742" y="589" w="-1" h="-1" measuredW="150" measuredH="21" zOrder="37" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>sun.%20apr.%2022%2C%202012%2C%2014%3A33</text>
       </controlProperties>
     </control>
   </controls>

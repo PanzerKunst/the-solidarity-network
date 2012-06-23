@@ -271,13 +271,13 @@
         <text>Save</text>
       </controlProperties>
     </control>
-    <control controlID="101" controlTypeID="com.balsamiq.mockups::Label" x="236" y="483" w="-1" h="-1" measuredW="154" measuredH="37" zOrder="52" locked="false" isInGroup="-1">
+    <control controlID="101" controlTypeID="com.balsamiq.mockups::Label" x="376" y="483" w="-1" h="-1" measuredW="154" measuredH="37" zOrder="52" locked="false" isInGroup="-1">
       <controlProperties>
         <size>28</size>
         <text>References</text>
       </controlProperties>
     </control>
-    <control controlID="102" controlTypeID="com.balsamiq.mockups::StickyNote" x="365" y="502" w="-1" h="-1" measuredW="109" measuredH="123" zOrder="53" locked="false" isInGroup="-1">
+    <control controlID="102" controlTypeID="com.balsamiq.mockups::StickyNote" x="505" y="502" w="-1" h="-1" measuredW="109" measuredH="123" zOrder="53" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Same%20as%20CS</text>
       </controlProperties>
@@ -352,7 +352,7 @@
         <text>Home</text>
       </controlProperties>
     </control>
-    <control controlID="124" controlTypeID="com.balsamiq.mockups::Link" x="960" y="82" w="-1" h="-1" measuredW="50" measuredH="21" zOrder="68" locked="false" isInGroup="-1">
+    <control controlID="124" controlTypeID="com.balsamiq.mockups::Link" x="960" y="82" w="-1" h="-1" measuredW="49" measuredH="21" zOrder="68" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Log%20out</text>
       </controlProperties>
@@ -368,7 +368,7 @@
         <text>Home</text>
       </controlProperties>
     </control>
-    <control controlID="127" controlTypeID="com.balsamiq.mockups::Link" x="959" y="979" w="-1" h="-1" measuredW="50" measuredH="21" zOrder="71" locked="false" isInGroup="-1">
+    <control controlID="127" controlTypeID="com.balsamiq.mockups::Link" x="959" y="979" w="-1" h="-1" measuredW="49" measuredH="21" zOrder="71" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Log%20out</text>
       </controlProperties>
@@ -384,7 +384,7 @@
         <text>Home</text>
       </controlProperties>
     </control>
-    <control controlID="130" controlTypeID="com.balsamiq.mockups::Link" x="959" y="2189" w="-1" h="-1" measuredW="50" measuredH="21" zOrder="74" locked="false" isInGroup="-1">
+    <control controlID="130" controlTypeID="com.balsamiq.mockups::Link" x="959" y="2189" w="-1" h="-1" measuredW="49" measuredH="21" zOrder="74" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Log%20out</text>
       </controlProperties>

@@ -36,12 +36,12 @@
         <text>Expiry%20date%20*</text>
       </controlProperties>
     </control>
-    <control controlID="27" controlTypeID="com.balsamiq.mockups::TextArea" x="1221" y="291" w="-1" h="-1" measuredW="200" measuredH="140" zOrder="8" locked="false" isInGroup="-1">
+    <control controlID="27" controlTypeID="com.balsamiq.mockups::TextArea" x="1221" y="291" w="200" h="102" measuredW="200" measuredH="140" zOrder="8" locked="false" isInGroup="-1">
       <controlProperties>
         <text/>
       </controlProperties>
     </control>
-    <control controlID="28" controlTypeID="com.balsamiq.mockups::DateChooser" x="1221" y="469" w="90" h="-1" measuredW="90" measuredH="25" zOrder="9" locked="false" isInGroup="-1">
+    <control controlID="28" controlTypeID="com.balsamiq.mockups::DateChooser" x="1221" y="429" w="90" h="-1" measuredW="90" measuredH="25" zOrder="9" locked="false" isInGroup="-1">
       <controlProperties>
         <text>%20%20/%20%20/%20%20%20%20</text>
       </controlProperties>
@@ -51,7 +51,7 @@
         <text>Description%20*</text>
       </controlProperties>
     </control>
-    <control controlID="30" controlTypeID="com.balsamiq.mockups::Label" x="1221" y="448" w="-1" h="-1" measuredW="81" measuredH="21" zOrder="11" locked="false" isInGroup="-1">
+    <control controlID="30" controlTypeID="com.balsamiq.mockups::Label" x="1221" y="408" w="-1" h="-1" measuredW="81" measuredH="21" zOrder="11" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Expiry%20date%20*</text>
       </controlProperties>
@@ -91,9 +91,19 @@
         <text>Home</text>
       </controlProperties>
     </control>
-    <control controlID="38" controlTypeID="com.balsamiq.mockups::Link" x="962" y="82" w="-1" h="-1" measuredW="50" measuredH="21" zOrder="19" locked="false" isInGroup="-1">
+    <control controlID="38" controlTypeID="com.balsamiq.mockups::Link" x="962" y="82" w="-1" h="-1" measuredW="49" measuredH="21" zOrder="19" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Log%20out</text>
+      </controlProperties>
+    </control>
+    <control controlID="39" controlTypeID="com.balsamiq.mockups::Button" x="483" y="475" w="69" h="27" measuredW="62" measuredH="27" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Submit</text>
+      </controlProperties>
+    </control>
+    <control controlID="40" controlTypeID="com.balsamiq.mockups::Button" x="1295" y="469" w="69" h="27" measuredW="62" measuredH="27" zOrder="21" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Submit</text>
       </controlProperties>
     </control>
   </controls>
