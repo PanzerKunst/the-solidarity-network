@@ -1,5 +1,26 @@
+form .field,
+form fieldset {
+  clear: both;
+  zoom: 1; }
+  form .field:before, form .field:after,
+  form fieldset:before,
+  form fieldset:after {
+    content: "";
+    display: table; }
+  form .field:after,
+  form fieldset:after {
+    clear: both; }
 form .field {
   margin-bottom: 0.5em; }
+  form .field > label,
+  form .field > input,
+  form .field > select,
+  form .field > textarea,
+  form .field > span {
+    display: block;
+    float: left; }
+  form .field > .field-error {
+    clear: both; }
 form .validation-icon {
   width: 1em;
   height: 1em;

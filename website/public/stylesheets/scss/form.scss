@@ -1,8 +1,28 @@
 @import "lib/common";
 
 form {
+
+  .field,
+  fieldset {
+    clear: both;
+    @include clearfix();
+  }
+
   .field {
     margin-bottom: 0.5em;
+
+    > label,
+    > input,
+    > select,
+    > textarea,
+    > span {
+      display: block;
+      float: left;
+    }
+
+    > .field-error {
+      clear: both;
+    }
   }
 
   .validation-icon {

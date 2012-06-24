@@ -19,9 +19,5 @@ body {
   padding-left: 30px;
   padding-right: 30px; }
 
-img,
-object,
-embed,
-video {
-  max-width: 100%;
-  display: block; }
+img {
+  max-width: 100%; }
