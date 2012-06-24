@@ -1,7 +1,7 @@
 package controllers.api
 
 import models.User
-import common.JsonUtil
+import services.JsonUtil
 import database.UserDto
 import play.api.mvc.{Action, Controller}
 
