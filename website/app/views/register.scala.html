@@ -140,7 +140,7 @@
     window.addEvent("domready",function () {
         new CBR.Controllers.Register({
             el: "#content",
-            countries: @Html(common.JsonUtil.serialize(countries)),
+            countries: @Html(services.JsonUtil.serialize(countries)),
             languageCode: "@languageCode"
         }).run();
     });

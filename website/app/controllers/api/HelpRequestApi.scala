@@ -1,6 +1,6 @@
 package controllers.api
 
-import common.JsonUtil
+import services.JsonUtil
 import play.api.mvc.{Action, Controller}
 import database.HelpRequestDto
 import models.HelpRequest

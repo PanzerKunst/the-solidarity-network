@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6a692bc-d147-471b-bee0-2af12beb41f5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/createHelpRequest.scala.html" afterPath="$PROJECT_DIR$/app/views/createHelpRequest.scala.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/nav.scala.html" afterPath="$PROJECT_DIR$/app/views/nav.scala.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/form.css" afterPath="$PROJECT_DIR$/public/stylesheets/form.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/responsive.css" afterPath="$PROJECT_DIR$/public/stylesheets/responsive.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/scss/form.scss" afterPath="$PROJECT_DIR$/public/stylesheets/scss/form.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/register.scala.html" afterPath="$PROJECT_DIR$/app/views/register.scala.html" />
     </list>
     <ignored path="website.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -69,31 +64,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Application.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/Application.scala">
+      <file leaf-file-name="form.scss" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/stylesheets/scss/form.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="12" selection-start="630" selection-end="630" vertical-scroll-proportion="0.0">
+            <state line="24" column="0" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JsonUtil.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/services/JsonUtil.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="22" selection-start="592" selection-end="592" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="e#21#42#0" expanded="true" />
+                <element signature="e#18#62#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="nav.scala.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/nav.scala.html">
+      <file leaf-file-name="UserApi.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/api/UserApi.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="101" column="37" selection-start="3226" selection-end="3226" vertical-scroll-proportion="-15.884615">
+            <state line="3" column="0" selection-start="44" selection-end="44" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="form.scss" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/stylesheets/scss/form.scss">
+      <file leaf-file-name="HelpRequestApi.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/api/HelpRequestApi.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="0" selection-start="296" selection-end="296" vertical-scroll-proportion="0.61538464">
+            <state line="3" column="0" selection-start="50" selection-end="50" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AuthApi.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/api/AuthApi.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="26" column="10" selection-start="690" selection-end="690" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#25#49#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -125,10 +140,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="register.scala.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="register.scala.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/register.scala.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="33" selection-start="2470" selection-end="2481" vertical-scroll-proportion="7.8461537">
+            <state line="136" column="9" selection-start="5024" selection-end="5024" vertical-scroll-proportion="0.54631084">
               <folding />
             </state>
           </provider>
@@ -139,26 +154,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state line="17" column="17" selection-start="356" selection-end="366" vertical-scroll-proportion="0.0">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="create-help-request-controller.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/create-help-request-controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="13" selection-start="798" selection-end="798" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="I18nService.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/services/I18nService.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="0" selection-start="337" selection-end="337" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#18#43#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -178,22 +173,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/public/javascripts/controllers/search-help-requests-controller.js" />
-        <option value="$PROJECT_DIR$/app/controllers/api/HelpRequestApi.scala" />
         <option value="$PROJECT_DIR$/app/views/searchHelpRequests.scala.html" />
-        <option value="$PROJECT_DIR$/app/controllers/api/AuthApi.scala" />
-        <option value="$PROJECT_DIR$/app/controllers/api/UserApi.scala" />
         <option value="$PROJECT_DIR$/conf/messages.fr" />
         <option value="$PROJECT_DIR$/conf/application.conf" />
         <option value="$PROJECT_DIR$/conf/messages.en" />
         <option value="$PROJECT_DIR$/app/services/I18nService.scala" />
-        <option value="$PROJECT_DIR$/app/views/register.scala.html" />
         <option value="$PROJECT_DIR$/public/javascripts/controllers/register-controller.js" />
         <option value="$PROJECT_DIR$/app/controllers/Application.scala" />
         <option value="$PROJECT_DIR$/app/views/nav.scala.html" />
         <option value="$PROJECT_DIR$/public/stylesheets/scss/register.scss" />
         <option value="$PROJECT_DIR$/app/views/createHelpRequest.scala.html" />
         <option value="$PROJECT_DIR$/public/stylesheets/scss/form.scss" />
+        <option value="$PROJECT_DIR$/app/services/JsonUtil.scala" />
+        <option value="$PROJECT_DIR$/app/controllers/api/UserApi.scala" />
+        <option value="$PROJECT_DIR$/app/controllers/api/HelpRequestApi.scala" />
+        <option value="$PROJECT_DIR$/app/controllers/api/AuthApi.scala" />
+        <option value="$PROJECT_DIR$/app/views/register.scala.html" />
       </list>
     </option>
   </component>
@@ -696,24 +691,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -743,6 +720,9 @@
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="services" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Pro\the-solidarity-network\website\public\javascripts\common" />
@@ -924,13 +904,13 @@
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32959402" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3294347" sideWeight="0.47225186" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294347" sideWeight="0.47225186" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39766082" sideWeight="0.7171825" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3294347" sideWeight="0.5240128" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3294347" sideWeight="0.5261473" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294347" sideWeight="0.49786553" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294347" sideWeight="0.47225186" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294347" sideWeight="0.4701174" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294347" sideWeight="0.49786553" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1002,34 +982,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/javascripts/models/help-request.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="268" selection-end="339" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/nav-controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/register-controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="44" selection-start="2416" selection-end="2416" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/login-controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/template-controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -1090,13 +1042,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/register.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="33" selection-start="2470" selection-end="2481" vertical-scroll-proportion="7.8461537">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/stylesheets/scss/register.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="7" selection-start="391" selection-end="391" vertical-scroll-proportion="0.0">
@@ -1113,7 +1058,46 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/stylesheets/scss/form.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="0" selection-start="296" selection-end="296" vertical-scroll-proportion="0.61538464">
+        <state line="24" column="0" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/services/JsonUtil.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="22" selection-start="592" selection-end="592" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#18#62#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/api/UserApi.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="0" selection-start="44" selection-end="44" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/api/HelpRequestApi.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="0" selection-start="50" selection-end="50" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/api/AuthApi.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="10" selection-start="690" selection-end="690" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#25#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/register.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="136" column="9" selection-start="5024" selection-end="5024" vertical-scroll-proportion="0.54631084">
           <folding />
         </state>
       </provider>
