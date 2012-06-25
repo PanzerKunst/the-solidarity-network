@@ -92,17 +92,19 @@ CBR.Controllers.Register = new Class({
         this.$usernameTakenParagraph.slideUp(200, "easeInQuad");
 
         if (this.$usernameField.val() !== "") {
+            var _this = this;
+
             new Request({
                 urlEncoded: false,
                 headers: { "Content-Type": "application/json" },
                 url: "/api/users/first?username=" + this.$usernameField.val(),
                 onSuccess: function (responseText, responseXML) {
 
-                    var $wrapper = this.$usernameField.parent();
+                    var $wrapper = _this.$usernameField.parent();
                     $wrapper.removeClass("valid");
                     $wrapper.addClass("invalid");
 
-                    this.$usernameTakenParagraph.slideDown(200, "easeOutQuad");
+                    _this.$usernameTakenParagraph.slideDown(200, "easeOutQuad");
                 },
                 onFailure: function (xhr) {
                     if (xhr.status === 404)
@@ -120,17 +122,19 @@ CBR.Controllers.Register = new Class({
         this.$emailAlreadyRegisteredParagraph.slideUp(200, "easeInQuad");
 
         if (this.$emailField.val() !== "") {
+            var _this = this;
+
             new Request({
                 urlEncoded: false,
                 headers: { "Content-Type": "application/json" },
                 url: "/api/users/first?email=" + this.$emailField.val().toLowerCase(),
                 onSuccess: function (responseText, responseXML) {
 
-                    var $wrapper = this.$emailAlreadyRegisteredParagraph.parent();
+                    var $wrapper = _this.$emailAlreadyRegisteredParagraph.parent();
                     $wrapper.removeClass("valid");
                     $wrapper.addClass("invalid");
 
-                    this.$emailAlreadyRegisteredParagraph.slideDown(200, "easeOutQuad");
+                    _this.$emailAlreadyRegisteredParagraph.slideDown(200, "easeOutQuad");
                 },
                 onFailure: function (xhr) {
                     if (xhr.status === 404)

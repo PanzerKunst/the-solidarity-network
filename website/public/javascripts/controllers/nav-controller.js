@@ -4,26 +4,26 @@ CBR.Controllers.NavController = new Class({
     },
 
     run: function () {
-        this._initDropDowns();
+        // Init dropdowns
+        jQuery("#header-nav li > span").click(jQuery.proxy(this._dropDownSubMenu, this));
+
+        // Init menu
+        jQuery("#header-nav > span").click(jQuery.proxy(this._dropDownWholeMenu, this));
     },
 
-    _initDropDowns: function () {
-        var _this = this;
+    _dropDownSubMenu: function (e) {
+        e.preventDefault();
 
-        var $title = jQuery("#header-nav span");
+        // Close all open
+        jQuery(".sub-nav").slideUp(200, "easeInQuad");
 
-        $title.click(function () {
-            // Close all open
-            jQuery(".sub-nav").slideUp(200, "easeInQuad");
+        var $li = jQuery(e.currentTarget).parent();
 
-            var $li = jQuery(this).parent();
-
-            var $subNav = $li.find("> ul");
-            if ($subNav.is(":visible"))
-                _this._closeDropDown($li);
-            else
-                _this._openDropDown($li);
-        });
+        var $subNav = $li.find("> ul");
+        if ($subNav.is(":visible"))
+            this._closeDropDown($li);
+        else
+            this._openDropDown($li);
     },
 
     _openDropDown: function ($li) {
@@ -32,5 +32,16 @@ CBR.Controllers.NavController = new Class({
 
     _closeDropDown: function ($li) {
         jQuery("> ul", $li).slideUp(200, "easeInQuad");
+    },
+
+    _dropDownWholeMenu: function (e) {
+        e.preventDefault();
+
+        var $menu = jQuery("#header-nav > ul");
+
+        if ($menu.is(":visible"))
+            $menu.slideUp(200, "easeInQuad");
+        else
+            $menu.slideDown(200, "easeOutQuad");
     }
 });

@@ -30,6 +30,7 @@ object HelpRequestApi extends Controller {
     implicit request =>
 
       var filtersMap = Map[String, String]()
+      // TODO
 
       val filters = if (filtersMap.size == 0)
         None
@@ -44,6 +45,5 @@ object HelpRequestApi extends Controller {
         val frontendHelpRequests = for (hr <- matchingHelpRequests) yield new FrontendHelpRequest(hr)
         Ok(JsonUtil.serialize(frontendHelpRequests))
       }
-
   }
 }

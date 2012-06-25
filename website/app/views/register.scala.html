@@ -3,7 +3,7 @@
 <!--
     Header
 -->
-@nav(None)
+@nav(None, Some(i18n("register.title")))
 
 } {
 <!--
@@ -55,8 +55,7 @@
          --><input id="email-confirmation" type="text"/><!--
          --><span class="validation-icon"></span>
 
-            <p class="field-error" data-check="empty">Registering with an incorrect e-mail address would be frustrating
-                for both of us</p>
+            <p class="field-error" data-check="empty">e-mails don't match!</p>
 
             <p class="field-error" id="emails-do-not-match">The e-mails do not match!</p>
         </div>
@@ -67,7 +66,7 @@
          --><span class="validation-icon"></span><!--
          --><a id="check-username-availability">Available?</a>
 
-            <p class="field-error" data-check="empty">Please choose a username, it'll identify you to other users.</p>
+            <p class="field-error" data-check="empty">Please choose a username, it will identify you to other users.</p>
 
             <p class="field-error" data-check="username">Sorry, but only the following characters are allowed:
                 <em>a-z</em>, <em>A-Z</em>, <em>0-9</em>, <em>-</em>, <em>_</em></p>
@@ -123,7 +122,7 @@
                 <span>Register</span>
             </a>
 
-            <input type="submit" style="visibility: hidden"/>
+            <input type="submit" />
         </span>
     </form>
 
@@ -138,6 +137,8 @@
 
 <script type="text/javascript">
     window.addEvent("domready",function () {
+        new CBR.Controllers.NavController().run();
+
         new CBR.Controllers.Register({
             el: "#content",
             countries: @Html(services.JsonUtil.serialize(countries)),

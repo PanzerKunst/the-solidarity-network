@@ -4,7 +4,7 @@
 }
 
 // Image replacement
-@mixin imgRepl(){
+@mixin imgRepl() {
   display: block;
   text-indent: -999em;
   overflow: hidden;
@@ -15,7 +15,7 @@
   border: 0;
 }
 
-@mixin clearfix(){
+@mixin clearfix() {
   zoom: 1;
 
   &:before, &:after {

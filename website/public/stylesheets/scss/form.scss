@@ -46,6 +46,10 @@ form {
   .field-error {
     font-style: italic;
   }
+
+  input[type=submit] {
+    visibility: hidden;
+  }
 }
 
 #submit-button-wrapper {

@@ -1,7 +1,14 @@
 body {
   font-size: 13px; }
+  @media screen and (max-width: 800px) {
+    body {
+      font-size: 17px; } }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   margin-bottom: 2em; }
 
 h1 {
@@ -15,23 +22,31 @@ h2 {
 h3 {
   font-size: 1.3em; }
 
-a, a:visited {
+a,
+a:visited {
   font-weight: bold;
   color: #be2d07;
   cursor: pointer;
   text-decoration: none; }
-  a:hover, a:visited:hover {
+  a:hover,
+  a:visited:hover {
     color: #f18a26; }
 
 p {
   color: #3f3f3f;
   margin-bottom: 1em; }
 
-a, span, label {
+li {
+  list-style-type: none; }
+
+a,
+span,
+label {
   display: inline-block; }
 
-#content {
-  clear: both; }
+@media screen and (max-width: 800px) {
+  #content > h1 {
+    display: none; } }
 
 #rss-feed-wrapper {
   text-align: center; }

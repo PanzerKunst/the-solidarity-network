@@ -5,4 +5,5 @@ body#login #content .field {
   body#login #content .field > input {
     width: 12em; }
 body#login #content #auth-failed {
+  display: none;
   text-align: center; }

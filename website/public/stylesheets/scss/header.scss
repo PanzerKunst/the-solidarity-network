@@ -2,34 +2,60 @@
 
 header {
   background-color: $headerBg;
-  padding-bottom: 10em;
 }
 
-$menuWidth: 70%;
-
 #header-nav {
-  > span {
-    float: left;
-    width: ((100 - $menuWidth) / 2);
+  @include clearfix();
+
+  @media screen and (min-width: 801px) {
+    padding-bottom: 10em;
+
+    > h1 {
+      display: none;
+    }
+
+    > span {
+      display: none;
+    }
+
+    > ul {
+      > li {
+        width: (100% / 7);
+        float: left;
+        position: relative;
+
+        > span {
+          cursor: pointer;
+        }
+
+        > ul {
+          position: absolute;
+          background-color: $headerBg;
+        }
+      }
+    }
   }
 
-  > ul {
-    float: left;
-    width: $menuWidth;
+  @media screen and (max-width: 800px) {
+    font-size: 1em;
 
-    > li {
-      width: (100% / 5);
+    > h1 {
       float: left;
-      position: relative;
 
-      > span {
-        cursor: pointer;
-      }
+      font-size: inherit;
 
-      > ul {
-        position: absolute;
-        background-color: $headerBg;
-      }
+      margin-bottom: 0;
+      margin-top: 0.2em;
+    }
+
+    > span {
+      float: right;
+    }
+
+    > ul {
+      display: none;
+      clear: both;
+      background-color: #3f3f3f;
     }
   }
 }

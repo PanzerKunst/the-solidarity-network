@@ -2,14 +2,23 @@
 
 body#register {
   #content {
-    $labelWidth: 9em;
-    $inputWidth: 12em;
-    $checkUsernameAvailabilityWidth: 6em;
-
     .field {
-      width: $labelWidth + $inputWidth + $validationIconWidth + $checkUsernameAvailabilityWidth + $extraSpaceForInputPaddingAndBorder;
+      $labelWidth: 9em;
+      $inputWidth: 12em;
+      $checkUsernameAvailabilityWidth: 6em;
+
       margin-left: auto;
       margin-right: auto;
+
+      width: $labelWidth + $inputWidth + $validationIconWidth + $checkUsernameAvailabilityWidth + $extraSpaceForInputPaddingAndBorder;
+
+      @media screen and (max-width: 800px) {
+        $labelWidth: 8em;
+        $inputWidth: 9em;
+        $checkUsernameAvailabilityWidth: 5em;
+
+        width: $inputWidth + $validationIconWidth + $checkUsernameAvailabilityWidth + $extraSpaceForInputPaddingAndBorder;
+      }
 
       > label {
         width: $labelWidth;
@@ -18,11 +27,18 @@ body#register {
       > input,
       > select {
         width: $inputWidth;
-      }
-    }
 
-    #check-username-availability {
-      width: $checkUsernameAvailabilityWidth;
+        @media screen and (max-width: 800px) {
+          clear: both;
+        }
+      }
+
+      #check-username-availability {
+        display: block;
+        float: left;
+
+        width: $checkUsernameAvailabilityWidth;
+      }
     }
   }
 }

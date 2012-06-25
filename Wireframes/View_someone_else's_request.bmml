@@ -365,10 +365,10 @@
         <text>Pic</text>
       </controlProperties>
     </control>
-    <control controlID="198" controlTypeID="com.balsamiq.mockups::Label" x="438" y="370" w="-1" h="-1" measuredW="150" measuredH="37" zOrder="72" locked="false" isInGroup="-1">
+    <control controlID="198" controlTypeID="com.balsamiq.mockups::Label" x="438" y="370" w="-1" h="-1" measuredW="143" measuredH="37" zOrder="72" locked="false" isInGroup="-1">
       <controlProperties>
         <size>28</size>
-        <text>Responses%3A</text>
+        <text>Responses</text>
       </controlProperties>
     </control>
     <control controlID="199" controlTypeID="com.balsamiq.mockups::Label" x="503" y="407" w="-1" h="-1" measuredW="224" measuredH="21" zOrder="73" locked="false" isInGroup="-1">

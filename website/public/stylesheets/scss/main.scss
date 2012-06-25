@@ -1,10 +1,18 @@
 @import "lib/common";
 
 body {
-  font-size: $baseline;
+  font-size: 13px;
+
+  @media screen and (max-width: 800px) {
+    font-size: 17px;
+  }
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   margin-bottom: 2em;
 }
 
@@ -22,7 +30,8 @@ h3 {
   font-size: 1.3em;
 }
 
-a, a:visited {
+a,
+a:visited {
   font-weight: bold;
   color: $red;
 
@@ -39,12 +48,22 @@ p {
   margin-bottom: 1em;
 }
 
-a, span, label {
+li {
+  list-style-type: none;
+}
+
+a,
+span,
+label {
   display: inline-block;  // For "width" declaration to work
 }
 
 #content {
-  clear: both;
+  > h1 {
+    @media screen and (max-width: 800px) {
+      display: none;
+    }
+  }
 }
 
 #rss-feed-wrapper {
