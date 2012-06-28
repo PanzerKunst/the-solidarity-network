@@ -1,11 +1,7 @@
 @import "lib/common";
 
 body {
-  font-size: 13px;
-
-  @media screen and (max-width: 800px) {
-    font-size: 17px;
-  }
+  font-size: medium;
 }
 
 h1,
@@ -17,7 +13,7 @@ h5 {
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 1.9em;
   font-weight: normal;
   text-align: center;
 }
@@ -32,7 +28,6 @@ h3 {
 
 a,
 a:visited {
-  font-weight: bold;
   color: $red;
 
   cursor: pointer;

@@ -15,9 +15,12 @@ CBR.Controllers.Register = new Class({
 
         this.$usernameField = jQuery("#username");
         this.$emailField = jQuery("#email");
+        this.$emailConfirmationField = jQuery("#email-confirmation");
         this.$languageSelect = jQuery("#language");
+
         this.$usernameTakenParagraph = jQuery("#username-taken");
         this.$emailAlreadyRegisteredParagraph = jQuery("#email-already-registered");
+        this.$emailsDoNotMatchParagraph = jQuery("#emails-do-not-match");
 
         this.$languageSelect.val(this._getLanguageCode());
 
@@ -53,6 +56,7 @@ CBR.Controllers.Register = new Class({
 
         this.$usernameField.blur(jQuery.proxy(this._checkIfUsernameIsAlreadyTaken, this));
         this.$emailField.blur(jQuery.proxy(this._checkIfEmailIsAlreadyRegistered, this));
+        this.$emailConfirmationField.blur(jQuery.proxy(this._checkIfEmailConfirmationMatches, this));
     },
 
     _doRegister: function (e) {
@@ -146,6 +150,23 @@ CBR.Controllers.Register = new Class({
         }
     },
 
+    _checkIfEmailConfirmationMatches: function (e) {
+        e.preventDefault();
+
+        this.$emailsDoNotMatchParagraph.slideUp(200, "easeInQuad");
+
+        var email = this.$emailField.val();
+        var emailConfirmation = this.$emailConfirmationField.val();
+
+        if ((email !== "" || emailConfirmation !== "") && email !== emailConfirmation) {
+            var $wrapper = this.$emailsDoNotMatchParagraph.parent();
+            $wrapper.removeClass("valid");
+            $wrapper.addClass("invalid");
+
+            this.$emailsDoNotMatchParagraph.slideDown(200, "easeOutQuad");
+        }
+    },
+
     _isUsernameAvailable: function () {
         if (this.$usernameField.val() === "")
             return true;
@@ -174,7 +195,7 @@ CBR.Controllers.Register = new Class({
         return xhr.status === 404;
     },
 
-    _changeLanguage: function(e) {
+    _changeLanguage: function (e) {
         e.preventDefault();
 
         var languageCode = e.currentTarget.value;

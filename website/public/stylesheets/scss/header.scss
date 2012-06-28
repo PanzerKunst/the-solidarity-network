@@ -19,6 +19,8 @@ header {
     }
 
     > ul {
+      @include clearfix();
+
       > li {
         width: (100% / 7);
         float: left;

@@ -19,7 +19,7 @@ CBR.Services.Validator = new Class({
         var result = true;
 
         for (var i=0; i<this._getFieldIds().length; i++)
-            if (!this._validateField(jQuery("#" + this._getFieldIds()[i])))
+            if (!this._validateField(jQuery("#" + this._getFieldIds()[i]), false))
                 result = false;
 
         return result;
@@ -114,12 +114,14 @@ CBR.Services.Validator = new Class({
         return nbDaysDifference >= 0;
     },
 
-    _validateField: function($field) {
+    _validateField: function($field, isOnBlur) {
 
         // Empty?
         if (this._isToCheckIfEmpty($field) && !$field.val()) {
-            this._flagInvalid($field);
-            this._get$empty($field).slideDown(200, "easeOutQuad");
+            if (!isOnBlur) {
+                this._flagInvalid($field);
+                this._get$empty($field).slideDown(200, "easeOutQuad");
+            }
             return false;
         }
         else
@@ -170,7 +172,7 @@ CBR.Services.Validator = new Class({
         var _this = this;
 
         $field.blur(function () {
-            _this._validateField($field);
+            _this._validateField($field, true);
         });
     },
 
