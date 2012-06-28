@@ -1,5 +1,2 @@
-body#home #content .actions {
-  margin: 10em 0; }
-  body#home #content .actions > span {
-    width: 33.333%;
-    text-align: center; }
+body#home #content .actions > span {
+  width: 33.333%; }

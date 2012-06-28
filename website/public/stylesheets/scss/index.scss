@@ -1,7 +1,11 @@
 @import "lib/common";
 
-body#help-dashboard {
+body#index {
   #content {
+    > h2 {
+      text-align: center;
+    }
+
     .actions {
       > span {
         width: 50%;

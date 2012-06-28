@@ -53,6 +53,7 @@ Dependencies:
                 main.css
                 header.css
                 form.css
+                index.css
                 register.css
                 login.css
                 home.css

@@ -2,19 +2,32 @@
 <!--
     Header
 -->
-@nav(None, None)
+@nav(None, Some("The Solidarity Network"))
 
 } {
 <!--
     Content
 -->
-<h1>To help others, directly</h1>
-<a href="/register">Register</a>
-<a href="/login">Login</a>
+<h1>The Solidarity Network</h1>
+<h2>To help others, directly</h2>
+
+<div class="actions">
+    <span>
+        <a href="/register">Register</a>
+    </span><!--
+ --><span>
+        <a href="/login">Login</a>
+    </span>
+</div>
 
 } {
 <!--
     Javascript
 -->
 
+<script type="text/javascript">
+    window.addEvent("domready", function () {
+        new CBR.Controllers.NavController().run();
+    });
+</script>
 }
