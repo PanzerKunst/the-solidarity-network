@@ -41,6 +41,8 @@ CBR.Controllers.CreateHelpRequest = new Class({
                 expiryDate: jQuery("#expiry-date").val()
             });
 
+            var _this = this;
+
             new Request({
                 urlEncoded: false,
                 headers: { "Content-Type": "application/json" },
@@ -50,7 +52,7 @@ CBR.Controllers.CreateHelpRequest = new Class({
                     location.replace("/help");
                 },
                 onFailure: function (xhr) {
-                    if (xhr.status === 401)
+                    if (xhr.status === _this.httpStatusCode.unauthorized)
                         location.replace("/login");
                     else
                         alert("AJAX fail :(");

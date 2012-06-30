@@ -5,5 +5,10 @@ CBR.Controllers.TemplateController = new Class({
 
     getEl: function () {
         return jQuery(this.options.el);
+    },
+
+    httpStatusCode: {
+        noContent: 204,
+        unauthorized: 401
     }
 });

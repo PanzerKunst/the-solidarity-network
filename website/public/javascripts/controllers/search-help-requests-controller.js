@@ -13,6 +13,9 @@ CBR.Controllers.SearchHelpRequests = new Class({
             )
         );
 
+        this.$queryField = jQuery("#query");
+        this.$searchResults = jQuery("#search-results");
+
         this._initValidation();
 
         jQuery("#search-button").click(jQuery.proxy(this._doSearch, this));
@@ -33,31 +36,48 @@ CBR.Controllers.SearchHelpRequests = new Class({
         e.preventDefault();
 
         if (this.validator.isValid()) {
-            var helpRequest = new CBR.Models.HelpRequest({
-                // TODO
-            });
+            /* TODO var helpRequest = new CBR.Models.HelpRequest();
+
+            var searchedCity = this._getSearchedCity();
+            if (searchedCity !== undefined)
+                helpRequest.setRequester(new CBR.Models.User({
+                    city: searchedCity
+                })); */
+
+            var requestData;
+            var query = this.$queryField.val();
+            if (query !== "")
+                requestData = { query: query };
+
+            var _this = this;
 
             new Request({
-                urlEncoded: false,
-                headers: { "Content-Type": "application/json" },
                 url: "/api/help-requests",
+                data: requestData,
                 onSuccess: function (responseText, responseXML) {
-                    jQuery("#search-results").append(
-                        Mustache.to_html(
-                            jQuery("#search-results-template").html(),
-                            {
-                                helpRequests: JSON.parse(responseText)
-                            }
-                        )
-                    );
+                    if (this.status === _this.httpStatusCode.noContent) {
+                        _this.$searchResults.html("");
+                        jQuery("#search-returned-nothing").show();
+                    }
+                    else
+                        _this.$searchResults.html(
+                            Mustache.to_html(
+                                jQuery("#search-results-template").html(),
+                                { helpRequests: JSON.parse(responseText) }
+                            )
+                        );
                 },
                 onFailure: function (xhr) {
-                    if (xhr.status === 401)
+                    if (xhr.status === _this.httpStatusCode.unauthorized)
                         location.replace("/login");
                     else
                         alert("AJAX fail :(");
                 }
             }).get();
         }
+    },
+
+    _getSearchedCity: function() {
+        var query = this.$queryField.val();
     }
 });

@@ -1,12 +1,19 @@
 body#search-help-requests #content .centered {
   width: 30em;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  zoom: 1; }
+  body#search-help-requests #content .centered:before, body#search-help-requests #content .centered:after {
+    content: "";
+    display: table; }
+  body#search-help-requests #content .centered:after {
+    clear: both; }
 body#search-help-requests #content .field {
-  display: inline-block; }
+  float: left; }
 body#search-help-requests #content #query {
   width: 25em; }
 body#search-help-requests #content #search-button {
+  float: left;
   width: 4em; }
 body#search-help-requests #content table {
   max-width: 50em;
@@ -18,4 +25,7 @@ body#search-help-requests #content td {
 body#search-help-requests #content .requester-username,
 body#search-help-requests #content .requester-city {
   display: block;
+  text-align: center; }
+body#search-help-requests #content #search-returned-nothing {
+  display: none;
   text-align: center; }

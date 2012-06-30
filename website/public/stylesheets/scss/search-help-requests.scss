@@ -11,10 +11,12 @@ body#search-help-requests {
 
       margin-left: auto;
       margin-right: auto;
+
+      @include clearfix();
     }
 
     .field {
-      display: inline-block;
+      float: left;
     }
 
     #query {
@@ -22,6 +24,7 @@ body#search-help-requests {
     }
 
     #search-button {
+      float: left;
       width: $searchButtonWidth;
     }
 
@@ -41,6 +44,11 @@ body#search-help-requests {
     .requester-username,
     .requester-city {
       display: block;
+      text-align: center;
+    }
+
+    #search-returned-nothing {
+      display: none;
       text-align: center;
     }
   }

@@ -15,18 +15,21 @@ object AuthApi extends Controller {
 
       if (user.username != null)
         filtersMap += ("username" -> user.username)
-      else if (user.email != null)
-        filtersMap += ("email" -> user.email)
+      else user.email match {
+        case Some(email) => filtersMap += ("email" -> email)
+        case None =>
+      }
 
-      filtersMap += ("password" -> user.password)
+
+      filtersMap += ("password" -> user.password.get)
 
       val matchingUsers = UserDto.get(Some(filtersMap))
 
       if (matchingUsers.isEmpty)
-        NotFound
+        NoContent
       else
         Ok.withSession(
-          session + ("userId" -> matchingUsers.head.id.toString)
+          session + ("userId" -> matchingUsers.head.id.get.toString)
         )
   }
 }

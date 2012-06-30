@@ -103,18 +103,18 @@ CBR.Controllers.Register = new Class({
                 headers: { "Content-Type": "application/json" },
                 url: "/api/users/first?username=" + this.$usernameField.val(),
                 onSuccess: function (responseText, responseXML) {
+                    if (this.status === _this.httpStatusCode.noContent)
+                        console.log("username available :)");
+                    else {
+                        var $wrapper = _this.$usernameField.parent();
+                        $wrapper.removeClass("valid");
+                        $wrapper.addClass("invalid");
 
-                    var $wrapper = _this.$usernameField.parent();
-                    $wrapper.removeClass("valid");
-                    $wrapper.addClass("invalid");
-
-                    _this.$usernameTakenParagraph.slideDown(200, "easeOutQuad");
+                        _this.$usernameTakenParagraph.slideDown(200, "easeOutQuad");
+                    }
                 },
                 onFailure: function (xhr) {
-                    if (xhr.status === 404)
-                        console.log("username available :)");
-                    else
-                        alert("AJAX fail :(");
+                    alert("AJAX fail :(");
                 }
             }).get();
         }
@@ -133,18 +133,18 @@ CBR.Controllers.Register = new Class({
                 headers: { "Content-Type": "application/json" },
                 url: "/api/users/first?email=" + this.$emailField.val().toLowerCase(),
                 onSuccess: function (responseText, responseXML) {
+                    if (this.status === _this.httpStatusCode.noContent)
+                        console.log("email not registered yet :)");
+                    else {
+                        var $wrapper = _this.$emailAlreadyRegisteredParagraph.parent();
+                        $wrapper.removeClass("valid");
+                        $wrapper.addClass("invalid");
 
-                    var $wrapper = _this.$emailAlreadyRegisteredParagraph.parent();
-                    $wrapper.removeClass("valid");
-                    $wrapper.addClass("invalid");
-
-                    _this.$emailAlreadyRegisteredParagraph.slideDown(200, "easeOutQuad");
+                        _this.$emailAlreadyRegisteredParagraph.slideDown(200, "easeOutQuad");
+                    }
                 },
                 onFailure: function (xhr) {
-                    if (xhr.status === 404)
-                        console.log("email not registered yet :)");
-                    else
-                        alert("AJAX fail :(");
+                    alert("AJAX fail :(");
                 }
             }).get();
         }
@@ -178,7 +178,7 @@ CBR.Controllers.Register = new Class({
             url: "/api/users/first?username=" + this.$usernameField.val()
         }).get();
 
-        return xhr.status === 404;
+        return xhr.status === this.httpStatusCode.noContent;
     },
 
     _isEmailNotRegisteredYet: function () {
@@ -192,7 +192,7 @@ CBR.Controllers.Register = new Class({
             url: "/api/users/first?email=" + this.$emailField.val().toLowerCase()
         }).get();
 
-        return xhr.status === 404;
+        return xhr.status === this.httpStatusCode.noContent;
     },
 
     _changeLanguage: function (e) {

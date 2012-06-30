@@ -36,7 +36,7 @@ object UserApi extends Controller {
       val matchingUsers = UserDto.get(filters)
 
       if (matchingUsers.isEmpty)
-        NotFound
+        NoContent
       else
         Ok(JsonUtil.serialize(matchingUsers.head))
   }

@@ -13,23 +13,31 @@ object UserDto {
       implicit c =>
 
         val query = """
-          select id, first_name, last_name, username, email, password, street_address, post_code, city, country_id
+          select id, first_name, last_name, username, email, street_address, post_code, city, country_id
           from user """ + DbUtil.generateWhereClause(filters) + ";"
 
-        Logger.info("UserDto.getUsersWhere():" + query)
+        Logger.info("UserDto.get():" + query)
 
         SQL(query)().map(row =>
-          new User(
-            row[Long]("id"),
-            row[String]("username"),
-            row[String]("first_name"),
-            row[String]("last_name"),
-            row[String]("email"),
-            row[String]("password"),
-            row[String]("street_address"),
-            row[String]("post_code"),
-            row[String]("city"),
-            row[Long]("country_id")
+          User(
+            id = Some(row[Long]("id")),
+            firstName = Some(row[String]("first_name")),
+            lastName = Some(row[String]("last_name")),
+            username = row[String]("username"),
+            email = Some(row[String]("email")),
+
+            streetAddress = if (row[String]("street_address") != "")
+              Some(row[String]("street_address"))
+            else
+              None,
+
+            postCode = if (row[String]("post_code") != "")
+              Some(row[String]("post_code"))
+            else
+              None,
+
+            city = Some(row[String]("city")),
+            countryId = Some(row[Long]("country_id"))
           )
         ).toList
     }
@@ -39,16 +47,26 @@ object UserDto {
     DB.withConnection {
       implicit c =>
 
+        val streetAddressForQuery = user.streetAddress match {
+          case Some(streetAddress) => streetAddress
+          case None => ""
+        }
+
+        val postCodeForQuery = user.postCode match {
+          case Some(postCode) => postCode
+          case None => ""
+        }
+
         val query = """
                        insert into user(first_name, last_name, username, email, password, street_address, post_code, city, country_id)
-      values("""" + DbUtil.backslashQuotes(user.firstName) + """","""" +
-          DbUtil.backslashQuotes(user.lastName) + """","""" +
+      values("""" + DbUtil.backslashQuotes(user.firstName.get) + """","""" +
+          DbUtil.backslashQuotes(user.lastName.get) + """","""" +
           DbUtil.backslashQuotes(user.username) + """","""" +
-          DbUtil.backslashQuotes(user.email) + """","""" +
-          DbUtil.backslashQuotes(user.password) + """","""" +
-          DbUtil.backslashQuotes(user.streetAddress) + """","""" +
-          DbUtil.backslashQuotes(user.postCode) + """","""" +
-          DbUtil.backslashQuotes(user.city) + """",""" +
+          DbUtil.backslashQuotes(user.email.get) + """","""" +
+          DbUtil.backslashQuotes(user.password.get) + """","""" +
+          DbUtil.backslashQuotes(streetAddressForQuery) + """","""" +
+          DbUtil.backslashQuotes(postCodeForQuery) + """","""" +
+          DbUtil.backslashQuotes(user.city.get) + """",""" +
           user.countryId + ");"
 
         Logger.info("UserDto.create():" + query)

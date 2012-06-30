@@ -18,7 +18,7 @@ CREATE TABLE `user` (
   `username` varchar(45) NOT NULL,
   `email` varchar(45) NOT NULL,
   `password` varchar(45) NOT NULL,
-  `street_address` varchar(100) NOT NULL,
+  `street_address` varchar(100) DEFAULT NULL,
   `post_code` varchar(10) DEFAULT NULL,
   `city` varchar(45) NOT NULL,
   `country_id` int(10) unsigned NOT NULL,

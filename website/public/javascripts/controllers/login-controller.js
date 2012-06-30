@@ -43,16 +43,21 @@ CBR.Controllers.Login = new Class({
             else
                 user.username = usernameOrEmail;
 
+            var _this = this;
+
             new Request({
                 urlEncoded: false,
                 headers: { "Content-Type": "application/json" },
                 url: "/api/authenticate",
                 data: CBR.JsonUtil.stringifyModel(user),
                 onSuccess: function (responseText, responseXML) {
-                    location.replace("/home");
+                    if (this.status === _this.httpStatusCode.noContent)
+                        jQuery("#auth-failed").show();
+                    else
+                        location.replace("/home");
                 },
                 onFailure: function (xhr) {
-                    jQuery("#auth-failed").show();
+                    alert("AJAX fail :(");
                 }
             }).post();
         }

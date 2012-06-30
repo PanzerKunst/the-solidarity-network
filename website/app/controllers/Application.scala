@@ -26,7 +26,7 @@ object Application extends Controller {
       } else
         i18n = I18nService.get("register", defaultLanguageCode)
 
-      Ok(views.html.register(i18n, CountryDto.getAll, languageCode))
+      Ok(views.html.register(i18n, CountryDto.get(None), languageCode))
   }
 
   def login = Action {

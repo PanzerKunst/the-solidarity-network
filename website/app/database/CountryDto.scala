@@ -8,33 +8,22 @@ import play.api.Logger
 
 
 object CountryDto {
-  val all = getAll
-
-  def getAll: List[Country] = {
-
+  def get(filters: Option[Map[String, String]]): List[Country] = {
     DB.withConnection {
       implicit c =>
 
         val query = """
           select id, name
-          from country
-          order by name;
-                    """
+          from country """ + DbUtil.generateWhereClause(filters) + ";"
 
-        Logger.info("CountryDto.getAll(): " + query)
+        Logger.info("CountryDto.get():" + query)
 
-        val sql = SQL(query)
-
-        sql().map(row =>
-          new Country(
-            row[Long]("id"),
-            row[String]("name")
+        SQL(query)().map(row =>
+          Country(
+            id = row[Long]("id"),
+            name = row[String]("name")
           )
-        ) toList
+        ).toList
     }
-  }
-
-  def getOfId(id: Long) = {
-    all.filter(c => c.id == id)
   }
 }
