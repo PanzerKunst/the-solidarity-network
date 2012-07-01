@@ -29,6 +29,7 @@ object HelpRequestDto {
             or u.last_name like """" + processedSearchQuery + """"
             or u.username like """" + processedSearchQuery + """"
             or u.city like """" + processedSearchQuery + """"
+            or c.name like """" + processedSearchQuery + """"
             limit 50;"""
 
 

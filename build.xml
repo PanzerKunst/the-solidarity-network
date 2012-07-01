@@ -37,13 +37,6 @@ Dependencies:
         </delete>
     </target>
     
-    <target name="clean-js">
-        <delete file="${non-lib.js.file}" />
-        <delete>
-            <fileset dir="${dist.js.dir}" includes="**/*" />
-        </delete>
-    </target>
-    
     <!-- Concat all css files. Add all files you wish to merge. Remember order matters! -->
     <target name="merge-css">
         <concat destfile="${dist.merged.file.css}" fixlastline="yes" append="no">
@@ -72,39 +65,14 @@ Dependencies:
         </java>
     </target>
     
-    <!-- Merges all javascript files into one. Remember, order matters! -->
-    <target name="merge-js">
-        <concat destfile="${dist.merged.file.js}" fixlastline="yes" append="no">
-            <filelist id="js-files" dir="${src.js.dir}" files="
-                libs/jquery-1.7.1.js
-                libs/jquery.easing.js
-                common/jquery.no-conflict.js
-                libs/mootools-core-1.4.5-full-nocompat.js
-                libs/mustache.js
-                global.js
-                common/json-util.js
-                services/validator.js
-                models/json-serializable-model.js
-                models/user.js
-                models/help-request.js
-                controllers/template-controller.js
-                controllers/nav-controller.js
-                controllers/login-controller.js
-                controllers/register-controller.js
-                controllers/create-help-request-controller.js
-                controllers/search-help-requests-controller.js" />
-        </concat>
+    <target name="clean-js">
+        <delete file="${non-lib.js.file}" />
+        <delete>
+            <fileset dir="${dist.js.dir}" includes="**/*" />
+        </delete>
     </target>
     
-    <!-- Comment out console.log commands from merged script -->
-    <target name="clean-merged-js" depends="merge-js" description="Comment out console.log lines">
-        <echo>Commenting out console.log lines</echo>
-        <replaceregexp file="${dist.merged.file.js}" match="(console.log\(.*\))" replace="/\*\1\*/" flags="g" />
-    </target>
-    
-    <!-- Performs a jsHint code quality check on the non-lib JS files -->
-    <target name="jshint-js" description="Performs a jsHint code quality check on the non-lib JS files">
-        <echo>jsHint code quality check</echo>
+    <target name="concat-non-lib-js">
         <concat destfile="${non-lib.js.file}" fixlastline="yes" append="no">
             <filelist id="non-lib-js-files" dir="${src.js.dir}" files="
                 global.js
@@ -120,6 +88,11 @@ Dependencies:
                 controllers/create-help-request-controller.js
                 controllers/search-help-requests-controller.js" />
         </concat>
+    </target>
+    
+    <!-- Performs a jsHint code quality check on the non-lib JS files -->
+    <target name="jshint" description="Performs a jsHint code quality check on the non-lib JS files">
+        <echo>jsHint code quality check</echo>
         <exec executable="cmd" failonerror="true">
             <arg value="/c" />
             <arg value="jshint" />
@@ -127,6 +100,20 @@ Dependencies:
             <arg value="--config"/>
             <arg value="jshint-config.json"/>
         </exec>
+    </target>
+    
+    <!-- Checks that jQuery dollar selector is not used -->
+    <target name="jquery-dollar-selector-not-used">
+        <if>
+          <length when="greater" length="0">
+            <fileset file="${non-lib.js.file}">
+              <containsregexp expression="\$\("/>
+            </fileset>
+          </length>
+          <then>
+            <fail message="jQuery dollar selector used!"/>
+          </then>
+        </if>
     </target>
     
     <!-- Compress the merged common javascript file -->
@@ -140,11 +127,30 @@ Dependencies:
         </java>
     </target>
     
+    <!-- Comment out console.log commands from merged script -->
+    <target name="clean-merged-js" depends="merge-js" description="Comment out console.log lines">
+        <echo>Commenting out console.log lines</echo>
+        <replaceregexp file="${dist.merged.file.js}" match="(console.log\(.*\))" replace="/\*\1\*/" flags="g" />
+    </target>
+    
+    <!-- Merges all javascript files into one. Remember, order matters! -->
+    <target name="merge-js">
+        <concat destfile="${dist.merged.file.js}" fixlastline="yes" append="no">
+            <filelist id="js-files" dir="${src.js.dir}" files="
+                libs/jquery-1.7.1.js
+                libs/jquery.easing.js
+                common/jquery.no-conflict.js
+                libs/mootools-core-1.4.5-full-nocompat.js
+                libs/mustache.js
+                ${non-lib.js.file}" />
+        </concat>
+    </target>
+    
     <!-- run css tasks only -->
     <target name="main-css" depends="clean-css, compress-css"></target>
     
     <!-- run javascript tasks only -->
-    <target name="main-js" depends="clean-js, jshint-js, compress-js"></target>
+    <target name="main-js" depends="clean-js, concat-non-lib-js, jquery-dollar-selector-not-used, jshint, compress-js"></target>
     
     <!-- run all tasks -->
     <target name="main" depends="make-dirs, main-css, main-js"></target>

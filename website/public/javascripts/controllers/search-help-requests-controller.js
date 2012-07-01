@@ -59,13 +59,15 @@ CBR.Controllers.SearchHelpRequests = new Class({
                         _this.$searchResults.html("");
                         jQuery("#search-returned-nothing").show();
                     }
-                    else
+                    else {
                         _this.$searchResults.html(
                             Mustache.to_html(
                                 jQuery("#search-results-template").html(),
                                 { helpRequests: JSON.parse(responseText) }
                             )
                         );
+                        jQuery("#search-returned-nothing").hide();
+                    }
                 },
                 onFailure: function (xhr) {
                     if (xhr.status === _this.httpStatusCode.unauthorized)
