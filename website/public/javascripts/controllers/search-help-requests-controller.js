@@ -6,7 +6,7 @@ CBR.Controllers.SearchHelpRequests = new Class({
     },
 
     run: function () {
-        this.getEl().append(
+        this.getEl().html(
             Mustache.to_html(
                 jQuery("#content-template").html(),
                 this.options
@@ -67,6 +67,7 @@ CBR.Controllers.SearchHelpRequests = new Class({
                             )
                         );
                         jQuery("#search-returned-nothing").hide();
+                        jQuery("tr").click(_this._navigateToHelpRequest);
                     }
                 },
                 onFailure: function (xhr) {
@@ -77,6 +78,15 @@ CBR.Controllers.SearchHelpRequests = new Class({
                 }
             }).get();
         }
+    },
+
+    _navigateToHelpRequest: function(e) {
+        e.preventDefault();
+
+        var helpRequestId = jQuery(e.currentTarget).data("id");
+
+        if (helpRequestId !== undefined)
+            location.replace("/help-requests/" + helpRequestId);
     },
 
     _getSearchedCity: function() {

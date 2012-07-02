@@ -1,0 +1,9 @@
+@import "lib/common";
+
+body#view-help-request {
+  #content {
+    #respond-form {
+      display: none;
+    }
+  }
+}

@@ -36,6 +36,14 @@ body#search-help-requests {
       margin-right: auto;
     }
 
+    tr {
+      cursor: pointer;
+
+      &:first-child {
+        cursor: default;
+      }
+    }
+
     td {
       padding-left: 0.5em;
       padding-right: 0.5em;

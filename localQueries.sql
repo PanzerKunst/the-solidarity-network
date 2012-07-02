@@ -1,5 +1,6 @@
 use thesolidaritynetwork;
 
+drop table help_response;
 drop table help_request;
 drop table user;
 drop table country;
@@ -27,7 +28,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
-Create table `help_request`(  
+Create table `help_request`(
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `requester_id` int(10) unsigned NOT NULL,
   `title` varchar(100) NOT NULL,
@@ -36,6 +37,18 @@ Create table `help_request`(
   `expiry_date` date NOT NULL,
   primary key (`id`),
   constraint `fk_requester` foreign key (`requester_id`) references `user`(`id`)
+) ENGINE=InnoDB DEFAULT charset=utf8;
+
+
+Create table `help_response`(
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `request_id` int(10) unsigned NOT NULL,
+  `responder_id` int(10) unsigned NOT NULL,
+  `text` text NOT NULL,
+  `creation_date` date NOT NULL,
+  primary key (`id`),
+  constraint `fk_request` foreign key (`request_id`) references `help_request`(`id`),
+  constraint `fk_responder` foreign key (`responder_id`) references `user`(`id`)
 ) ENGINE=InnoDB DEFAULT charset=utf8;
 
 
@@ -51,3 +64,5 @@ values("Christophe", "Bram", "blackbird", "cbramdit@gmail.com", "tigrou", "Helen
 select * from user;
 
 select * from help_request;
+
+select * from help_response;

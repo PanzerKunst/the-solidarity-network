@@ -1,4 +1,4 @@
-CBR.Controllers.CreateHelpRequest = new Class({
+CBR.Controllers.ViewHelpRequest = new Class({
     Extends: CBR.Controllers.TemplateController,
 
     initialize: function (options) {
@@ -15,8 +15,11 @@ CBR.Controllers.CreateHelpRequest = new Class({
 
         this._initValidation();
 
-        jQuery("#submit-button").click(jQuery.proxy(this._doCreate, this));
-        jQuery("form").submit(jQuery.proxy(this._doCreate, this));
+        this.$repondForm = jQuery("#respond-form");
+
+        jQuery("#respond").click(jQuery.proxy(this._expandRespondForm, this));
+        jQuery("#post-response-button").click(jQuery.proxy(this._doCreateResponse, this));
+        this.$repondForm.submit(jQuery.proxy(this._doCreateResponse, this));
     },
 
     _initValidation: function () {
@@ -24,21 +27,24 @@ CBR.Controllers.CreateHelpRequest = new Class({
 
         this.validator = new CBR.Services.Validator({
             fieldIds: [
-                "title",
-                "description",
-                "expiry-date"
+                "response-text"
             ]
         });
     },
 
-    _doCreate: function (e) {
+    _expandRespondForm: function(e) {
+        e.preventDefault();
+
+        this.$repondForm.slideDown(200, "easeOutQuad");
+    },
+
+    _doCreateResponse: function (e) {
         e.preventDefault();
 
         if (this.validator.isValid()) {
-            var helpRequest = new CBR.Models.HelpRequest({
-                title: jQuery("#title").val(),
-                description: jQuery("#description").val(),
-                expiryDate: jQuery("#expiry-date").val()
+            var helpResponse = new CBR.Models.HelpResponse({
+                requestId: jQuery("#help-request").data("id"),
+                text: jQuery("#response-text").val()
             });
 
             var _this = this;
@@ -46,10 +52,10 @@ CBR.Controllers.CreateHelpRequest = new Class({
             new Request({
                 urlEncoded: false,
                 headers: { "Content-Type": "application/json" },
-                url: "/api/help-requests",
-                data: CBR.JsonUtil.stringifyModel(helpRequest),
+                url: "/api/help-responses",
+                data: CBR.JsonUtil.stringifyModel(helpResponse),
                 onSuccess: function (responseText, responseXML) {
-                    location.replace("/help");
+                    location.reload();
                 },
                 onFailure: function (xhr) {
                     if (xhr.status === _this.httpStatusCode.unauthorized)

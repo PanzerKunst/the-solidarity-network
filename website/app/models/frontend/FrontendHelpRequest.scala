@@ -18,7 +18,7 @@ class FrontendHelpRequest extends HelpRequest {
     this.expiryDate = helpRequest.expiryDate
 
     this.requester = UserDto.get(Some(Map("id" -> this.requesterId.toString))).head
-    this.country = CountryDto.get(Some(Map("id" -> this.requester.countryId.toString))).head
+    this.country = CountryDto.get(Some(Map("id" -> this.requester.countryId.get.toString))).head
   }
 
   def this(helpRequest: HelpRequest,

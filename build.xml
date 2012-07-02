@@ -52,7 +52,8 @@ Dependencies:
                 home.css
                 help-dashboard.css
                 create-help-request.css
-                search-help-requests.css" />
+                search-help-requests.css
+                view-help-request.css" />
         </concat>
     </target>
 
@@ -81,12 +82,14 @@ Dependencies:
                 models/json-serializable-model.js
                 models/user.js
                 models/help-request.js
+                models/help-response.js
                 controllers/template-controller.js
                 controllers/nav-controller.js
                 controllers/login-controller.js
                 controllers/register-controller.js
                 controllers/create-help-request-controller.js
-                controllers/search-help-requests-controller.js" />
+                controllers/search-help-requests-controller.js
+                controllers/view-help-requests-controller.js" />
         </concat>
     </target>
     

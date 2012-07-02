@@ -6,7 +6,7 @@ CBR.Controllers.Register = new Class({
     },
 
     run: function () {
-        this.getEl().append(
+        this.getEl().html(
             Mustache.to_html(
                 jQuery("#content-template").html(),
                 this.options

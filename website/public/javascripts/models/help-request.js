@@ -39,5 +39,13 @@ CBR.Models.HelpRequest = new Class({
 
     setRequester: function (requester) {
         this.options.requester = requester;
+    },
+
+    getCountry: function () {
+        return this.options.country;
+    },
+
+    setCountry: function (country) {
+        this.options.country = country;
     }
 });

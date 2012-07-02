@@ -8,6 +8,29 @@ import play.api.Logger
 import java.util
 
 object HelpRequestDto {
+  def get(filters: Option[Map[String, String]]): List[HelpRequest] = {
+    DB.withConnection {
+      implicit c =>
+
+        val query = """
+          select id, requester_id, title, description, creation_date, expiry_date
+          from help_request """ + DbUtil.generateWhereClause(filters) + ";"
+
+        Logger.info("HelpRequestDto.get():" + query)
+
+        SQL(query)().map(row =>
+          new HelpRequest(
+            row[Long]("id"),
+            row[Long]("requester_id"),
+            row[String]("title"),
+            row[String]("description"),
+            row[util.Date]("creation_date"),
+            row[util.Date]("expiry_date")
+          )
+        ).toList
+    }
+  }
+
   def searchGeneric(searchQuery: Option[String]): List[(HelpRequest, User, Country)] = {
     DB.withConnection {
       implicit c =>

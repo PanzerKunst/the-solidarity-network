@@ -1,4 +1,4 @@
-@(user: User)
+@(user: User, helpRequest: frontend.FrontendHelpRequest)
 @main("Solidarity Network - View help request", "view-help-request") {
 <!--
     Header
@@ -14,4 +14,81 @@
 <!--
     Javascript
 -->
+<script id="content-template" type="text/html">
+    <div id="requester">
+
+    </div>
+
+    <div id="main">
+        <div id="help-request" data-id="{{helpRequest.id}}">
+            <h1>{{helpRequest.title}}</h1>
+
+            <p>{{helpRequest.description}}</p>
+
+            <p>
+                <label>Submitted:</label>
+                <span>{{helpRequest.creationDate}}</span>
+            </p>
+
+            <p>
+                <label>Expires:</label>
+                <span>{{helpRequest.expiryDate}}</span>
+            </p>
+
+            @if(user.id.get == helpRequest.requesterId) {
+            <span>
+                <a id="edit">Edit</a>
+            </span>
+            <span>
+                <a id="delete">Delete</a>
+            </span>
+            }
+        </div>
+
+        <div id="responses">
+            <h2>Responses</h2>
+            <!-- TODO: use <article> tags! -->
+
+        </div>
+
+        @if(user.id.get != helpRequest.requesterId) {
+            <a id="respond">Respond to @user.firstName.get's help request</a>
+            <a id="write-reference">Write a reference</a>
+        }
+
+        <form id="respond-form">
+            <h3>Respond to @user.firstName.get's help request</h3>
+
+            <div class="field">
+                <textarea id="response-text" placeholder="Your message *" />
+
+                <p class="field-error" data-check="empty">Please respond to with a message</p>
+            </div>
+
+            <span id="submit-response-wrapper">
+                <a id="post-response-button">
+                    <span>Post response</span>
+                </a>
+
+                <a id="cancel-response-button">
+                    <span>Cancel</span>
+                </a>
+
+                <input type="submit" />
+            </span>
+        </form>
+    </div>
+
+</script>
+
+<script type="text/javascript">
+    window.addEvent("domready",function () {
+        new CBR.Controllers.NavController().run();
+
+        new CBR.Controllers.ViewHelpRequest({
+            el: "#content",
+            helpRequest: @Html(services.JsonUtil.serialize(helpRequest))
+        }).run();
+    });
+</script>
 }

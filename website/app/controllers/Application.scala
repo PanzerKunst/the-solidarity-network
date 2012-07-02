@@ -2,9 +2,10 @@ package controllers
 
 import play.api.mvc._
 import models.User
-import database.{UserDto, CountryDto}
+import database.{HelpRequestDto, UserDto, CountryDto}
 import services.I18nService
 import scala.collection.mutable
+import models.frontend.FrontendHelpRequest
 
 object Application extends Controller {
 
@@ -73,6 +74,16 @@ object Application extends Controller {
     implicit request =>
       loggedInUser(session) match {
         case Some(user) => Ok(views.html.helpDashboard(user))
+        case None => Redirect(routes.Application.login)
+      }
+  }
+
+  def viewHelpRequest(id: Int) = Action {
+    implicit request =>
+      loggedInUser(session) match {
+        case Some(user) =>
+          val helpRequest = HelpRequestDto.get(Some(Map("id" -> id.toString))).head
+          Ok(views.html.viewHelpRequest(user, new FrontendHelpRequest(helpRequest)))
         case None => Redirect(routes.Application.login)
       }
   }
