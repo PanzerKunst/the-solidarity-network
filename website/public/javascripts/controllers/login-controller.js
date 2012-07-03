@@ -54,7 +54,7 @@ CBR.Controllers.Login = new Class({
                     if (this.status === _this.httpStatusCode.noContent)
                         jQuery("#auth-failed").show();
                     else
-                        location.replace("/home");
+                        location.href = "/home";
                 },
                 onFailure: function (xhr) {
                     alert("AJAX fail :(");

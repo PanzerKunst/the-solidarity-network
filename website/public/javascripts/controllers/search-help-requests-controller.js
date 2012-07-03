@@ -86,7 +86,7 @@ CBR.Controllers.SearchHelpRequests = new Class({
         var helpRequestId = jQuery(e.currentTarget).data("id");
 
         if (helpRequestId !== undefined)
-            location.replace("/help-requests/" + helpRequestId);
+            location.href = "/help-requests/" + helpRequestId;
     },
 
     _getSearchedCity: function() {

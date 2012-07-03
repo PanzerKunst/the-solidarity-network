@@ -200,6 +200,6 @@ CBR.Controllers.Register = new Class({
 
         var languageCode = e.currentTarget.value;
 
-        location.replace("/register?lang=" + languageCode);
+        location.href = "/register?lang=" + languageCode;
     }
 });
