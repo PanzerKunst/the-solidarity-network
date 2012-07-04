@@ -1,39 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b6a692bc-d147-471b-bee0-2af12beb41f5" name="Default" comment="">
-      <change type="DELETED" beforePath="E:\Pro\the-solidarity-network\website\public\stylesheets\register.css" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build.xml" afterPath="$PROJECT_DIR$/../build.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Application.scala" afterPath="$PROJECT_DIR$/app/controllers/Application.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/DbUtil.scala" afterPath="$PROJECT_DIR$/app/database/DbUtil.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/HelpRequestDto.scala" afterPath="$PROJECT_DIR$/app/database/HelpRequestDto.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/HelpResponseDto.scala" afterPath="$PROJECT_DIR$/app/database/HelpResponseDto.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/UserDto.scala" afterPath="$PROJECT_DIR$/app/database/UserDto.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/HelpRequest.scala" afterPath="$PROJECT_DIR$/app/models/HelpRequest.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/HelpResponse.scala" afterPath="$PROJECT_DIR$/app/models/HelpResponse.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/frontend/FrontendHelpRequest.scala" afterPath="$PROJECT_DIR$/app/models/frontend/FrontendHelpRequest.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/services/I18nService.scala" afterPath="$PROJECT_DIR$/app/services/I18nService.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/index.scala.html" afterPath="$PROJECT_DIR$/app/views/index.scala.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/login.scala.html" afterPath="$PROJECT_DIR$/app/views/login.scala.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/main.scala.html" afterPath="$PROJECT_DIR$/app/views/main.scala.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/nav.scala.html" afterPath="$PROJECT_DIR$/app/views/nav.scala.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/searchHelpRequests.scala.html" afterPath="$PROJECT_DIR$/app/views/searchHelpRequests.scala.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/viewHelpRequest.scala.html" afterPath="$PROJECT_DIR$/app/views/viewHelpRequest.scala.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/messages.en" afterPath="$PROJECT_DIR$/conf/messages.en" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/messages.fr" afterPath="$PROJECT_DIR$/conf/messages.fr" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/routes" afterPath="$PROJECT_DIR$/conf/routes" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/controllers/view-help-request-controller.js" afterPath="$PROJECT_DIR$/public/javascripts/controllers/view-help-request-controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/models/help-request.js" afterPath="$PROJECT_DIR$/public/javascripts/models/help-request.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/models/help-response.js" afterPath="$PROJECT_DIR$/public/javascripts/models/help-response.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/login.css" afterPath="$PROJECT_DIR$/public/stylesheets/login.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/scss/login.scss" afterPath="$PROJECT_DIR$/public/stylesheets/scss/login.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/scss/view-help-request.scss" afterPath="$PROJECT_DIR$/public/stylesheets/scss/view-help-request.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/view-help-request.css" afterPath="$PROJECT_DIR$/public/stylesheets/view-help-request.css" />
-      <change type="MOVED" beforePath="E:\Pro\the-solidarity-network\website\app\views\register.scala.html" afterPath="$PROJECT_DIR$/app/views/join.scala.html" />
-      <change type="MOVED" beforePath="E:\Pro\the-solidarity-network\website\public\javascripts\controllers\register-controller.js" afterPath="$PROJECT_DIR$/public/javascripts/controllers/join-controller.js" />
-      <change type="MOVED" beforePath="E:\Pro\the-solidarity-network\website\public\stylesheets\scss\register.scss" afterPath="$PROJECT_DIR$/public/stylesheets/scss/join.scss" />
-    </list>
+    <list default="true" id="b6a692bc-d147-471b-bee0-2af12beb41f5" name="Default" comment="" />
     <ignored path="website.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -122,10 +90,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="viewHelpRequest.scala.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="viewHelpRequest.scala.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/viewHelpRequest.scala.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="89" column="31" selection-start="2439" selection-end="2439" vertical-scroll-proportion="-18.115385">
+            <state line="56" column="22" selection-start="1402" selection-end="1402" vertical-scroll-proportion="1.2355317">
               <folding>
                 <element signature="e#249#269#0" expanded="false" />
               </folding>
@@ -178,10 +146,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FrontendHelpRequest.scala" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="FrontendHelpRequest.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/frontend/FrontendHelpRequest.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="10" selection-start="258" selection-end="258" vertical-scroll-proportion="0.15474643">
+            <state line="27" column="10" selection-start="811" selection-end="811" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -199,7 +167,7 @@
       <file leaf-file-name="searchHelpRequests.scala.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/searchHelpRequests.scala.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="65" column="62" selection-start="1849" selection-end="1849" vertical-scroll-proportion="-8.153846">
+            <state line="59" column="34" selection-start="1680" selection-end="1680" vertical-scroll-proportion="-38.384617">
               <folding />
             </state>
           </provider>
@@ -242,9 +210,9 @@
         <option value="$PROJECT_DIR$/public/javascripts/models/help-response.js" />
         <option value="$PROJECT_DIR$/app/models/frontend/FrontendHelpResponse.scala" />
         <option value="$PROJECT_DIR$/public/stylesheets/scss/view-help-request.scss" />
-        <option value="$PROJECT_DIR$/app/views/viewHelpRequest.scala.html" />
         <option value="$PROJECT_DIR$/public/javascripts/controllers/view-help-request-controller.js" />
         <option value="$PROJECT_DIR$/app/models/frontend/FrontendHelpRequest.scala" />
+        <option value="$PROJECT_DIR$/app/views/viewHelpRequest.scala.html" />
       </list>
     </option>
   </component>
@@ -962,7 +930,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1186" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32959402" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -978,7 +946,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22970085" sideWeight="0.79337233" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22970085" sideWeight="0.79337233" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20662768" sideWeight="0.54647434" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1087,13 +1055,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/searchHelpRequests.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="62" selection-start="1849" selection-end="1849" vertical-scroll-proportion="-8.153846">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/HelpRequest.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state line="30" column="0" selection-start="570" selection-end="570" vertical-scroll-proportion="0.0">
@@ -1136,15 +1097,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/viewHelpRequest.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="31" selection-start="2439" selection-end="2439" vertical-scroll-proportion="-18.115385">
-          <folding>
-            <element signature="e#249#269#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/view-help-request-controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="33" column="0" selection-start="1309" selection-end="1309" vertical-scroll-proportion="0.0">
@@ -1154,8 +1106,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/frontend/FrontendHelpRequest.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="10" selection-start="258" selection-end="258" vertical-scroll-proportion="0.15474643">
+        <state line="27" column="10" selection-start="811" selection-end="811" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/searchHelpRequests.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="34" selection-start="1680" selection-end="1680" vertical-scroll-proportion="-38.384617">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/viewHelpRequest.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="22" selection-start="1402" selection-end="1402" vertical-scroll-proportion="1.2355317">
+          <folding>
+            <element signature="e#249#269#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

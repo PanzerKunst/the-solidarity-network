@@ -60,7 +60,7 @@
         </section>
 
         @if(user.id.get != helpRequest.requesterId) {
-            <a id="respond">Respond to @user.firstName.get's help request</a>
+            <a id="respond">Respond to {{helpRequest.requester.firstName}}'s help request</a>
 
             <form id="respond-form">
                 <div class="field">

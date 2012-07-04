@@ -23,6 +23,7 @@ CREATE TABLE `user` (
   `post_code` varchar(10) DEFAULT NULL,
   `city` varchar(45) NOT NULL,
   `country_id` int(10) unsigned NOT NULL,
+  `creation_date` datetime NOT NULL,
   PRIMARY KEY (`id`,`username`,`email`) USING BTREE,
   CONSTRAINT `FK_country` FOREIGN KEY (`country_id`) REFERENCES `country` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -33,7 +34,7 @@ Create table `help_request`(
   `requester_id` int(10) unsigned NOT NULL,
   `title` varchar(100) NOT NULL,
   `description` text NOT NULL,
-  `creation_date` date NOT NULL,
+  `creation_date` datetime NOT NULL,
   `expiry_date` date NOT NULL,
   primary key (`id`),
   constraint `fk_requester` foreign key (`requester_id`) references `user`(`id`)
@@ -45,7 +46,7 @@ Create table `help_response`(
   `request_id` int(10) unsigned NOT NULL,
   `responder_id` int(10) unsigned NOT NULL,
   `text` text NOT NULL,
-  `creation_date` date NOT NULL,
+  `creation_date` datetime NOT NULL,
   primary key (`id`),
   constraint `fk_request` foreign key (`request_id`) references `help_request`(`id`),
   constraint `fk_responder` foreign key (`responder_id`) references `user`(`id`)
