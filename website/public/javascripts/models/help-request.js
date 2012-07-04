@@ -20,8 +20,8 @@ CBR.Models.HelpRequest = new Class({
         return this.options.description;
     },
 
-    getCreationDate: function () {
-        return this.options.creationDate;
+    getCreationDatetime: function () {
+        return this.options.creationDatetime;
     },
 
     getExpiryDate: function () {

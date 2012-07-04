@@ -1,2 +1,5 @@
-body#view-help-request #content #respond-form {
+body#view-help-request #content #respond-form,
+body#view-help-request #content #reference-form {
   display: none; }
+body#view-help-request #content #main > a {
+  display: block; }

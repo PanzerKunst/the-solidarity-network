@@ -2,10 +2,10 @@ package controllers
 
 import play.api.mvc._
 import models.User
-import database.{HelpRequestDto, UserDto, CountryDto}
+import database.{HelpResponseDto, HelpRequestDto, UserDto, CountryDto}
 import services.I18nService
 import scala.collection.mutable
-import models.frontend.FrontendHelpRequest
+import models.frontend.{FrontendHelpResponse, FrontendHelpRequest}
 
 object Application extends Controller {
 
@@ -15,7 +15,7 @@ object Application extends Controller {
     Ok(views.html.index())
   }
 
-  def register = Action {
+  def join = Action {
     implicit request =>
 
       var i18n: mutable.Map[String, String] = null
@@ -23,11 +23,11 @@ object Application extends Controller {
 
       if (request.queryString.contains("lang")) {
         languageCode = request.queryString.get("lang").get.head
-        i18n = I18nService.get("register", languageCode)
+        i18n = I18nService.get("join", languageCode)
       } else
-        i18n = I18nService.get("register", defaultLanguageCode)
+        i18n = I18nService.get("join", defaultLanguageCode)
 
-      Ok(views.html.register(i18n, CountryDto.get(None), languageCode))
+      Ok(views.html.join(i18n, CountryDto.get(None), languageCode))
   }
 
   def login = Action {
@@ -83,7 +83,9 @@ object Application extends Controller {
       loggedInUser(session) match {
         case Some(user) =>
           val helpRequest = HelpRequestDto.get(Some(Map("id" -> id.toString))).head
-          Ok(views.html.viewHelpRequest(user, new FrontendHelpRequest(helpRequest)))
+          val frontendHelpResponses = for (helpResponse <- HelpResponseDto.get(Some(Map("request_id" -> id.toString)))) yield new FrontendHelpResponse(helpResponse)
+
+          Ok(views.html.viewHelpRequest(user, new FrontendHelpRequest(helpRequest), frontendHelpResponses))
         case None => Redirect(routes.Application.login)
       }
   }

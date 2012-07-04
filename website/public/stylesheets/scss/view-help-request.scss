@@ -2,8 +2,15 @@
 
 body#view-help-request {
   #content {
-    #respond-form {
+    #respond-form,
+    #reference-form {
       display: none;
+    }
+
+    #main {
+      > a {
+        display: block;
+      }
     }
   }
 }

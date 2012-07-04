@@ -10,7 +10,7 @@ class HelpRequest {
            requesterId: Long,
            title: String,
            description: String,
-           creationDate: Date,
+           creationDatetime: Date,
            expiryDate: Date) = {
 
     this()
@@ -19,7 +19,7 @@ class HelpRequest {
     this.requesterId = requesterId
     this.title = title
     this.description = description
-    this.creationDate = creationDate
+    this.creationDatetime = creationDatetime
     this.expiryDate = expiryDate
   }
 
@@ -36,7 +36,7 @@ class HelpRequest {
   var requesterId: Long = _
 
   @JsonProperty
-  var creationDate: Date = _
+  var creationDatetime: Date = _
 
   @JsonProperty
   var expiryDate: Date = _

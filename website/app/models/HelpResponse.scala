@@ -10,14 +10,15 @@ class HelpResponse {
            requestId: Long,
            responderId: Long,
            text: String,
-           creationDate: Date) = {
+           creationDatetime: Date) = {
 
     this()
 
     this.id = id
+    this.requestId = requestId
     this.responderId = responderId
     this.text = text
-    this.creationDate = creationDate
+    this.creationDatetime = creationDatetime
   }
 
   @JsonProperty
@@ -33,5 +34,5 @@ class HelpResponse {
   var text: String = _
 
   @JsonProperty
-  var creationDate: Date = _
+  var creationDatetime: Date = _
 }

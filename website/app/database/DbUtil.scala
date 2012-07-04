@@ -5,6 +5,7 @@ import java.util.Date
 
 object DbUtil {
   private val dbDateFormat: SimpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+  val dbDatetimeFormat: SimpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
   def generateWhereClause(filters: Option[Map[String, String]]) = {
     filters match {
@@ -25,5 +26,9 @@ object DbUtil {
 
   def dateToString(date: Date): String = {
     dbDateFormat.format(date)
+  }
+
+  def datetimeToString(date: Date): String = {
+    dbDatetimeFormat.format(date)
   }
 }

@@ -1,4 +1,4 @@
-@(user: User, helpRequest: frontend.FrontendHelpRequest)
+@(user: User, helpRequest: frontend.FrontendHelpRequest, helpResponses: List[frontend.FrontendHelpResponse])
 @main("Solidarity Network - View help request", "view-help-request") {
 <!--
     Header
@@ -20,14 +20,14 @@
     </div>
 
     <div id="main">
-        <div id="help-request" data-id="{{helpRequest.id}}">
+        <section id="help-request" data-id="{{helpRequest.id}}">
             <h1>{{helpRequest.title}}</h1>
 
             <p>{{helpRequest.description}}</p>
 
             <p>
                 <label>Submitted:</label>
-                <span>{{helpRequest.creationDate}}</span>
+                <span>{{helpRequest.creationDatetime}}</span>
             </p>
 
             <p>
@@ -43,40 +43,62 @@
                 <a id="delete">Delete</a>
             </span>
             }
-        </div>
+        </section>
 
-        <div id="responses">
+        <section id="responses">
             <h2>Responses</h2>
-            <!-- TODO: use <article> tags! -->
 
-        </div>
+            {{#helpResponses}}
+            <article>
+                <span>{{creationDatetime}}</span>
+                <span>{{responder.name}}</span>
+                <span>{{responder.username}}</span>
+                <p>{{text}}</p>
+            </article>
+            {{/helpResponses}}
+
+        </section>
 
         @if(user.id.get != helpRequest.requesterId) {
             <a id="respond">Respond to @user.firstName.get's help request</a>
+
+            <form id="respond-form">
+                <div class="field">
+                    <textarea id="response-text" placeholder="Your message *" />
+
+                    <p class="field-error" data-check="empty">Please respond to with a message</p>
+                </div>
+
+                <span id="submit-response-wrapper">
+                    <a id="post-response-button">
+                        <span>Post response</span>
+                    </a>
+
+                    <a id="cancel-response-button">
+                        <span>Cancel</span>
+                    </a>
+
+                    <input type="submit" />
+                </span>
+            </form>
+
             <a id="write-reference">Write a reference</a>
+
+            <form id="reference-form">
+
+                <span id="submit-reference-wrapper">
+                    <a id="post-reference-button">
+                        <span>Save reference</span>
+                    </a>
+
+                    <a id="cancel-reference-button">
+                        <span>Cancel</span>
+                    </a>
+
+                    <input type="submit" />
+                </span>
+            </form>
         }
-
-        <form id="respond-form">
-            <h3>Respond to @user.firstName.get's help request</h3>
-
-            <div class="field">
-                <textarea id="response-text" placeholder="Your message *" />
-
-                <p class="field-error" data-check="empty">Please respond to with a message</p>
-            </div>
-
-            <span id="submit-response-wrapper">
-                <a id="post-response-button">
-                    <span>Post response</span>
-                </a>
-
-                <a id="cancel-response-button">
-                    <span>Cancel</span>
-                </a>
-
-                <input type="submit" />
-            </span>
-        </form>
     </div>
 
 </script>
@@ -87,7 +109,8 @@
 
         new CBR.Controllers.ViewHelpRequest({
             el: "#content",
-            helpRequest: @Html(services.JsonUtil.serialize(helpRequest))
+            helpRequest: @Html(services.JsonUtil.serialize(helpRequest)),
+            helpResponses: @Html(services.JsonUtil.serialize(helpResponses))
         }).run();
     });
 </script>

@@ -47,7 +47,7 @@ Dependencies:
                 header.css
                 form.css
                 index.css
-                register.css
+                join.css
                 login.css
                 home.css
                 help-dashboard.css
@@ -86,7 +86,7 @@ Dependencies:
                 controllers/template-controller.js
                 controllers/nav-controller.js
                 controllers/login-controller.js
-                controllers/register-controller.js
+                controllers/join-controller.js
                 controllers/create-help-request-controller.js
                 controllers/search-help-requests-controller.js
                 controllers/view-help-requests-controller.js" />

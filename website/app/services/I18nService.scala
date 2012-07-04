@@ -7,7 +7,7 @@ object I18nService {
   def get(page: String, languageCode: String) = {
     var i18n = mutable.Map.empty[String, String]
 
-    if (page == "register") {
+    if (page == "join") {
       i18n += (page + ".title" -> Messages(page + ".title")(Lang(languageCode)))
     }
 

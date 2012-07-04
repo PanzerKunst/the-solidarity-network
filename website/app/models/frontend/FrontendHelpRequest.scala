@@ -14,7 +14,7 @@ class FrontendHelpRequest extends HelpRequest {
     this.requesterId = helpRequest.requesterId
     this.title = helpRequest.title
     this.description = helpRequest.description
-    this.creationDate = helpRequest.creationDate
+    this.creationDatetime = helpRequest.creationDatetime
     this.expiryDate = helpRequest.expiryDate
 
     this.requester = UserDto.get(Some(Map("id" -> this.requesterId.toString))).head
@@ -31,7 +31,7 @@ class FrontendHelpRequest extends HelpRequest {
     this.requesterId = helpRequest.requesterId
     this.title = helpRequest.title
     this.description = helpRequest.description
-    this.creationDate = helpRequest.creationDate
+    this.creationDatetime = helpRequest.creationDatetime
     this.expiryDate = helpRequest.expiryDate
 
     this.requester = user

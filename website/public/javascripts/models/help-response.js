@@ -20,8 +20,8 @@ CBR.Models.HelpResponse = new Class({
         return this.options.text;
     },
 
-    getCreationDate: function () {
-        return this.options.creationDate;
+    getCreationDatetime: function () {
+        return this.options.creationDatetime;
     },
 
 

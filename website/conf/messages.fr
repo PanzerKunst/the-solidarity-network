@@ -1,4 +1,4 @@
-# Register page
+# Join page
 # ~~~~~
-register.title=S''inscrire au Solidarity Network
-register.firstName.label=Prénom
+join.title=Rejoindre le Solidarity Network
+join.firstName.label=Prénom

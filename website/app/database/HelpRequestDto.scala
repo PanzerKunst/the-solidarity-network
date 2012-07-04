@@ -104,7 +104,7 @@ object HelpRequestDto {
       values(""" + helpRequest.requesterId + ""","""" +
           DbUtil.backslashQuotes(helpRequest.title) + """","""" +
           DbUtil.backslashQuotes(helpRequest.description) + """","""" +
-          DbUtil.dateToString(new util.Date()) + """","""" +
+          DbUtil.datetimeToString(new util.Date()) + """","""" +
           DbUtil.dateToString(helpRequest.expiryDate) + """");"""
 
         Logger.info("HelpRequestDto.create(): " + query)

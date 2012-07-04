@@ -1,4 +1,4 @@
-CBR.Controllers.Register = new Class({
+CBR.Controllers.Join = new Class({
     Extends: CBR.Controllers.TemplateController,
 
     initialize: function (options) {
@@ -26,7 +26,7 @@ CBR.Controllers.Register = new Class({
 
         this._initValidation();
 
-        jQuery("#register-button").click(jQuery.proxy(this._doRegister, this));
+        jQuery("#join-button").click(jQuery.proxy(this._doRegister, this));
         jQuery("form").submit(jQuery.proxy(this._doRegister, this));
 
         this.$languageSelect.change(jQuery.proxy(this._changeLanguage, this));
@@ -200,6 +200,6 @@ CBR.Controllers.Register = new Class({
 
         var languageCode = e.currentTarget.value;
 
-        location.href = "/register?lang=" + languageCode;
+        location.href = "/join?lang=" + languageCode;
     }
 });

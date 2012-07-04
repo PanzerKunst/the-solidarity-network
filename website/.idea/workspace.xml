@@ -2,11 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6a692bc-d147-471b-bee0-2af12beb41f5" name="Default" comment="">
+      <change type="DELETED" beforePath="E:\Pro\the-solidarity-network\website\public\stylesheets\register.css" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build.xml" afterPath="$PROJECT_DIR$/../build.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/controllers/create-help-request-controller.js" afterPath="$PROJECT_DIR$/public/javascripts/controllers/create-help-request-controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/controllers/login-controller.js" afterPath="$PROJECT_DIR$/public/javascripts/controllers/login-controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/controllers/register-controller.js" afterPath="$PROJECT_DIR$/public/javascripts/controllers/register-controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/controllers/search-help-requests-controller.js" afterPath="$PROJECT_DIR$/public/javascripts/controllers/search-help-requests-controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Application.scala" afterPath="$PROJECT_DIR$/app/controllers/Application.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/DbUtil.scala" afterPath="$PROJECT_DIR$/app/database/DbUtil.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/HelpRequestDto.scala" afterPath="$PROJECT_DIR$/app/database/HelpRequestDto.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/HelpResponseDto.scala" afterPath="$PROJECT_DIR$/app/database/HelpResponseDto.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/UserDto.scala" afterPath="$PROJECT_DIR$/app/database/UserDto.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/HelpRequest.scala" afterPath="$PROJECT_DIR$/app/models/HelpRequest.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/HelpResponse.scala" afterPath="$PROJECT_DIR$/app/models/HelpResponse.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/frontend/FrontendHelpRequest.scala" afterPath="$PROJECT_DIR$/app/models/frontend/FrontendHelpRequest.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/services/I18nService.scala" afterPath="$PROJECT_DIR$/app/services/I18nService.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/index.scala.html" afterPath="$PROJECT_DIR$/app/views/index.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/login.scala.html" afterPath="$PROJECT_DIR$/app/views/login.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/main.scala.html" afterPath="$PROJECT_DIR$/app/views/main.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/nav.scala.html" afterPath="$PROJECT_DIR$/app/views/nav.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/searchHelpRequests.scala.html" afterPath="$PROJECT_DIR$/app/views/searchHelpRequests.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/viewHelpRequest.scala.html" afterPath="$PROJECT_DIR$/app/views/viewHelpRequest.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/messages.en" afterPath="$PROJECT_DIR$/conf/messages.en" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/messages.fr" afterPath="$PROJECT_DIR$/conf/messages.fr" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/routes" afterPath="$PROJECT_DIR$/conf/routes" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/controllers/view-help-request-controller.js" afterPath="$PROJECT_DIR$/public/javascripts/controllers/view-help-request-controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/models/help-request.js" afterPath="$PROJECT_DIR$/public/javascripts/models/help-request.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/models/help-response.js" afterPath="$PROJECT_DIR$/public/javascripts/models/help-response.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/login.css" afterPath="$PROJECT_DIR$/public/stylesheets/login.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/scss/login.scss" afterPath="$PROJECT_DIR$/public/stylesheets/scss/login.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/scss/view-help-request.scss" afterPath="$PROJECT_DIR$/public/stylesheets/scss/view-help-request.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/view-help-request.css" afterPath="$PROJECT_DIR$/public/stylesheets/view-help-request.css" />
+      <change type="MOVED" beforePath="E:\Pro\the-solidarity-network\website\app\views\register.scala.html" afterPath="$PROJECT_DIR$/app/views/join.scala.html" />
+      <change type="MOVED" beforePath="E:\Pro\the-solidarity-network\website\public\javascripts\controllers\register-controller.js" afterPath="$PROJECT_DIR$/public/javascripts/controllers/join-controller.js" />
+      <change type="MOVED" beforePath="E:\Pro\the-solidarity-network\website\public\stylesheets\scss\register.scss" afterPath="$PROJECT_DIR$/public/stylesheets/scss/join.scss" />
     </list>
     <ignored path="website.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -96,10 +122,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.scala.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/main.scala.html">
+      <file leaf-file-name="viewHelpRequest.scala.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/viewHelpRequest.scala.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="106" column="68" selection-start="4492" selection-end="4492" vertical-scroll-proportion="0.0">
+            <state line="89" column="31" selection-start="2439" selection-end="2439" vertical-scroll-proportion="-18.115385">
+              <folding>
+                <element signature="e#249#269#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="view-help-request.scss" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/stylesheets/scss/view-help-request.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="18" selection-start="79" selection-end="79" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="view-help-request-controller.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/view-help-request-controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="33" column="0" selection-start="1309" selection-end="1309" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="help-request.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/javascripts/models/help-request.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="23" selection-start="446" selection-end="446" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -108,79 +163,52 @@
       <file leaf-file-name="help-response.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/javascripts/models/help-response.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="6" selection-start="416" selection-end="416" vertical-scroll-proportion="0.0">
+            <state line="23" column="44" selection-start="501" selection-end="501" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FrontendHelpRequest.scala" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="HelpResponse.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/HelpResponse.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="20" selection-start="371" selection-end="371" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FrontendHelpRequest.scala" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/frontend/FrontendHelpRequest.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="42" selection-start="555" selection-end="555" vertical-scroll-proportion="0.0">
+            <state line="10" column="10" selection-start="258" selection-end="258" vertical-scroll-proportion="0.15474643">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HelpResponseApi.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/api/HelpResponseApi.scala">
+      <file leaf-file-name="FrontendHelpResponse.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/frontend/FrontendHelpResponse.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="0" selection-start="617" selection-end="617" vertical-scroll-proportion="0.0">
+            <state line="24" column="0" selection-start="590" selection-end="590" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HelpResponseDto.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/database/HelpResponseDto.scala">
+      <file leaf-file-name="searchHelpRequests.scala.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/searchHelpRequests.scala.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="16" selection-start="150" selection-end="150" vertical-scroll-proportion="0.0">
+            <state line="65" column="62" selection-start="1849" selection-end="1849" vertical-scroll-proportion="-8.153846">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="search-help-requests-controller.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/search-help-requests-controller.js">
+      <file leaf-file-name="HelpRequest.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/HelpRequest.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="74" column="50" selection-start="2510" selection-end="2510" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="view-help-request-controller.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/view-help-request-controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="0" selection-start="2043" selection-end="2043" vertical-scroll-proportion="0.84136856">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="create-help-request-controller.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/create-help-request-controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="24" selection-start="1691" selection-end="1691" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login-controller.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/login-controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="47" selection-start="1738" selection-end="1738" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="register-controller.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/register-controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="83" column="46" selection-start="3061" selection-end="3061" vertical-scroll-proportion="0.0">
+            <state line="30" column="0" selection-start="570" selection-end="570" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -201,22 +229,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/controllers/Application.scala" />
-        <option value="$PROJECT_DIR$/public/stylesheets/scss/view-help-request.scss" />
-        <option value="$PROJECT_DIR$/app/models/HelpRequestResponse.scala" />
-        <option value="$PROJECT_DIR$/app/controllers/api/HelpRequestResponseApi.scala" />
         <option value="$PROJECT_DIR$/app/database/HelpResponseDto.scala" />
-        <option value="$PROJECT_DIR$/app/controllers/api/HelpResponseApi.scala" />
-        <option value="$PROJECT_DIR$/conf/routes" />
+        <option value="$PROJECT_DIR$/app/views/login.scala.html" />
+        <option value="$PROJECT_DIR$/public/stylesheets/scss/login.scss" />
+        <option value="$PROJECT_DIR$/app/database/UserDto.scala" />
+        <option value="$PROJECT_DIR$/app/database/HelpRequestDto.scala" />
+        <option value="$PROJECT_DIR$/app/database/DbUtil.scala" />
+        <option value="$PROJECT_DIR$/app/models/HelpRequest.scala" />
+        <option value="$PROJECT_DIR$/app/views/searchHelpRequests.scala.html" />
+        <option value="$PROJECT_DIR$/app/models/HelpResponse.scala" />
         <option value="$PROJECT_DIR$/public/javascripts/models/help-request.js" />
         <option value="$PROJECT_DIR$/public/javascripts/models/help-response.js" />
+        <option value="$PROJECT_DIR$/app/models/frontend/FrontendHelpResponse.scala" />
+        <option value="$PROJECT_DIR$/public/stylesheets/scss/view-help-request.scss" />
         <option value="$PROJECT_DIR$/app/views/viewHelpRequest.scala.html" />
-        <option value="$PROJECT_DIR$/app/views/main.scala.html" />
-        <option value="$PROJECT_DIR$/public/javascripts/controllers/login-controller.js" />
-        <option value="$PROJECT_DIR$/public/javascripts/controllers/create-help-request-controller.js" />
-        <option value="$PROJECT_DIR$/public/javascripts/controllers/register-controller.js" />
-        <option value="$PROJECT_DIR$/public/javascripts/controllers/search-help-requests-controller.js" />
         <option value="$PROJECT_DIR$/public/javascripts/controllers/view-help-request-controller.js" />
+        <option value="$PROJECT_DIR$/app/models/frontend/FrontendHelpRequest.scala" />
       </list>
     </option>
   </component>
@@ -274,20 +302,6 @@
             <PATH_ELEMENT USER_OBJECT="Root">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -584,6 +598,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="conf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resource Bundle 'messages'" />
+              <option name="myItemType" value="com.intellij.lang.properties.projectView.ResourceBundleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -710,6 +742,20 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -727,37 +773,25 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="Downloaded.Files.Path" value="E:\Pro\the-solidarity-network\website\lib" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Pro\the-solidarity-network\website\public\javascripts\common" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="services" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Pro\the-solidarity-network\website\public\javascripts\common" />
+    </key>
   </component>
   <component name="RunManager" selected="Remote.Debug Play">
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
     <configuration default="true" type="Specs2RunConfiguration" factoryName="Specs2">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <extension name="scalaCoverage" />
@@ -775,6 +809,18 @@
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
         <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
@@ -816,6 +862,17 @@
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -839,17 +896,6 @@
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
         <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
-      <JSDebuggerConfigurationSettings>
-        <option name="engineId" value="embedded" />
-        <option name="fileUrl" />
-      </JSDebuggerConfigurationSettings>
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
@@ -921,21 +967,21 @@
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32959402" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3294347" sideWeight="0.4636752" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294347" sideWeight="0.4636752" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26998052" sideWeight="0.7171825" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19298245" sideWeight="0.44978634" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294347" sideWeight="0.49786553" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294347" sideWeight="0.4701174" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294347" sideWeight="0.49786553" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22970085" sideWeight="0.6705653" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20662768" sideWeight="0.54647434" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22970085" sideWeight="0.79337233" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20662768" sideWeight="0.54647434" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294347" sideWeight="0.4701174" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -999,96 +1045,116 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/controllers/api/HelpRequestApi.scala">
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/scss/login.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="7" selection-start="270" selection-end="270" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/HelpRequest.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="34" selection-start="348" selection-end="348" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/models/help-request.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="0" selection-start="878" selection-end="878" vertical-scroll-proportion="1.1107955" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conf/routes">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="0" selection-start="1612" selection-end="1612" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/nav-controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="58" selection-start="815" selection-end="846" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/viewHelpRequest.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="88" column="10" selection-start="2223" selection-end="2224" vertical-scroll-proportion="0.0">
+        <state line="17" column="18" selection-start="325" selection-end="325" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/main.scala.html">
+    <entry file="file://$PROJECT_DIR$/app/database/UserDto.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="106" column="68" selection-start="4492" selection-end="4492" vertical-scroll-proportion="0.0">
+        <state line="58" column="9" selection-start="1606" selection-end="1606" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Country.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="11" selection-start="27" selection-end="27" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/DbUtil.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="22" selection-start="180" selection-end="196" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/HelpRequestDto.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="0" selection-start="307" selection-end="307" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/User.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="44" selection-start="477" selection-end="477" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/searchHelpRequests.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="65" column="62" selection-start="1849" selection-end="1849" vertical-scroll-proportion="-8.153846">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/HelpRequest.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="0" selection-start="570" selection-end="570" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/HelpResponse.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="20" selection-start="371" selection-end="371" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/models/help-request.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="23" selection-start="446" selection-end="446" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/models/help-response.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="6" selection-start="416" selection-end="416" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/frontend/FrontendHelpRequest.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="42" selection-start="555" selection-end="555" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/api/HelpResponseApi.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="0" selection-start="617" selection-end="617" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/HelpResponseDto.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="16" selection-start="150" selection-end="150" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/login-controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="47" selection-start="1738" selection-end="1738" vertical-scroll-proportion="0.0">
+        <state line="23" column="44" selection-start="501" selection-end="501" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/create-help-request-controller.js">
+    <entry file="file://$PROJECT_DIR$/app/models/frontend/FrontendHelpResponse.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="24" selection-start="1691" selection-end="1691" vertical-scroll-proportion="0.0">
+        <state line="24" column="0" selection-start="590" selection-end="590" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/register-controller.js">
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/scss/view-help-request.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="46" selection-start="3061" selection-end="3061" vertical-scroll-proportion="0.0">
+        <state line="4" column="18" selection-start="79" selection-end="79" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/search-help-requests-controller.js">
+    <entry file="file://$PROJECT_DIR$/app/views/viewHelpRequest.scala.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="50" selection-start="2510" selection-end="2510" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="89" column="31" selection-start="2439" selection-end="2439" vertical-scroll-proportion="-18.115385">
+          <folding>
+            <element signature="e#249#269#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/view-help-request-controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="0" selection-start="2043" selection-end="2043" vertical-scroll-proportion="0.84136856">
+        <state line="33" column="0" selection-start="1309" selection-end="1309" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/frontend/FrontendHelpRequest.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="10" selection-start="258" selection-end="258" vertical-scroll-proportion="0.15474643">
           <folding />
         </state>
       </provider>

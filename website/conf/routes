@@ -11,7 +11,7 @@ GET     /robots.txt                 controllers.Assets.at(path="/public", file="
 
 # Pages
 GET     /                           controllers.Application.index
-GET     /register                   controllers.Application.register
+GET     /join                       controllers.Application.join
 GET     /login                      controllers.Application.login
 GET     /logout                     controllers.Application.logout
 GET     /home                       controllers.Application.home

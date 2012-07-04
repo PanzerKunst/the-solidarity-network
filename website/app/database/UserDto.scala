@@ -5,6 +5,7 @@ import models.User
 import play.api.db.DB
 import play.api.Play.current
 import play.api.Logger
+import java.util
 
 
 object UserDto {
@@ -58,7 +59,7 @@ object UserDto {
         }
 
         val query = """
-                       insert into user(first_name, last_name, username, email, password, street_address, post_code, city, country_id)
+                       insert into user(first_name, last_name, username, email, password, street_address, post_code, city, country_id, creation_date)
       values("""" + DbUtil.backslashQuotes(user.firstName.get) + """","""" +
           DbUtil.backslashQuotes(user.lastName.get) + """","""" +
           DbUtil.backslashQuotes(user.username) + """","""" +
@@ -67,7 +68,8 @@ object UserDto {
           DbUtil.backslashQuotes(streetAddressForQuery) + """","""" +
           DbUtil.backslashQuotes(postCodeForQuery) + """","""" +
           DbUtil.backslashQuotes(user.city.get) + """",""" +
-          user.countryId + ");"
+          user.countryId.get + ""","""" +
+          DbUtil.datetimeToString(new util.Date()) + """");"""
 
         Logger.info("UserDto.create():" + query)
 

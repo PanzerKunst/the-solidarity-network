@@ -7,3 +7,7 @@ body#login #content .field {
 body#login #content #auth-failed {
   display: none;
   text-align: center; }
+body#login #content #join {
+  margin-left: auto;
+  margin-right: auto;
+  width: 10em; }

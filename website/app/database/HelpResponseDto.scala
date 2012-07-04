@@ -15,7 +15,7 @@ object HelpResponseDto {
         val query = """
           select id, request_id, responder_id, text, creation_date
           from help_response """ + DbUtil.generateWhereClause(filters) + """
-          order by creation_date desc;"""
+          order by creation_date;"""
 
         Logger.info("HelpResponseDto.get():" + query)
 

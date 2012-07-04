@@ -15,11 +15,21 @@ CBR.Controllers.ViewHelpRequest = new Class({
 
         this._initValidation();
 
-        this.$repondForm = jQuery("#respond-form");
+        this.$respondForm = jQuery("#respond-form");
+        this.$respond = jQuery("#respond");
 
-        jQuery("#respond").click(jQuery.proxy(this._expandRespondForm, this));
+        this.$referenceForm = jQuery("#reference-form");
+        this.$writeReference = jQuery("#write-reference");
+
+        this.$respond.click(jQuery.proxy(this._toggleRespondForm, this));
+        jQuery("#cancel-response-button").click(jQuery.proxy(this._collapseRespondForm, this));
         jQuery("#post-response-button").click(jQuery.proxy(this._doCreateResponse, this));
-        this.$repondForm.submit(jQuery.proxy(this._doCreateResponse, this));
+        this.$respondForm.submit(jQuery.proxy(this._doCreateResponse, this));
+
+        this.$writeReference.click(jQuery.proxy(this._toggleReferenceForm, this));
+        jQuery("#cancel-reference-button").click(jQuery.proxy(this._collapseReferenceForm, this));
+        jQuery("#post-reference-button").click(jQuery.proxy(this._doCreateReference, this));
+        this.$referenceForm.submit(jQuery.proxy(this._doCreateReference, this));
     },
 
     _initValidation: function () {
@@ -32,10 +42,40 @@ CBR.Controllers.ViewHelpRequest = new Class({
         });
     },
 
-    _expandRespondForm: function(e) {
+    _toggleRespondForm: function(e) {
         e.preventDefault();
 
-        this.$repondForm.slideDown(200, "easeOutQuad");
+        if (this.$respond.hasClass("expanded"))
+            this._collapseRespondForm(e);
+        else {
+            this.$respondForm.slideDown(200, "easeOutQuad");
+            this.$respond.addClass("expanded");
+        }
+    },
+
+    _collapseRespondForm: function(e) {
+        e.preventDefault();
+
+        this.$respondForm.slideUp(200, "easeInQuad");
+        this.$respond.removeClass("expanded");
+    },
+
+    _toggleReferenceForm: function(e) {
+        e.preventDefault();
+
+        if (this.$writeReference.hasClass("expanded"))
+            this._collapseReferenceForm(e);
+        else {
+            this.$referenceForm.slideDown(200, "easeOutQuad");
+            this.$writeReference.addClass("expanded");
+        }
+    },
+
+    _collapseReferenceForm: function(e) {
+        e.preventDefault();
+
+        this.$referenceForm.slideUp(200, "easeInQuad");
+        this.$writeReference.removeClass("expanded");
     },
 
     _doCreateResponse: function (e) {
@@ -65,5 +105,9 @@ CBR.Controllers.ViewHelpRequest = new Class({
                 }
             }).post();
         }
+    },
+
+    _doCreateReference: function(e) {
+        e.preventDefault();
     }
 });

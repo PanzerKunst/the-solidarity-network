@@ -1,0 +1,20 @@
+body#join #content .field {
+  margin-left: auto;
+  margin-right: auto;
+  width: 29em; }
+  @media screen and (max-width: 800px) {
+    body#join #content .field {
+      width: 16em; } }
+  body#join #content .field > label {
+    width: 8em; }
+  body#join #content .field > input,
+  body#join #content .field > select {
+    width: 9em; }
+    @media screen and (max-width: 800px) {
+      body#join #content .field > input,
+      body#join #content .field > select {
+        clear: both; } }
+  body#join #content .field #check-username-availability {
+    display: block;
+    float: left;
+    width: 5em; }
