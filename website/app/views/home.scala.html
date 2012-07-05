@@ -3,13 +3,13 @@
 <!--
     Header
 -->
-@nav(Some(user), Some("Welcome back, " + user.firstName + "!"))
+@nav(Some(user), Some("Welcome back, " + user.firstName.get + "!"))
 
 } {
 <!--
     Content
 -->
-<h1>Welcome back, @user.firstName!</h1>
+<h1>Welcome back, @user.firstName.get!</h1>
 
 <div class="actions">
     <span>
