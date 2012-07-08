@@ -2,22 +2,22 @@ package models.frontend
 
 import models.{Country, User, HelpRequest}
 import org.codehaus.jackson.annotate.JsonProperty
-import database.{CountryDto, UserDto}
+import database.{DbUtil, CountryDto, UserDto}
+import java.util
 
-class FrontendHelpRequest extends HelpRequest {
+class FrontendHelpRequest {
 
   def this(helpRequest: HelpRequest) = {
 
     this()
 
-    this.id = helpRequest.id
-    this.requesterId = helpRequest.requesterId
+    this.id = helpRequest.id.get
     this.title = helpRequest.title
     this.description = helpRequest.description
-    this.creationDatetime = helpRequest.creationDatetime
-    this.expiryDate = helpRequest.expiryDate
+    this.creationDatetime = DbUtil.datetimeToString(helpRequest.creationDatetime.get)
+    this.expiryDate = DbUtil.dateToString(helpRequest.expiryDate)
 
-    this.requester = UserDto.get(Some(Map("id" -> this.requesterId.toString))).head
+    this.requester = UserDto.get(Some(Map("id" -> helpRequest.requesterId.get.toString))).head
     this.country = CountryDto.get(Some(Map("id" -> this.requester.countryId.get.toString))).head
   }
 
@@ -27,16 +27,30 @@ class FrontendHelpRequest extends HelpRequest {
 
     this()
 
-    this.id = helpRequest.id
-    this.requesterId = helpRequest.requesterId
+    this.id = helpRequest.id.get
     this.title = helpRequest.title
     this.description = helpRequest.description
-    this.creationDatetime = helpRequest.creationDatetime
-    this.expiryDate = helpRequest.expiryDate
+    this.creationDatetime = DbUtil.datetimeToString(helpRequest.creationDatetime.get)
+    this.expiryDate = DbUtil.dateToString(helpRequest.expiryDate)
 
     this.requester = user
     this.country = country
   }
+
+  @JsonProperty
+  var id: Long = _
+
+  @JsonProperty
+  var title: String = _
+
+  @JsonProperty
+  var description: String = _
+
+  @JsonProperty
+  var creationDatetime: String = _
+
+  @JsonProperty
+  var expiryDate: String = _
 
   @JsonProperty
   var requester: User = _

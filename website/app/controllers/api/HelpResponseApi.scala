@@ -15,8 +15,8 @@ object HelpResponseApi extends Controller {
       Application.loggedInUser(session) match {
         case Some(user) => {
           val helpResponse = JsonUtil.parse(request.body.toString, classOf[HelpResponse])
-          helpResponse.responderId = user.id.get
-          HelpResponseDto.create(helpResponse)
+          val helpResponseWithUserId = helpResponse.copy(responderId = user.id.get)
+          HelpResponseDto.create(helpResponseWithUserId)
           Ok
         }
         case None => {
