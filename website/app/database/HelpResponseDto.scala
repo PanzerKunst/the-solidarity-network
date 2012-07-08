@@ -21,11 +21,11 @@ object HelpResponseDto {
 
         SQL(query)().map(row =>
           new HelpResponse(
-            row[Long]("id"),
+            Some(row[Long]("id")),
             row[Long]("request_id"),
-            row[Long]("responder_id"),
+            Some(row[Long]("responder_id")),
             row[String]("text"),
-            row[util.Date]("creation_date")
+            Some(row[util.Date]("creation_date"))
           )
         ).toList
     }
@@ -38,9 +38,9 @@ object HelpResponseDto {
         val query = """
                        insert into help_response(request_id, responder_id, text, creation_date)
       values(""" + helpResponse.requestId + """,""" +
-          helpResponse.responderId + ""","""" +
+          helpResponse.responderId.get + ""","""" +
           DbUtil.backslashQuotes(helpResponse.text) + """","""" +
-          DbUtil.dateToString(new util.Date()) + """");"""
+          DbUtil.datetimeToString(new util.Date()) + """");"""
 
         Logger.info("HelpResponseDto.create(): " + query)
 

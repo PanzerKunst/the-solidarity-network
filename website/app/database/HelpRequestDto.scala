@@ -20,11 +20,11 @@ object HelpRequestDto {
 
         SQL(query)().map(row =>
           new HelpRequest(
-            row[Long]("id"),
-            row[Long]("requester_id"),
+            Some(row[Long]("id")),
+            Some(row[Long]("requester_id")),
             row[String]("title"),
             row[String]("description"),
-            row[util.Date]("creation_date"),
+            Some(row[util.Date]("creation_date")),
             row[util.Date]("expiry_date")
           )
         ).toList
@@ -71,11 +71,11 @@ object HelpRequestDto {
         SQL(query)().map(row =>
           (
             new HelpRequest(
-              row[Long]("help_request.id"),
-              row[Long]("user.id"),
+              Some(row[Long]("help_request.id")),
+              Some(row[Long]("user.id")),
               row[String]("title"),
               row[String]("description"),
-              row[util.Date]("creation_date"),
+              Some(row[util.Date]("creation_date")),
               row[util.Date]("expiry_date")
             ),
             User(
@@ -101,7 +101,7 @@ object HelpRequestDto {
 
         val query = """
                        insert into help_request(requester_id, title, description, creation_date, expiry_date)
-      values(""" + helpRequest.requesterId + ""","""" +
+      values(""" + helpRequest.requesterId.get + ""","""" +
           DbUtil.backslashQuotes(helpRequest.title) + """","""" +
           DbUtil.backslashQuotes(helpRequest.description) + """","""" +
           DbUtil.datetimeToString(new util.Date()) + """","""" +
