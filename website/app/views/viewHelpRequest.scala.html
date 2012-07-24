@@ -16,7 +16,19 @@
 -->
 <script id="content-template" type="text/html">
     <div id="requester">
+        <img src="/files/profile-pic/{{helpRequest.requester.id}}" />
+        <p>{{helpRequest.requester.firstName}} {{helpRequest.requester.lastName}}, aka "{{helpRequest.requester.username}}"</p>
+        <p>Lives in {{helpRequest.requester.city}}, {{helpRequest.country.name}}</p>
 
+        <div>
+            <a href="/users/{{helpRequest.requester.username}}">View full profile</a>
+        </div>
+
+        @if(user.id != helpRequest.requester.id) {
+        <div>
+            <a href="/messages/new?to={{helpRequest.requester.username}}">Write message</a>
+        </div>
+        }
     </div>
 
     <div id="main">
@@ -60,44 +72,47 @@
         </section>
 
         @if(user.id != helpRequest.requester.id) {
+        <div>
             <a id="respond">Respond to {{helpRequest.requester.firstName}}'s help request</a>
+        </div>
 
-            <form id="respond-form">
-                <div class="field">
-                    <textarea id="response-text" placeholder="Your message *" />
+        <form id="respond-form">
+            <div class="field">
+                <textarea id="response-text" placeholder="Your message *" />
 
-                    <p class="field-error" data-check="empty">Please respond to with a message</p>
-                </div>
+                <p class="field-error" data-check="empty">Please respond to with a message</p>
+            </div>
 
-                <span id="submit-response-wrapper">
-                    <a id="post-response-button">
-                        <span>Post response</span>
-                    </a>
+            <div id="submit-response-wrapper">
+                <a id="post-response-button">
+                    <span>Post response</span>
+                </a>
 
-                    <a id="cancel-response-button">
-                        <span>Cancel</span>
-                    </a>
+                <a id="cancel-response-button">
+                    <span>Cancel</span>
+                </a>
 
-                    <input type="submit" />
-                </span>
-            </form>
+                <input type="submit" />
+            </div>
+        </form>
 
+        <div>
             <a id="write-reference">Write a reference</a>
+        </div>
 
-            <form id="reference-form">
+        <form id="reference-form">
+            <div id="submit-reference-wrapper">
+                <a id="post-reference-button">
+                    <span>Save reference</span>
+                </a>
 
-                <span id="submit-reference-wrapper">
-                    <a id="post-reference-button">
-                        <span>Save reference</span>
-                    </a>
+                <a id="cancel-reference-button">
+                    <span>Cancel</span>
+                </a>
 
-                    <a id="cancel-reference-button">
-                        <span>Cancel</span>
-                    </a>
-
-                    <input type="submit" />
-                </span>
-            </form>
+                <input type="submit" />
+            </div>
+        </form>
         }
     </div>
 

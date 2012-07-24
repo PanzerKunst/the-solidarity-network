@@ -28,3 +28,6 @@ POST    /api/authenticate           controllers.api.AuthApi.authenticate
 POST    /api/help-requests          controllers.api.HelpRequestApi.create
 GET     /api/help-requests          controllers.api.HelpRequestApi.get
 POST    /api/help-responses         controllers.api.HelpResponseApi.create
+
+# Files
+GET     /files/profile-pic/:userId  controllers.FileController.profilePicture(userId: Int)

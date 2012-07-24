@@ -13,19 +13,18 @@ body#search-help-requests {
       margin-right: auto;
 
       @include clearfix();
-    }
 
-    .field {
-      float: left;
+      > * {
+        float: left;
+      }
+
+      > span {
+        width: $searchButtonWidth;
+      }
     }
 
     #query {
       width: $inputWidth;
-    }
-
-    #search-button {
-      float: left;
-      width: $searchButtonWidth;
     }
 
     // Search results

@@ -4,6 +4,25 @@ drop table help_response;
 drop table help_request;
 drop table user;
 drop table country;
+/* drop table file_data;
+drop table file_meta_data;
+
+Create table `file_meta_data`(
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `media_type` varchar(60) NOT NULL,
+  `name` varchar(120) NOT NULL,
+  `size_bytes` bigint(20) NOT NULL,
+  `creation_date` datetime NOT NULL,
+  primary key (`id`)
+) ENGINE=InnoDB DEFAULT charset=utf8;
+
+Create table `file_data`(
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `meta_data_id` int(10) unsigned NOT NULL,
+  `data` blob NOT NULL,
+  primary key (`id`),
+  constraint `fk_meta_data` foreign key (`meta_data_id`) references `file_meta_data`(`id`)
+) ENGINE=InnoDB DEFAULT charset=utf8; */
 
 CREATE TABLE `country` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -54,13 +73,14 @@ Create table `help_response`(
 
 
 insert into country(name) values("Greece");
+insert into country(name) values("Spain");
 insert into country(name) values("Sweden");
 
 select * from country;
 
-insert into user(first_name, last_name, username, email, password, street_address, post_code, city, country_id)
+insert into user(first_name, last_name, username, email, password, street_address, post_code, city, country_id, creation_date)
 values("Christophe", "Bram", "blackbird", "cbramdit@gmail.com", "tigrou", "Heleneborgsgatan 6C", "11732", "Stockholm",
-  (select id from country where name = "Sweden"));
+  (select id from country where name = "Sweden"), CURRENT_TIMESTAMP);
 
 select * from user;
 

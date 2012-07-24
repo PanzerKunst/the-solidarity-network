@@ -32,10 +32,10 @@ form .invalid > .validation-icon {
 form .field-error {
   font-style: italic; }
 form input[type=submit] {
+  display: block;
   visibility: hidden; }
 
 #submit-button-wrapper {
-  width: 100%;
   text-align: center;
   margin-top: 2em; }
   #submit-button-wrapper > input[type=submit] {

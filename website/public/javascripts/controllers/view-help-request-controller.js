@@ -21,6 +21,8 @@ CBR.Controllers.ViewHelpRequest = new Class({
         this.$referenceForm = jQuery("#reference-form");
         this.$writeReference = jQuery("#write-reference");
 
+        this.$expanded = jQuery(".expanded");
+
         this.$respond.click(jQuery.proxy(this._toggleRespondForm, this));
         jQuery("#cancel-response-button").click(jQuery.proxy(this._collapseRespondForm, this));
         jQuery("#post-response-button").click(jQuery.proxy(this._doCreateResponse, this));
@@ -48,6 +50,8 @@ CBR.Controllers.ViewHelpRequest = new Class({
         if (this.$respond.hasClass("expanded"))
             this._collapseRespondForm(e);
         else {
+            this.$expanded.slideUp(200, "easeInQuad");
+
             this.$respondForm.slideDown(200, "easeOutQuad");
             this.$respond.addClass("expanded");
         }
@@ -66,6 +70,8 @@ CBR.Controllers.ViewHelpRequest = new Class({
         if (this.$writeReference.hasClass("expanded"))
             this._collapseReferenceForm(e);
         else {
+            this.$expanded.slideUp(200, "easeInQuad");
+
             this.$referenceForm.slideDown(200, "easeOutQuad");
             this.$writeReference.addClass("expanded");
         }

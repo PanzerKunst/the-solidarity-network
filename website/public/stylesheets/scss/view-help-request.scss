@@ -7,9 +7,47 @@ body#view-help-request {
       display: none;
     }
 
+    #requester,
     #main {
-      > a {
-        display: block;
+      > div {
+        text-align: center;
+      }
+
+      @media screen and (min-width: 801px) {
+        float: left;
+      }
+    }
+
+    #requester {
+      @media screen and (min-width: 801px) {
+        margin-top: 7em;
+        margin-right: 4em;
+      }
+
+      > p {
+        text-align: center;
+      }
+    }
+
+    #main {
+      @media screen and (max-width: 800px) {
+        width: 20em;
+        margin: auto;
+      }
+    }
+
+    textarea {
+      width: 20em;
+      height: 4em;
+    }
+
+    #submit-response-wrapper,
+    #submit-reference-wrapper {
+      margin: auto;
+      width: 11em;
+
+      > :first-child {
+        margin-right: 1em;
       }
     }
   }

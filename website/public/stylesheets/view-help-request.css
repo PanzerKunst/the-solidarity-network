@@ -1,5 +1,30 @@
 body#view-help-request #content #respond-form,
 body#view-help-request #content #reference-form {
   display: none; }
-body#view-help-request #content #main > a {
-  display: block; }
+body#view-help-request #content #requester > div,
+body#view-help-request #content #main > div {
+  text-align: center; }
+@media screen and (min-width: 801px) {
+  body#view-help-request #content #requester,
+  body#view-help-request #content #main {
+    float: left; } }
+@media screen and (min-width: 801px) {
+  body#view-help-request #content #requester {
+    margin-top: 7em;
+    margin-right: 4em; } }
+body#view-help-request #content #requester > p {
+  text-align: center; }
+@media screen and (max-width: 800px) {
+  body#view-help-request #content #main {
+    width: 20em;
+    margin: auto; } }
+body#view-help-request #content textarea {
+  width: 20em;
+  height: 4em; }
+body#view-help-request #content #submit-response-wrapper,
+body#view-help-request #content #submit-reference-wrapper {
+  margin: auto;
+  width: 11em; }
+  body#view-help-request #content #submit-response-wrapper > :first-child,
+  body#view-help-request #content #submit-reference-wrapper > :first-child {
+    margin-right: 1em; }
