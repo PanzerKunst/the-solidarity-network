@@ -16,6 +16,7 @@ GET     /login                      controllers.Application.login
 GET     /logout                     controllers.Application.logout
 GET     /home                       controllers.Application.home
 GET     /my-profile                 controllers.Application.myProfile
+GET     /my-profile/edit            controllers.Application.editProfile
 GET     /help                       controllers.Application.helpDashboard
 GET     /help-requests              controllers.Application.searchHelpRequests
 GET     /help-requests/new          controllers.Application.createHelpRequest

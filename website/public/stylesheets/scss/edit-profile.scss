@@ -1,0 +1,51 @@
+@import "lib/common";
+
+body#edit-profile {
+  #content {
+    > ul {
+      @include clearfix();
+
+      > li {
+        float: left;
+      }
+    }
+
+    #account-info {
+      display: none;
+    }
+
+    .field {
+      $labelWidth: 9em;
+      $inputWidth: 12em;
+
+      margin-left: auto;
+      margin-right: auto;
+
+      width: $labelWidth + $inputWidth + $validationIconWidth + $extraSpaceForInputPaddingAndBorder;
+
+      @media screen and (max-width: 800px) {
+        $labelWidth: 8em;
+        $inputWidth: 9em;
+
+        width: $inputWidth + $validationIconWidth + $extraSpaceForInputPaddingAndBorder;
+      }
+
+      > label {
+        width: $labelWidth;
+      }
+
+      > input {
+        width: $inputWidth;
+
+        @media screen and (max-width: 800px) {
+          clear: both;
+        }
+      }
+
+      > input[type=checkbox],
+      > input[type=radio] {
+        width: 1em;
+      }
+    }
+  }
+}

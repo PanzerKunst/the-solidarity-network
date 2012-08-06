@@ -1,5 +1,6 @@
 body {
-  font-size: medium; }
+  font-size: medium;
+  color: #3f3f3f; }
 
 h1,
 h2,
@@ -14,10 +15,14 @@ h1 {
   text-align: center; }
 
 h2 {
-  font-size: 1.6em; }
+  font-size: 1.6em;
+  text-align: center; }
 
 h3 {
   font-size: 1.3em; }
+
+img {
+  display: block; }
 
 a,
 a:visited {
@@ -29,7 +34,6 @@ a:visited {
     color: #f18a26; }
 
 p {
-  color: #3f3f3f;
   margin-bottom: 1em; }
 
 li {

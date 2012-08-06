@@ -1,0 +1,28 @@
+body#edit-profile #content > ul {
+  zoom: 1; }
+  body#edit-profile #content > ul:before, body#edit-profile #content > ul:after {
+    content: "";
+    display: table; }
+  body#edit-profile #content > ul:after {
+    clear: both; }
+  body#edit-profile #content > ul > li {
+    float: left; }
+body#edit-profile #content #account-info {
+  display: none; }
+body#edit-profile #content .field {
+  margin-left: auto;
+  margin-right: auto;
+  width: 23em; }
+  @media screen and (max-width: 800px) {
+    body#edit-profile #content .field {
+      width: 11em; } }
+  body#edit-profile #content .field > label {
+    width: 8em; }
+  body#edit-profile #content .field > input {
+    width: 9em; }
+    @media screen and (max-width: 800px) {
+      body#edit-profile #content .field > input {
+        clear: both; } }
+  body#edit-profile #content .field > input[type=checkbox],
+  body#edit-profile #content .field > input[type=radio] {
+    width: 1em; }

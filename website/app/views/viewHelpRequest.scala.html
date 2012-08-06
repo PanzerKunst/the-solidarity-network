@@ -15,7 +15,7 @@
     Javascript
 -->
 <script id="content-template" type="text/html">
-    <div id="requester">
+    <section id="requester">
         <img src="/files/profile-pic/{{helpRequest.requester.id}}" />
         <p>{{helpRequest.requester.firstName}} {{helpRequest.requester.lastName}}, aka "{{helpRequest.requester.username}}"</p>
         <p>Lives in {{helpRequest.requester.city}}, {{helpRequest.country.name}}</p>
@@ -29,9 +29,9 @@
             <a href="/messages/new?to={{helpRequest.requester.username}}">Write message</a>
         </div>
         }
-    </div>
+    </section>
 
-    <div id="main">
+    <section id="main">
         <section id="help-request" data-id="{{helpRequest.id}}">
             <h1>{{helpRequest.title}}</h1>
 
@@ -114,7 +114,7 @@
             </div>
         </form>
         }
-    </div>
+    </section>
 
 </script>
 

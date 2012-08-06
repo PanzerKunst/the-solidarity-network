@@ -27,6 +27,12 @@ body#view-help-request {
       > p {
         text-align: center;
       }
+
+      > img {
+        margin: auto;
+        max-width: 11em;
+        max-height: 11em;
+      }
     }
 
     #main {

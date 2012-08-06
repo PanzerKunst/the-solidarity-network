@@ -34,12 +34,12 @@ object HelpRequestApi extends Controller {
       else
         None
 
-      val matchingHelpRequests: List[(HelpRequest, User, Country)] = HelpRequestDto.searchGeneric(query)
+      val matchingHelpRequests: List[(HelpRequest, User)] = HelpRequestDto.searchGeneric(query)
 
       if (matchingHelpRequests.isEmpty)
         NoContent
       else {
-        val frontendHelpRequests = for (hr <- matchingHelpRequests) yield new FrontendHelpRequest(hr._1, hr._2, hr._3)
+        val frontendHelpRequests = for (hr <- matchingHelpRequests) yield new FrontendHelpRequest(hr._1, hr._2)
         Ok(JsonUtil.serialize(frontendHelpRequests))
       }
   }

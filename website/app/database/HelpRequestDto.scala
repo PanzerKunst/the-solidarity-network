@@ -2,7 +2,7 @@ package database
 
 import anorm._
 import play.api.db.DB
-import models.{User, Country, HelpRequest}
+import models.{User, HelpRequest}
 import play.api.Play.current
 import play.api.Logger
 import java.util
@@ -31,7 +31,7 @@ object HelpRequestDto {
     }
   }
 
-  def searchGeneric(searchQuery: Option[String]): List[(HelpRequest, User, Country)] = {
+  def searchGeneric(searchQuery: Option[String]): List[(HelpRequest, User)] = {
     DB.withConnection {
       implicit c =>
 
@@ -58,11 +58,9 @@ object HelpRequestDto {
 
           case None => """
             select hr.id as help_request_id, hr.title, hr.description, hr.creation_date, hr.expiry_date,
-              u.id as user_id, u.first_name, u.last_name, u.username, u.email, u.city,
-              c.id as country_id, c.name as country_name
+              u.id as user_id, u.first_name, u.last_name, u.username, u.email, u.city, u.country_id
             from help_request hr
             inner join user u on u.id = hr.requester_id
-            inner join country c on c.id = u.country_id
             limit 50;"""
         }
 
@@ -70,13 +68,13 @@ object HelpRequestDto {
 
         SQL(query)().map(row =>
           (
-            new HelpRequest(
-              Some(row[Long]("help_request.id")),
-              Some(row[Long]("user.id")),
-              row[String]("title"),
-              row[String]("description"),
-              Some(row[util.Date]("creation_date")),
-              row[util.Date]("expiry_date")
+            HelpRequest(
+              id = Some(row[Long]("help_request.id")),
+              requesterId = Some(row[Long]("user.id")),
+              title = row[String]("title"),
+              description = row[String]("description"),
+              creationDatetime = Some(row[util.Date]("creation_date")),
+              expiryDate = row[util.Date]("expiry_date")
             ),
             User(
               id = Some(row[Long]("user.id")),
@@ -86,11 +84,8 @@ object HelpRequestDto {
               email = Some(row[String]("email")),
               city = Some(row[String]("city")),
               countryId = Some(row[Long]("country.id"))
-            ),
-            Country(
-              id = row[Long]("country.id"),
-              name = row[String]("country.name"))
             )
+          )
         ).toList
     }
   }

@@ -14,6 +14,10 @@ body#view-help-request #content #main > div {
     margin-right: 4em; } }
 body#view-help-request #content #requester > p {
   text-align: center; }
+body#view-help-request #content #requester > img {
+  margin: auto;
+  max-width: 11em;
+  max-height: 11em; }
 @media screen and (max-width: 800px) {
   body#view-help-request #content #main {
     width: 20em;

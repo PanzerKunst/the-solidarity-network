@@ -32,8 +32,10 @@
 
     @if(play.Play.isDev) {
 
+    <!-- Libs -->
+    <link rel="stylesheet" href="@routes.Assets.at("stylesheets/libs/h5bp.css")">
+
     <!-- Global -->
-    <link rel="stylesheet" href="@routes.Assets.at("stylesheets/h5bp/style.css")">
     <link rel="stylesheet" href="@routes.Assets.at("stylesheets/responsive.css")">
     <link rel="stylesheet" href="@routes.Assets.at("stylesheets/main.css")">
     <link rel="stylesheet" href="@routes.Assets.at("stylesheets/header.css")">
@@ -48,6 +50,8 @@
     <link rel="stylesheet" href="@routes.Assets.at("stylesheets/create-help-request.css")">
     <link rel="stylesheet" href="@routes.Assets.at("stylesheets/search-help-requests.css")">
     <link rel="stylesheet" href="@routes.Assets.at("stylesheets/view-help-request.css")">
+    <link rel="stylesheet" href="@routes.Assets.at("stylesheets/my-profile.css")">
+    <link rel="stylesheet" href="@routes.Assets.at("stylesheets/edit-profile.css")">
 
     } else {
 
@@ -114,6 +118,8 @@ Create your own custom Modernizr build: www.modernizr.com/download/ -->
     <script src="@routes.Assets.at("javascripts/controllers/create-help-request-controller.js")"></script>
     <script src="@routes.Assets.at("javascripts/controllers/search-help-requests-controller.js")"></script>
     <script src="@routes.Assets.at("javascripts/controllers/view-help-request-controller.js")"></script>
+    <script src="@routes.Assets.at("javascripts/controllers/my-profile-controller.js")"></script>
+    <script src="@routes.Assets.at("javascripts/controllers/edit-profile-controller.js")"></script>
 
     } else {
 

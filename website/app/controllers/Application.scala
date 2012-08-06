@@ -5,7 +5,7 @@ import models.User
 import database.{HelpResponseDto, HelpRequestDto, UserDto, CountryDto}
 import services.I18nService
 import scala.collection.mutable
-import models.frontend.{FrontendHelpResponse, FrontendHelpRequest}
+import models.frontend.{FrontendUser, FrontendHelpResponse, FrontendHelpRequest}
 
 object Application extends Controller {
 
@@ -49,7 +49,15 @@ object Application extends Controller {
   def myProfile = Action {
     implicit request =>
       loggedInUser(session) match {
-        case Some(user) => Ok(views.html.myProfile(user))
+        case Some(user) => Ok(views.html.myProfile(user, new FrontendUser(user)))
+        case None => Redirect(routes.Application.login)
+      }
+  }
+
+  def editProfile = Action {
+    implicit request =>
+      loggedInUser(session) match {
+        case Some(user) => Ok(views.html.editProfile(CountryDto.get(None), user))
         case None => Redirect(routes.Application.login)
       }
   }

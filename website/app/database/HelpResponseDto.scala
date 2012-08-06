@@ -20,12 +20,12 @@ object HelpResponseDto {
         Logger.info("HelpResponseDto.get():" + query)
 
         SQL(query)().map(row =>
-          new HelpResponse(
-            Some(row[Long]("id")),
-            row[Long]("request_id"),
-            Some(row[Long]("responder_id")),
-            row[String]("text"),
-            Some(row[util.Date]("creation_date"))
+          HelpResponse(
+            id = Some(row[Long]("id")),
+            requestId = row[Long]("request_id"),
+            responderId = Some(row[Long]("responder_id")),
+            text = row[String]("text"),
+            creationDatetime = Some(row[util.Date]("creation_date"))
           )
         ).toList
     }

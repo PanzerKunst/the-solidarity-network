@@ -17,13 +17,11 @@ class FrontendHelpRequest {
     this.creationDatetime = DbUtil.datetimeToString(helpRequest.creationDatetime.get)
     this.expiryDate = DbUtil.dateToString(helpRequest.expiryDate)
 
-    this.requester = UserDto.get(Some(Map("id" -> helpRequest.requesterId.get.toString))).head
-    this.country = CountryDto.get(Some(Map("id" -> this.requester.countryId.get.toString))).head
+    this.requester = new FrontendUser(UserDto.get(Some(Map("id" -> helpRequest.requesterId.get.toString))).head)
   }
 
   def this(helpRequest: HelpRequest,
-           user: User,
-           country: Country) = {
+           user: User) = {
 
     this()
 
@@ -33,8 +31,7 @@ class FrontendHelpRequest {
     this.creationDatetime = DbUtil.datetimeToString(helpRequest.creationDatetime.get)
     this.expiryDate = DbUtil.dateToString(helpRequest.expiryDate)
 
-    this.requester = user
-    this.country = country
+    this.requester = new FrontendUser(user)
   }
 
   @JsonProperty
@@ -53,9 +50,6 @@ class FrontendHelpRequest {
   var expiryDate: String = _
 
   @JsonProperty
-  var requester: User = _
-
-  @JsonProperty
-  var country: Country = _
+  var requester: FrontendUser = _
 
 }

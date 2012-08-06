@@ -35,30 +35,32 @@
             <p class="field-error" data-check="empty">You need to indicate your last name...</p>
         </div>
 
-        <div class="field">
-            <label for="email">e-mail address <span>*</span></label><!--
-         --><input id="email" type="text"/><!--
-         --><span class="validation-icon"></span>
+        <fieldset>
+            <div class="field">
+                <label for="email">e-mail address <span>*</span></label><!--
+             --><input id="email" type="text"/><!--
+             --><span class="validation-icon"></span>
 
-            <p class="field-error" data-check="empty">Please indicate your e-mail address. We'll use it to inform you of
-                user messages and help requests.</p>
+                <p class="field-error" data-check="empty">Please indicate your e-mail address. We'll use it to inform you of
+                    user messages and help requests.</p>
 
-            <p class="field-error" data-check="email">Would you mind checking that e-mail address? Looks wrong to
-                me...</p>
+                <p class="field-error" data-check="email">Would you mind checking that e-mail address? Looks wrong to
+                    me...</p>
 
-            <p class="field-error" id="email-already-registered">This e-mail is already registered
-                in our system. You should try resetting your password on the Login page.</p>
-        </div>
+                <p class="field-error" id="email-already-registered">This e-mail is already registered
+                    in our system. You should try resetting your password on the Login page.</p>
+            </div>
 
-        <div class="field">
-            <label for="email-confirmation">Confirm e-mail <span>*</span></label><!--
-         --><input id="email-confirmation" type="text"/><!--
-         --><span class="validation-icon"></span>
+            <div class="field">
+                <label for="email-confirmation">Confirm e-mail <span>*</span></label><!--
+             --><input id="email-confirmation" type="text"/><!--
+             --><span class="validation-icon"></span>
 
-            <p class="field-error" data-check="empty">e-mails don't match!</p>
+                <p class="field-error" data-check="empty">e-mails don't match!</p>
 
-            <p class="field-error" id="emails-do-not-match">The e-mails do not match!</p>
-        </div>
+                <p class="field-error" id="emails-do-not-match">The e-mails do not match!</p>
+            </div>
+        </fieldset>
 
         <div class="field">
             <label for="username">Username <span>*</span></label><!--
@@ -127,8 +129,8 @@
     </form>
 
     <section id="website-language-selection">
-        <label for="language">Display the website in:</label>
-        <select id="language">
+        <label for="language">Display the website in:</label><!--
+     --><select id="language">
             <option value="en">English</option>
             <option value="fr">Fran&ccedil;ais</option>
         </select>

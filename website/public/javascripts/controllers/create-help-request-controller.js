@@ -6,7 +6,7 @@ CBR.Controllers.CreateHelpRequest = new Class({
     },
 
     run: function () {
-        this.getEl().html(
+        this.getEl().append(
             Mustache.to_html(
                 jQuery("#content-template").html(),
                 this.options

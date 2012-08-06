@@ -22,7 +22,7 @@ header {
       @include clearfix();
 
       > li {
-        width: (100% / 7);
+        width: (99% / 7);  // 1% less to round down
         float: left;
         position: relative;
 

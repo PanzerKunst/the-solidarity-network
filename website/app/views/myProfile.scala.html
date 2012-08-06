@@ -1,4 +1,4 @@
-@(user: User)
+@(user: User, frontendUser: frontend.FrontendUser)
 @main("Solidarity Network - My profile", "my-profile") {
 <!--
     Header
@@ -9,17 +9,26 @@
 <!--
     Content
 -->
-<p>@user.username</p>
-<p>@user.firstName @user.lastName</p>
 
 } {
 <!--
     Javascript
 -->
+<script id="content-template" type="text/html">
+    <h1>My profile</h1>
+    <img src="/files/profile-pic/{{user.id}}" />
+    <p>{{user.firstName}} {{user.lastName}}, aka "{{user.username}}"</p>
+    <p>Lives in {{user.city}}, {{user.country.name}}</p>
+</script>
 
 <script type="text/javascript">
     window.addEvent("domready", function () {
         new CBR.Controllers.NavController().run();
+
+        new CBR.Controllers.MyProfile({
+            el: "#content",
+            user: @Html(services.JsonUtil.serialize(frontendUser))
+        }).run();
     });
 </script>
 }

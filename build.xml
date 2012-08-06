@@ -53,7 +53,9 @@ Dependencies:
                 help-dashboard.css
                 create-help-request.css
                 search-help-requests.css
-                view-help-request.css" />
+                view-help-request.css
+                my-profile.css
+                edit-profile.css" />
         </concat>
     </target>
 
@@ -89,7 +91,9 @@ Dependencies:
                 controllers/join-controller.js
                 controllers/create-help-request-controller.js
                 controllers/search-help-requests-controller.js
-                controllers/view-help-requests-controller.js" />
+                controllers/view-help-requests-controller.js
+                controllers/my-profile-controller.js
+                controllers/edit-profile-controller.js" />
         </concat>
     </target>
     
