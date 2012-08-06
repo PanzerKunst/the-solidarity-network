@@ -14,7 +14,7 @@ object UserDto {
       implicit c =>
 
         val query = """
-          select id, first_name, last_name, username, email, street_address, post_code, city, country_id
+          select id, first_name, last_name, username, email, street_address, post_code, city, country_id, description
           from user """ + DbUtil.generateWhereClause(filters) + ";"
 
         Logger.info("UserDto.get():" + query)
@@ -24,21 +24,13 @@ object UserDto {
             id = Some(row[Long]("id")),
             firstName = Some(row[String]("first_name")),
             lastName = Some(row[String]("last_name")),
-            username = row[String]("username"),
+            username = Some(row[String]("username")),
             email = Some(row[String]("email")),
-
-            streetAddress = if (row[String]("street_address") != "")
-              Some(row[String]("street_address"))
-            else
-              None,
-
-            postCode = if (row[String]("post_code") != "")
-              Some(row[String]("post_code"))
-            else
-              None,
-
+            streetAddress = row[Option[String]]("street_address"),
+            postCode = row[Option[String]]("post_code"),
             city = Some(row[String]("city")),
-            countryId = Some(row[Long]("country_id"))
+            countryId = Some(row[Long]("country_id")),
+            description = row[Option[String]]("description")
           )
         ).toList
     }
@@ -48,21 +40,41 @@ object UserDto {
     DB.withConnection {
       implicit c =>
 
-        val streetAddressForQuery = user.streetAddress match {
-          case Some(streetAddress) => streetAddress
-          case None => ""
-        }
-
-        val postCodeForQuery = user.postCode match {
-          case Some(postCode) => postCode
-          case None => ""
-        }
+        val streetAddressForQuery = user.streetAddress.getOrElse("")
+        val postCodeForQuery = user.postCode.getOrElse("")
 
         val query = """
                        insert into user(first_name, last_name, username, email, password, street_address, post_code, city, country_id, creation_date)
       values("""" + DbUtil.backslashQuotes(user.firstName.get) + """","""" +
           DbUtil.backslashQuotes(user.lastName.get) + """","""" +
-          DbUtil.backslashQuotes(user.username) + """","""" +
+          DbUtil.backslashQuotes(user.username.get) + """","""" +
+          DbUtil.backslashQuotes(user.email.get) + """","""" +
+          DbUtil.backslashQuotes(user.password.get) + """","""" +
+          DbUtil.backslashQuotes(streetAddressForQuery) + """","""" +
+          DbUtil.backslashQuotes(postCodeForQuery) + """","""" +
+          DbUtil.backslashQuotes(user.city.get) + """",""" +
+          user.countryId.get + ""","""" +
+          DbUtil.datetimeToString(new util.Date()) + """");"""
+
+        Logger.info("UserDto.create():" + query)
+
+        SQL(query).execute()
+    }
+  }
+
+  def update(user: User) {
+    DB.withConnection {
+      implicit c =>
+
+        val streetAddressForQuery = user.streetAddress.getOrElse("")
+        val postCodeForQuery = user.postCode.getOrElse("")
+
+        // TODO: transform into "update" query
+        val query = """
+                       insert into user(first_name, last_name, username, email, password, street_address, post_code, city, country_id, creation_date)
+      values("""" + DbUtil.backslashQuotes(user.firstName.get) + """","""" +
+          DbUtil.backslashQuotes(user.lastName.get) + """","""" +
+          DbUtil.backslashQuotes(user.username.get) + """","""" +
           DbUtil.backslashQuotes(user.email.get) + """","""" +
           DbUtil.backslashQuotes(user.password.get) + """","""" +
           DbUtil.backslashQuotes(streetAddressForQuery) + """","""" +

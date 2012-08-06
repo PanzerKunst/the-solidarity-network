@@ -13,8 +13,12 @@ CBR.Controllers.ViewHelpRequest = new Class({
             )
         );
 
+        this._initElements();
         this._initValidation();
+        this._initEvents();
+    },
 
+    _initElements: function() {
         this.$respondForm = jQuery("#respond-form");
         this.$respond = jQuery("#respond");
 
@@ -22,16 +26,6 @@ CBR.Controllers.ViewHelpRequest = new Class({
         this.$writeReference = jQuery("#write-reference");
 
         this.$expanded = jQuery(".expanded");
-
-        this.$respond.click(jQuery.proxy(this._toggleRespondForm, this));
-        jQuery("#cancel-response-button").click(jQuery.proxy(this._collapseRespondForm, this));
-        jQuery("#post-response-button").click(jQuery.proxy(this._doCreateResponse, this));
-        this.$respondForm.submit(jQuery.proxy(this._doCreateResponse, this));
-
-        this.$writeReference.click(jQuery.proxy(this._toggleReferenceForm, this));
-        jQuery("#cancel-reference-button").click(jQuery.proxy(this._collapseReferenceForm, this));
-        jQuery("#post-reference-button").click(jQuery.proxy(this._doCreateReference, this));
-        this.$referenceForm.submit(jQuery.proxy(this._doCreateReference, this));
     },
 
     _initValidation: function () {
@@ -42,6 +36,18 @@ CBR.Controllers.ViewHelpRequest = new Class({
                 "response-text"
             ]
         });
+    },
+
+    _initEvents: function() {
+        this.$respond.click(jQuery.proxy(this._toggleRespondForm, this));
+        jQuery("#cancel-response-button").click(jQuery.proxy(this._collapseRespondForm, this));
+        jQuery("#post-response-button").click(jQuery.proxy(this._doCreateResponse, this));
+        this.$respondForm.submit(jQuery.proxy(this._doCreateResponse, this));
+
+        this.$writeReference.click(jQuery.proxy(this._toggleReferenceForm, this));
+        jQuery("#cancel-reference-button").click(jQuery.proxy(this._collapseReferenceForm, this));
+        jQuery("#post-reference-button").click(jQuery.proxy(this._doCreateReference, this));
+        this.$referenceForm.submit(jQuery.proxy(this._doCreateReference, this));
     },
 
     _toggleRespondForm: function(e) {

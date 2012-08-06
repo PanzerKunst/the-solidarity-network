@@ -4,6 +4,8 @@ import models.User
 import services.JsonUtil
 import database.UserDto
 import play.api.mvc.{Action, Controller}
+import play.api.Logger
+import controllers.Application
 
 object UserApi extends Controller {
   def create = Action(parse.json) {
@@ -11,6 +13,23 @@ object UserApi extends Controller {
 
       UserDto.create(JsonUtil.parse(request.body.toString, classOf[User]))
       Ok
+  }
+
+  def update = Action(parse.json) {
+    implicit request =>
+
+      Application.loggedInUser(session) match {
+        case Some(loggedInUser) => {
+          val user = JsonUtil.parse(request.body.toString, classOf[User])
+          val userWithId = user.copy(id = loggedInUser.id)
+          UserDto.update(userWithId)
+          Ok
+        }
+        case None => {
+          Logger.info("Profile update attempt while not logged-in")
+          Unauthorized
+        }
+      }
   }
 
   def getFirst = Action {

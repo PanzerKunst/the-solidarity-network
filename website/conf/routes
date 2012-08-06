@@ -24,6 +24,7 @@ GET     /help-requests/:id          controllers.Application.viewHelpRequest(id: 
 
 # API
 POST    /api/users                  controllers.api.UserApi.create
+PUT     /api/users                  controllers.api.UserApi.update
 GET     /api/users/first            controllers.api.UserApi.getFirst
 POST    /api/authenticate           controllers.api.AuthApi.authenticate
 POST    /api/help-requests          controllers.api.HelpRequestApi.create

@@ -13,6 +13,21 @@ CBR.Controllers.MyProfile = new Class({
             )
         );
 
+        this._initElements();
+
+        this.$languageSelect.val(this._getLanguageCode());
+
+        this._initValidation();
+        this._initEvents();
+
+        this.$languageSelect.change(jQuery.proxy(this._changeLanguage, this));
+    },
+
+    _getLanguageCode: function () {
+        return this.options.languageCode;
+    },
+
+    _initElements: function() {
         this.$profileInfoSection = jQuery("#profile-info");
         this.$accountInfoSection = jQuery("#account-info");
 
@@ -22,21 +37,6 @@ CBR.Controllers.MyProfile = new Class({
         this.$languageSelect = jQuery("#language");
 
         this.$emailsDoNotMatchParagraph = jQuery("#emails-do-not-match");
-
-        this.$languageSelect.val(this._getLanguageCode());
-
-        this._initValidation();
-
-        jQuery("#show-profile-info").click(jQuery.proxy(this._activateProfileInfoSection, this));
-        jQuery("#show-account-info").click(jQuery.proxy(this._activateAccountInfoSection, this));
-        jQuery("#save-button").click(jQuery.proxy(this._doSave, this));
-        jQuery("form").submit(jQuery.proxy(this._doSave, this));
-
-        this.$languageSelect.change(jQuery.proxy(this._changeLanguage, this));
-    },
-
-    _getLanguageCode: function () {
-        return this.options.languageCode;
     },
 
     _initValidation: function () {
@@ -56,6 +56,13 @@ CBR.Controllers.MyProfile = new Class({
         });
 
         this.$emailConfirmationField.blur(jQuery.proxy(this._checkIfEmailConfirmationMatches, this));
+    },
+
+    _initEvents: function() {
+        jQuery("#show-profile-info").click(jQuery.proxy(this._activateProfileInfoSection, this));
+        jQuery("#show-account-info").click(jQuery.proxy(this._activateAccountInfoSection, this));
+        jQuery("#save-button").click(jQuery.proxy(this._doSave, this));
+        jQuery("form").submit(jQuery.proxy(this._doSave, this));
     },
 
     _activateProfileInfoSection: function (e) {

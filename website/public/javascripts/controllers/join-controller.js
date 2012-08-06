@@ -13,6 +13,22 @@ CBR.Controllers.Join = new Class({
             )
         );
 
+        this._initElements();
+
+        this.$languageSelect.val(this._getLanguageCode());
+
+        this._initValidation();
+
+        this._initEvents();
+
+        this.$languageSelect.change(jQuery.proxy(this._changeLanguage, this));
+    },
+
+    _getLanguageCode: function () {
+        return this.options.languageCode;
+    },
+
+    _initElements: function() {
         this.$usernameField = jQuery("#username");
         this.$emailField = jQuery("#email");
         this.$emailConfirmationField = jQuery("#email-confirmation");
@@ -21,19 +37,6 @@ CBR.Controllers.Join = new Class({
         this.$usernameTakenParagraph = jQuery("#username-taken");
         this.$emailAlreadyRegisteredParagraph = jQuery("#email-already-registered");
         this.$emailsDoNotMatchParagraph = jQuery("#emails-do-not-match");
-
-        this.$languageSelect.val(this._getLanguageCode());
-
-        this._initValidation();
-
-        jQuery("#join-button").click(jQuery.proxy(this._doRegister, this));
-        jQuery("form").submit(jQuery.proxy(this._doRegister, this));
-
-        this.$languageSelect.change(jQuery.proxy(this._changeLanguage, this));
-    },
-
-    _getLanguageCode: function () {
-        return this.options.languageCode;
     },
 
     _initValidation: function () {
@@ -59,14 +62,19 @@ CBR.Controllers.Join = new Class({
         this.$emailConfirmationField.blur(jQuery.proxy(this._checkIfEmailConfirmationMatches, this));
     },
 
+    _initEvents: function() {
+        jQuery("#join-button").click(jQuery.proxy(this._doRegister, this));
+        jQuery("form").submit(jQuery.proxy(this._doRegister, this));
+    },
+
     _doRegister: function (e) {
         e.preventDefault();
 
         if (this.validator.isValid() && this._isUsernameAvailable() && this._isEmailNotRegisteredYet()) {
             var user = new CBR.Models.User({
                 username: this.$usernameField.val(),
-                lastName: jQuery("#last-name").val(),
                 firstName: jQuery("#first-name").val(),
+                lastName: jQuery("#last-name").val(),
                 email: this.$emailField.val().toLowerCase(),
                 password: jQuery("#password").val(),
                 streetAddress: jQuery("#street-address").val(),

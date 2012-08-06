@@ -15,8 +15,7 @@ CBR.Controllers.Login = new Class({
 
         this._initValidation();
 
-        jQuery("#login-button").click(jQuery.proxy(this._doLogin, this));
-        jQuery("form").submit(jQuery.proxy(this._doLogin, this));
+        this._initEvents();
     },
 
     _initValidation: function () {
@@ -28,6 +27,11 @@ CBR.Controllers.Login = new Class({
                 "password"
             ]
         });
+    },
+
+    _initEvents: function() {
+        jQuery("#login-button").click(jQuery.proxy(this._doLogin, this));
+        jQuery("form").submit(jQuery.proxy(this._doLogin, this));
     },
 
     _doLogin: function (e) {

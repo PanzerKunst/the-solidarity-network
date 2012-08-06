@@ -13,13 +13,14 @@ CBR.Controllers.SearchHelpRequests = new Class({
             )
         );
 
+        this._initElements();
+        this._initValidation();
+        this._initEvents();
+    },
+
+    _initElements: function() {
         this.$queryField = jQuery("#query");
         this.$searchResults = jQuery("#search-results");
-
-        this._initValidation();
-
-        jQuery("#search-button").click(jQuery.proxy(this._doSearch, this));
-        jQuery("form").submit(jQuery.proxy(this._doSearch, this));
     },
 
     _initValidation: function () {
@@ -30,6 +31,11 @@ CBR.Controllers.SearchHelpRequests = new Class({
                 "query"
             ]
         });
+    },
+
+    _initEvents: function() {
+        jQuery("#search-button").click(jQuery.proxy(this._doSearch, this));
+        jQuery("form").submit(jQuery.proxy(this._doSearch, this));
     },
 
     _doSearch: function (e) {

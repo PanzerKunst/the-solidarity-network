@@ -19,13 +19,13 @@ object HelpRequestDto {
         Logger.info("HelpRequestDto.get():" + query)
 
         SQL(query)().map(row =>
-          new HelpRequest(
-            Some(row[Long]("id")),
-            Some(row[Long]("requester_id")),
-            row[String]("title"),
-            row[String]("description"),
-            Some(row[util.Date]("creation_date")),
-            row[util.Date]("expiry_date")
+          HelpRequest(
+            id = Some(row[Long]("id")),
+            requesterId = Some(row[Long]("requester_id")),
+            title = row[String]("title"),
+            description = row[String]("description"),
+            creationDatetime = Some(row[util.Date]("creation_date")),
+            expiryDate = row[util.Date]("expiry_date")
           )
         ).toList
     }
@@ -80,7 +80,7 @@ object HelpRequestDto {
               id = Some(row[Long]("user.id")),
               firstName = Some(row[String]("first_name")),
               lastName = Some(row[String]("last_name")),
-              username = row[String]("username"),
+              username = Some(row[String]("username")),
               email = Some(row[String]("email")),
               city = Some(row[String]("city")),
               countryId = Some(row[Long]("country.id"))

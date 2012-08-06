@@ -1,4 +1,4 @@
-@(countries: List[Country], user: User)
+@(countries: List[Country], user: User, frontentUser: frontend.FrontendUser)
 @main("Solidarity Network - Edit profile", "edit-profile") {
 <!--
     Header
@@ -116,16 +116,20 @@
                         in our system. You should try resetting your password on the Login page.</p>
                 </div>
 
-                <div class="field">
+                <div class="field" id="email-confirmation-field">
                     <label for="email-confirmation">Confirm e-mail <span>*</span></label><!--
                  --><input id="email-confirmation" type="text"/><!--
                  --><span class="validation-icon"></span>
 
-                    <p class="field-error" data-check="empty">e-mails don't match!</p>
-
-                    <p class="field-error" id="emails-do-not-match">The e-mails do not match!</p>
+                    <p class="field-error" id="emails-do-not-match">e-mails do not match!</p>
                 </div>
             </fieldset>
+
+            <div class="field">
+                <label for="password">New password</label><!--
+             --><input id="password" type="password"/><!--
+             --><span class="validation-icon"></span>
+            </div>
 
 
 
@@ -185,7 +189,7 @@
         new CBR.Controllers.EditProfile({
             el: "#content",
             countries: @Html(services.JsonUtil.serialize(countries)),
-            user: @Html(services.JsonUtil.serialize(user))
+            user: @Html(services.JsonUtil.serialize(frontentUser))
         }).run();
     });
 </script>

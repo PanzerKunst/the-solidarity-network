@@ -26,3 +26,5 @@ body#edit-profile #content .field {
   body#edit-profile #content .field > input[type=checkbox],
   body#edit-profile #content .field > input[type=radio] {
     width: 1em; }
+body#edit-profile #content #email-confirmation-field {
+  display: none; }

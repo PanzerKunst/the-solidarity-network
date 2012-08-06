@@ -42,6 +42,7 @@ CREATE TABLE `user` (
   `post_code` varchar(10) DEFAULT NULL,
   `city` varchar(45) NOT NULL,
   `country_id` int(10) unsigned NOT NULL,
+  `description` text DEFAULT NULL,
   `creation_date` datetime NOT NULL,
   PRIMARY KEY (`id`,`username`,`email`) USING BTREE,
   CONSTRAINT `FK_country` FOREIGN KEY (`country_id`) REFERENCES `country` (`id`)

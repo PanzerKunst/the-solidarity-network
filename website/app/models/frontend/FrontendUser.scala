@@ -11,12 +11,13 @@ class FrontendUser {
     this.id = user.id.get
     this.firstName = user.firstName.get
     this.lastName = user.lastName.get
-    this.username = user.username
+    this.username = user.username.get
     this email = user.email.get
-    this.streetAddress = user.streetAddress.get
-    this.postCode = user.postCode.get
+    this.streetAddress = user.streetAddress
+    this.postCode = user.postCode
     this.city = user.city.get
     this.country = CountryDto.get(Some(Map("id" -> user.countryId.get.toString))).head
+    this.description = user.description
   }
 
   @JsonProperty
@@ -38,14 +39,17 @@ class FrontendUser {
   var password: Option[String] = None
 
   @JsonProperty
-  var streetAddress: String = _
+  var streetAddress: Option[String] = None
 
   @JsonProperty
-  var postCode: String = _
+  var postCode: Option[String] = None
 
   @JsonProperty
   var city: String = _
 
   @JsonProperty
   var country: Country = _
+
+  @JsonProperty
+  var description: Option[String] = None
 }

@@ -41,7 +41,7 @@ object Application extends Controller {
   def home = Action {
     implicit request =>
       loggedInUser(session) match {
-        case Some(user) => Ok(views.html.home(user))
+        case Some(loggedInUser) => Ok(views.html.home(loggedInUser))
         case None => Redirect(routes.Application.login)
       }
   }
@@ -49,7 +49,7 @@ object Application extends Controller {
   def myProfile = Action {
     implicit request =>
       loggedInUser(session) match {
-        case Some(user) => Ok(views.html.myProfile(user, new FrontendUser(user)))
+        case Some(loggedInUser) => Ok(views.html.myProfile(loggedInUser, new FrontendUser(loggedInUser)))
         case None => Redirect(routes.Application.login)
       }
   }
@@ -57,7 +57,7 @@ object Application extends Controller {
   def editProfile = Action {
     implicit request =>
       loggedInUser(session) match {
-        case Some(user) => Ok(views.html.editProfile(CountryDto.get(None), user))
+        case Some(loggedInUser) => Ok(views.html.editProfile(CountryDto.get(None), loggedInUser, new FrontendUser(loggedInUser)))
         case None => Redirect(routes.Application.login)
       }
   }
@@ -65,7 +65,7 @@ object Application extends Controller {
   def createHelpRequest = Action {
     implicit request =>
       loggedInUser(session) match {
-        case Some(user) => Ok(views.html.createHelpRequest(user))
+        case Some(loggedInUser) => Ok(views.html.createHelpRequest(loggedInUser))
         case None => Redirect(routes.Application.login)
       }
   }
@@ -73,7 +73,7 @@ object Application extends Controller {
   def searchHelpRequests = Action {
     implicit request =>
       loggedInUser(session) match {
-        case Some(user) => Ok(views.html.searchHelpRequests(user))
+        case Some(loggedInUser) => Ok(views.html.searchHelpRequests(loggedInUser))
         case None => Redirect(routes.Application.login)
       }
   }
@@ -81,7 +81,7 @@ object Application extends Controller {
   def helpDashboard = Action {
     implicit request =>
       loggedInUser(session) match {
-        case Some(user) => Ok(views.html.helpDashboard(user))
+        case Some(loggedInUser) => Ok(views.html.helpDashboard(loggedInUser))
         case None => Redirect(routes.Application.login)
       }
   }
@@ -89,11 +89,11 @@ object Application extends Controller {
   def viewHelpRequest(id: Int) = Action {
     implicit request =>
       loggedInUser(session) match {
-        case Some(user) =>
+        case Some(loggedInUser) =>
           val helpRequest = HelpRequestDto.get(Some(Map("id" -> id.toString))).head
           val frontendHelpResponses = for (helpResponse <- HelpResponseDto.get(Some(Map("request_id" -> id.toString)))) yield new FrontendHelpResponse(helpResponse)
 
-          Ok(views.html.viewHelpRequest(user, new FrontendHelpRequest(helpRequest), frontendHelpResponses))
+          Ok(views.html.viewHelpRequest(loggedInUser, new FrontendHelpRequest(helpRequest), frontendHelpResponses))
         case None => Redirect(routes.Application.login)
       }
   }

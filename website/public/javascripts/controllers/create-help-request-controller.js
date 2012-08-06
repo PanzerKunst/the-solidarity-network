@@ -14,9 +14,7 @@ CBR.Controllers.CreateHelpRequest = new Class({
         );
 
         this._initValidation();
-
-        jQuery("#submit-button").click(jQuery.proxy(this._doCreate, this));
-        jQuery("form").submit(jQuery.proxy(this._doCreate, this));
+        this._initEvents();
     },
 
     _initValidation: function () {
@@ -29,6 +27,11 @@ CBR.Controllers.CreateHelpRequest = new Class({
                 "expiry-date"
             ]
         });
+    },
+
+    _initEvents: function() {
+        jQuery("#submit-button").click(jQuery.proxy(this._doCreate, this));
+        jQuery("form").submit(jQuery.proxy(this._doCreate, this));
     },
 
     _doCreate: function (e) {

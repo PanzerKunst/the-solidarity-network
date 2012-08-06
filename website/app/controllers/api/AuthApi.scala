@@ -13,13 +13,13 @@ object AuthApi extends Controller {
 
       var filtersMap = Map[String, String]()
 
-      if (user.username != null)
-        filtersMap += ("username" -> user.username)
-      else user.email match {
-        case Some(email) => filtersMap += ("email" -> email)
-        case None =>
+      user.username match {
+        case Some(username) => filtersMap += ("username" -> username)
+        case None => user.email match {
+          case Some(email) => filtersMap += ("email" -> email)
+          case None =>
+        }
       }
-
 
       filtersMap += ("password" -> user.password.get)
 
