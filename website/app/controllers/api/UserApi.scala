@@ -22,7 +22,9 @@ object UserApi extends Controller {
         case Some(loggedInUser) => {
           val user = JsonUtil.parse(request.body.toString, classOf[User])
           val userWithId = user.copy(id = loggedInUser.id)
-          UserDto.update(userWithId)
+          val userWithPassword = updateUserWithCurrentPasswordIfNotChanged(userWithId, loggedInUser.password.get)
+
+          UserDto.update(userWithPassword)
           Ok
         }
         case None => {
@@ -58,5 +60,12 @@ object UserApi extends Controller {
         NoContent
       else
         Ok(JsonUtil.serialize(matchingUsers.head))
+  }
+
+  private def updateUserWithCurrentPasswordIfNotChanged(user: User, password: String) = {
+    user.password match {
+      case Some(password) => user
+      case None => user.copy(password = Some(password))
+    }
   }
 }

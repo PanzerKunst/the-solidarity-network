@@ -37,9 +37,9 @@ object HelpResponseDto {
 
         val query = """
                        insert into help_response(request_id, responder_id, text, creation_date)
-      values(""" + helpResponse.requestId + """,""" +
-          helpResponse.responderId.get + ""","""" +
-          DbUtil.backslashQuotes(helpResponse.text) + """","""" +
+      values(""" + helpResponse.requestId + """, """ +
+          helpResponse.responderId.get + """, """" +
+          DbUtil.backslashQuotes(helpResponse.text) + """", """" +
           DbUtil.datetimeToString(new util.Date()) + """");"""
 
         Logger.info("HelpResponseDto.create(): " + query)

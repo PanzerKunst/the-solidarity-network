@@ -14,7 +14,7 @@ object UserDto {
       implicit c =>
 
         val query = """
-          select id, first_name, last_name, username, email, street_address, post_code, city, country_id, description
+          select id, first_name, last_name, username, password, email, street_address, post_code, city, country_id, description
           from user """ + DbUtil.generateWhereClause(filters) + ";"
 
         Logger.info("UserDto.get():" + query)
@@ -25,6 +25,7 @@ object UserDto {
             firstName = Some(row[String]("first_name")),
             lastName = Some(row[String]("last_name")),
             username = Some(row[String]("username")),
+            password = Some(row[String]("password")),
             email = Some(row[String]("email")),
             streetAddress = row[Option[String]]("street_address"),
             postCode = row[Option[String]]("post_code"),
@@ -45,15 +46,15 @@ object UserDto {
 
         val query = """
                        insert into user(first_name, last_name, username, email, password, street_address, post_code, city, country_id, creation_date)
-      values("""" + DbUtil.backslashQuotes(user.firstName.get) + """","""" +
-          DbUtil.backslashQuotes(user.lastName.get) + """","""" +
-          DbUtil.backslashQuotes(user.username.get) + """","""" +
-          DbUtil.backslashQuotes(user.email.get) + """","""" +
-          DbUtil.backslashQuotes(user.password.get) + """","""" +
-          DbUtil.backslashQuotes(streetAddressForQuery) + """","""" +
-          DbUtil.backslashQuotes(postCodeForQuery) + """","""" +
-          DbUtil.backslashQuotes(user.city.get) + """",""" +
-          user.countryId.get + ""","""" +
+      values("""" + DbUtil.backslashQuotes(user.firstName.get) + """", """" +
+          DbUtil.backslashQuotes(user.lastName.get) + """", """" +
+          DbUtil.backslashQuotes(user.username.get) + """", """" +
+          DbUtil.backslashQuotes(user.email.get) + """", """" +
+          DbUtil.backslashQuotes(user.password.get) + """", """" +
+          DbUtil.backslashQuotes(streetAddressForQuery) + """", """" +
+          DbUtil.backslashQuotes(postCodeForQuery) + """", """" +
+          DbUtil.backslashQuotes(user.city.get) + """", """ +
+          user.countryId.get + """, """" +
           DbUtil.datetimeToString(new util.Date()) + """");"""
 
         Logger.info("UserDto.create():" + query)
@@ -68,22 +69,22 @@ object UserDto {
 
         val streetAddressForQuery = user.streetAddress.getOrElse("")
         val postCodeForQuery = user.postCode.getOrElse("")
+        val descriptionForQuery = user.description.getOrElse("")
 
-        // TODO: transform into "update" query
         val query = """
-                       insert into user(first_name, last_name, username, email, password, street_address, post_code, city, country_id, creation_date)
-      values("""" + DbUtil.backslashQuotes(user.firstName.get) + """","""" +
-          DbUtil.backslashQuotes(user.lastName.get) + """","""" +
-          DbUtil.backslashQuotes(user.username.get) + """","""" +
-          DbUtil.backslashQuotes(user.email.get) + """","""" +
-          DbUtil.backslashQuotes(user.password.get) + """","""" +
-          DbUtil.backslashQuotes(streetAddressForQuery) + """","""" +
-          DbUtil.backslashQuotes(postCodeForQuery) + """","""" +
-          DbUtil.backslashQuotes(user.city.get) + """",""" +
-          user.countryId.get + ""","""" +
-          DbUtil.datetimeToString(new util.Date()) + """");"""
+                       update user set
+          first_name = """" + DbUtil.backslashQuotes(user.firstName.get) + """",
+          last_name = """" + DbUtil.backslashQuotes(user.lastName.get) + """",
+          email = """" + DbUtil.backslashQuotes(user.email.get) + """",
+          password = """" + DbUtil.backslashQuotes(user.password.get) + """",
+          street_address = """" + DbUtil.backslashQuotes(streetAddressForQuery) + """",
+          post_code = """" + DbUtil.backslashQuotes(postCodeForQuery) + """",
+          city = """" + DbUtil.backslashQuotes(user.city.get) + """",
+          country_id = """ + user.countryId.get + """,
+          description = """" + DbUtil.backslashQuotes(descriptionForQuery) + """"
+          where id = """ + user.id.get + """;"""
 
-        Logger.info("UserDto.create():" + query)
+        Logger.info("UserDto.update():" + query)
 
         SQL(query).execute()
     }

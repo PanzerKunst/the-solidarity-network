@@ -28,11 +28,11 @@ CBR.Controllers.EditProfile = new Class({
         return this.options.languageCode;
     },
 
-    _getUser: function() {
+    _getUser: function () {
         return this.options.user;
     },
 
-    _initElements: function() {
+    _initElements: function () {
         this.$profileInfoSection = jQuery("#profile-info");
         this.$accountInfoSection = jQuery("#account-info");
 
@@ -73,7 +73,7 @@ CBR.Controllers.EditProfile = new Class({
         this.$emailConfirmationField.blur(jQuery.proxy(this._checkIfEmailConfirmationMatches, this));
     },
 
-    _fillForm: function() {
+    _fillForm: function () {
         this.$firstNameField.val(this._getUser().firstName);
         this.$lastNameField.val(this._getUser().lastName);
         this.$streetAddressField.val(this._getUser().streetAddress);
@@ -86,7 +86,7 @@ CBR.Controllers.EditProfile = new Class({
         this.$emailField.val(this._getUser().email);
     },
 
-    _initEvents: function() {
+    _initEvents: function () {
         jQuery("#show-profile-info").click(jQuery.proxy(this._activateProfileInfoSection, this));
         jQuery("#show-account-info").click(jQuery.proxy(this._activateAccountInfoSection, this));
         jQuery("#save-button").click(jQuery.proxy(this._doSave, this));
@@ -124,6 +124,7 @@ CBR.Controllers.EditProfile = new Class({
 
             new Request({
                 urlEncoded: false,
+                emulation: false, // Otherwise PUT and DELETE requests are sent as POST
                 headers: { "Content-Type": "application/json" },
                 url: "/api/users",
                 data: CBR.JsonUtil.stringifyModel(user),

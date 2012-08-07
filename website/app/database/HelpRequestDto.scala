@@ -96,10 +96,10 @@ object HelpRequestDto {
 
         val query = """
                        insert into help_request(requester_id, title, description, creation_date, expiry_date)
-      values(""" + helpRequest.requesterId.get + ""","""" +
-          DbUtil.backslashQuotes(helpRequest.title) + """","""" +
-          DbUtil.backslashQuotes(helpRequest.description) + """","""" +
-          DbUtil.datetimeToString(new util.Date()) + """","""" +
+      values(""" + helpRequest.requesterId.get + """, """" +
+          DbUtil.backslashQuotes(helpRequest.title) + """", """" +
+          DbUtil.backslashQuotes(helpRequest.description) + """", """" +
+          DbUtil.datetimeToString(new util.Date()) + """", """" +
           DbUtil.dateToString(helpRequest.expiryDate) + """");"""
 
         Logger.info("HelpRequestDto.create(): " + query)

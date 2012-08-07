@@ -13,9 +13,9 @@ object HelpRequestApi extends Controller {
     implicit request =>
 
       Application.loggedInUser(session) match {
-        case Some(user) => {
+        case Some(loggedInUser) => {
           val helpRequest = JsonUtil.parse(request.body.toString, classOf[HelpRequest])
-          val helpRequestWithUserId = helpRequest.copy(requesterId = user.id)
+          val helpRequestWithUserId = helpRequest.copy(requesterId = loggedInUser.id)
           HelpRequestDto.create(helpRequestWithUserId)
           Ok
         }
