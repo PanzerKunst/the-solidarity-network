@@ -46,6 +46,7 @@ CBR.Controllers.EditProfile = new Class({
         this.$descriptionField = jQuery("#description");
 
         this.$emailField = jQuery("#email");
+        this.$emailConfirmationWrapper = jQuery("#email-confirmation-field");
         this.$emailConfirmationField = jQuery("#email-confirmation");
         this.$passwordField = jQuery("#password");
 
@@ -89,6 +90,9 @@ CBR.Controllers.EditProfile = new Class({
     _initEvents: function () {
         jQuery("#show-profile-info").click(jQuery.proxy(this._activateProfileInfoSection, this));
         jQuery("#show-account-info").click(jQuery.proxy(this._activateAccountInfoSection, this));
+
+        this.$emailField.keyup(jQuery.proxy(this._toggleEmailConfirmationField, this));
+
         jQuery("#save-button").click(jQuery.proxy(this._doSave, this));
         jQuery("form").submit(jQuery.proxy(this._doSave, this));
     },
@@ -107,6 +111,19 @@ CBR.Controllers.EditProfile = new Class({
         this.$profileInfoSection.hide();
     },
 
+    _toggleEmailConfirmationField: function(e) {
+        e.preventDefault();
+
+        if (CBR.Services.Keyboard.isPressedKeyText(e)) {
+            if (this.$emailField.val().toLowerCase() === this._getUser().email
+                && this.$emailConfirmationWrapper.is(":visible"))
+                this.$emailConfirmationWrapper.slideUp(200, "easeInQuad");
+            else if (this.$emailField.val().toLowerCase() !== this._getUser().email
+                && !this.$emailConfirmationWrapper.is(":visible"))
+                this.$emailConfirmationWrapper.slideDown(200, "easeOutQuad");
+        }
+    },
+
     _doSave: function (e) {
         e.preventDefault();
 
@@ -114,6 +131,7 @@ CBR.Controllers.EditProfile = new Class({
             var user = new CBR.Models.User({
                 firstName: this.$firstNameField.val(),
                 lastName: this.$lastNameField.val(),
+                password: this.$passwordField.val(),
                 streetAddress: jQuery("#street-address").val(),
                 postCode: jQuery("#post-code").val(),
                 city: jQuery("#city").val(),

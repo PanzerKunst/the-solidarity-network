@@ -62,10 +62,10 @@ object UserApi extends Controller {
         Ok(JsonUtil.serialize(matchingUsers.head))
   }
 
-  private def updateUserWithCurrentPasswordIfNotChanged(user: User, password: String) = {
+  private def updateUserWithCurrentPasswordIfNotChanged(user: User, currentPassword: String) = {
     user.password match {
       case Some(password) => user
-      case None => user.copy(password = Some(password))
+      case None => user.copy(password = Some(currentPassword))
     }
   }
 }
