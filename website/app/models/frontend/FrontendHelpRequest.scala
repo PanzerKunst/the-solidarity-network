@@ -1,9 +1,8 @@
 package models.frontend
 
-import models.{Country, User, HelpRequest}
+import models.{User, HelpRequest}
 import org.codehaus.jackson.annotate.JsonProperty
-import database.{DbUtil, CountryDto, UserDto}
-import java.util
+import database.{DbUtil, UserDto}
 
 class FrontendHelpRequest {
 
@@ -20,8 +19,7 @@ class FrontendHelpRequest {
     this.requester = new FrontendUser(UserDto.get(Some(Map("id" -> helpRequest.requesterId.get.toString))).head)
   }
 
-  def this(helpRequest: HelpRequest,
-           user: User) = {
+  def this(helpRequest: HelpRequest, user: User) = {
 
     this()
 

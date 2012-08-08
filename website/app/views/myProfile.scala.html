@@ -1,4 +1,4 @@
-@(user: User, frontendUser: frontend.FrontendUser)
+@(user: User, frontendUser: frontend.FrontendUser, frontendReferences: List[frontend.FrontendReference])
 @main("Solidarity Network - My profile", "my-profile") {
 <!--
     Header
@@ -25,6 +25,20 @@
     <span>
         <a href="/my-profile/edit">Edit</a>
     </span>
+
+    <h2>References</h2>
+    <section id="references">
+        {{#references}}
+        <article>
+            <span>From <a href="/users/{{fromUser.username}}">{{fromUser.firstName}} {{fromUser.lastName}} aka "{{fromUser.username}}"</a></span>
+            <img src="/files/profile-pic/{{fromUser.id}}" />
+            <span class="creation-date">{{creationDatetime}}</span>
+            <span class="was-helped {{wasHelped}}"></span>
+            <span class="rating {{rating.label}}"></span>
+            <span>{{text}}</span>
+        </article>
+        {{/references}}
+    </section>
 </script>
 
 <script type="text/javascript">
@@ -33,7 +47,8 @@
 
         new CBR.Controllers.MyProfile({
             el: "#content",
-            user: @Html(services.JsonUtil.serialize(frontendUser))
+            user: @Html(services.JsonUtil.serialize(frontendUser)),
+            references: @Html(services.JsonUtil.serialize(frontendReferences))
         }).run();
     });
 </script>

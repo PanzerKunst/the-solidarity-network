@@ -1,11 +1,12 @@
 package controllers
 
 import play.api.mvc._
-import models.User
-import database.{HelpResponseDto, HelpRequestDto, UserDto, CountryDto}
+import database._
 import services.I18nService
 import scala.collection.mutable
-import models.frontend.{FrontendUser, FrontendHelpResponse, FrontendHelpRequest}
+import models.frontend.{FrontendReference, FrontendUser, FrontendHelpResponse, FrontendHelpRequest}
+import models.User
+import scala.Some
 
 object Application extends Controller {
 
@@ -49,7 +50,11 @@ object Application extends Controller {
   def myProfile = Action {
     implicit request =>
       loggedInUser(session) match {
-        case Some(loggedInUser) => Ok(views.html.myProfile(loggedInUser, new FrontendUser(loggedInUser)))
+        case Some(loggedInUser) =>
+          val references = ReferenceDto.get(Some(Map("to_user_id" -> loggedInUser.id.get.toString)))
+          val frontendReferences = for (ref <- references) yield new FrontendReference(ref, loggedInUser)
+          Ok(views.html.myProfile(loggedInUser, new FrontendUser(loggedInUser), frontendReferences))
+
         case None => Redirect(routes.Application.login)
       }
   }

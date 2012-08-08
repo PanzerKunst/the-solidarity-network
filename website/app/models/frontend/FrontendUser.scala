@@ -12,7 +12,7 @@ class FrontendUser {
     this.firstName = user.firstName.get
     this.lastName = user.lastName.get
     this.username = user.username.get
-    this email = user.email.get
+    this.email = user.email.get
     this.streetAddress = user.streetAddress
     this.postCode = user.postCode
     this.city = user.city.get

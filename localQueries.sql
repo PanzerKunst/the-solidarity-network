@@ -72,6 +72,25 @@ Create table `help_response`(
   constraint `fk_responder` foreign key (`responder_id`) references `user`(`id`)
 ) ENGINE=InnoDB DEFAULT charset=utf8;
 
+Create table `reference_rating` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `label` varchar(10) NOT NULL,
+  primary key (`id`)
+) ENGINE=InnoDB DEFAULT charset=utf8;
+
+Create table `reference` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `from_user_id` int(10) unsigned NOT NULL,
+  `to_user_id` int(10) unsigned NOT NULL,
+  `was_helped` boolean NOT NULL,
+  `rating_id` int(10) unsigned NOT NULL,
+  `text` text NOT NULL,
+  `creation_date` datetime NOT NULL,
+  primary key (`id`),
+  constraint `fk_from_user` foreign key (`from_user_id`) references `user`(`id`),
+  constraint `fk_to_user` foreign key (`to_user_id`) references `user`(`id`),
+  constraint `fk_rating` foreign key (`rating_id`) references `reference_rating`(`id`)
+) ENGINE=InnoDB DEFAULT charset=utf8;
 
 insert into country(name) values("Greece");
 insert into country(name) values("Spain");
@@ -84,6 +103,28 @@ values("Christophe", "Bram", "blackbird", "cbramdit@gmail.com", "tigrou", "Helen
   (select id from country where name = "Sweden"), CURRENT_TIMESTAMP);
 
 select * from user;
+
+insert into reference_rating(label)
+values("Negative");
+
+insert into reference_rating(label)
+values("Neutral");
+
+insert into reference_rating(label)
+values("Good");
+
+insert into reference_rating(label)
+values("Great");
+
+select * from reference_rating;
+
+insert into reference(from_user_id, to_user_id, was_helped, rating_id, text, creation_date)
+values(1, 1, true, (select id from reference_rating where label = "Great"), "Foo ref", current_timestamp);
+
+insert into reference(from_user_id, to_user_id, was_helped, rating_id, text, creation_date)
+values(2, 1, false, (select id from reference_rating where label = "Neutral"), "Bar ref", current_timestamp);
+
+select * from reference;
 
 select * from help_request;
 
