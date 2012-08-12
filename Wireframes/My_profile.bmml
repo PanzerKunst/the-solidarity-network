@@ -11,7 +11,7 @@
         <text>Menu</text>
       </controlProperties>
     </control>
-    <control controlID="10" controlTypeID="com.balsamiq.mockups::Label" x="1221" y="110" w="-1" h="-1" measuredW="63" measuredH="21" zOrder="3" locked="false" isInGroup="-1">
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::Label" x="1221" y="110" w="-1" h="-1" measuredW="60" measuredH="21" zOrder="3" locked="false" isInGroup="-1">
       <controlProperties>
         <text>My%20profile</text>
       </controlProperties>
@@ -277,9 +277,9 @@
         <text>References</text>
       </controlProperties>
     </control>
-    <control controlID="102" controlTypeID="com.balsamiq.mockups::StickyNote" x="505" y="502" w="-1" h="-1" measuredW="109" measuredH="123" zOrder="53" locked="false" isInGroup="-1">
+    <control controlID="102" controlTypeID="com.balsamiq.mockups::StickyNote" x="505" y="502" w="109" h="142" measuredW="109" measuredH="123" zOrder="53" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>Same%20as%20CS</text>
+        <text>Same%20as%20CS%0A+%20possibility%20to%20Report%20a%20problematic%20ref.</text>
       </controlProperties>
     </control>
     <control controlID="103" controlTypeID="com.balsamiq.mockups::TextArea" x="1188" y="427" w="282" h="133" measuredW="200" measuredH="140" zOrder="54" locked="false" isInGroup="-1">
@@ -324,7 +324,7 @@
         <text>Menu</text>
       </controlProperties>
     </control>
-    <control controlID="113" controlTypeID="com.balsamiq.mockups::Label" x="1241" y="1009" w="-1" h="-1" measuredW="63" measuredH="21" zOrder="63" locked="false" isInGroup="-1">
+    <control controlID="113" controlTypeID="com.balsamiq.mockups::Label" x="1241" y="1009" w="-1" h="-1" measuredW="60" measuredH="21" zOrder="63" locked="false" isInGroup="-1">
       <controlProperties>
         <text>My%20profile</text>
       </controlProperties>
