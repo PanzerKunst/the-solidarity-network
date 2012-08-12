@@ -4,6 +4,8 @@
  * Licensed under the MIT license ( http://valums.com/mit-license/ )
  * Thanks to Gary Haran, David Mark, Corey Burns and others for contributions
  */
+var qq = qq || {};
+
 (function () {
     /* global window */
     /* jslint browser: true, devel: true, undef: true, nomen: true, bitwise: true, regexp: true, newcap: true, immed: true */
@@ -230,7 +232,7 @@
      * upload button. Tested dimentions up to 500x500px
      * @param {Object} options See defaults below.
      */
-    window.AjaxUpload = function(button, options){
+    qq.AjaxUpload = function(button, options){
         this._settings = {
             // Location of the server-side upload script
             action: 'upload.php',
@@ -313,7 +315,7 @@
     };
 
     // assigning methods to our class
-    AjaxUpload.prototype = {
+    qq.AjaxUpload.prototype = {
         setData: function(data){
             this._settings.data = data;
         },

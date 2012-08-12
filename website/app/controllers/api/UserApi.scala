@@ -54,7 +54,12 @@ object UserApi extends Controller {
       else
         Some(filtersMap)
 
-      val matchingUsers = UserDto.get(filters)
+      val matchingUsers = if (request.queryString.contains("notId")) {
+        val exceptId = request.queryString.get("notId").get.head
+        UserDto.getExceptOfId(filters, exceptId)
+      } else
+        UserDto.get(filters)
+
 
       if (matchingUsers.isEmpty)
         NoContent

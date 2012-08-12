@@ -87,7 +87,9 @@
                 <span>Got a better one?</span>
                 <a id="change-profile-pic" data-action="/files/profile-pic">Browse</a>
 
-                <p class="field-error" id="wrong-extension">Only .png, .jpg and .jpeg extensions are accepted. Please select another image.</p>
+                <p class="field-error" id="wrong-extension">Only .png, .jpg and .jpeg extensions are accepted. Please
+                    select another image.</p>
+
                 <p class="field-error" id="upload-failed">Error: could not save the image :(</p>
             </div>
 
@@ -101,22 +103,22 @@
         </section>
 
 
-
         <section id="account-info">
             <fieldset>
                 <div class="field">
                     <label for="email">E-mail address <span>*</span></label><!--
-             --><input id="email" type="text"/><!--
-             --><span class="validation-icon"></span>
+                 --><input id="email" type="text"/><!--
+                 --><span class="validation-icon"></span>
 
-                    <p class="field-error" data-check="empty">Please indicate your e-mail address. We'll use it to inform you of
-                        user messages and help requests.</p>
+                    <p class="field-error" data-check="empty">Please indicate your e-mail address. We'll use it to
+                        inform you of user messages and help requests.</p>
 
-                    <p class="field-error" data-check="email">Would you mind checking that e-mail address? Looks wrong to
-                        me...</p>
+                    <p class="field-error" data-check="email">Would you mind checking that e-mail address? Looks wrong
+                        to me...</p>
 
-                    <p class="field-error" id="email-already-registered">This e-mail is already registered
-                        in our system. You should try resetting your password on the Login page.</p>
+                    <p class="field-error" id="email-already-registered">Someone else has registered with that e-mail.
+                        Or it means that you have two accounts! It may be a bug.. in any case, input another e-mail to
+                        continue, thanks!</p>
                 </div>
 
                 <div class="field" id="email-confirmation-field">
@@ -124,7 +126,12 @@
                  --><input id="email-confirmation" type="text"/><!--
                  --><span class="validation-icon"></span>
 
-                    <p class="field-error" id="emails-do-not-match">e-mails do not match!</p>
+                    <p class="field-error" data-check="empty">The e-mails do not match!</p>
+
+                    <p class="field-error" data-check="email">Would you mind checking that e-mail address? Looks wrong to
+                        me...</p>
+
+                    <p class="field-error" id="emails-do-not-match">The e-mails do not match!</p>
                 </div>
             </fieldset>
 
@@ -135,8 +142,8 @@
             </div>
 
 
-
             <h2>Mailing-lists</h2>
+
             <div class="field">
                 <input type="checkbox" id="is-registering-to-new-help-requests"><!--
              --><span>Be informed of new help requests near me</span>
@@ -144,17 +151,17 @@
 
             <fieldset id="new-help-requests-frequencies">
                 <div class="field">
-                    <input type="radio" name="new-help-requests-frequency" value="one-email-per-request" /><!--
+                    <input type="radio" name="new-help-requests-frequency" value="one-email-per-request"/><!--
                  --><span>Receive an e-mail per new request</span>
                 </div>
 
                 <div class="field">
-                    <input type="radio" name="new-help-requests-frequency" value="one-email-per-day" /><!--
+                    <input type="radio" name="new-help-requests-frequency" value="one-email-per-day"/><!--
                  --><span>An email with the day's new requests</span>
                 </div>
 
                 <div class="field">
-                    <input type="radio" name="new-help-requests-frequency" value="one-email-per-week" /><!--
+                    <input type="radio" name="new-help-requests-frequency" value="one-email-per-week"/><!--
                  --><span>An email with the week's new requests</span>
                 </div>
             </fieldset>
@@ -172,7 +179,6 @@
                 </select>
             </div>
         </section>
-
 
 
         <div id="submit-button-wrapper">

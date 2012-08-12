@@ -25,6 +25,22 @@ CBR.Services.Validator = new Class({
         return result;
     },
 
+    flagValid: function($field) {
+        var $wrapper = $field.parent();
+        $wrapper.removeClass("invalid");
+        $wrapper.addClass("valid");
+    },
+
+    flagInvalid: function($field) {
+        var $wrapper = $field.parent();
+        $wrapper.removeClass("valid");
+        $wrapper.addClass("invalid");
+    },
+
+    isFlaggedInvalid: function($field) {
+        return $field.parent().hasClass("invalid");
+    },
+
     _getFieldIds: function() {
         return this.options.fieldIds;
     },
@@ -119,7 +135,7 @@ CBR.Services.Validator = new Class({
         // Empty?
         if (this._isToCheckIfEmpty($field) && !$field.val()) {
             if (!isOnBlur) {
-                this._flagInvalid($field);
+                this.flagInvalid($field);
                 this._get$empty($field).slideDown(200, "easeOutQuad");
             }
             return false;
@@ -129,7 +145,7 @@ CBR.Services.Validator = new Class({
 
         // Email?
         if (this._isToCheckIfEmail($field) && !this._isValidEmail($field.val())) {
-            this._flagInvalid($field);
+            this.flagInvalid($field);
             this._get$email($field).slideDown(200, "easeOutQuad");
             return false;
         }
@@ -138,7 +154,7 @@ CBR.Services.Validator = new Class({
 
         // Username?
         if (this._isToCheckIfUsername($field) && !this._isValidUsername($field.val())) {
-            this._flagInvalid($field);
+            this.flagInvalid($field);
             this._get$username($field).slideDown(200, "easeOutQuad");
             return false;
         }
@@ -147,7 +163,7 @@ CBR.Services.Validator = new Class({
 
         // In the future?
         if (this._isToCheckIfInFuture($field) && !this._isInFuture($field.val())) {
-            this._flagInvalid($field);
+            this.flagInvalid($field);
             this._get$inFuture($field).slideDown(200, "easeOutQuad");
             return false;
         }
@@ -156,14 +172,14 @@ CBR.Services.Validator = new Class({
 
         // In max 2 weeks?
         if (this._isToCheckIfInMaxTwoWeeks($field) && !this._isInMaxTwoWeeks($field.val())) {
-            this._flagInvalid($field);
+            this.flagInvalid($field);
             this._get$inMaxTwoWeeks($field).slideDown(200, "easeOutQuad");
             return false;
         }
         else
             this._get$inMaxTwoWeeks($field).slideUp(200, "easeInQuad");
 
-        this._flagValid($field);
+        this.flagValid($field);
 
         return true;
     },
@@ -182,17 +198,5 @@ CBR.Services.Validator = new Class({
         $field.change(function () {
             _this._validateField($field);
         });
-    },
-
-    _flagValid: function($field) {
-        var $wrapper = $field.parent();
-        $wrapper.removeClass("invalid");
-        $wrapper.addClass("valid");
-    },
-
-    _flagInvalid: function($field) {
-        var $wrapper = $field.parent();
-        $wrapper.removeClass("valid");
-        $wrapper.addClass("invalid");
     }
 });

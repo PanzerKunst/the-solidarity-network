@@ -37,6 +37,35 @@ object UserDto {
     }
   }
 
+  def getExceptOfId(filters: Option[Map[String, String]], id: String): List[User] = {
+    DB.withConnection {
+      implicit c =>
+
+        val query = """
+          select id, first_name, last_name, username, password, email, street_address, post_code, city, country_id, description
+          from user """ + DbUtil.generateWhereClause(filters) +
+          """ and id <> """ + DbUtil.backslashQuotes(id) + ";"
+
+        Logger.info("UserDto.getExceptOfId():" + query)
+
+        SQL(query)().map(row =>
+          User(
+            id = Some(row[Long]("id")),
+            firstName = Some(row[String]("first_name")),
+            lastName = Some(row[String]("last_name")),
+            username = Some(row[String]("username")),
+            password = Some(row[String]("password")),
+            email = Some(row[String]("email")),
+            streetAddress = row[Option[String]]("street_address"),
+            postCode = row[Option[String]]("post_code"),
+            city = Some(row[String]("city")),
+            countryId = Some(row[Long]("country_id")),
+            description = row[Option[String]]("description")
+          )
+        ).toList
+    }
+  }
+
   def create(user: User) {
     DB.withConnection {
       implicit c =>

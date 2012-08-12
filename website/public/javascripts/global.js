@@ -8,3 +8,6 @@ CBR.Services = CBR.Services || {};
 
 // Because jsHint doesn't know Mustache
 var Mustache = Mustache || {};
+
+// Because jsHint doesn't know AjaxUpload
+var qq = qq || {};

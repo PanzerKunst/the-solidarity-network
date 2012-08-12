@@ -7,11 +7,16 @@ object FileController extends Controller {
   private val homeDir = System.getProperty("user.home")
   val profilePicturesDir = new File(homeDir + "/data/profile-pictures")
 
-  def serveProfilePicture(userId: Int) = Action {
+  def serveProfilePicture(userId: Int, isTemp: Boolean = false) = Action {
     implicit request =>
       Application.loggedInUser(session) match {
         case Some(loggedInUser) =>
-          getProfilePicture(userId) match {
+          val isTemp = if (request.queryString.contains("isTemp"))
+            request.queryString.get("isTemp").get.head == "true"
+          else
+            false
+
+          getProfilePicture(userId, isTemp) match {
             case Some(file) => Ok.sendFile(
               content = file,
               inline = true
@@ -28,11 +33,11 @@ object FileController extends Controller {
         case Some(loggedInUser) =>
           request.body.file("image").map {
             picture =>
-              deleteExistingProfilePicture(loggedInUser.id.get)
+              deleteExistingTempProfilePicture(loggedInUser.id.get)
 
               val extension = picture.filename.substring(picture.filename.lastIndexOf(".")).toLowerCase
 
-              picture.ref.moveTo(new File(profilePicturesDir.getPath + "/" + loggedInUser.id.get + extension))
+              picture.ref.moveTo(new File(profilePicturesDir.getPath + "/" + loggedInUser.id.get + ".tmp" + extension))
               Ok("")
           }.getOrElse {
             NotFound
@@ -41,8 +46,11 @@ object FileController extends Controller {
       }
   }
 
-  private def getProfilePicture(userId: Long) = {
-    val matchingRegex = (userId + """\.(jpg|jpeg|png)""").r
+  private def getProfilePicture(userId: Long, isTemp: Boolean) = {
+    val matchingRegex = if (isTemp)
+      (userId + """\.tmp\.(jpg|jpeg|png)""").r
+    else
+      (userId + """\.(jpg|jpeg|png)""").r
     val matchingFiles = profilePicturesDir.listFiles.filter(f => matchingRegex.findFirstIn(f.getName).isDefined)
 
     if (matchingFiles.size > 1)
@@ -53,20 +61,20 @@ object FileController extends Controller {
       Some(matchingFiles.head)
   }
 
-  private def deleteExistingProfilePicture(userId: Long) {
-    getProfilePicture(userId) match {
+  private def deleteExistingTempProfilePicture(userId: Long) {
+    getProfilePicture(userId, true) match {
       case Some(file) => {
-        deleteProfilePictureFile(file)
+        deleteFile(file)
       }
       case None =>
     }
   }
 
-  private def deleteProfilePictureFile(file: File) {
+  private def deleteFile(file: File) {
     val deletionSuccessful = if (file.exists())
       file.delete()
     else true
 
-    if (!deletionSuccessful) throw new FileSystemException("Could not delete the profile picture file!")
+    if (!deletionSuccessful) throw new FileSystemException("Could not delete file: " + file.getAbsolutePath)
   }
 }

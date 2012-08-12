@@ -45,6 +45,7 @@ CBR.Controllers.EditProfile = new Class({
         this.$countryField = jQuery("#country");
 
         this.$changeProfilePic = jQuery("#change-profile-pic");
+        this.$profilePic = jQuery("#profile-pic");
         this.$wrongExtensionParagraph = jQuery("#wrong-extension");
         this.$uploadFailedParagraph = jQuery("#upload-failed");
 
@@ -57,6 +58,7 @@ CBR.Controllers.EditProfile = new Class({
 
         this.$languageSelect = jQuery("#language");
 
+        this.$emailAlreadyRegisteredParagraph = jQuery("#email-already-registered");
         this.$emailsDoNotMatchParagraph = jQuery("#emails-do-not-match");
     },
 
@@ -76,6 +78,7 @@ CBR.Controllers.EditProfile = new Class({
             ]
         });
 
+        this.$emailField.blur(jQuery.proxy(this._checkIfEmailIsNotYetRegisteredByAnotherUser, this));
         this.$emailConfirmationField.blur(jQuery.proxy(this._checkIfEmailConfirmationMatches, this));
     },
 
@@ -115,14 +118,19 @@ CBR.Controllers.EditProfile = new Class({
                 }
             },
             onComplete: function (file, response) {
-                if (jQuery(response).is("pre"))
-                    jQuery("#profile-pic").attr("src", "/files/profile-pic/" + _this._getUser().id + "?time=" + new Date().getTime());
+                if (jQuery(response).is("pre")) {
+                    // We hide and show to avoid display bugs of the top of the previous image still visible
+                    _this.$profilePic.hide(0, function () {
+                        _this.$profilePic.attr("src", "/files/profile-pic/" + _this._getUser().id + "?isTemp=true&time=" + new Date().getTime());
+                    })
+                        .show();
+                }
                 else
                     _this.$uploadFailedParagraph.slideDown(200, "easeOutQuad");
             }
         };
 
-        new AjaxUpload(this.$changeProfilePic, options);
+        var ajaxUpload = new qq.AjaxUpload(this.$changeProfilePic, options);
     },
 
     _initEvents: function () {
@@ -165,7 +173,9 @@ CBR.Controllers.EditProfile = new Class({
     _doSave: function (e) {
         e.preventDefault();
 
-        if (this.validator.isValid() && this._isEmailConfirmationMatching()) {
+        if (this.validator.isValid() &&
+            this._isEmailNotYetRegisteredByAnotherUser() &&
+            this._isEmailConfirmationMatching()) {
             var user = new CBR.Models.User({
                 firstName: this.$firstNameField.val(),
                 lastName: this.$lastNameField.val(),
@@ -197,6 +207,31 @@ CBR.Controllers.EditProfile = new Class({
         }
     },
 
+    _checkIfEmailIsNotYetRegisteredByAnotherUser: function (e) {
+        e.preventDefault();
+
+        this.$emailAlreadyRegisteredParagraph.slideUp(200, "easeInQuad");
+
+        if (this.$emailField.val() !== "") {
+            var _this = this;
+
+            new Request({
+                urlEncoded: false,
+                headers: { "Content-Type": "application/json" },
+                url: "/api/users/first?email=" + this.$emailField.val().toLowerCase() + "&notId=" + this._getUser().id,
+                onSuccess: function (responseText, responseXML) {
+                    if (this.status !== _this.httpStatusCode.noContent && !_this.validator.isFlaggedInvalid(_this.$emailField)) {
+                        _this.validator.flagInvalid(this.$emailField);
+                        _this.$emailAlreadyRegisteredParagraph.slideDown(200, "easeOutQuad");
+                    }
+                },
+                onFailure: function (xhr) {
+                    alert("AJAX fail :(");
+                }
+            }).get();
+        }
+    },
+
     _checkIfEmailConfirmationMatches: function (e) {
         e.preventDefault();
 
@@ -205,20 +240,48 @@ CBR.Controllers.EditProfile = new Class({
         var email = this.$emailField.val();
         var emailConfirmation = this.$emailConfirmationField.val();
 
-        if ((email !== "" || emailConfirmation !== "") && email !== emailConfirmation) {
-            var $wrapper = this.$emailsDoNotMatchParagraph.parent();
-            $wrapper.removeClass("valid");
-            $wrapper.addClass("invalid");
+        if ((email !== "" || emailConfirmation !== "") &&
+            email !== emailConfirmation &&
+            !this.validator.isFlaggedInvalid(this.$emailConfirmationField)) {
 
+            this.validator.flagInvalid(this.$emailConfirmationField);
             this.$emailsDoNotMatchParagraph.slideDown(200, "easeOutQuad");
         }
+    },
+
+    _isEmailNotYetRegisteredByAnotherUser: function () {
+        if (this.$emailField.val() === "")
+            return true;
+
+        var xhr = new Request({
+            urlEncoded: false,
+            headers: { "Content-Type": "application/json" },
+            async: false,
+            url: "/api/users/first?email=" + this.$emailField.val().toLowerCase() + "&notId=" + this._getUser().id
+        }).get();
+
+        var isNotRegistered = xhr.status === this.httpStatusCode.noContent;
+
+        if (!isNotRegistered && !this.validator.isFlaggedInvalid(this.$emailField)) {
+            this.validator.flagInvalid(this.$emailField);
+            this.$emailAlreadyRegisteredParagraph.slideDown(200, "easeOutQuad");
+        }
+
+        return isNotRegistered;
     },
 
     _isEmailConfirmationMatching: function () {
         var email = this.$emailField.val();
         var emailConfirmation = this.$emailConfirmationField.val();
 
-        return (email !== "" || emailConfirmation !== "") && email === emailConfirmation
+        var isMatching = (email !== "" || emailConfirmation !== "") && email === emailConfirmation;
+
+        if (!isMatching && !this.validator.isFlaggedInvalid(this.$emailConfirmationField)) {
+            this.validator.flagInvalid(this.$emailConfirmationField);
+            this.$emailsDoNotMatchParagraph.slideDown(200, "easeOutQuad");
+        }
+
+        return isMatching;
     },
 
     _changeLanguage: function (e) {

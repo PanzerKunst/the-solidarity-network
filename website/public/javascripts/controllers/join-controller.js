@@ -113,13 +113,8 @@ CBR.Controllers.Join = new Class({
                 headers: { "Content-Type": "application/json" },
                 url: "/api/users/first?username=" + this.$usernameField.val(),
                 onSuccess: function (responseText, responseXML) {
-                    if (this.status === _this.httpStatusCode.noContent)
-                        console.log("username available :)");
-                    else {
-                        var $wrapper = _this.$usernameField.parent();
-                        $wrapper.removeClass("valid");
-                        $wrapper.addClass("invalid");
-
+                    if (this.status !== _this.httpStatusCode.noContent && !_this.validator.isFlaggedInvalid(_this.$usernameField)) {
+                        _this.validator.flagInvalid(this.$usernameField);
                         _this.$usernameTakenParagraph.slideDown(200, "easeOutQuad");
                     }
                 },
@@ -143,13 +138,8 @@ CBR.Controllers.Join = new Class({
                 headers: { "Content-Type": "application/json" },
                 url: "/api/users/first?email=" + this.$emailField.val().toLowerCase(),
                 onSuccess: function (responseText, responseXML) {
-                    if (this.status === _this.httpStatusCode.noContent)
-                        console.log("email not registered yet :)");
-                    else {
-                        var $wrapper = _this.$emailAlreadyRegisteredParagraph.parent();
-                        $wrapper.removeClass("valid");
-                        $wrapper.addClass("invalid");
-
+                    if (this.status !== _this.httpStatusCode.noContent && !_this.validator.isFlaggedInvalid(_this.$emailField)) {
+                        _this.validator.flagInvalid(this.$emailField);
                         _this.$emailAlreadyRegisteredParagraph.slideDown(200, "easeOutQuad");
                     }
                 },
@@ -168,11 +158,11 @@ CBR.Controllers.Join = new Class({
         var email = this.$emailField.val();
         var emailConfirmation = this.$emailConfirmationField.val();
 
-        if ((email !== "" || emailConfirmation !== "") && email !== emailConfirmation) {
-            var $wrapper = this.$emailsDoNotMatchParagraph.parent();
-            $wrapper.removeClass("valid");
-            $wrapper.addClass("invalid");
+        if ((email !== "" || emailConfirmation !== "") &&
+            email !== emailConfirmation &&
+            !this.validator.isFlaggedInvalid(this.$emailConfirmationField)) {
 
+            this.validator.flagInvalid(this.$emailConfirmationField);
             this.$emailsDoNotMatchParagraph.slideDown(200, "easeOutQuad");
         }
     },
@@ -188,7 +178,14 @@ CBR.Controllers.Join = new Class({
             url: "/api/users/first?username=" + this.$usernameField.val()
         }).get();
 
-        return xhr.status === this.httpStatusCode.noContent;
+        var isAvailable = xhr.status === this.httpStatusCode.noContent;
+
+        if (!isAvailable) {
+            this.validator.flagInvalid(this.$usernameField);
+            this.$usernameTakenParagraph.slideDown(200, "easeOutQuad");
+        }
+
+        return isAvailable;
     },
 
     _isEmailNotRegisteredYet: function () {
@@ -202,14 +199,28 @@ CBR.Controllers.Join = new Class({
             url: "/api/users/first?email=" + this.$emailField.val().toLowerCase()
         }).get();
 
-        return xhr.status === this.httpStatusCode.noContent;
+        var isNotRegistered = xhr.status === this.httpStatusCode.noContent;
+
+        if (!isNotRegistered) {
+            this.validator.flagInvalid(this.$emailField);
+            this.$emailAlreadyRegisteredParagraph.slideDown(200, "easeOutQuad");
+        }
+
+        return isNotRegistered;
     },
 
     _isEmailConfirmationMatching: function () {
         var email = this.$emailField.val();
         var emailConfirmation = this.$emailConfirmationField.val();
 
-        return (email !== "" || emailConfirmation !== "") && email === emailConfirmation
+        var isMatching = (email !== "" || emailConfirmation !== "") && email === emailConfirmation;
+
+        if (!isMatching) {
+            this.validator.flagInvalid(this.$emailConfirmationField);
+            this.$emailsDoNotMatchParagraph.slideDown(200, "easeOutQuad");
+        }
+
+        return isMatching;
     },
 
     _changeLanguage: function (e) {
