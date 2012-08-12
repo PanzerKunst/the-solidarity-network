@@ -13,9 +13,13 @@ CBR.Controllers.Login = new Class({
             )
         );
 
+        this._initElements();
         this._initValidation();
-
         this._initEvents();
+    },
+
+    _initElements: function() {
+        this.$authFailed = jQuery("#auth-failed");
     },
 
     _initValidation: function () {
@@ -37,6 +41,8 @@ CBR.Controllers.Login = new Class({
     _doLogin: function (e) {
         e.preventDefault();
 
+        this.$authFailed.slideUp(200, "easeInQuad");
+
         if (this.validator.isValid()) {
             var user = {
                 password: jQuery("#password").val()
@@ -56,7 +62,7 @@ CBR.Controllers.Login = new Class({
                 data: CBR.JsonUtil.stringifyModel(user),
                 onSuccess: function (responseText, responseXML) {
                     if (this.status === _this.httpStatusCode.noContent)
-                        jQuery("#auth-failed").show();
+                        _this.$authFailed.slideDown(200, "easeOutQuad");
                     else
                         location.href = "/home";
                 },

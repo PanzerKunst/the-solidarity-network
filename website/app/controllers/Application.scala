@@ -13,7 +13,11 @@ object Application extends Controller {
   private val defaultLanguageCode = "en"
 
   def index = Action {
-    Ok(views.html.index())
+    implicit request =>
+      loggedInUser(session) match {
+        case Some(loggedInUser) => Redirect(routes.Application.home)
+        case None => Ok(views.html.index())
+      }
   }
 
   def join = Action {

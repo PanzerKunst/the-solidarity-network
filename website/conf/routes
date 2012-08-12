@@ -32,4 +32,5 @@ GET     /api/help-requests          controllers.api.HelpRequestApi.get
 POST    /api/help-responses         controllers.api.HelpResponseApi.create
 
 # Files
-GET     /files/profile-pic/:userId  controllers.FileController.profilePicture(userId: Int)
+GET     /files/profile-pic/:userId  controllers.FileController.serveProfilePicture(userId: Int)
+POST    /files/profile-pic          controllers.FileController.uploadProfilePicture

@@ -41,7 +41,7 @@ Dependencies:
     <target name="merge-css">
         <concat destfile="${dist.merged.file.css}" fixlastline="yes" append="no">
             <filelist dir="${src.css.dir}" files="
-                h5bp/style.css
+                libs/h5bp.css
                 responsive.css
                 main.css
                 header.css
@@ -81,6 +81,7 @@ Dependencies:
                 global.js
                 common/json-util.js
                 services/validator.js
+                services/keyboard.js
                 models/json-serializable-model.js
                 models/user.js
                 models/help-request.js
@@ -91,7 +92,7 @@ Dependencies:
                 controllers/join-controller.js
                 controllers/create-help-request-controller.js
                 controllers/search-help-requests-controller.js
-                controllers/view-help-requests-controller.js
+                controllers/view-help-request-controller.js
                 controllers/my-profile-controller.js
                 controllers/edit-profile-controller.js" />
         </concat>
@@ -149,6 +150,7 @@ Dependencies:
                 common/jquery.no-conflict.js
                 libs/mootools-core-1.4.5-full-nocompat.js
                 libs/mustache.js
+                libs/ajaxupload.js
                 ${non-lib.js.file}" />
         </concat>
     </target>

@@ -28,6 +28,10 @@ CBR.Models.User = new Class({
         return this.options.password;
     },
 
+    setPassword: function(password) {
+        this.options.password = password;
+    },
+
     getStreetAddress: function() {
         return this.options.streetAddress;
     },

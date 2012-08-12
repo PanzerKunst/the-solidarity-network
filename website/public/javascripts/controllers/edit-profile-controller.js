@@ -19,6 +19,7 @@ CBR.Controllers.EditProfile = new Class({
 
         this._initValidation();
         this._fillForm();
+        this._initIconUpload();
         this._initEvents();
 
         this.$languageSelect.change(jQuery.proxy(this._changeLanguage, this));
@@ -42,6 +43,10 @@ CBR.Controllers.EditProfile = new Class({
         this.$postCodeField = jQuery("#post-code");
         this.$cityField = jQuery("#city");
         this.$countryField = jQuery("#country");
+
+        this.$changeProfilePic = jQuery("#change-profile-pic");
+        this.$wrongExtensionParagraph = jQuery("#wrong-extension");
+        this.$uploadFailedParagraph = jQuery("#upload-failed");
 
         this.$descriptionField = jQuery("#description");
 
@@ -87,6 +92,39 @@ CBR.Controllers.EditProfile = new Class({
         this.$emailField.val(this._getUser().email);
     },
 
+    _initIconUpload: function () {
+        var _this = this;
+
+        var options = {
+            action: this.$changeProfilePic.data("action"),
+            name: 'image',
+            accept: "image/*",
+            autoSubmit: true,
+            onSubmit: function (file, extension) {
+                _this.$wrongExtensionParagraph.slideUp(200, "easeInQuad");
+                _this.$uploadFailedParagraph.slideUp(200, "easeInQuad");
+
+                // Make sure its is one of the allowed file extensions
+                var lowerCaseExtension = extension.toLowerCase();
+                if (lowerCaseExtension !== "png" &&
+                    lowerCaseExtension !== "jpg" &&
+                    lowerCaseExtension !== "jpeg") {
+
+                    _this.$wrongExtensionParagraph.slideDown(200, "easeOutQuad");
+                    return false;
+                }
+            },
+            onComplete: function (file, response) {
+                if (jQuery(response).is("pre"))
+                    jQuery("#profile-pic").attr("src", "/files/profile-pic/" + _this._getUser().id + "?time=" + new Date().getTime());
+                else
+                    _this.$uploadFailedParagraph.slideDown(200, "easeOutQuad");
+            }
+        };
+
+        new AjaxUpload(this.$changeProfilePic, options);
+    },
+
     _initEvents: function () {
         jQuery("#show-profile-info").click(jQuery.proxy(this._activateProfileInfoSection, this));
         jQuery("#show-account-info").click(jQuery.proxy(this._activateAccountInfoSection, this));
@@ -111,15 +149,15 @@ CBR.Controllers.EditProfile = new Class({
         this.$profileInfoSection.hide();
     },
 
-    _toggleEmailConfirmationField: function(e) {
+    _toggleEmailConfirmationField: function (e) {
         e.preventDefault();
 
         if (CBR.Services.Keyboard.isPressedKeyText(e)) {
-            if (this.$emailField.val().toLowerCase() === this._getUser().email
-                && this.$emailConfirmationWrapper.is(":visible"))
+            if (this.$emailField.val().toLowerCase() === this._getUser().email &&
+                this.$emailConfirmationWrapper.is(":visible"))
                 this.$emailConfirmationWrapper.slideUp(200, "easeInQuad");
-            else if (this.$emailField.val().toLowerCase() !== this._getUser().email
-                && !this.$emailConfirmationWrapper.is(":visible"))
+            else if (this.$emailField.val().toLowerCase() !== this._getUser().email &&
+                !this.$emailConfirmationWrapper.is(":visible"))
                 this.$emailConfirmationWrapper.slideDown(200, "easeOutQuad");
         }
     },
@@ -127,11 +165,10 @@ CBR.Controllers.EditProfile = new Class({
     _doSave: function (e) {
         e.preventDefault();
 
-        if (this.validator.isValid()) {
+        if (this.validator.isValid() && this._isEmailConfirmationMatching()) {
             var user = new CBR.Models.User({
                 firstName: this.$firstNameField.val(),
                 lastName: this.$lastNameField.val(),
-                password: this.$passwordField.val(),
                 streetAddress: jQuery("#street-address").val(),
                 postCode: jQuery("#post-code").val(),
                 city: jQuery("#city").val(),
@@ -139,6 +176,10 @@ CBR.Controllers.EditProfile = new Class({
                 description: jQuery('#description').val(),
                 email: this.$emailField.val().toLowerCase()
             });
+
+            var newPassword = this.$passwordField.val();
+            if (newPassword !== "")
+                user.setPassword(newPassword);
 
             new Request({
                 urlEncoded: false,
@@ -173,11 +214,18 @@ CBR.Controllers.EditProfile = new Class({
         }
     },
 
+    _isEmailConfirmationMatching: function () {
+        var email = this.$emailField.val();
+        var emailConfirmation = this.$emailConfirmationField.val();
+
+        return (email !== "" || emailConfirmation !== "") && email === emailConfirmation
+    },
+
     _changeLanguage: function (e) {
         e.preventDefault();
 
         var languageCode = e.currentTarget.value;
 
-        location.href = "/join?lang=" + languageCode;
+        location.href = "/my-profile/edit?lang=" + languageCode;
     }
 });

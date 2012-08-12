@@ -82,11 +82,14 @@
 
             <h2>Profile picture</h2>
 
-            <img src="/files/profile-pic/{{user.id}}"/>
-            <span>Got a better one?</span>
-            <span>
-                <a id="change-profile-pic">Browse</a>
-            </span>
+            <div class="field">
+                <img id="profile-pic" src="/files/profile-pic/{{user.id}}"/>
+                <span>Got a better one?</span>
+                <a id="change-profile-pic" data-action="/files/profile-pic">Browse</a>
+
+                <p class="field-error" id="wrong-extension">Only .png, .jpg and .jpeg extensions are accepted. Please select another image.</p>
+                <p class="field-error" id="upload-failed">Error: could not save the image :(</p>
+            </div>
 
 
             <h2>Description</h2>

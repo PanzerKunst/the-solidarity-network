@@ -18,7 +18,6 @@ CBR.Controllers.Join = new Class({
         this.$languageSelect.val(this._getLanguageCode());
 
         this._initValidation();
-
         this._initEvents();
 
         this.$languageSelect.change(jQuery.proxy(this._changeLanguage, this));
@@ -28,7 +27,7 @@ CBR.Controllers.Join = new Class({
         return this.options.languageCode;
     },
 
-    _initElements: function() {
+    _initElements: function () {
         this.$usernameField = jQuery("#username");
         this.$emailField = jQuery("#email");
         this.$emailConfirmationField = jQuery("#email-confirmation");
@@ -62,15 +61,18 @@ CBR.Controllers.Join = new Class({
         this.$emailConfirmationField.blur(jQuery.proxy(this._checkIfEmailConfirmationMatches, this));
     },
 
-    _initEvents: function() {
-        jQuery("#join-button").click(jQuery.proxy(this._doRegister, this));
-        jQuery("form").submit(jQuery.proxy(this._doRegister, this));
+    _initEvents: function () {
+        jQuery("#join-button").click(jQuery.proxy(this._doJoin, this));
+        jQuery("form").submit(jQuery.proxy(this._doJoin, this));
     },
 
-    _doRegister: function (e) {
+    _doJoin: function (e) {
         e.preventDefault();
 
-        if (this.validator.isValid() && this._isUsernameAvailable() && this._isEmailNotRegisteredYet()) {
+        if (this.validator.isValid() &&
+            this._isUsernameAvailable() &&
+            this._isEmailNotRegisteredYet() &&
+            this._isEmailConfirmationMatching()) {
             var user = new CBR.Models.User({
                 username: this.$usernameField.val(),
                 firstName: jQuery("#first-name").val(),
@@ -201,6 +203,13 @@ CBR.Controllers.Join = new Class({
         }).get();
 
         return xhr.status === this.httpStatusCode.noContent;
+    },
+
+    _isEmailConfirmationMatching: function () {
+        var email = this.$emailField.val();
+        var emailConfirmation = this.$emailConfirmationField.val();
+
+        return (email !== "" || emailConfirmation !== "") && email === emailConfirmation
     },
 
     _changeLanguage: function (e) {

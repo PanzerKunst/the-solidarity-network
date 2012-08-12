@@ -2,15 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6a692bc-d147-471b-bee0-2af12beb41f5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../localQueries.sql" afterPath="$PROJECT_DIR$/../localQueries.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../build.xml" afterPath="$PROJECT_DIR$/../build.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Application.scala" afterPath="$PROJECT_DIR$/app/controllers/Application.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/frontend/FrontendHelpRequest.scala" afterPath="$PROJECT_DIR$/app/models/frontend/FrontendHelpRequest.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/frontend/FrontendUser.scala" afterPath="$PROJECT_DIR$/app/models/frontend/FrontendUser.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/FileController.scala" afterPath="$PROJECT_DIR$/app/controllers/FileController.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/InconsistentDataException.scala" afterPath="$PROJECT_DIR$/app/controllers/InconsistentDataException.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/editProfile.scala.html" afterPath="$PROJECT_DIR$/app/views/editProfile.scala.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/join.scala.html" afterPath="$PROJECT_DIR$/app/views/join.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/main.scala.html" afterPath="$PROJECT_DIR$/app/views/main.scala.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/myProfile.scala.html" afterPath="$PROJECT_DIR$/app/views/myProfile.scala.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/controllers/my-profile-controller.js" afterPath="$PROJECT_DIR$/public/javascripts/controllers/my-profile-controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/routes" afterPath="$PROJECT_DIR$/conf/routes" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/controllers/edit-profile-controller.js" afterPath="$PROJECT_DIR$/public/javascripts/controllers/edit-profile-controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/controllers/join-controller.js" afterPath="$PROJECT_DIR$/public/javascripts/controllers/join-controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/controllers/login-controller.js" afterPath="$PROJECT_DIR$/public/javascripts/controllers/login-controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/models/user.js" afterPath="$PROJECT_DIR$/public/javascripts/models/user.js" />
     </list>
     <ignored path="website.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -72,94 +76,40 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="FrontendReference.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/frontend/FrontendReference.scala">
+      <file leaf-file-name="edit-profile-controller.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/edit-profile-controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="50" selection-start="800" selection-end="800" vertical-scroll-proportion="0.0">
+            <state line="130" column="0" selection-start="4476" selection-end="4476" vertical-scroll-proportion="0.76537913">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReferenceDto.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/database/ReferenceDto.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="45" selection-start="350" selection-end="360" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="myProfile.scala.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/myProfile.scala.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="3" selection-start="273" selection-end="273" vertical-scroll-proportion="-9.807693">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="my-profile-controller.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/my-profile-controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="0" selection-start="359" selection-end="359" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Application.scala" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Application.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/Application.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="40" selection-start="340" selection-end="340" vertical-scroll-proportion="0.31726283">
+            <state line="68" column="129" selection-start="2085" selection-end="2085" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="editProfile.scala.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/editProfile.scala.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="88" column="0" selection-start="2957" selection-end="2957" vertical-scroll-proportion="-13.076923">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileController.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/FileController.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="41" column="3" selection-start="1301" selection-end="1301" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="e#21#42#0" expanded="true" />
+                <element signature="e#21#61#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FrontendUser.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/frontend/FrontendUser.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="0" selection-start="192" selection-end="192" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FrontendHelpRequest.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/frontend/FrontendHelpRequest.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="8" selection-start="621" selection-end="621" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HelpRequestApi.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/api/HelpRequestApi.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="78" selection-start="1282" selection-end="1282" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HelpResponseApi.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/api/HelpResponseApi.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="39" selection-start="1213" selection-end="1213" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/User.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="18" selection-start="32" selection-end="34" vertical-scroll-proportion="0.0">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -178,22 +128,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/public/javascripts/services/keyboard.js" />
-        <option value="$PROJECT_DIR$/public/javascripts/controllers/edit-profile-controller.js" />
-        <option value="$PROJECT_DIR$/app/views/main.scala.html" />
-        <option value="$PROJECT_DIR$/app/views/editProfile.scala.html" />
-        <option value="$PROJECT_DIR$/app/views/join.scala.html" />
-        <option value="$PROJECT_DIR$/app/models/Reference.scala" />
-        <option value="$PROJECT_DIR$/app/models/ReferenceRating.scala" />
-        <option value="$PROJECT_DIR$/app/database/ReferenceRatingDto.scala" />
-        <option value="$PROJECT_DIR$/app/models/frontend/FrontendUser.scala" />
-        <option value="$PROJECT_DIR$/app/database/HelpRequestDto.scala" />
-        <option value="$PROJECT_DIR$/app/database/ReferenceDto.scala" />
-        <option value="$PROJECT_DIR$/public/javascripts/controllers/my-profile-controller.js" />
         <option value="$PROJECT_DIR$/app/models/frontend/FrontendReference.scala" />
-        <option value="$PROJECT_DIR$/app/views/myProfile.scala.html" />
         <option value="$PROJECT_DIR$/app/models/frontend/FrontendHelpRequest.scala" />
+        <option value="$PROJECT_DIR$/public/javascripts/models/user.js" />
+        <option value="$PROJECT_DIR$/app/controllers/FileSystemException.scala" />
+        <option value="$PROJECT_DIR$/app/controllers/InconsistentDataException.scala" />
+        <option value="$PROJECT_DIR$/app/Global.scala" />
+        <option value="$PROJECT_DIR$/public/javascripts/controllers/login-controller.js" />
+        <option value="$PROJECT_DIR$/app/views/myProfile.scala.html" />
+        <option value="$PROJECT_DIR$/conf/routes" />
+        <option value="$PROJECT_DIR$/app/views/main.scala.html" />
+        <option value="$PROJECT_DIR$/public/javascripts/libs/ajaxupload.js" />
+        <option value="$PROJECT_DIR$/public/javascripts/controllers/join-controller.js" />
+        <option value="$PROJECT_DIR$/app/controllers/FileController.scala" />
         <option value="$PROJECT_DIR$/app/controllers/Application.scala" />
+        <option value="$PROJECT_DIR$/app/views/editProfile.scala.html" />
+        <option value="$PROJECT_DIR$/public/javascripts/controllers/edit-profile-controller.js" />
       </list>
     </option>
   </component>
@@ -415,6 +365,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="libs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -514,84 +486,22 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="services" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="frontend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -692,11 +602,11 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Pro\the-solidarity-network\website\public\javascripts\services" />
     </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="services" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Pro\the-solidarity-network\website\public\javascripts\common" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="services" />
     </key>
   </component>
   <component name="RunManager" selected="Remote.Debug Play">
@@ -875,21 +785,21 @@
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32959402" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3294347" sideWeight="0.4636752" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294347" sideWeight="0.4636752" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26998052" sideWeight="0.7171825" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26998052" sideWeight="0.7171825" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19298245" sideWeight="0.44978634" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294347" sideWeight="0.49786553" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294347" sideWeight="0.4701174" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294347" sideWeight="0.49786553" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22970085" sideWeight="0.6705653" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22970085" sideWeight="0.7300195" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20565303" sideWeight="0.99935484" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294347" sideWeight="0.4701174" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -953,117 +863,142 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/models/frontend/FrontendHelpResponse.scala">
+    <entry file="file://$PROJECT_DIR$/app/views/login.scala.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="6" selection-start="168" selection-end="168" vertical-scroll-proportion="0.0">
+        <state line="15" column="0" selection-start="148" selection-end="148" vertical-scroll-proportion="-9.807693">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/HelpRequest.scala">
+    <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/login-controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="54" selection-start="280" selection-end="280" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/ReferenceRatingDto.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="3" selection-start="660" selection-end="660" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Reference.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="31" selection-start="106" selection-end="116" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/HelpRequestDto.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="68" selection-start="817" selection-end="854" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/edit-profile-controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/my-profile-controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="359" selection-end="359" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/ReferenceDto.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="45" selection-start="350" selection-end="360" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/User.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="18" selection-start="32" selection-end="34" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/frontend/FrontendReference.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="50" selection-start="800" selection-end="800" vertical-scroll-proportion="0.0">
+        <state line="57" column="25" selection-start="1515" selection-end="1515" vertical-scroll-proportion="-8.4">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/myProfile.scala.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="3" selection-start="273" selection-end="273" vertical-scroll-proportion="-9.807693">
+        <state line="31" column="17" selection-start="722" selection-end="722" vertical-scroll-proportion="-10.692307">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/frontend/FrontendUser.scala">
+    <entry file="file://$PROJECT_DIR$/app/views/join.scala.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="192" selection-end="192" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="13.730769">
+          <folding>
+            <marker date="1344378906755" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1344378906755" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1344378906755" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1344378906755" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1344378906755" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1344378906755" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1344378906755" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1344378906755" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1344378906755" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1344378906755" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1344378906755" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1344378906755" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1344378906755" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1344378906755" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1344378906755" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1344378906755" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1344378906755" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1344378906755" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1344378906755" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1344378906755" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1344378906755" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1344378906755" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1344378906755" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1344378906755" expanded="true" signature="-1:-1" placeholder="{&quot;el&quot;: &quot;#content&quot;...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/models/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/frontend/FrontendHelpRequest.scala">
+    <entry file="file://$PROJECT_DIR$/app/controllers/api/UserApi.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="8" selection-start="621" selection-end="621" vertical-scroll-proportion="0.0">
+        <state line="9" column="7" selection-start="196" selection-end="196" vertical-scroll-proportion="0.08607595">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/api/HelpRequestApi.scala">
+    <entry file="jar://E:/servers/play-2.0.1/repository/local/play/play_2.9.1/2.0.1/jars/play_2.9.1.jar!/play/core/Router.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="78" selection-start="1282" selection-end="1282" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/api/HelpResponseApi.scala">
+    <entry file="file://$PROJECT_DIR$/target/scala-2.9.1/classes_managed/Routes.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="39" selection-start="1213" selection-end="1213" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/routes">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="83" selection-start="1935" selection-end="1935" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/main.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="96" column="63" selection-start="4083" selection-end="4093" vertical-scroll-proportion="-15.692307">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/libs/ajaxupload.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="29" selection-start="821" selection-end="821" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/join-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="76" column="52" selection-start="2468" selection-end="2468" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/FileController.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="3" selection-start="1301" selection-end="1301" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#21#61#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/Application.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="40" selection-start="340" selection-end="340" vertical-scroll-proportion="0.31726283">
-          <folding>
-            <element signature="e#21#42#0" expanded="true" />
-          </folding>
+        <state line="68" column="129" selection-start="2085" selection-end="2085" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/editProfile.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="88" column="0" selection-start="2957" selection-end="2957" vertical-scroll-proportion="-13.076923">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/edit-profile-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="130" column="0" selection-start="4476" selection-end="4476" vertical-scroll-proportion="0.76537913">
+          <folding />
         </state>
       </provider>
     </entry>

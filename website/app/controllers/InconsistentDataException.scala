@@ -1,5 +1,3 @@
 package controllers
 
-class InconsistentDataException extends Exception {
-
-}
+class InconsistentDataException(message: String) extends Exception(message)
