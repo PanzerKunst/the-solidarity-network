@@ -46,6 +46,23 @@ object FileController extends Controller {
       }
   }
 
+  def saveTempProfilePicture(userId: Long) {
+    getProfilePicture(userId, true) match {
+      case Some(tempFile) =>
+        // Deleting actual profile pic
+        getProfilePicture(userId, false) match {
+          case Some(file) => deleteFile(file)
+          case None =>
+        }
+
+        val fileName = tempFile.getName()
+        val extension = fileName.substring(fileName.lastIndexOf("."))
+        if (!tempFile.renameTo(new File(profilePicturesDir.getPath + "/" + userId + extension)))
+          throw new FileSystemException("Temporary profile pic couldn't be moved to non-temp file!")
+      case None => throw new FileSystemException("Couldn't find the temporary profile pic to move!")
+    }
+  }
+
   private def getProfilePicture(userId: Long, isTemp: Boolean) = {
     val matchingRegex = if (isTemp)
       (userId + """\.tmp\.(jpg|jpeg|png)""").r
@@ -63,9 +80,7 @@ object FileController extends Controller {
 
   private def deleteExistingTempProfilePicture(userId: Long) {
     getProfilePicture(userId, true) match {
-      case Some(file) => {
-        deleteFile(file)
-      }
+      case Some(file) => deleteFile(file)
       case None =>
     }
   }

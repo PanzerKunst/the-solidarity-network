@@ -5,7 +5,7 @@ import services.JsonUtil
 import database.UserDto
 import play.api.mvc.{Action, Controller}
 import play.api.Logger
-import controllers.Application
+import controllers.{FileController, Application}
 
 object UserApi extends Controller {
   def create = Action(parse.json) {
@@ -25,6 +25,7 @@ object UserApi extends Controller {
           val userWithPassword = updateUserWithCurrentPasswordIfNotChanged(userWithId, loggedInUser.password.get)
 
           UserDto.update(userWithPassword)
+          FileController.saveTempProfilePicture(loggedInUser.id.get)
           Ok
         }
         case None => {

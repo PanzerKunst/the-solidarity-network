@@ -120,13 +120,8 @@ CBR.Controllers.EditProfile = new Class({
                 }
             },
             onComplete: function (file, response) {
-                if (jQuery(response).is("pre")) {
-                    // We hide and show to avoid display bugs of the top of the previous image still visible
-                    _this.$profilePic.hide(0, function () {
-                        _this.$profilePic.attr("src", "/files/profile-pic/" + _this._getUser().id + "?isTemp=true&time=" + new Date().getTime());
-                    })
-                        .show();
-                }
+                if (file !== "")
+                    _this.$profilePic.attr("src", "/files/profile-pic/" + _this._getUser().id + "?isTemp=true&time=" + new Date().getTime());
                 else
                     _this.$uploadFailedParagraph.slideDown(200, "easeOutQuad");
             }
@@ -290,7 +285,7 @@ CBR.Controllers.EditProfile = new Class({
         var email = this.$emailField.val();
         var emailConfirmation = this.$emailConfirmationField.val();
 
-        var isMatching = this.$emailConfirmationField.css("display") === "none" || email === emailConfirmation;
+        var isMatching = this.$emailConfirmationWrapper.css("display") === "none" || email === emailConfirmation;
 
         if (!isMatching && !this.validator.isFlaggedInvalid(this.$emailConfirmationField)) {
             this._activateAccountInfoSection();
