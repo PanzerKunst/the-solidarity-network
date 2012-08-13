@@ -1,3 +1,4 @@
+@(from: Option[String], username: Option[String])
 @main("Solidarity Network - Login", "login") {
 <!--
     Header
@@ -8,6 +9,12 @@
 <!--
     Content
 -->
+<h1>Login</h1>
+
+@if(from.isDefined) {
+<p class="indication">Thanks for joining the Solidarity Network!<br />
+    Please login:</p>
+}
 
 } {
 <!--
@@ -15,8 +22,6 @@
 -->
 
 <script id="content-template" type="text/html">
-    <h1>Login</h1>
-
     <form>
         <p id="auth-failed">Wrong credentials :( Please try again!</p>
 
@@ -56,6 +61,9 @@
 
         new CBR.Controllers.Login({
             el: "#content"
+            @if(username.isDefined) {
+            , username: "@username.get"
+            }
         }).run();
     });
 </script>

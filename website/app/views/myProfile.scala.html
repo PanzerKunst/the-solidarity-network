@@ -17,26 +17,33 @@
 <script id="content-template" type="text/html">
     <h1>My profile</h1>
 
-    <img src="/files/profile-pic/{{user.id}}" />
-    <p>{{user.firstName}} {{user.lastName}}, aka "{{user.username}}"</p>
-    <p>Lives in {{user.city}}, {{user.country.name}}</p>
+    <section id="profile-info">
+        <img class="profile-pic" src="/files/profile-pic/{{user.id}}" />
 
-    <p>{{user.description}}</p>
-    <span>
-        <a href="/my-profile/edit">Edit</a>
-    </span>
+        <div id="textual-info">
+            <p>{{user.firstName}} {{user.lastName}}, aka "{{user.username}}"</p>
+            <p>Lives in {{user.city}}, {{user.country.name}}</p>
+
+            <p>{{user.description}}</p>
+            <span>
+                <a href="/my-profile/edit">Edit</a>
+            </span>
+        </div>
+    </section>
+
 
     <h2>References</h2>
+
     <section id="references">
         {{#references}}
         <article>
-            <span>From <a href="/users/{{fromUser.username}}">{{fromUser.firstName}} {{fromUser.lastName}} aka "{{fromUser.username}}"</a></span>
-            <img src="/files/profile-pic/{{fromUser.id}}" />
+            <img class="profile-pic-thumb" src="/files/profile-pic/{{fromUser.id}}" />
+            <span><a href="/users/{{fromUser.username}}">{{fromUser.firstName}} {{fromUser.lastName}} aka "{{fromUser.username}}"</a></span>
             <span class="creation-date">{{creationDatetime}}</span>
             <a href="mailto:panzrkunst@@yahoo.fr?subject=Reporting-a-reference">Report</a>
             <span class="was-helped {{wasHelped}}"></span>
             <span class="rating {{rating.label}}"></span>
-            <span>{{text}}</span>
+            <p>{{text}}</p>
         </article>
         {{/references}}
     </section>

@@ -15,10 +15,16 @@ CBR.Controllers.Login = new Class({
 
         this._initElements();
         this._initValidation();
+        this._fillForm();
         this._initEvents();
     },
 
-    _initElements: function() {
+    _getUsername: function () {
+        return this.options.username;
+    },
+
+    _initElements: function () {
+        this.$usernameOrEmail = jQuery("#username-or-email");
         this.$authFailed = jQuery("#auth-failed");
     },
 
@@ -33,21 +39,26 @@ CBR.Controllers.Login = new Class({
         });
     },
 
-    _initEvents: function() {
+    _fillForm: function () {
+        if (this._getUsername() !== undefined) {
+            this.$usernameOrEmail.val(this._getUsername());
+            this.$usernameOrEmail.focus();
+        }
+    },
+
+    _initEvents: function () {
         jQuery("#login-button").click(jQuery.proxy(this._doLogin, this));
         jQuery("form").submit(jQuery.proxy(this._doLogin, this));
     },
 
-    _doLogin: function (e) {
-        e.preventDefault();
-
+    _doLogin: function () {
         this.$authFailed.slideUp(200, "easeInQuad");
 
         if (this.validator.isValid()) {
             var user = {
                 password: jQuery("#password").val()
             };
-            var usernameOrEmail = jQuery("#username-or-email").val();
+            var usernameOrEmail = this.$usernameOrEmail.val();
             if (usernameOrEmail.indexOf("@") > 0)
                 user.email = usernameOrEmail.toLowerCase();
             else

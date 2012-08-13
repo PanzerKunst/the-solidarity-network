@@ -45,6 +45,8 @@ form {
 
   .field-error {
     font-style: italic;
+    font-size: small;
+    color: $red;
   }
 
   input[type=submit] {

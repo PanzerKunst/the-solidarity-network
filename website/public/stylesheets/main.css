@@ -2,11 +2,7 @@ body {
   font-size: medium;
   color: #3f3f3f; }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
+h1 {
   margin-bottom: 2em; }
 
 h1 {
@@ -26,15 +22,11 @@ img {
 
 a,
 a:visited {
-  color: #be2d07;
   cursor: pointer;
   text-decoration: none; }
   a:hover,
   a:visited:hover {
-    color: #f18a26; }
-
-p {
-  margin-bottom: 1em; }
+    color: #be2d07; }
 
 li {
   list-style-type: none; }
@@ -48,6 +40,10 @@ label {
   #content > h1 {
     display: none; } }
 
+.indication {
+  text-align: center;
+  font-style: italic; }
+
 #rss-feed-wrapper {
   text-align: center; }
 
@@ -58,3 +54,16 @@ label {
   margin: 10em 0; }
   .actions > span {
     text-align: center; }
+
+.profile-pic {
+  max-width: 12em;
+  max-height: 12em; }
+
+/* References */
+.profile-pic-thumb {
+  display: inline-block;
+  max-width: 6em;
+  max-height: 6em; }
+
+.creation-date {
+  float: right; }

@@ -36,7 +36,18 @@ object Application extends Controller {
   }
 
   def login = Action {
-    Ok(views.html.login())
+    implicit request =>
+      val from = if (request.queryString.contains("from"))
+        Some(request.queryString.get("from").get.head)
+      else
+        None
+
+      val username = if (request.queryString.contains("username"))
+        Some(request.queryString.get("username").get.head)
+      else
+        None
+
+      Ok(views.html.login(from, username))
   }
 
   def logout = Action {

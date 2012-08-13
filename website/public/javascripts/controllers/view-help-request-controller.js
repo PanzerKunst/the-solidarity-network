@@ -50,11 +50,9 @@ CBR.Controllers.ViewHelpRequest = new Class({
         this.$referenceForm.submit(jQuery.proxy(this._doCreateReference, this));
     },
 
-    _toggleRespondForm: function(e) {
-        e.preventDefault();
-
+    _toggleRespondForm: function() {
         if (this.$respond.hasClass("expanded"))
-            this._collapseRespondForm(e);
+            this._collapseRespondForm();
         else {
             this.$expanded.slideUp(200, "easeInQuad");
 
@@ -63,18 +61,14 @@ CBR.Controllers.ViewHelpRequest = new Class({
         }
     },
 
-    _collapseRespondForm: function(e) {
-        e.preventDefault();
-
+    _collapseRespondForm: function() {
         this.$respondForm.slideUp(200, "easeInQuad");
         this.$respond.removeClass("expanded");
     },
 
-    _toggleReferenceForm: function(e) {
-        e.preventDefault();
-
+    _toggleReferenceForm: function() {
         if (this.$writeReference.hasClass("expanded"))
-            this._collapseReferenceForm(e);
+            this._collapseReferenceForm();
         else {
             this.$expanded.slideUp(200, "easeInQuad");
 
@@ -83,16 +77,12 @@ CBR.Controllers.ViewHelpRequest = new Class({
         }
     },
 
-    _collapseReferenceForm: function(e) {
-        e.preventDefault();
-
+    _collapseReferenceForm: function() {
         this.$referenceForm.slideUp(200, "easeInQuad");
         this.$writeReference.removeClass("expanded");
     },
 
-    _doCreateResponse: function (e) {
-        e.preventDefault();
-
+    _doCreateResponse: function () {
         if (this.validator.isValid()) {
             var helpResponse = new CBR.Models.HelpResponse({
                 requestId: jQuery("#help-request").data("id"),
@@ -119,7 +109,6 @@ CBR.Controllers.ViewHelpRequest = new Class({
         }
     },
 
-    _doCreateReference: function(e) {
-        e.preventDefault();
+    _doCreateReference: function() {
     }
 });

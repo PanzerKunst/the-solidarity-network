@@ -66,9 +66,7 @@ CBR.Controllers.Join = new Class({
         jQuery("form").submit(jQuery.proxy(this._doJoin, this));
     },
 
-    _doJoin: function (e) {
-        e.preventDefault();
-
+    _doJoin: function () {
         if (this.validator.isValid() &&
             this._isUsernameAvailable() &&
             this._isEmailNotRegisteredYet() &&
@@ -91,7 +89,7 @@ CBR.Controllers.Join = new Class({
                 url: "/api/users",
                 data: CBR.JsonUtil.stringifyModel(user),
                 onSuccess: function (responseText, responseXML) {
-                    location.replace("/login");
+                    location.replace("/login?from=join&username=" + user.getUsername());
                 },
                 onFailure: function (xhr) {
                     alert("AJAX fail :(");
@@ -100,9 +98,7 @@ CBR.Controllers.Join = new Class({
         }
     },
 
-    _checkIfUsernameIsAlreadyTaken: function (e) {
-        e.preventDefault();
-
+    _checkIfUsernameIsAlreadyTaken: function () {
         this.$usernameTakenParagraph.slideUp(200, "easeInQuad");
 
         if (this.$usernameField.val() !== "") {
@@ -114,7 +110,7 @@ CBR.Controllers.Join = new Class({
                 url: "/api/users/first?username=" + this.$usernameField.val(),
                 onSuccess: function (responseText, responseXML) {
                     if (this.status !== _this.httpStatusCode.noContent && !_this.validator.isFlaggedInvalid(_this.$usernameField)) {
-                        _this.validator.flagInvalid(this.$usernameField);
+                        _this.validator.flagInvalid(_this.$usernameField);
                         _this.$usernameTakenParagraph.slideDown(200, "easeOutQuad");
                     }
                 },
@@ -125,9 +121,7 @@ CBR.Controllers.Join = new Class({
         }
     },
 
-    _checkIfEmailIsAlreadyRegistered: function (e) {
-        e.preventDefault();
-
+    _checkIfEmailIsAlreadyRegistered: function () {
         this.$emailAlreadyRegisteredParagraph.slideUp(200, "easeInQuad");
 
         if (this.$emailField.val() !== "") {
@@ -139,7 +133,7 @@ CBR.Controllers.Join = new Class({
                 url: "/api/users/first?email=" + this.$emailField.val().toLowerCase(),
                 onSuccess: function (responseText, responseXML) {
                     if (this.status !== _this.httpStatusCode.noContent && !_this.validator.isFlaggedInvalid(_this.$emailField)) {
-                        _this.validator.flagInvalid(this.$emailField);
+                        _this.validator.flagInvalid(_this.$emailField);
                         _this.$emailAlreadyRegisteredParagraph.slideDown(200, "easeOutQuad");
                     }
                 },
@@ -150,9 +144,7 @@ CBR.Controllers.Join = new Class({
         }
     },
 
-    _checkIfEmailConfirmationMatches: function (e) {
-        e.preventDefault();
-
+    _checkIfEmailConfirmationMatches: function () {
         this.$emailsDoNotMatchParagraph.slideUp(200, "easeInQuad");
 
         var email = this.$emailField.val();

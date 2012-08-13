@@ -2,5 +2,19 @@
 
 body#my-profile {
   #content {
+    @media screen and (min-width: 801px) {
+      #profile-info {
+        @include clearfix();
+      }
+
+      .profile-pic,
+      #textual-info {
+        float: left;
+      }
+
+      .profile-pic {
+        margin-right: 1em;
+      }
+    }
   }
 }

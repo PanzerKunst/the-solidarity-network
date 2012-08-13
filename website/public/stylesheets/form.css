@@ -30,7 +30,9 @@ form .valid > .validation-icon {
 form .invalid > .validation-icon {
   background-image: url("/assets/images/invalid.png"); }
 form .field-error {
-  font-style: italic; }
+  font-style: italic;
+  font-size: small;
+  color: #be2d07; }
 form input[type=submit] {
   display: block;
   visibility: hidden; }

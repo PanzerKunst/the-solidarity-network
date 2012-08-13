@@ -34,9 +34,7 @@ CBR.Controllers.CreateHelpRequest = new Class({
         jQuery("form").submit(jQuery.proxy(this._doCreate, this));
     },
 
-    _doCreate: function (e) {
-        e.preventDefault();
-
+    _doCreate: function () {
         if (this.validator.isValid()) {
             var helpRequest = new CBR.Models.HelpRequest({
                 title: jQuery("#title").val(),

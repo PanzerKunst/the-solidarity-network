@@ -34,6 +34,8 @@ CBR.Controllers.EditProfile = new Class({
     },
 
     _initElements: function () {
+        this.$indicationParagraph = jQuery(".indication");
+
         this.$profileInfoSection = jQuery("#profile-info");
         this.$accountInfoSection = jQuery("#account-info");
 
@@ -143,37 +145,34 @@ CBR.Controllers.EditProfile = new Class({
         jQuery("form").submit(jQuery.proxy(this._doSave, this));
     },
 
-    _activateProfileInfoSection: function (e) {
-        e.preventDefault();
+    _activateProfileInfoSection: function () {
+        this.$indicationParagraph.hide();
 
         this.$profileInfoSection.show();
         this.$accountInfoSection.hide();
     },
 
-    _activateAccountInfoSection: function (e) {
-        e.preventDefault();
+    _activateAccountInfoSection: function () {
+        this.$indicationParagraph.hide();
 
         this.$accountInfoSection.show();
         this.$profileInfoSection.hide();
     },
 
     _toggleEmailConfirmationField: function (e) {
-        e.preventDefault();
-
         if (CBR.Services.Keyboard.isPressedKeyText(e)) {
-            if (this.$emailField.val().toLowerCase() === this._getUser().email &&
-                this.$emailConfirmationWrapper.is(":visible"))
+            if (this.$emailField.val().toLowerCase() === this._getUser().email && this.$emailConfirmationWrapper.is(":visible"))
                 this.$emailConfirmationWrapper.slideUp(200, "easeInQuad");
-            else if (this.$emailField.val().toLowerCase() !== this._getUser().email &&
-                !this.$emailConfirmationWrapper.is(":visible"))
+
+            else if (this.$emailField.val().toLowerCase() !== this._getUser().email && !this.$emailConfirmationWrapper.is(":visible"))
                 this.$emailConfirmationWrapper.slideDown(200, "easeOutQuad");
         }
     },
 
-    _doSave: function (e) {
-        e.preventDefault();
+    _doSave: function () {
+        var _this = this;
 
-        if (this.validator.isValid() &&
+        if (this._isFormValid() &&
             this._isEmailNotYetRegisteredByAnotherUser() &&
             this._isEmailConfirmationMatching()) {
             var user = new CBR.Models.User({
@@ -198,7 +197,8 @@ CBR.Controllers.EditProfile = new Class({
                 url: "/api/users",
                 data: CBR.JsonUtil.stringifyModel(user),
                 onSuccess: function (responseText, responseXML) {
-                    alert("saved!");
+                    _this.$emailConfirmationWrapper.slideUp(200, "easeInQuad");
+                    _this.$indicationParagraph.slideDown(200, "easeOutQuad");
                 },
                 onFailure: function (xhr) {
                     alert("AJAX fail :(");
@@ -207,9 +207,25 @@ CBR.Controllers.EditProfile = new Class({
         }
     },
 
-    _checkIfEmailIsNotYetRegisteredByAnotherUser: function (e) {
-        e.preventDefault();
+    _isFormValid: function () {
+        var isValid = this.validator.isValid();
 
+        if (!isValid) {
+            if (this.validator.isFlaggedInvalid(this.$firstNameField) ||
+                this.validator.isFlaggedInvalid(this.$lastNameField) ||
+                this.validator.isFlaggedInvalid(this.$cityField) ||
+                this.validator.isFlaggedInvalid(this.$countryField))
+
+                this._activateProfileInfoSection();
+
+            else
+                this._activateAccountInfoSection();
+        }
+
+        return isValid;
+    },
+
+    _checkIfEmailIsNotYetRegisteredByAnotherUser: function () {
         this.$emailAlreadyRegisteredParagraph.slideUp(200, "easeInQuad");
 
         if (this.$emailField.val() !== "") {
@@ -221,7 +237,7 @@ CBR.Controllers.EditProfile = new Class({
                 url: "/api/users/first?email=" + this.$emailField.val().toLowerCase() + "&notId=" + this._getUser().id,
                 onSuccess: function (responseText, responseXML) {
                     if (this.status !== _this.httpStatusCode.noContent && !_this.validator.isFlaggedInvalid(_this.$emailField)) {
-                        _this.validator.flagInvalid(this.$emailField);
+                        _this.validator.flagInvalid(_this.$emailField);
                         _this.$emailAlreadyRegisteredParagraph.slideDown(200, "easeOutQuad");
                     }
                 },
@@ -232,9 +248,7 @@ CBR.Controllers.EditProfile = new Class({
         }
     },
 
-    _checkIfEmailConfirmationMatches: function (e) {
-        e.preventDefault();
-
+    _checkIfEmailConfirmationMatches: function () {
         this.$emailsDoNotMatchParagraph.slideUp(200, "easeInQuad");
 
         var email = this.$emailField.val();
@@ -263,6 +277,8 @@ CBR.Controllers.EditProfile = new Class({
         var isNotRegistered = xhr.status === this.httpStatusCode.noContent;
 
         if (!isNotRegistered && !this.validator.isFlaggedInvalid(this.$emailField)) {
+            this._activateAccountInfoSection();
+
             this.validator.flagInvalid(this.$emailField);
             this.$emailAlreadyRegisteredParagraph.slideDown(200, "easeOutQuad");
         }
@@ -274,9 +290,11 @@ CBR.Controllers.EditProfile = new Class({
         var email = this.$emailField.val();
         var emailConfirmation = this.$emailConfirmationField.val();
 
-        var isMatching = (email !== "" || emailConfirmation !== "") && email === emailConfirmation;
+        var isMatching = this.$emailConfirmationField.css("display") === "none" || email === emailConfirmation;
 
         if (!isMatching && !this.validator.isFlaggedInvalid(this.$emailConfirmationField)) {
+            this._activateAccountInfoSection();
+
             this.validator.flagInvalid(this.$emailConfirmationField);
             this.$emailsDoNotMatchParagraph.slideDown(200, "easeOutQuad");
         }

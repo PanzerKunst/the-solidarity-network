@@ -5,11 +5,7 @@ body {
   color: $fontDarkGrey;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
+h1 {
   margin-bottom: 2em;
 }
 
@@ -34,18 +30,12 @@ img {
 
 a,
 a:visited {
-  color: $red;
-
   cursor: pointer;
   text-decoration: none;
 
   &:hover {
-    color: $orange;
+    color: $red;
   }
-}
-
-p {
-  margin-bottom: 1em;
 }
 
 li {
@@ -66,6 +56,11 @@ label {
   }
 }
 
+.indication {
+  text-align: center;
+  font-style: italic;
+}
+
 #rss-feed-wrapper {
   text-align: center;
 }
@@ -80,4 +75,22 @@ label {
   > span {
     text-align: center;
   }
+}
+
+.profile-pic {
+  max-width: 12em;
+  max-height: 12em;
+}
+
+
+/* References */
+
+.profile-pic-thumb {
+  display: inline-block;
+  max-width: 6em;
+  max-height: 6em;
+}
+
+.creation-date {
+  float: right;
 }

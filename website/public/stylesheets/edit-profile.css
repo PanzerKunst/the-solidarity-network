@@ -1,3 +1,5 @@
+body#edit-profile #content .indication {
+  display: none; }
 body#edit-profile #content > ul {
   zoom: 1; }
   body#edit-profile #content > ul:before, body#edit-profile #content > ul:after {

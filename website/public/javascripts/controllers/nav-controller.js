@@ -34,9 +34,7 @@ CBR.Controllers.NavController = new Class({
         jQuery("> ul", $li).slideUp(200, "easeInQuad");
     },
 
-    _dropDownWholeMenu: function (e) {
-        e.preventDefault();
-
+    _dropDownWholeMenu: function () {
         var $menu = jQuery("#header-nav > ul");
 
         if ($menu.is(":visible"))
