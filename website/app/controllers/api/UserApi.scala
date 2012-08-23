@@ -1,17 +1,20 @@
 package controllers.api
 
 import models.User
-import services.JsonUtil
+import services.{EmailService, JsonUtil}
 import database.UserDto
 import play.api.mvc.{Action, Controller}
 import play.api.Logger
 import controllers.{FileController, Application}
+import models.frontend.FrontendUser
 
 object UserApi extends Controller {
   def create = Action(parse.json) {
     implicit request =>
 
-      UserDto.create(JsonUtil.parse(request.body.toString, classOf[User]))
+      val userToCreate = JsonUtil.parse(request.body.toString, classOf[User])
+      UserDto.create(userToCreate)
+      EmailService.sendJoinConfirmation(userToCreate)
       Ok
   }
 

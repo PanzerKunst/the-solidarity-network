@@ -38,7 +38,9 @@ CBR.Controllers.SearchHelpRequests = new Class({
         jQuery("form").submit(jQuery.proxy(this._doSearch, this));
     },
 
-    _doSearch: function () {
+    _doSearch: function (e) {
+        e.preventDefault();
+
         if (this.validator.isValid()) {
             /* TODO var helpRequest = new CBR.Models.HelpRequest();
 

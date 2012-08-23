@@ -164,7 +164,9 @@ CBR.Controllers.EditProfile = new Class({
         }
     },
 
-    _doSave: function () {
+    _doSave: function (e) {
+        e.preventDefault();
+
         var _this = this;
 
         if (this._isFormValid() &&

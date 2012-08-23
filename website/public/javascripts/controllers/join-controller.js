@@ -66,7 +66,9 @@ CBR.Controllers.Join = new Class({
         jQuery("form").submit(jQuery.proxy(this._doJoin, this));
     },
 
-    _doJoin: function () {
+    _doJoin: function (e) {
+        e.preventDefault();
+
         if (this.validator.isValid() &&
             this._isUsernameAvailable() &&
             this._isEmailNotRegisteredYet() &&

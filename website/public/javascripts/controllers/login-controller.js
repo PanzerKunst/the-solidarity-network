@@ -51,7 +51,9 @@ CBR.Controllers.Login = new Class({
         jQuery("form").submit(jQuery.proxy(this._doLogin, this));
     },
 
-    _doLogin: function () {
+    _doLogin: function (e) {
+        e.preventDefault();
+
         this.$authFailed.slideUp(200, "easeInQuad");
 
         if (this.validator.isValid()) {

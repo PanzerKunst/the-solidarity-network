@@ -82,7 +82,9 @@ CBR.Controllers.ViewHelpRequest = new Class({
         this.$writeReference.removeClass("expanded");
     },
 
-    _doCreateResponse: function () {
+    _doCreateResponse: function (e) {
+        e.preventDefault();
+
         if (this.validator.isValid()) {
             var helpResponse = new CBR.Models.HelpResponse({
                 requestId: jQuery("#help-request").data("id"),
@@ -109,6 +111,8 @@ CBR.Controllers.ViewHelpRequest = new Class({
         }
     },
 
-    _doCreateReference: function() {
+    _doCreateReference: function(e) {
+        e.preventDefault();
+
     }
 });
