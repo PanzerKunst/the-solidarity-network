@@ -30,6 +30,8 @@ POST    /api/authenticate           controllers.api.AuthApi.authenticate
 POST    /api/help-requests          controllers.api.HelpRequestApi.create
 GET     /api/help-requests          controllers.api.HelpRequestApi.get
 POST    /api/help-responses         controllers.api.HelpResponseApi.create
+POST    /api/db/admin               controllers.api.DbAdminApi.createTables
+DELETE  /api/db/admin               controllers.api.DbAdminApi.dropTables
 
 # Files
 GET     /files/profile-pic/:userId      controllers.FileController.serveProfilePicture(userId: Int)

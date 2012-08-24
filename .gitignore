@@ -8,3 +8,5 @@
 /website/tmp
 /website/public/stylesheets/scss/.sass-cache
 /website/out
+*.log
+/selenium-tests/target

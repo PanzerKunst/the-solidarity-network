@@ -117,6 +117,8 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="play-plugins-mailer_2.9.1-2.0.4" level="project" />
+    <orderEntry type="library" name="play-plugins-util_2.9.1-2.0.3" level="project" />
   </component>
 </module>
 

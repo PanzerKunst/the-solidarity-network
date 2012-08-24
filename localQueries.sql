@@ -1,5 +1,7 @@
 use thesolidaritynetwork;
 
+drop table reference;
+drop table reference_rating;
 drop table help_response;
 drop table help_request;
 drop table user;
@@ -104,17 +106,10 @@ values("Christophe", "Bram", "blackbird", "cbramdit@gmail.com", "tigrou", "Helen
 
 select * from user;
 
-insert into reference_rating(label)
-values("Negative");
-
-insert into reference_rating(label)
-values("Neutral");
-
-insert into reference_rating(label)
-values("Good");
-
-insert into reference_rating(label)
-values("Great");
+insert into reference_rating(label) values("Negative");
+insert into reference_rating(label) values("Neutral");
+insert into reference_rating(label) values("Good");
+insert into reference_rating(label) values("Great");
 
 select * from reference_rating;
 
