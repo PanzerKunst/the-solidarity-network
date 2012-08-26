@@ -24,7 +24,7 @@
             <a href="/users/{{helpRequest.requester.username}}">View full profile</a>
         </div>
 
-        @if(user.id != helpRequest.requester.id) {
+        @if(user.id.get != helpRequest.requester.id) {
         <div>
             <a href="/messages/new?to={{helpRequest.requester.username}}">Write message</a>
         </div>
@@ -47,7 +47,7 @@
                 <span>{{helpRequest.expiryDate}}</span>
             </p>
 
-            @if(user.id == helpRequest.requester.id) {
+            @if(user.id.get == helpRequest.requester.id) {
             <span>
                 <a id="edit">Edit</a>
             </span>
@@ -71,7 +71,7 @@
 
         </section>
 
-        @if(user.id != helpRequest.requester.id) {
+        @if(user.id.get != helpRequest.requester.id) {
         <div>
             <a id="respond">Respond to {{helpRequest.requester.firstName}}'s help request</a>
         </div>
