@@ -14,7 +14,7 @@ object UserApi extends Controller {
 
       val userToCreate = JsonUtil.parse(request.body.toString, classOf[User])
       UserDto.create(userToCreate)
-      EmailService.sendJoinConfirmation(userToCreate)
+      // TODO EmailService.sendJoinConfirmation(userToCreate)
       Ok
   }
 

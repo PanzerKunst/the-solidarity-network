@@ -1,4 +1,5 @@
 import com.opera.core.systems.OperaDriver;
+import models.User;
 import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
@@ -55,14 +56,37 @@ public class Runner {
 
         driver.get(Runner.URL_ROOT);
 
-        Join.properFormFill(driver);
+        User christophe = new User("Christophe",
+                "Bram",
+                "cbramdit@gmail.com",
+                "blackbird",
+                "tigrou",
+                "Stockholm");
+
+        Join.properFormFill(driver, christophe);
 
         Login.incorrectPassword(driver);
-        Login.properFormFillUsername(driver);
+        Login.properFormFillUsername(driver, christophe);
         Login.logout(driver);
-        Login.properFormFillEmail(driver);
+        Login.properFormFillEmail(driver, christophe);
 
         SubmitHelpRequest.properFormFill(driver);
+
+        Login.logout(driver);
+
+        User damien = new User("Damien",
+                "Bram",
+                "panzrkunst@yahoo.fr",
+                "db",
+                "tigrou",
+                "Lille");
+
+        Join.properFormFill(driver, damien);
+        Login.properFormFillUsername(driver, damien);
+
+        SearchHelpRequests.clickOnFirstSearchResult(driver);
+
+        RespondToHelpRequest.properFormFill(driver);
 
         Login.logout(driver);
 

@@ -1,3 +1,4 @@
+import models.User;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -20,7 +21,7 @@ public class Login {
         });
     }
 
-    public static void properFormFillUsername(WebDriver driver) {
+    public static void properFormFillUsername(WebDriver driver, User user) {
         driver.findElement(By.id("username-or-email"))
                 .clear();
 
@@ -28,10 +29,10 @@ public class Login {
                 .clear();
 
         driver.findElement(By.id("username-or-email"))
-                .sendKeys("blackbird");
+                .sendKeys(user.getUsername());
 
         driver.findElement(By.id("password"))
-                .sendKeys("tigrou");
+                .sendKeys(user.getPassword());
 
         driver.findElement(By.tagName("form"))
                 .submit();
@@ -45,7 +46,7 @@ public class Login {
         });
     }
 
-    public static void properFormFillEmail(WebDriver driver) {
+    public static void properFormFillEmail(WebDriver driver, User user) {
         driver.findElement(By.cssSelector("a[href='/login']"))
                 .click();
 
@@ -57,10 +58,10 @@ public class Login {
         });
 
         driver.findElement(By.id("username-or-email"))
-                .sendKeys("cbramdit@gmail.com");
+                .sendKeys(user.getEmail());
 
         driver.findElement(By.id("password"))
-                .sendKeys("tigrou");
+                .sendKeys(user.getPassword());
 
         driver.findElement(By.tagName("form"))
                 .submit();

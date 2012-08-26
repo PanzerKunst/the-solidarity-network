@@ -1,3 +1,4 @@
+import models.User;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -5,7 +6,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Join {
-    public static void properFormFill(WebDriver driver) {
+    public static void properFormFill(WebDriver driver, final User user) {
         driver.findElement(By.cssSelector("a[href='/join']"))
                 .click();
 
@@ -17,25 +18,25 @@ public class Join {
         });
 
         driver.findElement(By.id("first-name"))
-                .sendKeys("Christophe");
+                .sendKeys(user.getFirstName());
 
         driver.findElement(By.id("last-name"))
-                .sendKeys("Bram");
+                .sendKeys(user.getLastName());
 
         driver.findElement(By.id("email"))
-                .sendKeys("cbramdit@gmail.com");
+                .sendKeys(user.getEmail());
 
         driver.findElement(By.id("email-confirmation"))
-                .sendKeys("cbramdit@gmail.com");
+                .sendKeys(user.getEmail());
 
         driver.findElement(By.id("username"))
-                .sendKeys("blackbird");
+                .sendKeys(user.getUsername());
 
         driver.findElement(By.id("password"))
-                .sendKeys("tigrou");
+                .sendKeys(user.getPassword());
 
         driver.findElement(By.id("city"))
-                .sendKeys("Stockholm");
+                .sendKeys(user.getCity());
 
         Select droplist = new Select(driver.findElement(By.id("country")));
         droplist.selectByIndex(1);
@@ -46,10 +47,10 @@ public class Join {
         // Wait 5s for the page to load, and check that we are redirected to post-join login
         (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
-                return d.getCurrentUrl().startsWith(Runner.URL_ROOT + "login?from=join&username=") &&
+                return d.getCurrentUrl().equals(Runner.URL_ROOT + "login?from=join&username=" + user.getUsername()) &&
                         d.findElement(By.id("username-or-email"))
                                 .getAttribute("value")
-                                .equals("blackbird");
+                                .equals(user.getUsername());
             }
         });
     }
