@@ -14,7 +14,8 @@ object HelpRequestDto {
 
         val query = """
           select id, requester_id, title, description, creation_date, expiry_date
-          from help_request """ + DbUtil.generateWhereClause(filters) + ";"
+          from help_request """ + DbUtil.generateWhereClause(filters) + """
+          order by expiry_date, creation_date;"""
 
         Logger.info("HelpRequestDto.get():" + query)
 
@@ -53,14 +54,15 @@ object HelpRequestDto {
             or u.username like """" + processedSearchQuery + """"
             or u.city like """" + processedSearchQuery + """"
             or c.name like """" + processedSearchQuery + """"
+            order by expiry_date, creation_date
             limit 50;"""
-
 
           case None => """
             select hr.id as help_request_id, hr.title, hr.description, hr.creation_date, hr.expiry_date,
               u.id as user_id, u.first_name, u.last_name, u.username, u.email, u.city, u.country_id
             from help_request hr
             inner join user u on u.id = hr.requester_id
+            order by expiry_date, creation_date
             limit 50;"""
         }
 
@@ -83,14 +85,14 @@ object HelpRequestDto {
               username = Some(row[String]("username")),
               email = Some(row[String]("email")),
               city = Some(row[String]("city")),
-              countryId = Some(row[Long]("country.id"))
+              countryId = Some(row[Long]("country_id"))
             )
-          )
+            )
         ).toList
     }
   }
 
-  def create(helpRequest: HelpRequest) {
+  def create(helpRequest: HelpRequest): Option[Long] = {
     DB.withConnection {
       implicit c =>
 
@@ -104,7 +106,7 @@ object HelpRequestDto {
 
         Logger.info("HelpRequestDto.create(): " + query)
 
-        SQL(query).execute()
+        SQL(query).executeInsert()
     }
   }
 }

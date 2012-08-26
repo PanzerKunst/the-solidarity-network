@@ -52,7 +52,7 @@ CBR.Controllers.CreateHelpRequest = new Class({
                 url: "/api/help-requests",
                 data: CBR.JsonUtil.stringifyModel(helpRequest),
                 onSuccess: function (responseText, responseXML) {
-                    location.href = "/help";
+                    location.href = "/help-requests/" + responseText;
                 },
                 onFailure: function (xhr) {
                     if (xhr.status === _this.httpStatusCode.unauthorized)

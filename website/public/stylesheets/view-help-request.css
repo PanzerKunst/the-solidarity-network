@@ -10,14 +10,23 @@ body#view-help-request #content #main > div {
     float: left; } }
 @media screen and (min-width: 801px) {
   body#view-help-request #content #requester {
-    margin-top: 7em;
-    margin-right: 4em; } }
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-top: 9em;
+    padding-right: 1em;
+    width: 35%; } }
 body#view-help-request #content #requester > p {
   text-align: center; }
 body#view-help-request #content #requester > img {
   margin: auto;
   max-width: 11em;
   max-height: 11em; }
+@media screen and (min-width: 801px) {
+  body#view-help-request #content #main {
+    width: 65%; } }
 @media screen and (max-width: 800px) {
   body#view-help-request #content #main {
     width: 20em;

@@ -1,44 +1,77 @@
+import com.opera.core.systems.OperaDriver;
 import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 
 public class Runner {
-    private static DefaultHttpClient httpClient = new DefaultHttpClient();
+    public static final String URL_ROOT = "http://localhost:9000/";
+    public static final DateFormat yyyymmdd = new SimpleDateFormat("yyyy-MM-dd");
+    private static final DefaultHttpClient httpClient = new DefaultHttpClient();
 
     public static void main(String[] args) throws IOException {
         testInFirefox();
         testInChrome();
+        testInIE();
+        testInOpera();
     }
 
     private static void testInFirefox() throws IOException {
-        dropTables();
-        createTables();
+        WebDriver driver = new FirefoxDriver();
 
-        WebDriver firefoxDriver = new FirefoxDriver();
-        Join.properFormFill(firefoxDriver);
+        runTests(driver);
     }
 
     private static void testInChrome() throws IOException {
+        System.setProperty("webdriver.chrome.driver", "e:/servers/selenium-drivers/chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+
+        runTests(driver);
+    }
+
+    private static void testInIE() throws IOException {
+        System.setProperty("webdriver.ie.driver", "e:/servers/selenium-drivers/IEDriverServer.exe");
+        WebDriver driver = new InternetExplorerDriver();
+
+        runTests(driver);
+    }
+
+    private static void testInOpera() throws IOException {
+        WebDriver driver = new OperaDriver();
+
+        runTests(driver);
+    }
+
+    private static void runTests(WebDriver driver) throws IOException {
         dropTables();
         createTables();
 
-        System.setProperty("webdriver.chrome.driver", "e:/servers/chromedriver.exe");
-        WebDriver chromeDriver = new ChromeDriver();
+        driver.get(Runner.URL_ROOT);
 
-        Join.properFormFill(chromeDriver);
+        Join.properFormFill(driver);
+
+        Login.incorrectPassword(driver);
+        Login.properFormFillUsername(driver);
+        Login.logout(driver);
+        Login.properFormFillEmail(driver);
+
+        SubmitHelpRequest.properFormFill(driver);
+
+        Login.logout(driver);
+
+        // Close the browser
+        driver.quit();
     }
 
     private static void createTables() throws IOException {
-        HttpPost httpPost = new HttpPost("http://localhost:9000/api/db/admin?key=OZs:]T@R]u9I4nyqbvNyAMe4hPZaoFsNhiQvGjCh@GErJ7/0wqaVdj8To8MpmE1O");
+        HttpPost httpPost = new HttpPost(Runner.URL_ROOT + "api/db/admin?key=OZs:]T@R]u9I4nyqbvNyAMe4hPZaoFsNhiQvGjCh@GErJ7/0wqaVdj8To8MpmE1O");
 
         try {
             httpClient.execute(httpPost);
@@ -48,7 +81,7 @@ public class Runner {
     }
 
     private static void dropTables() throws IOException {
-        HttpDelete httpDelete = new HttpDelete("http://localhost:9000/api/db/admin?key=OZs:]T@R]u9I4nyqbvNyAMe4hPZaoFsNhiQvGjCh@GErJ7/0wqaVdj8To8MpmE1O");
+        HttpDelete httpDelete = new HttpDelete(Runner.URL_ROOT + "api/db/admin?key=OZs:]T@R]u9I4nyqbvNyAMe4hPZaoFsNhiQvGjCh@GErJ7/0wqaVdj8To8MpmE1O");
 
         try {
             httpClient.execute(httpDelete);

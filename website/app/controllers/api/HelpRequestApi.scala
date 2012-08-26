@@ -16,8 +16,11 @@ object HelpRequestApi extends Controller {
         case Some(loggedInUser) => {
           val helpRequest = JsonUtil.parse(request.body.toString, classOf[HelpRequest])
           val helpRequestWithUserId = helpRequest.copy(requesterId = loggedInUser.id)
-          HelpRequestDto.create(helpRequestWithUserId)
-          Ok
+
+          HelpRequestDto.create(helpRequestWithUserId) match {
+            case Some(id) => Ok(id.toString)
+            case None => InternalServerError("Creation of a help request did not return an ID!")
+          }
         }
         case None => {
           Logger.info("Help request creation attempt while not logged-in")

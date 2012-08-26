@@ -31,7 +31,7 @@ object HelpResponseDto {
     }
   }
 
-  def create(helpResponse: HelpResponse) {
+  def create(helpResponse: HelpResponse): Option[Long] = {
     DB.withConnection {
       implicit c =>
 
@@ -44,7 +44,7 @@ object HelpResponseDto {
 
         Logger.info("HelpResponseDto.create(): " + query)
 
-        SQL(query).execute()
+        SQL(query).executeInsert()
     }
   }
 }

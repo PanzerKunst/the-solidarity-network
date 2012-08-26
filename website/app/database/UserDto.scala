@@ -66,7 +66,7 @@ object UserDto {
     }
   }
 
-  def create(user: User) {
+  def create(user: User): Option[Long] = {
     DB.withConnection {
       implicit c =>
 
@@ -88,7 +88,7 @@ object UserDto {
 
         Logger.info("UserDto.create():" + query)
 
-        SQL(query).execute()
+        SQL(query).executeInsert()
     }
   }
 
