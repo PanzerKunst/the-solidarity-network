@@ -53,6 +53,19 @@ body#view-help-request {
       height: 4em;
     }
 
+    #responses {
+      > article {
+        @include clearfix();
+        margin-bottom: 1em;
+      }
+
+      img {
+        float: left;
+        max-width: 4em;
+        max-height: 4em;
+      }
+    }
+
     #submit-response-wrapper,
     #submit-reference-wrapper {
       margin: auto;

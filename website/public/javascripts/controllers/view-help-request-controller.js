@@ -6,6 +6,8 @@ CBR.Controllers.ViewHelpRequest = new Class({
     },
 
     run: function () {
+        this._prepareDataForDisplay();
+
         this.getEl().append(
             Mustache.to_html(
                 jQuery("#content-template").html(),
@@ -18,7 +20,7 @@ CBR.Controllers.ViewHelpRequest = new Class({
         this._initEvents();
     },
 
-    _initElements: function() {
+    _initElements: function () {
         this.$respondForm = jQuery("#respond-form");
         this.$respond = jQuery("#respond");
 
@@ -38,7 +40,7 @@ CBR.Controllers.ViewHelpRequest = new Class({
         });
     },
 
-    _initEvents: function() {
+    _initEvents: function () {
         this.$respond.click(jQuery.proxy(this._toggleRespondForm, this));
         jQuery("#cancel-response-button").click(jQuery.proxy(this._collapseRespondForm, this));
         jQuery("#post-response-button").click(jQuery.proxy(this._doCreateResponse, this));
@@ -50,7 +52,29 @@ CBR.Controllers.ViewHelpRequest = new Class({
         this.$referenceForm.submit(jQuery.proxy(this._doCreateReference, this));
     },
 
-    _toggleRespondForm: function() {
+    _prepareDataForDisplay: function () {
+        for (var i = 0; i < this.options.helpResponses.length; i++) {
+            var currentHelpResponse = this.options.helpResponses[i];
+            var currentCreationDatetime = currentHelpResponse.creationDatetime;
+
+            var year = currentCreationDatetime.substring(0, 4);
+            var month = currentCreationDatetime.substring(5, 7);
+            var day = currentCreationDatetime.substring(8, 10);
+            var hour = currentCreationDatetime.substring(11, 13);
+            var minute = currentCreationDatetime.substring(14, 16);
+
+            currentCreationDatetime = day + "/" + month;
+
+            if (year !== new Date().getFullYear().toString())
+                currentCreationDatetime += "/" + year;
+
+            currentCreationDatetime += " " + hour + ":" + minute;
+
+            currentHelpResponse.creationDatetime = currentCreationDatetime
+        }
+    },
+
+    _toggleRespondForm: function () {
         if (this.$respond.hasClass("expanded"))
             this._collapseRespondForm();
         else {
@@ -61,12 +85,12 @@ CBR.Controllers.ViewHelpRequest = new Class({
         }
     },
 
-    _collapseRespondForm: function() {
+    _collapseRespondForm: function () {
         this.$respondForm.slideUp(200, "easeInQuad");
         this.$respond.removeClass("expanded");
     },
 
-    _toggleReferenceForm: function() {
+    _toggleReferenceForm: function () {
         if (this.$writeReference.hasClass("expanded"))
             this._collapseReferenceForm();
         else {
@@ -77,7 +101,7 @@ CBR.Controllers.ViewHelpRequest = new Class({
         }
     },
 
-    _collapseReferenceForm: function() {
+    _collapseReferenceForm: function () {
         this.$referenceForm.slideUp(200, "easeInQuad");
         this.$writeReference.removeClass("expanded");
     },
@@ -111,7 +135,7 @@ CBR.Controllers.ViewHelpRequest = new Class({
         }
     },
 
-    _doCreateReference: function(e) {
+    _doCreateReference: function (e) {
         e.preventDefault();
 
     }

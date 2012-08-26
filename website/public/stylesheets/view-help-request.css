@@ -34,6 +34,18 @@ body#view-help-request #content #requester > img {
 body#view-help-request #content textarea {
   width: 20em;
   height: 4em; }
+body#view-help-request #content #responses > article {
+  zoom: 1;
+  margin-bottom: 1em; }
+  body#view-help-request #content #responses > article:before, body#view-help-request #content #responses > article:after {
+    content: "";
+    display: table; }
+  body#view-help-request #content #responses > article:after {
+    clear: both; }
+body#view-help-request #content #responses img {
+  float: left;
+  max-width: 4em;
+  max-height: 4em; }
 body#view-help-request #content #submit-response-wrapper,
 body#view-help-request #content #submit-reference-wrapper {
   margin: auto;
