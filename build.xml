@@ -86,6 +86,7 @@ Dependencies:
                 models/user.js
                 models/help-request.js
                 models/help-response.js
+                models/reference.js
                 controllers/template-controller.js
                 controllers/nav-controller.js
                 controllers/login-controller.js

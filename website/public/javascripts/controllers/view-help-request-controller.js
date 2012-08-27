@@ -18,6 +18,7 @@ CBR.Controllers.ViewHelpRequest = new Class({
         this._initElements();
         this._initValidation();
         this._initEvents();
+        this._initPills();
     },
 
     _initElements: function () {
@@ -33,9 +34,17 @@ CBR.Controllers.ViewHelpRequest = new Class({
     _initValidation: function () {
         jQuery(".field-error").hide();
 
-        this.validator = new CBR.Services.Validator({
+        this.responseValidator = new CBR.Services.Validator({
             fieldIds: [
                 "response-text"
+            ]
+        });
+
+        this.referenceValidator = new CBR.Services.Validator({
+            fieldIds: [
+                "helped-or-was-helped",
+                "grade",
+                "reference-text"
             ]
         });
     },
@@ -50,6 +59,10 @@ CBR.Controllers.ViewHelpRequest = new Class({
         jQuery("#cancel-reference-button").click(jQuery.proxy(this._collapseReferenceForm, this));
         jQuery("#post-reference-button").click(jQuery.proxy(this._doCreateReference, this));
         this.$referenceForm.submit(jQuery.proxy(this._doCreateReference, this));
+    },
+
+    _initPills: function() {
+        jQuery(".pills a").click(jQuery.proxy(this.setActivePill, this));
     },
 
     _prepareDataForDisplay: function () {
@@ -70,7 +83,7 @@ CBR.Controllers.ViewHelpRequest = new Class({
 
             currentCreationDatetime += " " + hour + ":" + minute;
 
-            currentHelpResponse.creationDatetime = currentCreationDatetime
+            currentHelpResponse.creationDatetime = currentCreationDatetime;
         }
     },
 
@@ -109,7 +122,7 @@ CBR.Controllers.ViewHelpRequest = new Class({
     _doCreateResponse: function (e) {
         e.preventDefault();
 
-        if (this.validator.isValid()) {
+        if (this.responseValidator.isValid()) {
             var helpResponse = new CBR.Models.HelpResponse({
                 requestId: jQuery("#help-request").data("id"),
                 text: jQuery("#response-text").val()
@@ -138,5 +151,31 @@ CBR.Controllers.ViewHelpRequest = new Class({
     _doCreateReference: function (e) {
         e.preventDefault();
 
+        if (this.referenceValidator.isValid()) {
+            var reference = new CBR.Models.Reference({
+                toUserId: "",
+                wasHelped: "",
+                ratingId: "",
+                text: jQuery("#reference-text").val()
+            }); // TODO
+
+            var _this = this;
+
+            new Request({
+                urlEncoded: false,
+                headers: { "Content-Type": "application/json" },
+                url: "/api/references",
+                data: CBR.JsonUtil.stringifyModel(reference),
+                onSuccess: function (responseText, responseXML) {
+                    location.reload();
+                },
+                onFailure: function (xhr) {
+                    if (xhr.status === _this.httpStatusCode.unauthorized)
+                        location.replace("/login");
+                    else
+                        alert("AJAX fail :(");
+                }
+            }).post();
+        }
     }
 });

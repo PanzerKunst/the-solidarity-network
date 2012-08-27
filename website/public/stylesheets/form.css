@@ -19,6 +19,20 @@ form .field {
   form .field > span {
     display: block;
     float: left; }
+  form .field > ul {
+    zoom: 1;
+    display: block;
+    float: left; }
+    form .field > ul:before, form .field > ul:after {
+      content: "";
+      display: table; }
+    form .field > ul:after {
+      clear: both; }
+    form .field > ul > li {
+      display: block;
+      float: left; }
+      form .field > ul > li.active {
+        font-weight: bold; }
   form .field > .field-error {
     clear: both; }
 form .validation-icon {

@@ -16,8 +16,11 @@
 -->
 <script id="content-template" type="text/html">
     <section id="requester">
-        <img src="/files/profile-pic/{{helpRequest.requester.id}}" />
-        <p>{{helpRequest.requester.firstName}} {{helpRequest.requester.lastName}}, aka "{{helpRequest.requester.username}}"</p>
+        <img src="/files/profile-pic/{{helpRequest.requester.id}}"/>
+
+        <p>{{helpRequest.requester.firstName}} {{helpRequest.requester.lastName}}, aka
+            "{{helpRequest.requester.username}}"</p>
+
         <p>Lives in {{helpRequest.requester.city}}, {{helpRequest.country.name}}</p>
 
         <div>
@@ -62,10 +65,11 @@
 
             {{#helpResponses}}
             <article>
-                <img src="/files/profile-pic/{{responder.id}}" />
+                <img src="/files/profile-pic/{{responder.id}}"/>
                 <span>{{creationDatetime}}</span>
                 <span>{{responder.name}}</span>
                 <span>{{responder.username}}</span>
+
                 <p>{{text}}</p>
             </article>
             {{/helpResponses}}
@@ -79,7 +83,7 @@
 
         <form id="respond-form">
             <div class="field">
-                <textarea id="response-text" placeholder="Your message *" />
+                <textarea id="response-text" placeholder="Your message *"></textarea>
 
                 <p class="field-error" data-check="empty">Please respond to with a message</p>
             </div>
@@ -93,7 +97,7 @@
                     <span>Cancel</span>
                 </a>
 
-                <input type="submit" />
+                <input type="submit"/>
             </div>
         </form>
 
@@ -102,6 +106,45 @@
         </div>
 
         <form id="reference-form">
+            <div class="field">
+                <ul id="helped-or-was-helped" class="pills">
+                    <li id="helped">
+                        <a>Helped</a>
+                    </li>
+                    <li id="was-helped">
+                        <a>Was helped</a>
+                    </li>
+                </ul>
+
+                <p class="field-error" data-check="empty">Did you help, or were you helped?</p>
+            </div>
+
+            <div class="field">
+                <label for="grade">Grade:</label><!--
+             --><ul id="grade" class="pills">
+                    <li data-grade-id="4">
+                        <a>Great!</a>
+                    </li>
+                    <li data-grade-id="3">
+                        <a>Nice</a>
+                    </li>
+                    <li data-grade-id="2">
+                        <a>Neutral</a>
+                    </li>
+                    <li data-grade-id="1">
+                        <a>Negative</a>
+                    </li>
+                </ul>
+
+                <p class="field-error" data-check="empty">Please select a grade</p>
+            </div>
+
+            <div class="field">
+                <textarea id="reference-text" placeholder="Your reference text *"></textarea>
+
+                <p class="field-error" data-check="empty">Please explain how things went</p>
+            </div>
+
             <div id="submit-reference-wrapper">
                 <a id="post-reference-button">
                     <span>Save reference</span>
@@ -111,7 +154,7 @@
                     <span>Cancel</span>
                 </a>
 
-                <input type="submit" />
+                <input type="submit"/>
             </div>
         </form>
         }

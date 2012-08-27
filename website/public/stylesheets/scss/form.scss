@@ -20,6 +20,22 @@ form {
       float: left;
     }
 
+    > ul {
+      @include clearfix();
+
+      display: block;
+      float: left;
+
+      > li {
+        display: block;
+        float: left;
+
+        &.active {
+          font-weight: bold;
+        }
+      }
+    }
+
     > .field-error {
       clear: both;
     }

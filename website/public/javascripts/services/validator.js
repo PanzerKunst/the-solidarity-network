@@ -8,40 +8,45 @@ CBR.Services.Validator = new Class({
     initialize: function (options) {
         this.options = options;
 
-        for (var i=0; i<this._getFieldIds().length; i++) {
+        for (var i = 0; i < this._getFieldIds().length; i++) {
             var $field = jQuery("#" + this._getFieldIds()[i]);
-            this._addBlurEvent($field);
-            this._addValueChangedEvent($field);
+
+            if ($field.hasClass("pills"))
+                this._addClickEvents($field);
+            else {
+                this._addBlurEvent($field);
+                this._addValueChangedEvent($field);
+            }
         }
     },
 
-    isValid: function() {
+    isValid: function () {
         var result = true;
 
-        for (var i=0; i<this._getFieldIds().length; i++)
+        for (var i = 0; i < this._getFieldIds().length; i++)
             if (!this._validateField(jQuery("#" + this._getFieldIds()[i]), false))
                 result = false;
 
         return result;
     },
 
-    flagValid: function($field) {
+    flagValid: function ($field) {
         var $wrapper = $field.parent();
         $wrapper.removeClass("invalid");
         $wrapper.addClass("valid");
     },
 
-    flagInvalid: function($field) {
+    flagInvalid: function ($field) {
         var $wrapper = $field.parent();
         $wrapper.removeClass("valid");
         $wrapper.addClass("invalid");
     },
 
-    isFlaggedInvalid: function($field) {
+    isFlaggedInvalid: function ($field) {
         return $field.parent().hasClass("invalid");
     },
 
-    _getFieldIds: function() {
+    _getFieldIds: function () {
         return this.options.fieldIds;
     },
 
@@ -108,10 +113,10 @@ CBR.Services.Validator = new Class({
         var month = parseInt(yearMonthDay[1], 10);
         var day = parseInt(yearMonthDay[2], 10);
 
-        var date = new Date(year, month-1, day);
+        var date = new Date(year, month - 1, day);
         var now = new Date();
 
-        var oneDayInMillis = 1000*60*60*24;
+        var oneDayInMillis = 1000 * 60 * 60 * 24;
         var nbDaysDifference = Math.ceil((date - now) / oneDayInMillis);
 
         return nbDaysDifference > 0;
@@ -123,20 +128,31 @@ CBR.Services.Validator = new Class({
         var month = parseInt(yearMonthDay[1], 10);
         var day = parseInt(yearMonthDay[2], 10);
 
-        var date = new Date(year, month-1, day);
+        var date = new Date(year, month - 1, day);
         var inTwoWeeks = new Date();
         inTwoWeeks.setDate(inTwoWeeks.getDate() + 14);
 
-        var oneDayInMillis = 1000*60*60*24;
+        var oneDayInMillis = 1000 * 60 * 60 * 24;
         var nbDaysDifference = Math.ceil((inTwoWeeks - date) / oneDayInMillis);
 
         return nbDaysDifference >= 0;
     },
 
-    _validateField: function($field, isOnBlur) {
+    _validateField: function ($field, isOnBlur) {
 
         // Empty?
-        if (this._isToCheckIfEmpty($field) && !$field.val()) {
+        if (this._isToCheckIfEmpty($field) &&
+            $field.hasClass("pills") &&
+            $field.children(".active").length === 0) {
+
+            this.flagInvalid($field);
+            this._get$empty($field).slideDown(200, "easeOutQuad");
+            return false;
+        }
+        else if (this._isToCheckIfEmpty($field) &&
+            !$field.hasClass("pills") &&
+            !$field.val()) {
+
             if (!isOnBlur) {
                 this.flagInvalid($field);
                 this._get$empty($field).slideDown(200, "easeOutQuad");
@@ -199,6 +215,14 @@ CBR.Services.Validator = new Class({
         var _this = this;
 
         $field.change(function () {
+            _this._validateField($field);
+        });
+    },
+
+    _addClickEvents: function ($field) {
+        var _this = this;
+
+        $field.find("a").bind("active-toggled", function () {
             _this._validateField($field);
         });
     }

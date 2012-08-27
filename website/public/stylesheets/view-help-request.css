@@ -49,7 +49,7 @@ body#view-help-request #content #responses img {
 body#view-help-request #content #submit-response-wrapper,
 body#view-help-request #content #submit-reference-wrapper {
   margin: auto;
-  width: 11em; }
+  width: 12em; }
   body#view-help-request #content #submit-response-wrapper > :first-child,
   body#view-help-request #content #submit-reference-wrapper > :first-child {
     margin-right: 1em; }
