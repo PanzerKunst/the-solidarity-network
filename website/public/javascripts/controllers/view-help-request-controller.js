@@ -21,6 +21,10 @@ CBR.Controllers.ViewHelpRequest = new Class({
         this._initPills();
     },
 
+    _getHelpRequester: function() {
+        return this.options.helpRequest.requester;
+    },
+
     _initElements: function () {
         this.$respondForm = jQuery("#respond-form");
         this.$respond = jQuery("#respond");
@@ -153,11 +157,11 @@ CBR.Controllers.ViewHelpRequest = new Class({
 
         if (this.referenceValidator.isValid()) {
             var reference = new CBR.Models.Reference({
-                toUserId: "",
-                wasHelped: "",
-                ratingId: "",
+                toUserId: this._getHelpRequester().id,
+                wasHelped: jQuery("#was-helped").hasClass("active"),
+                ratingId: jQuery("#grade > li.active").data("grade-id"),
                 text: jQuery("#reference-text").val()
-            }); // TODO
+            });
 
             var _this = this;
 

@@ -95,7 +95,8 @@ Dependencies:
                 controllers/search-help-requests-controller.js
                 controllers/view-help-request-controller.js
                 controllers/my-profile-controller.js
-                controllers/edit-profile-controller.js" />
+                controllers/edit-profile-controller.js
+                controllers/profile-controller.js" />
         </concat>
     </target>
     

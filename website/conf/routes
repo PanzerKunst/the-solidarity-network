@@ -17,6 +17,7 @@ GET     /logout                     controllers.Application.logout
 GET     /home                       controllers.Application.home
 GET     /my-profile                 controllers.Application.myProfile
 GET     /my-profile/edit            controllers.Application.editProfile
+GET     /users/:username            controllers.Application.profile(username: String)
 GET     /help                       controllers.Application.helpDashboard
 GET     /help-requests              controllers.Application.searchHelpRequests
 GET     /help-requests/new          controllers.Application.createHelpRequest
@@ -32,6 +33,7 @@ GET     /api/help-requests          controllers.api.HelpRequestApi.get
 POST    /api/help-responses         controllers.api.HelpResponseApi.create
 POST    /api/db/admin               controllers.api.DbAdminApi.createTables
 DELETE  /api/db/admin               controllers.api.DbAdminApi.dropTables
+POST    /api/references             controllers.api.ReferenceApi.create
 
 # Files
 GET     /files/profile-pic/:userId      controllers.FileController.serveProfilePicture(userId: Int)

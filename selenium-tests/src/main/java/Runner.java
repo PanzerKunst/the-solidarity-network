@@ -18,8 +18,8 @@ public class Runner {
     private static final DefaultHttpClient httpClient = new DefaultHttpClient();
 
     public static void main(String[] args) throws IOException {
-        testInFirefox();
-        testInChrome();
+        /* TODO testInFirefox();
+        testInChrome(); */
         testInIE();
         testInOpera();
     }
@@ -56,19 +56,19 @@ public class Runner {
 
         driver.get(Runner.URL_ROOT);
 
-        User christophe = new User("Christophe",
+        User chris = new User("Christophe",
                 "Bram",
                 "cbramdit@gmail.com",
                 "blackbird",
                 "tigrou",
                 "Stockholm");
 
-        Join.properFormFill(driver, christophe);
+        Join.properFormFill(driver, chris);
 
         Login.incorrectPassword(driver);
-        Login.properFormFillUsername(driver, christophe);
+        Login.properFormFillUsername(driver, chris);
         Login.logout(driver);
-        Login.properFormFillEmail(driver, christophe);
+        Login.properFormFillEmail(driver, chris);
 
         SubmitHelpRequest.properFormFill(driver);
 
@@ -87,6 +87,8 @@ public class Runner {
         SearchHelpRequests.clickOnFirstSearchResult(driver);
 
         RespondToHelpRequest.properFormFill(driver);
+
+        WriteReference.properFormFill(driver, chris, damien);
 
         Login.logout(driver);
 

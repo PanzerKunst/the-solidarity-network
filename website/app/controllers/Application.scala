@@ -82,6 +82,18 @@ object Application extends Controller {
       }
   }
 
+  def profile(username: String) = Action {
+    implicit request =>
+      loggedInUser(session) match {
+        case Some(loggedInUser) =>
+          val user = UserDto.get(Some(Map("username" -> username))).head
+          val references = ReferenceDto.get(Some(Map("to_user_id" -> user.id.get.toString)))
+          val frontendReferences = for (ref <- references) yield new FrontendReference(ref, user)
+          Ok(views.html.profile(loggedInUser, new FrontendUser(user), frontendReferences))
+        case None => Redirect(routes.Application.login)
+      }
+  }
+
   def createHelpRequest = Action {
     implicit request =>
       loggedInUser(session) match {
