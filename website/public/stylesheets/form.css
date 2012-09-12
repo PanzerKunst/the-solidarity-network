@@ -48,11 +48,16 @@ form .field-error {
   font-size: small;
   color: #be2d07; }
 form input[type=submit] {
+  /* For it to go below the anchor, keeping the latter centered */
   display: block;
-  visibility: hidden; }
+  /* All those properties hide the submit button but keeps submit on enter working */
+  border: none;
+  height: 0;
+  width: 0;
+  padding: 0;
+  margin: 0;
+  overflow: hidden; }
 
 #submit-button-wrapper {
   text-align: center;
   margin-top: 2em; }
-  #submit-button-wrapper > input[type=submit] {
-    display: block; }

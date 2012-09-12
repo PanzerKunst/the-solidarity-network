@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0fcd2012-10db-4360-ab06-452ca8cd34f1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../selenium-tests/src/main/java/Runner.java" afterPath="$PROJECT_DIR$/../selenium-tests/src/main/java/Runner.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../selenium-tests/src/main/java/WriteReference.java" afterPath="$PROJECT_DIR$/../selenium-tests/src/main/java/WriteReference.java" />
+      <change type="DELETED" beforePath="E:\Pro\the-solidarity-network\website\public\javascripts\libs\h5bp\modernizr-2.5.3.min.js" afterPath="" />
+      <change type="DELETED" beforePath="E:\Pro\the-solidarity-network\website\public\stylesheets\libs\h5bp.css" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/main.scala.html" afterPath="$PROJECT_DIR$/app/views/main.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/form.css" afterPath="$PROJECT_DIR$/public/stylesheets/form.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/scss/form.scss" afterPath="$PROJECT_DIR$/public/stylesheets/scss/form.scss" />
     </list>
     <ignored path="website.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -85,15 +88,43 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WriteReference.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="WriteReference.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../selenium-tests/src/main/java/WriteReference.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="13" selection-start="1391" selection-end="1391" vertical-scroll-proportion="0.3846154">
+            <state line="35" column="40" selection-start="1339" selection-end="1339" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#1125#1401#0" expanded="true" />
+                <element signature="e#1390#1391#0" expanded="true" />
                 <element signature="e#1594#2103#0" expanded="true" />
                 <element signature="e#2092#2093#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.scala.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/login.scala.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="53" column="12" selection-start="1254" selection-end="1254" vertical-scroll-proportion="-19.923077">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="form.scss" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/stylesheets/scss/form.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="73" column="13" selection-start="1206" selection-end="1206" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.scala.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/main.scala.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="53" column="73" selection-start="2379" selection-end="2379" vertical-scroll-proportion="0.46624804">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -120,10 +151,8 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/controllers/api/ReferenceApi.scala" />
         <option value="$PROJECT_DIR$/app/database/ReferenceDto.scala" />
         <option value="$PROJECT_DIR$/public/javascripts/controllers/profile-controller.js" />
-        <option value="$PROJECT_DIR$/app/views/main.scala.html" />
         <option value="$PROJECT_DIR$/app/controllers/Application.scala" />
         <option value="$PROJECT_DIR$/conf/routes" />
         <option value="$PROJECT_DIR$/app/views/createHelpRequest.scala.html" />
@@ -136,6 +165,8 @@
         <option value="$PROJECT_DIR$/app/views/profile.scala.html" />
         <option value="$PROJECT_DIR$/../selenium-tests/src/main/java/WriteReference.java" />
         <option value="$PROJECT_DIR$/../selenium-tests/src/main/java/Runner.java" />
+        <option value="$PROJECT_DIR$/public/stylesheets/scss/form.scss" />
+        <option value="$PROJECT_DIR$/app/views/main.scala.html" />
       </list>
     </option>
   </component>
@@ -599,6 +630,7 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="963" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="967" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="295" />
+    <property name="GoToClass.includeJavaFiles" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="292" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -907,11 +939,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/editProfile.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="31" selection-start="108" selection-end="108" vertical-scroll-proportion="-0.65384614" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/helpDashboard.scala.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="7" selection-start="21" selection-end="21" vertical-scroll-proportion="-0.65384614" />
@@ -930,16 +957,6 @@
     <entry file="file://$PROJECT_DIR$/app/views/join.scala.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/login.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/main.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="115" column="24" selection-start="4959" selection-end="4959" vertical-scroll-proportion="-5.269231" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/searchHelpRequests.scala.html">
@@ -986,12 +1003,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../selenium-tests/src/main/java/WriteReference.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="13" selection-start="1391" selection-end="1391" vertical-scroll-proportion="0.3846154">
+        <state line="35" column="40" selection-start="1339" selection-end="1339" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#1125#1401#0" expanded="true" />
+            <element signature="e#1390#1391#0" expanded="true" />
             <element signature="e#1594#2103#0" expanded="true" />
             <element signature="e#2092#2093#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/login.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="12" selection-start="1254" selection-end="1254" vertical-scroll-proportion="-19.923077">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/scss/form.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="13" selection-start="1206" selection-end="1206" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/main.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="73" selection-start="2379" selection-end="2379" vertical-scroll-proportion="0.46624804">
+          <folding />
         </state>
       </provider>
     </entry>

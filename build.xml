@@ -41,7 +41,8 @@ Dependencies:
     <target name="merge-css">
         <concat destfile="${dist.merged.file.css}" fixlastline="yes" append="no">
             <filelist dir="${src.css.dir}" files="
-                libs/h5bp.css
+                libs/h5bp/normalize.css
+                libs/h5bp/main.css
                 responsive.css
                 main.css
                 header.css
