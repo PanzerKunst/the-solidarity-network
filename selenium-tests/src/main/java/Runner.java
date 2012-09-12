@@ -18,8 +18,8 @@ public class Runner {
     private static final DefaultHttpClient httpClient = new DefaultHttpClient();
 
     public static void main(String[] args) throws IOException {
-        /* TODO testInFirefox();
-        testInChrome(); */
+        testInFirefox();
+        testInChrome();
         testInIE();
         testInOpera();
     }

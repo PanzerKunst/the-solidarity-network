@@ -29,17 +29,17 @@ public class WriteReference {
         driver.findElement(By.id("post-reference-button"))
                 .click();
 
-        // Wait 5s for page to load
-        (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
+        // Wait 10s for page to load
+        (new WebDriverWait(driver, 10)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
-                return d.getCurrentUrl().startsWith(Runner.URL_ROOT + "help-requests/") /* TODO: fails on IE &&
-                        !d.findElement(By.id("reference-form")).isDisplayed()*/;
+                return d.getCurrentUrl().startsWith(Runner.URL_ROOT + "help-requests/") &&
+                        !d.findElement(By.id("reference-form")).isDisplayed();
             }
         });
 
         driver.get(Runner.URL_ROOT + "users/" + to.getUsername());
 
-        // Wait 10s for page to load, then check that the reference is there
+        // Wait 5s for page to load, then check that the reference is there
         (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
 
