@@ -3,21 +3,21 @@
 body#join {
   #content {
     .field {
-      $labelWidth: 9em;
-      $inputWidth: 12em;
-      $checkUsernameAvailabilityWidth: 6em;
-
       margin-left: auto;
       margin-right: auto;
 
-      width: $labelWidth + $inputWidth + $validationIconWidth + $checkUsernameAvailabilityWidth + $extraSpaceForInputPaddingAndBorder;
+      $labelWidth: 8em;
+      $inputWidth: 9em;
+      $checkUsernameAvailabilityWidth: 5em;
 
-      @media screen and (max-width: 800px) {
-        $labelWidth: 8em;
-        $inputWidth: 9em;
-        $checkUsernameAvailabilityWidth: 5em;
+      width: $inputWidth + $validationIconWidth + $checkUsernameAvailabilityWidth + $extraSpaceForInputPaddingAndBorder;
 
-        width: $inputWidth + $validationIconWidth + $checkUsernameAvailabilityWidth + $extraSpaceForInputPaddingAndBorder;
+      @include desktop {
+        $labelWidth: 9em;
+        $inputWidth: 12em;
+        $checkUsernameAvailabilityWidth: 6em;
+
+        width: $labelWidth + $inputWidth + $validationIconWidth + $checkUsernameAvailabilityWidth + $extraSpaceForInputPaddingAndBorder;
       }
 
       > label {
@@ -28,8 +28,10 @@ body#join {
       > select {
         width: $inputWidth;
 
-        @media screen and (max-width: 800px) {
-          clear: both;
+        clear: both;
+
+        @include desktop {
+          clear: none;
         }
       }
 

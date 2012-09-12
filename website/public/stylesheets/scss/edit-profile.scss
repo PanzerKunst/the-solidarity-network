@@ -19,19 +19,19 @@ body#edit-profile {
     }
 
     .field {
-      $labelWidth: 9em;
-      $inputWidth: 12em;
-
       margin-left: auto;
       margin-right: auto;
 
-      width: $labelWidth + $inputWidth + $validationIconWidth + $extraSpaceForInputPaddingAndBorder;
+      $labelWidth: 8em;
+      $inputWidth: 9em;
 
-      @media screen and (max-width: 800px) {
-        $labelWidth: 8em;
-        $inputWidth: 9em;
+      width: $inputWidth + $validationIconWidth + $extraSpaceForInputPaddingAndBorder;
 
-        width: $inputWidth + $validationIconWidth + $extraSpaceForInputPaddingAndBorder;
+      @include desktop {
+        $labelWidth: 9em;
+        $inputWidth: 12em;
+
+        width: $labelWidth + $inputWidth + $validationIconWidth + $extraSpaceForInputPaddingAndBorder;
       }
 
       > label {
@@ -41,8 +41,10 @@ body#edit-profile {
       > input {
         width: $inputWidth;
 
-        @media screen and (max-width: 800px) {
-          clear: both;
+        clear: both;
+
+        @include desktop {
+          clear: none;
         }
       }
 

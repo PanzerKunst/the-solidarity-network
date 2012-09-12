@@ -13,13 +13,13 @@ body#view-help-request {
         text-align: center;
       }
 
-      @media screen and (min-width: 801px) {
+      @include desktop {
         float: left;
       }
     }
 
     #requester {
-      @media screen and (min-width: 801px) {
+      @include desktop {
         @include box-sizing(border-box);
         padding-top: 9em;
         padding-right: 1em;
@@ -38,13 +38,12 @@ body#view-help-request {
     }
 
     #main {
-      @media screen and (min-width: 801px) {
-        width: 65%;
-      }
+      width: 20em;
+      margin: auto;
 
-      @media screen and (max-width: 800px) {
-        width: 20em;
-        margin: auto;
+      @include desktop {
+        width: 65%;
+        margin: 0;
       }
     }
 

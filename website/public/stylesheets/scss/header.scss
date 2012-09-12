@@ -7,7 +7,30 @@ header {
 #header-nav {
   @include clearfix();
 
-  @media screen and (min-width: 801px) {
+  /* TODO: there were mobile-only */
+  font-size: 1em;
+
+  > h1 {
+    float: left;
+
+    font-size: inherit;
+
+    margin-bottom: 0;
+    margin-top: 0.2em;
+  }
+
+  > span {
+    float: right;
+  }
+
+  > ul {
+    display: none;
+    clear: both;
+    background-color: #3f3f3f;
+  }
+  /* End of TODO */
+
+  @include desktop {
     padding-bottom: 10em;
 
     > h1 {
@@ -35,29 +58,6 @@ header {
           background-color: $headerBg;
         }
       }
-    }
-  }
-
-  @media screen and (max-width: 800px) {
-    font-size: 1em;
-
-    > h1 {
-      float: left;
-
-      font-size: inherit;
-
-      margin-bottom: 0;
-      margin-top: 0.2em;
-    }
-
-    > span {
-      float: right;
-    }
-
-    > ul {
-      display: none;
-      clear: both;
-      background-color: #3f3f3f;
     }
   }
 }

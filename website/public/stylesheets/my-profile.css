@@ -1,4 +1,4 @@
-@media screen and (min-width: 801px) {
+@media screen and (min-width: 61em) {
   body#my-profile #content #profile-info {
     zoom: 1; }
     body#my-profile #content #profile-info:before, body#my-profile #content #profile-info:after {

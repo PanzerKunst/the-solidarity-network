@@ -2,7 +2,7 @@
 
 body#my-profile {
   #content {
-    @media screen and (min-width: 801px) {
+    @include desktop {
       #profile-info {
         @include clearfix();
       }

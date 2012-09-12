@@ -41,9 +41,11 @@ span,
 label {
   display: inline-block; }
 
-@media screen and (max-width: 800px) {
-  #content > h1 {
-    display: none; } }
+#content > h1 {
+  display: none; }
+  @media screen and (min-width: 61em) {
+    #content > h1 {
+      display: block; } }
 
 .indication {
   text-align: center;
