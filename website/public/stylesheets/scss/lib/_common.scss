@@ -12,6 +12,6 @@ $extraSpaceForInputPaddingAndBorder: 1em;
 
 @mixin desktop {
   @media screen and (min-width: 61em) {
-  @content;
+    @content;
   }
 }
