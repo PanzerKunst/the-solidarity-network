@@ -3,6 +3,8 @@ import models.User;
 import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -18,41 +20,60 @@ public class Runner {
     private static final DefaultHttpClient httpClient = new DefaultHttpClient();
 
     public static void main(String[] args) throws IOException {
-        testInFirefox();
-        testInChrome();
-        testInIE();
+        testOnDesktop();
+        testOnMobile();
+    }
+
+    private static void testOnDesktop() throws IOException {
+        testInFirefox(new Dimension(801, 1024));
+        testInChrome(new Dimension(801, 1024));
+        testInIE(new Dimension(801, 1024));
         testInOpera();
     }
 
-    private static void testInFirefox() throws IOException {
-        WebDriver driver = new FirefoxDriver();
+    private static void testOnMobile() throws IOException {
+        testInFirefox(new Dimension(320, 1024));
+        testInChrome(new Dimension(320, 1024));
+        testInIE(new Dimension(320, 1024));
 
-        runTests(driver);
+        // No test in Opera, because of:
+        // java.lang.UnsupportedOperationException: Not supported in OperaDriver yet
     }
 
-    private static void testInChrome() throws IOException {
+    private static void testInFirefox(Dimension resolution) throws IOException {
+        WebDriver driver = new FirefoxDriver();
+
+        runTests(driver, resolution);
+    }
+
+    private static void testInChrome(Dimension resolution) throws IOException {
         System.setProperty("webdriver.chrome.driver", "e:/servers/selenium-drivers/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
 
-        runTests(driver);
+        runTests(driver, resolution);
     }
 
-    private static void testInIE() throws IOException {
+    private static void testInIE(Dimension resolution) throws IOException {
         System.setProperty("webdriver.ie.driver", "e:/servers/selenium-drivers/IEDriverServer.exe");
         WebDriver driver = new InternetExplorerDriver();
 
-        runTests(driver);
+        runTests(driver, resolution);
     }
 
     private static void testInOpera() throws IOException {
         WebDriver driver = new OperaDriver();
 
-        runTests(driver);
+        runTests(driver, null);
     }
 
-    private static void runTests(WebDriver driver) throws IOException {
+    private static void runTests(WebDriver driver, Dimension resolution) throws IOException {
         dropTables();
         createTables();
+
+        if (resolution != null) {
+            driver.manage().window().setPosition(new Point(0, 0));
+            driver.manage().window().setSize(resolution);
+        }
 
         driver.get(Runner.URL_ROOT);
 

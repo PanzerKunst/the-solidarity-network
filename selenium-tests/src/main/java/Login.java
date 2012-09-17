@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Login {
+public class Login extends TestBase {
     public static void incorrectPassword(WebDriver driver) {
         driver.findElement(By.id("password"))
                 .sendKeys("tigru");
@@ -40,8 +40,16 @@ public class Login {
         // Wait 5s for the page to load, and check we have been redirected to "home"
         (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
-                return d.getCurrentUrl().equals(Runner.URL_ROOT + "home") &&
-                        d.findElement(By.cssSelector("a[href='/logout']")).isDisplayed();
+                return d.getCurrentUrl().equals(Runner.URL_ROOT + "home");
+            }
+        });
+
+        clickOnMobileMenuLinkIfRequired(driver);
+
+        // Wait 5s for the page to load, and check that the "logout" link exists
+        (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
+            public Boolean apply(WebDriver d) {
+                return d.findElement(By.cssSelector("a[href='/logout']")).isDisplayed();
             }
         });
     }
@@ -69,22 +77,40 @@ public class Login {
         // Wait 5s for the page to load, and check we have been redirected to "home"
         (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
-                return d.getCurrentUrl().equals(Runner.URL_ROOT + "home") &&
-                        d.findElement(By.cssSelector("a[href='/logout']")).isDisplayed();
+                return d.getCurrentUrl().equals(Runner.URL_ROOT + "home");
+            }
+        });
+
+        clickOnMobileMenuLinkIfRequired(driver);
+
+        // Wait 5s for the page to load, and check that the "logout" link exists
+        (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
+            public Boolean apply(WebDriver d) {
+                return d.findElement(By.cssSelector("a[href='/logout']")).isDisplayed();
             }
         });
     }
 
     public static void logout(WebDriver driver) {
+        clickOnMobileMenuLinkIfRequired(driver);
+
         driver.findElement(By.cssSelector("a[href='/logout']"))
                 .click();
 
         // Wait 5s for the page to load, and check that menu is logged-out
         (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
-                return d.getCurrentUrl().equals(Runner.URL_ROOT) &&
-                        d.findElement(By.id("header-nav"))
-                                .getText().indexOf("Login") > 0;
+                return d.getCurrentUrl().equals(Runner.URL_ROOT);
+            }
+        });
+
+        clickOnMobileMenuLinkIfRequired(driver);
+
+        // Wait 5s for the page to load, and check that menu is logged-out
+        (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
+            public Boolean apply(WebDriver d) {
+                return d.findElement(By.id("header-nav"))
+                        .getText().indexOf("Login") > 0;
             }
         });
     }

@@ -26,7 +26,8 @@ img {
 a,
 a:visited {
   cursor: pointer;
-  text-decoration: none; }
+  text-decoration: none;
+  color: blue; }
   a:hover,
   a:visited:hover {
     color: #be2d07; }
@@ -41,7 +42,7 @@ label {
 
 #content > h1 {
   display: none; }
-  @media screen and (min-width: 61em) {
+  @media screen and (min-width: 49em) {
     #content > h1 {
       display: block; } }
 

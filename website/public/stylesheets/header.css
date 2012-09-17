@@ -22,7 +22,7 @@ header {
     color: white; }
     #header-nav > ul span {
       cursor: pointer; }
-  @media screen and (min-width: 61em) {
+  @media screen and (min-width: 49em) {
     #header-nav {
       padding-bottom: 10em; }
       #header-nav > h1,

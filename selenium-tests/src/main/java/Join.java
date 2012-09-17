@@ -5,9 +5,9 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Join {
+public class Join extends TestBase {
     public static void properFormFill(WebDriver driver, final User user) {
-        driver.findElement(By.cssSelector("a[href='/join']"))
+        driver.findElement(By.cssSelector(".actions a[href='/join']"))
                 .click();
 
         // Wait 5s for the page to load
