@@ -39,7 +39,7 @@ public class Join extends TestBase {
                 .sendKeys(user.getCity());
 
         Select droplist = new Select(driver.findElement(By.id("country")));
-        droplist.selectByIndex(1);
+        droplist.selectByValue(user.getCountryId());
 
         driver.findElement(By.tagName("form"))
                 .submit();

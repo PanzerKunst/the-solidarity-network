@@ -25,9 +25,9 @@ public class Runner {
     }
 
     private static void testOnDesktop() throws IOException {
-        testInFirefox(new Dimension(801, 1024));
-        testInChrome(new Dimension(801, 1024));
-        testInIE(new Dimension(801, 1024));
+        testInFirefox(new Dimension(820, 1024));
+        testInChrome(new Dimension(820, 1024));
+        testInIE(new Dimension(820, 1024));
         testInOpera();
     }
 
@@ -82,10 +82,17 @@ public class Runner {
                 "cbramdit@gmail.com",
                 "blackbird",
                 "tigrou",
-                "Stockholm");
+                "Stockholm",
+                "1");
 
+        /**
+         * Join
+         */
         Join.properFormFill(driver, chris);
 
+        /**
+         * Login
+         */
         Login.incorrectPassword(driver);
         Login.properFormFillUsername(driver, chris);
         Login.logout(driver);
@@ -100,17 +107,54 @@ public class Runner {
                 "panzrkunst@yahoo.fr",
                 "db",
                 "tigrou",
-                "Lille");
+                "Lille",
+                "2");
 
         Join.properFormFill(driver, damien);
         Login.properFormFillUsername(driver, damien);
 
+        /**
+         * SearchHelpRequests
+         */
         SearchHelpRequests.clickOnFirstSearchResult(driver);
 
+        /**
+         * RespondToHelpRequest
+         */
         RespondToHelpRequest.properFormFill(driver);
 
+        /**
+         * WriteReference
+         */
         WriteReference.properFormFill(driver, chris, damien);
 
+        /**
+         * MyProfile
+         */
+        MyProfile.checkPage(driver, damien);
+
+        /**
+         * EditProfile
+         */
+        EditProfile.checkProfileTab(driver, damien);
+        EditProfile.checkAccountTab(driver, damien);
+
+        User updatedDamien = new User("Dämish",
+                "Bram dit Saint-Amand",
+                "cbramdit@gmail.com",
+                "damish",
+                "tigrou",
+                "Strasbourg",
+                "1");
+        updatedDamien.setStreetAddress("Heleneborgsgatan 6C");
+        updatedDamien.setPostCode("11732");
+        updatedDamien.setDescription("Bref, un mec normal");
+
+        EditProfile.properFormFill(driver, updatedDamien);
+
+        /**
+         * Logout
+         */
         Login.logout(driver);
 
         // Close the browser

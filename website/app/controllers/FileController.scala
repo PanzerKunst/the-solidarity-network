@@ -59,7 +59,7 @@ object FileController extends Controller {
         val extension = fileName.substring(fileName.lastIndexOf("."))
         if (!tempFile.renameTo(new File(profilePicturesDir.getPath + "/" + userId + extension)))
           throw new FileSystemException("Temporary profile pic couldn't be moved to non-temp file!")
-      case None => throw new FileSystemException("Couldn't find the temporary profile pic to move!")
+      case None =>
     }
   }
 

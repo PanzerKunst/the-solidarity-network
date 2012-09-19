@@ -29,8 +29,8 @@ public class WriteReference {
         driver.findElement(By.id("post-reference-button"))
                 .click();
 
-        // Wait 10s for page to load
-        (new WebDriverWait(driver, 10)).until(new ExpectedCondition<Boolean>() {
+        // Wait 20s for page to load
+        (new WebDriverWait(driver, 20)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
                 return d.getCurrentUrl().startsWith(Runner.URL_ROOT + "help-requests/") &&
                         !d.findElement(By.id("reference-form")).isDisplayed();

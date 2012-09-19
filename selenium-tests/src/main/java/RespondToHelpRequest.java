@@ -19,6 +19,12 @@ public class RespondToHelpRequest {
         driver.findElement(By.id("response-text"))
                 .sendKeys(hrText);
 
+        (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
+            public Boolean apply(WebDriver d) {
+                return d.findElement(By.id("post-response-button")).isDisplayed();
+            }
+        });
+
         driver.findElement(By.id("post-response-button"))
                 .click();
 
