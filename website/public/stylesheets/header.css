@@ -1,5 +1,9 @@
 header {
-  background-color: whitesmoke; }
+  background-color: whitesmoke;
+  margin-bottom: 5em; }
+  @media screen and (min-width: 49em) {
+    header {
+      margin-bottom: 0; } }
 
 #header-nav {
   zoom: 1; }

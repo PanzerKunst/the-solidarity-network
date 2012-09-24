@@ -2,6 +2,12 @@
 
 header {
   background-color: $headerBg;
+
+  margin-bottom: 5em;
+
+  @include desktop {
+    margin-bottom: 0;
+  }
 }
 
 #header-nav {

@@ -10,6 +10,9 @@ $validationIconHeight: 1em;
 
 $extraSpaceForInputPaddingAndBorder: 1em;
 
+$labelWidth: 9em;
+$inputWidth: 12em;
+
 @mixin desktop {
   @media screen and (min-width: 49em) {
     @content;

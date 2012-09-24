@@ -2,23 +2,5 @@
 
 body#create-help-request {
   #content {
-    $labelWidth: 9em;
-    $inputWidth: 12em;
-    $extraSpaceForInputPaddingAndBorder: 1em;
-
-    .field {
-      width: $labelWidth + $inputWidth + $validationIconWidth + $extraSpaceForInputPaddingAndBorder;
-      margin-left: auto;
-      margin-right: auto;
-
-      > label {
-        width: $labelWidth;
-      }
-
-      > input,
-      > textarea {
-        width: $inputWidth;
-      }
-    }
   }
 }

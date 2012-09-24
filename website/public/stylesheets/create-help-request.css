@@ -1,9 +1,0 @@
-body#create-help-request #content .field {
-  width: 23em;
-  margin-left: auto;
-  margin-right: auto; }
-  body#create-help-request #content .field > label {
-    width: 9em; }
-  body#create-help-request #content .field > input,
-  body#create-help-request #content .field > textarea {
-    width: 12em; }

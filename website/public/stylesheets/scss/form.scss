@@ -10,14 +10,46 @@ form {
 
   .field {
     margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
 
-    > label,
+    width: $inputWidth + $validationIconWidth + $extraSpaceForInputPaddingAndBorder;
+
+    @include desktop {
+      width: $labelWidth + $inputWidth + $validationIconWidth + $extraSpaceForInputPaddingAndBorder;
+    }
+
     > input,
     > select,
     > textarea,
-    > span {
+    > .validation-icon {
       display: block;
       float: left;
+    }
+
+    > label {
+      display: block;
+      width: $labelWidth;
+
+      @include desktop {
+        float: left;
+      }
+    }
+
+    > input,
+    > select,
+    > textarea {
+      clear: both;
+      width: $inputWidth;
+
+      @include desktop {
+        clear: none;
+      }
+    }
+
+    > input[type=checkbox],
+    > input[type=radio] {
+      width: 1em;
     }
 
     > ul {

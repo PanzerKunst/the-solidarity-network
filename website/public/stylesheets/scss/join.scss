@@ -3,43 +3,21 @@
 body#join {
   #content {
     .field {
-      margin-left: auto;
-      margin-right: auto;
-
-      $labelWidth: 8em;
-      $inputWidth: 9em;
-      $checkUsernameAvailabilityWidth: 5em;
-
-      width: $inputWidth + $validationIconWidth + $checkUsernameAvailabilityWidth + $extraSpaceForInputPaddingAndBorder;
+      $checkUsernameAvailabilityWidth: 6em;
 
       @include desktop {
-        $labelWidth: 9em;
-        $inputWidth: 12em;
-        $checkUsernameAvailabilityWidth: 6em;
-
         width: $labelWidth + $inputWidth + $validationIconWidth + $checkUsernameAvailabilityWidth + $extraSpaceForInputPaddingAndBorder;
-      }
-
-      > label {
-        width: $labelWidth;
-      }
-
-      > input,
-      > select {
-        width: $inputWidth;
-
-        clear: both;
-
-        @include desktop {
-          clear: none;
-        }
       }
 
       #check-username-availability {
         display: block;
-        float: left;
-
         width: $checkUsernameAvailabilityWidth;
+        clear: both;
+
+        @include desktop {
+          float: left;
+          clear: none;
+        }
       }
     }
   }

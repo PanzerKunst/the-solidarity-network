@@ -11,23 +11,5 @@ body#edit-profile #content > ul {
     float: left; }
 body#edit-profile #content #account-info {
   display: none; }
-body#edit-profile #content .field {
-  margin-left: auto;
-  margin-right: auto;
-  width: 11em; }
-  @media screen and (min-width: 49em) {
-    body#edit-profile #content .field {
-      width: 23em; } }
-  body#edit-profile #content .field > label {
-    width: 9em; }
-  body#edit-profile #content .field > input {
-    width: 12em;
-    clear: both; }
-    @media screen and (min-width: 49em) {
-      body#edit-profile #content .field > input {
-        clear: none; } }
-  body#edit-profile #content .field > input[type=checkbox],
-  body#edit-profile #content .field > input[type=radio] {
-    width: 1em; }
 body#edit-profile #content #email-confirmation-field {
   display: none; }
