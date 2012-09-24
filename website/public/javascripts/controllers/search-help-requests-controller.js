@@ -7,7 +7,7 @@ CBR.Controllers.SearchHelpRequests = new Class({
 
     run: function () {
         this.getEl().append(
-            Mustache.to_html(
+            Mustache.render(
                 jQuery("#content-template").html(),
                 this.options
             )
@@ -67,7 +67,7 @@ CBR.Controllers.SearchHelpRequests = new Class({
                     }
                     else {
                         _this.$searchResults.html(
-                            Mustache.to_html(
+                            Mustache.render(
                                 jQuery("#search-results-template").html(),
                                 { helpRequests: JSON.parse(responseText) }
                             )

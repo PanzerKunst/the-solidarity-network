@@ -1,4 +1,5 @@
 body#index #content > h2 {
   text-align: center; }
-body#index #content .actions > span {
-  width: 50%; }
+@media screen and (min-width: 49em) {
+  body#index #content .action {
+    width: 50%; } }

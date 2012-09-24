@@ -14,18 +14,18 @@ public class SubmitHelpRequest {
     public static void properFormFill(WebDriver driver) {
         (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
-                return d.findElement(By.cssSelector(".actions a[href='/help']")).isDisplayed();
+                return d.findElement(By.cssSelector(".action a[href='/help']")).isDisplayed();
             }
         });
-        driver.findElement(By.cssSelector(".actions a[href='/help']"))
+        driver.findElement(By.cssSelector(".action a[href='/help']"))
                 .click();
 
         (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
-                return d.findElement(By.cssSelector(".actions a[href='/help-requests/new']")).isDisplayed();
+                return d.findElement(By.cssSelector(".action a[href='/help-requests/new']")).isDisplayed();
             }
         });
-        driver.findElement(By.cssSelector(".actions a[href='/help-requests/new']"))
+        driver.findElement(By.cssSelector(".action a[href='/help-requests/new']"))
                 .click();
 
         // Wait 5s for the page to load

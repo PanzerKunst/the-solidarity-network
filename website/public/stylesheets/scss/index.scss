@@ -6,8 +6,8 @@ body#index {
       text-align: center;
     }
 
-    .actions {
-      > span {
+    .action {
+      @include desktop {
         width: 50%;
       }
     }

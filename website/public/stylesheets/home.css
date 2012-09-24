@@ -1,2 +1,3 @@
-body#home #content .actions > span {
-  width: 33.33333%; }
+@media screen and (min-width: 49em) {
+  body#home #content .action {
+    width: 33.33333%; } }

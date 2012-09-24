@@ -2,8 +2,8 @@
 
 body#home {
   #content {
-    .actions {
-      > span {
+    .action {
+      @include desktop {
         width: (100% / 3);
       }
     }

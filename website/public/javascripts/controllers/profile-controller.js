@@ -7,7 +7,7 @@ CBR.Controllers.Profile = new Class({
 
     run: function () {
         this.getEl().append(
-            Mustache.to_html(
+            Mustache.render(
                 jQuery("#content-template").html(),
                 this.options
             )

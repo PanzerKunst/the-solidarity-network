@@ -2,8 +2,8 @@
 
 body#help-dashboard {
   #content {
-    .actions {
-      > span {
+    .action {
+      @include desktop {
         width: 50%;
       }
     }

@@ -10,18 +10,18 @@ public class SearchHelpRequests {
     public static void clickOnFirstSearchResult(WebDriver driver) {
         (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
-                return d.findElement(By.cssSelector(".actions a[href='/help']")).isDisplayed();
+                return d.findElement(By.cssSelector(".action a[href='/help']")).isDisplayed();
             }
         });
-        driver.findElement(By.cssSelector(".actions a[href='/help']"))
+        driver.findElement(By.cssSelector(".action a[href='/help']"))
                 .click();
 
         (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
-                return d.findElement(By.cssSelector(".actions a[href='/help-requests']")).isDisplayed();
+                return d.findElement(By.cssSelector(".action a[href='/help-requests']")).isDisplayed();
             }
         });
-        driver.findElement(By.cssSelector(".actions a[href='/help-requests']"))
+        driver.findElement(By.cssSelector(".action a[href='/help-requests']"))
                 .click();
 
         (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {

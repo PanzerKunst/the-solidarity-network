@@ -17,11 +17,11 @@ public class MyProfile extends TestBase {
         // Wait 5s for the page to load
         (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
-                return d.findElement(By.cssSelector(".actions a[href='/my-profile']")).isDisplayed();
+                return d.findElement(By.cssSelector(".action a[href='/my-profile']")).isDisplayed();
             }
         });
 
-        driver.findElement(By.cssSelector(".actions a[href='/my-profile']"))
+        driver.findElement(By.cssSelector(".action a[href='/my-profile']"))
                 .click();
 
         // Wait 5s for the page to load

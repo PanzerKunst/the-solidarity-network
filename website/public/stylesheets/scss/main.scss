@@ -75,12 +75,21 @@ label {
   text-align: center;
 }
 
-.actions {
-  margin: 10em 0;
+.action {
+  margin: 3em 0;
 
-  > span {
-    text-align: center;
+  @include clearfix();
+
+  @include desktop {
+    margin: 10em 0;
+
+    float: left;
+
+    &.line {
+      clear: both;
+    }
   }
+  text-align: center;
 }
 
 .profile-pic {

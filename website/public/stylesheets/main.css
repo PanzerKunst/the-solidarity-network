@@ -56,10 +56,21 @@ label {
 #website-language-selection {
   text-align: center; }
 
-.actions {
-  margin: 10em 0; }
-  .actions > span {
-    text-align: center; }
+.action {
+  margin: 3em 0;
+  zoom: 1;
+  text-align: center; }
+  .action:before, .action:after {
+    content: "";
+    display: table; }
+  .action:after {
+    clear: both; }
+  @media screen and (min-width: 49em) {
+    .action {
+      margin: 10em 0;
+      float: left; }
+      .action.line {
+        clear: both; } }
 
 .profile-pic {
   max-width: 12em;
