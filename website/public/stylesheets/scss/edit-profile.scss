@@ -1,4 +1,4 @@
-@import "lib/common";
+@import "common";
 
 body#edit-profile {
   #content {
@@ -20,6 +20,22 @@ body#edit-profile {
 
     #email-confirmation-field {
       display: none;
+    }
+
+    label[for="language"] {
+      width: $fieldWidth;
+    }
+
+    @include desktop {
+      $selectWidth: 6em;
+
+      label[for="language"] {
+        width: $fieldWidthDesktop - $validationIconWidth - $extraSpaceForInputPaddingAndBorder - $selectWidth;
+      }
+
+      #language {
+        width: $selectWidth;
+      }
     }
   }
 }

@@ -1,5 +1,5 @@
-@import "css3";
-@import "utils";
+@import "lib/css3";
+@import "lib/utils";
 
 $red: #BE2D07;
 $fontDarkGrey: #3F3F3F;
@@ -12,6 +12,9 @@ $extraSpaceForInputPaddingAndBorder: 1em;
 
 $labelWidth: 9em;
 $inputWidth: 12em;
+
+$fieldWidth: $inputWidth + $validationIconWidth + $extraSpaceForInputPaddingAndBorder;
+$fieldWidthDesktop: $labelWidth + $inputWidth + $validationIconWidth + $extraSpaceForInputPaddingAndBorder;
 
 @mixin desktop {
   @media screen and (min-width: 49em) {

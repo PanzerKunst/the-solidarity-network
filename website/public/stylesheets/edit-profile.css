@@ -13,3 +13,10 @@ body#edit-profile #content #account-info {
   display: none; }
 body#edit-profile #content #email-confirmation-field {
   display: none; }
+body#edit-profile #content label[for="language"] {
+  width: 14em; }
+@media screen and (min-width: 49em) {
+  body#edit-profile #content label[for="language"] {
+    width: 15em; }
+  body#edit-profile #content #language {
+    width: 6em; } }
