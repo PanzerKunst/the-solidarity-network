@@ -47,6 +47,10 @@ form {
       }
     }
 
+    > select {
+      width: $inputWidth + $extraInputWidthForSelect;
+    }
+
     > input[type=checkbox],
     > input[type=radio] {
       width: 1em;

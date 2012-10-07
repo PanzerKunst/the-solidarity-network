@@ -12,6 +12,7 @@ $extraSpaceForInputPaddingAndBorder: 1em;
 
 $labelWidth: 9em;
 $inputWidth: 12em;
+$extraInputWidthForSelect: 0.4em;
 
 $fieldWidth: $inputWidth + $validationIconWidth + $extraSpaceForInputPaddingAndBorder;
 $fieldWidthDesktop: $labelWidth + $inputWidth + $validationIconWidth + $extraSpaceForInputPaddingAndBorder;

@@ -40,6 +40,8 @@ form .field {
       form .field > select,
       form .field > textarea {
         clear: none; } }
+  form .field > select {
+    width: 12.4em; }
   form .field > input[type=checkbox],
   form .field > input[type=radio] {
     width: 1em; }
