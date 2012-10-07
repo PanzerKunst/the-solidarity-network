@@ -59,6 +59,17 @@ form .field {
         font-weight: bold; }
   form .field > .field-error {
     clear: both; }
+  form .field.check-or-radio > input {
+    width: 1em;
+    margin-right: 0.5em;
+    margin-top: 1em; }
+  form .field.check-or-radio > span {
+    width: 12.5em; }
+  @media screen and (min-width: 49em) {
+    form .field.check-or-radio > input {
+      margin-top: 0.2em; }
+    form .field.check-or-radio > span {
+      width: 21.5em; } }
 form .validation-icon {
   width: 1em;
   height: 1em;

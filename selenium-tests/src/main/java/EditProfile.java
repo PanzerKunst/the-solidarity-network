@@ -11,7 +11,7 @@ public class EditProfile extends TestBase {
         driver.findElement(By.cssSelector("#content a[href='/my-profile/edit']"))
                 .click();
 
-        // Wait 5s for the page to load
+        // Wait for the page to load
         (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
                 return checkProfileValuesForUser(d, user);
@@ -23,7 +23,7 @@ public class EditProfile extends TestBase {
         driver.findElement(By.id("show-account-info"))
                 .click();
 
-        // Wait 5s for the page to load
+        // Wait for the page to load
         (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
                 return checkAccountValuesForUser(d, user);
@@ -38,7 +38,7 @@ public class EditProfile extends TestBase {
         driver.findElement(By.id("show-profile-info"))
                 .click();
 
-        // Wait 5s for the page to load
+        // Wait for the page to load
         (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
                 return d.findElement(By.id("first-name")).isDisplayed();
@@ -83,7 +83,7 @@ public class EditProfile extends TestBase {
         driver.findElement(By.id("show-account-info"))
                 .click();
 
-        // Wait 5s for the page to load
+        // Wait for the page to load
         (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
                 return d.findElement(By.id("email")).isDisplayed();
@@ -106,7 +106,7 @@ public class EditProfile extends TestBase {
          * Checking result
          */
 
-        // Wait 5s for the page to load, check account tab
+        // Wait for the page to load, check account tab
         (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
                 return d.findElement(By.cssSelector(".indication"))
@@ -119,7 +119,7 @@ public class EditProfile extends TestBase {
         driver.findElement(By.id("show-profile-info"))
                 .click();
 
-        // Wait 5s for the page to load, check profile tab
+        // Wait for the page to load, check profile tab
         (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
                 return checkProfileValuesForUser(d, user);

@@ -28,7 +28,7 @@ public class SubmitHelpRequest {
         driver.findElement(By.cssSelector(".action a[href='/help-requests/new']"))
                 .click();
 
-        // Wait 5s for the page to load
+        // Wait for the page to load
         (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
                 return d.findElement(By.id("title")).isDisplayed();
@@ -50,7 +50,7 @@ public class SubmitHelpRequest {
         driver.findElement(By.tagName("form"))
                 .submit();
 
-        // Wait 10s for the page to load, and check that we are redirected to post-join login
+        // Wait for the page to load, and check that we are redirected to post-join login
         (new WebDriverWait(driver, 10)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
                 return d.findElement(By.tagName("body")).getAttribute("id").equals("view-help-request") &&

@@ -12,7 +12,7 @@ public class Login extends TestBase {
         driver.findElement(By.tagName("form"))
                 .submit();
 
-        // Wait 5s for the page to load, and check we have been redirected to "home"
+        // Wait for the page to load, and check we have been redirected to "home"
         (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
                 return d.findElement(By.id("auth-failed"))
@@ -37,7 +37,7 @@ public class Login extends TestBase {
         driver.findElement(By.tagName("form"))
                 .submit();
 
-        // Wait 5s for the page to load, and check we have been redirected to "home"
+        // Wait for the page to load, and check we have been redirected to "home"
         (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
                 return d.getCurrentUrl().equals(Runner.URL_ROOT + "home");
@@ -46,7 +46,7 @@ public class Login extends TestBase {
 
         clickOnMobileMenuLinkIfRequired(driver);
 
-        // Wait 5s for the page to load, and check that the "logout" link exists
+        // Wait for the page to load, and check that the "logout" link exists
         (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
                 return d.findElement(By.cssSelector("a[href='/logout']")).isDisplayed();
@@ -58,7 +58,7 @@ public class Login extends TestBase {
         driver.findElement(By.cssSelector("a[href='/login']"))
                 .click();
 
-        // Wait 5s for the page to load
+        // Wait for the page to load
         (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
                 return d.findElement(By.id("username-or-email")).isDisplayed();
@@ -74,7 +74,7 @@ public class Login extends TestBase {
         driver.findElement(By.tagName("form"))
                 .submit();
 
-        // Wait 5s for the page to load, and check we have been redirected to "home"
+        // Wait for the page to load, and check we have been redirected to "home"
         (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
                 return d.getCurrentUrl().equals(Runner.URL_ROOT + "home");
@@ -83,7 +83,7 @@ public class Login extends TestBase {
 
         clickOnMobileMenuLinkIfRequired(driver);
 
-        // Wait 5s for the page to load, and check that the "logout" link exists
+        // Wait for the page to load, and check that the "logout" link exists
         (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
                 return d.findElement(By.cssSelector("a[href='/logout']")).isDisplayed();
@@ -97,7 +97,7 @@ public class Login extends TestBase {
         driver.findElement(By.cssSelector("a[href='/logout']"))
                 .click();
 
-        // Wait 5s for the page to load, and check that menu is logged-out
+        // Wait for the page to load, and check that menu is logged-out
         (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
                 return d.getCurrentUrl().equals(Runner.URL_ROOT);
@@ -106,7 +106,7 @@ public class Login extends TestBase {
 
         clickOnMobileMenuLinkIfRequired(driver);
 
-        // Wait 5s for the page to load, and check that menu is logged-out
+        // Wait for the page to load, and check that menu is logged-out
         (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
                 return d.findElement(By.id("header-nav"))

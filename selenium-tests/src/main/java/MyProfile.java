@@ -14,7 +14,7 @@ public class MyProfile extends TestBase {
         driver.findElement(By.cssSelector("a[href='/home']"))
                 .click();
 
-        // Wait 5s for the page to load
+        // Wait for the page to load
         (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
                 return d.findElement(By.cssSelector(".action a[href='/my-profile']")).isDisplayed();
@@ -24,7 +24,7 @@ public class MyProfile extends TestBase {
         driver.findElement(By.cssSelector(".action a[href='/my-profile']"))
                 .click();
 
-        // Wait 5s for the page to load
+        // Wait for the page to load
         (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
                 WebElement textualInfo = d.findElement(By.cssSelector("#textual-info"));

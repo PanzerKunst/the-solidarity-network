@@ -13,10 +13,13 @@ form {
     margin-left: auto;
     margin-right: auto;
 
-    width: $inputWidth + $validationIconWidth + $extraSpaceForInputPaddingAndBorder;
+    $fieldWidth: $inputWidth + $validationIconWidth + $extraSpaceForInputPaddingAndBorder;
+    $fieldWidthDesktop: $labelWidth + $inputWidth + $validationIconWidth + $extraSpaceForInputPaddingAndBorder;
+
+    width: $fieldWidth;
 
     @include desktop {
-      width: $labelWidth + $inputWidth + $validationIconWidth + $extraSpaceForInputPaddingAndBorder;
+      width: $fieldWidthDesktop;
     }
 
     > input,
@@ -70,6 +73,30 @@ form {
 
     > .field-error {
       clear: both;
+    }
+
+    &.check-or-radio {
+      $inputWidth: 1em;
+      $inputRightMargin: 0.5em;
+
+      > input {
+        width: $inputWidth;
+        margin-right: $inputRightMargin;
+        margin-top: 1em;
+      }
+      > span {
+        width: $fieldWidth - $inputWidth - $inputRightMargin;
+      }
+
+      @include desktop {
+        > input {
+          margin-top: 0.2em;
+        }
+
+        > span {
+          width: $fieldWidthDesktop - $inputWidth - $inputRightMargin;
+        }
+      }
     }
   }
 

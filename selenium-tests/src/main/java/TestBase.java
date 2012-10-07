@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class TestBase {
     public static void clickOnMobileMenuLinkIfRequired(WebDriver driver) {
-        // Wait 5s for the page to load
+        // Wait for the page to load
         (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
                 return d.findElement(By.cssSelector("#header-nav")).isDisplayed();
@@ -19,7 +19,7 @@ public class TestBase {
             menuAnchor.click();
         }
 
-        // Wait 5s for the content to be displayed
+        // Wait for the content to be displayed
         (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
                 return d.findElement(By.cssSelector("a[href='/about']")).isDisplayed();
