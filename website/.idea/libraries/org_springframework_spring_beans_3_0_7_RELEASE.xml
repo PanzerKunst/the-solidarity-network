@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="org.springframework_spring-beans_3.0.7.RELEASE">
     <CLASSES>
-      <root url="jar://E:/servers/play-2.0.3/repository/local/org.springframework/spring-beans/3.0.7.RELEASE/jars/spring-beans.jar!/" />
+      <root url="jar://E:/servers/play-2.0.4/repository/local/org.springframework/spring-beans/3.0.7.RELEASE/jars/spring-beans.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="org.seleniumhq.selenium_selenium-iphone-driver_2.16.1_test">
     <CLASSES>
-      <root url="jar://E:/servers/play-2.0.3/repository/local/org.seleniumhq.selenium/selenium-iphone-driver/2.16.1/jars/selenium-iphone-driver.jar!/" />
+      <root url="jar://E:/servers/play-2.0.4/repository/local/org.seleniumhq.selenium/selenium-iphone-driver/2.16.1/jars/selenium-iphone-driver.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

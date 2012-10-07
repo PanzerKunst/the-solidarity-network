@@ -18,7 +18,7 @@
         <dependency>
             <groupId>com.opera</groupId>
             <artifactId>operadriver</artifactId>
-            <version>0.16.1</version>
+            <version>0.18</version>
         </dependency>
 
         <dependency>
