@@ -11,6 +11,7 @@
 /website/.classpath
 /website/.project
 /website/RUNNING_PID
+/website/public/dist
 
 /website/public/stylesheets/scss/.sass-cache
 

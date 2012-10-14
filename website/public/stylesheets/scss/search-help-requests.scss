@@ -3,11 +3,14 @@
 body#search-help-requests {
   #content {
 
-    $inputWidth: 25em;
     $searchButtonWidth: 4em;
 
     .centered {
-      width: $inputWidth + $searchButtonWidth + $extraSpaceForInputPaddingAndBorder;
+      width: $fieldWidth + $searchButtonWidth;
+
+      @include desktop {
+        width: $fieldWidthDesktop + $searchButtonWidth;
+      }
 
       margin-left: auto;
       margin-right: auto;
@@ -24,7 +27,12 @@ body#search-help-requests {
     }
 
     #query {
-      width: $inputWidth;
+      // -1em otherwise the <field> container is smaller than the input field
+      width: $fieldWidth - 1;
+
+      @include desktop {
+        width: $fieldWidthDesktop - 1;
+      }
     }
 
     // Search results

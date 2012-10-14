@@ -96,6 +96,14 @@ public class EditProfile extends TestBase {
         driver.findElement(By.id("email"))
                 .sendKeys(user.getEmail());
 
+        // Wait for e-mail confirmation to be interactible with
+        (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
+            public Boolean apply(WebDriver d) {
+                return d.findElement(By.id("email-confirmation")).isDisplayed() &&
+                        d.findElement(By.id("email-confirmation")).isEnabled();
+            }
+        });
+
         driver.findElement(By.id("email-confirmation"))
                 .sendKeys(user.getEmail());
 

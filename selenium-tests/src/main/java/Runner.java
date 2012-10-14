@@ -36,7 +36,7 @@ public class Runner {
         testInChrome(new Dimension(320, 1024));
         testInIE(new Dimension(320, 1024));
 
-        // No test in Opera, because of:
+        // TODO No test in Opera, because of:
         // java.lang.UnsupportedOperationException: Not supported in OperaDriver yet
     }
 

@@ -38,18 +38,21 @@ body#view-help-request {
     }
 
     #main {
-      width: 20em;
+      max-width: 25em;
       margin: auto;
 
       @include desktop {
-        width: 65%;
+        max-width: 65%;
         margin: 0;
       }
     }
 
     textarea {
-      width: 20em;
-      height: 4em;
+      width: $fieldWidth;
+
+      @include desktop {
+        width: $fieldWidthDesktop;
+      }
     }
 
     #responses {

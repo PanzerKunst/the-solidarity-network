@@ -1,8 +1,11 @@
 body#search-help-requests #content .centered {
-  width: 30em;
+  width: 18em;
   margin-left: auto;
   margin-right: auto;
   zoom: 1; }
+  @media screen and (min-width: 49em) {
+    body#search-help-requests #content .centered {
+      width: 27em; } }
   body#search-help-requests #content .centered:before, body#search-help-requests #content .centered:after {
     content: "";
     display: table; }
@@ -13,7 +16,10 @@ body#search-help-requests #content .centered {
   body#search-help-requests #content .centered > span {
     width: 4em; }
 body#search-help-requests #content #query {
-  width: 25em; }
+  width: 13em; }
+  @media screen and (min-width: 49em) {
+    body#search-help-requests #content #query {
+      width: 22em; } }
 body#search-help-requests #content table {
   max-width: 50em;
   margin-left: auto;
