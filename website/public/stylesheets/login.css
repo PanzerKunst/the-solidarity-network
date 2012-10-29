@@ -5,7 +5,8 @@ body#login #content .field {
   body#login #content .field > input {
     width: 12em; }
 body#login #content #auth-failed {
-  display: none;
+  opacity: 0;
+  line-height: 0;
   text-align: center; }
 body#login #content #join {
   margin-left: auto;

@@ -1,6 +1,8 @@
 body#view-help-request #content #respond-form,
 body#view-help-request #content #reference-form {
-  display: none; }
+  display: none;
+  opacity: 0;
+  line-height: 0; }
 body#view-help-request #content #requester > div,
 body#view-help-request #content #main > div {
   text-align: center; }
@@ -48,6 +50,8 @@ body#view-help-request #content #responses img {
   float: left;
   max-width: 4em;
   max-height: 4em; }
+body#view-help-request #content #responses > .field.check-or-radio > span {
+  width: 14em; }
 body#view-help-request #content #submit-response-wrapper,
 body#view-help-request #content #submit-reference-wrapper {
   margin: auto;

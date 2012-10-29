@@ -1,5 +1,6 @@
 body#edit-profile #content .indication {
-  display: none; }
+  opacity: 0;
+  line-height: 0; }
 body#edit-profile #content > ul {
   zoom: 1; }
   body#edit-profile #content > ul:before, body#edit-profile #content > ul:after {
@@ -12,7 +13,9 @@ body#edit-profile #content > ul {
 body#edit-profile #content #account-info {
   display: none; }
 body#edit-profile #content #email-confirmation-field {
-  display: none; }
+  display: none;
+  opacity: 0;
+  line-height: 0; }
 body#edit-profile #content #new-help-requests-frequencies > div {
   padding-left: 3em; }
 body#edit-profile #content label[for="language"] {

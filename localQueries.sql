@@ -50,7 +50,6 @@ CREATE TABLE `user` (
   CONSTRAINT `FK_country` FOREIGN KEY (`country_id`) REFERENCES `country` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-
 Create table `help_request`(
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `requester_id` int(10) unsigned NOT NULL,
@@ -62,7 +61,6 @@ Create table `help_request`(
   constraint `fk_requester` foreign key (`requester_id`) references `user`(`id`)
 ) ENGINE=InnoDB DEFAULT charset=utf8;
 
-
 Create table `help_response`(
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `request_id` int(10) unsigned NOT NULL,
@@ -72,6 +70,15 @@ Create table `help_response`(
   primary key (`id`),
   constraint `fk_request` foreign key (`request_id`) references `help_request`(`id`),
   constraint `fk_responder` foreign key (`responder_id`) references `user`(`id`)
+) ENGINE=InnoDB DEFAULT charset=utf8;
+
+Create table `subscription_to_help_responses`(
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `request_id` int(10) unsigned NOT NULL,
+  `subscriber_id` int(10) unsigned NOT NULL,
+  primary key (`id`),
+  constraint `fk_request1` foreign key (`request_id`) references `help_request`(`id`),
+  constraint `fk_subscriber` foreign key (`subscriber_id`) references `user`(`id`)
 ) ENGINE=InnoDB DEFAULT charset=utf8;
 
 Create table `reference_rating` (
@@ -124,3 +131,5 @@ select * from reference;
 select * from help_request;
 
 select * from help_response;
+
+select * from subscription_to_help_responses;

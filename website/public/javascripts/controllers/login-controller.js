@@ -29,8 +29,6 @@ CBR.Controllers.Login = new Class({
     },
 
     _initValidation: function () {
-        jQuery(".field-error").hide();
-
         this.validator = new CBR.Services.Validator({
             fieldIds: [
                 "username-or-email",
@@ -54,7 +52,7 @@ CBR.Controllers.Login = new Class({
     _doLogin: function (e) {
         e.preventDefault();
 
-        this.$authFailed.slideUp(200, "easeInQuad");
+        this.$authFailed.slideUpAnimated();
 
         if (this.validator.isValid()) {
             var user = {
@@ -75,7 +73,7 @@ CBR.Controllers.Login = new Class({
                 data: CBR.JsonUtil.stringifyModel(user),
                 onSuccess: function (responseText, responseXML) {
                     if (this.status === _this.httpStatusCode.noContent)
-                        _this.$authFailed.slideDown(200, "easeOutQuad");
+                        _this.$authFailed.slideDownAnimated();
                     else
                         location.href = "/home";
                 },

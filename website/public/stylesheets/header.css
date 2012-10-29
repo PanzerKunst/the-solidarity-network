@@ -21,6 +21,8 @@ header {
     float: right; }
   #header-nav > ul {
     display: none;
+    opacity: 0;
+    line-height: 0;
     clear: both;
     background-color: #3f3f3f;
     color: white; }
@@ -35,6 +37,8 @@ header {
       #header-nav > ul {
         zoom: 1;
         display: block;
+        opacity: 1;
+        line-height: 1.4;
         background-color: inherit;
         color: #3f3f3f; }
         #header-nav > ul:before, #header-nav > ul:after {

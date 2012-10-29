@@ -3,7 +3,7 @@
 body#edit-profile {
   #content {
     .indication {
-      display: none;
+      @include prepareForAnimatedSlideDown();
     }
 
     > ul {
@@ -19,7 +19,10 @@ body#edit-profile {
     }
 
     #email-confirmation-field {
+      // Otherwise a white block is displayed
       display: none;
+
+      @include prepareForAnimatedSlideDown();
     }
 
     #new-help-requests-frequencies {

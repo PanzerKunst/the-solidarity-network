@@ -16,7 +16,8 @@ body#login {
     }
 
     #auth-failed {
-      display: none;
+      @include prepareForAnimatedSlideDown();
+
       text-align: center;
     }
 

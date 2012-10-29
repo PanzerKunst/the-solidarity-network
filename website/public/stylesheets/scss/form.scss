@@ -75,30 +75,6 @@ form {
     > .field-error {
       clear: both;
     }
-
-    &.check-or-radio {
-      $inputWidth: 1em;
-      $inputRightMargin: 0.5em;
-
-      > input {
-        width: $inputWidth;
-        margin-right: $inputRightMargin;
-        margin-top: 1em;
-      }
-      > span {
-        width: $fieldWidth - $inputWidth - $inputRightMargin;
-      }
-
-      @include desktop {
-        > input {
-          margin-top: 0.2em;
-        }
-
-        > span {
-          width: $fieldWidthDesktop - $inputWidth - $inputRightMargin;
-        }
-      }
-    }
   }
 
   .validation-icon {
@@ -123,6 +99,8 @@ form {
     font-style: italic;
     font-size: small;
     color: $red;
+
+    @include prepareForAnimatedSlideDown();
   }
 
   input[type=submit] {
@@ -136,6 +114,30 @@ form {
     padding: 0;
     margin: 0;
     overflow: hidden;
+  }
+}
+
+.field.check-or-radio {
+  $inputWidth: 1em;
+  $inputRightMargin: 0.5em;
+
+  > input {
+    width: $inputWidth;
+    margin-right: $inputRightMargin;
+    margin-top: 1em;
+  }
+  > span {
+    width: $fieldWidth - $inputWidth - $inputRightMargin;
+  }
+
+  @include desktop {
+    > input {
+      margin-top: 0.2em;
+    }
+
+    > span {
+      width: $fieldWidthDesktop - $inputWidth - $inputRightMargin;
+    }
   }
 }
 

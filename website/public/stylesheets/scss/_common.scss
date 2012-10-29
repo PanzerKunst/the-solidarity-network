@@ -22,3 +22,13 @@ $fieldWidthDesktop: $labelWidth + $inputWidth + $validationIconWidth + $extraSpa
     @content;
   }
 }
+
+@mixin prepareForAnimatedSlideDown {
+  opacity: 0;
+  line-height: 0;
+}
+
+@mixin unprepareForAnimatedSlideDown {
+  opacity: 1;
+  line-height: 1.4;
+}

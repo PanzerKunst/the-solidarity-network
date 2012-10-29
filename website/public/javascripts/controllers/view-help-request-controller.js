@@ -21,6 +21,10 @@ CBR.Controllers.ViewHelpRequest = new Class({
         this._initPills();
     },
 
+    _getHelpRequest: function() {
+        return this.options.helpRequest;
+    },
+
     _getHelpRequester: function() {
         return this.options.helpRequest.requester;
     },
@@ -28,6 +32,8 @@ CBR.Controllers.ViewHelpRequest = new Class({
     _initElements: function () {
         this.$respondForm = jQuery("#respond-form");
         this.$respond = jQuery("#respond");
+
+        this.$isSubscribingToFutureResponsesCheckbox = jQuery("#is-subscribing-to-future-responses");
 
         this.$referenceForm = jQuery("#reference-form");
         this.$writeReference = jQuery("#write-reference");
@@ -54,6 +60,8 @@ CBR.Controllers.ViewHelpRequest = new Class({
     },
 
     _initEvents: function () {
+        this.$isSubscribingToFutureResponsesCheckbox.change(jQuery.proxy(this._changeSubscriptionToResponses, this));
+
         this.$respond.click(jQuery.proxy(this._toggleRespondForm, this));
         jQuery("#cancel-response-button").click(jQuery.proxy(this._collapseRespondForm, this));
         jQuery("#post-response-button").click(jQuery.proxy(this._doCreateResponse, this));
@@ -95,15 +103,25 @@ CBR.Controllers.ViewHelpRequest = new Class({
         if (this.$respond.hasClass("expanded"))
             this._collapseRespondForm();
         else {
-            this.$expanded.slideUp(200, "easeInQuad");
+            this.$expanded.slideUpAnimated({
+                complete: function () {
+                    jQuery(this).hide();
+                }
+            });
 
-            this.$respondForm.slideDown(200, "easeOutQuad");
+            this.$respondForm.show(0, function () {
+                jQuery(this).slideDownAnimated();
+            });
             this.$respond.addClass("expanded");
         }
     },
 
     _collapseRespondForm: function () {
-        this.$respondForm.slideUp(200, "easeInQuad");
+        this.$respondForm.slideUpAnimated({
+            complete: function () {
+                jQuery(this).hide();
+            }
+        });
         this.$respond.removeClass("expanded");
     },
 
@@ -111,15 +129,25 @@ CBR.Controllers.ViewHelpRequest = new Class({
         if (this.$writeReference.hasClass("expanded"))
             this._collapseReferenceForm();
         else {
-            this.$expanded.slideUp(200, "easeInQuad");
+            this.$expanded.slideUpAnimated({
+                complete: function () {
+                    jQuery(this).hide();
+                }
+            });
 
-            this.$referenceForm.slideDown(200, "easeOutQuad");
+            this.$referenceForm.show(0, function () {
+                jQuery(this).slideDownAnimated();
+            });
             this.$writeReference.addClass("expanded");
         }
     },
 
     _collapseReferenceForm: function () {
-        this.$referenceForm.slideUp(200, "easeInQuad");
+        this.$referenceForm.slideUpAnimated({
+            complete: function () {
+                jQuery(this).hide();
+            }
+        });
         this.$writeReference.removeClass("expanded");
     },
 
@@ -181,5 +209,33 @@ CBR.Controllers.ViewHelpRequest = new Class({
                 }
             }).post();
         }
+    },
+
+    _changeSubscriptionToResponses: function(e) {
+        e.preventDefault();
+
+        var subscription = new CBR.Models.SubscriptionToHelpResponses({
+            requestId: this._getHelpRequest().id
+        });
+
+        var _this = this;
+
+        var request = new Request({
+            urlEncoded: false,
+            headers: { "Content-Type": "application/json" },
+            url: "/api/help-requests/subscribe-to-responses",
+            data: CBR.JsonUtil.stringifyModel(subscription),
+            onFailure: function (xhr) {
+                if (xhr.status === _this.httpStatusCode.unauthorized)
+                    location.replace("/login");
+                else
+                    alert("AJAX fail :(");
+            }
+        });
+
+        if (this.$isSubscribingToFutureResponsesCheckbox.is(':checked'))
+            request.post();
+        else
+            request.delete();
     }
 });

@@ -74,6 +74,12 @@
             </article>
             {{/helpResponses}}
 
+            @if(user.id.get != helpRequest.requester.id) {
+            <div class="field check-or-radio">
+                <input type="checkbox" id="is-subscribing-to-future-responses"><!--
+             --><span>Subscribe to future responses</span>
+            </div>
+            }
         </section>
 
         @if(user.id.get != helpRequest.requester.id) {

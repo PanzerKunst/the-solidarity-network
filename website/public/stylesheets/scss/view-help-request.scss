@@ -4,7 +4,10 @@ body#view-help-request {
   #content {
     #respond-form,
     #reference-form {
+      // Otherwise a empty block is displayed
       display: none;
+
+      @include prepareForAnimatedSlideDown();
     }
 
     #requester,
@@ -65,6 +68,12 @@ body#view-help-request {
         float: left;
         max-width: 4em;
         max-height: 4em;
+      }
+
+      > .field.check-or-radio {
+        > span {
+          width: 14em;
+        }
       }
     }
 

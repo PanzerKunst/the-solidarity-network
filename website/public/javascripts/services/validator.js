@@ -146,7 +146,7 @@ CBR.Services.Validator = new Class({
             $field.children(".active").length === 0) {
 
             this.flagInvalid($field);
-            this._get$empty($field).slideDown(200, "easeOutQuad");
+            this._get$empty($field).slideDownAnimated();
             return false;
         }
         else if (this._isToCheckIfEmpty($field) &&
@@ -155,48 +155,48 @@ CBR.Services.Validator = new Class({
 
             if (!isOnBlur) {
                 this.flagInvalid($field);
-                this._get$empty($field).slideDown(200, "easeOutQuad");
+                this._get$empty($field).slideDownAnimated();
             }
             return false;
         }
         else
-            this._get$empty($field).slideUp(200, "easeInQuad");
+            this._get$empty($field).slideUpAnimated();
 
         // Email?
         if (this._isToCheckIfEmail($field) && !this._isValidEmail($field.val())) {
             this.flagInvalid($field);
-            this._get$email($field).slideDown(200, "easeOutQuad");
+            this._get$email($field).slideDownAnimated();
             return false;
         }
         else
-            this._get$email($field).slideUp(200, "easeInQuad");
+            this._get$email($field).slideUpAnimated();
 
         // Username?
         if (this._isToCheckIfUsername($field) && !this._isValidUsername($field.val())) {
             this.flagInvalid($field);
-            this._get$username($field).slideDown(200, "easeOutQuad");
+            this._get$username($field).slideDownAnimated();
             return false;
         }
         else
-            this._get$username($field).slideUp(200, "easeInQuad");
+            this._get$username($field).slideUpAnimated();
 
         // In the future?
         if (this._isToCheckIfInFuture($field) && !this._isInFuture($field.val())) {
             this.flagInvalid($field);
-            this._get$inFuture($field).slideDown(200, "easeOutQuad");
+            this._get$inFuture($field).slideDownAnimated();
             return false;
         }
         else
-            this._get$inFuture($field).slideUp(200, "easeInQuad");
+            this._get$inFuture($field).slideUpAnimated();
 
         // In max 2 weeks?
         if (this._isToCheckIfInMaxTwoWeeks($field) && !this._isInMaxTwoWeeks($field.val())) {
             this.flagInvalid($field);
-            this._get$inMaxTwoWeeks($field).slideDown(200, "easeOutQuad");
+            this._get$inMaxTwoWeeks($field).slideDownAnimated();
             return false;
         }
         else
-            this._get$inMaxTwoWeeks($field).slideUp(200, "easeInQuad");
+            this._get$inMaxTwoWeeks($field).slideUpAnimated();
 
         this.flagValid($field);
 
