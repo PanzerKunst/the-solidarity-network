@@ -31,7 +31,7 @@ POST    /api/authenticate           controllers.api.AuthApi.authenticate
 POST    /api/help-requests          controllers.api.HelpRequestApi.create
 GET     /api/help-requests          controllers.api.HelpRequestApi.get
 POST    /api/help-requests/subscribe-to-responses   controllers.api.HelpRequestApi.subscribeTo
-DELETE  /api/help-requests/subscribe-to-responses   controllers.api.HelpRequestApi.unsubscribeTo
+DELETE  /api/help-requests/subscribe-to-responses   controllers.api.HelpRequestApi.unsubscribeFrom
 POST    /api/help-responses         controllers.api.HelpResponseApi.create
 POST    /api/db/admin               controllers.api.DbAdminApi.createTables
 DELETE  /api/db/admin               controllers.api.DbAdminApi.dropTables

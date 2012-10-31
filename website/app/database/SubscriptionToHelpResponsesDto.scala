@@ -49,8 +49,8 @@ object SubscriptionToHelpResponsesDto {
       implicit c =>
 
         val query = """
-                       delete subscription_to_help_responses
-      where request_id = """ + subscriptionToHelpResponses.requestId + """,
+                       delete from subscription_to_help_responses
+      where request_id = """ + subscriptionToHelpResponses.requestId + """
           and subscriber_id = """ + subscriptionToHelpResponses.subscriberId.get + """;"""
 
         Logger.info("SubscriptionToHelpResponsesDto.delete(): " + query)

@@ -3,7 +3,7 @@ package controllers.api
 import services.JsonUtil
 import play.api.mvc.{Action, Controller}
 import database.{SubscriptionToHelpResponsesDto, HelpRequestDto}
-import models.{SubscriptionToHelpResponses, User, Country, HelpRequest}
+import models.{SubscriptionToHelpResponses, User, HelpRequest}
 import controllers.Application
 import play.api.Logger
 import models.frontend.FrontendHelpRequest
@@ -55,10 +55,16 @@ object HelpRequestApi extends Controller {
           val subscription = JsonUtil.parse(request.body.toString, classOf[SubscriptionToHelpResponses])
           val subscriptionWithSubscriberId = subscription.copy(subscriberId = loggedInUser.id)
 
-          SubscriptionToHelpResponsesDto.create(subscriptionWithSubscriberId) match {
-            case Some(id) => Ok(id.toString)
-            case None => InternalServerError("Creation of a subscription to help responses did not return an ID!")
-          }
+          val filtersMap = Map("request_id" -> subscriptionWithSubscriberId.requestId.toString,
+            "subscriber_id" -> subscriptionWithSubscriberId.subscriberId.get.toString)
+
+          if (SubscriptionToHelpResponsesDto.get(Some(filtersMap)).isEmpty)
+            SubscriptionToHelpResponsesDto.create(subscriptionWithSubscriberId) match {
+              case Some(id) => Ok(id.toString)
+              case None => InternalServerError("Creation of a subscription to help responses did not return an ID!")
+            }
+          else
+            Ok
         }
         case None => {
           Logger.info("Attempt to create a subscription to help responses while not logged-in")
@@ -67,7 +73,7 @@ object HelpRequestApi extends Controller {
       }
   }
 
-  def unsubscribeTo = Action(parse.json) {
+  def unsubscribeFrom = Action(parse.json) {
     implicit request =>
 
       Application.loggedInUser(session) match {

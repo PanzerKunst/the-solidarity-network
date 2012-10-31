@@ -123,9 +123,14 @@ object Application extends Controller {
       loggedInUser(session) match {
         case Some(loggedInUser) =>
           val helpRequest = HelpRequestDto.get(Some(Map("id" -> id.toString))).head
+
+          val filtersMap = Map("request_id" -> id.toString,
+            "subscriber_id" -> loggedInUser.id.get.toString)
+          val isSubscribedToResponses = !SubscriptionToHelpResponsesDto.get(Some(filtersMap)).isEmpty
+
           val frontendHelpResponses = for (helpResponse <- HelpResponseDto.get(Some(Map("request_id" -> id.toString)))) yield new FrontendHelpResponse(helpResponse)
 
-          Ok(views.html.viewHelpRequest(loggedInUser, new FrontendHelpRequest(helpRequest), frontendHelpResponses))
+          Ok(views.html.viewHelpRequest(loggedInUser, new FrontendHelpRequest(helpRequest), isSubscribedToResponses, frontendHelpResponses))
         case None => Redirect(routes.Application.login)
       }
   }

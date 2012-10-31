@@ -1,4 +1,4 @@
-@(user: models.User, helpRequest: models.frontend.FrontendHelpRequest, helpResponses: List[models.frontend.FrontendHelpResponse])
+@(user: models.User, helpRequest: models.frontend.FrontendHelpRequest, isSubscribedToResponses: java.lang.Boolean, helpResponses: List[models.frontend.FrontendHelpResponse])
 @main(helpRequest.title, "view-help-request") {
 <!--
     Header
@@ -76,7 +76,7 @@
 
             @if(user.id.get != helpRequest.requester.id) {
             <div class="field check-or-radio">
-                <input type="checkbox" id="is-subscribing-to-future-responses"><!--
+                <input type="checkbox" id="is-subscribing-to-future-responses" {{#isSubscribedToResponses}}checked="checked"{{/isSubscribedToResponses}}><!--
              --><span>Subscribe to future responses</span>
             </div>
             }
@@ -175,6 +175,7 @@
         new CBR.Controllers.ViewHelpRequest({
             el: "#content",
             helpRequest: @Html(services.JsonUtil.serialize(helpRequest)),
+            isSubscribedToResponses: @Html(services.JsonUtil.serialize(isSubscribedToResponses)),
             helpResponses: @Html(services.JsonUtil.serialize(helpResponses))
         }).run();
     });

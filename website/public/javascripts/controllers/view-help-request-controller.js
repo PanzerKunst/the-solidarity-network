@@ -223,6 +223,7 @@ CBR.Controllers.ViewHelpRequest = new Class({
         var request = new Request({
             urlEncoded: false,
             headers: { "Content-Type": "application/json" },
+            emulation: false, // Otherwise PUT and DELETE requests are sent as POST
             url: "/api/help-requests/subscribe-to-responses",
             data: CBR.JsonUtil.stringifyModel(subscription),
             onFailure: function (xhr) {
