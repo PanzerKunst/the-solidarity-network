@@ -1,12 +1,17 @@
 import models.User;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Join extends TestBase {
     public static void properFormFill(WebDriver driver, final User user) {
+        if (driver instanceof ChromeDriver) {
+            sleepBecauseSeleniumSucks();
+        }
+
         driver.findElement(By.cssSelector(".action a[href='/join']"))
                 .click();
 

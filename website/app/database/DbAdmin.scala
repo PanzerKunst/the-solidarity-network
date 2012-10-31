@@ -10,6 +10,7 @@ object DbAdmin {
     createTableUser
     createTableHelpRequest
     createTableHelpResponse
+    createTableSubscriptionToHelpResponses
     createTableReferenceRating
     createTableReference
   }
@@ -17,6 +18,7 @@ object DbAdmin {
   def dropTables {
     dropTableReference
     dropTableReferenceRating
+    dropTableSubscriptionToHelpResponses
     dropTableHelpResponse
     dropTableHelpRequest
     dropTableUser
@@ -109,6 +111,24 @@ object DbAdmin {
     }
   }
 
+  private def createTableSubscriptionToHelpResponses {
+    DB.withConnection {
+      implicit c =>
+
+        val query = """
+        Create table `subscription_to_help_responses`(
+          `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+          `request_id` int(10) unsigned NOT NULL,
+          `subscriber_id` int(10) unsigned NOT NULL,
+          primary key (`id`),
+          constraint `fk_request1` foreign key (`request_id`) references `help_request`(`id`),
+          constraint `fk_subscriber` foreign key (`subscriber_id`) references `user`(`id`)
+        ) ENGINE=InnoDB DEFAULT charset=utf8;"""
+
+        SQL(query).executeUpdate()
+    }
+  }
+
   private def createTableReferenceRating {
     DB.withConnection {
       implicit c =>
@@ -158,6 +178,13 @@ object DbAdmin {
     DB.withConnection {
       implicit c =>
         SQL("drop table if exists reference_rating;").executeUpdate()
+    }
+  }
+
+  private def dropTableSubscriptionToHelpResponses {
+    DB.withConnection {
+      implicit c =>
+        SQL("drop table if exists subscription_to_help_responses;").executeUpdate()
     }
   }
 

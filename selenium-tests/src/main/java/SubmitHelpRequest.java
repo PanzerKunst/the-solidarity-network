@@ -1,12 +1,13 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-public class SubmitHelpRequest {
+public class SubmitHelpRequest extends TestBase {
 
     private static final String hrTitle = "HR title";
     private static final String hrDesc = "HR desc Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
@@ -17,6 +18,11 @@ public class SubmitHelpRequest {
                 return d.findElement(By.cssSelector(".action a[href='/help']")).isDisplayed();
             }
         });
+
+        if (driver instanceof ChromeDriver) {
+            sleepBecauseSeleniumSucks();
+        }
+
         driver.findElement(By.cssSelector(".action a[href='/help']"))
                 .click();
 

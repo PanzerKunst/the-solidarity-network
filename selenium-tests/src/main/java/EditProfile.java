@@ -1,6 +1,7 @@
 import models.User;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -77,11 +78,19 @@ public class EditProfile extends TestBase {
         driver.findElement(By.id("description"))
                 .sendKeys(user.getDescription());
 
+        if (driver instanceof ChromeDriver) {
+            sleepBecauseSeleniumSucks();
+        }
+
         /**
          * Account tab
          */
         driver.findElement(By.id("show-account-info"))
                 .click();
+
+        if (driver instanceof ChromeDriver) {
+            sleepBecauseSeleniumSucks();
+        }
 
         // Wait for the page to load
         (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {

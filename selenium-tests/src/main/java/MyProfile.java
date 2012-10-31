@@ -2,6 +2,7 @@ import models.User;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -10,6 +11,10 @@ public class MyProfile extends TestBase {
     public static void checkPage(WebDriver driver, final User user) {
 
         clickOnMobileMenuLinkIfRequired(driver);
+
+        if (driver instanceof ChromeDriver) {
+            sleepBecauseSeleniumSucks();
+        }
 
         driver.findElement(By.cssSelector("a[href='/home']"))
                 .click();

@@ -1,10 +1,13 @@
+import com.opera.core.systems.OperaDriver;
 import models.User;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class WriteReference {
+public class WriteReference extends TestBase {
 
     private static final String refText = "Good lad! was fun to help!";
 
@@ -17,8 +20,16 @@ public class WriteReference {
         driver.findElement(By.id("write-reference"))
                 .click();
 
+        if (driver instanceof OperaDriver) {
+            sleepBecauseSeleniumSucks();
+        }
+
         driver.findElement(By.cssSelector("#helped > a"))
                 .click();
+
+        if (driver instanceof ChromeDriver) {
+            sleepBecauseSeleniumSucks();
+        }
 
         driver.findElement(By.cssSelector("#grade a"))
                 .click();
@@ -29,8 +40,12 @@ public class WriteReference {
         driver.findElement(By.id("post-reference-button"))
                 .click();
 
+        if (driver instanceof ChromeDriver) {
+            sleepBecauseSeleniumSucks(10000);
+        }
+
         // Wait for page to load
-        (new WebDriverWait(driver, 20)).until(new ExpectedCondition<Boolean>() {
+        (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
                 return d.getCurrentUrl().startsWith(Runner.URL_ROOT + "help-requests/") &&
                         !d.findElement(By.id("reference-form")).isDisplayed();

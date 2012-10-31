@@ -26,4 +26,17 @@ public class TestBase {
             }
         });
     }
+
+    public static void sleepBecauseSeleniumSucks() {
+        sleepBecauseSeleniumSucks(500);
+    }
+
+    public static void sleepBecauseSeleniumSucks(long millis) {
+        try {
+            Thread.sleep(millis);
+        }
+        catch (InterruptedException e) {
+            // Nothing
+        }
+    }
 }

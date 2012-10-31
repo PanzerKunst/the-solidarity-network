@@ -1,9 +1,10 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class SearchHelpRequests {
+public class SearchHelpRequests extends TestBase {
 
     private static final String hrText = "I can help, send me a message!";
 
@@ -13,6 +14,11 @@ public class SearchHelpRequests {
                 return d.findElement(By.cssSelector(".action a[href='/help']")).isDisplayed();
             }
         });
+
+        if (driver instanceof ChromeDriver) {
+            sleepBecauseSeleniumSucks();
+        }
+
         driver.findElement(By.cssSelector(".action a[href='/help']"))
                 .click();
 
