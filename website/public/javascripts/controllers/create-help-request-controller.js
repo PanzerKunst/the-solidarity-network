@@ -18,8 +18,6 @@ CBR.Controllers.CreateHelpRequest = new Class({
     },
 
     _initValidation: function () {
-        jQuery(".field-error").hide();
-
         this.validator = new CBR.Services.Validator({
             fieldIds: [
                 "title",

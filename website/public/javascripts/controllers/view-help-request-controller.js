@@ -42,8 +42,6 @@ CBR.Controllers.ViewHelpRequest = new Class({
     },
 
     _initValidation: function () {
-        jQuery(".field-error").hide();
-
         this.responseValidator = new CBR.Services.Validator({
             fieldIds: [
                 "response-text"
