@@ -1,6 +1,6 @@
 @import "common";
 
-body#my-profile {
+#my-profile {
   #content {
     @include desktop {
       #profile-info {

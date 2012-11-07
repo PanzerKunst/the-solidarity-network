@@ -1,6 +1,6 @@
 @import "common";
 
-body#edit-profile {
+#edit-profile {
   #content {
     .indication {
       @include prepareForAnimatedSlideDown();
