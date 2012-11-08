@@ -20,9 +20,7 @@ public class WriteReference extends TestBase {
         driver.findElement(By.id("write-reference"))
                 .click();
 
-        if (driver instanceof OperaDriver) {
-            sleepBecauseSeleniumSucks();
-        }
+        sleepBecauseSeleniumSucks();
 
         driver.findElement(By.cssSelector("#helped > a"))
                 .click();
