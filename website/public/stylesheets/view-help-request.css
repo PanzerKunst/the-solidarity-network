@@ -1,61 +1,59 @@
-body#view-help-request #content #respond-form,
-body#view-help-request #content #reference-form {
+#view-help-request #content #respond-form,
+#view-help-request #content #reference-form {
   display: none;
   opacity: 0;
   line-height: 0; }
-body#view-help-request #content #requester > div,
-body#view-help-request #content #main > div {
+#view-help-request #content #requester > div,
+#view-help-request #content #main > div {
   text-align: center; }
 @media screen and (min-width: 49em) {
-  body#view-help-request #content #requester,
-  body#view-help-request #content #main {
+  #view-help-request #content #requester,
+  #view-help-request #content #main {
     float: left; } }
 @media screen and (min-width: 49em) {
-  body#view-help-request #content #requester {
+  #view-help-request #content #requester {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-    -o-box-sizing: border-box;
     box-sizing: border-box;
     padding-top: 9em;
     padding-right: 1em;
     width: 35%; } }
-body#view-help-request #content #requester > p {
+#view-help-request #content #requester > p {
   text-align: center; }
-body#view-help-request #content #requester > img {
+#view-help-request #content #requester > img {
   margin: auto;
   max-width: 11em;
   max-height: 11em; }
-body#view-help-request #content #main {
+#view-help-request #content #main {
   max-width: 25em;
   margin: auto; }
   @media screen and (min-width: 49em) {
-    body#view-help-request #content #main {
+    #view-help-request #content #main {
       max-width: 65%;
       margin: 0; } }
-body#view-help-request #content textarea {
+#view-help-request #content textarea {
   width: 14em; }
   @media screen and (min-width: 49em) {
-    body#view-help-request #content textarea {
+    #view-help-request #content textarea {
       width: 23em; } }
-body#view-help-request #content #responses > article {
+#view-help-request #content #responses > article {
   zoom: 1;
   margin-bottom: 1em; }
-  body#view-help-request #content #responses > article:before, body#view-help-request #content #responses > article:after {
+  #view-help-request #content #responses > article:before, #view-help-request #content #responses > article:after {
     content: "";
     display: table; }
-  body#view-help-request #content #responses > article:after {
+  #view-help-request #content #responses > article:after {
     clear: both; }
-body#view-help-request #content #responses img {
+#view-help-request #content #responses img {
   float: left;
   max-width: 4em;
   max-height: 4em; }
-body#view-help-request #content #responses > .field.check-or-radio > span {
+#view-help-request #content #responses > .field.check-or-radio > span {
   width: 14em; }
-body#view-help-request #content #submit-response-wrapper,
-body#view-help-request #content #submit-reference-wrapper {
+#view-help-request #content #submit-response-wrapper,
+#view-help-request #content #submit-reference-wrapper {
   margin: auto;
   width: 12em; }
-  body#view-help-request #content #submit-response-wrapper > :first-child,
-  body#view-help-request #content #submit-reference-wrapper > :first-child {
+  #view-help-request #content #submit-response-wrapper > :first-child,
+  #view-help-request #content #submit-reference-wrapper > :first-child {
     margin-right: 1em; }

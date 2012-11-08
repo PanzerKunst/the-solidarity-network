@@ -1,3 +1,12 @@
-@media screen and (min-width: 49em) {
-  body#help-dashboard #content .action {
-    width: 50%; } }
+#help-dashboard #content {
+  zoom: 1; }
+  #help-dashboard #content:before, #help-dashboard #content:after {
+    content: "";
+    display: table; }
+  #help-dashboard #content:after {
+    clear: both; }
+  @media screen and (min-width: 49em) {
+    #help-dashboard #content .action {
+      width: 50%; } }
+  #help-dashboard #content #rss-feed-wrapper {
+    clear: both; }

@@ -1,40 +1,48 @@
-body#search-help-requests #content .centered {
+#search-help-requests #content .centered {
   width: 18em;
+  text-align: center;
   margin-left: auto;
-  margin-right: auto;
-  zoom: 1; }
+  margin-right: auto; }
   @media screen and (min-width: 49em) {
-    body#search-help-requests #content .centered {
-      width: 27em; } }
-  body#search-help-requests #content .centered:before, body#search-help-requests #content .centered:after {
-    content: "";
-    display: table; }
-  body#search-help-requests #content .centered:after {
-    clear: both; }
-  body#search-help-requests #content .centered > * {
-    float: left; }
-  body#search-help-requests #content .centered > span {
+    #search-help-requests #content .centered {
+      width: 27em;
+      zoom: 1; }
+      #search-help-requests #content .centered:before, #search-help-requests #content .centered:after {
+        content: "";
+        display: table; }
+      #search-help-requests #content .centered:after {
+        clear: both; }
+      #search-help-requests #content .centered > * {
+        float: left; } }
+  #search-help-requests #content .centered > span {
     width: 4em; }
-body#search-help-requests #content #query {
-  width: 13em; }
+  #search-help-requests #content .centered > .field {
+    width: 19em; }
+    @media screen and (min-width: 49em) {
+      #search-help-requests #content .centered > .field {
+        width: 23em; } }
+#search-help-requests #content #query {
+  /* In this specific case, we want a larger search field for the mobile, because the search button is placed
+      below, therefore more space is available */
+  width: 18em; }
   @media screen and (min-width: 49em) {
-    body#search-help-requests #content #query {
+    #search-help-requests #content #query {
       width: 22em; } }
-body#search-help-requests #content table {
+#search-help-requests #content table {
   max-width: 50em;
   margin-left: auto;
   margin-right: auto; }
-body#search-help-requests #content tr {
+#search-help-requests #content tr {
   cursor: pointer; }
-  body#search-help-requests #content tr:first-child {
+  #search-help-requests #content tr:first-child {
     cursor: default; }
-body#search-help-requests #content td {
+#search-help-requests #content td {
   padding-left: 0.5em;
   padding-right: 0.5em; }
-body#search-help-requests #content .requester-username,
-body#search-help-requests #content .requester-city {
+#search-help-requests #content .requester-username,
+#search-help-requests #content .requester-city {
   display: block;
   text-align: center; }
-body#search-help-requests #content #search-returned-nothing {
+#search-help-requests #content #search-returned-nothing {
   display: none;
   text-align: center; }

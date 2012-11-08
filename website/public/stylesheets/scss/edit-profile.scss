@@ -7,7 +7,7 @@
     }
 
     > ul {
-      @include clearfix();
+      @include clearfix;
 
       > li {
         float: left;

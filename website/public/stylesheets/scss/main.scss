@@ -76,12 +76,10 @@ label {
 }
 
 .action {
-  margin: 3em 0;
-
-  @include clearfix();
+  margin-bottom: 3em;
 
   @include desktop {
-    margin: 10em 0;
+    margin-bottom: 5em;
 
     float: left;
 

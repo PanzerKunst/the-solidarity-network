@@ -2,10 +2,18 @@
 
 #help-dashboard {
   #content {
+
+    // Because .action are floated
+    @include clearfix;
+
     .action {
       @include desktop {
         width: 50%;
       }
+    }
+
+    #rss-feed-wrapper {
+      clear: both;
     }
   }
 }

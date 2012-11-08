@@ -60,7 +60,9 @@
 
     #responses {
       > article {
-        @include clearfix();
+        // for img, a child
+        @include clearfix;
+
         margin-bottom: 1em;
       }
 

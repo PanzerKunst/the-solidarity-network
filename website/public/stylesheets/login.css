@@ -1,14 +1,14 @@
-body#login #content .field {
+#login #content .field {
   width: 13em;
   margin-left: auto;
   margin-right: auto; }
-  body#login #content .field > input {
+  #login #content .field > input {
     width: 12em; }
-body#login #content #auth-failed {
+#login #content #auth-failed {
   opacity: 0;
   line-height: 0;
   text-align: center; }
-body#login #content #join {
+#login #content #join {
   margin-left: auto;
   margin-right: auto;
   width: 10em; }

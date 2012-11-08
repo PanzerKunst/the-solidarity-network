@@ -1,13 +1,13 @@
 @media screen and (min-width: 49em) {
-  body#my-profile #content #profile-info {
+  #my-profile #content #profile-info {
     zoom: 1; }
-    body#my-profile #content #profile-info:before, body#my-profile #content #profile-info:after {
+    #my-profile #content #profile-info:before, #my-profile #content #profile-info:after {
       content: "";
       display: table; }
-    body#my-profile #content #profile-info:after {
+    #my-profile #content #profile-info:after {
       clear: both; }
-  body#my-profile #content .profile-pic,
-  body#my-profile #content #textual-info {
+  #my-profile #content .profile-pic,
+  #my-profile #content #textual-info {
     float: left; }
-  body#my-profile #content .profile-pic {
+  #my-profile #content .profile-pic {
     margin-right: 1em; } }

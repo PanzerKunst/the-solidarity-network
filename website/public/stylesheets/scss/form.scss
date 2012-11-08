@@ -5,10 +5,11 @@ form {
   .field,
   fieldset {
     clear: both;
-    @include clearfix();
   }
 
   .field {
+    @include clearfix;
+
     margin-bottom: 0.5em;
     margin-left: auto;
     margin-right: auto;
@@ -57,7 +58,7 @@ form {
     }
 
     > ul {
-      @include clearfix();
+      @include clearfix;
 
       display: block;
       float: left;
