@@ -18,7 +18,7 @@ CBR.Controllers.SearchHelpRequests = new Class({
         this._initEvents();
     },
 
-    _initElements: function() {
+    _initElements: function () {
         this.$queryField = jQuery("#query");
         this.$searchResults = jQuery("#search-results");
     },
@@ -31,7 +31,7 @@ CBR.Controllers.SearchHelpRequests = new Class({
         });
     },
 
-    _initEvents: function() {
+    _initEvents: function () {
         jQuery("#search-button").click(jQuery.proxy(this._doSearch, this));
         jQuery("form").submit(jQuery.proxy(this._doSearch, this));
     },
@@ -42,11 +42,11 @@ CBR.Controllers.SearchHelpRequests = new Class({
         if (this.validator.isValid()) {
             /* TODO var helpRequest = new CBR.Models.HelpRequest();
 
-            var searchedCity = this._getSearchedCity();
-            if (searchedCity !== undefined)
-                helpRequest.setRequester(new CBR.Models.User({
-                    city: searchedCity
-                })); */
+             var searchedCity = this._getSearchedCity();
+             if (searchedCity !== undefined)
+             helpRequest.setRequester(new CBR.Models.User({
+             city: searchedCity
+             })); */
 
             var requestData;
             var query = this.$queryField.val();
@@ -67,11 +67,11 @@ CBR.Controllers.SearchHelpRequests = new Class({
                         _this.$searchResults.html(
                             Mustache.render(
                                 jQuery("#search-results-template").html(),
-                                { helpRequests: JSON.parse(responseText) }
+                                { helpRequests: _this._formatDates(JSON.parse(responseText)) }
                             )
                         );
                         jQuery("#search-returned-nothing").hide();
-                        jQuery("tr").click(_this._navigateToHelpRequest);
+                        jQuery(".search-result").click(_this._navigateToHelpRequest);
                     }
                 },
                 onFailure: function (xhr) {
@@ -84,7 +84,7 @@ CBR.Controllers.SearchHelpRequests = new Class({
         }
     },
 
-    _navigateToHelpRequest: function(e) {
+    _navigateToHelpRequest: function (e) {
         e.preventDefault();
 
         var helpRequestId = jQuery(e.currentTarget).data("id");
@@ -93,7 +93,35 @@ CBR.Controllers.SearchHelpRequests = new Class({
             location.href = "/help-requests/" + helpRequestId;
     },
 
-    _getSearchedCity: function() {
-        var query = this.$queryField.val();
+    /* TODO
+     _getSearchedCity: function() {
+     var query = this.$queryField.val();
+     }, */
+
+    _formatDates: function (helpRequests) {
+        for (var i = 0; i < helpRequests.length; i++) {
+            var currentHelpRequest = helpRequests[i];
+
+            // Format submitted date
+            currentHelpRequest.creationDatetime = this._formatDate(currentHelpRequest.creationDatetime);
+
+            // Format expiry date
+            currentHelpRequest.expiryDate = this._formatDate(currentHelpRequest.expiryDate);
+        }
+
+        return helpRequests;
+    },
+
+    _formatDate: function(yyyyMMdd) {
+        var year = yyyyMMdd.substring(0, 4);
+        var month = yyyyMMdd.substring(5, 7);
+        var day = yyyyMMdd.substring(8, 10);
+
+        var formatedDate = day + "/" + month;
+
+        if (year !== new Date().getFullYear().toString())
+            formatedDate += "/" + year;
+
+        return formatedDate;
     }
 });

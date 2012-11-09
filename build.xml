@@ -41,8 +41,8 @@ Dependencies:
     <target name="merge-css">
         <concat destfile="${dist.merged.file.css}" fixlastline="yes" append="no">
             <filelist dir="${src.css.dir}" files="
-                libs/h5bp/normalize.css
-                libs/h5bp/main.css
+                lib/h5bp/normalize.css
+                lib/h5bp/main.css
                 responsive.css
                 main.css
                 header.css
@@ -150,11 +150,11 @@ Dependencies:
     <target name="merge-js">
         <concat destfile="${dist.merged.file.js}" fixlastline="yes" append="no">
             <filelist id="js-files" dir="${src.js.dir}" files="
-                libs/jquery-1.8.2.js
+                lib/jquery-1.8.2.js
                 common/jquery.no-conflict.js
-                libs/mootools-core-1.4.5-full-nocompat.js
-                libs/mustache.js
-                libs/ajaxupload.js
+                lib/mootools-core-1.4.5-full-nocompat.js
+                lib/mustache.js
+                lib/ajaxupload.js
                 ${non-lib.js.file}" />
         </concat>
     </target>

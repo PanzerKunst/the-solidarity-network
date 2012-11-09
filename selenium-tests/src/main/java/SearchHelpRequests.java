@@ -1,5 +1,6 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -38,12 +39,17 @@ public class SearchHelpRequests extends TestBase {
         driver.findElement(By.id("search-button"))
                 .click();
 
-        (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
-            public Boolean apply(WebDriver d) {
-                return d.findElement(By.cssSelector("tr[data-id='1']")).isDisplayed();
-            }
-        });
-        driver.findElement(By.cssSelector("tr[data-id='1']"))
+        String cssSelectorOfFirstDisplayedSearchResult = "li[data-id='1']";
+
+        sleepBecauseSeleniumSucks();
+
+        if (driver.findElement(By.id("desktop-results")).isDisplayed()) {
+            cssSelectorOfFirstDisplayedSearchResult = "tr[data-id='1']";
+        }
+
+        sleepBecauseSeleniumSucks(2000);
+
+        driver.findElement(By.cssSelector(cssSelectorOfFirstDisplayedSearchResult))
                 .click();
 
     }

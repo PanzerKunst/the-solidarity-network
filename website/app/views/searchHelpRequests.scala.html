@@ -39,20 +39,53 @@
 </script>
 
 <script id="search-results-template" type="text/html">
-    <table>
+    <ul id="mobile-results">
+        {{#helpRequests}}
+        <li class="search-result" data-id="{{id}}">
+            <div class="floated-wrapper">
+                <img class="profile-pic-thumb" src="/files/profile-pic/{{requester.id}}" />
+
+                <section class="dates">
+                    <div class="creation-date">
+                        <label>Submitted:</label>
+                        <span>{{creationDatetime}}</span>
+                    </div>
+                    <div class="expiry-date">
+                        <label>Expires:</label>
+                        <span>{{expiryDate}}</span>
+                    </div>
+                </section>
+            </div>
+
+            <div class="floated-wrapper">
+                <section>
+                    <div class="requester-username">{{requester.username}}</div>
+                    <span class="requester-first-name">{{requester.firstName}}</span>
+                    <span class="requester-last-name">{{requester.lastName}}</span>
+                    <div class="requester-city">{{requester.city}}</div>
+                </section>
+
+                <h3>{{title}}</h3>
+            </div>
+        </li>
+        {{/helpRequests}}
+    </ul>
+
+    <table id="desktop-results">
         <th>By</th>
         <th>Title & description</th>
         <th>Submitted</th>
         <th>Expires</th>
 
         {{#helpRequests}}
-        <tr data-id="{{id}}">
+        <tr class="search-result" data-id="{{id}}">
             <!-- By -->
             <td>
-                <span class="requester-username">{{requester.username}}</span>
+                <img class="profile-pic-thumb" src="/files/profile-pic/{{requester.id}}" />
+                <div class="requester-username">{{requester.username}}</div>
                 <span class="requester-first-name">{{requester.firstName}}</span>
                 <span class="requester-last-name">{{requester.lastName}}</span>
-                <span class="requester-city">{{requester.city}}</span>
+                <div class="requester-city">{{requester.city}}</div>
             </td>
 
             <!-- Title & description -->
