@@ -19,7 +19,7 @@ CBR.Controllers.EditProfile = new Class({
 
         this._initValidation();
         this._fillForm();
-        this._initIconUpload();
+        this._initPictureUpload();
         this._initEvents();
 
         this.$languageSelect.change(jQuery.proxy(this._changeLanguage, this));
@@ -95,7 +95,7 @@ CBR.Controllers.EditProfile = new Class({
         this.$emailField.val(this._getUser().email);
     },
 
-    _initIconUpload: function () {
+    _initPictureUpload: function () {
         var _this = this;
 
         var options = {

@@ -1,4 +1,4 @@
-@(user: models.User)
+@(user: models.User, query: Map[String, String])
 @main("Search help requests", "search-help-requests") {
 <!--
     Header
@@ -113,7 +113,8 @@
         new CBR.Controllers.NavController().run();
 
         new CBR.Controllers.SearchHelpRequests({
-            el: "#content"
+            el: "#content",
+            query: @Html(services.JsonUtil.serialize(query))
         }).run();
     });
 </script>

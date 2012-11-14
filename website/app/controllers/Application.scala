@@ -105,7 +105,15 @@ object Application extends Controller {
   def searchHelpRequests = Action {
     implicit request =>
       loggedInUser(session) match {
-        case Some(loggedInUser) => Ok(views.html.searchHelpRequests(loggedInUser))
+        case Some(loggedInUser) =>
+
+          var query: Map[String, String] = Map()
+
+          for (key <- request.queryString.keys) {
+            query += (key -> request.queryString.get(key).get.head)
+          }
+
+          Ok(views.html.searchHelpRequests(loggedInUser, query))
         case None => Redirect(routes.Application.login)
       }
   }

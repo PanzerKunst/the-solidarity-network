@@ -41,9 +41,9 @@ object HelpRequestDto {
             val processedSearchQuery = DbUtil.backslashQuotes(sq.replaceAll("\\*", "%"))
 
             """
-            select hr.id as help_request_id, hr.title, hr.description, hr.creation_date, hr.expiry_date,
-              u.id as user_id, u.first_name, u.last_name, u.username, u.email, u.city,
-              c.id as country_id, c.name as country_name
+            select hr.id, hr.title, hr.description, hr.creation_date, hr.expiry_date,
+              u.id, u.first_name, u.last_name, u.username, u.email, u.city, u.country_id,
+              c.id, c.name
             from help_request hr
             inner join user u on u.id = hr.requester_id
             inner join country c on c.id = u.country_id
@@ -58,8 +58,8 @@ object HelpRequestDto {
             limit 50;"""
 
           case None => """
-            select hr.id as help_request_id, hr.title, hr.description, hr.creation_date, hr.expiry_date,
-              u.id as user_id, u.first_name, u.last_name, u.username, u.email, u.city, u.country_id
+            select hr.id, hr.title, hr.description, hr.creation_date, hr.expiry_date,
+              u.id, u.first_name, u.last_name, u.username, u.email, u.city, u.country_id
             from help_request hr
             inner join user u on u.id = hr.requester_id
             order by expiry_date, creation_date
@@ -67,6 +67,46 @@ object HelpRequestDto {
         }
 
         Logger.info("HelpRequestDto.searchGeneric():" + query)
+
+        SQL(query)().map(row =>
+          (
+            HelpRequest(
+              id = Some(row[Long]("help_request.id")),
+              requesterId = Some(row[Long]("user.id")),
+              title = row[String]("title"),
+              description = row[String]("description"),
+              creationDatetime = Some(row[util.Date]("creation_date")),
+              expiryDate = row[util.Date]("expiry_date")
+            ),
+            User(
+              id = Some(row[Long]("user.id")),
+              firstName = Some(row[String]("first_name")),
+              lastName = Some(row[String]("last_name")),
+              username = Some(row[String]("username")),
+              email = Some(row[String]("email")),
+              city = Some(row[String]("city")),
+              countryId = Some(row[Long]("country_id"))
+            )
+            )
+        ).toList
+    }
+  }
+
+  def searchAdvanced(filters: Map[String, String]): List[(HelpRequest, User)] = {
+    DB.withConnection {
+      implicit c =>
+
+        val query = """
+            select hr.id, hr.title, hr.description, hr.creation_date, hr.expiry_date,
+              u.id, u.first_name, u.last_name, u.username, u.email, u.city, u.country_id,
+              c.id, c.name
+            from help_request hr
+            inner join user u on u.id = hr.requester_id
+            inner join country c on c.id = u.country_id """ + DbUtil.generateWhereClause(Some(webFiltersToDbFilters(filters))) + """
+            order by expiry_date, creation_date
+            limit 50;"""
+
+        Logger.info("HelpRequestDto.searchAdvanced():" + query)
 
         SQL(query)().map(row =>
           (
@@ -108,5 +148,17 @@ object HelpRequestDto {
 
         SQL(query).executeInsert()
     }
+  }
+
+  private def webFiltersToDbFilters(webFilters: Map[String, String]): Map[String, String] = {
+    var dbFilters: Map[String, String] = Map()
+    for (key <- webFilters.keys)
+      if (key == "by") {
+        val rawFilterValue = webFilters.get(key).get
+        val processedFilterValue = rawFilterValue.replaceAll("\\*", "%")
+        dbFilters += ("u.username" -> processedFilterValue)
+      }
+
+    dbFilters
   }
 }

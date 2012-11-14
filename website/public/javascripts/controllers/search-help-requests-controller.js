@@ -16,6 +16,11 @@ CBR.Controllers.SearchHelpRequests = new Class({
         this._initElements();
         this._initValidation();
         this._initEvents();
+        this._initSearchQuery();
+    },
+
+    _getQuery: function () {
+        return this.options.query;
     },
 
     _initElements: function () {
@@ -36,22 +41,27 @@ CBR.Controllers.SearchHelpRequests = new Class({
         jQuery("form").submit(jQuery.proxy(this._doSearch, this));
     },
 
+    _initSearchQuery: function() {
+        if (this._getQuery() !== undefined) {
+            var queryFieldValue = "";
+
+            for (var key in this._getQuery())
+                queryFieldValue += key + "=" + this._getQuery()[key] + " "; // Space is separator between params
+        }
+
+        this.$queryField.val(queryFieldValue);
+        this._doSearch();
+    },
+
     _doSearch: function (e) {
-        e.preventDefault();
+        if (e !== undefined)
+            e.preventDefault();
 
         if (this.validator.isValid()) {
-            /* TODO var helpRequest = new CBR.Models.HelpRequest();
-
-             var searchedCity = this._getSearchedCity();
-             if (searchedCity !== undefined)
-             helpRequest.setRequester(new CBR.Models.User({
-             city: searchedCity
-             })); */
-
             var requestData;
-            var query = this.$queryField.val();
-            if (query !== "")
-                requestData = { query: query };
+            var queryFieldValue = this.$queryField.val();
+            if (queryFieldValue !== "")
+                requestData = this._getSearchRequestData(queryFieldValue);
 
             var _this = this;
 
@@ -93,11 +103,6 @@ CBR.Controllers.SearchHelpRequests = new Class({
             location.href = "/help-requests/" + helpRequestId;
     },
 
-    /* TODO
-     _getSearchedCity: function() {
-     var query = this.$queryField.val();
-     }, */
-
     _formatDates: function (helpRequests) {
         for (var i = 0; i < helpRequests.length; i++) {
             var currentHelpRequest = helpRequests[i];
@@ -123,5 +128,19 @@ CBR.Controllers.SearchHelpRequests = new Class({
             formatedDate += "/" + year;
 
         return formatedDate;
+    },
+
+    _getSearchRequestData: function(queryFieldValue) {
+        var requestData = {};
+
+        var byPattern = /( |^)by=(\w+)/;
+        var value = byPattern.exec(queryFieldValue);
+        if (value && value.length === 3)
+            requestData.by = value[2];
+
+        if (CBR.isEmptyObject(requestData))
+            return { query: queryFieldValue };
+
+        return requestData;
     }
 });

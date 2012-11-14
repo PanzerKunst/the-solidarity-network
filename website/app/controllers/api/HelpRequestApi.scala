@@ -32,12 +32,19 @@ object HelpRequestApi extends Controller {
   def get = Action {
     implicit request =>
 
-      val query = if (request.queryString.contains("query"))
-        Some(request.queryString.get("query").get.head)
-      else
-        None
+      val queryString = request.queryString
 
-      val matchingHelpRequests: List[(HelpRequest, User)] = HelpRequestDto.searchGeneric(query)
+      // Generic search
+      val matchingHelpRequests: List[(HelpRequest, User)] = if (queryString.isEmpty)
+        HelpRequestDto.searchGeneric(None)
+      else if (queryString.contains("query"))
+        HelpRequestDto.searchGeneric(Some(queryString.get("query").get.head))
+      // Advanced search
+      else {
+        var filters: Map[String, String] = Map()
+        filters = getUpdatedFiltersIfQueryStringContains(filters, queryString, "by")
+        HelpRequestDto.searchAdvanced(filters)
+      }
 
       if (matchingHelpRequests.isEmpty)
         NoContent
@@ -90,5 +97,11 @@ object HelpRequestApi extends Controller {
           Unauthorized
         }
       }
+  }
+
+  private def getUpdatedFiltersIfQueryStringContains(filters: Map[String, String], queryString: Map[String, Seq[String]], key: String): Map[String, String] = {
+    if (queryString.contains(key)) {
+      filters ++ Map(key -> queryString.get(key).get.head)
+    } else filters
   }
 }
