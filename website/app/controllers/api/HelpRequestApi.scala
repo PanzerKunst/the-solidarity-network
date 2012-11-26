@@ -42,7 +42,12 @@ object HelpRequestApi extends Controller {
       // Advanced search
       else {
         var filters: Map[String, String] = Map()
-        filters = getUpdatedFiltersIfQueryStringContains(filters, queryString, "by")
+        filters = getUpdatedFiltersIfQueryStringContains(filters, queryString, "username")
+        filters = getUpdatedFiltersIfQueryStringContains(filters, queryString, "firstName")
+        filters = getUpdatedFiltersIfQueryStringContains(filters, queryString, "lastName")
+        filters = getUpdatedFiltersIfQueryStringContains(filters, queryString, "city")
+        filters = getUpdatedFiltersIfQueryStringContains(filters, queryString, "country")
+        filters = getUpdatedFiltersIfQueryStringContains(filters, queryString, "respondedBy")
         HelpRequestDto.searchAdvanced(filters)
       }
 
@@ -102,6 +107,7 @@ object HelpRequestApi extends Controller {
   private def getUpdatedFiltersIfQueryStringContains(filters: Map[String, String], queryString: Map[String, Seq[String]], key: String): Map[String, String] = {
     if (queryString.contains(key)) {
       filters ++ Map(key -> queryString.get(key).get.head)
-    } else filters
+    }
+    else filters
   }
 }

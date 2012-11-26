@@ -96,13 +96,18 @@ object HelpRequestDto {
     DB.withConnection {
       implicit c =>
 
+        val innerJoinForRespondedBy = if (filters.contains("respondedBy"))
+          "inner join help_response r on hr.id = r.request_id"
+        else ""
+
         val query = """
             select hr.id, hr.title, hr.description, hr.creation_date, hr.expiry_date,
               u.id, u.first_name, u.last_name, u.username, u.email, u.city, u.country_id,
               c.id, c.name
             from help_request hr
             inner join user u on u.id = hr.requester_id
-            inner join country c on c.id = u.country_id """ + DbUtil.generateWhereClause(Some(webFiltersToDbFilters(filters))) + """
+            inner join country c on c.id = u.country_id """ + innerJoinForRespondedBy +
+          DbUtil.generateWhereClause(Some(webFiltersToDbFilters(filters))) + """
             order by expiry_date, creation_date
             limit 50;"""
 
@@ -153,10 +158,35 @@ object HelpRequestDto {
   private def webFiltersToDbFilters(webFilters: Map[String, String]): Map[String, String] = {
     var dbFilters: Map[String, String] = Map()
     for (key <- webFilters.keys)
-      if (key == "by") {
+      if (key == "username") {
         val rawFilterValue = webFilters.get(key).get
         val processedFilterValue = rawFilterValue.replaceAll("\\*", "%")
         dbFilters += ("u.username" -> processedFilterValue)
+      }
+      else if (key == "firstName") {
+        val rawFilterValue = webFilters.get(key).get
+        val processedFilterValue = rawFilterValue.replaceAll("\\*", "%")
+        dbFilters += ("u.first_name" -> processedFilterValue)
+      }
+      else if (key == "lastName") {
+        val rawFilterValue = webFilters.get(key).get
+        val processedFilterValue = rawFilterValue.replaceAll("\\*", "%")
+        dbFilters += ("u.last_name" -> processedFilterValue)
+      }
+      else if (key == "city") {
+        val rawFilterValue = webFilters.get(key).get
+        val processedFilterValue = rawFilterValue.replaceAll("\\*", "%")
+        dbFilters += ("u.city" -> processedFilterValue)
+      }
+      else if (key == "country") {
+        val rawFilterValue = webFilters.get(key).get
+        val processedFilterValue = rawFilterValue.replaceAll("\\*", "%")
+        dbFilters += ("c.name" -> processedFilterValue)
+      }
+      else if (key == "respondedBy") {
+        val rawFilterValue = webFilters.get(key).get
+        val user = UserDto.get(Some(Map("username" -> rawFilterValue))).head
+        dbFilters += ("r.responder_id" -> user.id.get.toString)
       }
 
     dbFilters
