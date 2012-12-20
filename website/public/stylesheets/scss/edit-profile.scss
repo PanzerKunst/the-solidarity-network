@@ -3,7 +3,7 @@
 #edit-profile {
   #content {
     .indication {
-      @include prepareForAnimatedSlideDown();
+      display: none;
     }
 
     > ul {
@@ -19,10 +19,7 @@
     }
 
     #email-confirmation-field {
-      // Otherwise a white block is displayed
       display: none;
-
-      @include prepareForAnimatedSlideDown();
     }
 
     #new-help-requests-frequencies {
@@ -39,7 +36,7 @@
       $selectWidth: 6em;
 
       label[for="language"] {
-        width: $fieldWidthDesktop - $validationIconWidth - $extraSpaceForInputPaddingAndBorder - $selectWidth + $extraInputWidthForSelect;
+        width: $fieldWidthDesktop - $selectWidth;
       }
 
       #language {

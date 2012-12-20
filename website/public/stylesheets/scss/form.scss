@@ -22,8 +22,7 @@ form {
 
     > input,
     > select,
-    > textarea,
-    > .validation-icon {
+    > textarea {
       display: block;
       float: left;
     }
@@ -48,10 +47,6 @@ form {
       }
     }
 
-    > select {
-      width: $inputWidth + $extraInputWidthForSelect;
-    }
-
     > input[type=checkbox],
     > input[type=radio] {
       width: 1em;
@@ -72,37 +67,36 @@ form {
         }
       }
     }
-
-    > .field-error {
-      clear: both;
-    }
-  }
-
-  .validation-icon {
-    width: $validationIconWidth;
-    height: $validationIconHeight;
-    background-size: $validationIconWidth $validationIconHeight;
-  }
-
-  .valid {
-    > .validation-icon {
-      background-image: url("/assets/images/valid.png");
-    }
   }
 
   .invalid {
-    > .validation-icon {
-      background-image: url("/assets/images/invalid.png");
+    > input,
+    > select,
+    > textarea {
+      border-color: $errorText;
+
+      margin-bottom: 0;
     }
   }
 
-  .field-error {
-    font-style: italic;
-    font-size: small;
-    color: $red;
+.field-error {
+  display: none;
+  clear: both;
 
-    @include prepareForAnimatedSlideDown();
+  $fontSize: 13px;
+
+  font-style: italic;
+  font-size: $fontSize;
+  color: $errorText;
+
+  @include desktop {
+    margin-left: $labelWidth * $baseFontSize / $fontSize;
+
+    &.without-label {
+      margin-left: 0;
+    }
   }
+}
 
   input[type=submit] {
   /* For it to go below the anchor, keeping the latter centered */

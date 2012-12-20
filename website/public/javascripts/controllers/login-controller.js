@@ -52,7 +52,7 @@ CBR.Controllers.Login = new Class({
     _doLogin: function (e) {
         e.preventDefault();
 
-        this.$authFailed.slideUpAnimated();
+        this.$authFailed.slideUpCustom();
 
         if (this.validator.isValid()) {
             var user = {
@@ -73,7 +73,7 @@ CBR.Controllers.Login = new Class({
                 data: CBR.JsonUtil.stringifyModel(user),
                 onSuccess: function (responseText, responseXML) {
                     if (this.status === _this.httpStatusCode.noContent)
-                        _this.$authFailed.slideDownAnimated();
+                        _this.$authFailed.slideDownCustom();
                     else
                         location.href = "/home";
                 },

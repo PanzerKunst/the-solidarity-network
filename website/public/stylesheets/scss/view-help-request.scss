@@ -4,10 +4,7 @@
   #content {
     #respond-form,
     #reference-form {
-      // Otherwise a empty block is displayed
       display: none;
-
-      @include prepareForAnimatedSlideDown();
     }
 
     #requester,

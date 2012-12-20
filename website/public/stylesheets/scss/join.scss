@@ -2,22 +2,28 @@
 
 #join {
   #content {
+    $checkUsernameAvailabilityWidth: 6em;
+
     .field {
-      $checkUsernameAvailabilityWidth: 6em;
+      @include desktop {
+        width: $labelWidth + $inputWidth + $checkUsernameAvailabilityWidth;
+      }
+    }
+
+    #check-username-availability {
+      display: block;
+      width: $checkUsernameAvailabilityWidth;
+      clear: both;
 
       @include desktop {
-        width: $labelWidth + $inputWidth + $validationIconWidth + $checkUsernameAvailabilityWidth + $extraSpaceForInputPaddingAndBorder;
+        float: left;
+        clear: none;
       }
+    }
 
-      #check-username-availability {
-        display: block;
-        width: $checkUsernameAvailabilityWidth;
-        clear: both;
-
-        @include desktop {
-          float: left;
-          clear: none;
-        }
+    .valid {
+      > #username {
+        border-color: $btnSuccessBackground;
       }
     }
   }

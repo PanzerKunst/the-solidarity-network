@@ -1,11 +1,13 @@
 @media screen and (min-width: 49em) {
   #join #content .field {
     width: 29em; } }
-#join #content .field #check-username-availability {
+#join #content #check-username-availability {
   display: block;
   width: 6em;
   clear: both; }
   @media screen and (min-width: 49em) {
-    #join #content .field #check-username-availability {
+    #join #content #check-username-availability {
       float: left;
       clear: none; } }
+#join #content .valid > #username {
+  border-color: #62c462; }

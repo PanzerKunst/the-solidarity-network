@@ -1,8 +1,8 @@
 @media screen and (min-width: 49em) {
   #my-profile #content #profile-info {
-    zoom: 1; }
+    *zoom: 1; }
     #my-profile #content #profile-info:before, #my-profile #content #profile-info:after {
-      content: "";
+      content: " ";
       display: table; }
     #my-profile #content #profile-info:after {
       clear: both; }

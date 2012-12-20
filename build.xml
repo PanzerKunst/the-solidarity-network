@@ -41,8 +41,7 @@ Dependencies:
     <target name="merge-css">
         <concat destfile="${dist.merged.file.css}" fixlastline="yes" append="no">
             <filelist dir="${src.css.dir}" files="
-                lib/h5bp/normalize.css
-                lib/h5bp/main.css
+                lib/bootstrap/bootstrap.css
                 responsive.css
                 main.css
                 header.css
@@ -154,6 +153,7 @@ Dependencies:
                 common/jquery.no-conflict.js
                 lib/mootools-core-1.4.5-full-nocompat.js
                 lib/mustache.js
+                lib/bootstrap.js
                 lib/ajaxupload.js
                 ${non-lib.js.file}" />
         </concat>

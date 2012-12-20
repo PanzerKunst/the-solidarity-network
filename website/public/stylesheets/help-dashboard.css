@@ -1,7 +1,7 @@
 #help-dashboard #content {
-  zoom: 1; }
+  *zoom: 1; }
   #help-dashboard #content:before, #help-dashboard #content:after {
-    content: "";
+    content: " ";
     display: table; }
   #help-dashboard #content:after {
     clear: both; }

@@ -21,46 +21,29 @@ CBR.Controllers.NavController = new Class({
         e.preventDefault();
 
         // Close all open
-        jQuery(".sub-nav").slideUpAnimated({
-            complete: function () {
-                jQuery(this).hide();
-            }
-        });
+        jQuery(".sub-nav").slideUpCustom();
 
         var $li = jQuery(e.currentTarget).parent();
 
-        var $subNav = $li.find("> .sub-nav");
+        var $subNav = $li.children(".sub-nav");
         if ($subNav.is(":visible"))
-            this._closeDropDown($li);
+            this._closeDropDown($subNav);
         else
-            this._openDropDown($li);
+            this._openDropDown($subNav);
     },
 
-    _openDropDown: function ($li) {
-        jQuery("> .sub-nav", $li).show(0, function () {
-            jQuery(this).slideDownAnimated();
-        });
+    _openDropDown: function ($subNav) {
+        $subNav.slideDownCustom();
     },
 
-    _closeDropDown: function ($li) {
-        jQuery("> .sub-nav", $li)
-            .slideUpAnimated({
-                complete: function () {
-                    jQuery(this).hide();
-                }
-            });
+    _closeDropDown: function ($subNav) {
+        $subNav.slideUpCustom();
     },
 
     _dropDownWholeMenu: function () {
         if (this.$menu.is(":visible"))
-            this.$menu.slideUpAnimated({
-                complete: function () {
-                    jQuery(this).hide();
-                }
-            });
+            this.$menu.slideUpCustom();
         else
-            this.$menu.show(0, function () {
-                jQuery(this).slideDownAnimated();
-            });
+            this.$menu.slideDownCustom();
     }
 });

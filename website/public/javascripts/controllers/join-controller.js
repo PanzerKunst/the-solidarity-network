@@ -97,7 +97,7 @@ CBR.Controllers.Join = new Class({
     },
 
     _checkIfUsernameIsAlreadyTaken: function () {
-        this.$usernameTakenParagraph.slideUpAnimated();
+        this.$usernameTakenParagraph.slideUpCustom();
 
         if (this.$usernameField.val() !== "") {
             var _this = this;
@@ -107,9 +107,14 @@ CBR.Controllers.Join = new Class({
                 headers: { "Content-Type": "application/json" },
                 url: "/api/users/first?username=" + this.$usernameField.val(),
                 onSuccess: function (responseText, responseXML) {
-                    if (this.status !== _this.httpStatusCode.noContent && !_this.validator.isFlaggedInvalid(_this.$usernameField)) {
-                        _this.validator.flagInvalid(_this.$usernameField);
-                        _this.$usernameTakenParagraph.slideDownAnimated();
+                    if (!_this.validator.isFlaggedInvalid(_this.$usernameField)) {
+                        if (this.status === _this.httpStatusCode.noContent) {
+                            _this.validator.flagValid(_this.$usernameField);
+                        }
+                        else {
+                            _this.validator.flagInvalid(_this.$usernameField);
+                            _this.$usernameTakenParagraph.slideDownCustom();
+                        }
                     }
                 },
                 onFailure: function (xhr) {
@@ -120,7 +125,7 @@ CBR.Controllers.Join = new Class({
     },
 
     _checkIfEmailIsAlreadyRegistered: function () {
-        this.$emailAlreadyRegisteredParagraph.slideUpAnimated();
+        this.$emailAlreadyRegisteredParagraph.slideUpCustom();
 
         if (this.$emailField.val() !== "") {
             var _this = this;
@@ -132,7 +137,7 @@ CBR.Controllers.Join = new Class({
                 onSuccess: function (responseText, responseXML) {
                     if (this.status !== _this.httpStatusCode.noContent && !_this.validator.isFlaggedInvalid(_this.$emailField)) {
                         _this.validator.flagInvalid(_this.$emailField);
-                        _this.$emailAlreadyRegisteredParagraph.slideDownAnimated();
+                        _this.$emailAlreadyRegisteredParagraph.slideDownCustom();
                     }
                 },
                 onFailure: function (xhr) {
@@ -143,7 +148,7 @@ CBR.Controllers.Join = new Class({
     },
 
     _checkIfEmailConfirmationMatches: function () {
-        this.$emailsDoNotMatchParagraph.slideUpAnimated();
+        this.$emailsDoNotMatchParagraph.slideUpCustom();
 
         var email = this.$emailField.val();
         var emailConfirmation = this.$emailConfirmationField.val();
@@ -153,7 +158,7 @@ CBR.Controllers.Join = new Class({
             !this.validator.isFlaggedInvalid(this.$emailConfirmationField)) {
 
             this.validator.flagInvalid(this.$emailConfirmationField);
-            this.$emailsDoNotMatchParagraph.slideDownAnimated();
+            this.$emailsDoNotMatchParagraph.slideDownCustom();
         }
     },
 
@@ -172,7 +177,7 @@ CBR.Controllers.Join = new Class({
 
         if (!isAvailable) {
             this.validator.flagInvalid(this.$usernameField);
-            this.$usernameTakenParagraph.slideDownAnimated();
+            this.$usernameTakenParagraph.slideDownCustom();
         }
 
         return isAvailable;
@@ -193,7 +198,7 @@ CBR.Controllers.Join = new Class({
 
         if (!isNotRegistered) {
             this.validator.flagInvalid(this.$emailField);
-            this.$emailAlreadyRegisteredParagraph.slideDownAnimated();
+            this.$emailAlreadyRegisteredParagraph.slideDownCustom();
         }
 
         return isNotRegistered;
@@ -207,7 +212,7 @@ CBR.Controllers.Join = new Class({
 
         if (!isMatching) {
             this.validator.flagInvalid(this.$emailConfirmationField);
-            this.$emailsDoNotMatchParagraph.slideDownAnimated();
+            this.$emailsDoNotMatchParagraph.slideDownCustom();
         }
 
         return isMatching;

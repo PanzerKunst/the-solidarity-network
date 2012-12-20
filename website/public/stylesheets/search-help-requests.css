@@ -6,9 +6,9 @@
   @media screen and (min-width: 49em) {
     #search-help-requests #content .centered {
       width: 27em;
-      zoom: 1; }
+      *zoom: 1; }
       #search-help-requests #content .centered:before, #search-help-requests #content .centered:after {
-        content: "";
+        content: " ";
         display: table; }
       #search-help-requests #content .centered:after {
         clear: both; }
@@ -24,16 +24,16 @@
 #search-help-requests #content #query {
   /* In this specific case, we want a larger search field for the mobile, because the search button is placed
       below, therefore more space is available */
-  width: 18em; }
+  width: 19em; }
   @media screen and (min-width: 49em) {
     #search-help-requests #content #query {
-      width: 22em; } }
+      width: 23em; } }
 #search-help-requests #content .search-result {
   cursor: pointer; }
 #search-help-requests #content .floated-wrapper {
-  zoom: 1; }
+  *zoom: 1; }
   #search-help-requests #content .floated-wrapper:before, #search-help-requests #content .floated-wrapper:after {
-    content: "";
+    content: " ";
     display: table; }
   #search-help-requests #content .floated-wrapper:after {
     clear: both; }

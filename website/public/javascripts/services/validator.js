@@ -146,7 +146,7 @@ CBR.Services.Validator = new Class({
             $field.children(".active").length === 0) {
 
             this.flagInvalid($field);
-            this._get$empty($field).slideDownAnimated();
+            this._get$empty($field).slideDownCustom();
             return false;
         }
         else if (this._isToCheckIfEmpty($field) &&
@@ -155,48 +155,48 @@ CBR.Services.Validator = new Class({
 
             if (!isOnBlur) {
                 this.flagInvalid($field);
-                this._get$empty($field).slideDownAnimated();
+                this._get$empty($field).slideDownCustom();
             }
             return false;
         }
         else
-            this._get$empty($field).slideUpAnimated();
+            this._get$empty($field).slideUpCustom();
 
         // Email?
         if (this._isToCheckIfEmail($field) && !this._isValidEmail($field.val())) {
             this.flagInvalid($field);
-            this._get$email($field).slideDownAnimated();
+            this._get$email($field).slideDownCustom();
             return false;
         }
         else
-            this._get$email($field).slideUpAnimated();
+            this._get$email($field).slideUpCustom();
 
         // Username?
         if (this._isToCheckIfUsername($field) && !this._isValidUsername($field.val())) {
             this.flagInvalid($field);
-            this._get$username($field).slideDownAnimated();
+            this._get$username($field).slideDownCustom();
             return false;
         }
         else
-            this._get$username($field).slideUpAnimated();
+            this._get$username($field).slideUpCustom();
 
         // In the future?
         if (this._isToCheckIfInFuture($field) && !this._isInFuture($field.val())) {
             this.flagInvalid($field);
-            this._get$inFuture($field).slideDownAnimated();
+            this._get$inFuture($field).slideDownCustom();
             return false;
         }
         else
-            this._get$inFuture($field).slideUpAnimated();
+            this._get$inFuture($field).slideUpCustom();
 
         // In max 2 weeks?
         if (this._isToCheckIfInMaxTwoWeeks($field) && !this._isInMaxTwoWeeks($field.val())) {
             this.flagInvalid($field);
-            this._get$inMaxTwoWeeks($field).slideDownAnimated();
+            this._get$inMaxTwoWeeks($field).slideDownCustom();
             return false;
         }
         else
-            this._get$inMaxTwoWeeks($field).slideUpAnimated();
+            this._get$inMaxTwoWeeks($field).slideUpCustom();
 
         this.flagValid($field);
 

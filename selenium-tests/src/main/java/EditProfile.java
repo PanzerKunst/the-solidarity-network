@@ -88,9 +88,7 @@ public class EditProfile extends TestBase {
         driver.findElement(By.id("show-account-info"))
                 .click();
 
-        if (driver instanceof ChromeDriver) {
-            sleepBecauseSeleniumSucks();
-        }
+        sleepBecauseSeleniumSucks();
 
         // Wait for the page to load
         (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {

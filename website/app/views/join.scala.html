@@ -21,16 +21,14 @@
     <form>
         <div class="field">
             <label for="first-name">First name <span>*</span></label><!--
-         --><input id="first-name" type="text"/><!--
-         --><span class="validation-icon"></span>
+         --><input id="first-name" type="text"/>
 
             <p class="field-error" data-check="empty">You need to indicate your first name...</p>
         </div>
 
         <div class="field">
             <label for="last-name">Last name <span>*</span></label><!--
-         --><input id="last-name" type="text"/><!--
-         --><span class="validation-icon"></span>
+         --><input id="last-name" type="text"/>
 
             <p class="field-error" data-check="empty">You need to indicate your last name...</p>
         </div>
@@ -38,8 +36,7 @@
         <fieldset>
             <div class="field">
                 <label for="email">E-mail address <span>*</span></label><!--
-             --><input id="email" type="email"/><!--
-             --><span class="validation-icon"></span>
+             --><input id="email" type="email"/>
 
                 <p class="field-error" data-check="empty">Please indicate your e-mail address. We'll use it to inform you of
                     user messages and help requests.</p>
@@ -53,8 +50,7 @@
 
             <div class="field">
                 <label for="email-confirmation">Confirm e-mail <span>*</span></label><!--
-             --><input id="email-confirmation" type="email"/><!--
-             --><span class="validation-icon"></span>
+             --><input id="email-confirmation" type="email"/>
 
                 <p class="field-error" data-check="empty">The e-mails do not match!</p>
 
@@ -68,7 +64,6 @@
         <div class="field">
             <label for="username">Username <span>*</span></label><!--
          --><input id="username" type="text"/><!--
-         --><span class="validation-icon"></span><!--
          --><a id="check-username-availability">Available?</a>
 
             <p class="field-error" data-check="empty">Please choose a username, it will identify you to other users.</p>
@@ -82,27 +77,15 @@
 
         <div class="field">
             <label for="password">Password <span>*</span></label><!--
-         --><input id="password" type="password"/><!--
-         --><span class="validation-icon"></span>
+         --><input id="password" type="password"/>
 
             <p class="field-error" data-check="empty">Hum... you'll need a password to login!</p>
         </div>
 
         <fieldset>
             <div class="field">
-                <label for="street-address">Street address</label><!--
-             --><input id="street-address" type="text"/>
-            </div>
-
-            <div class="field">
-                <label for="post-code">Post code</label><!--
-             --><input id="post-code" type="text"/>
-            </div>
-
-            <div class="field">
                 <label for="city">City <span>*</span></label><!--
-             --><input id="city" type="text"/><!--
-             --><span class="validation-icon"></span>
+             --><input id="city" type="text"/>
 
                 <p class="field-error" data-check="empty">Please indicate your city. Otherwise, we wouldn't know which
                     other users live nearby.</p>
@@ -115,17 +98,14 @@
                 {{#countries}}
                 <option value="{{id}}">{{name}}</option>
                 {{/countries}}
-            </select><!--
-             --><span class="validation-icon"></span>
+            </select>
 
                 <p class="field-error" data-check="empty">Where exactly is your city located?</p>
             </div>
         </fieldset>
 
         <div id="submit-button-wrapper">
-            <a id="join-button">
-                <span>Join</span>
-            </a>
+            <a id="join-button" class="btn btn-primary btn-large">Join</a>
 
             <input type="submit" />
         </div>

@@ -102,6 +102,8 @@ public class Login extends TestBase {
         driver.findElement(By.cssSelector("a[href='/logout']"))
                 .click();
 
+        sleepBecauseSeleniumSucks();
+
         // Wait for the page to load, and check that menu is logged-out
         (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {

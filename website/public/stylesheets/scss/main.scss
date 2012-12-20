@@ -1,24 +1,13 @@
 @import "common";
 
-body {
-  font-size: medium;
-  color: $fontDarkGrey;
+h1,
+h2 {
+  text-align: center;
+  font-weight: normal;
 }
 
 h1 {
-  font-size: 1.9em;
-  font-weight: normal;
-  text-align: center;
   margin-bottom: 2em;
-}
-
-h2 {
-  font-size: 1.6em;
-  text-align: center;
-}
-
-h3 {
-  font-size: 1.3em;
 }
 
 p,
@@ -50,6 +39,19 @@ a,
 span,
 label {
   display: inline-block;  // For "width" declaration to work
+}
+
+// Bootstrap override
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+  @include box-sizing(border-box);
+}
+
+// Bootstrap override
+input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+  $defaultBootstrapTopAndBottomPadding: 4px;
+  $defaultBootstrapBorderWidth: 1px;
+
+  height: $baseLineHeight + 2 * ($defaultBootstrapTopAndBottomPadding + $defaultBootstrapBorderWidth);
 }
 
 #content {
@@ -94,7 +96,6 @@ label {
   max-width: 12em;
   max-height: 12em;
 }
-
 
 /* References */
 

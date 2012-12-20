@@ -42,13 +42,12 @@
     }
 
     #query {
-      // -1em otherwise the <field> container is smaller than the input field
       /* In this specific case, we want a larger search field for the mobile, because the search button is placed
           below, therefore more space is available */
-      width: $fieldWidth + $howLargerIsSearchFieldThanOtherInputs - 1;
+      width: $fieldWidth + $howLargerIsSearchFieldThanOtherInputs;
 
       @include desktop {
-        width: $fieldWidthDesktop - 1;
+        width: $fieldWidthDesktop;
       }
     }
 

@@ -1,12 +1,11 @@
 #login #content .field {
-  width: 13em;
+  width: 14em;
   margin-left: auto;
   margin-right: auto; }
   #login #content .field > input {
-    width: 12em; }
+    width: 14em; }
 #login #content #auth-failed {
-  opacity: 0;
-  line-height: 0;
+  display: none;
   text-align: center; }
 #login #content #join {
   margin-left: auto;

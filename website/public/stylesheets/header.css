@@ -6,9 +6,9 @@ header {
       margin-bottom: 0; } }
 
 #header-nav {
-  zoom: 1; }
+  *zoom: 1; }
   #header-nav:before, #header-nav:after {
-    content: "";
+    content: " ";
     display: table; }
   #header-nav:after {
     clear: both; }
@@ -21,8 +21,6 @@ header {
     float: right; }
   #header-nav > ul {
     display: none;
-    opacity: 0;
-    line-height: 0;
     clear: both;
     background-color: #3f3f3f;
     color: white; }
@@ -35,14 +33,12 @@ header {
       #header-nav > span {
         display: none; }
       #header-nav > ul {
-        zoom: 1;
+        *zoom: 1;
         display: block;
-        opacity: 1;
-        line-height: 1.4;
         background-color: inherit;
-        color: #3f3f3f; }
+        color: #333333; }
         #header-nav > ul:before, #header-nav > ul:after {
-          content: "";
+          content: " ";
           display: table; }
         #header-nav > ul:after {
           clear: both; }

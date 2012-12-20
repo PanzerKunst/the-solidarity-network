@@ -46,11 +46,12 @@ CBR.Controllers.SearchHelpRequests = new Class({
             var queryFieldValue = "";
 
             for (var key in this._getQuery())
-                queryFieldValue += key + "=" + this._getQuery()[key] + " "; // Space is separator between params
-        }
+                if (this._getQuery().hasOwnProperty(key))
+                    queryFieldValue += key + "=" + this._getQuery()[key] + " "; // Space is separator between params
 
-        this.$queryField.val(queryFieldValue);
-        this._doSearch();
+            this.$queryField.val(queryFieldValue);
+            this._doSearch();
+        }
     },
 
     _doSearch: function (e) {

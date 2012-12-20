@@ -1,8 +1,6 @@
 #view-help-request #content #respond-form,
 #view-help-request #content #reference-form {
-  display: none;
-  opacity: 0;
-  line-height: 0; }
+  display: none; }
 #view-help-request #content #requester > div,
 #view-help-request #content #main > div {
   text-align: center; }
@@ -37,10 +35,10 @@
     #view-help-request #content textarea {
       width: 23em; } }
 #view-help-request #content #responses > article {
-  zoom: 1;
+  *zoom: 1;
   margin-bottom: 1em; }
   #view-help-request #content #responses > article:before, #view-help-request #content #responses > article:after {
-    content: "";
+    content: " ";
     display: table; }
   #view-help-request #content #responses > article:after {
     clear: both; }

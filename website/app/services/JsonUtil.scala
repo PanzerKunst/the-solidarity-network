@@ -13,7 +13,7 @@ object JsonUtil {
       createObjectMapper().readValue(json, classOfT)
     } catch {
       case e: Throwable => {
-        Logger.error("Unable to parse JSON into " + classOfT.getName + ": " + json, e);
+        Logger.error("Unable to parse JSON into " + classOfT.getName + ": " + json, e)
         throw e
       }
     }
@@ -25,7 +25,7 @@ object JsonUtil {
         createObjectMapper().readValue(response.getAHCResponse.getResponseBodyAsStream, classOfT)
       } catch {
         case e: Throwable => {
-          Logger.error("Unable to parse JSON into " + classOfT.getName, e);
+          Logger.error("Unable to parse JSON into " + classOfT.getName, e)
           throw e
         }
       }

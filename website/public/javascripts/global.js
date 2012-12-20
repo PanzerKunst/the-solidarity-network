@@ -19,4 +19,4 @@ CBR.isEmptyObject = function(obj) {
     }
 
     return true;
-}
+};

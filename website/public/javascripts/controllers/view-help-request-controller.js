@@ -101,25 +101,15 @@ CBR.Controllers.ViewHelpRequest = new Class({
         if (this.$respond.hasClass("expanded"))
             this._collapseRespondForm();
         else {
-            this.$expanded.slideUpAnimated({
-                complete: function () {
-                    jQuery(this).hide();
-                }
-            });
+            this.$expanded.slideUpCustom();
 
-            this.$respondForm.show(0, function () {
-                jQuery(this).slideDownAnimated();
-            });
+            this.$respondForm.slideDownCustom();
             this.$respond.addClass("expanded");
         }
     },
 
     _collapseRespondForm: function () {
-        this.$respondForm.slideUpAnimated({
-            complete: function () {
-                jQuery(this).hide();
-            }
-        });
+        this.$respondForm.slideUpCustom();
         this.$respond.removeClass("expanded");
     },
 
@@ -127,25 +117,15 @@ CBR.Controllers.ViewHelpRequest = new Class({
         if (this.$writeReference.hasClass("expanded"))
             this._collapseReferenceForm();
         else {
-            this.$expanded.slideUpAnimated({
-                complete: function () {
-                    jQuery(this).hide();
-                }
-            });
+            this.$expanded.slideUpCustom();
 
-            this.$referenceForm.show(0, function () {
-                jQuery(this).slideDownAnimated();
-            });
+            this.$referenceForm.slideDownCustom();
             this.$writeReference.addClass("expanded");
         }
     },
 
     _collapseReferenceForm: function () {
-        this.$referenceForm.slideUpAnimated({
-            complete: function () {
-                jQuery(this).hide();
-            }
-        });
+        this.$referenceForm.slideUpCustom();
         this.$writeReference.removeClass("expanded");
     },
 
@@ -235,6 +215,6 @@ CBR.Controllers.ViewHelpRequest = new Class({
         if (this.$isSubscribingToFutureResponsesCheckbox.is(':checked'))
             request.post();
         else
-            request.delete();
+            request.DELETE();   // Lowercase triggers a jsHint error
     }
 });

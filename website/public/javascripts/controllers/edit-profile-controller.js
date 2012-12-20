@@ -104,8 +104,8 @@ CBR.Controllers.EditProfile = new Class({
             accept: "image/*",
             autoSubmit: true,
             onSubmit: function (file, extension) {
-                _this.$wrongExtensionParagraph.slideUpAnimated();
-                _this.$uploadFailedParagraph.slideUpAnimated();
+                _this.$wrongExtensionParagraph.slideUpCustom();
+                _this.$uploadFailedParagraph.slideUpCustom();
 
                 // Make sure its is one of the allowed file extensions
                 var lowerCaseExtension = extension.toLowerCase();
@@ -113,7 +113,7 @@ CBR.Controllers.EditProfile = new Class({
                     lowerCaseExtension !== "jpg" &&
                     lowerCaseExtension !== "jpeg") {
 
-                    _this.$wrongExtensionParagraph.slideDownAnimated();
+                    _this.$wrongExtensionParagraph.slideDownCustom();
                     return false;
                 }
             },
@@ -121,7 +121,7 @@ CBR.Controllers.EditProfile = new Class({
                 if (file !== "")
                     _this.$profilePic.attr("src", "/files/profile-pic/" + _this._getUser().id + "?isTemp=true&time=" + new Date().getTime());
                 else
-                    _this.$uploadFailedParagraph.slideDownAnimated();
+                    _this.$uploadFailedParagraph.slideDownCustom();
             }
         };
 
@@ -139,14 +139,14 @@ CBR.Controllers.EditProfile = new Class({
     },
 
     _activateProfileInfoSection: function () {
-        this.$indicationParagraph.hideBeforeSlideDown();
+        this.$indicationParagraph.hide();
 
         this.$profileInfoSection.show();
         this.$accountInfoSection.hide();
     },
 
     _activateAccountInfoSection: function () {
-        this.$indicationParagraph.hideBeforeSlideDown();
+        this.$indicationParagraph.hide();
 
         this.$accountInfoSection.show();
         this.$profileInfoSection.hide();
@@ -155,16 +155,10 @@ CBR.Controllers.EditProfile = new Class({
     _toggleEmailConfirmationField: function (e) {
         if (CBR.Services.Keyboard.isPressedKeyText(e)) {
             if (this.$emailField.val().toLowerCase() === this._getUser().email && this.$emailConfirmationWrapper.is(":visible"))
-                this.$emailConfirmationWrapper.slideUpAnimated({
-                    complete: function () {
-                        jQuery(this).hide();
-                    }
-                });
+                this.$emailConfirmationWrapper.slideUpCustom();
 
             else if (this.$emailField.val().toLowerCase() !== this._getUser().email && !this.$emailConfirmationWrapper.is(":visible"))
-                this.$emailConfirmationWrapper.show(0, function () {
-                    jQuery(this).slideDownAnimated();
-                });
+                this.$emailConfirmationWrapper.slideDownCustom();
         }
     },
 
@@ -198,12 +192,8 @@ CBR.Controllers.EditProfile = new Class({
                 url: "/api/users",
                 data: CBR.JsonUtil.stringifyModel(user),
                 onSuccess: function (responseText, responseXML) {
-                    _this.$emailConfirmationWrapper.slideUpAnimated({
-                        complete: function () {
-                            jQuery(this).hide();
-                        }
-                    });
-                    _this.$indicationParagraph.slideDownAnimated();
+                    _this.$emailConfirmationWrapper.slideUpOnDesktop();
+                    _this.$indicationParagraph.slideDownCustom();
                 },
                 onFailure: function (xhr) {
                     alert("AJAX fail :(");
@@ -231,7 +221,7 @@ CBR.Controllers.EditProfile = new Class({
     },
 
     _checkIfEmailIsNotYetRegisteredByAnotherUser: function () {
-        this.$emailAlreadyRegisteredParagraph.slideUpAnimated();
+        this.$emailAlreadyRegisteredParagraph.slideUpCustom();
 
         if (this.$emailField.val() !== "") {
             var _this = this;
@@ -243,7 +233,7 @@ CBR.Controllers.EditProfile = new Class({
                 onSuccess: function (responseText, responseXML) {
                     if (this.status !== _this.httpStatusCode.noContent && !_this.validator.isFlaggedInvalid(_this.$emailField)) {
                         _this.validator.flagInvalid(_this.$emailField);
-                        _this.$emailAlreadyRegisteredParagraph.slideDownAnimated();
+                        _this.$emailAlreadyRegisteredParagraph.slideDownCustom();
                     }
                 },
                 onFailure: function (xhr) {
@@ -254,7 +244,7 @@ CBR.Controllers.EditProfile = new Class({
     },
 
     _checkIfEmailConfirmationMatches: function () {
-        this.$emailsDoNotMatchParagraph.slideUpAnimated();
+        this.$emailsDoNotMatchParagraph.slideUpCustom();
 
         var email = this.$emailField.val();
         var emailConfirmation = this.$emailConfirmationField.val();
@@ -264,7 +254,7 @@ CBR.Controllers.EditProfile = new Class({
             !this.validator.isFlaggedInvalid(this.$emailConfirmationField)) {
 
             this.validator.flagInvalid(this.$emailConfirmationField);
-            this.$emailsDoNotMatchParagraph.slideDownAnimated();
+            this.$emailsDoNotMatchParagraph.slideDownCustom();
         }
     },
 
@@ -285,7 +275,7 @@ CBR.Controllers.EditProfile = new Class({
             this._activateAccountInfoSection();
 
             this.validator.flagInvalid(this.$emailField);
-            this.$emailAlreadyRegisteredParagraph.slideDownAnimated();
+            this.$emailAlreadyRegisteredParagraph.slideDownCustom();
         }
 
         return isNotRegistered;
@@ -301,7 +291,7 @@ CBR.Controllers.EditProfile = new Class({
             this._activateAccountInfoSection();
 
             this.validator.flagInvalid(this.$emailConfirmationField);
-            this.$emailsDoNotMatchParagraph.slideDownAnimated();
+            this.$emailsDoNotMatchParagraph.slideDownCustom();
         }
 
         return isMatching;

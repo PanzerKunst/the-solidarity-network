@@ -26,10 +26,7 @@ header {
   }
 
   > ul {
-    // We need to really hide otherwise the anchors of line-height 0 are still clickable because of some margin or something
     display: none;
-
-    @include prepareForAnimatedSlideDown();
 
     clear: both;
 
@@ -54,10 +51,9 @@ header {
 
       // Cancelling mobile-first declaration
       display: block;
-      @include unprepareForAnimatedSlideDown();
 
       background-color: inherit;
-      color: $fontDarkGrey;
+      color: $grayDark;
 
       > li {
         width: (99% / 7);  // 1% less to round down
@@ -73,6 +69,5 @@ header {
 }
 
 .sub-nav {
-  // We need to really hide otherwise the anchors of line-height 0 are still clickable because of some margin or something
   display: none;
 }

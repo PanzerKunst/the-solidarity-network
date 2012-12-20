@@ -2,11 +2,8 @@
 
 #login {
   #content {
-    $inputWidth: 12em;
-    $extraSpaceForInputPaddingAndBorder: 1em;
-
     .field {
-      width: $inputWidth + $extraSpaceForInputPaddingAndBorder;
+      width: $inputWidth;
       margin-left: auto;
       margin-right: auto;
 
@@ -16,7 +13,7 @@
     }
 
     #auth-failed {
-      @include prepareForAnimatedSlideDown();
+      display: none;
 
       text-align: center;
     }

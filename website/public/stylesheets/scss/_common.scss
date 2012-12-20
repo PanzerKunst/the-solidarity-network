@@ -1,34 +1,17 @@
 @import "lib/bourbon/bourbon";
 @import "lib/utils";
+@import "lib/bootstrap/variables";
 
-$red: #BE2D07;
-$fontDarkGrey: #3F3F3F;
 $headerBg: #f5f5f5;
 
-$validationIconWidth: 1em;
-$validationIconHeight: 1em;
-
-$extraSpaceForInputPaddingAndBorder: 1em;
-
 $labelWidth: 9em;
-$inputWidth: 12em;
-$extraInputWidthForSelect: 0.4em;
+$inputWidth: 14em;
 
-$fieldWidth: $inputWidth + $validationIconWidth + $extraSpaceForInputPaddingAndBorder;
-$fieldWidthDesktop: $labelWidth + $inputWidth + $validationIconWidth + $extraSpaceForInputPaddingAndBorder;
+$fieldWidth: $inputWidth;
+$fieldWidthDesktop: $labelWidth + $inputWidth;
 
 @mixin desktop {
   @media screen and (min-width: 49em) {
     @content;
   }
-}
-
-@mixin prepareForAnimatedSlideDown {
-  opacity: 0;
-  line-height: 0;
-}
-
-@mixin unprepareForAnimatedSlideDown {
-  opacity: 1;
-  line-height: 1.4;
 }
