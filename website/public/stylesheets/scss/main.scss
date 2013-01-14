@@ -1,5 +1,10 @@
 @import "common";
 
+html {
+  // Always display the vertical scrollbar
+  overflow-y: scroll;
+}
+
 h1,
 h2 {
   text-align: center;

@@ -20,13 +20,14 @@ CBR.Controllers.NavController = new Class({
     _dropDownSubMenu: function (e) {
         e.preventDefault();
 
+        var $li = jQuery(e.currentTarget).parent();
+        var $subNav = $li.children(".sub-nav");
+        var isToClose = $subNav.is(":visible");
+
         // Close all open
         jQuery(".sub-nav").slideUpCustom();
 
-        var $li = jQuery(e.currentTarget).parent();
-
-        var $subNav = $li.children(".sub-nav");
-        if ($subNav.is(":visible"))
+        if (isToClose)
             this._closeDropDown($subNav);
         else
             this._openDropDown($subNav);

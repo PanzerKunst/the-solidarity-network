@@ -192,7 +192,7 @@ CBR.Controllers.EditProfile = new Class({
                 url: "/api/users",
                 data: CBR.JsonUtil.stringifyModel(user),
                 onSuccess: function (responseText, responseXML) {
-                    _this.$emailConfirmationWrapper.slideUpOnDesktop();
+                    _this.$emailConfirmationWrapper.slideUpCustom();
                     _this.$indicationParagraph.slideDownCustom();
                 },
                 onFailure: function (xhr) {

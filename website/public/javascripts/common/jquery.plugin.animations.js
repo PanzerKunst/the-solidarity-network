@@ -1,9 +1,15 @@
 (function ($) {
     $.fn.slideDownCustom = function () {
-        return this.slideDown();
+        if (Modernizr.mq("screen and (min-width: 49em)"))
+            return this.slideDown();
+
+        return this.show();
     };
 
     $.fn.slideUpCustom = function () {
-        return this.slideUp();
+        if (Modernizr.mq("screen and (min-width: 49em)"))
+            return this.slideUp();
+
+        return this.hide();
     };
 })(jQuery);

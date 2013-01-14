@@ -141,7 +141,7 @@ public class Runner {
 
         User updatedDamien = new User("Dämish",
                 "Bram dit Saint-Amand",
-                "cbramdit@gmail.com",
+                "jahugan@gmx.de",
                 "damish",
                 "tigrou",
                 "Strasbourg",

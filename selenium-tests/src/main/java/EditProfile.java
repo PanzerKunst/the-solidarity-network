@@ -1,6 +1,7 @@
 import models.User;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.Select;
@@ -124,9 +125,11 @@ public class EditProfile extends TestBase {
         // Wait for the page to load, check account tab
         (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
-                return d.findElement(By.cssSelector(".indication"))
-                        .getAttribute("innerHTML")
-                        .equals("Saved!") &&
+                WebElement indication = d.findElement(By.cssSelector(".indication"));
+
+                return indication.isDisplayed() &&
+                        indication.getAttribute("innerHTML")
+                                .equals("Saved!") &&
                         checkAccountValuesForUser(d, user);
             }
         });
