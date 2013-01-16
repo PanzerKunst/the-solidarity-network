@@ -143,6 +143,20 @@ object Application extends Controller {
       }
   }
 
+  def editHelpRequest(id: Int) = Action {
+    implicit request =>
+      loggedInUser(session) match {
+        case Some(loggedInUser) =>
+          val helpRequest = HelpRequestDto.get(Some(Map("id" -> id.toString))).head
+
+          if (helpRequest.requesterId.get == loggedInUser.id.get)
+            Ok(views.html.editHelpRequest(loggedInUser, new FrontendHelpRequest(helpRequest)))
+          else
+            Forbidden("Only your own help requests, you may edit.")
+        case None => Redirect(routes.Application.login)
+      }
+  }
+
   def loggedInUser(session: Session): Option[User] = {
     session.get("userId") match {
       case Some(userId) => {

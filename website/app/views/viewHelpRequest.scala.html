@@ -52,7 +52,7 @@
 
             @if(user.id.get == helpRequest.requester.id) {
             <span>
-                <a id="edit">Edit</a>
+                <a id="edit" href="/help-requests/edit/{{helpRequest.id}}">Edit</a>
             </span>
             <span>
                 <a id="delete">Delete</a>
@@ -94,12 +94,11 @@
                 <p class="field-error" data-check="empty">Please respond to with a message</p>
             </div>
 
+            <input type="submit"/>
+
             <div id="submit-response-wrapper">
-                <a id="post-response-button">Post response</a>
-
                 <a id="cancel-response-button">Cancel</a>
-
-                <input type="submit"/>
+                <a id="post-response-button">Post response</a>
             </div>
         </form>
 
@@ -147,12 +146,11 @@
                 <p class="field-error" data-check="empty">Please explain how things went</p>
             </div>
 
+            <input type="submit"/>
+
             <div id="submit-reference-wrapper">
-                <a id="post-reference-button">Save reference</a>
-
                 <a id="cancel-reference-button">Cancel</a>
-
-                <input type="submit"/>
+                <a id="post-reference-button">Save reference</a>
             </div>
         </form>
         }

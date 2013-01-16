@@ -29,6 +29,27 @@ object HelpRequestApi extends Controller {
       }
   }
 
+  def update = Action(parse.json) {
+    implicit request =>
+
+      Application.loggedInUser(session) match {
+        case Some(loggedInUser) => {
+          val helpRequest = JsonUtil.parse(request.body.toString, classOf[HelpRequest])
+
+          if (helpRequest.requesterId.get == loggedInUser.id.get) {
+            HelpRequestDto.update(helpRequest)
+            Ok
+          }
+          else
+            Forbidden("Only your own help requests, you may update.")
+        }
+        case None => {
+          Logger.info("Help request update attempt while not logged-in")
+          Unauthorized
+        }
+      }
+  }
+
   def get = Action {
     implicit request =>
 

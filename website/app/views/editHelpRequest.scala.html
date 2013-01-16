@@ -1,9 +1,9 @@
-@(user: models.User)
-@main("Submit a help request", "create-help-request") {
+@(user: models.User, helpRequest: models.frontend.FrontendHelpRequest)
+@main("Edit a help request", "edit-help-request") {
 <!--
     Header
 -->
-@nav(Some(user), Some("Submit a help request"))
+@nav(Some(user), Some("Edit a help request"))
 
 } {
 <!--
@@ -15,7 +15,7 @@
     Javascript
 -->
 <script id="content-template" type="text/html">
-    <h1>Submit a help request</h1>
+    <h1>Edit a help request</h1>
 
     <form>
         <div class="field">
@@ -50,7 +50,7 @@
         <input type="submit" />
 
         <div id="submit-button-wrapper">
-            <a id="submit-button">Submit</a>
+            <a id="save-button">Save</a>
         </div>
     </form>
 </script>
@@ -59,8 +59,9 @@
     window.addEvent("domready", function () {
         new CBR.Controllers.NavController().run();
 
-        new CBR.Controllers.CreateHelpRequest({
-            el: "#content"
+        new CBR.Controllers.EditHelpRequest({
+            el: "#content",
+            helpRequest: @Html(services.JsonUtil.serialize(helpRequest))
         }).run();
     });
 </script>

@@ -155,6 +155,23 @@ object HelpRequestDto {
     }
   }
 
+  def update(helpRequest: HelpRequest) {
+    DB.withConnection {
+      implicit c =>
+
+        val query = """
+                       update help_request set
+          title = """" + DbUtil.backslashQuotes(helpRequest.title) + """",
+          description = """" + DbUtil.backslashQuotes(helpRequest.description) + """",
+          expiry_date = """" + DbUtil.dateToString(helpRequest.expiryDate) + """",
+          where id = """ + helpRequest.id.get + """;"""
+
+        Logger.info("HelpRequestDto.update():" + query)
+
+        SQL(query).execute()
+    }
+  }
+
   private def webFiltersToDbFilters(webFilters: Map[String, String]): Map[String, String] = {
     var dbFilters: Map[String, String] = Map()
     for (key <- webFilters.keys)

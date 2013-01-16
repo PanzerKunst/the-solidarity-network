@@ -42,7 +42,7 @@ CBR.Controllers.SearchHelpRequests = new Class({
     },
 
     _initSearchQuery: function() {
-        if (this._getQuery() !== undefined) {
+        if (!CBR.isEmptyObject(this._getQuery())) {
             var queryFieldValue = "";
 
             for (var key in this._getQuery())
