@@ -33,10 +33,10 @@ public class SearchHelpRequests extends TestBase {
 
         (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
-                return d.findElement(By.id("search-button")).isDisplayed();
+                return d.findElement(By.id("search")).isDisplayed();
             }
         });
-        driver.findElement(By.id("search-button"))
+        driver.findElement(By.id("search"))
                 .click();
 
         String cssSelectorOfFirstDisplayedSearchResult = "li[data-id='1']";

@@ -1,0 +1,35 @@
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+  height: 30px; }
+
+.modal {
+  width: 300px;
+  margin-left: -150px; }
+  .modal.fade.in {
+    top: 100%; }
+  @media screen and (min-width: 49em) {
+    .modal {
+      width: 560px;
+      margin-left: -280px; }
+      .modal.fade.in {
+        top: 50%; } }
+
+.modal-body,
+.modal-footer {
+  text-align: center; }
+
+a.btn,
+a.btn:visited {
+  color: #333333; }
+  a.btn.btn-primary, a.btn.btn-info, a.btn.btn-success, a.btn.btn-warning, a.btn.btn-danger, a.btn.btn-inverse,
+  a.btn:visited.btn-primary,
+  a.btn:visited.btn-info,
+  a.btn:visited.btn-success,
+  a.btn:visited.btn-warning,
+  a.btn:visited.btn-danger,
+  a.btn:visited.btn-inverse {
+    color: white; }

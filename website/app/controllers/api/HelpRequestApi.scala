@@ -50,6 +50,31 @@ object HelpRequestApi extends Controller {
       }
   }
 
+  def delete = Action(parse.json) {
+    implicit request =>
+
+      Application.loggedInUser(session) match {
+        case Some(loggedInUser) => {
+          val helpRequest = JsonUtil.parse(request.body.toString, classOf[HelpRequest])
+
+          val subscriptions = SubscriptionToHelpResponsesDto.get(Some(Map("request_id" -> helpRequest.id.get.toString)))
+          for (subscription <- subscriptions)
+            SubscriptionToHelpResponsesDto.delete(subscription)
+
+          if (helpRequest.requesterId.get == loggedInUser.id.get) {
+            HelpRequestDto.delete(helpRequest)
+            Ok
+          }
+          else
+            Forbidden("Only your own help requests, you may delete.")
+        }
+        case None => {
+          Logger.info("Help request delete attempt while not logged-in")
+          Unauthorized
+        }
+      }
+  }
+
   def get = Action {
     implicit request =>
 

@@ -1,11 +1,11 @@
 #search-help-requests #content .centered {
-  width: 18em;
+  width: 20em;
   text-align: center;
   margin-left: auto;
   margin-right: auto; }
   @media screen and (min-width: 49em) {
     #search-help-requests #content .centered {
-      width: 27em;
+      width: 36em;
       *zoom: 1; }
       #search-help-requests #content .centered:before, #search-help-requests #content .centered:after {
         content: " ";
@@ -15,19 +15,10 @@
       #search-help-requests #content .centered > * {
         float: left; } }
   #search-help-requests #content .centered > span {
-    width: 4em; }
-  #search-help-requests #content .centered > .field {
-    width: 19em; }
-    @media screen and (min-width: 49em) {
-      #search-help-requests #content .centered > .field {
-        width: 23em; } }
-#search-help-requests #content #query {
-  /* In this specific case, we want a larger search field for the mobile, because the search button is placed
-      below, therefore more space is available */
-  width: 19em; }
-  @media screen and (min-width: 49em) {
-    #search-help-requests #content #query {
-      width: 23em; } }
+    width: 7em; }
+@media screen and (min-width: 49em) {
+  #search-help-requests #content #query {
+    width: 29em; } }
 #search-help-requests #content .search-result {
   cursor: pointer; }
 #search-help-requests #content .floated-wrapper {

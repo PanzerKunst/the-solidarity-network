@@ -1,0 +1,52 @@
+@import "common";
+
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+  @include box-sizing(border-box);
+}
+
+input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+  $defaultBootstrapTopAndBottomPadding: 4px;
+  $defaultBootstrapBorderWidth: 1px;
+
+  height: $baseLineHeight + 2 * ($defaultBootstrapTopAndBottomPadding + $defaultBootstrapBorderWidth);
+}
+
+.modal {
+  $width: 300px;
+  width: $width;
+  margin-left: -($width / 2);
+
+  &.fade.in {
+    top: 100%;
+  }
+
+  // Original Bootstrap values
+  @include desktop {
+    $width: 560px;
+    width: $width;
+    margin-left: -($width / 2);
+
+    &.fade.in {
+      top: 50%;
+    }
+  }
+}
+
+.modal-body,
+.modal-footer {
+  text-align: center;
+}
+
+a.btn,
+a.btn:visited {
+  color: $grayDark;
+
+  &.btn-primary,
+  &.btn-info,
+  &.btn-success,
+  &.btn-warning,
+  &.btn-danger,
+  &.btn-inverse {
+    color: white;
+  }
+}

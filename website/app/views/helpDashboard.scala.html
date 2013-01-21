@@ -1,4 +1,4 @@
-@(user: models.User)
+@(user: models.User, from: Option[String])
 @main("Help dashboard", "help-dashboard") {
 <!--
     Header
@@ -10,6 +10,10 @@
     Content
 -->
 <h1>Help dashboard</h1>
+
+@if(from.isDefined) {
+<p class="indication">Help request deleted</p>
+}
 
 <div class="action line">
     <a href="/help-requests/new">Submit a help request</a>
@@ -24,6 +28,9 @@
 <div class="action">
     <a href="/help-requests?respondedBy=@user.username">Help requests I responded to</a>
 </div>
+
+<h2>Help requests near me</h2>
+<em>TODO: insert search form and results here</em>
 
 <div id="rss-feed-wrapper">
     <a id="rss-feed">Help requests near me</a>

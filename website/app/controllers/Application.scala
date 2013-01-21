@@ -68,8 +68,7 @@ object Application extends Controller {
         case Some(loggedInUser) =>
           val references = ReferenceDto.get(Some(Map("to_user_id" -> loggedInUser.id.get.toString)))
           val frontendReferences = for (ref <- references) yield new FrontendReference(ref, loggedInUser)
-          Ok(views.html.myProfile(loggedInUser, new FrontendUser(loggedInUser), frontendReferences))
-
+          Ok(views.html.profile(loggedInUser, new FrontendUser(loggedInUser), frontendReferences))
         case None => Redirect(routes.Application.login)
       }
   }
@@ -121,7 +120,13 @@ object Application extends Controller {
   def helpDashboard = Action {
     implicit request =>
       loggedInUser(session) match {
-        case Some(loggedInUser) => Ok(views.html.helpDashboard(loggedInUser))
+        case Some(loggedInUser) =>
+          val from = if (request.queryString.contains("from"))
+            Some(request.queryString.get("from").get.head)
+          else
+            None
+
+          Ok(views.html.helpDashboard(loggedInUser, from))
         case None => Redirect(routes.Application.login)
       }
   }
@@ -130,15 +135,21 @@ object Application extends Controller {
     implicit request =>
       loggedInUser(session) match {
         case Some(loggedInUser) =>
-          val helpRequest = HelpRequestDto.get(Some(Map("id" -> id.toString))).head
+          val helpRequests = HelpRequestDto.get(Some(Map("id" -> id.toString)))
 
-          val filtersMap = Map("request_id" -> id.toString,
-            "subscriber_id" -> loggedInUser.id.get.toString)
-          val isSubscribedToResponses = !SubscriptionToHelpResponsesDto.get(Some(filtersMap)).isEmpty
+          if (helpRequests.isEmpty) {
+            NotFound("Help request not found")
+          }
+          else {
+            val filtersMap = Map("request_id" -> id.toString,
+              "subscriber_id" -> loggedInUser.id.get.toString)
+            val isSubscribedToResponses = !SubscriptionToHelpResponsesDto.get(Some(filtersMap)).isEmpty
 
-          val frontendHelpResponses = for (helpResponse <- HelpResponseDto.get(Some(Map("request_id" -> id.toString)))) yield new FrontendHelpResponse(helpResponse)
+            val frontendHelpResponses = for (helpResponse <- HelpResponseDto.get(Some(Map("request_id" -> id.toString)))) yield new FrontendHelpResponse(helpResponse)
 
-          Ok(views.html.viewHelpRequest(loggedInUser, new FrontendHelpRequest(helpRequest), isSubscribedToResponses, frontendHelpResponses))
+            Ok(views.html.viewHelpRequest(loggedInUser, new FrontendHelpRequest(helpRequests.head), isSubscribedToResponses, frontendHelpResponses))
+          }
+
         case None => Redirect(routes.Application.login)
       }
   }

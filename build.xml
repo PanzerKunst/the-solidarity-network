@@ -42,6 +42,7 @@ Dependencies:
         <concat destfile="${dist.merged.file.css}" fixlastline="yes" append="no">
             <filelist dir="${src.css.dir}" files="
                 lib/bootstrap/bootstrap.css
+                bootstrap-overrides.css
                 responsive.css
                 main.css
                 header.css
@@ -54,7 +55,7 @@ Dependencies:
                 create-help-request.css
                 search-help-requests.css
                 view-help-request.css
-                my-profile.css
+                profile.css
                 edit-profile.css" />
         </concat>
     </target>
@@ -96,7 +97,6 @@ Dependencies:
                 controllers/create-help-request-controller.js
                 controllers/search-help-requests-controller.js
                 controllers/view-help-request-controller.js
-                controllers/my-profile-controller.js
                 controllers/edit-profile-controller.js
                 controllers/profile-controller.js" />
         </concat>

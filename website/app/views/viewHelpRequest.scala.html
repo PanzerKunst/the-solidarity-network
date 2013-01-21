@@ -24,7 +24,7 @@
         <p>Lives in {{helpRequest.requester.city}}, {{helpRequest.country.name}}</p>
 
         <div>
-            <a href="/users/{{helpRequest.requester.username}}">View full profile</a>
+            <a href="/users/{{helpRequest.requester.username}}" class="btn"><i class="icon-eye-open"></i>&nbsp;&nbsp;View full profile</a>
         </div>
 
         @if(user.id.get != helpRequest.requester.id) {
@@ -51,12 +51,12 @@
             </p>
 
             @if(user.id.get == helpRequest.requester.id) {
-            <span>
-                <a id="edit" href="/help-requests/edit/{{helpRequest.id}}">Edit</a>
-            </span>
-            <span>
-                <a id="delete">Delete</a>
-            </span>
+            <div>
+                <a href="/help-requests/edit/{{helpRequest.id}}" class="btn"><i class="icon-edit"></i>&nbsp;&nbsp;Edit</a>
+            </div>
+            <div>
+                <button id="delete" class="btn btn-danger"><i class="icon-trash icon-white"></i>&nbsp;&nbsp;Delete</button>
+            </div>
             }
         </section>
 
@@ -97,8 +97,8 @@
             <input type="submit"/>
 
             <div id="submit-response-wrapper">
-                <a id="cancel-response-button">Cancel</a>
-                <a id="post-response-button">Post response</a>
+                <a id="cancel-response">Cancel</a>
+                <a id="post-response">Post response</a>
             </div>
         </form>
 
@@ -108,7 +108,7 @@
 
         <form id="reference-form">
             <div class="field">
-                <ul id="helped-or-was-helped" class="pills">
+                <ul id="helped-or-was-helped" class="nav nav-pills">
                     <li id="helped">
                         <a>Helped</a>
                     </li>
@@ -122,7 +122,7 @@
 
             <div class="field">
                 <label for="grade">Grade:</label><!--
-             --><ul id="grade" class="pills">
+             --><ul id="grade" class="nav nav-pills">
                     <li data-grade-id="4">
                         <a>Great!</a>
                     </li>
@@ -149,12 +149,31 @@
             <input type="submit"/>
 
             <div id="submit-reference-wrapper">
-                <a id="cancel-reference-button">Cancel</a>
-                <a id="post-reference-button">Save reference</a>
+                <a id="cancel-reference">Cancel</a>
+                <a id="post-reference">Save reference</a>
             </div>
         </form>
         }
     </section>
+
+    <div class="modal hide fade" id="confirm-delete-modal">
+        <div class="modal-body">
+            <p>Delete this help request?</p>
+        </div>
+        <div class="modal-footer">
+            <button id="cancel-delete" class="btn btn-inverse"><i class="icon-chevron-left icon-white"></i>&nbsp;&nbsp;Cancel</button>
+            <button id="confirm-delete" class="btn btn-primary"><i class="icon-chevron-right icon-white"></i>&nbsp;&nbsp;Delete</button>
+        </div>
+    </div>
+
+    <div class="modal hide fade" id="deletion-impossible-modal">
+        <div class="modal-body">
+            <p>Only unanswered help requests can be deleted</p>
+        </div>
+        <div class="modal-footer">
+            <button id="close-modal" class="btn btn-inverse"><i class="icon-remove icon-white"></i>&nbsp;&nbsp;Close</button>
+        </div>
+    </div>
 
 </script>
 

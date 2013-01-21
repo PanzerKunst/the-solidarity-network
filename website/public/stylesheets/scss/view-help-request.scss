@@ -2,6 +2,17 @@
 
 #view-help-request {
   #content {
+    #help-request {
+      @include clearfix;
+
+      > div {
+        float: left;
+        width: 50%;
+
+        text-align: center;
+      }
+    }
+
     #respond-form,
     #reference-form {
       display: none;

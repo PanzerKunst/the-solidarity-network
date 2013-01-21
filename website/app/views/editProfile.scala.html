@@ -11,9 +11,9 @@
 -->
 <h1>Edit profile and account</h1>
 
-<p class="indication">Saved!</p>
+<p class="indication">Saved! <a href="/my-profile">View my profile</a></p>
 
-<ul>
+<ul class="nav nav-tabs">
     <li>
         <a id="show-profile-info">My profile</a>
     </li>
@@ -84,7 +84,7 @@
             <div class="field">
                 <img id="profile-pic" src="/files/profile-pic/{{user.id}}"/>
                 <span>Got a better one?</span>
-                <a id="change-profile-pic" data-action="/files/profile-pic">Browse</a>
+                <button id="change-profile-pic" data-action="/files/profile-pic" class="btn btn-search"><i class="icon-hand-right"></i>&nbsp;&nbsp;Browse</button>
 
                 <p class="field-error" id="wrong-extension">Only .png, .jpg and .jpeg extensions are accepted. Please
                     select another image.</p>
@@ -176,8 +176,8 @@
 
         <input type="submit"/>
 
-        <div id="submit-button-wrapper">
-            <a id="save-button">Save</a>
+        <div id="submit-wrapper">
+            <button id="save" class="btn btn-primary btn-large">Save</button>
         </div>
     </form>
 </script>

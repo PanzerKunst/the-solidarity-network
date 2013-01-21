@@ -3,12 +3,12 @@
 #search-help-requests {
   #content {
 
-    $searchButtonWidth: 4em;
+    $searchButtonWidth: 7em;
 
     $howLargerIsSearchFieldThanOtherInputs: 5em;
 
     .centered {
-      width: $fieldWidth + $searchButtonWidth;
+      width: $fieldWidth;
 
       // For the child <span> to be centered in mobile layout
       text-align: center;
@@ -29,23 +29,9 @@
       > span {
         width: $searchButtonWidth;
       }
-
-      > .field {
-        // Since we want a larger than normal search field, we need the wrapper to be bigger as well
-        width: $fieldWidth + $howLargerIsSearchFieldThanOtherInputs;
-
-        @include desktop {
-          // This is the default value, but was overridden just above
-          width: $fieldWidthDesktop;
-        }
-      }
     }
 
     #query {
-      /* In this specific case, we want a larger search field for the mobile, because the search button is placed
-          below, therefore more space is available */
-      width: $fieldWidth + $howLargerIsSearchFieldThanOtherInputs;
-
       @include desktop {
         width: $fieldWidthDesktop;
       }

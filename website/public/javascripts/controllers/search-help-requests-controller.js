@@ -37,7 +37,7 @@ CBR.Controllers.SearchHelpRequests = new Class({
     },
 
     _initEvents: function () {
-        jQuery("#search-button").click(jQuery.proxy(this._doSearch, this));
+        jQuery("#search").click(jQuery.proxy(this._doSearch, this));
         jQuery("form").submit(jQuery.proxy(this._doSearch, this));
     },
 

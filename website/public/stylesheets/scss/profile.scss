@@ -1,0 +1,60 @@
+@import "common";
+
+#profile {
+  #content {
+    #profile-info {
+      @include desktop {
+        @include clearfix;
+      }
+    }
+
+    #profile-pic {
+      > img {
+        max-width: 21em;
+        max-height: 25em;
+        margin: auto;
+
+        @include desktop {
+          max-width: 100%;
+          max-height: 100%;
+        }
+      }
+
+      @include desktop {
+        @include box-sizing(border-box);
+        float: left;
+        padding-right: 1em;
+        width: 35%;
+      }
+    }
+
+
+    #textual-info {
+      max-width: 25em;
+      margin: auto;
+
+      > div {
+        text-align: center;
+      }
+
+      > p {
+        text-align: center;
+
+        @include desktop {
+          text-align: left;
+        }
+      }
+
+      #description {
+        text-align: left;
+      }
+
+      @include desktop {
+        float: left;
+        max-width: 65%;
+        width: 65%;
+        margin: 0;
+      }
+    }
+  }
+}

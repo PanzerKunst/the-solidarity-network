@@ -41,7 +41,7 @@ object HelpRequestDto {
             val processedSearchQuery = DbUtil.backslashQuotes(sq.replaceAll("\\*", "%"))
 
             """
-            select hr.id, hr.title, hr.description, hr.creation_date, hr.expiry_date,
+            select distinct hr.id, hr.title, hr.description, hr.creation_date, hr.expiry_date,
               u.id, u.first_name, u.last_name, u.username, u.email, u.city, u.country_id,
               c.id, c.name
             from help_request hr
@@ -101,7 +101,7 @@ object HelpRequestDto {
         else ""
 
         val query = """
-            select hr.id, hr.title, hr.description, hr.creation_date, hr.expiry_date,
+            select distinct hr.id, hr.title, hr.description, hr.creation_date, hr.expiry_date,
               u.id, u.first_name, u.last_name, u.username, u.email, u.city, u.country_id,
               c.id, c.name
             from help_request hr
@@ -163,10 +163,24 @@ object HelpRequestDto {
                        update help_request set
           title = """" + DbUtil.backslashQuotes(helpRequest.title) + """",
           description = """" + DbUtil.backslashQuotes(helpRequest.description) + """",
-          expiry_date = """" + DbUtil.dateToString(helpRequest.expiryDate) + """",
+          expiry_date = """" + DbUtil.dateToString(helpRequest.expiryDate) + """"
           where id = """ + helpRequest.id.get + """;"""
 
         Logger.info("HelpRequestDto.update():" + query)
+
+        SQL(query).execute()
+    }
+  }
+
+  def delete(helpRequest: HelpRequest) {
+    DB.withConnection {
+      implicit c =>
+
+        val query = """
+                      delete from help_request
+          where id = """ + helpRequest.id.get + """;"""
+
+        Logger.info("HelpRequestDto.delete():" + query)
 
         SQL(query).execute()
     }

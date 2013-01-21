@@ -30,10 +30,6 @@ a:visited {
   cursor: pointer;
   text-decoration: none;
   color: blue;
-
-  &:hover {
-    color: $red;
-  }
 }
 
 li {
@@ -46,17 +42,9 @@ label {
   display: inline-block;  // For "width" declaration to work
 }
 
-// Bootstrap override
-select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
-  @include box-sizing(border-box);
-}
-
-// Bootstrap override
-input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
-  $defaultBootstrapTopAndBottomPadding: 4px;
-  $defaultBootstrapBorderWidth: 1px;
-
-  height: $baseLineHeight + 2 * ($defaultBootstrapTopAndBottomPadding + $defaultBootstrapBorderWidth);
+textarea {
+  resize: vertical;
+  height: 8em;
 }
 
 #content {

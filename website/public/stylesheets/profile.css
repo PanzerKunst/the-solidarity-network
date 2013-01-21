@@ -1,42 +1,41 @@
 @media screen and (min-width: 49em) {
-  #my-profile #content #profile-info {
+  #profile #content #profile-info {
     *zoom: 1; }
-    #my-profile #content #profile-info:before, #my-profile #content #profile-info:after {
+    #profile #content #profile-info:before, #profile #content #profile-info:after {
       content: " ";
       display: table; }
-    #my-profile #content #profile-info:after {
+    #profile #content #profile-info:after {
       clear: both; } }
-#my-profile #content #profile-pic > img {
-  width: 100%;
-  max-width: 25em;
+#profile #content #profile-pic > img {
+  max-width: 21em;
   max-height: 25em;
   margin: auto; }
   @media screen and (min-width: 49em) {
-    #my-profile #content #profile-pic > img {
+    #profile #content #profile-pic > img {
       max-width: 100%;
       max-height: 100%; } }
 @media screen and (min-width: 49em) {
-  #my-profile #content #profile-pic {
+  #profile #content #profile-pic {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     float: left;
     padding-right: 1em;
     width: 35%; } }
-#my-profile #content #textual-info {
+#profile #content #textual-info {
   max-width: 25em;
   margin: auto; }
-  #my-profile #content #textual-info > div {
+  #profile #content #textual-info > div {
     text-align: center; }
-  #my-profile #content #textual-info > p {
+  #profile #content #textual-info > p {
     text-align: center; }
     @media screen and (min-width: 49em) {
-      #my-profile #content #textual-info > p {
+      #profile #content #textual-info > p {
         text-align: left; } }
-  #my-profile #content #textual-info #description {
+  #profile #content #textual-info #description {
     text-align: left; }
   @media screen and (min-width: 49em) {
-    #my-profile #content #textual-info {
+    #profile #content #textual-info {
       float: left;
       max-width: 65%;
       width: 65%;

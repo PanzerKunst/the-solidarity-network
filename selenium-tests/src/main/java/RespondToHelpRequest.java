@@ -23,11 +23,11 @@ public class RespondToHelpRequest extends TestBase {
 
         (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
-                return d.findElement(By.id("post-response-button")).isDisplayed();
+                return d.findElement(By.id("post-response")).isDisplayed();
             }
         });
 
-        driver.findElement(By.id("post-response-button"))
+        driver.findElement(By.id("post-response"))
                 .click();
 
         sleepBecauseSeleniumSucks();

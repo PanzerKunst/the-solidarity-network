@@ -28,7 +28,7 @@ CBR.Controllers.CreateHelpRequest = new Class({
     },
 
     _initEvents: function() {
-        jQuery("#submit-button").click(jQuery.proxy(this._doCreate, this));
+        jQuery("#submit").click(jQuery.proxy(this._doCreate, this));
         jQuery("form").submit(jQuery.proxy(this._doCreate, this));
     },
 

@@ -134,7 +134,7 @@ CBR.Controllers.EditProfile = new Class({
 
         this.$emailField.keyup(jQuery.proxy(this._toggleEmailConfirmationField, this));
 
-        jQuery("#save-button").click(jQuery.proxy(this._doSave, this));
+        jQuery("#save").click(jQuery.proxy(this._doSave, this));
         jQuery("form").submit(jQuery.proxy(this._doSave, this));
     },
 
@@ -192,6 +192,7 @@ CBR.Controllers.EditProfile = new Class({
                 url: "/api/users",
                 data: CBR.JsonUtil.stringifyModel(user),
                 onSuccess: function (responseText, responseXML) {
+                    jQuery(window).scrollTop(0);
                     _this.$emailConfirmationWrapper.slideUpCustom();
                     _this.$indicationParagraph.slideDownCustom();
                 },

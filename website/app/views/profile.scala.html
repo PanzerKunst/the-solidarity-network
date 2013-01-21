@@ -1,9 +1,9 @@
 @(user: models.User, frontendUser: models.frontend.FrontendUser, frontendReferences: List[models.frontend.FrontendReference])
-@main(frontendUser.firstName + " " + frontendUser.lastName + " aka " + frontendUser.username, "profile") {
+@main(frontendUser.firstName + " " + frontendUser.lastName + ", aka " + frontendUser.username, "profile") {
 <!--
     Header
 -->
-@nav(Some(user), Some(frontendUser.firstName + " " + frontendUser.lastName + " aka " + frontendUser.username))
+@nav(Some(user), Some(frontendUser.firstName + " " + frontendUser.lastName + ", aka " + frontendUser.username))
 
 } {
 <!--
@@ -15,15 +15,22 @@
     Javascript
 -->
 <script id="content-template" type="text/html">
-    <h1>{{user.firstName}} {{user.lastName}} aka {{user.username}}</h1>
+    <h1>{{user.firstName}} {{user.lastName}}, aka {{user.username}}</h1>
 
     <section id="profile-info">
-        <img class="profile-pic" src="/files/profile-pic/{{user.id}}" />
+        <div id="profile-pic">
+            <img src="/files/profile-pic/{{user.id}}" />
+        </div>
 
         <div id="textual-info">
             <p>Lives in {{user.city}}, {{user.country.name}}</p>
 
-            <p>{{user.description}}</p>
+            <p id="description">{{user.description}}</p>
+            @if(user.id.get == frontendUser.id) {
+            <div>
+                <a href="/my-profile/edit" class="btn"><i class="icon-edit"></i>&nbsp;&nbsp;Edit</a>
+            </div>
+            }
         </div>
     </section>
 
@@ -36,7 +43,11 @@
             <img class="profile-pic-thumb" src="/files/profile-pic/{{fromUser.id}}" />
             <span><a href="/users/{{fromUser.username}}">{{fromUser.firstName}} {{fromUser.lastName}} aka "{{fromUser.username}}"</a></span>
             <span class="creation-date">{{creationDatetime}}</span>
-            <a href="mailto:panzrkunst@@yahoo.fr?subject=Reporting-a-reference">Report</a>
+
+            @if(user.id.get == frontendUser.id) {
+            <a href="mailto:panzrkunst@@yahoo.fr?subject=Reporting reference number {{id}}">Report</a>
+            }
+
             <span class="was-helped {{wasHelped}}"></span>
             <span class="rating {{rating.id}}"></span>
             <p>{{text}}</p>

@@ -35,7 +35,7 @@ public class WriteReference extends TestBase {
         driver.findElement(By.id("reference-text"))
                 .sendKeys(refText);
 
-        driver.findElement(By.id("post-reference-button"))
+        driver.findElement(By.id("post-reference"))
                 .click();
 
         if (driver instanceof ChromeDriver) {

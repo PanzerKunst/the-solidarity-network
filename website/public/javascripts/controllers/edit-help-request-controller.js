@@ -46,7 +46,7 @@ CBR.Controllers.EditHelpRequest = new Class({
     },
 
     _initEvents: function () {
-        jQuery("#save-button").click(jQuery.proxy(this._doSave, this));
+        jQuery("#save").click(jQuery.proxy(this._doSave, this));
         jQuery("form").submit(jQuery.proxy(this._doSave, this));
     },
 
@@ -57,6 +57,9 @@ CBR.Controllers.EditHelpRequest = new Class({
             this._getHelpRequest().title = this.$titleField.val();
             this._getHelpRequest().description = this.$descriptionField.val();
             this._getHelpRequest().expiryDate = this.$expiryDateField.val();
+
+            // For the parsing by the backend to work
+            this._getHelpRequest().requesterId = this._getHelpRequest().requester.id;
 
             // Jackson fails to parse "yyyy-MM-dd hh:mm:ss" for datetimes. "yyyy-MM-ddThh:mm:ss" works though.
             this._getHelpRequest().creationDatetime = this._getHelpRequest().creationDatetime.replace(" ", "T");

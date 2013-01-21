@@ -21,11 +21,15 @@ CBR.Controllers.ViewHelpRequest = new Class({
         this._initPills();
     },
 
-    _getHelpRequest: function() {
+    _getHelpRequest: function () {
         return this.options.helpRequest;
     },
 
-    _getHelpRequester: function() {
+    _getHelpResponses: function() {
+        return this.options.helpResponses;
+    },
+
+    _getHelpRequester: function () {
         return this.options.helpRequest.requester;
     },
 
@@ -39,6 +43,10 @@ CBR.Controllers.ViewHelpRequest = new Class({
         this.$writeReference = jQuery("#write-reference");
 
         this.$expanded = jQuery(".expanded");
+
+        this.$modals = jQuery(".modal");
+        this.$confirmDeleteModal = jQuery("#confirm-delete-modal");
+        this.$deletionImpossibleModal = jQuery("#deletion-impossible-modal");
     },
 
     _initValidation: function () {
@@ -58,21 +66,26 @@ CBR.Controllers.ViewHelpRequest = new Class({
     },
 
     _initEvents: function () {
+        jQuery("#delete").click(jQuery.proxy(this._showModal, this));
+        jQuery("#cancel-delete").click(jQuery.proxy(this._hideModals, this));
+        jQuery("#close-modal").click(jQuery.proxy(this._hideModals, this));
+        jQuery("#confirm-delete").click(jQuery.proxy(this._doDeleteHelpRequest, this));
+
         this.$isSubscribingToFutureResponsesCheckbox.change(jQuery.proxy(this._changeSubscriptionToResponses, this));
 
         this.$respond.click(jQuery.proxy(this._toggleRespondForm, this));
-        jQuery("#cancel-response-button").click(jQuery.proxy(this._collapseRespondForm, this));
-        jQuery("#post-response-button").click(jQuery.proxy(this._doCreateResponse, this));
+        jQuery("#cancel-response").click(jQuery.proxy(this._collapseRespondForm, this));
+        jQuery("#post-response").click(jQuery.proxy(this._doCreateResponse, this));
         this.$respondForm.submit(jQuery.proxy(this._doCreateResponse, this));
 
         this.$writeReference.click(jQuery.proxy(this._toggleReferenceForm, this));
-        jQuery("#cancel-reference-button").click(jQuery.proxy(this._collapseReferenceForm, this));
-        jQuery("#post-reference-button").click(jQuery.proxy(this._doCreateReference, this));
+        jQuery("#cancel-reference").click(jQuery.proxy(this._collapseReferenceForm, this));
+        jQuery("#post-reference").click(jQuery.proxy(this._doCreateReference, this));
         this.$referenceForm.submit(jQuery.proxy(this._doCreateReference, this));
     },
 
-    _initPills: function() {
-        jQuery(".pills a").click(jQuery.proxy(this.setActivePill, this));
+    _initPills: function () {
+        jQuery(".nav-pills a").click(jQuery.proxy(this.setActivePill, this));
     },
 
     _prepareDataForDisplay: function () {
@@ -95,6 +108,50 @@ CBR.Controllers.ViewHelpRequest = new Class({
 
             currentHelpResponse.creationDatetime = currentCreationDatetime;
         }
+    },
+
+    _showModal: function (e) {
+        e.preventDefault();
+
+        if (this._getHelpResponses() !== undefined && this._getHelpResponses().length > 0)
+            this.$deletionImpossibleModal.modal("show");
+        else
+            this.$confirmDeleteModal.modal("show");
+    },
+
+    _hideModals: function (e) {
+        e.preventDefault();
+
+        this.$modals.modal('hide');
+    },
+
+    _doDeleteHelpRequest: function(e) {
+        e.preventDefault(e);
+
+        // For the parsing by the backend to work
+        this._getHelpRequest().requesterId = this._getHelpRequest().requester.id;
+
+        // Jackson fails to parse "yyyy-MM-dd hh:mm:ss" for datetimes. "yyyy-MM-ddThh:mm:ss" works though.
+        this._getHelpRequest().creationDatetime = this._getHelpRequest().creationDatetime.replace(" ", "T");
+
+        var _this = this;
+
+        new Request({
+            urlEncoded: false,
+            headers: { "Content-Type": "application/json" },
+            emulation: false, // Otherwise PUT and DELETE requests are sent as POST
+            url: "/api/help-requests",
+            data: CBR.JsonUtil.stringifyModel(this._getHelpRequest()),
+            onSuccess: function(responseText, responseXML) {
+                location.replace("/help?from=helpRequestDeleted");
+            },
+            onFailure: function (xhr) {
+                if (xhr.status === _this.httpStatusCode.unauthorized)
+                    location.replace("/login");
+                else
+                    alert("AJAX fail :(");
+            }
+        }).DELETE();   // Lowercase triggers a jsHint error
     },
 
     _toggleRespondForm: function () {
@@ -189,7 +246,7 @@ CBR.Controllers.ViewHelpRequest = new Class({
         }
     },
 
-    _changeSubscriptionToResponses: function(e) {
+    _changeSubscriptionToResponses: function (e) {
         e.preventDefault();
 
         var subscription = new CBR.Models.SubscriptionToHelpResponses({
