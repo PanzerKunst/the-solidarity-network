@@ -26,11 +26,14 @@
             <p>Lives in {{user.city}}, {{user.country.name}}</p>
 
             <p id="description">{{user.description}}</p>
-            @if(user.id.get == frontendUser.id) {
+
             <div>
+                @if(user.id.get == frontendUser.id) {
                 <a href="/my-profile/edit" class="btn"><i class="icon-edit"></i>&nbsp;&nbsp;Edit</a>
+                } else {
+                <a href="/messages/new?to={{user.username}}" class="btn"><i class="icon-pencil"></i>&nbsp;&nbsp;Write message</a>
+                }
             </div>
-            }
         </div>
     </section>
 

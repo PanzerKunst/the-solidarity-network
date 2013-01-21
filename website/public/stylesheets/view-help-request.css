@@ -62,7 +62,7 @@
 #view-help-request #content #submit-response-wrapper,
 #view-help-request #content #submit-reference-wrapper {
   margin: auto;
-  width: 12em; }
+  width: 16em; }
   #view-help-request #content #submit-response-wrapper > :first-child,
   #view-help-request #content #submit-reference-wrapper > :first-child {
     margin-right: 1em; }
