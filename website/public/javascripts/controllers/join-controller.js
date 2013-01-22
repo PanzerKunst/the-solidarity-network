@@ -13,7 +13,7 @@ CBR.Controllers.Join = new Class({
             )
         );
 
-        this._initElements();
+        this.initElements();
 
         this.$languageSelect.val(this._getLanguageCode());
 
@@ -27,7 +27,9 @@ CBR.Controllers.Join = new Class({
         return this.options.languageCode;
     },
 
-    _initElements: function () {
+    initElements: function () {
+        this.parent();
+
         this.$usernameField = jQuery("#username");
         this.$emailField = jQuery("#email");
         this.$emailConfirmationField = jQuery("#email-confirmation");
@@ -78,7 +80,7 @@ CBR.Controllers.Join = new Class({
                 streetAddress: jQuery("#street-address").val(),
                 postCode: jQuery("#post-code").val(),
                 city: jQuery("#city").val(),
-                countryId: jQuery('#country').val()
+                countryId: jQuery("#country").val()
             });
 
             new Request({

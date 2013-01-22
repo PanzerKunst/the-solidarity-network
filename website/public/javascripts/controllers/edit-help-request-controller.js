@@ -13,7 +13,7 @@ CBR.Controllers.EditHelpRequest = new Class({
             )
         );
 
-        this._initElements();
+        this.initElements();
         this._initValidation();
         this._fillForm();
         this._initEvents();
@@ -23,7 +23,9 @@ CBR.Controllers.EditHelpRequest = new Class({
         return this.options.helpRequest;
     },
 
-    _initElements: function () {
+    initElements: function () {
+        this.parent();
+
         this.$titleField = jQuery("#title");
         this.$descriptionField = jQuery("#description");
         this.$expiryDateField = jQuery("#expiry-date");

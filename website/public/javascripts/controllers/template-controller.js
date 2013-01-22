@@ -20,6 +20,10 @@ CBR.Controllers.TemplateController = new Class({
         $a.trigger("active-toggled");
     },
 
+    initElements: function() {
+        jQuery("select", this.options.el).select2({minimumResultsForSearch: 20});
+    },
+
     httpStatusCode: {
         noContent: 204,
         unauthorized: 401

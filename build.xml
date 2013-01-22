@@ -11,6 +11,7 @@ Dependencies:
     <property name="antcontrib.dir" value="build/lib/ant-contrib.jar" />
     <property name="src.js.dir" value="${basedir}/website/public/javascripts" />
     <property name="src.css.dir" value="${basedir}/website/public/stylesheets" />
+    <property name="src.plugin.dir" value="${basedir}/website/public/plugins" />
     <property name="dist.js.dir" value="${basedir}/website/public/dist/javascripts" />
     <property name="dist.css.dir" value="${basedir}/website/public/dist/stylesheets" />
     <property name="non-lib.js.file" value="${basedir}/website/tmp/non-lib.js" />
@@ -40,23 +41,25 @@ Dependencies:
     <!-- Concat all css files. Add all files you wish to merge. Remember order matters! -->
     <target name="merge-css">
         <concat destfile="${dist.merged.file.css}" fixlastline="yes" append="no">
-            <filelist dir="${src.css.dir}" files="
-                lib/bootstrap/bootstrap.css
-                bootstrap-overrides.css
-                responsive.css
-                main.css
-                header.css
-                form.css
-                index.css
-                join.css
-                login.css
-                home.css
-                help-dashboard.css
-                create-help-request.css
-                search-help-requests.css
-                view-help-request.css
-                profile.css
-                edit-profile.css" />
+            <filelist files="
+                ${src.css.dir}/lib/bootstrap/bootstrap.css
+                ${src.plugin.dir}/select2/select2.css
+                ${src.css.dir}/bootstrap-overrides.css
+                ${src.css.dir}/select2-overrides.css
+                ${src.css.dir}/responsive.css
+                ${src.css.dir}/main.css
+                ${src.css.dir}/header.css
+                ${src.css.dir}/form.css
+                ${src.css.dir}/index.css
+                ${src.css.dir}/join.css
+                ${src.css.dir}/login.css
+                ${src.css.dir}/home.css
+                ${src.css.dir}/help-dashboard.css
+                ${src.css.dir}/create-help-request.css
+                ${src.css.dir}/search-help-requests.css
+                ${src.css.dir}/view-help-request.css
+                ${src.css.dir}/profile.css
+                ${src.css.dir}/edit-profile.css" />
         </concat>
     </target>
 
@@ -148,13 +151,14 @@ Dependencies:
     <!-- Merges all javascript files into one. Remember, order matters! -->
     <target name="merge-js">
         <concat destfile="${dist.merged.file.js}" fixlastline="yes" append="no">
-            <filelist id="js-files" dir="${src.js.dir}" files="
-                lib/jquery-1.8.3.js
-                common/jquery.no-conflict.js
-                lib/mootools-core-1.4.5-full-nocompat.js
-                lib/mustache.js
-                lib/bootstrap.js
-                lib/ajaxupload.js
+            <filelist id="js-files" files="
+                ${src.js.dir}/lib/jquery-1.8.3.js
+                ${src.js.dir}/common/jquery.no-conflict.js
+                ${src.js.dir}/lib/mootools-core-1.4.5-full-nocompat.js
+                ${src.js.dir}/lib/mustache.js
+                ${src.js.dir}/lib/bootstrap.js
+                ${src.plugin.dir}/ajaxupload.js
+                ${src.plugin.dir}/select2/select2.js
                 ${non-lib.js.file}" />
         </concat>
     </target>

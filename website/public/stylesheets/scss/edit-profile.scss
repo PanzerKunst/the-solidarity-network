@@ -33,13 +33,14 @@
     }
 
     @include desktop {
-      $selectWidth: 6em;
+      $selectWidth: 16em;
 
       label[for="language"] {
         width: $fieldWidthDesktop - $selectWidth;
       }
 
-      #language {
+      #language,
+      #s2id_language {
         width: $selectWidth;
       }
     }

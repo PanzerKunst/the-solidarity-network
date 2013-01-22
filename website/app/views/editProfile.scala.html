@@ -14,7 +14,7 @@
 <p class="indication">Saved! <a href="/my-profile">View my profile</a></p>
 
 <ul class="nav nav-tabs">
-    <li>
+    <li class="active">
         <a id="show-profile-info">My profile</a>
     </li>
     <li>
@@ -67,7 +67,7 @@
 
                 <div class="field">
                     <label for="country">Country <span>*</span></label><!--
-                 --><select id="country">
+                 --><select id="country" data-placeholder="Select:">
                         <option value=""></option>
                         {{#countries}}
                         <option value="{{id}}">{{name}}</option>

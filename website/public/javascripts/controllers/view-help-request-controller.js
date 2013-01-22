@@ -15,7 +15,7 @@ CBR.Controllers.ViewHelpRequest = new Class({
             )
         );
 
-        this._initElements();
+        this.initElements();
         this._initValidation();
         this._initEvents();
         this._initPills();
@@ -33,7 +33,9 @@ CBR.Controllers.ViewHelpRequest = new Class({
         return this.options.helpRequest.requester;
     },
 
-    _initElements: function () {
+    initElements: function () {
+        this.parent();
+
         this.$respondForm = jQuery("#respond-form");
         this.$respond = jQuery("#respond");
 

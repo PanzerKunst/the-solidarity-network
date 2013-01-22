@@ -13,7 +13,7 @@ CBR.Controllers.EditProfile = new Class({
             )
         );
 
-        this._initElements();
+        this.initElements();
 
         this.$languageSelect.val(this._getLanguageCode());
 
@@ -33,8 +33,14 @@ CBR.Controllers.EditProfile = new Class({
         return this.options.user;
     },
 
-    _initElements: function () {
+    initElements: function () {
+        this.parent();
+
         this.$indicationParagraph = jQuery(".indication");
+
+        this.$tabLis = jQuery(".nav-tabs > li");
+        this.$showProfileInfo = this.$tabLis.children("#show-profile-info");
+        this.$showAccountInfo = this.$tabLis.children("#show-account-info");
 
         this.$profileInfoSection = jQuery("#profile-info");
         this.$accountInfoSection = jQuery("#account-info");
@@ -129,8 +135,8 @@ CBR.Controllers.EditProfile = new Class({
     },
 
     _initEvents: function () {
-        jQuery("#show-profile-info").click(jQuery.proxy(this._activateProfileInfoSection, this));
-        jQuery("#show-account-info").click(jQuery.proxy(this._activateAccountInfoSection, this));
+        this.$showProfileInfo.click(jQuery.proxy(this._activateProfileInfoSection, this));
+        this.$showAccountInfo.click(jQuery.proxy(this._activateAccountInfoSection, this));
 
         this.$emailField.keyup(jQuery.proxy(this._toggleEmailConfirmationField, this));
 
@@ -141,12 +147,18 @@ CBR.Controllers.EditProfile = new Class({
     _activateProfileInfoSection: function () {
         this.$indicationParagraph.hide();
 
+        this.$tabLis.removeClass("active");
+        this.$showProfileInfo.parent().addClass("active");
+
         this.$profileInfoSection.show();
         this.$accountInfoSection.hide();
     },
 
     _activateAccountInfoSection: function () {
         this.$indicationParagraph.hide();
+
+        this.$tabLis.removeClass("active");
+        this.$showAccountInfo.parent().addClass("active");
 
         this.$accountInfoSection.show();
         this.$profileInfoSection.hide();

@@ -13,7 +13,7 @@ CBR.Controllers.SearchHelpRequests = new Class({
             )
         );
 
-        this._initElements();
+        this.initElements();
         this._initValidation();
         this._initEvents();
         this._initSearchQuery();
@@ -23,7 +23,9 @@ CBR.Controllers.SearchHelpRequests = new Class({
         return this.options.query;
     },
 
-    _initElements: function () {
+    initElements: function () {
+        this.parent();
+
         this.$queryField = jQuery("#query");
         this.$searchResults = jQuery("#search-results");
     },

@@ -1,0 +1,35 @@
+@import "common";
+
+.select2-container .select2-choice {
+  // Because of box-sizing: border-box
+  height: 30px;
+
+  > span {
+    margin-top: 2px;
+  }
+}
+
+.select2-container .select2-choice,
+.select2-container .select2-choice div,
+.select2-drop {
+  border-color: $inputBorder;
+}
+
+.select2-container-active {
+  .select2-choice,
+  .select2-choices {
+    @include box-shadow(none);
+  }
+}
+
+// Removing separator with the down arrow
+.select2-container .select2-choice div {
+  border-left: none;
+  background: inherit;
+}
+
+.field.invalid {
+  .select2-choice {
+    border-color: $red;
+  }
+}

@@ -13,7 +13,7 @@ CBR.Controllers.Login = new Class({
             )
         );
 
-        this._initElements();
+        this.initElements();
         this._initValidation();
         this._fillForm();
         this._initEvents();
@@ -23,7 +23,9 @@ CBR.Controllers.Login = new Class({
         return this.options.username;
     },
 
-    _initElements: function () {
+    initElements: function () {
+        this.parent();
+
         this.$usernameOrEmail = jQuery("#username-or-email");
         this.$authFailed = jQuery("#auth-failed");
     },

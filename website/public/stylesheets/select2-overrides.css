@@ -1,0 +1,21 @@
+.select2-container .select2-choice {
+  height: 30px; }
+  .select2-container .select2-choice > span {
+    margin-top: 2px; }
+
+.select2-container .select2-choice,
+.select2-container .select2-choice div,
+.select2-drop {
+  border-color: #cccccc; }
+
+.select2-container-active .select2-choice,
+.select2-container-active .select2-choices {
+  -webkit-box-shadow: none;
+  box-shadow: none; }
+
+.select2-container .select2-choice div {
+  border-left: none;
+  background: inherit; }
+
+.field.invalid .select2-choice {
+  border-color: #9d261d; }

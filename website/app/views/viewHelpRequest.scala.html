@@ -21,17 +21,11 @@
         <p>{{helpRequest.requester.firstName}} {{helpRequest.requester.lastName}}, aka
             "{{helpRequest.requester.username}}"</p>
 
-        <p>Lives in {{helpRequest.requester.city}}, {{helpRequest.country.name}}</p>
+        <p>Lives in {{helpRequest.requester.city}}, {{helpRequest.requester.country.name}}</p>
 
         <div>
             <a href="/users/{{helpRequest.requester.username}}" class="btn"><i class="icon-eye-open"></i>&nbsp;&nbsp;View full profile</a>
         </div>
-
-        @if(user.id.get != helpRequest.requester.id) {
-        <div>
-            <a href="/messages/new?to={{helpRequest.requester.username}}" class="btn"><i class="icon-pencil"></i>&nbsp;&nbsp;Write message</a>
-        </div>
-        }
     </section>
 
     <section id="main">

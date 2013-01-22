@@ -35,6 +35,8 @@
 <script type="text/javascript">
     window.addEvent("domready", function () {
         new CBR.Controllers.NavController().run();
+
+        jQuery("select").select2({minimumResultsForSearch: 20});
     });
 </script>
 }
