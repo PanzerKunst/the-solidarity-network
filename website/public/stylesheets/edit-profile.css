@@ -9,6 +9,8 @@
     clear: both; }
   #edit-profile #content > ul > li {
     float: left; }
+#edit-profile #content #profile-pic {
+  margin: 0 auto; }
 #edit-profile #content #account-info {
   display: none; }
 #edit-profile #content #email-confirmation-field {

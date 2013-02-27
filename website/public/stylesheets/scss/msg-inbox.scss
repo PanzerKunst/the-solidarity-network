@@ -1,0 +1,15 @@
+@import "common";
+
+#msg-inbox {
+  #content {
+
+    // Because .action are floated
+    @include clearfix;
+
+    .action {
+      @include desktop {
+        width: 50%;
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+@(user: models.User)
+@main("Write a message", "create-message") {
+<!--
+    Header
+-->
+@nav(Some(user), Some("Write a message"))
+
+} {
+<!--
+    Content
+-->
+
+} {
+<!--
+    Javascript
+-->
+<script id="content-template" type="text/html">
+    <h1>Write a message</h1>
+
+    <form>
+        <div class="field">
+            <label for="recipient">To <span>*</span></label><!--
+         --><input id="recipient" type="hidden"/>
+
+            <p class="field-error" data-check="empty">Who are you writing to?</p>
+        </div>
+
+        <div class="field">
+            <label for="title">Title</label><!--
+         --><input id="title" type="text"/>
+        </div>
+
+        <div class="field">
+            <label for="message">Message <span>*</span></label><!--
+         --><textarea id="message"></textarea>
+
+            <p class="field-error" data-check="empty">;)</p>
+        </div>
+
+        <input type="submit" />
+
+        <div id="submit-wrapper">
+            <button id="save" class="btn btn-primary btn-large">Send</button>
+        </div>
+    </form>
+</script>
+
+<script type="text/javascript">
+    window.addEvent("domready", function () {
+        new CBR.Controllers.NavController().run();
+
+        new CBR.Controllers.CreateMessage({
+            el: "#content"
+        }).run();
+    });
+</script>
+}

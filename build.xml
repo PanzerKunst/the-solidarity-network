@@ -95,13 +95,16 @@ Dependencies:
                 models/subscription-to-help-responses.js
                 controllers/template-controller.js
                 controllers/nav-controller.js
-                controllers/login-controller.js
-                controllers/join-controller.js
                 controllers/create-help-request-controller.js
-                controllers/search-help-requests-controller.js
-                controllers/view-help-request-controller.js
+                controllers/edit-help-request-controller.js
                 controllers/edit-profile-controller.js
-                controllers/profile-controller.js" />
+                controllers/help-dashboard-controller.js
+                controllers/join-controller.js
+                controllers/login-controller.js
+                controllers/my-profile-controller.js
+                controllers/profile-controller.js
+                controllers/search-help-requests-controller.js
+                controllers/view-help-request-controller.js" />
         </concat>
     </target>
     
@@ -152,7 +155,7 @@ Dependencies:
     <target name="merge-js">
         <concat destfile="${dist.merged.file.js}" fixlastline="yes" append="no">
             <filelist id="js-files" files="
-                ${src.js.dir}/lib/jquery-1.8.3.js
+                ${src.js.dir}/lib/jquery-1.9.0.js
                 ${src.js.dir}/common/jquery.no-conflict.js
                 ${src.js.dir}/lib/mootools-core-1.4.5-full-nocompat.js
                 ${src.js.dir}/lib/mustache.js

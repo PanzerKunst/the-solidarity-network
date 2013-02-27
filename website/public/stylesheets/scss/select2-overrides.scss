@@ -1,5 +1,10 @@
 @import "common";
 
+// Make the bottom margin the same as other inputs
+.select2-container {
+  margin-bottom: $baseLineHeight / 2;
+}
+
 .select2-container .select2-choice {
   // Because of box-sizing: border-box
   height: 30px;
@@ -28,8 +33,14 @@
   background: inherit;
 }
 
-.field.invalid {
-  .select2-choice {
-    border-color: $red;
+form {
+  .invalid {
+    > .select2-container {
+      margin-bottom: 0;
+    }
+
+    .select2-choice {
+      border-color: $red;
+    }
   }
 }

@@ -1,9 +1,9 @@
 @(user: models.User, frontendUser: models.frontend.FrontendUser, frontendReferences: List[models.frontend.FrontendReference])
-@main(frontendUser.firstName + " " + frontendUser.lastName + ", aka " + frontendUser.username, "profile") {
+@main(frontendUser.firstName + " " + frontendUser.lastName + " <" + frontendUser.username + ">", "profile") {
 <!--
     Header
 -->
-@nav(Some(user), Some(frontendUser.firstName + " " + frontendUser.lastName + ", aka " + frontendUser.username))
+@nav(Some(user), Some(frontendUser.firstName + " " + frontendUser.lastName + " <" + frontendUser.username + ">"))
 
 } {
 <!--
@@ -15,7 +15,7 @@
     Javascript
 -->
 <script id="content-template" type="text/html">
-    <h1>{{user.firstName}} {{user.lastName}}, aka {{user.username}}</h1>
+    <h1>{{user.firstName}} {{user.lastName}} <{{user.username}}></h1>
 
     <section id="profile-info">
         <div id="profile-pic">
@@ -31,7 +31,7 @@
                 @if(user.id.get == frontendUser.id) {
                 <a href="/my-profile/edit" class="btn"><i class="icon-edit"></i>&nbsp;&nbsp;Edit</a>
                 } else {
-                <a href="/messages/new?to={{user.username}}" class="btn"><i class="icon-pencil"></i>&nbsp;&nbsp;Write message</a>
+                <a href="/messages/new?to={{user.username}}" class="btn"><i class="icon-pencil"></i>&nbsp;&nbsp;Write a message</a>
                 }
             </div>
         </div>
@@ -44,7 +44,7 @@
         {{#references}}
         <article>
             <img class="profile-pic-thumb" src="/files/profile-pic/{{fromUser.id}}" />
-            <span><a href="/users/{{fromUser.username}}">{{fromUser.firstName}} {{fromUser.lastName}} aka "{{fromUser.username}}"</a></span>
+            <span><a href="/users/{{fromUser.username}}">{{fromUser.firstName}} {{fromUser.lastName}} <{{fromUser.username}}></a></span>
             <span class="creation-date">{{creationDatetime}}</span>
 
             @if(user.id.get == frontendUser.id) {

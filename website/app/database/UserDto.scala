@@ -118,4 +118,36 @@ object UserDto {
         SQL(query).execute()
     }
   }
+
+  def search(searchQuery: String): List[User] = {
+    DB.withConnection {
+      implicit c =>
+
+        val query = """
+            select id, first_name, last_name, username, password, email, street_address, post_code, city, country_id, description
+            from user
+            where first_name like "%""" + searchQuery + """%"
+            or last_name like "%""" + searchQuery + """%"
+            or username like "%""" + searchQuery + """%"
+            limit 50;"""
+
+        Logger.info("UserDto.search():" + query)
+
+        SQL(query)().map(row =>
+          User(
+            id = Some(row[Long]("id")),
+            firstName = Some(row[String]("first_name")),
+            lastName = Some(row[String]("last_name")),
+            username = Some(row[String]("username")),
+            password = Some(row[String]("password")),
+            email = Some(row[String]("email")),
+            streetAddress = row[Option[String]]("street_address"),
+            postCode = row[Option[String]]("post_code"),
+            city = Some(row[String]("city")),
+            countryId = Some(row[Long]("country_id")),
+            description = row[Option[String]]("description")
+          )
+        ).toList
+    }
+  }
 }

@@ -1,4 +1,4 @@
-CBR.Controllers.SearchHelpRequests = new Class({
+CBR.Controllers.HelpDashboard = new Class({
     Extends: CBR.Controllers.TemplateController,
 
     initialize: function (options) {
@@ -19,8 +19,8 @@ CBR.Controllers.SearchHelpRequests = new Class({
         this._initSearchQuery();
     },
 
-    _getQuery: function () {
-        return this.options.query;
+    _getUser: function () {
+        return this.options.user;
     },
 
     initElements: function () {
@@ -28,6 +28,9 @@ CBR.Controllers.SearchHelpRequests = new Class({
 
         this.$queryField = jQuery("#query");
         this.$searchResults = jQuery("#search-results");
+
+        // To use correct CSS declaration
+        jQuery(this.getEl()).addClass("search-help-requests");
     },
 
     _initValidation: function () {
@@ -43,17 +46,12 @@ CBR.Controllers.SearchHelpRequests = new Class({
         jQuery("form").submit(jQuery.proxy(this._doSearch, this));
     },
 
-    _initSearchQuery: function() {
-        if (!CBR.isEmptyObject(this._getQuery())) {
-            var queryFieldValue = "";
+    _initSearchQuery: function () {
+        // Space is separator between params
+        var queryFieldValue = "country=" + this._getUser().country.name + " city=" + this._getUser().city;
 
-            for (var key in this._getQuery())
-                if (this._getQuery().hasOwnProperty(key))
-                    queryFieldValue += key + "=" + this._getQuery()[key] + " "; // Space is separator between params
-
-            this.$queryField.val(queryFieldValue);
-            this._doSearch();
-        }
+        this.$queryField.val(queryFieldValue);
+        this._doSearch();
     },
 
     _doSearch: function (e) {
@@ -120,7 +118,7 @@ CBR.Controllers.SearchHelpRequests = new Class({
         return helpRequests;
     },
 
-    _formatDate: function(yyyyMMdd) {
+    _formatDate: function (yyyyMMdd) {
         var year = yyyyMMdd.substring(0, 4);
         var month = yyyyMMdd.substring(5, 7);
         var day = yyyyMMdd.substring(8, 10);
@@ -133,7 +131,7 @@ CBR.Controllers.SearchHelpRequests = new Class({
         return formatedDate;
     },
 
-    _getSearchRequestData: function(queryFieldValue) {
+    _getSearchRequestData: function (queryFieldValue) {
         var requestData = {};
 
         var usernamePattern = /( |^)username=(\w+)/;

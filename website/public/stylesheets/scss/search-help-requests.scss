@@ -1,96 +1,94 @@
 @import "common";
 
-#search-help-requests {
-  #content {
+.search-help-requests {
 
-    $searchButtonWidth: 7em;
+  $searchButtonWidth: 7em;
 
-    $howLargerIsSearchFieldThanOtherInputs: 5em;
+  $howLargerIsSearchFieldThanOtherInputs: 5em;
 
-    .centered {
-      width: $fieldWidth;
+  .centered {
+    width: $fieldWidth;
 
-      // For the child <span> to be centered in mobile layout
-      text-align: center;
+    // For the child <span> to be centered in mobile layout
+    text-align: center;
 
-      @include desktop {
-        width: $fieldWidthDesktop + $searchButtonWidth;
+    @include desktop {
+      width: $fieldWidthDesktop + $searchButtonWidth;
 
-        @include clearfix;
-
-        > * {
-          float: left;
-        }
-      }
-
-      margin-left: auto;
-      margin-right: auto;
-
-      > span {
-        width: $searchButtonWidth;
-      }
-    }
-
-    #query {
-      @include desktop {
-        width: $fieldWidthDesktop;
-      }
-    }
-
-    // Search results
-
-    .search-result {
-      cursor: pointer;
-    }
-
-    .floated-wrapper {
       @include clearfix;
 
       > * {
         float: left;
       }
+    }
 
-      > .dates {
-        float: right;
-      }
+    margin-left: auto;
+    margin-right: auto;
 
-      label {
-        width: 5em;
-      }
+    > span {
+      width: $searchButtonWidth;
+    }
+  }
+
+  #query {
+    @include desktop {
+      width: $fieldWidthDesktop;
+    }
+  }
+
+  // Search results
+
+  .search-result {
+    cursor: pointer;
+  }
+
+  .floated-wrapper {
+    @include clearfix;
+
+    > * {
+      float: left;
+    }
+
+    > .dates {
+      float: right;
+    }
+
+    label {
+      width: 5em;
+    }
+  }
+
+  #desktop-results {
+    display: none;
+
+    max-width: 50em;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    td {
+      padding-left: 0.5em;
+      padding-right: 0.5em;
+    }
+  }
+
+  @include desktop {
+    #mobile-results {
+      display: none;
     }
 
     #desktop-results {
-      display: none;
-
-      max-width: 50em;
-
-      margin-left: auto;
-      margin-right: auto;
-
-      td {
-        padding-left: 0.5em;
-        padding-right: 0.5em;
-      }
+      display: block;
     }
+  }
 
-    @include desktop {
-      #mobile-results {
-        display: none;
-      }
+  .requester-username,
+  .requester-city {
+    text-align: center;
+  }
 
-      #desktop-results {
-        display: block;
-      }
-    }
-
-    .requester-username,
-    .requester-city {
-      text-align: center;
-    }
-
-    #search-returned-nothing {
-      display: none;
-      text-align: center;
-    }
+  #search-returned-nothing {
+    display: none;
+    text-align: center;
   }
 }

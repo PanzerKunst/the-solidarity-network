@@ -118,7 +118,7 @@ form {
     margin-right: $inputRightMargin;
     margin-top: 1em;
   }
-  > span {
+  > label {
     width: $fieldWidth - $inputWidth - $inputRightMargin;
   }
 
@@ -127,7 +127,7 @@ form {
       margin-top: 0.2em;
     }
 
-    > span {
+    > label {
       width: $fieldWidthDesktop - $inputWidth - $inputRightMargin;
     }
   }

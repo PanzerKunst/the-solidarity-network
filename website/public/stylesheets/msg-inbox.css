@@ -1,0 +1,10 @@
+#msg-inbox #content {
+  *zoom: 1; }
+  #msg-inbox #content:before, #msg-inbox #content:after {
+    content: " ";
+    display: table; }
+  #msg-inbox #content:after {
+    clear: both; }
+  @media screen and (min-width: 49em) {
+    #msg-inbox #content .action {
+      width: 50%; } }

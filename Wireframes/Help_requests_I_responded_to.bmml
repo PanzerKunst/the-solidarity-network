@@ -76,7 +76,7 @@
         <text>Home</text>
       </controlProperties>
     </control>
-    <control controlID="50" controlTypeID="com.balsamiq.mockups::Link" x="962" y="82" w="-1" h="-1" measuredW="50" measuredH="21" zOrder="16" locked="false" isInGroup="-1">
+    <control controlID="50" controlTypeID="com.balsamiq.mockups::Link" x="962" y="82" w="-1" h="-1" measuredW="49" measuredH="21" zOrder="16" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Log%20out</text>
       </controlProperties>

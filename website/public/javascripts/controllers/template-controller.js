@@ -7,7 +7,7 @@ CBR.Controllers.TemplateController = new Class({
         return jQuery(this.options.el);
     },
 
-    setActivePill: function(e) {
+    setActivePill: function (e) {
         e.preventDefault();
 
         var $a = jQuery(e.currentTarget);
@@ -20,8 +20,23 @@ CBR.Controllers.TemplateController = new Class({
         $a.trigger("active-toggled");
     },
 
-    initElements: function() {
+    initElements: function () {
         jQuery("select", this.options.el).select2({minimumResultsForSearch: 20});
+    },
+
+    formatDate: function(yyyyMMdd) {
+        var year = yyyyMMdd.substring(0, 4);
+        var month = yyyyMMdd.substring(5, 7);
+        var day = yyyyMMdd.substring(8, 10);
+
+        var today = new Date();
+
+        var formattedDate = day + "/" + month;
+
+        if (year !== today.getFullYear().toString())
+            formattedDate += "/" + year;
+
+        return formattedDate;
     },
 
     httpStatusCode: {

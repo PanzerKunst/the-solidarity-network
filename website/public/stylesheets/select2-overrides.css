@@ -1,3 +1,6 @@
+.select2-container {
+  margin-bottom: 10px; }
+
 .select2-container .select2-choice {
   height: 30px; }
   .select2-container .select2-choice > span {
@@ -17,5 +20,7 @@
   border-left: none;
   background: inherit; }
 
-.field.invalid .select2-choice {
+form .invalid > .select2-container {
+  margin-bottom: 0; }
+form .invalid .select2-choice {
   border-color: #9d261d; }

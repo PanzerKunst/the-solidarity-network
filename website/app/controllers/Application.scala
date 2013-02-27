@@ -126,7 +126,7 @@ object Application extends Controller {
           else
             None
 
-          Ok(views.html.helpDashboard(loggedInUser, from))
+          Ok(views.html.helpDashboard(loggedInUser, new FrontendUser(loggedInUser), from))
         case None => Redirect(routes.Application.login)
       }
   }
@@ -168,6 +168,28 @@ object Application extends Controller {
       }
   }
 
+  def msgInbox = Action {
+    implicit request =>
+      loggedInUser(session) match {
+        case Some(loggedInUser) =>
+          val from = if (request.queryString.contains("from"))
+            Some(request.queryString.get("from").get.head)
+          else
+            None
+
+          Ok(views.html.msgInbox(loggedInUser, from))
+        case None => Redirect(routes.Application.login)
+      }
+  }
+
+  def createMessage = Action {
+    implicit request =>
+      loggedInUser(session) match {
+        case Some(loggedInUser) => Ok(views.html.createMessage(loggedInUser))
+        case None => Redirect(routes.Application.login)
+      }
+  }
+
   def loggedInUser(session: Session): Option[User] = {
     session.get("userId") match {
       case Some(userId) => {
@@ -181,5 +203,4 @@ object Application extends Controller {
       case None => None
     }
   }
-
 }

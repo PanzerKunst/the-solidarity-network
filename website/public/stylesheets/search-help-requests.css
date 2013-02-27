@@ -1,55 +1,55 @@
-#search-help-requests #content .centered {
+.search-help-requests .centered {
   width: 20em;
   text-align: center;
   margin-left: auto;
   margin-right: auto; }
   @media screen and (min-width: 49em) {
-    #search-help-requests #content .centered {
+    .search-help-requests .centered {
       width: 36em;
       *zoom: 1; }
-      #search-help-requests #content .centered:before, #search-help-requests #content .centered:after {
+      .search-help-requests .centered:before, .search-help-requests .centered:after {
         content: " ";
         display: table; }
-      #search-help-requests #content .centered:after {
+      .search-help-requests .centered:after {
         clear: both; }
-      #search-help-requests #content .centered > * {
+      .search-help-requests .centered > * {
         float: left; } }
-  #search-help-requests #content .centered > span {
+  .search-help-requests .centered > span {
     width: 7em; }
 @media screen and (min-width: 49em) {
-  #search-help-requests #content #query {
+  .search-help-requests #query {
     width: 29em; } }
-#search-help-requests #content .search-result {
+.search-help-requests .search-result {
   cursor: pointer; }
-#search-help-requests #content .floated-wrapper {
+.search-help-requests .floated-wrapper {
   *zoom: 1; }
-  #search-help-requests #content .floated-wrapper:before, #search-help-requests #content .floated-wrapper:after {
+  .search-help-requests .floated-wrapper:before, .search-help-requests .floated-wrapper:after {
     content: " ";
     display: table; }
-  #search-help-requests #content .floated-wrapper:after {
+  .search-help-requests .floated-wrapper:after {
     clear: both; }
-  #search-help-requests #content .floated-wrapper > * {
+  .search-help-requests .floated-wrapper > * {
     float: left; }
-  #search-help-requests #content .floated-wrapper > .dates {
+  .search-help-requests .floated-wrapper > .dates {
     float: right; }
-  #search-help-requests #content .floated-wrapper label {
+  .search-help-requests .floated-wrapper label {
     width: 5em; }
-#search-help-requests #content #desktop-results {
+.search-help-requests #desktop-results {
   display: none;
   max-width: 50em;
   margin-left: auto;
   margin-right: auto; }
-  #search-help-requests #content #desktop-results td {
+  .search-help-requests #desktop-results td {
     padding-left: 0.5em;
     padding-right: 0.5em; }
 @media screen and (min-width: 49em) {
-  #search-help-requests #content #mobile-results {
+  .search-help-requests #mobile-results {
     display: none; }
-  #search-help-requests #content #desktop-results {
+  .search-help-requests #desktop-results {
     display: block; } }
-#search-help-requests #content .requester-username,
-#search-help-requests #content .requester-city {
+.search-help-requests .requester-username,
+.search-help-requests .requester-city {
   text-align: center; }
-#search-help-requests #content #search-returned-nothing {
+.search-help-requests #search-returned-nothing {
   display: none;
   text-align: center; }

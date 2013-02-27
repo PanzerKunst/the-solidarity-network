@@ -94,7 +94,7 @@ CBR.Controllers.EditProfile = new Class({
         this.$streetAddressField.val(this._getUser().streetAddress);
         this.$postCodeField.val(this._getUser().postCode);
         this.$cityField.val(this._getUser().city);
-        this.$countryField.val(this._getUser().country.id);
+        this.$countryField.select2("val", this._getUser().country.id);
 
         this.$descriptionField.val(this._getUser().description);
 

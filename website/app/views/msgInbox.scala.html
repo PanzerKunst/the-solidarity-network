@@ -1,32 +1,24 @@
-@(user: models.User, frontentUser: models.frontend.FrontendUser, from: Option[String])
-@main("Help dashboard", "help-dashboard") {
+@(user: models.User, from: Option[String])
+@main("Inbox", "msg-inbox") {
 <!--
     Header
 -->
-@nav(Some(user), Some("Help dashboard"))
+@nav(Some(user), Some("Inbox"))
 
 } {
 <!--
     Content
 -->
-<h1>Help dashboard</h1>
+<h1>Messages</h1>
 
 @if(from.isDefined) {
-<p class="indication">Help request deleted</p>
+<p class="indication">Message sent</p>
 }
-
 <div class="action line">
-    <a href="/help-requests/new">Submit a help request</a>
+    <a href="/messages/new">Write a message</a>
 </div>
 <div class="action">
-    <a href="/help-requests">Search help requests</a>
-</div>
-
-<div class="action line">
-    <a href="/help-requests?username=@user.username">My help requests</a>
-</div>
-<div class="action">
-    <a href="/help-requests?respondedBy=@user.username">Help requests I responded to</a>
+    <a href="/messages/sent">Sent messages</a>
 </div>
 } {
 <!--
@@ -34,36 +26,14 @@
 -->
 
 <script id="content-template" type="text/html">
-    <h2>Help requests near me</h2>
+    <h2>Inbox</h2>
 
-    <form>
-        <div class="centered">
-            <div class="field">
-                <input id="query" type="search" placeholder="city, name, username, keyword..."/>
-
-                <p class="field-error" data-check="search-keywords">Keywords are optional. Only "title", "desc",
-                    "firstName", "lastName", "username", "city" and "country" are considered as keywords.</p>
-            </div>
-
-            <input type="submit" />
-
-            <span>
-                <button id="search" class="btn"><i class="icon-search"></i>&nbsp;&nbsp;Search</button>
-            </span>
-        </div>
-    </form>
-
-    <section id="search-results"></section>
-    <p id="search-returned-nothing">Nothing found for this search</p>
-
-    <div id="rss-feed-wrapper">
-        <a id="rss-feed">Help requests near me</a>
-    </div>
+    <section id="list-container"></section>
 </script>
 
-<script id="search-results-template" type="text/html">
+<script id="list-template" type="text/html">
     <ul id="mobile-results">
-        {{#helpRequests}}
+        {{#messages}}
         <li class="search-result" data-id="{{id}}">
             <div class="floated-wrapper">
                 <img class="profile-pic-thumb" src="/files/profile-pic/{{requester.id}}" />
@@ -91,7 +61,7 @@
                 <h3>{{title}}</h3>
             </div>
         </li>
-        {{/helpRequests}}
+        {{/messages}}
     </ul>
 
     <table id="desktop-results">
@@ -100,7 +70,7 @@
         <th>Submitted</th>
         <th>Expires</th>
 
-        {{#helpRequests}}
+        {{#messages}}
         <tr class="search-result" data-id="{{id}}">
             <!-- By -->
             <td>
@@ -127,7 +97,7 @@
                 <span class="expiry-date">{{expiryDate}}</span>
             </td>
         </tr>
-        {{/helpRequests}}
+        {{/messages}}
     </table>
 </script>
 
@@ -135,10 +105,9 @@
     window.addEvent("domready", function () {
         new CBR.Controllers.NavController().run();
 
-        new CBR.Controllers.HelpDashboard({
-            el: "#content",
-            user: @Html(services.JsonUtil.serialize(frontentUser))
-        }).run();
+        /* TODO new CBR.Controllers.MsgInbox({
+            el: "#content"
+        }).run(); */
     });
 </script>
 }

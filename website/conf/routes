@@ -23,10 +23,13 @@ GET     /help-requests              controllers.Application.searchHelpRequests
 GET     /help-requests/new          controllers.Application.createHelpRequest
 GET     /help-requests/:id          controllers.Application.viewHelpRequest(id: Int)
 GET     /help-requests/edit/:id     controllers.Application.editHelpRequest(id: Int)
+GET     /messages                   controllers.Application.msgInbox
+GET     /messages/new               controllers.Application.createMessage
 
 # API
 POST    /api/users                  controllers.api.UserApi.create
 PUT     /api/users                  controllers.api.UserApi.update
+GET     /api/users                  controllers.api.UserApi.get
 GET     /api/users/first            controllers.api.UserApi.getFirst
 POST    /api/authenticate           controllers.api.AuthApi.authenticate
 POST    /api/help-requests          controllers.api.HelpRequestApi.create
@@ -39,6 +42,7 @@ POST    /api/help-responses         controllers.api.HelpResponseApi.create
 POST    /api/db/admin               controllers.api.DbAdminApi.createTables
 DELETE  /api/db/admin               controllers.api.DbAdminApi.dropTables
 POST    /api/references             controllers.api.ReferenceApi.create
+#POST    /api/messages               controllers.api.MessageApi.create
 
 # Files
 GET     /files/profile-pic/:userId      controllers.FileController.serveProfilePicture(userId: Int)

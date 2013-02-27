@@ -1,7 +1,7 @@
 package controllers.api
 
 import models.User
-import services.{EmailService, JsonUtil}
+import services.JsonUtil
 import database.UserDto
 import play.api.mvc.{Action, Controller}
 import play.api.Logger
@@ -69,6 +69,19 @@ object UserApi extends Controller {
         NoContent
       else
         Ok(JsonUtil.serialize(matchingUsers.head))
+  }
+
+  def get = Action {
+    implicit request =>
+
+      val matchingUsers: List[User] = UserDto.search(request.queryString.get("query").get.head)
+
+      if (matchingUsers.isEmpty)
+        NoContent
+      else {
+        val frontendUsers = for (user <- matchingUsers) yield new FrontendUser(user)
+        Ok(JsonUtil.serialize(frontendUsers))
+      }
   }
 
   private def updateUserWithCurrentPasswordIfNotChanged(user: User, currentPassword: String) = {

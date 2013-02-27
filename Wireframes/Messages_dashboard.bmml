@@ -47,9 +47,9 @@
         <text>Inbox</text>
       </controlProperties>
     </control>
-    <control controlID="25" controlTypeID="com.balsamiq.mockups::DataGrid" x="161" y="349" w="708" h="157" measuredW="265" measuredH="55" zOrder="10" locked="false" isInGroup="-1">
+    <control controlID="25" controlTypeID="com.balsamiq.mockups::DataGrid" x="161" y="349" w="708" h="157" measuredW="284" measuredH="135" zOrder="10" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>Louis%20Bram%2C%20Hello%21%2C%2021%20apr.%202012%0ADamien%20Bram%2C%20What%27s%20up%3F%2C%2011%20apr.%202012%0A%7B25L%2C%2060L%2C%2015R%7D</text>
+        <text>Pic%5Crluigiboogie%5CrLouis%20Bram%5CrMontreal%2C%20Hello%21%2C%2021%20apr.%202012%0APic%5Crdocteur_benway%5CrDamien%20Bram%5CrLille%2C%20What%27s%20up%3F%2C%2011%20apr.%202012%0A%7B25C%2C%2060L%2C%2015R%7D</text>
       </controlProperties>
     </control>
     <control controlID="26" controlTypeID="com.balsamiq.mockups::Label" x="1310" y="305" w="-1" h="-1" measuredW="39" measuredH="22" zOrder="11" locked="false" isInGroup="-1">
@@ -74,7 +74,7 @@
         <text>Home</text>
       </controlProperties>
     </control>
-    <control controlID="30" controlTypeID="com.balsamiq.mockups::Link" x="962" y="82" w="-1" h="-1" measuredW="50" measuredH="21" zOrder="15" locked="false" isInGroup="-1">
+    <control controlID="30" controlTypeID="com.balsamiq.mockups::Link" x="962" y="82" w="-1" h="-1" measuredW="49" measuredH="21" zOrder="15" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Log%20out</text>
       </controlProperties>

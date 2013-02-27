@@ -37,16 +37,17 @@
     <link rel="stylesheet" href="@routes.Assets.at("stylesheets/form.css")">
 
     <!-- Rest -->
+    <link rel="stylesheet" href="@routes.Assets.at("stylesheets/create-help-request.css")">
+    <link rel="stylesheet" href="@routes.Assets.at("stylesheets/edit-profile.css")">
+    <link rel="stylesheet" href="@routes.Assets.at("stylesheets/help-dashboard.css")">
+    <link rel="stylesheet" href="@routes.Assets.at("stylesheets/home.css")">
     <link rel="stylesheet" href="@routes.Assets.at("stylesheets/index.css")">
     <link rel="stylesheet" href="@routes.Assets.at("stylesheets/join.css")">
     <link rel="stylesheet" href="@routes.Assets.at("stylesheets/login.css")">
-    <link rel="stylesheet" href="@routes.Assets.at("stylesheets/home.css")">
-    <link rel="stylesheet" href="@routes.Assets.at("stylesheets/help-dashboard.css")">
-    <link rel="stylesheet" href="@routes.Assets.at("stylesheets/create-help-request.css")">
+    <link rel="stylesheet" href="@routes.Assets.at("stylesheets/msg-inbox.css")">
+    <link rel="stylesheet" href="@routes.Assets.at("stylesheets/profile.css")">
     <link rel="stylesheet" href="@routes.Assets.at("stylesheets/search-help-requests.css")">
     <link rel="stylesheet" href="@routes.Assets.at("stylesheets/view-help-request.css")">
-    <link rel="stylesheet" href="@routes.Assets.at("stylesheets/profile.css")">
-    <link rel="stylesheet" href="@routes.Assets.at("stylesheets/edit-profile.css")">
 
     } else {
 
@@ -77,7 +78,7 @@
     @if(play.Play.isDev) {
 
     <!-- Libs -->
-    <script src="@routes.Assets.at("javascripts/lib/jquery-1.8.3.js")"></script>
+    <script src="@routes.Assets.at("javascripts/lib/jquery-1.9.0.js")"></script>
     <script src="@routes.Assets.at("javascripts/common/jquery.no-conflict.js")"></script>
 
     <script src="@routes.Assets.at("javascripts/lib/mootools-core-1.4.5-full-nocompat.js")"></script>
@@ -103,22 +104,25 @@
     <script src="@routes.Assets.at("javascripts/models/json-serializable-model.js")"></script>
     <script src="@routes.Assets.at("javascripts/models/help-request.js")"></script>
     <script src="@routes.Assets.at("javascripts/models/help-response.js")"></script>
+    <script src="@routes.Assets.at("javascripts/models/message.js")"></script>
     <script src="@routes.Assets.at("javascripts/models/reference.js")"></script>
     <script src="@routes.Assets.at("javascripts/models/subscription-to-help-responses.js")"></script>
     <script src="@routes.Assets.at("javascripts/models/user.js")"></script>
 
     <!-- Controllers -->
     <script src="@routes.Assets.at("javascripts/controllers/template-controller.js")"></script>
-    <script src="@routes.Assets.at("javascripts/controllers/nav-controller.js")"></script>
-    <script src="@routes.Assets.at("javascripts/controllers/create-help-request-controller.js")"></script>
-    <script src="@routes.Assets.at("javascripts/controllers/edit-help-request-controller.js")"></script>
-    <script src="@routes.Assets.at("javascripts/controllers/edit-profile-controller.js")"></script>
-    <script src="@routes.Assets.at("javascripts/controllers/join-controller.js")"></script>
-    <script src="@routes.Assets.at("javascripts/controllers/login-controller.js")"></script>
-    <script src="@routes.Assets.at("javascripts/controllers/my-profile-controller.js")"></script>
-    <script src="@routes.Assets.at("javascripts/controllers/profile-controller.js")"></script>
-    <script src="@routes.Assets.at("javascripts/controllers/search-help-requests-controller.js")"></script>
-    <script src="@routes.Assets.at("javascripts/controllers/view-help-request-controller.js")"></script>
+    <script src="@routes.Assets.at("javascripts/controllers/nav.js")"></script>
+    <script src="@routes.Assets.at("javascripts/controllers/create-help-request.js")"></script>
+    <script src="@routes.Assets.at("javascripts/controllers/create-message.js")"></script>
+    <script src="@routes.Assets.at("javascripts/controllers/edit-help-request.js")"></script>
+    <script src="@routes.Assets.at("javascripts/controllers/edit-profile.js")"></script>
+    <script src="@routes.Assets.at("javascripts/controllers/help-dashboard.js")"></script>
+    <script src="@routes.Assets.at("javascripts/controllers/join.js")"></script>
+    <script src="@routes.Assets.at("javascripts/controllers/login.js")"></script>
+    <script src="@routes.Assets.at("javascripts/controllers/my-profile.js")"></script>
+    <script src="@routes.Assets.at("javascripts/controllers/profile.js")"></script>
+    <script src="@routes.Assets.at("javascripts/controllers/search-help-requests.js")"></script>
+    <script src="@routes.Assets.at("javascripts/controllers/view-help-request.js")"></script>
 
     } else {
 
