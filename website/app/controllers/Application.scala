@@ -42,17 +42,14 @@ object Application extends Controller {
       else
         None
 
-      val to = if (request.queryString.contains("to"))
-        Some(request.queryString.get("to").get.head)
-      else
-        None
+      val to = session.get("to")
 
       val username = if (request.queryString.contains("username"))
         Some(request.queryString.get("username").get.head)
       else
         None
 
-      Ok(views.html.login(username, from, to))
+      Ok(views.html.login(username, from, to)).withSession(session - "to")
   }
 
   def logout = Action {
@@ -183,7 +180,10 @@ object Application extends Controller {
             None
 
           Ok(views.html.msgInbox(loggedInUser, from))
-        case None => Redirect(routes.Application.login)
+        case None =>
+          Redirect(routes.Application.login).withSession(
+            session + ("to" -> "messages")
+          )
       }
   }
 
