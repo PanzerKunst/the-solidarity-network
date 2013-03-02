@@ -1,7 +1,7 @@
 package controllers.api
 
 import models.User
-import services.JsonUtil
+import services.{EmailService, JsonUtil}
 import database.UserDto
 import play.api.mvc.{Action, Controller}
 import play.api.Logger
@@ -13,16 +13,20 @@ object UserApi extends Controller {
     implicit request =>
 
       val userToCreate = JsonUtil.parse(request.body.toString, classOf[User])
-      UserDto.create(userToCreate)
-      // TODO EmailService.sendJoinConfirmation(userToCreate)
-      Ok
+      UserDto.create(userToCreate) match {
+        case Some(id) =>
+          val createdUser = UserDto.get(Some(Map("id" -> id.toString))).head
+          EmailService.confirmRegistration(new FrontendUser(createdUser))
+          Ok(id.toString)
+        case None => InternalServerError("Creation of a user did not return an ID!")
+      }
   }
 
   def update = Action(parse.json) {
     implicit request =>
 
       Application.loggedInUser(session) match {
-        case Some(loggedInUser) => {
+        case Some(loggedInUser) =>
           val user = JsonUtil.parse(request.body.toString, classOf[User])
           val userWithId = user.copy(id = loggedInUser.id)
           val userWithPassword = updateUserWithCurrentPasswordIfNotChanged(userWithId, loggedInUser.password.get)
@@ -30,11 +34,9 @@ object UserApi extends Controller {
           UserDto.update(userWithPassword)
           FileController.saveTempProfilePicture(loggedInUser.id.get)
           Ok
-        }
-        case None => {
+        case None =>
           Logger.info("Profile update attempt while not logged-in")
           Unauthorized
-        }
       }
   }
 
@@ -74,13 +76,21 @@ object UserApi extends Controller {
   def get = Action {
     implicit request =>
 
-      val matchingUsers: List[User] = UserDto.search(request.queryString.get("query").get.head)
+      Application.loggedInUser(session) match {
+        case Some(loggedInUser) =>
 
-      if (matchingUsers.isEmpty)
-        NoContent
-      else {
-        val frontendUsers = for (user <- matchingUsers) yield new FrontendUser(user)
-        Ok(JsonUtil.serialize(frontendUsers))
+          val matchingUsers: List[User] = UserDto.searchExceptOfId(
+            request.queryString.get("query").get.head,
+            loggedInUser.id.get
+          )
+
+          if (matchingUsers.isEmpty)
+            Ok(JsonUtil.serialize(List()))
+          else {
+            val frontendUsers = for (user <- matchingUsers) yield new FrontendUser(user)
+            Ok(JsonUtil.serialize(frontendUsers))
+          }
+        case None => Unauthorized
       }
   }
 

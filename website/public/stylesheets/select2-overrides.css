@@ -20,7 +20,11 @@
   border-left: none;
   background: inherit; }
 
-form .invalid > .select2-container {
-  margin-bottom: 0; }
+form .field > .select2-container {
+  clear: both;
+  width: 20em; }
+  @media screen and (min-width: 49em) {
+    form .field > .select2-container {
+      clear: none; } }
 form .invalid .select2-choice {
   border-color: #9d261d; }

@@ -159,8 +159,9 @@ CBR.Services.Validator = new Class({
             }
             return false;
         }
-        else
+        else if (this._isToCheckIfEmpty($field)) {
             this._get$empty($field).slideUpCustom();
+        }
 
         // Email?
         if (this._isToCheckIfEmail($field) && !this._isValidEmail($field.val())) {
@@ -168,8 +169,9 @@ CBR.Services.Validator = new Class({
             this._get$email($field).slideDownCustom();
             return false;
         }
-        else
+        else if (this._isToCheckIfEmail($field)) {
             this._get$email($field).slideUpCustom();
+        }
 
         // Username?
         if (this._isToCheckIfUsername($field) && !this._isValidUsername($field.val())) {
@@ -177,8 +179,9 @@ CBR.Services.Validator = new Class({
             this._get$username($field).slideDownCustom();
             return false;
         }
-        else
+        else if (this._isToCheckIfUsername($field)) {
             this._get$username($field).slideUpCustom();
+        }
 
         // In the future?
         if (this._isToCheckIfInFuture($field) && !this._isInFuture($field.val())) {
@@ -186,8 +189,9 @@ CBR.Services.Validator = new Class({
             this._get$inFuture($field).slideDownCustom();
             return false;
         }
-        else
+        else if (this._isToCheckIfInFuture($field)) {
             this._get$inFuture($field).slideUpCustom();
+        }
 
         // In max 2 weeks?
         if (this._isToCheckIfInMaxTwoWeeks($field) && !this._isInMaxTwoWeeks($field.val())) {
@@ -195,8 +199,9 @@ CBR.Services.Validator = new Class({
             this._get$inMaxTwoWeeks($field).slideDownCustom();
             return false;
         }
-        else
+        else if (this._isToCheckIfInMaxTwoWeeks($field)) {
             this._get$inMaxTwoWeeks($field).slideUpCustom();
+        }
 
         this.flagValid($field);
 

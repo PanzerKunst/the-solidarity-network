@@ -1,0 +1,20 @@
+@(message: models.frontend.FrontendMessage)
+
+<p>Hi @message.toUser.firstName,</p>
+<br />
+
+<p>@message.fromUser.firstName @message.fromUser.lastName send you a new message:</p>
+
+<hr />
+
+<h1>@message.title</h1>
+
+<p>@message.text</p>
+
+<hr />
+
+<p>You can reply to the sender <a href="http://localhost:9000/messages">here</a></p>
+
+<p>Best regards,</p>
+
+<p>The Team</p>

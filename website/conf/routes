@@ -42,7 +42,7 @@ POST    /api/help-responses         controllers.api.HelpResponseApi.create
 POST    /api/db/admin               controllers.api.DbAdminApi.createTables
 DELETE  /api/db/admin               controllers.api.DbAdminApi.dropTables
 POST    /api/references             controllers.api.ReferenceApi.create
-#POST    /api/messages               controllers.api.MessageApi.create
+POST    /api/messages               controllers.api.MessageApi.create
 
 # Files
 GET     /files/profile-pic/:userId      controllers.FileController.serveProfilePicture(userId: Int)

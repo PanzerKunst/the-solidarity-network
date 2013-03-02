@@ -1,4 +1,4 @@
-@(from: Option[String], username: Option[String])
+@(username: Option[String], from: Option[String], to: Option[String])
 @main("Solidarity Network - Login", "login") {
 <!--
     Header
@@ -59,6 +59,9 @@
             el: "#content"
             @if(username.isDefined) {
             , username: "@username.get"
+            }
+            @if(to.isDefined) {
+            , to: "@to.get"
             }
         }).run();
     });

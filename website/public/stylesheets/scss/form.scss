@@ -38,7 +38,6 @@ form {
 
     > input,
     > select,
-    > .select2-container,
     > textarea {
       clear: both;
       width: $inputWidth;
@@ -71,8 +70,6 @@ form {
     > select,
     > textarea {
       border-color: $errorText;
-
-      margin-bottom: 0;
     }
   }
 
@@ -85,6 +82,8 @@ form {
   font-style: italic;
   font-size: $fontSize;
   color: $errorText;
+
+  margin-bottom: $baseLineHeight / 2;
 
   @include desktop {
     margin-left: $labelWidth * $baseFontSize / $fontSize;

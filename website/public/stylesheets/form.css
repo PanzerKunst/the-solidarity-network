@@ -28,14 +28,12 @@ form .field {
         float: left; } }
   form .field > input,
   form .field > select,
-  form .field > .select2-container,
   form .field > textarea {
     clear: both;
     width: 20em; }
     @media screen and (min-width: 49em) {
       form .field > input,
       form .field > select,
-      form .field > .select2-container,
       form .field > textarea {
         clear: none; } }
   form .field > input[type=checkbox],
@@ -56,14 +54,14 @@ form .field {
 form .invalid > input,
 form .invalid > select,
 form .invalid > textarea {
-  border-color: #b94a48;
-  margin-bottom: 0; }
+  border-color: #b94a48; }
 form .field-error {
   display: none;
   clear: both;
   font-style: italic;
   font-size: 13px;
-  color: #b94a48; }
+  color: #b94a48;
+  margin-bottom: 10px; }
   @media screen and (min-width: 49em) {
     form .field-error {
       margin-left: 9.69231em; }

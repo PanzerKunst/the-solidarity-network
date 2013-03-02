@@ -20,8 +20,8 @@ CBR.Models.Message = new Class({
         return this.options.title;
     },
 
-    getContent: function () {
-        return this.options.content;
+    getText: function () {
+        return this.options.text;
     },
 
     getCreationDatetime: function () {

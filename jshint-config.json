@@ -11,6 +11,7 @@
     "laxbreak": true,
     "bitwise": true,
     "undef": true,
+    "curly": true,
     "nonew": true,
     "browser": true,
     "devel": true,

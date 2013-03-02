@@ -119,19 +119,20 @@ object UserDto {
     }
   }
 
-  def search(searchQuery: String): List[User] = {
+  def searchExceptOfId(searchQuery: String, id: Long): List[User] = {
     DB.withConnection {
       implicit c =>
 
         val query = """
             select id, first_name, last_name, username, password, email, street_address, post_code, city, country_id, description
             from user
-            where first_name like "%""" + searchQuery + """%"
+            where (first_name like "%""" + searchQuery + """%"
             or last_name like "%""" + searchQuery + """%"
-            or username like "%""" + searchQuery + """%"
+            or username like "%""" + searchQuery + """%")
+            and id <> """ + id + """
             limit 50;"""
 
-        Logger.info("UserDto.search():" + query)
+        Logger.info("UserDto.searchExceptOfId():" + query)
 
         SQL(query)().map(row =>
           User(

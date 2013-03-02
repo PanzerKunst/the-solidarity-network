@@ -34,11 +34,18 @@
 }
 
 form {
-  .invalid {
+  .field {
     > .select2-container {
-      margin-bottom: 0;
-    }
+      clear: both;
+      width: $inputWidth;
 
+      @include desktop {
+        clear:none;
+      }
+    }
+  }
+
+  .invalid {
     .select2-choice {
       border-color: $red;
     }

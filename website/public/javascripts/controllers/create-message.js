@@ -57,7 +57,7 @@ CBR.Controllers.CreateMessage = new Class({
         this.validator = new CBR.Services.Validator({
             fieldIds: [
                 "recipient",
-                "message"
+                "text"
             ]
         });
     },
@@ -72,9 +72,9 @@ CBR.Controllers.CreateMessage = new Class({
 
         if (this.validator.isValid()) {
             var message = new CBR.Models.Message({
-                toUser: { id: this.$recipientField.val() },
+                toUserId: this.$recipientField.val(),
                 title: jQuery("#title").val(),
-                content: jQuery("#message").val()
+                text: jQuery("#text").val()
             });
 
             var _this = this;

@@ -23,6 +23,10 @@ CBR.Controllers.Login = new Class({
         return this.options.username;
     },
 
+    _getTo: function () {
+        return this.options.to;
+    },
+
     initElements: function () {
         this.parent();
 
@@ -76,8 +80,12 @@ CBR.Controllers.Login = new Class({
                 onSuccess: function (responseText, responseXML) {
                     if (this.status === _this.httpStatusCode.noContent)
                         _this.$authFailed.slideDownCustom();
-                    else
+                    else if (_this._getTo() === "messages") {
+                        location.href = "/messages";
+                    }
+                    else {
                         location.href = "/home";
+                    }
                 },
                 onFailure: function (xhr) {
                     alert("AJAX fail :(");

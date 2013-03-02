@@ -42,12 +42,17 @@ object Application extends Controller {
       else
         None
 
+      val to = if (request.queryString.contains("to"))
+        Some(request.queryString.get("to").get.head)
+      else
+        None
+
       val username = if (request.queryString.contains("username"))
         Some(request.queryString.get("username").get.head)
       else
         None
 
-      Ok(views.html.login(from, username))
+      Ok(views.html.login(username, from, to))
   }
 
   def logout = Action {
