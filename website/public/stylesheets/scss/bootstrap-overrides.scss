@@ -16,19 +16,11 @@ input[type="text"], input[type="password"], input[type="datetime"], input[type="
   width: $width;
   margin-left: -($width / 2);
 
-  &.fade.in {
-    top: 100%;
-  }
-
   // Original Bootstrap values
   @include desktop {
     $width: 560px;
     width: $width;
     margin-left: -($width / 2);
-
-    &.fade.in {
-      top: 50%;
-    }
   }
 }
 

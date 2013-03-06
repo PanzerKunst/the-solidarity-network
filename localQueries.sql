@@ -101,6 +101,18 @@ Create table `reference` (
   constraint `fk_rating` foreign key (`rating_id`) references `reference_rating`(`id`)
 ) ENGINE=InnoDB DEFAULT charset=utf8;
 
+Create table `message` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `from_user_id` int(10) unsigned NOT NULL,
+  `to_user_id` int(10) unsigned NOT NULL,
+  `title` varchar(100) NOT NULL,
+  `text` text NOT NULL,
+  `creation_date` datetime NOT NULL,
+  primary key (`id`),
+  constraint `fk_from_user1` foreign key (`from_user_id`) references `user`(`id`),
+  constraint `fk_to_user1` foreign key (`to_user_id`) references `user`(`id`)
+) ENGINE=InnoDB DEFAULT charset=utf8;
+
 insert into country(name) values("Greece");
 insert into country(name) values("Spain");
 insert into country(name) values("Sweden");
@@ -133,3 +145,9 @@ select * from help_request;
 select * from help_response;
 
 select * from subscription_to_help_responses;
+
+select * from message;
+
+delete from user where email = "panzrkunst@yahoo.fr";
+
+delete from message where from_user_id = 3 or to_user_id = 3;

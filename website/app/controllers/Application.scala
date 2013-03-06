@@ -190,7 +190,13 @@ object Application extends Controller {
   def createMessage = Action {
     implicit request =>
       loggedInUser(session) match {
-        case Some(loggedInUser) => Ok(views.html.createMessage(loggedInUser))
+        case Some(loggedInUser) =>
+          val to = if (request.queryString.contains("to"))
+            Some(request.queryString.get("to").get.head)
+          else
+            None
+
+          Ok(views.html.createMessage(loggedInUser, to))
         case None => Redirect(routes.Application.login)
       }
   }

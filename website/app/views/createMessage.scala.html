@@ -1,4 +1,4 @@
-@(user: models.User)
+@(user: models.User, to: Option[String])
 @main("Write a message", "create-message") {
 <!--
     Header
@@ -20,7 +20,12 @@
     <form>
         <div class="field">
             <label for="recipient">To <span>*</span></label><!--
-         --><input id="recipient" type="hidden"/>
+         --><input id="recipient" type="hidden"
+
+            @if(to.isDefined) {
+              value="@to.get"
+            }
+                />
 
             <p class="field-error" data-check="empty">Who are you writing to?</p>
         </div>

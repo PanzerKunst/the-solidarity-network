@@ -26,6 +26,8 @@ CBR.Controllers.CreateMessage = new Class({
     },
 
     _initSelect: function ($input) {
+        var _this = this;
+
         $input.select2({
             placeholder: "Search",
             minimumInputLength: 2,
@@ -41,6 +43,26 @@ CBR.Controllers.CreateMessage = new Class({
                     return { results: data };
                 }
             },
+            initSelection: function (element, callback) {
+                var username = _this.$recipientField.val();
+                if (username !== "") {
+                    new Request({
+                        urlEncoded: false,
+                        headers: { "Content-Type": "application/json" },
+                        url: "/api/users/first?username=" + username,
+                        onSuccess: function (responseText, responseXML) {
+                            var recipient = JSON.parse(responseText);
+                            callback(recipient);
+
+                            // We need to set the input value to the user's ID instead of username
+                            _this.$recipientField.val(recipient.id);
+                        },
+                        onFailure: function (xhr) {
+                            alert("AJAX fail :(");
+                        }
+                    }).get();
+                }
+            },
             formatResult: this._formatDropdownItem,
             formatSelection: this._formatDropdownItem,
             escapeMarkup: function (m) {
@@ -49,7 +71,7 @@ CBR.Controllers.CreateMessage = new Class({
         });
     },
 
-    _formatDropdownItem: function(user) {
+    _formatDropdownItem: function (user) {
         return user.firstName + " " + user.lastName + " &lt;" + user.username + "&gt;";
     },
 
