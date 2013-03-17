@@ -41,6 +41,9 @@ textarea {
     #content > h1 {
       display: block; } }
 
+.clickable {
+  cursor: pointer; }
+
 .indication {
   text-align: center;
   font-style: italic; }
@@ -61,14 +64,49 @@ textarea {
       .action.line {
         clear: both; } }
 
-.profile-pic {
-  max-width: 12em;
-  max-height: 12em; }
+/* Tables and lists */
+#mobile-list .profile-pic-thumb,
+#desktop-list .profile-pic-thumb {
+  margin: auto; }
+#mobile-list .username,
+#mobile-list .user-city,
+#desktop-list .username,
+#desktop-list .user-city {
+  text-align: center; }
 
+#mobile-list > .clickable {
+  *zoom: 1; }
+  #mobile-list > .clickable:before, #mobile-list > .clickable:after {
+    content: " ";
+    display: table; }
+  #mobile-list > .clickable:after {
+    clear: both; }
+  #mobile-list > .clickable > div {
+    float: left;
+    width: 67%; }
+    #mobile-list > .clickable > div:first-child {
+      width: 33%; }
+
+#desktop-list {
+  display: none;
+  max-width: 50em;
+  margin-left: auto;
+  margin-right: auto; }
+  #desktop-list td {
+    padding-left: 0.5em;
+    padding-right: 0.5em; }
+    #desktop-list td.main-column {
+      width: 100%; }
+    #desktop-list td.date {
+      text-align: center; }
+
+@media screen and (min-width: 49em) {
+  #mobile-list {
+    display: none; }
+
+  #desktop-list {
+    display: block; } }
 /* References */
 .profile-pic-thumb {
   max-width: 6em;
   max-height: 6em; }
-
-.creation-date {
-  float: right; }

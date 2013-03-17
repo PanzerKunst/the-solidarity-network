@@ -15,7 +15,8 @@ object ReferenceDto {
 
         val query = """
           select id, from_user_id, to_user_id, was_helped, rating_id, text, creation_date
-          from reference """ + DbUtil.generateWhereClause(filters) + ";"
+          from reference """ + DbUtil.generateWhereClause(filters) + """
+          order by creation_date desc;"""
 
         Logger.info("ReferenceDto.get():" + query)
 

@@ -1,4 +1,4 @@
-@(user: models.User, from: Option[String])
+@(user: models.User, inboxMessages: List[models.frontend.FrontendMessage], from: Option[String])
 @main("Inbox", "msg-inbox") {
 <!--
     Header
@@ -32,72 +32,54 @@
 </script>
 
 <script id="list-template" type="text/html">
-    <ul id="mobile-results">
-        {{#messages}}
-        <li class="search-result" data-id="{{id}}">
-            <div class="floated-wrapper">
-                <img class="profile-pic-thumb" src="/files/profile-pic/{{requester.id}}" />
+    <ul id="mobile-list">
+        {{#inboxMessages}}
+        <li class="clickable" data-id="{{id}}">
+            <div>
+                <img class="profile-pic-thumb" src="/files/profile-pic/{{fromUser.id}}" />
 
-                <section class="dates">
-                    <div class="creation-date">
-                        <label>Submitted:</label>
-                        <span>{{creationDatetime}}</span>
-                    </div>
-                    <div class="expiry-date">
-                        <label>Expires:</label>
-                        <span>{{expiryDate}}</span>
-                    </div>
+                <section>
+                    <p class="username">{{fromUser.username}}</p>
+                    <span class="first-name">{{fromUser.firstName}}</span>
+                    <span class="last-name">{{fromUser.lastName}}</span>
+                    <p class="user-city">{{fromUser.city}}</p>
                 </section>
             </div>
 
-            <div class="floated-wrapper">
-                <section>
-                    <div class="requester-username">{{requester.username}}</div>
-                    <span class="requester-first-name">{{requester.firstName}}</span>
-                    <span class="requester-last-name">{{requester.lastName}}</span>
-                    <div class="requester-city">{{requester.city}}</div>
+            <div>
+                <section class="date">
+                    <p>{{creationDatetime}}</p>
                 </section>
 
                 <h3>{{title}}</h3>
             </div>
         </li>
-        {{/messages}}
+        {{/inboxMessages}}
     </ul>
 
-    <table id="desktop-results">
-        <th>By</th>
-        <th>Title & description</th>
-        <th>Submitted</th>
-        <th>Expires</th>
-
-        {{#messages}}
-        <tr class="search-result" data-id="{{id}}">
+    <table id="desktop-list">
+        {{#inboxMessages}}
+        <tr class="clickable" data-id="{{id}}">
             <!-- By -->
             <td>
-                <img class="profile-pic-thumb" src="/files/profile-pic/{{requester.id}}" />
-                <div class="requester-username">{{requester.username}}</div>
-                <span class="requester-first-name">{{requester.firstName}}</span>
-                <span class="requester-last-name">{{requester.lastName}}</span>
-                <div class="requester-city">{{requester.city}}</div>
+                <img class="profile-pic-thumb" src="/files/profile-pic/{{fromUser.id}}" />
+                <p class="username">{{fromUser.username}}</p>
+                <span class="first-name">{{fromUser.firstName}}</span>
+                <span class="last-name">{{fromUser.lastName}}</span>
+                <p class="user-city">{{fromUser.city}}</p>
             </td>
 
-            <!-- Title & description -->
-            <td>
-                <h3>{{title}}</h3>
-                <p>{{description}}</p>
+            <!-- Title -->
+            <td class="main-column">
+                <p>{{title}}</p>
             </td>
 
-            <!-- Submitted -->
-            <td>
-                <span class="creation-date">{{creationDatetime}}</span>
-            </td>
-
-            <!-- Expires -->
-            <td>
-                <span class="expiry-date">{{expiryDate}}</span>
+            <!-- Created -->
+            <td class="date">
+                <span>{{creationDatetime}}</span>
             </td>
         </tr>
-        {{/messages}}
+        {{/inboxMessages}}
     </table>
 </script>
 
@@ -105,9 +87,10 @@
     window.addEvent("domready", function () {
         new CBR.Controllers.NavController().run();
 
-        /* TODO new CBR.Controllers.MsgInbox({
-            el: "#content"
-        }).run(); */
+        new CBR.Controllers.MsgInbox({
+            el: "#content",
+            inboxMessages: @Html(services.JsonUtil.serialize(inboxMessages))
+        }).run();
     });
 </script>
 }

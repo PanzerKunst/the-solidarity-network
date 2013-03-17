@@ -57,6 +57,10 @@ textarea {
   }
 }
 
+.clickable {
+  cursor: pointer;
+}
+
 .indication {
   text-align: center;
   font-style: italic;
@@ -85,9 +89,68 @@ textarea {
   text-align: center;
 }
 
-.profile-pic {
-  max-width: 12em;
-  max-height: 12em;
+/* Tables and lists */
+
+#mobile-list,
+#desktop-list {
+  .profile-pic-thumb {
+    margin: auto;
+  }
+
+  .username,
+  .user-city {
+    text-align: center;
+  }
+}
+
+#mobile-list {
+  > .clickable {
+    @include clearfix;
+
+    > div {
+      float: left;
+
+      $userInfoWidth: 33%;
+
+      width: 100% - $userInfoWidth;
+
+      &:first-child {
+        width: $userInfoWidth;
+      }
+    }
+  }
+}
+
+#desktop-list {
+  display: none;
+
+  max-width: 50em;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  td {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+
+    &.main-column {
+      width: 100%;
+    }
+
+    &.date {
+      text-align: center;
+    }
+  }
+}
+
+@include desktop {
+  #mobile-list {
+    display: none;
+  }
+
+  #desktop-list {
+    display: block;
+  }
 }
 
 /* References */
@@ -95,8 +158,4 @@ textarea {
 .profile-pic-thumb {
   max-width: 6em;
   max-height: 6em;
-}
-
-.creation-date {
-  float: right;
 }

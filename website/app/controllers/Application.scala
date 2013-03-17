@@ -4,9 +4,11 @@ import play.api.mvc._
 import database._
 import services.I18nService
 import scala.collection.mutable
-import models.frontend.{FrontendReference, FrontendUser, FrontendHelpResponse, FrontendHelpRequest}
+import models.frontend._
 import models.User
 import scala.Some
+import scala.Some
+import models.User
 
 object Application extends Controller {
 
@@ -179,7 +181,10 @@ object Application extends Controller {
           else
             None
 
-          Ok(views.html.msgInbox(loggedInUser, from))
+          val inboxMessages = MessageDto.get(Some(Map("to_user_id" -> loggedInUser.id.get.toString)))
+          val inboxFrontendMessages = for (msg <- inboxMessages) yield new FrontendMessage(msg)
+
+          Ok(views.html.msgInbox(loggedInUser, inboxFrontendMessages, from))
         case None =>
           Redirect(routes.Application.login).withSession(
             session + ("to" -> "messages")
@@ -191,12 +196,12 @@ object Application extends Controller {
     implicit request =>
       loggedInUser(session) match {
         case Some(loggedInUser) =>
-          val to = if (request.queryString.contains("to"))
-            Some(request.queryString.get("to").get.head)
+          val recipient = if (request.queryString.contains("recipient"))
+            Some(request.queryString.get("recipient").get.head)
           else
             None
 
-          Ok(views.html.createMessage(loggedInUser, to))
+          Ok(views.html.createMessage(loggedInUser, recipient))
         case None => Redirect(routes.Application.login)
       }
   }

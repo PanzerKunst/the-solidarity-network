@@ -31,7 +31,7 @@
                 @if(user.id.get == frontendUser.id) {
                 <a href="/my-profile/edit" class="btn"><i class="icon-edit"></i>&nbsp;&nbsp;Edit</a>
                 } else {
-                <a href="/messages/new?to={{user.username}}" class="btn"><i class="icon-pencil"></i>&nbsp;&nbsp;Write a message</a>
+                <a href="/messages/new?recipient={{user.username}}" class="btn"><i class="icon-pencil"></i>&nbsp;&nbsp;Write a message</a>
                 }
             </div>
         </div>

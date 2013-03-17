@@ -15,7 +15,8 @@ object MessageDto {
 
         val query = """
           select id, from_user_id, to_user_id, title, text, creation_date
-          from message """ + DbUtil.generateWhereClause(filters) + ";"
+          from message """ + DbUtil.generateWhereClause(filters) + """
+          order by creation_date desc;"""
 
         Logger.info("MessageDto.get():" + query)
 

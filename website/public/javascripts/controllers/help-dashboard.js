@@ -28,6 +28,8 @@ CBR.Controllers.HelpDashboard = new Class({
 
         this.$queryField = jQuery("#query");
         this.$searchResults = jQuery("#search-results");
+        this.$searchResultedNothingParagraph = jQuery("#search-returned-nothing");
+        this.$searchResultsTemplate = jQuery("#search-results-template");
 
         // To use correct CSS declaration
         jQuery(this.getEl()).addClass("search-help-requests");
@@ -72,17 +74,17 @@ CBR.Controllers.HelpDashboard = new Class({
                 onSuccess: function (responseText, responseXML) {
                     if (this.status === _this.httpStatusCode.noContent) {
                         _this.$searchResults.html("");
-                        jQuery("#search-returned-nothing").show();
+                        _this.$searchResultedNothingParagraph.show();
                     }
                     else {
                         _this.$searchResults.html(
                             Mustache.render(
-                                jQuery("#search-results-template").html(),
+                                _this.$searchResultsTemplate.html(),
                                 { helpRequests: _this._formatDates(JSON.parse(responseText)) }
                             )
                         );
-                        jQuery("#search-returned-nothing").hide();
-                        jQuery(".search-result").click(_this._navigateToHelpRequest);
+                        _this.$searchResultedNothingParagraph.hide();
+                        jQuery(".clickable").click(jQuery.proxy(_this._navigateToHelpRequest));
                     }
                 },
                 onFailure: function (xhr) {

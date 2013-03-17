@@ -1,4 +1,4 @@
-@(user: models.User, to: Option[String])
+@(user: models.User, recipient: Option[String])
 @main("Write a message", "create-message") {
 <!--
     Header
@@ -22,8 +22,8 @@
             <label for="recipient">To <span>*</span></label><!--
          --><input id="recipient" type="hidden"
 
-            @if(to.isDefined) {
-              value="@to.get"
+            @if(recipient.isDefined) {
+              value="@recipient.get"
             }
                 />
 

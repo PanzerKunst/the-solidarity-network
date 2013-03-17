@@ -8,3 +8,5 @@
   @media screen and (min-width: 49em) {
     #msg-inbox #content .action {
       width: 50%; } }
+  #msg-inbox #content #mobile-list .date {
+    text-align: right; }

@@ -39,30 +39,30 @@
 </script>
 
 <script id="search-results-template" type="text/html">
-    <ul id="mobile-results">
+    <ul id="mobile-list">
         {{#helpRequests}}
-        <li class="search-result" data-id="{{id}}">
-            <div class="floated-wrapper">
+        <li class="clickable" data-id="{{id}}">
+            <div>
                 <img class="profile-pic-thumb" src="/files/profile-pic/{{requester.id}}" />
 
-                <section class="dates">
-                    <div class="creation-date">
-                        <label>Submitted:</label>
-                        <span>{{creationDatetime}}</span>
-                    </div>
-                    <div class="expiry-date">
-                        <label>Expires:</label>
-                        <span>{{expiryDate}}</span>
-                    </div>
+                <section>
+                    <p class="username">{{requester.username}}</p>
+                    <span class="first-name">{{requester.firstName}}</span>
+                    <span class="last-name">{{requester.lastName}}</span>
+                    <p class="user-city">{{requester.city}}</p>
                 </section>
             </div>
 
-            <div class="floated-wrapper">
-                <section>
-                    <div class="requester-username">{{requester.username}}</div>
-                    <span class="requester-first-name">{{requester.firstName}}</span>
-                    <span class="requester-last-name">{{requester.lastName}}</span>
-                    <div class="requester-city">{{requester.city}}</div>
+            <div>
+                <section class="dates">
+                    <div>
+                        <label>Submitted:</label>
+                        <span>{{creationDatetime}}</span>
+                    </div>
+                    <div>
+                        <label>Expires:</label>
+                        <span>{{expiryDate}}</span>
+                    </div>
                 </section>
 
                 <h3>{{title}}</h3>
@@ -71,37 +71,37 @@
         {{/helpRequests}}
     </ul>
 
-    <table id="desktop-results">
+    <table id="desktop-list">
         <th>By</th>
         <th>Title & description</th>
         <th>Submitted</th>
         <th>Expires</th>
 
         {{#helpRequests}}
-        <tr class="search-result" data-id="{{id}}">
+        <tr class="clickable" data-id="{{id}}">
             <!-- By -->
             <td>
                 <img class="profile-pic-thumb" src="/files/profile-pic/{{requester.id}}" />
-                <div class="requester-username">{{requester.username}}</div>
-                <span class="requester-first-name">{{requester.firstName}}</span>
-                <span class="requester-last-name">{{requester.lastName}}</span>
-                <div class="requester-city">{{requester.city}}</div>
+                <p class="username">{{requester.username}}</p>
+                <span class="first-name">{{requester.firstName}}</span>
+                <span class="last-name">{{requester.lastName}}</span>
+                <p class="user-city">{{requester.city}}</p>
             </td>
 
             <!-- Title & description -->
-            <td>
+            <td class="main-column">
                 <h3>{{title}}</h3>
                 <p>{{description}}</p>
             </td>
 
             <!-- Submitted -->
-            <td>
-                <span class="creation-date">{{creationDatetime}}</span>
+            <td class="date">
+                <span>{{creationDatetime}}</span>
             </td>
 
             <!-- Expires -->
-            <td>
-                <span class="expiry-date">{{expiryDate}}</span>
+            <td class="date">
+                <span>{{expiryDate}}</span>
             </td>
         </tr>
         {{/helpRequests}}

@@ -14,20 +14,31 @@ CBR.Controllers.MsgInbox = new Class({
         );
 
         this.initElements();
+        this._showInboxMessages();
     },
 
-    _getMessages: function () {
-        return this.options.messages;
+    _getInboxMessages: function () {
+        return this.options.inboxMessages;
     },
 
     initElements: function () {
         this.parent();
 
         this.$listContainer = jQuery("#list-container");
+        this.$listTemplate = jQuery("#list-template");
     },
 
     _initEvents: function () {
         jQuery(".inbox-item").click(jQuery.proxy(this._navigateToMessage, this));
+    },
+
+    _showInboxMessages: function() {
+        this.$listContainer.html(
+            Mustache.render(
+                this.$listTemplate.html(),
+                { inboxMessages: this._formatDates(this._getInboxMessages()) }
+            )
+        );
     },
 
     _navigateToMessage: function (e) {

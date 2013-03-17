@@ -38,53 +38,16 @@
 
   // Search results
 
-  .search-result {
-    cursor: pointer;
-  }
+  #mobile-list {
+    .dates {
+      > div {
+        text-align: right;
 
-  .floated-wrapper {
-    @include clearfix;
-
-    > * {
-      float: left;
+        span {
+          width: 3em;
+        }
+      }
     }
-
-    > .dates {
-      float: right;
-    }
-
-    label {
-      width: 5em;
-    }
-  }
-
-  #desktop-results {
-    display: none;
-
-    max-width: 50em;
-
-    margin-left: auto;
-    margin-right: auto;
-
-    td {
-      padding-left: 0.5em;
-      padding-right: 0.5em;
-    }
-  }
-
-  @include desktop {
-    #mobile-results {
-      display: none;
-    }
-
-    #desktop-results {
-      display: block;
-    }
-  }
-
-  .requester-username,
-  .requester-city {
-    text-align: center;
   }
 
   #search-returned-nothing {
