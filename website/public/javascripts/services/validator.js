@@ -151,7 +151,7 @@ CBR.Services.Validator = new Class({
         }
         else if (this._isToCheckIfEmpty($field) &&
             !$field.hasClass("pills") &&
-            !$field.val()) {
+            !$field.val().trim()) {
 
             if (!isOnBlur) {
                 this.flagInvalid($field);

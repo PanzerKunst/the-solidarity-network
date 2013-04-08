@@ -8,7 +8,6 @@ import java.util
 class FrontendHelpResponse {
 
   def this(helpResponse: HelpResponse) = {
-
     this()
 
     this.id = helpResponse.id.get

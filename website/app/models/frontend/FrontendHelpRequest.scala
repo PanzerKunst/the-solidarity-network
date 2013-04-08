@@ -7,7 +7,6 @@ import database.{DbUtil, UserDto}
 class FrontendHelpRequest {
 
   def this(helpRequest: HelpRequest) = {
-
     this()
 
     this.id = helpRequest.id.get

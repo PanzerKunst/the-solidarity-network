@@ -42,9 +42,17 @@ CBR.Controllers.NavController = new Class({
     },
 
     _dropDownWholeMenu: function () {
-        if (this.$menu.is(":visible"))
+        if (this.$menu.is(":visible")) {
             this.$menu.slideUpCustom();
-        else
+            this._setMenuButtonIcon("icon-chevron-down");
+        }
+        else {
             this.$menu.slideDownCustom();
+            this._setMenuButtonIcon("icon-chevron-up");
+        }
+    },
+
+    _setMenuButtonIcon: function(className) {
+        this.$menu.parent().find("i").attr("class", className);
     }
 });

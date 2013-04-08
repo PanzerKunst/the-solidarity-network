@@ -16,18 +16,6 @@ class FrontendMessage {
     this.creationDatetime = DbUtil.datetimeToString(message.creationDatetime.get)
   }
 
-  /* TODO: remove?
-  def this(message: Message, toUser: User) = {
-    this()
-
-    this.id = message.id.get
-    this.fromUser = new FrontendUser(UserDto.get(Some(Map("id" -> message.fromUserId.get.toString))).head)
-    this.toUser = new FrontendUser(toUser)
-    this.title = message.title
-    this.text = message.text
-    this.creationDatetime = DbUtil.datetimeToString(message.creationDatetime.get)
-  } */
-
   @JsonProperty
   var id: Long = _
 
