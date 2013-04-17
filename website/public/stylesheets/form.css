@@ -23,6 +23,8 @@ form .field {
   form .field > label {
     display: block;
     width: 9em; }
+    form .field > label.mdnz-polyfill {
+      display: none; }
     @media screen and (min-width: 49em) {
       form .field > label {
         float: left; } }

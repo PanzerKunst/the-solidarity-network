@@ -22,6 +22,8 @@ CBR.Controllers.TemplateController = new Class({
 
     initElements: function () {
         jQuery("select", this.options.el).select2({minimumResultsForSearch: 20});
+
+        this._applyModernizrRules();
     },
 
     formatDate: function(yyyyMMdd) {
@@ -57,6 +59,12 @@ CBR.Controllers.TemplateController = new Class({
             formattedDatetime += "/" + year;
 
         return formattedDatetime + " " + hour + ":" + minute;
+    },
+
+    _applyModernizrRules: function() {
+        if (!Modernizr.input.placeholder) {
+            jQuery(".mdnz-polyfill.placeholder").show();
+        }
     },
 
     httpStatusCode: {

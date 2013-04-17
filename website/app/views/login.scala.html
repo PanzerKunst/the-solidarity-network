@@ -26,13 +26,15 @@
         <p id="auth-failed">Wrong credentials :( Please try again!</p>
 
         <div class="field">
-            <input id="username-or-email" type="text" placeholder="Username or e-mail *"/>
+            <label for="username-or-email" class="mdnz-polyfill placeholder">Username or e-mail</label><!--
+         --><input id="username-or-email" type="text" placeholder="Username or e-mail *"/>
 
             <p class="field-error without-label" data-check="empty">Hard for us to log you in without a username...</p>
         </div>
 
         <div class="field">
-            <input id="password" type="password" placeholder="Password *"/>
+            <label for="password" class="mdnz-polyfill placeholder">Password</label><!--
+         --><input id="password" type="password" placeholder="Password *"/>
 
             <p class="field-error without-label" data-check="empty">Oops, you forgot the password!</p>
         </div>

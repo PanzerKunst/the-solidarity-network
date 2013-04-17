@@ -64,6 +64,9 @@ textarea {
       .action.line {
         clear: both; } }
 
+.mdnz-polyfill {
+  display: none; }
+
 /* Tables and lists */
 #mobile-list .profile-pic-thumb,
 #desktop-list .profile-pic-thumb {

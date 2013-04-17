@@ -48,6 +48,9 @@
     <link rel="stylesheet" href="@routes.Assets.at("stylesheets/search-help-requests.css")">
     <link rel="stylesheet" href="@routes.Assets.at("stylesheets/view-help-request.css")">
 
+    <!-- Browser-specific -->
+    <!--[if IE]><link rel="stylesheet" href="@routes.Assets.at("stylesheets/all-ie.css")" /><![endif]-->
+
     } else {
 
     <!-- Merged Stylesheets -->
@@ -134,6 +137,7 @@
     @javascript
 
     <script>
+        <!-- Google Analytics -->
         var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
         (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
             g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';

@@ -13,6 +13,7 @@ CBR.Controllers.CreateHelpRequest = new Class({
             )
         );
 
+        this.initElements();
         this._initValidation();
         this._initEvents();
     },
