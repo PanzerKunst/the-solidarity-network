@@ -25,6 +25,7 @@ GET     /help-requests/:id          controllers.Application.viewHelpRequest(id: 
 GET     /help-requests/edit/:id     controllers.Application.editHelpRequest(id: Int)
 GET     /messages                   controllers.Application.msgInbox
 GET     /messages/new               controllers.Application.createMessage
+GET     /messages/:id               controllers.Application.viewMessage(id: Int)
 
 # API
 POST    /api/users                  controllers.api.UserApi.create

@@ -28,24 +28,7 @@ CBR.Models.Message = new Class({
         return this.options.creationDatetime;
     },
 
-
-    /**
-     * Frontend specific
-     */
-
-    getFromUser: function () {
-        return this.options.fromUser;
-    },
-
-    setFromUser: function (user) {
-        this.options.fromUser = user;
-    },
-
-    getToUser: function () {
-        return this.options.toUser;
-    },
-
-    setToUser: function (user) {
-        this.options.toUser = user;
+    getReplyToMessageId: function () {
+        return this.options.replyToMessageId;
     }
 });

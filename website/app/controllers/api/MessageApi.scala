@@ -18,7 +18,7 @@ object MessageApi extends Controller {
           val msgWithUserId = msg.copy(fromUserId = loggedInUser.id)
           MessageDto.create(msgWithUserId) match {
             case Some(id) =>
-              val createdMessage = MessageDto.get(Some(Map("id" -> id.toString))).head
+              val createdMessage = MessageDto.get(Map("id" -> id.toString)).head
               EmailService.newMessage(new FrontendMessage(createdMessage))
               Ok(id.toString)
             case None => InternalServerError("Creation of a reference did not return an ID!")

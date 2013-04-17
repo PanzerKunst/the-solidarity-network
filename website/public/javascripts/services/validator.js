@@ -142,7 +142,7 @@ CBR.Services.Validator = new Class({
 
         // Empty?
         if (this._isToCheckIfEmpty($field) &&
-            $field.hasClass("pills") &&
+            $field.hasClass("nav-pills") &&
             $field.children(".active").length === 0) {
 
             this.flagInvalid($field);
@@ -150,7 +150,7 @@ CBR.Services.Validator = new Class({
             return false;
         }
         else if (this._isToCheckIfEmpty($field) &&
-            !$field.hasClass("pills") &&
+            !$field.hasClass("nav-pills") &&
             !$field.val().trim()) {
 
             if (!isOnBlur) {

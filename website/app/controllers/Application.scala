@@ -181,7 +181,7 @@ object Application extends Controller {
           else
             None
 
-          val inboxMessages = MessageDto.get(Some(Map("to_user_id" -> loggedInUser.id.get.toString)))
+          val inboxMessages = MessageDto.get(Map("to_user_id" -> loggedInUser.id.get.toString))
           val inboxFrontendMessages = for (msg <- inboxMessages) yield new FrontendMessage(msg)
 
           Ok(views.html.msgInbox(loggedInUser, inboxFrontendMessages, from))
@@ -202,6 +202,20 @@ object Application extends Controller {
             None
 
           Ok(views.html.createMessage(loggedInUser, recipient))
+        case None => Redirect(routes.Application.login)
+      }
+  }
+
+  def viewMessage(id: Int) = Action {
+    implicit request =>
+      loggedInUser(session) match {
+        case Some(loggedInUser) =>
+          val msg = MessageDto.get(Map("id" -> id.toString)).head
+
+          val replies = MessageDto.get(Map("reply_to_message_id" -> id.toString), false)
+          val frontendReplies = for (reply <- replies) yield new FrontendMessage(reply)
+
+          Ok(views.html.viewMessage(loggedInUser, new FrontendMessage(msg), frontendReplies))
         case None => Redirect(routes.Application.login)
       }
   }

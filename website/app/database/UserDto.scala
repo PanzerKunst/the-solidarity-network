@@ -70,21 +70,26 @@ object UserDto {
     DB.withConnection {
       implicit c =>
 
-        val streetAddressForQuery = user.streetAddress.getOrElse("")
-        val postCodeForQuery = user.postCode.getOrElse("")
+        var streetAddressForQuery = "NULL"
+        if (user.streetAddress.isDefined && user.streetAddress.get != "")
+          streetAddressForQuery = "\"" + DbUtil.backslashQuotes(user.streetAddress.get) + "\""
+
+        var postCodeForQuery = "NULL"
+        if (user.postCode.isDefined && user.postCode.get != "")
+          postCodeForQuery = "\"" + DbUtil.backslashQuotes(user.postCode.get) + "\""
 
         val query = """
-                       insert into user(first_name, last_name, username, email, password, street_address, post_code, city, country_id, creation_date)
-      values("""" + DbUtil.backslashQuotes(user.firstName.get) + """", """" +
+                       insert into user(first_name, last_name, username, email, password, city, country_id, creation_date, street_address, post_code)
+        values("""" + DbUtil.backslashQuotes(user.firstName.get) + """", """" +
           DbUtil.backslashQuotes(user.lastName.get) + """", """" +
           DbUtil.backslashQuotes(user.username.get) + """", """" +
           DbUtil.backslashQuotes(user.email.get) + """", """" +
           DbUtil.backslashQuotes(user.password.get) + """", """" +
-          DbUtil.backslashQuotes(streetAddressForQuery) + """", """" +
-          DbUtil.backslashQuotes(postCodeForQuery) + """", """" +
           DbUtil.backslashQuotes(user.city.get) + """", """ +
           user.countryId.get + """, """" +
-          DbUtil.datetimeToString(new util.Date()) + """");"""
+          DbUtil.datetimeToString(new util.Date()) + """",""" +
+          streetAddressForQuery + """,""" +
+          postCodeForQuery + """);"""
 
         Logger.info("UserDto.create():" + query)
 
@@ -96,9 +101,17 @@ object UserDto {
     DB.withConnection {
       implicit c =>
 
-        val streetAddressForQuery = user.streetAddress.getOrElse("")
-        val postCodeForQuery = user.postCode.getOrElse("")
-        val descriptionForQuery = user.description.getOrElse("")
+        var streetAddressForQuery = "NULL"
+        if (user.streetAddress.isDefined && user.streetAddress.get != "")
+          streetAddressForQuery = "\"" + DbUtil.backslashQuotes(user.streetAddress.get) + "\""
+
+        var postCodeForQuery = "NULL"
+        if (user.postCode.isDefined && user.postCode.get != "")
+          postCodeForQuery = "\"" + DbUtil.backslashQuotes(user.postCode.get) + "\""
+
+        var descriptionForQuery = "NULL"
+        if (user.description.isDefined && user.description.get != "")
+          descriptionForQuery = "\"" + DbUtil.backslashQuotes(user.description.get) + "\""
 
         val query = """
                        update user set
@@ -106,11 +119,11 @@ object UserDto {
           last_name = """" + DbUtil.backslashQuotes(user.lastName.get) + """",
           email = """" + DbUtil.backslashQuotes(user.email.get) + """",
           password = """" + DbUtil.backslashQuotes(user.password.get) + """",
-          street_address = """" + DbUtil.backslashQuotes(streetAddressForQuery) + """",
-          post_code = """" + DbUtil.backslashQuotes(postCodeForQuery) + """",
           city = """" + DbUtil.backslashQuotes(user.city.get) + """",
           country_id = """ + user.countryId.get + """,
-          description = """" + DbUtil.backslashQuotes(descriptionForQuery) + """"
+          street_address = """ + streetAddressForQuery + """,
+          post_code = """ + postCodeForQuery + """,
+          description = """ + descriptionForQuery + """
           where id = """ + user.id.get + """;"""
 
         Logger.info("UserDto.update():" + query)

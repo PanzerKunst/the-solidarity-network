@@ -13,9 +13,11 @@ object DbAdmin {
     createTableSubscriptionToHelpResponses
     createTableReferenceRating
     createTableReference
+    createTableMessage
   }
 
   def dropTables {
+    dropTableMessage
     dropTableReference
     dropTableReferenceRating
     dropTableSubscriptionToHelpResponses
@@ -164,6 +166,35 @@ object DbAdmin {
         ) ENGINE=InnoDB DEFAULT charset=utf8;"""
 
         SQL(query).executeUpdate()
+    }
+  }
+
+  private def createTableMessage {
+    DB.withConnection {
+      implicit c =>
+
+        val query = """
+          Create table `message` (
+            `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+            `from_user_id` int(10) unsigned NOT NULL,
+            `to_user_id` int(10) unsigned NOT NULL,
+            `title` varchar(100) NOT NULL,
+            `text` text NOT NULL,
+            `creation_date` datetime NOT NULL,
+            `reply_to_message_id` int(10) unsigned DEFAULT NULL,
+            primary key (`id`),
+            constraint `fk_from_user1` foreign key (`from_user_id`) references `user`(`id`),
+            constraint `fk_to_user1` foreign key (`to_user_id`) references `user`(`id`)
+          ) ENGINE=InnoDB DEFAULT charset=utf8;"""
+
+        SQL(query).executeUpdate()
+    }
+  }
+
+  private def dropTableMessage {
+    DB.withConnection {
+      implicit c =>
+        SQL("drop table if exists message;").executeUpdate()
     }
   }
 

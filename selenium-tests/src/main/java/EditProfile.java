@@ -3,6 +3,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -76,12 +77,15 @@ public class EditProfile extends TestBase {
         Select droplist = new Select(driver.findElement(By.id("country")));
         droplist.selectByValue(user.getCountryId());
 
+        // On IE there is a problem with the country select2 component when navigating inputting the descriptin too fast
+        if (driver instanceof InternetExplorerDriver) {
+            sleepBecauseSeleniumSucks();
+        }
+
         driver.findElement(By.id("description"))
                 .sendKeys(user.getDescription());
 
-        if (driver instanceof ChromeDriver) {
-            sleepBecauseSeleniumSucks();
-        }
+        sleepBecauseSeleniumSucks();
 
         /**
          * Account tab
@@ -129,7 +133,7 @@ public class EditProfile extends TestBase {
 
                 return indication.isDisplayed() &&
                         indication.getAttribute("innerHTML")
-                                .equals("Saved!") &&
+                                .indexOf("Saved!") > -1 &&
                         checkAccountValuesForUser(d, user);
             }
         });

@@ -26,26 +26,5 @@ CBR.Models.HelpRequest = new Class({
 
     getExpiryDate: function () {
         return this.options.expiryDate;
-    },
-
-
-    /**
-     * Frontend specific
-     */
-
-    getRequester: function () {
-        return this.options.requester;
-    },
-
-    setRequester: function (requester) {
-        this.options.requester = requester;
-    },
-
-    getCountry: function () {
-        return this.options.country;
-    },
-
-    setCountry: function (country) {
-        this.options.country = country;
     }
 });

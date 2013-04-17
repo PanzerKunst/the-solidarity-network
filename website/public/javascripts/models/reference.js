@@ -30,34 +30,5 @@ CBR.Models.Reference = new Class({
 
     getCreationDatetime: function () {
         return this.options.creationDatetime;
-    },
-
-
-    /**
-     * Frontend specific
-     */
-
-    getFromUser: function () {
-        return this.options.fromUser;
-    },
-
-    setFromUser: function (user) {
-        this.options.fromUser = user;
-    },
-
-    getToUser: function () {
-        return this.options.toUser;
-    },
-
-    setToUser: function (user) {
-        this.options.toUser = user;
-    },
-
-    getRating: function () {
-        return this.options.rating;
-    },
-
-    setRating: function (rating) {
-        this.options.rating = rating;
     }
 });

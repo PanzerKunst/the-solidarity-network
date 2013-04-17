@@ -111,26 +111,13 @@ CBR.Controllers.HelpDashboard = new Class({
             var currentHelpRequest = helpRequests[i];
 
             // Format submitted date
-            currentHelpRequest.creationDatetime = this._formatDate(currentHelpRequest.creationDatetime);
+            currentHelpRequest.creationDatetime = this.formatDate(currentHelpRequest.creationDatetime);
 
             // Format expiry date
-            currentHelpRequest.expiryDate = this._formatDate(currentHelpRequest.expiryDate);
+            currentHelpRequest.expiryDate = this.formatDate(currentHelpRequest.expiryDate);
         }
 
         return helpRequests;
-    },
-
-    _formatDate: function (yyyyMMdd) {
-        var year = yyyyMMdd.substring(0, 4);
-        var month = yyyyMMdd.substring(5, 7);
-        var day = yyyyMMdd.substring(8, 10);
-
-        var formatedDate = day + "/" + month;
-
-        if (year !== new Date().getFullYear().toString())
-            formatedDate += "/" + year;
-
-        return formatedDate;
     },
 
     _getSearchRequestData: function (queryFieldValue) {

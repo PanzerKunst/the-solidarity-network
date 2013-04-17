@@ -1,6 +1,7 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -13,9 +14,14 @@ public class TestBase {
             }
         });
 
-        WebElement menuAnchor = driver.findElement(By.cssSelector("#header-nav > span > a"));
-        if (menuAnchor.getAttribute("innerHTML").equals("Menu") &&  // Mobile browser
+        WebElement menuAnchor = driver.findElement(By.cssSelector("#header-nav > span > button"));
+        if (menuAnchor.getAttribute("innerHTML").indexOf("Menu") > -1 &&  // Mobile browser
                 !driver.findElement(By.cssSelector("#header-nav > ul")).isDisplayed()) {
+
+            if (driver instanceof InternetExplorerDriver) {
+                sleepBecauseSeleniumSucks(2000);
+            }
+
             menuAnchor.click();
         }
 

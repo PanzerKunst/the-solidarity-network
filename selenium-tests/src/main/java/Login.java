@@ -117,7 +117,7 @@ public class Login extends TestBase {
         (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
                 return d.findElement(By.id("header-nav"))
-                        .getText().indexOf("Login") > 0;
+                        .getText().indexOf("Login") > -1;
             }
         });
     }

@@ -15,7 +15,7 @@ object EmailService {
     mail.setSubject("Registration confirmation")
 
     //send " " in text version otherwise it is not working. Bug reported to typesafe
-    mail.send(" ", confirmRegistrationTemplate(user).toString())
+    // TODO mail.send(" ", confirmRegistrationTemplate(user).toString())
   }
 
   def newMessage(message: FrontendMessage) {

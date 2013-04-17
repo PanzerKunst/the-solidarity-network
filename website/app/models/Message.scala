@@ -7,4 +7,5 @@ case class Message(id: Option[Long] = None,
                    toUserId: Long,
                    title: String,
                    text: String,
-                   creationDatetime: Option[Date])
+                   creationDatetime: Option[Date],
+                   replyToMessageId: Option[Long])

@@ -12,8 +12,15 @@
 <h1>Messages</h1>
 
 @if(from.isDefined) {
-<p class="indication">Message sent</p>
+<p class="indication">
+    @if(from.get == "new") {
+        Message sent
+    } else {
+        Reply sent
+    }
+</p>
 }
+
 <div class="action line">
     <a href="/messages/new">Write a message</a>
 </div>

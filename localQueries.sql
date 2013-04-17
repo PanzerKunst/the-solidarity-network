@@ -1,30 +1,13 @@
 use thesolidaritynetwork;
 
+drop table message;
 drop table reference;
 drop table reference_rating;
+drop table subscription_to_help_responses;
 drop table help_response;
 drop table help_request;
 drop table user;
 drop table country;
-/* drop table file_data;
-drop table file_meta_data;
-
-Create table `file_meta_data`(
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `media_type` varchar(60) NOT NULL,
-  `name` varchar(120) NOT NULL,
-  `size_bytes` bigint(20) NOT NULL,
-  `creation_date` datetime NOT NULL,
-  primary key (`id`)
-) ENGINE=InnoDB DEFAULT charset=utf8;
-
-Create table `file_data`(
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `meta_data_id` int(10) unsigned NOT NULL,
-  `data` blob NOT NULL,
-  primary key (`id`),
-  constraint `fk_meta_data` foreign key (`meta_data_id`) references `file_meta_data`(`id`)
-) ENGINE=InnoDB DEFAULT charset=utf8; */
 
 CREATE TABLE `country` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -108,6 +91,7 @@ Create table `message` (
   `title` varchar(100) NOT NULL,
   `text` text NOT NULL,
   `creation_date` datetime NOT NULL,
+  `reply_to_message_id` int(10) unsigned DEFAULT NULL,
   primary key (`id`),
   constraint `fk_from_user1` foreign key (`from_user_id`) references `user`(`id`),
   constraint `fk_to_user1` foreign key (`to_user_id`) references `user`(`id`)

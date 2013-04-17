@@ -3,20 +3,22 @@ package database
 import anorm._
 import play.api.db.DB
 import play.api.Play.current
-import models.{Message, Reference}
+import models.Message
 import play.api.Logger
 import java.util.Date
 
 
 object MessageDto {
-  def get(filters: Option[Map[String, String]]): List[Message] = {
+  def get(filters: Map[String, String], orderIsDesc: Boolean = true): List[Message] = {
     DB.withConnection {
       implicit c =>
 
+        val orderForQuery = if (orderIsDesc) "desc" else ""
+
         val query = """
-          select id, from_user_id, to_user_id, title, text, creation_date
-          from message """ + DbUtil.generateWhereClause(filters) + """
-          order by creation_date desc;"""
+          select id, from_user_id, to_user_id, title, text, creation_date, reply_to_message_id
+          from message """ + DbUtil.generateWhereClause(Some(filters)) + """
+          order by creation_date """ + orderForQuery + """;"""
 
         Logger.info("MessageDto.get():" + query)
 
@@ -27,7 +29,8 @@ object MessageDto {
             toUserId = row[Long]("to_user_id"),
             title = row[String]("title"),
             text = row[String]("text"),
-            creationDatetime = Some(row[Date]("creation_date"))
+            creationDatetime = Some(row[Date]("creation_date")),
+            replyToMessageId = row[Option[Long]]("reply_to_message_id")
           )
         ).toList
     }
@@ -38,12 +41,13 @@ object MessageDto {
       implicit c =>
 
         val query = """
-                       insert into message(from_user_id, to_user_id, title, text, creation_date)
-      values(""" + message.fromUserId.get + """, """ +
+                       insert into message(from_user_id, to_user_id, title, text, creation_date, reply_to_message_id)
+        values(""" + message.fromUserId.get + """, """ +
           message.toUserId + """, """" +
           DbUtil.backslashQuotes(message.title) + """", """" +
           DbUtil.backslashQuotes(message.text) + """", """" +
-          DbUtil.datetimeToString(new Date()) + """");"""
+          DbUtil.datetimeToString(new Date()) + """",""" +
+          message.replyToMessageId.getOrElse("NULL") + """);"""
 
         Logger.info("MessageDto.create(): " + query)
 

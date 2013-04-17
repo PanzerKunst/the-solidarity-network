@@ -32,12 +32,13 @@ public class MyProfile extends TestBase {
         // Wait for the page to load
         (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
+                WebElement h1 = d.findElement(By.tagName("h1"));
                 WebElement textualInfo = d.findElement(By.cssSelector("#textual-info"));
 
-                return textualInfo.getAttribute("innerHTML").indexOf(user.getFirstName()) > 0 &&
-                        textualInfo.getAttribute("innerHTML").indexOf(user.getLastName()) > 0 &&
-                        textualInfo.getAttribute("innerHTML").indexOf(user.getUsername()) > 0 &&
-                        textualInfo.getAttribute("innerHTML").indexOf(user.getCity()) > 0;
+                return h1.getAttribute("innerHTML").indexOf(user.getFirstName()) > -1 &&
+                        h1.getAttribute("innerHTML").indexOf(user.getLastName()) > -1 &&
+                        h1.getAttribute("innerHTML").indexOf(user.getUsername()) > -1 &&
+                        textualInfo.getAttribute("innerHTML").indexOf(user.getCity()) > -1;
             }
         });
     }

@@ -43,7 +43,7 @@ public class SearchHelpRequests extends TestBase {
 
         sleepBecauseSeleniumSucks();
 
-        if (driver.findElement(By.id("desktop-results")).isDisplayed()) {
+        if (driver.findElement(By.id("desktop-list")).isDisplayed()) {
             cssSelectorOfFirstDisplayedSearchResult = "tr[data-id='1']";
         }
 

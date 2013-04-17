@@ -32,9 +32,9 @@ public class Runner {
     }
 
     private static void testOnMobile() throws IOException {
-        testInFirefox(new Dimension(320, 1024));
-        testInChrome(new Dimension(320, 1024));
-        testInIE(new Dimension(320, 1024));
+        testInFirefox(new Dimension(350, 1024));
+        testInChrome(new Dimension(350, 1024));
+        testInIE(new Dimension(350, 1024));
 
         // TODO No test in Opera, because of:
         // java.lang.UnsupportedOperationException: Not supported in OperaDriver yet

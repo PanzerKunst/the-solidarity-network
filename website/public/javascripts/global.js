@@ -12,11 +12,17 @@ var Mustache = Mustache || {};
 // Because jsHint doesn't know AjaxUpload
 var qq = qq || {};
 
-CBR.isEmptyObject = function(obj) {
-    for(var prop in obj) {
-        if(obj.hasOwnProperty(prop))
+CBR.isEmptyObject = function (obj) {
+    for (var prop in obj) {
+        if (obj.hasOwnProperty(prop))
             return false;
     }
 
     return true;
 };
+
+if (typeof String.prototype.startsWith !== 'function') {
+    String.prototype.startsWith = function (str) {
+        return this.slice(0, str.length) === str;
+    };
+}

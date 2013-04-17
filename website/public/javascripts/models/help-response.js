@@ -22,18 +22,5 @@ CBR.Models.HelpResponse = new Class({
 
     getCreationDatetime: function () {
         return this.options.creationDatetime;
-    },
-
-
-    /**
-     * Frontend specific
-     */
-
-    getResponder: function () {
-        return this.options.requester;
-    },
-
-    setResponder: function (requester) {
-        this.options.requester = requester;
     }
 });

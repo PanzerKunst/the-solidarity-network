@@ -1,7 +1,7 @@
 package models.frontend
 
 import models.{Message, ReferenceRating, Reference, User}
-import database.{DbUtil, ReferenceRatingDto, UserDto}
+import database.{MessageDto, DbUtil, ReferenceRatingDto, UserDto}
 import org.codehaus.jackson.annotate.JsonProperty
 
 class FrontendMessage {
@@ -14,6 +14,9 @@ class FrontendMessage {
     this.title = message.title
     this.text = message.text
     this.creationDatetime = DbUtil.datetimeToString(message.creationDatetime.get)
+
+    if (message.replyToMessageId.isDefined)
+      this.replyToMessage = new FrontendMessage(MessageDto.get(Map("id" -> message.replyToMessageId.get.toString)).head)
   }
 
   @JsonProperty
@@ -33,4 +36,7 @@ class FrontendMessage {
 
   @JsonProperty
   var creationDatetime: String = _
+
+  @JsonProperty
+  var replyToMessage: FrontendMessage = _
 }

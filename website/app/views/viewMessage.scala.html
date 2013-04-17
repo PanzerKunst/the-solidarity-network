@@ -1,0 +1,73 @@
+@(user: models.User, message: models.frontend.FrontendMessage, replies: List[models.frontend.FrontendMessage])
+@main(message.title, "view-message") {
+<!--
+    Header
+-->
+@nav(Some(user), Some(message.title))
+
+} {
+<!--
+    Content
+-->
+
+} {
+<!--
+    Javascript
+-->
+<script id="content-template" type="text/html">
+    <h1>{{message.title}}</h1>
+    <section>
+        <article>
+            <img src="/files/profile-pic/{{message.fromUser.id}}"/>
+
+            <p>{{message.fromUser.firstName}} {{message.fromUser.lastName}} &lt;{{message.fromUser.username}}&gt;</p>
+
+            <p>{{message.creationDatetime}}</p>
+
+            <p>{{message.text}}</p>
+        </article>
+
+        {{#replies}}
+        <article>
+            <img src="/files/profile-pic/{{fromUser.id}}"/>
+
+            <p>{{fromUser.firstName}} {{fromUser.lastName}} &lt;{{fromUser.username}}&gt;</p>
+
+            <p>{{creationDatetime}}</p>
+
+            <p>{{text}}</p>
+        </article>
+        {{/replies}}
+    </section>
+
+    @if(user.id.get != message.fromUser.id) {
+    <form>
+        <div class="field">
+            <label for="text">Reply <span>*</span></label><!--
+         --><textarea id="text"></textarea>
+
+            <p class="field-error" data-check="empty">;)</p>
+        </div>
+
+        <input type="submit" />
+
+        <div id="submit-wrapper">
+            <button id="reply" class="btn btn-primary btn-large">Send</button>
+        </div>
+    </form>
+    }
+
+</script>
+
+<script type="text/javascript">
+    window.addEvent("domready",function () {
+        new CBR.Controllers.NavController().run();
+
+        new CBR.Controllers.ViewMessage({
+            el: "#content",
+            message: @Html(services.JsonUtil.serialize(message)),
+            replies: @Html(services.JsonUtil.serialize(replies)),
+        }).run();
+    });
+</script>
+}

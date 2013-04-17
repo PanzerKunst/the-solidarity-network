@@ -93,22 +93,7 @@ CBR.Controllers.ViewHelpRequest = new Class({
     _prepareDataForDisplay: function () {
         for (var i = 0; i < this.options.helpResponses.length; i++) {
             var currentHelpResponse = this.options.helpResponses[i];
-            var currentCreationDatetime = currentHelpResponse.creationDatetime;
-
-            var year = currentCreationDatetime.substring(0, 4);
-            var month = currentCreationDatetime.substring(5, 7);
-            var day = currentCreationDatetime.substring(8, 10);
-            var hour = currentCreationDatetime.substring(11, 13);
-            var minute = currentCreationDatetime.substring(14, 16);
-
-            currentCreationDatetime = day + "/" + month;
-
-            if (year !== new Date().getFullYear().toString())
-                currentCreationDatetime += "/" + year;
-
-            currentCreationDatetime += " " + hour + ":" + minute;
-
-            currentHelpResponse.creationDatetime = currentCreationDatetime;
+            currentHelpResponse.creationDatetime = this.formatDatetime(currentHelpResponse.creationDatetime);
         }
     },
 

@@ -15,6 +15,7 @@ CBR.Controllers.MsgInbox = new Class({
 
         this.initElements();
         this._showInboxMessages();
+        this._initEvents();
     },
 
     _getInboxMessages: function () {
@@ -29,7 +30,7 @@ CBR.Controllers.MsgInbox = new Class({
     },
 
     _initEvents: function () {
-        jQuery(".inbox-item").click(jQuery.proxy(this._navigateToMessage, this));
+        jQuery(".clickable").click(jQuery.proxy(this._navigateToMessage, this));
     },
 
     _showInboxMessages: function() {

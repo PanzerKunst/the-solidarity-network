@@ -29,14 +29,34 @@ CBR.Controllers.TemplateController = new Class({
         var month = yyyyMMdd.substring(5, 7);
         var day = yyyyMMdd.substring(8, 10);
 
-        var today = new Date();
+        var now = new Date();
 
         var formattedDate = day + "/" + month;
 
-        if (year !== today.getFullYear().toString())
+        if (parseInt(year, 10) !== now.getFullYear())
             formattedDate += "/" + year;
 
         return formattedDate;
+    },
+
+    formatDatetime: function(yyyyMMddHHmmss) {
+        var year = yyyyMMddHHmmss.substring(0, 4);
+        var month = yyyyMMddHHmmss.substring(5, 7);
+        var day = yyyyMMddHHmmss.substring(8, 10);
+        var hour = yyyyMMddHHmmss.substring(11, 13);
+        var minute = yyyyMMddHHmmss.substring(14, 16);
+
+        var now = new Date();
+
+        var formattedDatetime = "";
+
+        if (parseInt(day, 10) !== now.getDate() || parseInt(month, 10) !== now.getMonth() + 1)
+            formattedDatetime += day + "/" + month;
+
+        if (parseInt(year, 10) !== now.getFullYear())
+            formattedDatetime += "/" + year;
+
+        return formattedDatetime + " " + hour + ":" + minute;
     },
 
     httpStatusCode: {
