@@ -16,3 +16,4 @@
 /website/public/stylesheets/scss/.sass-cache
 
 /selenium-tests/target
+*.log

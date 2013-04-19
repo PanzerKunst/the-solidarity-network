@@ -6,12 +6,13 @@ CBR.Controllers.ViewHelpRequest = new Class({
     },
 
     run: function () {
-        this._prepareDataForDisplay();
-
         this.getEl().append(
             Mustache.render(
                 jQuery("#content-template").html(),
-                this.options
+                {
+                    helpRequest: this._generateHelpRequestForTemplate(),
+                    helpResponses: this._generateHelpResponsesForTemplate()
+                }
             )
         );
 
@@ -90,11 +91,23 @@ CBR.Controllers.ViewHelpRequest = new Class({
         jQuery(".nav-pills a").click(jQuery.proxy(this.setActivePill, this));
     },
 
-    _prepareDataForDisplay: function () {
-        for (var i = 0; i < this.options.helpResponses.length; i++) {
-            var currentHelpResponse = this.options.helpResponses[i];
-            currentHelpResponse.creationDatetime = this.formatDatetime(currentHelpResponse.creationDatetime);
+    _generateHelpRequestForTemplate: function () {
+        var result = Object.clone(this._getHelpRequest());
+        result.description = result.description.replace(/\n/g, "<br />");
+        return result;
+    },
+
+    _generateHelpResponsesForTemplate: function () {
+        var result = [];
+
+        for (var i = 0; i < this._getHelpResponses().length; i++) {
+            var helpResponse = Object.clone(this._getHelpResponses()[i]);
+            helpResponse.creationDatetime = this.formatDatetime(helpResponse.creationDatetime);
+            helpResponse.text = helpResponse.text.replace(/\n/g, "<br />");
+            result.push(helpResponse);
         }
+
+        return result;
     },
 
     _showModal: function (e) {
@@ -119,7 +132,7 @@ CBR.Controllers.ViewHelpRequest = new Class({
         this._getHelpRequest().requesterId = this._getHelpRequest().requester.id;
 
         // Jackson fails to parse "yyyy-MM-dd hh:mm:ss" for datetimes. "yyyy-MM-ddThh:mm:ss" works though.
-        this._getHelpRequest().creationDatetime = this._getHelpRequest().creationDatetime.replace(" ", "T");
+        this._getHelpRequest().creationDatetime = this._getHelpRequest().creationDatetime.replace(/\s/, "T");
 
         var _this = this;
 

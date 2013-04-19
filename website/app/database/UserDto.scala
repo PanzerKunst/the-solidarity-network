@@ -111,7 +111,7 @@ object UserDto {
 
         var descriptionForQuery = "NULL"
         if (user.description.isDefined && user.description.get != "")
-          descriptionForQuery = "\"" + DbUtil.backslashQuotes(user.description.get) + "\""
+          descriptionForQuery = "\"" + DbUtil.backslashQuotes(user.description.get.replaceAll("\n", "\\\\n")) + "\""
 
         val query = """
                        update user set

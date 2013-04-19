@@ -38,13 +38,15 @@ object ReferenceDto {
     DB.withConnection {
       implicit c =>
 
+        val textForQuery = reference.text.replaceAll("\n", "\\\\n")
+
         val query = """
                        insert into reference(from_user_id, to_user_id, was_helped, rating_id, text, creation_date)
       values(""" + reference.fromUserId.get + """, """ +
           reference.toUserId + """, """ +
           reference.wasHelped.toString + """, """ +
           reference.ratingId + """, """" +
-          DbUtil.backslashQuotes(reference.text) + """", """" +
+          DbUtil.backslashQuotes(textForQuery) + """", """" +
           DbUtil.datetimeToString(new Date()) + """");"""
 
         Logger.info("ReferenceDto.create(): " + query)

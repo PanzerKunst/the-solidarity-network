@@ -64,7 +64,7 @@ CBR.Controllers.EditHelpRequest = new Class({
             this._getHelpRequest().requesterId = this._getHelpRequest().requester.id;
 
             // Jackson fails to parse "yyyy-MM-dd hh:mm:ss" for datetimes. "yyyy-MM-ddThh:mm:ss" works though.
-            this._getHelpRequest().creationDatetime = this._getHelpRequest().creationDatetime.replace(" ", "T");
+            this._getHelpRequest().creationDatetime = this._getHelpRequest().creationDatetime.replace(/\s/, "T");
 
             var _this = this;
 

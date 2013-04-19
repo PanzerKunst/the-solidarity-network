@@ -6,12 +6,13 @@ CBR.Controllers.ViewMessage = new Class({
     },
 
     run: function () {
-        this._prepareDataForDisplay();
-
         this.getEl().append(
             Mustache.render(
                 jQuery("#content-template").html(),
-                this.options
+                {
+                    message: this._generateMessageForTemplate(),
+                    replies: this._generateRepliesForTemplate()
+                }
             )
         );
 
@@ -22,6 +23,10 @@ CBR.Controllers.ViewMessage = new Class({
 
     _getMessage: function () {
         return this.options.message;
+    },
+
+    _getReplies: function () {
+        return this.options.replies;
     },
 
     initElements: function () {
@@ -43,8 +48,25 @@ CBR.Controllers.ViewMessage = new Class({
         this.$replyForm.submit(jQuery.proxy(this._doCreateResponse, this));
     },
 
-    _prepareDataForDisplay: function () {
-        this._getMessage().creationDatetime = this.formatDatetime(this._getMessage().creationDatetime);
+    _generateMessageForTemplate: function () {
+        var result = Object.clone(this._getMessage());
+
+        result.creationDatetime = this.formatDatetime(this._getMessage().creationDatetime);
+        result.text = result.text.replace(/\n/g, "<br />");
+
+        return result;
+    },
+
+    _generateRepliesForTemplate: function () {
+        var result = [];
+
+        for (var i = 0; i < this._getReplies().length; i++) {
+            var reply = Object.clone(this._getReplies()[i]);
+            reply.text = reply.text.replace(/\n/g, "<br />");
+            result.push(reply);
+        }
+
+        return result;
     },
 
     _doCreateResponse: function (e) {
@@ -58,7 +80,7 @@ CBR.Controllers.ViewMessage = new Class({
                 toUserId: this._getMessage().fromUser.id,
                 title: replyTitle,
                 text: jQuery("#text").val(),
-                replyToMessageId: this._getMessage().id
+                replyToMessageId: this._getMessage().replyToMessageId ? this._getMessage().replyToMessageId : this._getMessage().id
             });
 
             var _this = this;

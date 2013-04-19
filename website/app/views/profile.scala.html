@@ -25,7 +25,7 @@
         <div id="textual-info">
             <p>Lives in {{user.city}}, {{user.country.name}}</p>
 
-            <p id="description">{{user.description}}</p>
+            <p id="description">{{{user.description}}}</p>
 
             <div>
                 @if(user.id.get == frontendUser.id) {
@@ -53,7 +53,7 @@
 
             <span class="was-helped {{wasHelped}}"></span>
             <span class="rating {{rating.id}}"></span>
-            <p>{{text}}</p>
+            <p>{{{text}}}</p>
         </article>
         {{/references}}
     </section>

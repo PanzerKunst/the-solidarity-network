@@ -77,31 +77,48 @@ object HelpRequestApi extends Controller {
 
   def get = Action {
     implicit request =>
+      Application.loggedInUser(session) match {
+        case Some(loggedInUser) => {
 
-      val queryString = request.queryString
+          val queryString = request.queryString
 
-      // Generic search
-      val matchingHelpRequests: List[(HelpRequest, User)] = if (queryString.isEmpty)
-        HelpRequestDto.searchGeneric(None)
-      else if (queryString.contains("query"))
-        HelpRequestDto.searchGeneric(Some(queryString.get("query").get.head))
-      // Advanced search
-      else {
-        var filters: Map[String, String] = Map()
-        filters = getUpdatedFiltersIfQueryStringContains(filters, queryString, "username")
-        filters = getUpdatedFiltersIfQueryStringContains(filters, queryString, "firstName")
-        filters = getUpdatedFiltersIfQueryStringContains(filters, queryString, "lastName")
-        filters = getUpdatedFiltersIfQueryStringContains(filters, queryString, "city")
-        filters = getUpdatedFiltersIfQueryStringContains(filters, queryString, "country")
-        filters = getUpdatedFiltersIfQueryStringContains(filters, queryString, "respondedBy")
-        HelpRequestDto.searchAdvanced(filters)
-      }
+          val exceptForRequesterId = queryString.get("isOwnFiltered") match {
+            case Some(isOwnFiltered) =>
+              if (isOwnFiltered.head.toBoolean)
+                loggedInUser.id
+              else
+                None
+            case None => None
+          }
 
-      if (matchingHelpRequests.isEmpty)
-        NoContent
-      else {
-        val frontendHelpRequests = for (hr <- matchingHelpRequests) yield new FrontendHelpRequest(hr._1, hr._2)
-        Ok(JsonUtil.serialize(frontendHelpRequests))
+          // Generic search
+          val matchingHelpRequests: List[(HelpRequest, User)] = if (queryString.isEmpty)
+            HelpRequestDto.searchGeneric(None, exceptForRequesterId)
+          else if (queryString.contains("query"))
+            HelpRequestDto.searchGeneric(Some(queryString.get("query").get.head), exceptForRequesterId)
+          // Advanced search
+          else {
+            var filters: Map[String, String] = Map()
+            filters = getUpdatedFiltersIfQueryStringContains(filters, queryString, "username")
+            filters = getUpdatedFiltersIfQueryStringContains(filters, queryString, "firstName")
+            filters = getUpdatedFiltersIfQueryStringContains(filters, queryString, "lastName")
+            filters = getUpdatedFiltersIfQueryStringContains(filters, queryString, "city")
+            filters = getUpdatedFiltersIfQueryStringContains(filters, queryString, "country")
+            filters = getUpdatedFiltersIfQueryStringContains(filters, queryString, "respondedBy")
+            HelpRequestDto.searchAdvanced(filters, exceptForRequesterId)
+          }
+
+          if (matchingHelpRequests.isEmpty)
+            NoContent
+          else {
+            val frontendHelpRequests = for (hr <- matchingHelpRequests) yield new FrontendHelpRequest(hr._1, hr._2)
+            Ok(JsonUtil.serialize(frontendHelpRequests))
+          }
+        }
+        case None => {
+          Logger.info("Help request search attempt while not logged-in")
+          Unauthorized
+        }
       }
   }
 

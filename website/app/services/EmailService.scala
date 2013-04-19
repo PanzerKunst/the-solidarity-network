@@ -26,6 +26,6 @@ object EmailService {
     mail.setSubject("Msg from " + message.fromUser.username + ": " + message.title)
 
     //send " " in text version otherwise it is not working. Bug reported to typesafe
-    mail.send(" ", newMessageTemplate(message).toString())
+    // TODO mail.send(" ", newMessageTemplate(message).toString())
   }
 }

@@ -40,12 +40,14 @@ object MessageDto {
     DB.withConnection {
       implicit c =>
 
+        val messageTextForQuery = message.text.replaceAll("\n", "\\\\n")
+
         val query = """
                        insert into message(from_user_id, to_user_id, title, text, creation_date, reply_to_message_id)
         values(""" + message.fromUserId.get + """, """ +
           message.toUserId + """, """" +
           DbUtil.backslashQuotes(message.title) + """", """" +
-          DbUtil.backslashQuotes(message.text) + """", """" +
+          DbUtil.backslashQuotes(messageTextForQuery) + """", """" +
           DbUtil.datetimeToString(new Date()) + """",""" +
           message.replyToMessageId.getOrElse("NULL") + """);"""
 

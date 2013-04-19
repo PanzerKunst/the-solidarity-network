@@ -32,9 +32,14 @@ object HelpRequestDto {
     }
   }
 
-  def searchGeneric(searchQuery: Option[String]): List[(HelpRequest, User)] = {
+  def searchGeneric(searchQuery: Option[String], exceptFromRequesterId: Option[Long] = None): List[(HelpRequest, User)] = {
     DB.withConnection {
       implicit c =>
+
+        val ownFilteredClause = exceptFromRequesterId match {
+          case Some(requesterId) => " and hr.requester_id <> " + requesterId
+          case None => ""
+        }
 
         val query = searchQuery match {
           case Some(sq) =>
@@ -53,7 +58,8 @@ object HelpRequestDto {
             or u.last_name like """" + processedSearchQuery + """"
             or u.username like """" + processedSearchQuery + """"
             or u.city like """" + processedSearchQuery + """"
-            or c.name like """" + processedSearchQuery + """"
+            or c.name like """" + processedSearchQuery + """"""" +
+              ownFilteredClause + """
             order by expiry_date, creation_date
             limit 50;"""
 
@@ -61,7 +67,8 @@ object HelpRequestDto {
             select hr.id, hr.title, hr.description, hr.creation_date, hr.expiry_date,
               u.id, u.first_name, u.last_name, u.username, u.email, u.city, u.country_id
             from help_request hr
-            inner join user u on u.id = hr.requester_id
+            inner join user u on u.id = hr.requester_id""" +
+              ownFilteredClause + """
             order by expiry_date, creation_date
             limit 50;"""
         }
@@ -92,7 +99,7 @@ object HelpRequestDto {
     }
   }
 
-  def searchAdvanced(filters: Map[String, String]): List[(HelpRequest, User)] = {
+  def searchAdvanced(filters: Map[String, String], exceptFromRequesterId: Option[Long] = None): List[(HelpRequest, User)] = {
     DB.withConnection {
       implicit c =>
 
@@ -100,14 +107,21 @@ object HelpRequestDto {
           "inner join help_response r on hr.id = r.request_id"
         else ""
 
+        val ownFilteredClause = exceptFromRequesterId match {
+          case Some(requesterId) => " and hr.requester_id <> " + requesterId
+          case None => ""
+        }
+
         val query = """
             select distinct hr.id, hr.title, hr.description, hr.creation_date, hr.expiry_date,
               u.id, u.first_name, u.last_name, u.username, u.email, u.city, u.country_id,
               c.id, c.name
             from help_request hr
             inner join user u on u.id = hr.requester_id
-            inner join country c on c.id = u.country_id """ + innerJoinForRespondedBy +
-          DbUtil.generateWhereClause(Some(webFiltersToDbFilters(filters))) + """
+            inner join country c on c.id = u.country_id
+            """ + innerJoinForRespondedBy +
+              DbUtil.generateWhereClause(Some(webFiltersToDbFilters(filters))) +
+              ownFilteredClause + """
             order by expiry_date, creation_date
             limit 50;"""
 
@@ -141,11 +155,13 @@ object HelpRequestDto {
     DB.withConnection {
       implicit c =>
 
+        val descriptionForQuery = helpRequest.description.replaceAll("\n", "\\\\n");
+
         val query = """
                        insert into help_request(requester_id, title, description, creation_date, expiry_date)
       values(""" + helpRequest.requesterId.get + """, """" +
           DbUtil.backslashQuotes(helpRequest.title) + """", """" +
-          DbUtil.backslashQuotes(helpRequest.description) + """", """" +
+          DbUtil.backslashQuotes(descriptionForQuery) + """", """" +
           DbUtil.datetimeToString(new util.Date()) + """", """" +
           DbUtil.dateToString(helpRequest.expiryDate) + """");"""
 
@@ -159,10 +175,12 @@ object HelpRequestDto {
     DB.withConnection {
       implicit c =>
 
+        val descriptionForQuery = helpRequest.description.replaceAll("\n", "\\\\n");
+
         val query = """
                        update help_request set
           title = """" + DbUtil.backslashQuotes(helpRequest.title) + """",
-          description = """" + DbUtil.backslashQuotes(helpRequest.description) + """",
+          description = """" + DbUtil.backslashQuotes(descriptionForQuery) + """",
           expiry_date = """" + DbUtil.dateToString(helpRequest.expiryDate) + """"
           where id = """ + helpRequest.id.get + """;"""
 
