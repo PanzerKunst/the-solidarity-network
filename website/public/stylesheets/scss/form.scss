@@ -2,23 +2,25 @@
 
 form {
 
+  $fieldBottomMargin: 0.5em;
+
   .field,
   fieldset {
     clear: both;
-  }
 
-  .field {
-    @include clearfix;
-
-    margin-bottom: 0.5em;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: $fieldBottomMargin;
 
     width: $fieldWidth;
 
     @include desktop {
       width: $fieldWidthDesktop;
     }
+  }
+
+  .field {
+    @include clearfix;
 
     > input,
     > select,
@@ -51,11 +53,6 @@ form {
       }
     }
 
-    > input[type=checkbox],
-    > input[type=radio] {
-      width: 1em;
-    }
-
     > ul {
       @include clearfix;
 
@@ -66,6 +63,12 @@ form {
         display: block;
         float: left;
       }
+    }
+  }
+
+  fieldset {
+    > .field {
+      margin-bottom: 0;
     }
   }
 
@@ -112,26 +115,24 @@ form {
   }
 }
 
-.field.check-or-radio {
-  $inputWidth: 1em;
-  $inputRightMargin: 0.5em;
+.check-or-radio {
+  // For checkbox and label to be vertically centered
+  display: table-row;
 
-  > input {
-    width: $inputWidth;
-    margin-right: $inputRightMargin;
-    margin-top: 1em;
-  }
-  > label {
-    width: $fieldWidth - $inputWidth - $inputRightMargin;
-  }
+  > div {
+    display: table-cell;
+    vertical-align: middle;
 
-  @include desktop {
     > input {
-      margin-top: 0.2em;
+      $bootstrapCheckboxTopMargin: 4px;
+      margin-bottom: $bootstrapCheckboxTopMargin;
+
+      margin-right: 0.5em;
     }
 
     > label {
-      width: $fieldWidthDesktop - $inputWidth - $inputRightMargin;
+      $bootstrapLabelBottomMargin: 5px;
+      margin-top: $bootstrapLabelBottomMargin;
     }
   }
 }

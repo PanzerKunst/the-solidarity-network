@@ -68,9 +68,11 @@
             {{/helpResponses}}
 
             @if(user.id.get != helpRequest.requester.id) {
-            <div class="field check-or-radio">
-                <input type="checkbox" id="is-subscribing-to-future-responses" {{#isSubscribedToResponses}}checked="checked"{{/isSubscribedToResponses}}><!--
-             --><label>Subscribe to future responses</label>
+            <div class="field">
+                <article class="check-or-radio">
+                    <div><input type="checkbox" id="is-subscribing-to-future-responses" {{#isSubscribedToResponses}}checked="checked"{{/isSubscribedToResponses}}/></div>
+                    <div><label>Subscribe to future responses</label></div>
+                </article>
             </div>
             }
         </section>

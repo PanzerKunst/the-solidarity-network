@@ -57,8 +57,6 @@
   float: left;
   max-width: 4em;
   max-height: 4em; }
-#view-help-request #content #responses > .field.check-or-radio > span {
-  width: 14em; }
 #view-help-request #content #submit-response-wrapper,
 #view-help-request #content #submit-reference-wrapper {
   margin: auto;
