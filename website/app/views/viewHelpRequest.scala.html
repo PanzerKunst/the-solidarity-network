@@ -1,9 +1,9 @@
-@(user: models.User, helpRequest: models.frontend.FrontendHelpRequest, isSubscribedToResponses: java.lang.Boolean, helpResponses: List[models.frontend.FrontendHelpResponse])
+@(loggedInUser: models.frontend.FrontendUser, helpRequest: models.frontend.FrontendHelpRequest, isSubscribedToResponses: java.lang.Boolean, helpResponses: List[models.frontend.FrontendHelpResponse])
 @main(helpRequest.title, "view-help-request") {
 <!--
     Header
 -->
-@nav(Some(user), Some(helpRequest.title))
+@nav(Some(loggedInUser), Some(helpRequest.title))
 
 } {
 <!--
@@ -25,6 +25,12 @@
         <div>
             <a href="/users/{{helpRequest.requester.username}}" class="btn"><i class="icon-eye-open"></i>&nbsp;&nbsp;View full profile</a>
         </div>
+
+        @if(loggedInUser.id != helpRequest.requester.id) {
+        <div>
+            <a href="/users/{{helpRequest.requester.username}}?action=writeReference" class="btn"><i class="icon-pencil"></i>&nbsp;&nbsp;Write a reference</a>
+        </div>
+        }
     </section>
 
     <section id="main">
@@ -43,7 +49,7 @@
                 <span>{{helpRequest.expiryDate}}</span>
             </p>
 
-            @if(user.id.get == helpRequest.requester.id) {
+            @if(loggedInUser.id == helpRequest.requester.id) {
             <div>
                 <a href="/help-requests/edit/{{helpRequest.id}}" class="btn"><i class="icon-edit"></i>&nbsp;&nbsp;Edit</a>
             </div>
@@ -67,7 +73,7 @@
             </article>
             {{/helpResponses}}
 
-            @if(user.id.get != helpRequest.requester.id) {
+            @if(loggedInUser.id != helpRequest.requester.id) {
             <div class="field">
                 <article class="check-or-radio">
                     <div><input type="checkbox" id="is-subscribing-to-future-responses" {{#isSubscribedToResponses}}checked="checked"{{/isSubscribedToResponses}}/></div>
@@ -77,7 +83,7 @@
             }
         </section>
 
-        @if(user.id.get != helpRequest.requester.id) {
+        @if(loggedInUser.id != helpRequest.requester.id) {
         <div>
             <a id="respond">Respond to {{helpRequest.requester.firstName}}'s help request</a>
         </div>
@@ -94,58 +100,6 @@
             <div id="submit-response-wrapper">
                 <button id="cancel-response" class="btn btn-inverse">Cancel</button>
                 <button id="post-response" class="btn btn-primary">Post response</button>
-            </div>
-        </form>
-
-        <div>
-            <a id="write-reference">Write a reference</a>
-        </div>
-
-        <form id="reference-form">
-            <div class="field">
-                <ul id="helped-or-was-helped" class="nav nav-pills">
-                    <li id="helped">
-                        <a>Helped</a>
-                    </li>
-                    <li id="was-helped">
-                        <a>Was helped</a>
-                    </li>
-                </ul>
-
-                <p class="field-error" data-check="empty">Did you help, or were you helped?</p>
-            </div>
-
-            <div class="field">
-                <label for="grade">Grade:</label><!--
-             --><ul id="grade" class="nav nav-pills">
-                    <li data-grade-id="4">
-                        <a>Great!</a>
-                    </li>
-                    <li data-grade-id="3">
-                        <a>Nice</a>
-                    </li>
-                    <li data-grade-id="2">
-                        <a>Neutral</a>
-                    </li>
-                    <li data-grade-id="1">
-                        <a>Negative</a>
-                    </li>
-                </ul>
-
-                <p class="field-error" data-check="empty">Please select a grade</p>
-            </div>
-
-            <div class="field">
-                <textarea id="reference-text" placeholder="Your reference text *"></textarea>
-
-                <p class="field-error" data-check="empty">Please explain how things went</p>
-            </div>
-
-            <input type="submit"/>
-
-            <div id="submit-reference-wrapper">
-                <button id="cancel-reference" class="btn btn-inverse">Cancel</button>
-                <button id="post-reference" class="btn btn-primary">Save reference</button>
             </div>
         </form>
         }

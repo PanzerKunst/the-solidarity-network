@@ -42,9 +42,6 @@ CBR.Controllers.ViewHelpRequest = new Class({
 
         this.$isSubscribingToFutureResponsesCheckbox = jQuery("#is-subscribing-to-future-responses");
 
-        this.$referenceForm = jQuery("#reference-form");
-        this.$writeReference = jQuery("#write-reference");
-
         this.$expanded = jQuery(".expanded");
 
         this.$modals = jQuery(".modal");
@@ -56,14 +53,6 @@ CBR.Controllers.ViewHelpRequest = new Class({
         this.responseValidator = new CBR.Services.Validator({
             fieldIds: [
                 "response-text"
-            ]
-        });
-
-        this.referenceValidator = new CBR.Services.Validator({
-            fieldIds: [
-                "helped-or-was-helped",
-                "grade",
-                "reference-text"
             ]
         });
     },
@@ -80,11 +69,6 @@ CBR.Controllers.ViewHelpRequest = new Class({
         jQuery("#cancel-response").click(jQuery.proxy(this._collapseRespondForm, this));
         jQuery("#post-response").click(jQuery.proxy(this._doCreateResponse, this));
         this.$respondForm.submit(jQuery.proxy(this._doCreateResponse, this));
-
-        this.$writeReference.click(jQuery.proxy(this._toggleReferenceForm, this));
-        jQuery("#cancel-reference").click(jQuery.proxy(this._collapseReferenceForm, this));
-        jQuery("#post-reference").click(jQuery.proxy(this._doCreateReference, this));
-        this.$referenceForm.submit(jQuery.proxy(this._doCreateReference, this));
     },
 
     _initPills: function () {
@@ -170,22 +154,6 @@ CBR.Controllers.ViewHelpRequest = new Class({
         this.$respond.removeClass("expanded");
     },
 
-    _toggleReferenceForm: function () {
-        if (this.$writeReference.hasClass("expanded"))
-            this._collapseReferenceForm();
-        else {
-            this.$expanded.slideUpCustom();
-
-            this.$referenceForm.slideDownCustom();
-            this.$writeReference.addClass("expanded");
-        }
-    },
-
-    _collapseReferenceForm: function () {
-        this.$referenceForm.slideUpCustom();
-        this.$writeReference.removeClass("expanded");
-    },
-
     _doCreateResponse: function (e) {
         e.preventDefault();
 
@@ -202,37 +170,6 @@ CBR.Controllers.ViewHelpRequest = new Class({
                 headers: { "Content-Type": "application/json" },
                 url: "/api/help-responses",
                 data: CBR.JsonUtil.stringifyModel(helpResponse),
-                onSuccess: function (responseText, responseXML) {
-                    location.reload();
-                },
-                onFailure: function (xhr) {
-                    if (xhr.status === _this.httpStatusCode.unauthorized)
-                        location.replace("/login");
-                    else
-                        alert("AJAX fail :(");
-                }
-            }).post();
-        }
-    },
-
-    _doCreateReference: function (e) {
-        e.preventDefault();
-
-        if (this.referenceValidator.isValid()) {
-            var reference = new CBR.Models.Reference({
-                toUserId: this._getHelpRequester().id,
-                wasHelped: jQuery("#was-helped").hasClass("active"),
-                ratingId: jQuery("#grade > li.active").data("grade-id"),
-                text: jQuery("#reference-text").val()
-            });
-
-            var _this = this;
-
-            new Request({
-                urlEncoded: false,
-                headers: { "Content-Type": "application/json" },
-                url: "/api/references",
-                data: CBR.JsonUtil.stringifyModel(reference),
                 onSuccess: function (responseText, responseXML) {
                     location.reload();
                 },

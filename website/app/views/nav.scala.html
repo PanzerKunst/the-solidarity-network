@@ -1,4 +1,4 @@
-@(user: Option[models.User], title: Option[String])
+@(user: Option[models.frontend.FrontendUser], title: Option[String])
 <nav id="header-nav">
     @if(title.isDefined) {
     <h1>@title.get</h1>

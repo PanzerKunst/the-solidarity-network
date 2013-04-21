@@ -1,4 +1,4 @@
-@(countries: List[models.Country], user: models.User, frontentUser: models.frontend.FrontendUser)
+@(countries: List[models.Country], user: models.frontend.FrontendUser)
 @main("Edit profile and account", "edit-profile") {
 <!--
     Header
@@ -199,7 +199,7 @@
         new CBR.Controllers.EditProfile({
             el: "#content",
             countries: @Html(services.JsonUtil.serialize(countries)),
-            user: @Html(services.JsonUtil.serialize(frontentUser))
+            user: @Html(services.JsonUtil.serialize(user))
         }).run();
     });
 </script>

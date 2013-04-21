@@ -1,4 +1,4 @@
-@(user: models.User, message: models.frontend.FrontendMessage, replies: List[models.frontend.FrontendMessage])
+@(user: models.frontend.FrontendUser, message: models.frontend.FrontendMessage, replies: List[models.frontend.FrontendMessage])
 @main(message.title, "view-message") {
 <!--
     Header
@@ -40,7 +40,7 @@
         {{/replies}}
     </section>
 
-    @if(user.id.get != message.fromUser.id) {
+    @if(user.id != message.fromUser.id) {
     <form>
         <div class="field">
             <label for="text">Reply <span>*</span></label><!--

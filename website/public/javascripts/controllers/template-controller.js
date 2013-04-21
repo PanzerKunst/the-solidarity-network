@@ -26,7 +26,18 @@ CBR.Controllers.TemplateController = new Class({
         this._applyModernizrRules();
     },
 
-    formatDate: function(yyyyMMdd) {
+    getParameterByName: function (name) {
+        name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+        var regexS = "[\\?&]" + name + "=([^&#]*)";
+        var regex = new RegExp(regexS);
+        var results = regex.exec(window.location.search);
+        if (results === null)
+            return undefined;
+
+        return decodeURIComponent(results[1].replace(/\+/g, " "));
+    },
+
+    formatDate: function (yyyyMMdd) {
         var year = yyyyMMdd.substring(0, 4);
         var month = yyyyMMdd.substring(5, 7);
         var day = yyyyMMdd.substring(8, 10);
@@ -41,7 +52,7 @@ CBR.Controllers.TemplateController = new Class({
         return formattedDate;
     },
 
-    formatDatetime: function(yyyyMMddHHmmss) {
+    formatDatetime: function (yyyyMMddHHmmss) {
         var year = yyyyMMddHHmmss.substring(0, 4);
         var month = yyyyMMddHHmmss.substring(5, 7);
         var day = yyyyMMddHHmmss.substring(8, 10);
@@ -61,7 +72,7 @@ CBR.Controllers.TemplateController = new Class({
         return formattedDatetime + " " + hour + ":" + minute;
     },
 
-    getSearchRequestData: function(queryFieldValue) {
+    getSearchRequestData: function (queryFieldValue) {
         var requestData = {};
 
         var usernamePattern = /( |^)username=(\w+)/;
@@ -100,7 +111,7 @@ CBR.Controllers.TemplateController = new Class({
         return requestData;
     },
 
-    _applyModernizrRules: function() {
+    _applyModernizrRules: function () {
         if (!Modernizr.input.placeholder) {
             jQuery(".mdnz-polyfill.placeholder").show();
         }

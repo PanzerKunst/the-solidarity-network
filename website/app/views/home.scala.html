@@ -1,15 +1,15 @@
-@(user: models.User)
+@(user: models.frontend.FrontendUser)
 @main("Solidarity Network", "home") {
 <!--
     Header
 -->
-@nav(Some(user), Some("Welcome back, " + user.firstName.get + "!"))
+@nav(Some(user), Some("Welcome back, " + user.firstName + "!"))
 
 } {
 <!--
     Content
 -->
-<h1>Welcome back, @user.firstName.get!</h1>
+<h1>Welcome back, @user.firstName!</h1>
 
 <div class="action line">
     <a href="/help">Help dashboard</a>

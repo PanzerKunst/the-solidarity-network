@@ -61,7 +61,7 @@ object Application extends Controller {
   def home = Action {
     implicit request =>
       loggedInUser(session) match {
-        case Some(loggedInUser) => Ok(views.html.home(loggedInUser))
+        case Some(loggedInUser) => Ok(views.html.home(new FrontendUser(loggedInUser)))
         case None => Redirect(routes.Application.login)
       }
   }
@@ -72,7 +72,7 @@ object Application extends Controller {
         case Some(loggedInUser) =>
           val references = ReferenceDto.get(Some(Map("to_user_id" -> loggedInUser.id.get.toString)))
           val frontendReferences = for (ref <- references) yield new FrontendReference(ref, loggedInUser)
-          Ok(views.html.profile(loggedInUser, new FrontendUser(loggedInUser), frontendReferences))
+          Ok(views.html.profile(new FrontendUser(loggedInUser), new FrontendUser(loggedInUser), frontendReferences))
         case None => Redirect(routes.Application.login)
       }
   }
@@ -80,7 +80,7 @@ object Application extends Controller {
   def editProfile = Action {
     implicit request =>
       loggedInUser(session) match {
-        case Some(loggedInUser) => Ok(views.html.editProfile(CountryDto.get(None), loggedInUser, new FrontendUser(loggedInUser)))
+        case Some(loggedInUser) => Ok(views.html.editProfile(CountryDto.get(None), new FrontendUser(loggedInUser)))
         case None => Redirect(routes.Application.login)
       }
   }
@@ -92,7 +92,7 @@ object Application extends Controller {
           val user = UserDto.get(Some(Map("username" -> username))).head
           val references = ReferenceDto.get(Some(Map("to_user_id" -> user.id.get.toString)))
           val frontendReferences = for (ref <- references) yield new FrontendReference(ref, user)
-          Ok(views.html.profile(loggedInUser, new FrontendUser(user), frontendReferences))
+          Ok(views.html.profile(new FrontendUser(loggedInUser), new FrontendUser(user), frontendReferences))
         case None => Redirect(routes.Application.login)
       }
   }
@@ -100,7 +100,7 @@ object Application extends Controller {
   def createHelpRequest = Action {
     implicit request =>
       loggedInUser(session) match {
-        case Some(loggedInUser) => Ok(views.html.createHelpRequest(loggedInUser))
+        case Some(loggedInUser) => Ok(views.html.createHelpRequest(new FrontendUser(loggedInUser)))
         case None => Redirect(routes.Application.login)
       }
   }
@@ -116,7 +116,7 @@ object Application extends Controller {
             query += (key -> request.queryString.get(key).get.head)
           }
 
-          Ok(views.html.searchHelpRequests(loggedInUser, query))
+          Ok(views.html.searchHelpRequests(new FrontendUser(loggedInUser), query))
         case None => Redirect(routes.Application.login)
       }
   }
@@ -130,7 +130,7 @@ object Application extends Controller {
           else
             None
 
-          Ok(views.html.helpDashboard(loggedInUser, new FrontendUser(loggedInUser), from))
+          Ok(views.html.helpDashboard(new FrontendUser(loggedInUser), from))
         case None => Redirect(routes.Application.login)
       }
   }
@@ -151,7 +151,7 @@ object Application extends Controller {
 
             val frontendHelpResponses = for (helpResponse <- HelpResponseDto.get(Some(Map("request_id" -> id.toString)))) yield new FrontendHelpResponse(helpResponse)
 
-            Ok(views.html.viewHelpRequest(loggedInUser, new FrontendHelpRequest(helpRequests.head), isSubscribedToResponses, frontendHelpResponses))
+            Ok(views.html.viewHelpRequest(new FrontendUser(loggedInUser), new FrontendHelpRequest(helpRequests.head), isSubscribedToResponses, frontendHelpResponses))
           }
 
         case None => Redirect(routes.Application.login)
@@ -165,7 +165,7 @@ object Application extends Controller {
           val helpRequest = HelpRequestDto.get(Some(Map("id" -> id.toString))).head
 
           if (helpRequest.requesterId.get == loggedInUser.id.get)
-            Ok(views.html.editHelpRequest(loggedInUser, new FrontendHelpRequest(helpRequest)))
+            Ok(views.html.editHelpRequest(new FrontendUser(loggedInUser), new FrontendHelpRequest(helpRequest)))
           else
             Forbidden("Only your own help requests, you may edit.")
         case None => Redirect(routes.Application.login)
@@ -184,7 +184,7 @@ object Application extends Controller {
           val inboxMessages = MessageDto.get(Map("to_user_id" -> loggedInUser.id.get.toString))
           val inboxFrontendMessages = for (msg <- inboxMessages) yield new FrontendMessage(msg)
 
-          Ok(views.html.msgInbox(loggedInUser, inboxFrontendMessages, from))
+          Ok(views.html.msgInbox(new FrontendUser(loggedInUser), inboxFrontendMessages, from))
         case None =>
           Redirect(routes.Application.login).withSession(
             session + ("to" -> "messages")
@@ -201,7 +201,7 @@ object Application extends Controller {
           else
             None
 
-          Ok(views.html.createMessage(loggedInUser, recipient))
+          Ok(views.html.createMessage(new FrontendUser(loggedInUser), recipient))
         case None => Redirect(routes.Application.login)
       }
   }
@@ -215,7 +215,7 @@ object Application extends Controller {
           val replies = MessageDto.get(Map("reply_to_message_id" -> id.toString), false)
           val frontendReplies = for (reply <- replies) yield new FrontendMessage(reply)
 
-          Ok(views.html.viewMessage(loggedInUser, new FrontendMessage(msg), frontendReplies))
+          Ok(views.html.viewMessage(new FrontendUser(loggedInUser), new FrontendMessage(msg), frontendReplies))
         case None => Redirect(routes.Application.login)
       }
   }
