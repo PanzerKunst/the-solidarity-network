@@ -178,7 +178,7 @@ object DbAdmin {
             `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
             `from_user_id` int(10) unsigned NOT NULL,
             `to_user_id` int(10) unsigned NOT NULL,
-            `title` varchar(100) NOT NULL,
+            `title` varchar(100) DEFAULT NULL,
             `text` text NOT NULL,
             `creation_date` datetime NOT NULL,
             `reply_to_message_id` int(10) unsigned DEFAULT NULL,

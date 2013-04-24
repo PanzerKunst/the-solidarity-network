@@ -15,3 +15,9 @@ $fieldWidthDesktop: $labelWidth + $inputWidth;
     @content;
   }
 }
+
+@mixin ellipsis($whiteSpace: nowrap) {
+  white-space: $whiteSpace;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -9,7 +9,7 @@ CBR.Controllers.MsgInbox = new Class({
         this.getEl().append(
             Mustache.render(
                 jQuery("#content-template").html(),
-                this.options
+                { inboxMessages: this._generateInboxMessagesForTemplate() }
             )
         );
 
@@ -33,7 +33,7 @@ CBR.Controllers.MsgInbox = new Class({
         jQuery(".clickable").click(jQuery.proxy(this._navigateToMessage, this));
     },
 
-    _showInboxMessages: function() {
+    _showInboxMessages: function () {
         this.$listContainer.html(
             Mustache.render(
                 this.$listTemplate.html(),
@@ -59,5 +59,21 @@ CBR.Controllers.MsgInbox = new Class({
         }
 
         return messages;
+    },
+
+    _generateInboxMessagesForTemplate: function () {
+        var result = [];
+
+        var maxChars = 75;
+
+        for (var i = 0; i < this._getInboxMessages().length; i++) {
+            var message = this._getInboxMessages()[i];
+            if (message.title === null && message.text.length > maxChars) {
+                message.text = message.text.substring(0, maxChars).trim() + "...";
+            }
+            result.push(message);
+        }
+
+        return result;
     }
 });

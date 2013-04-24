@@ -1,9 +1,9 @@
 @(user: models.frontend.FrontendUser, message: models.frontend.FrontendMessage, replies: List[models.frontend.FrontendMessage])
-@main(message.title, "view-message") {
+@main(message.title.getOrElse(null), "view-message") {
 <!--
     Header
 -->
-@nav(Some(user), Some(message.title))
+@nav(Some(user), Some(message.title.getOrElse(null)))
 
 } {
 <!--
@@ -28,7 +28,7 @@
         </article>
 
         {{#replies}}
-        <article>
+        <article data-reply-id="{{id}}">
             <img src="/files/profile-pic/{{fromUser.id}}"/>
 
             <p><a href="/users/{{fromUser.username}}">{{fromUser.firstName}} {{fromUser.lastName}} &lt;{{fromUser.username}}&gt;</a></p>
@@ -40,7 +40,7 @@
         {{/replies}}
     </section>
 
-    @if(user.id != message.fromUser.id) {
+    @if(replies.length > 0 || user.id != message.fromUser.id) {
     <form>
         <div class="field">
             <label for="text">Reply <span>*</span></label><!--
@@ -67,6 +67,7 @@
             el: "#content",
             message: @Html(services.JsonUtil.serialize(message)),
             replies: @Html(services.JsonUtil.serialize(replies)),
+            loggedInUser: @Html(services.JsonUtil.serialize(user))
         }).run();
     });
 </script>

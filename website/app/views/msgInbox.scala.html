@@ -58,7 +58,13 @@
                     <p>{{creationDatetime}}</p>
                 </section>
 
-                <h3>{{title}}</h3>
+                {{#title}}
+                <h3>{{title}}{{^title}}{{text}}{{/title}}</h3>
+                {{/title}}
+
+                {{^title}}
+                <p>{{text}}</p>
+                {{/title}}
             </div>
         </li>
         {{/inboxMessages}}
@@ -78,7 +84,7 @@
 
             <!-- Title -->
             <td class="main-column">
-                <p>{{title}}</p>
+                <p>{{title}}{{^title}}{{text}}{{/title}}</p>
             </td>
 
             <!-- Created -->

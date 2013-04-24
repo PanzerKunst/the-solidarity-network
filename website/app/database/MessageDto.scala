@@ -27,7 +27,7 @@ object MessageDto {
             id = Some(row[Long]("id")),
             fromUserId = Some(row[Long]("from_user_id")),
             toUserId = row[Long]("to_user_id"),
-            title = row[String]("title"),
+            title = row[Option[String]]("title"),
             text = row[String]("text"),
             creationDatetime = Some(row[Date]("creation_date")),
             replyToMessageId = row[Option[Long]]("reply_to_message_id")
@@ -40,13 +40,17 @@ object MessageDto {
     DB.withConnection {
       implicit c =>
 
+        var messageTitleForQuery = "NULL"
+        if (message.title.isDefined && message.title.get != "")
+          messageTitleForQuery = "\"" + DbUtil.backslashQuotes(message.title.get) + "\""
+
         val messageTextForQuery = message.text.replaceAll("\n", "\\\\n")
 
         val query = """
                        insert into message(from_user_id, to_user_id, title, text, creation_date, reply_to_message_id)
         values(""" + message.fromUserId.get + """, """ +
-          message.toUserId + """, """" +
-          DbUtil.backslashQuotes(message.title) + """", """" +
+          message.toUserId + """, """ +
+          messageTitleForQuery + """, """" +
           DbUtil.backslashQuotes(messageTextForQuery) + """", """" +
           DbUtil.datetimeToString(new Date()) + """",""" +
           message.replyToMessageId.getOrElse("NULL") + """);"""

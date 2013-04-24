@@ -19,6 +19,8 @@ CBR.Controllers.ViewMessage = new Class({
         this.initElements();
         this._initValidation();
         this._initEvents();
+
+        this._scrollToReply();
     },
 
     _getMessage: function () {
@@ -27,6 +29,10 @@ CBR.Controllers.ViewMessage = new Class({
 
     _getReplies: function () {
         return this.options.replies;
+    },
+
+    _getLoggedInUser: function () {
+        return this.options.loggedInUser;
     },
 
     initElements: function () {
@@ -46,6 +52,25 @@ CBR.Controllers.ViewMessage = new Class({
     _initEvents: function () {
         jQuery("#reply").click(jQuery.proxy(this._doCreateResponse, this));
         this.$replyForm.submit(jQuery.proxy(this._doCreateResponse, this));
+    },
+
+    _scrollToReply: function () {
+        var replyIdFromUrl = this._getReplyIdFromUrl();
+
+        if (replyIdFromUrl !== -1) {
+            setTimeout(function () {    // We need to wait for images to be added to the DOM (at least on Chrome)
+                jQuery("html, body").animate({
+                    scrollTop: jQuery('article[data-reply-id="' + replyIdFromUrl + '"]').offset().top
+                }, 0);
+            }, 300);
+        }
+    },
+
+    _getReplyIdFromUrl: function () {
+        var messageIdUrlIndex = document.URL.lastIndexOf("/") + 1;
+        var messageIdInUrl = parseInt(document.URL.substring(messageIdUrlIndex), 10);
+
+        return messageIdInUrl !== this._getMessage().id ? messageIdInUrl : -1;
     },
 
     _generateMessageForTemplate: function () {
@@ -76,8 +101,13 @@ CBR.Controllers.ViewMessage = new Class({
             var replyPrefix = "Re: ";
             var replyTitle = this._getMessage().title.startsWith(replyPrefix) ? this._getMessage().title : replyPrefix + this._getMessage().title;
 
+            var toUserId = this._getMessage().fromUser.id;
+            if (toUserId === this._getLoggedInUser().id) {
+                toUserId = this._getMessage().toUser.id;
+            }
+
             var reply = new CBR.Models.Message({
-                toUserId: this._getMessage().fromUser.id,
+                toUserId: toUserId,
                 title: replyTitle,
                 text: jQuery("#text").val(),
                 replyToMessageId: this._getMessage().replyToMessageId ? this._getMessage().replyToMessageId : this._getMessage().id

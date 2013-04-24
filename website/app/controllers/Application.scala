@@ -5,8 +5,6 @@ import database._
 import services.I18nService
 import scala.collection.mutable
 import models.frontend._
-import models.User
-import scala.Some
 import scala.Some
 import models.User
 
@@ -210,12 +208,22 @@ object Application extends Controller {
     implicit request =>
       loggedInUser(session) match {
         case Some(loggedInUser) =>
-          val msg = MessageDto.get(Map("id" -> id.toString)).head
+          val messages = MessageDto.get(Map("id" -> id.toString))
+          if (messages.length > 0) {
+            val msg = messages.head
 
-          val replies = MessageDto.get(Map("reply_to_message_id" -> id.toString), false)
-          val frontendReplies = for (reply <- replies) yield new FrontendMessage(reply)
+            val originalMessage = msg.replyToMessageId match {
+              case Some(parentMessageId) => MessageDto.get(Map("id" -> parentMessageId.toString)).head
+              case None => msg
+            }
 
-          Ok(views.html.viewMessage(new FrontendUser(loggedInUser), new FrontendMessage(msg), frontendReplies))
+            val replies = MessageDto.get(Map("reply_to_message_id" -> originalMessage.id.get.toString), false)
+            val frontendReplies = for (reply <- replies) yield new FrontendMessage(reply)
+
+            Ok(views.html.viewMessage(new FrontendUser(loggedInUser), new FrontendMessage(originalMessage), frontendReplies))
+          } else {
+            NotFound
+          }
         case None => Redirect(routes.Application.login)
       }
   }

@@ -85,8 +85,8 @@ CBR.Controllers.SearchHelpRequests = new Class({
                         _this.$searchResults.html(
                             Mustache.render(
                                 _this.$searchResultsTemplate.html(),
-                                { helpRequests: _this._formatDates(JSON.parse(responseText)) }
-                            )
+                                { helpRequests: _this._generateHelpRequestsForTemplate(JSON.parse(responseText)) }
+                    )
                         );
                         _this.$searchResultedNothingParagraph.hide();
                         jQuery(".clickable").click(jQuery.proxy(_this._navigateToHelpRequest));
@@ -111,7 +111,9 @@ CBR.Controllers.SearchHelpRequests = new Class({
             location.href = "/help-requests/" + helpRequestId;
     },
 
-    _formatDates: function (helpRequests) {
+    _generateHelpRequestsForTemplate: function(helpRequests) {
+        var maxChars = 200;
+
         for (var i = 0; i < helpRequests.length; i++) {
             var currentHelpRequest = helpRequests[i];
 
@@ -120,6 +122,11 @@ CBR.Controllers.SearchHelpRequests = new Class({
 
             // Format expiry date
             currentHelpRequest.expiryDate = this.formatDate(currentHelpRequest.expiryDate);
+
+            // Format description
+            if (currentHelpRequest.description.length > maxChars) {
+                currentHelpRequest.description = currentHelpRequest.description.substring(0, maxChars).trim() + "...";
+            }
         }
 
         return helpRequests;

@@ -29,7 +29,7 @@ class FrontendMessage {
   var toUser: FrontendUser = _
 
   @JsonProperty
-  var title: String = _
+  var title: Option[String] = _
 
   @JsonProperty
   var text: String = _

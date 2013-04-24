@@ -15,7 +15,6 @@ CREATE TABLE `country` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-
 CREATE TABLE `user` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `first_name` varchar(45) NOT NULL,
@@ -88,7 +87,7 @@ Create table `message` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `from_user_id` int(10) unsigned NOT NULL,
   `to_user_id` int(10) unsigned NOT NULL,
-  `title` varchar(100) NOT NULL,
+  `title` varchar(100) DEFAULT NULL,
   `text` text NOT NULL,
   `creation_date` datetime NOT NULL,
   `reply_to_message_id` int(10) unsigned DEFAULT NULL,
@@ -134,4 +133,4 @@ select * from message;
 
 delete from user where email = "panzrkunst@yahoo.fr";
 
-delete from message where from_user_id = 3 or to_user_id = 3;
+delete from message;

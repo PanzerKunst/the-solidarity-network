@@ -93,11 +93,16 @@ CBR.Controllers.CreateMessage = new Class({
         e.preventDefault();
 
         if (this.validator.isValid()) {
+
             var message = new CBR.Models.Message({
                 toUserId: this.$recipientField.val(),
-                title: jQuery("#title").val(),
                 text: jQuery("#text").val()
             });
+
+            var title = jQuery("#title").val();
+            if (title !== "") {
+                message.title = title;
+            }
 
             var _this = this;
 
