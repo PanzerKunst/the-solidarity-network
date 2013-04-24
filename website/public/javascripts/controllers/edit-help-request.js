@@ -48,7 +48,6 @@ CBR.Controllers.EditHelpRequest = new Class({
     },
 
     _initEvents: function () {
-        jQuery("#save").click(jQuery.proxy(this._doSave, this));
         jQuery("form").submit(jQuery.proxy(this._doSave, this));
     },
 

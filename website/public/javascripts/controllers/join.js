@@ -60,7 +60,6 @@ CBR.Controllers.Join = new Class({
     },
 
     _initEvents: function () {
-        jQuery("#join-button").click(jQuery.proxy(this._doJoin, this));
         jQuery("form").submit(jQuery.proxy(this._doJoin, this));
     },
 

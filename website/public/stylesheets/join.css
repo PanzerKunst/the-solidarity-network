@@ -1,5 +1,6 @@
 @media screen and (min-width: 49em) {
-  #join #content .field {
+  #join #content .field,
+  #join #content fieldset {
     width: 35em; } }
 #join #content #check-username-availability {
   display: block;

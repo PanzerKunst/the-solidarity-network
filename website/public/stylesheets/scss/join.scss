@@ -4,7 +4,8 @@
   #content {
     $checkUsernameAvailabilityWidth: 6em;
 
-    .field {
+    .field,
+    fieldset {
       @include desktop {
         width: $labelWidth + $inputWidth + $checkUsernameAvailabilityWidth;
       }

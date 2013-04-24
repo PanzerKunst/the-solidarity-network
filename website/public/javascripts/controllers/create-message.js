@@ -85,7 +85,6 @@ CBR.Controllers.CreateMessage = new Class({
     },
 
     _initEvents: function () {
-        jQuery("#submit").click(jQuery.proxy(this._doCreate, this));
         jQuery("form").submit(jQuery.proxy(this._doCreate, this));
     },
 

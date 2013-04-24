@@ -3,14 +3,14 @@ form fieldset {
   clear: both;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 0.5em;
   width: 20em; }
   @media screen and (min-width: 49em) {
     form .field,
     form fieldset {
       width: 29em; } }
 form .field {
-  *zoom: 1; }
+  *zoom: 1;
+  margin-bottom: 0.5em; }
   form .field:before, form .field:after {
     content: " ";
     display: table; }
@@ -51,8 +51,6 @@ form .field {
     form .field > ul > li {
       display: block;
       float: left; }
-form fieldset > .field {
-  margin-bottom: 0; }
 form .invalid > input,
 form .invalid > select,
 form .invalid > textarea {
@@ -69,7 +67,7 @@ form .field-error {
       margin-left: 9.69231em; }
       form .field-error.without-label {
         margin-left: 0; } }
-form input[type=submit] {
+form input[type=submit].hidden {
   /* For it to go below the anchor, keeping the latter centered */
   display: block;
   /* All those properties hide the submit button but keeps submit on enter working */

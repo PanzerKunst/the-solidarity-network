@@ -140,7 +140,6 @@ CBR.Controllers.EditProfile = new Class({
 
         this.$emailField.keyup(jQuery.proxy(this._toggleEmailConfirmationField, this));
 
-        jQuery("#save").click(jQuery.proxy(this._doSave, this));
         jQuery("form").submit(jQuery.proxy(this._doSave, this));
     },
 

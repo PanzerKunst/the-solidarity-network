@@ -94,20 +94,18 @@
             <div class="field">
                 <label for="country">Country <span>*</span></label><!--
              --><select id="country" data-placeholder="Select">
-                <option value=""></option>
-                {{#countries}}
-                <option value="{{id}}">{{name}}</option>
-                {{/countries}}
-            </select>
+                    <option value=""></option>
+                    {{#countries}}
+                    <option value="{{id}}">{{name}}</option>
+                    {{/countries}}
+                </select>
 
                 <p class="field-error" data-check="empty">Where exactly is your city located?</p>
             </div>
         </fieldset>
 
-        <input type="submit" />
-
         <div id="submit-wrapper">
-            <button id="join-button" class="btn btn-primary btn-large">Join</button>
+            <input type="submit" class="btn btn-primary btn-large" value="Join" />
         </div>
     </form>
 

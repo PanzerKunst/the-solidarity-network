@@ -2,15 +2,12 @@
 
 form {
 
-  $fieldBottomMargin: 0.5em;
-
   .field,
   fieldset {
     clear: both;
 
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: $fieldBottomMargin;
 
     width: $fieldWidth;
 
@@ -21,6 +18,8 @@ form {
 
   .field {
     @include clearfix;
+
+    margin-bottom: 0.5em;
 
     > input,
     > select,
@@ -66,12 +65,6 @@ form {
     }
   }
 
-  fieldset {
-    > .field {
-      margin-bottom: 0;
-    }
-  }
-
   .invalid {
     > input,
     > select,
@@ -80,29 +73,29 @@ form {
     }
   }
 
-.field-error {
-  display: none;
-  clear: both;
+  .field-error {
+    display: none;
+    clear: both;
 
-  $fontSize: 13px;
+    $fontSize: 13px;
 
-  font-style: italic;
-  font-size: $fontSize;
-  color: $errorText;
+    font-style: italic;
+    font-size: $fontSize;
+    color: $errorText;
 
-  margin-bottom: $baseLineHeight / 2;
+    margin-bottom: $baseLineHeight / 2;
 
-  @include desktop {
-    margin-left: $labelWidth * $baseFontSize / $fontSize;
+    @include desktop {
+      margin-left: $labelWidth * $baseFontSize / $fontSize;
 
-    &.without-label {
-      margin-left: 0;
+      &.without-label {
+        margin-left: 0;
+      }
     }
   }
-}
 
-  input[type=submit] {
-  /* For it to go below the anchor, keeping the latter centered */
+  input[type=submit].hidden {
+    /* For it to go below the anchor, keeping the latter centered */
     display: block;
 
     /* All those properties hide the submit button but keeps submit on enter working */

@@ -51,7 +51,6 @@ CBR.Controllers.Login = new Class({
     },
 
     _initEvents: function () {
-        jQuery("#login-button").click(jQuery.proxy(this._doLogin, this));
         jQuery("form").submit(jQuery.proxy(this._doLogin, this));
     },
 

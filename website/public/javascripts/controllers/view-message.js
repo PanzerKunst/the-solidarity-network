@@ -50,7 +50,6 @@ CBR.Controllers.ViewMessage = new Class({
     },
 
     _initEvents: function () {
-        jQuery("#reply").click(jQuery.proxy(this._doCreateResponse, this));
         this.$replyForm.submit(jQuery.proxy(this._doCreateResponse, this));
     },
 
