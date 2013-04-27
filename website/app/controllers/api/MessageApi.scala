@@ -14,7 +14,7 @@ object MessageApi extends Controller {
 
       Application.loggedInUser(session) match {
         case Some(loggedInUser) => {
-          val msg = JsonUtil.parse(request.body.toString, classOf[Message])
+          val msg = JsonUtil.deserialize[Message](request.body.toString)
           val msgWithUserId = msg.copy(fromUserId = loggedInUser.id)
           MessageDto.create(msgWithUserId) match {
             case Some(id) =>

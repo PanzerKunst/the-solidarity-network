@@ -2,11 +2,10 @@ package controllers.api
 
 import services.JsonUtil
 import play.api.mvc.{Action, Controller}
-import database.{ReferenceDto, HelpRequestDto}
-import models.{Reference, User, HelpRequest}
+import database.ReferenceDto
+import models.Reference
 import controllers.Application
 import play.api.Logger
-import models.frontend.FrontendHelpRequest
 
 object ReferenceApi extends Controller {
   def create = Action(parse.json) {
@@ -14,7 +13,7 @@ object ReferenceApi extends Controller {
 
       Application.loggedInUser(session) match {
         case Some(loggedInUser) => {
-          val reference = JsonUtil.parse(request.body.toString, classOf[Reference])
+          val reference = JsonUtil.deserialize[Reference](request.body.toString)
           val referenceWithUserId = reference.copy(fromUserId = loggedInUser.id)
 
           ReferenceDto.create(referenceWithUserId) match {

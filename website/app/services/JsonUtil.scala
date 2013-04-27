@@ -1,50 +1,34 @@
 package services
 
-import org.codehaus.jackson.map.ObjectMapper
-import com.codahale.jerkson.ScalaModule
-import play.api.libs.json.{Json, JsValue}
-import play.api.Logger
-import play.api.libs.ws.Response
-
+import java.lang.reflect.{Type, ParameterizedType}
+import com.fasterxml.jackson.databind.ObjectMapper
+import com.fasterxml.jackson.module.scala.DefaultScalaModule
+import com.fasterxml.jackson.core.`type`.TypeReference
 
 object JsonUtil {
-  def parse[T](json: String, classOfT: Class[T]) = {
-    try {
-      createObjectMapper().readValue(json, classOfT)
-    } catch {
-      case e: Throwable => {
-        Logger.error("Unable to parse JSON into " + classOfT.getName + ": " + json, e)
-        throw e
-      }
+  val mapper = new ObjectMapper()
+  mapper.registerModule(DefaultScalaModule)
+
+  def serialize(value: Any): String = {
+    import java.io.StringWriter
+    val writer = new StringWriter()
+    mapper.writeValue(writer, value)
+    writer.toString
+  }
+
+  def deserialize[T: Manifest](value: String) : T =
+    mapper.readValue(value, typeReference[T])
+
+  private [this] def typeReference[T: Manifest] = new TypeReference[T] {
+    override def getType = typeFromManifest(manifest[T])
+  }
+
+  private [this] def typeFromManifest(m: Manifest[_]): Type = {
+    if (m.typeArguments.isEmpty) { m.erasure }
+    else new ParameterizedType {
+      def getRawType = m.erasure
+      def getActualTypeArguments = m.typeArguments.map(typeFromManifest).toArray
+      def getOwnerType = null
     }
-  }
-
-  def parseResponse[T](response: Response, classOfT: Class[T]) = {
-    if (response.header("Content-Type").isDefined && response.header("Content-Type").get.startsWith("application/json")) {
-      try {
-        createObjectMapper().readValue(response.getAHCResponse.getResponseBodyAsStream, classOfT)
-      } catch {
-        case e: Throwable => {
-          Logger.error("Unable to parse JSON into " + classOfT.getName, e)
-          throw e
-        }
-      }
-    } else {
-      throw new Exception("Expecting JSON, but got " + response.body)
-    }
-  }
-
-  def parseJsValue[T](json: JsValue, classOfT: Class[T]) = {
-    parse(Json.stringify(json), classOfT)
-  }
-
-  def serialize(obj: AnyRef): String = {
-    createObjectMapper().writeValueAsString(obj)
-  }
-
-  private def createObjectMapper() = {
-    val mapper = new ObjectMapper()
-    mapper.registerModule(new ScalaModule(this.getClass.getClassLoader))
-    mapper
   }
 }

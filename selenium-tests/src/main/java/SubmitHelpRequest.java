@@ -56,6 +56,8 @@ public class SubmitHelpRequest extends TestBase {
         driver.findElement(By.tagName("form"))
                 .submit();
 
+        sleepBecauseSeleniumSucks();
+
         // Wait for the page to load, and check that we are redirected to post-join login
         (new WebDriverWait(driver, 10)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {

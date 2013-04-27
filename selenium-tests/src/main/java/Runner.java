@@ -7,9 +7,13 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
+import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -41,27 +45,33 @@ public class Runner {
     }
 
     private static void testInFirefox(Dimension resolution) throws IOException {
-        WebDriver driver = new FirefoxDriver();
+        File pathToBinary = new File("D:/ProgramFiles/Mozilla Firefox/firefox.exe");
+        FirefoxBinary ffBinary = new FirefoxBinary(pathToBinary);
+        FirefoxProfile firefoxProfile = new FirefoxProfile();
+        WebDriver driver = new FirefoxDriver(ffBinary, firefoxProfile);
 
         runTests(driver, resolution);
     }
 
     private static void testInChrome(Dimension resolution) throws IOException {
-        System.setProperty("webdriver.chrome.driver", "e:/servers/selenium-drivers/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "d:/ProgramFiles/Selenium/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
 
         runTests(driver, resolution);
     }
 
     private static void testInIE(Dimension resolution) throws IOException {
-        System.setProperty("webdriver.ie.driver", "e:/servers/selenium-drivers/IEDriverServer.exe");
+        System.setProperty("webdriver.ie.driver", "d:/ProgramFiles/Selenium/IEDriverServer.exe");
         WebDriver driver = new InternetExplorerDriver();
 
         runTests(driver, resolution);
     }
 
     private static void testInOpera() throws IOException {
-        WebDriver driver = new OperaDriver();
+        DesiredCapabilities capabilities = DesiredCapabilities.opera();
+        capabilities.setCapability("opera.binary", "D:/ProgramFiles/Opera/opera.exe");
+
+        WebDriver driver = new OperaDriver(capabilities);
 
         runTests(driver, null);
     }

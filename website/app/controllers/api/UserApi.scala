@@ -12,7 +12,7 @@ object UserApi extends Controller {
   def create = Action(parse.json) {
     implicit request =>
 
-      val userToCreate = JsonUtil.parse(request.body.toString, classOf[User])
+      val userToCreate = JsonUtil.deserialize[User](request.body.toString)
       UserDto.create(userToCreate) match {
         case Some(id) =>
           val createdUser = UserDto.get(Some(Map("id" -> id.toString))).head
@@ -27,7 +27,7 @@ object UserApi extends Controller {
 
       Application.loggedInUser(session) match {
         case Some(loggedInUser) =>
-          val user = JsonUtil.parse(request.body.toString, classOf[User])
+          val user = JsonUtil.deserialize[User](request.body.toString)
           val userWithId = user.copy(id = loggedInUser.id)
           val userWithPassword = updateUserWithCurrentPasswordIfNotChanged(userWithId, loggedInUser.password.get)
 

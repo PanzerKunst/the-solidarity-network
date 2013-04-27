@@ -9,7 +9,7 @@ object AuthApi extends Controller {
   def authenticate = Action(parse.json) {
     implicit request =>
 
-      val user = JsonUtil.parse(request.body.toString, classOf[User])
+      val user = JsonUtil.deserialize[User](request.body.toString)
 
       var filtersMap = Map[String, String]()
 

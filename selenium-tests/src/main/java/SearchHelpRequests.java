@@ -31,6 +31,8 @@ public class SearchHelpRequests extends TestBase {
         driver.findElement(By.cssSelector(".action a[href='/help-requests']"))
                 .click();
 
+        sleepBecauseSeleniumSucks();
+
         (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
                 return d.findElement(By.id("search")).isDisplayed();

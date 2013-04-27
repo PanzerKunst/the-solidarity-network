@@ -3,7 +3,7 @@ package controllers.api
 import services.JsonUtil
 import play.api.mvc.{Action, Controller}
 import database.{HelpResponseDto, HelpRequestDto}
-import models.{HelpResponse, User, Country, HelpRequest}
+import models.{HelpResponse, User, HelpRequest}
 import controllers.Application
 import play.api.Logger
 import models.frontend.FrontendHelpRequest
@@ -14,7 +14,7 @@ object HelpResponseApi extends Controller {
 
       Application.loggedInUser(session) match {
         case Some(loggedInUser) => {
-          val helpResponse = JsonUtil.parse(request.body.toString, classOf[HelpResponse])
+          val helpResponse = JsonUtil.deserialize[HelpResponse](request.body.toString)
           val helpResponseWithUserId = helpResponse.copy(responderId = loggedInUser.id)
           HelpResponseDto.create(helpResponseWithUserId)
           Ok

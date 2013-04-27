@@ -14,7 +14,7 @@ object HelpRequestApi extends Controller {
 
       Application.loggedInUser(session) match {
         case Some(loggedInUser) => {
-          val helpRequest = JsonUtil.parse(request.body.toString, classOf[HelpRequest])
+          val helpRequest = JsonUtil.deserialize[HelpRequest](request.body.toString)
           val helpRequestWithUserId = helpRequest.copy(requesterId = loggedInUser.id)
 
           HelpRequestDto.create(helpRequestWithUserId) match {
@@ -34,7 +34,7 @@ object HelpRequestApi extends Controller {
 
       Application.loggedInUser(session) match {
         case Some(loggedInUser) => {
-          val helpRequest = JsonUtil.parse(request.body.toString, classOf[HelpRequest])
+          val helpRequest = JsonUtil.deserialize[HelpRequest](request.body.toString)
 
           if (helpRequest.requesterId.get == loggedInUser.id.get) {
             HelpRequestDto.update(helpRequest)
@@ -55,7 +55,7 @@ object HelpRequestApi extends Controller {
 
       Application.loggedInUser(session) match {
         case Some(loggedInUser) => {
-          val helpRequest = JsonUtil.parse(request.body.toString, classOf[HelpRequest])
+          val helpRequest = JsonUtil.deserialize[HelpRequest](request.body.toString)
 
           val subscriptions = SubscriptionToHelpResponsesDto.get(Some(Map("request_id" -> helpRequest.id.get.toString)))
           for (subscription <- subscriptions)
@@ -127,7 +127,7 @@ object HelpRequestApi extends Controller {
 
       Application.loggedInUser(session) match {
         case Some(loggedInUser) => {
-          val subscription = JsonUtil.parse(request.body.toString, classOf[SubscriptionToHelpResponses])
+          val subscription = JsonUtil.deserialize[SubscriptionToHelpResponses](request.body.toString)
           val subscriptionWithSubscriberId = subscription.copy(subscriberId = loggedInUser.id)
 
           val filtersMap = Map("request_id" -> subscriptionWithSubscriberId.requestId.toString,
@@ -153,7 +153,7 @@ object HelpRequestApi extends Controller {
 
       Application.loggedInUser(session) match {
         case Some(loggedInUser) => {
-          val subscription = JsonUtil.parse(request.body.toString, classOf[SubscriptionToHelpResponses])
+          val subscription = JsonUtil.deserialize[SubscriptionToHelpResponses](request.body.toString)
           val subscriptionWithSubscriberId = subscription.copy(subscriberId = loggedInUser.id)
 
           SubscriptionToHelpResponsesDto.delete(subscriptionWithSubscriberId)
