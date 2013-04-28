@@ -20,6 +20,10 @@ CBR.Models.Message = new Class({
         return this.options.title;
     },
 
+    setTitle: function (title) {
+        this.options.title = title;
+    },
+
     getText: function () {
         return this.options.text;
     },

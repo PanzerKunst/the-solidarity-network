@@ -1,52 +1,35 @@
-@(user: models.frontend.FrontendUser, messages: List[models.frontend.FrontendMessage], from: Option[String])
-@main("Inbox", "msg-inbox") {
+@(user: models.frontend.FrontendUser, messages: List[models.frontend.FrontendMessage])
+@main("Sent messages", "sent-messages") {
 <!--
     Header
 -->
-@nav(Some(user), Some("Inbox"))
+@nav(Some(user), Some("Sent messages"))
 
 } {
 <!--
     Content
 -->
-<h1>Messages</h1>
 
-@if(from.isDefined) {
-<p class="indication">
-    @if(from.get == "new") {
-        Message sent
-    } else {
-        Reply sent
-    }
-</p>
-}
-
-<div class="action line">
-    <a href="/messages/new">Write a message</a>
-</div>
-<div class="action">
-    <a href="/messages/sent">Sent messages</a>
-</div>
 } {
 <!--
     Javascript
 -->
 
 <script id="content-template" type="text/html">
-    <h2>Inbox</h2>
+    <h2>Sent messages</h2>
 
     <section id="list-container">
         <ul id="mobile-list">
             {{#messages}}
             <li class="clickable" data-id="{{id}}">
                 <div>
-                    <img class="profile-pic-thumb" src="/files/profile-pic/{{fromUser.id}}" />
+                    <img class="profile-pic-thumb" src="/files/profile-pic/{{toUser.id}}" />
 
                     <section>
-                        <p class="username">{{fromUser.username}}</p>
-                        <span class="first-name">{{fromUser.firstName}}</span>
-                        <span class="last-name">{{fromUser.lastName}}</span>
-                        <p class="user-city">{{fromUser.city}}</p>
+                        <p class="username">{{toUser.username}}</p>
+                        <span class="first-name">{{toUser.firstName}}</span>
+                        <span class="last-name">{{toUser.lastName}}</span>
+                        <p class="user-city">{{toUser.city}}</p>
                     </section>
                 </div>
 
@@ -72,11 +55,11 @@
             <tr class="clickable" data-id="{{id}}">
                 <!-- By -->
                 <td>
-                    <img class="profile-pic-thumb" src="/files/profile-pic/{{fromUser.id}}" />
-                    <p class="username">{{fromUser.username}}</p>
-                    <span class="first-name">{{fromUser.firstName}}</span>
-                    <span class="last-name">{{fromUser.lastName}}</span>
-                    <p class="user-city">{{fromUser.city}}</p>
+                    <img class="profile-pic-thumb" src="/files/profile-pic/{{toUser.id}}" />
+                    <p class="username">{{toUser.username}}</p>
+                    <span class="first-name">{{toUser.firstName}}</span>
+                    <span class="last-name">{{toUser.lastName}}</span>
+                    <p class="user-city">{{toUser.city}}</p>
                 </td>
 
                 <!-- Title -->

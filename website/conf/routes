@@ -24,6 +24,7 @@ GET     /help-requests/new          controllers.Application.createHelpRequest
 GET     /help-requests/:id          controllers.Application.viewHelpRequest(id: Int)
 GET     /help-requests/edit/:id     controllers.Application.editHelpRequest(id: Int)
 GET     /messages                   controllers.Application.msgInbox
+GET     /messages/sent              controllers.Application.sentMessages
 GET     /messages/new               controllers.Application.createMessage
 GET     /messages/:id               controllers.Application.viewMessage(id: Int)
 

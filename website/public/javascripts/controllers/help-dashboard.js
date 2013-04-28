@@ -1,5 +1,5 @@
 CBR.Controllers.HelpDashboard = new Class({
-    Extends: CBR.Controllers.TemplateController,
+    Extends: CBR.Controllers.SearchBase,
 
     initialize: function (options) {
         this.parent(options);

@@ -228,6 +228,18 @@ object Application extends Controller {
       }
   }
 
+  def sentMessages = Action {
+    implicit request =>
+      loggedInUser(session) match {
+        case Some(loggedInUser) =>
+          val sentMessages = MessageDto.get(Map("from_user_id" -> loggedInUser.id.get.toString))
+          val sentFrontendMessages = for (msg <- sentMessages) yield new FrontendMessage(msg)
+
+          Ok(views.html.sentMessages(new FrontendUser(loggedInUser), sentFrontendMessages))
+        case None => Redirect(routes.Application.login)
+      }
+  }
+
   def loggedInUser(session: Session): Option[User] = {
     session.get("userId") match {
       case Some(userId) => {

@@ -38,7 +38,7 @@ CBR.Controllers.ViewMessage = new Class({
     initElements: function () {
         this.parent();
 
-        this.$replyForm = jQuery("#reply-form");
+        this.$replyForm = jQuery("form");
     },
 
     _initValidation: function () {
@@ -50,7 +50,7 @@ CBR.Controllers.ViewMessage = new Class({
     },
 
     _initEvents: function () {
-        this.$replyForm.submit(jQuery.proxy(this._doCreateResponse, this));
+        this.$replyForm.submit(jQuery.proxy(this._doCreateReply, this));
     },
 
     _scrollToReply: function () {
@@ -86,6 +86,7 @@ CBR.Controllers.ViewMessage = new Class({
 
         for (var i = 0; i < this._getReplies().length; i++) {
             var reply = Object.clone(this._getReplies()[i]);
+            reply.creationDatetime = this.formatDatetime(reply.creationDatetime);
             reply.text = reply.text.replace(/\n/g, "<br />");
             result.push(reply);
         }
@@ -93,12 +94,13 @@ CBR.Controllers.ViewMessage = new Class({
         return result;
     },
 
-    _doCreateResponse: function (e) {
+    _doCreateReply: function (e) {
         e.preventDefault();
 
         if (this.validator.isValid()) {
+            var originalTitle = this._getMessage().title !== null ? this._getMessage().title : "";
             var replyPrefix = "Re: ";
-            var replyTitle = this._getMessage().title.startsWith(replyPrefix) ? this._getMessage().title : replyPrefix + this._getMessage().title;
+            var replyTitle = originalTitle.startsWith(replyPrefix) ? originalTitle : replyPrefix + originalTitle;
 
             var toUserId = this._getMessage().fromUser.id;
             if (toUserId === this._getLoggedInUser().id) {

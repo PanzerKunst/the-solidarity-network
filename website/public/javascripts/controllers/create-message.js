@@ -32,7 +32,7 @@ CBR.Controllers.CreateMessage = new Class({
             placeholder: "Search",
             minimumInputLength: 2,
             ajax: {
-                url: "http://localhost:9000/api/users",
+                url: "http://192.168.0.4:9000/api/users",
                 dataType: 'json',
                 data: function (term, page) {
                     return {
@@ -100,7 +100,7 @@ CBR.Controllers.CreateMessage = new Class({
 
             var title = jQuery("#title").val();
             if (title !== "") {
-                message.title = title;
+                message.setTitle(title);
             }
 
             var _this = this;
