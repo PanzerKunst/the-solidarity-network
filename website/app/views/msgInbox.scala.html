@@ -35,6 +35,10 @@
 <script id="content-template" type="text/html">
     <h2>Inbox</h2>
 
+    {{^messages}}
+    <p>Nothing here yet.</p>
+    {{/messages}}
+
     <section id="list-container">
         <ul id="mobile-list">
             {{#messages}}

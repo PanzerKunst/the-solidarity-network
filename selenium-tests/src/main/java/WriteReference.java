@@ -12,10 +12,18 @@ public class WriteReference extends TestBase {
     public static void properFormFill(WebDriver driver, final User to, final User from) {
         (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
-                return d.findElement(By.cssSelector("a[href='/users/" + to.getUsername() + "?action=writeReference']")).isDisplayed();
+                return d.findElement(By.cssSelector("a[href='/users/" + to.getUsername() + "']")).isDisplayed();
             }
         });
-        driver.findElement(By.cssSelector("a[href='/users/" + to.getUsername() + "?action=writeReference']"))
+        driver.findElement(By.cssSelector("a[href='/users/" + to.getUsername() + "']"))
+                .click();
+
+        (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
+            public Boolean apply(WebDriver d) {
+                return d.findElement(By.id("write-reference")).isDisplayed();
+            }
+        });
+        driver.findElement(By.id("write-reference"))
                 .click();
 
         (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {

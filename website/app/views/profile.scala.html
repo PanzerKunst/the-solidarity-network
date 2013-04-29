@@ -96,7 +96,7 @@
         {{#references}}
         <article>
             <img class="profile-pic-thumb" src="/files/profile-pic/{{fromUser.id}}" />
-            <span><a href="/users/{{fromUser.username}}">{{fromUser.firstName}} {{fromUser.lastName}} &lt;{{fromUser.username}}&gt;</a></span>
+            <a href="/users/{{fromUser.username}}">{{fromUser.firstName}} {{fromUser.lastName}} &lt;{{fromUser.username}}&gt;</a>
             <span class="creation-date">{{creationDatetime}}</span>
 
             @if(loggedInUser.id == frontendUser.id) {

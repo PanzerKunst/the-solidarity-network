@@ -21,7 +21,10 @@ object FileController extends Controller {
               content = file,
               inline = true
             )
-            case None => NotFound
+            case None => Ok.sendFile(
+              content = getDefaultProfilePicture(),
+              inline = true
+            )
           }
         case None => Forbidden
       }
@@ -72,10 +75,14 @@ object FileController extends Controller {
 
     if (matchingFiles.size > 1)
       throw new InconsistentDataException("Found more than 1 profile picture!")
-    else if (matchingFiles.size == 0)
-      None
-    else
+    else if (matchingFiles.size == 1)
       Some(matchingFiles.head)
+    else
+      None
+  }
+
+  private def getDefaultProfilePicture() = {
+    profilePicturesDir.listFiles.filter(f => f.getName == "default.jpg").head
   }
 
   private def deleteExistingTempProfilePicture(userId: Long) {

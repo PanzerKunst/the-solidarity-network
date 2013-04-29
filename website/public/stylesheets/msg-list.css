@@ -1,0 +1,21 @@
+#msg-inbox #content,
+#sent-messages #content {
+  *zoom: 1; }
+  #msg-inbox #content > p,
+  #sent-messages #content > p {
+    text-align: center; }
+  #msg-inbox #content:before, #msg-inbox #content:after,
+  #sent-messages #content:before,
+  #sent-messages #content:after {
+    content: " ";
+    display: table; }
+  #msg-inbox #content:after,
+  #sent-messages #content:after {
+    clear: both; }
+  @media screen and (min-width: 49em) {
+    #msg-inbox #content .action,
+    #sent-messages #content .action {
+      width: 50%; } }
+  #msg-inbox #content #mobile-list .date,
+  #sent-messages #content #mobile-list .date {
+    text-align: right; }

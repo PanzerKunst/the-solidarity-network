@@ -145,11 +145,11 @@ object Application extends Controller {
           else {
             val filtersMap = Map("request_id" -> id.toString,
               "subscriber_id" -> loggedInUser.id.get.toString)
-            val isSubscribedToResponses = !SubscriptionToHelpResponsesDto.get(Some(filtersMap)).isEmpty
+            val isSubscribedToReplies = !SubscriptionToHelpRepliesDto.get(Some(filtersMap)).isEmpty
 
-            val frontendHelpResponses = for (helpResponse <- HelpResponseDto.get(Some(Map("request_id" -> id.toString)))) yield new FrontendHelpResponse(helpResponse)
+            val frontendHelpReplies = for (helpReply <- HelpReplyDto.get(Some(Map("request_id" -> id.toString)))) yield new FrontendHelpReply(helpReply)
 
-            Ok(views.html.viewHelpRequest(new FrontendUser(loggedInUser), new FrontendHelpRequest(helpRequests.head), isSubscribedToResponses, frontendHelpResponses))
+            Ok(views.html.viewHelpRequest(new FrontendUser(loggedInUser), new FrontendHelpRequest(helpRequests.head), isSubscribedToReplies, frontendHelpReplies))
           }
 
         case None => Redirect(routes.Application.login)

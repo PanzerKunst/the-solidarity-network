@@ -3,7 +3,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class RespondToHelpRequest extends TestBase {
+public class ReplyToHelpRequest extends TestBase {
 
     private static final String hrText = "I can help, send me a message!";
 
@@ -12,22 +12,22 @@ public class RespondToHelpRequest extends TestBase {
 
         (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
-                return d.findElement(By.id("respond")).isDisplayed();
+                return d.findElement(By.id("reply")).isDisplayed();
             }
         });
-        driver.findElement(By.id("respond"))
+        driver.findElement(By.id("reply"))
                 .click();
 
-        driver.findElement(By.id("response-text"))
+        driver.findElement(By.id("reply-text"))
                 .sendKeys(hrText);
 
         (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
-                return d.findElement(By.id("post-response")).isDisplayed();
+                return d.findElement(By.id("post-reply")).isDisplayed();
             }
         });
 
-        driver.findElement(By.id("post-response"))
+        driver.findElement(By.id("post-reply"))
                 .click();
 
         sleepBecauseSeleniumSucks();
@@ -35,7 +35,7 @@ public class RespondToHelpRequest extends TestBase {
         // Wait for page to load, then check if response is in the body
         (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
-                return d.findElement(By.cssSelector("#responses > article > p")).getAttribute("innerHTML").equals(hrText);
+                return d.findElement(By.cssSelector("#replies > article > p")).getAttribute("innerHTML").equals(hrText);
             }
         });
     }

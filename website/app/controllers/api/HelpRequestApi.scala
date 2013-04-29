@@ -2,8 +2,8 @@ package controllers.api
 
 import services.JsonUtil
 import play.api.mvc.{Action, Controller}
-import database.{SubscriptionToHelpResponsesDto, HelpRequestDto}
-import models.{SubscriptionToHelpResponses, User, HelpRequest}
+import database.{SubscriptionToHelpRepliesDto, HelpRequestDto}
+import models.{SubscriptionToHelpReplies, User, HelpRequest}
 import controllers.Application
 import play.api.Logger
 import models.frontend.FrontendHelpRequest
@@ -57,9 +57,9 @@ object HelpRequestApi extends Controller {
         case Some(loggedInUser) => {
           val helpRequest = JsonUtil.deserialize[HelpRequest](request.body.toString)
 
-          val subscriptions = SubscriptionToHelpResponsesDto.get(Some(Map("request_id" -> helpRequest.id.get.toString)))
+          val subscriptions = SubscriptionToHelpRepliesDto.get(Some(Map("request_id" -> helpRequest.id.get.toString)))
           for (subscription <- subscriptions)
-            SubscriptionToHelpResponsesDto.delete(subscription)
+            SubscriptionToHelpRepliesDto.delete(subscription)
 
           if (helpRequest.requesterId.get == loggedInUser.id.get) {
             HelpRequestDto.delete(helpRequest)
@@ -104,7 +104,7 @@ object HelpRequestApi extends Controller {
             filters = getUpdatedFiltersIfQueryStringContains(filters, queryString, "lastName")
             filters = getUpdatedFiltersIfQueryStringContains(filters, queryString, "city")
             filters = getUpdatedFiltersIfQueryStringContains(filters, queryString, "country")
-            filters = getUpdatedFiltersIfQueryStringContains(filters, queryString, "respondedBy")
+            filters = getUpdatedFiltersIfQueryStringContains(filters, queryString, "repliedBy")
             HelpRequestDto.searchAdvanced(filters, exceptForRequesterId)
           }
 
@@ -127,22 +127,22 @@ object HelpRequestApi extends Controller {
 
       Application.loggedInUser(session) match {
         case Some(loggedInUser) => {
-          val subscription = JsonUtil.deserialize[SubscriptionToHelpResponses](request.body.toString)
+          val subscription = JsonUtil.deserialize[SubscriptionToHelpReplies](request.body.toString)
           val subscriptionWithSubscriberId = subscription.copy(subscriberId = loggedInUser.id)
 
           val filtersMap = Map("request_id" -> subscriptionWithSubscriberId.requestId.toString,
             "subscriber_id" -> subscriptionWithSubscriberId.subscriberId.get.toString)
 
-          if (SubscriptionToHelpResponsesDto.get(Some(filtersMap)).isEmpty)
-            SubscriptionToHelpResponsesDto.create(subscriptionWithSubscriberId) match {
+          if (SubscriptionToHelpRepliesDto.get(Some(filtersMap)).isEmpty)
+            SubscriptionToHelpRepliesDto.create(subscriptionWithSubscriberId) match {
               case Some(id) => Ok(id.toString)
-              case None => InternalServerError("Creation of a subscription to help responses did not return an ID!")
+              case None => InternalServerError("Creation of a subscription to help replies did not return an ID!")
             }
           else
             Ok
         }
         case None => {
-          Logger.info("Attempt to create a subscription to help responses while not logged-in")
+          Logger.info("Attempt to create a subscription to help replies while not logged-in")
           Unauthorized
         }
       }
@@ -153,15 +153,15 @@ object HelpRequestApi extends Controller {
 
       Application.loggedInUser(session) match {
         case Some(loggedInUser) => {
-          val subscription = JsonUtil.deserialize[SubscriptionToHelpResponses](request.body.toString)
+          val subscription = JsonUtil.deserialize[SubscriptionToHelpReplies](request.body.toString)
           val subscriptionWithSubscriberId = subscription.copy(subscriberId = loggedInUser.id)
 
-          SubscriptionToHelpResponsesDto.delete(subscriptionWithSubscriberId)
+          SubscriptionToHelpRepliesDto.delete(subscriptionWithSubscriberId)
 
           Ok
         }
         case None => {
-          Logger.info("Attempt to delete a subscription to help responses while not logged-in")
+          Logger.info("Attempt to delete a subscription to help replies while not logged-in")
           Unauthorized
         }
       }

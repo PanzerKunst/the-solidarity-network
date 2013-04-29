@@ -103,8 +103,8 @@ object HelpRequestDto {
     DB.withConnection {
       implicit c =>
 
-        val innerJoinForRespondedBy = if (filters.contains("respondedBy"))
-          "inner join help_response r on hr.id = r.request_id"
+        val innerJoinForRepliedBy = if (filters.contains("repliedBy"))
+          "inner join help_reply r on hr.id = r.request_id"
         else ""
 
         val ownFilteredClause = exceptFromRequesterId match {
@@ -119,7 +119,7 @@ object HelpRequestDto {
             from help_request hr
             inner join user u on u.id = hr.requester_id
             inner join country c on c.id = u.country_id
-            """ + innerJoinForRespondedBy +
+            """ + innerJoinForRepliedBy +
               DbUtil.generateWhereClause(Some(webFiltersToDbFilters(filters))) +
               ownFilteredClause + """
             order by expiry_date, creation_date
@@ -232,10 +232,10 @@ object HelpRequestDto {
         val processedFilterValue = rawFilterValue.replaceAll("\\*", "%")
         dbFilters += ("c.name" -> processedFilterValue)
       }
-      else if (key == "respondedBy") {
+      else if (key == "repliedBy") {
         val rawFilterValue = webFilters.get(key).get
         val user = UserDto.get(Some(Map("username" -> rawFilterValue))).head
-        dbFilters += ("r.responder_id" -> user.id.get.toString)
+        dbFilters += ("r.replier_id" -> user.id.get.toString)
       }
 
     dbFilters

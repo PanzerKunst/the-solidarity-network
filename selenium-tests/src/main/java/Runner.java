@@ -129,9 +129,9 @@ public class Runner {
         SearchHelpRequests.clickOnFirstSearchResult(driver);
 
         /**
-         * RespondToHelpRequest
+         * ReplyToHelpRequest
          */
-        RespondToHelpRequest.properFormFill(driver);
+        ReplyToHelpRequest.properFormFill(driver);
 
         /**
          * WriteReference

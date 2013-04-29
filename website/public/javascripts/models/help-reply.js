@@ -1,4 +1,4 @@
-CBR.Models.HelpResponse = new Class({
+CBR.Models.HelpReply = new Class({
     Extends: CBR.Models.JsonSerializableModel,
 
     options: {  // Defaults
@@ -12,8 +12,8 @@ CBR.Models.HelpResponse = new Class({
         return this.options.requestId;
     },
 
-    getResponderId: function () {
-        return this.options.responderId;
+    getReplierId: function () {
+        return this.options.replierId;
     },
 
     getText: function () {

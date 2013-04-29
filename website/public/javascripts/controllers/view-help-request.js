@@ -11,7 +11,7 @@ CBR.Controllers.ViewHelpRequest = new Class({
                 jQuery("#content-template").html(),
                 {
                     helpRequest: this._generateHelpRequestForTemplate(),
-                    helpResponses: this._generateHelpResponsesForTemplate()
+                    helpReplies: this._generateHelpRepliesForTemplate()
                 }
             )
         );
@@ -26,8 +26,8 @@ CBR.Controllers.ViewHelpRequest = new Class({
         return this.options.helpRequest;
     },
 
-    _getHelpResponses: function() {
-        return this.options.helpResponses;
+    _getHelpReplies: function() {
+        return this.options.helpReplies;
     },
 
     _getHelpRequester: function () {
@@ -37,10 +37,10 @@ CBR.Controllers.ViewHelpRequest = new Class({
     initElements: function () {
         this.parent();
 
-        this.$respondForm = jQuery("#respond-form");
-        this.$respond = jQuery("#respond");
+        this.$replyForm = jQuery("#reply-form");
+        this.$reply = jQuery("#reply");
 
-        this.$isSubscribingToFutureResponsesCheckbox = jQuery("#is-subscribing-to-future-responses");
+        this.$isSubscribingToFutureRepliesCheckbox = jQuery("#is-subscribing-to-future-replies");
 
         this.$expanded = jQuery(".expanded");
 
@@ -50,9 +50,9 @@ CBR.Controllers.ViewHelpRequest = new Class({
     },
 
     _initValidation: function () {
-        this.responseValidator = new CBR.Services.Validator({
+        this.replyValidator = new CBR.Services.Validator({
             fieldIds: [
-                "response-text"
+                "reply-text"
             ]
         });
     },
@@ -63,12 +63,12 @@ CBR.Controllers.ViewHelpRequest = new Class({
         jQuery("#close-modal").click(jQuery.proxy(this._hideModals, this));
         jQuery("#confirm-delete").click(jQuery.proxy(this._doDeleteHelpRequest, this));
 
-        this.$isSubscribingToFutureResponsesCheckbox.change(jQuery.proxy(this._changeSubscriptionToResponses, this));
+        this.$isSubscribingToFutureRepliesCheckbox.change(jQuery.proxy(this._changeSubscriptionToReplies, this));
 
-        this.$respond.click(jQuery.proxy(this._toggleRespondForm, this));
-        jQuery("#cancel-response").click(jQuery.proxy(this._collapseRespondForm, this));
-        jQuery("#post-response").click(jQuery.proxy(this._doCreateResponse, this));
-        this.$respondForm.submit(jQuery.proxy(this._doCreateResponse, this));
+        this.$reply.click(jQuery.proxy(this._toggleReplyForm, this));
+        jQuery("#cancel-reply").click(jQuery.proxy(this._collapseReplyForm, this));
+        jQuery("#post-reply").click(jQuery.proxy(this._doCreateReply, this));
+        this.$replyForm.submit(jQuery.proxy(this._doCreateReply, this));
     },
 
     _initPills: function () {
@@ -81,14 +81,14 @@ CBR.Controllers.ViewHelpRequest = new Class({
         return result;
     },
 
-    _generateHelpResponsesForTemplate: function () {
+    _generateHelpRepliesForTemplate: function () {
         var result = [];
 
-        for (var i = 0; i < this._getHelpResponses().length; i++) {
-            var helpResponse = Object.clone(this._getHelpResponses()[i]);
-            helpResponse.creationDatetime = this.formatDatetime(helpResponse.creationDatetime);
-            helpResponse.text = helpResponse.text.replace(/\n/g, "<br />");
-            result.push(helpResponse);
+        for (var i = 0; i < this._getHelpReplies().length; i++) {
+            var helpReply = Object.clone(this._getHelpReplies()[i]);
+            helpReply.creationDatetime = this.formatDatetime(helpReply.creationDatetime);
+            helpReply.text = helpReply.text.replace(/\n/g, "<br />");
+            result.push(helpReply);
         }
 
         return result;
@@ -97,7 +97,7 @@ CBR.Controllers.ViewHelpRequest = new Class({
     _showModal: function (e) {
         e.preventDefault();
 
-        if (this._getHelpResponses() !== undefined && this._getHelpResponses().length > 0)
+        if (this._getHelpReplies() !== undefined && this._getHelpReplies().length > 0)
             this.$deletionImpossibleModal.modal("show");
         else
             this.$confirmDeleteModal.modal("show");
@@ -138,29 +138,29 @@ CBR.Controllers.ViewHelpRequest = new Class({
         }).DELETE();   // Lowercase triggers a jsHint error
     },
 
-    _toggleRespondForm: function () {
-        if (this.$respond.hasClass("expanded"))
-            this._collapseRespondForm();
+    _toggleReplyForm: function () {
+        if (this.$reply.hasClass("expanded"))
+            this._collapseReplyForm();
         else {
             this.$expanded.slideUpCustom();
 
-            this.$respondForm.slideDownCustom();
-            this.$respond.addClass("expanded");
+            this.$replyForm.slideDownCustom();
+            this.$reply.addClass("expanded");
         }
     },
 
-    _collapseRespondForm: function () {
-        this.$respondForm.slideUpCustom();
-        this.$respond.removeClass("expanded");
+    _collapseReplyForm: function () {
+        this.$replyForm.slideUpCustom();
+        this.$reply.removeClass("expanded");
     },
 
-    _doCreateResponse: function (e) {
+    _doCreateReply: function (e) {
         e.preventDefault();
 
-        if (this.responseValidator.isValid()) {
-            var helpResponse = new CBR.Models.HelpResponse({
+        if (this.replyValidator.isValid()) {
+            var helpReply = new CBR.Models.HelpReply({
                 requestId: jQuery("#help-request").data("id"),
-                text: jQuery("#response-text").val()
+                text: jQuery("#reply-text").val()
             });
 
             var _this = this;
@@ -168,8 +168,8 @@ CBR.Controllers.ViewHelpRequest = new Class({
             new Request({
                 urlEncoded: false,
                 headers: { "Content-Type": "application/json" },
-                url: "/api/help-responses",
-                data: CBR.JsonUtil.stringifyModel(helpResponse),
+                url: "/api/help-replies",
+                data: CBR.JsonUtil.stringifyModel(helpReply),
                 onSuccess: function (responseText, responseXML) {
                     location.reload();
                 },
@@ -183,10 +183,10 @@ CBR.Controllers.ViewHelpRequest = new Class({
         }
     },
 
-    _changeSubscriptionToResponses: function (e) {
+    _changeSubscriptionToReplies: function (e) {
         e.preventDefault();
 
-        var subscription = new CBR.Models.SubscriptionToHelpResponses({
+        var subscription = new CBR.Models.SubscriptionToHelpReplies({
             requestId: this._getHelpRequest().id
         });
 
@@ -196,7 +196,7 @@ CBR.Controllers.ViewHelpRequest = new Class({
             urlEncoded: false,
             headers: { "Content-Type": "application/json" },
             emulation: false, // Otherwise PUT and DELETE requests are sent as POST
-            url: "/api/help-requests/subscribe-to-responses",
+            url: "/api/help-requests/subscribe-to-replies",
             data: CBR.JsonUtil.stringifyModel(subscription),
             onFailure: function (xhr) {
                 if (xhr.status === _this.httpStatusCode.unauthorized)
@@ -206,7 +206,7 @@ CBR.Controllers.ViewHelpRequest = new Class({
             }
         });
 
-        if (this.$isSubscribingToFutureResponsesCheckbox.is(':checked'))
+        if (this.$isSubscribingToFutureRepliesCheckbox.is(':checked'))
             request.post();
         else
             request.DELETE();   // Lowercase triggers a jsHint error

@@ -33,10 +33,10 @@ CBR.Controllers.SearchBase = new Class({
         if (value && value.length === 3)
             requestData.country = value[2];
 
-        var respondedByPattern = /( |^)respondedBy=(\w+)/;
-        value = respondedByPattern.exec(queryFieldValue);
+        var repliedByPattern = /( |^)repliedBy=(\w+)/;
+        value = repliedByPattern.exec(queryFieldValue);
         if (value && value.length === 3)
-            requestData.respondedBy = value[2];
+            requestData.repliedBy = value[2];
 
         if (CBR.isEmptyObject(requestData))
             return { query: queryFieldValue };

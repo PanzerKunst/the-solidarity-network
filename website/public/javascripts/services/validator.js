@@ -4,6 +4,7 @@ CBR.Services.Validator = new Class({
     checkUsername: "username",
     checkDateInFuture: "in-future",
     checkDateInMaxTwoWeeks: "in-max-2-weeks",
+    checkLongEnough: "long-enough",
 
     initialize: function (options) {
         this.options = options;
@@ -70,6 +71,10 @@ CBR.Services.Validator = new Class({
         return this._get$error($field, this.checkDateInMaxTwoWeeks);
     },
 
+    _get$longEnough: function ($field) {
+        return this._get$error($field, this.checkLongEnough);
+    },
+
     _get$error: function ($field, checkType) {
         return $field.parent().find("p[data-check=" + checkType + "]");
     },
@@ -92,6 +97,10 @@ CBR.Services.Validator = new Class({
 
     _isToCheckIfInMaxTwoWeeks: function ($field) {
         return this._get$inMaxTwoWeeks($field).length === 1;
+    },
+
+    _isToCheckIfLongEnough: function ($field) {
+        return this._get$longEnough($field).length === 1;
     },
 
     _isValidEmail: function (email) {
@@ -138,69 +147,83 @@ CBR.Services.Validator = new Class({
         return nbDaysDifference >= 0;
     },
 
+    _isLongEnough: function(value, minLength) {
+        return value.length >= minLength;
+    },
+
     _validateField: function ($field, isOnBlur) {
 
         // Empty?
-        if (this._isToCheckIfEmpty($field) &&
-            $field.hasClass("nav-pills") &&
-            $field.children(".active").length === 0) {
+        if (this._isToCheckIfEmpty($field)) {
+            if ($field.hasClass("nav-pills") &&
+                $field.children(".active").length === 0) {
 
-            this.flagInvalid($field);
-            this._get$empty($field).slideDownCustom();
-            return false;
-        }
-        else if (this._isToCheckIfEmpty($field) &&
-            !$field.hasClass("nav-pills") &&
-            !$field.val().trim()) {
-
-            if (!isOnBlur) {
                 this.flagInvalid($field);
                 this._get$empty($field).slideDownCustom();
+                return false;
             }
-            return false;
-        }
-        else if (this._isToCheckIfEmpty($field)) {
+            if (!$field.hasClass("nav-pills") &&
+                !$field.val().trim()) {
+
+                if (!isOnBlur) {
+                    this.flagInvalid($field);
+                    this._get$empty($field).slideDownCustom();
+                }
+                return false;
+            }
+
             this._get$empty($field).slideUpCustom();
         }
 
         // Email?
-        if (this._isToCheckIfEmail($field) && !this._isValidEmail($field.val())) {
-            this.flagInvalid($field);
-            this._get$email($field).slideDownCustom();
-            return false;
-        }
-        else if (this._isToCheckIfEmail($field)) {
+        if (this._isToCheckIfEmail($field)) {
+            if (!this._isValidEmail($field.val())) {
+                this.flagInvalid($field);
+                this._get$email($field).slideDownCustom();
+                return false;
+            }
+
             this._get$email($field).slideUpCustom();
         }
 
         // Username?
-        if (this._isToCheckIfUsername($field) && !this._isValidUsername($field.val())) {
-            this.flagInvalid($field);
-            this._get$username($field).slideDownCustom();
-            return false;
-        }
-        else if (this._isToCheckIfUsername($field)) {
+        if (this._isToCheckIfUsername($field)) {
+            if (!this._isValidUsername($field.val())) {
+                this.flagInvalid($field);
+                this._get$username($field).slideDownCustom();
+                return false;
+            }
             this._get$username($field).slideUpCustom();
         }
 
         // In the future?
-        if (this._isToCheckIfInFuture($field) && !this._isInFuture($field.val())) {
-            this.flagInvalid($field);
-            this._get$inFuture($field).slideDownCustom();
-            return false;
-        }
-        else if (this._isToCheckIfInFuture($field)) {
+        if (this._isToCheckIfInFuture($field)) {
+            if (!this._isInFuture($field.val())) {
+                this.flagInvalid($field);
+                this._get$inFuture($field).slideDownCustom();
+                return false;
+            }
             this._get$inFuture($field).slideUpCustom();
         }
 
         // In max 2 weeks?
-        if (this._isToCheckIfInMaxTwoWeeks($field) && !this._isInMaxTwoWeeks($field.val())) {
-            this.flagInvalid($field);
-            this._get$inMaxTwoWeeks($field).slideDownCustom();
-            return false;
-        }
-        else if (this._isToCheckIfInMaxTwoWeeks($field)) {
+        if (this._isToCheckIfInMaxTwoWeeks($field)) {
+            if (!this._isInMaxTwoWeeks($field.val())) {
+                this.flagInvalid($field);
+                this._get$inMaxTwoWeeks($field).slideDownCustom();
+                return false;
+            }
             this._get$inMaxTwoWeeks($field).slideUpCustom();
+        }
+
+        // Long enough?
+        if (this._isToCheckIfLongEnough($field)) {
+            if (!this._isLongEnough($field.val(), $field.data("min-length"))) {
+                this.flagInvalid($field);
+                this._get$longEnough($field).slideDownCustom();
+                return false;
+            }
+            this._get$longEnough($field).slideUpCustom();
         }
 
         this.flagValid($field);

@@ -9,7 +9,7 @@
     float: left;
     width: 50%;
     text-align: center; }
-#view-help-request #content #respond-form,
+#view-help-request #content #reply-form,
 #view-help-request #content #reference-form {
   display: none; }
 #view-help-request #content #requester > div,
@@ -45,17 +45,19 @@
   @media screen and (min-width: 49em) {
     #view-help-request #content textarea {
       width: 29em; } }
-#view-help-request #content #responses > article {
+#view-help-request #content #replies > article {
   *zoom: 1;
   margin-bottom: 1em; }
-  #view-help-request #content #responses > article:before, #view-help-request #content #responses > article:after {
+  #view-help-request #content #replies > article:before, #view-help-request #content #replies > article:after {
     content: " ";
     display: table; }
-  #view-help-request #content #responses > article:after {
+  #view-help-request #content #replies > article:after {
     clear: both; }
-#view-help-request #content #responses img {
+#view-help-request #content #replies img {
   float: left;
   max-width: 4em;
   max-height: 4em; }
 #view-help-request #content .modal.fade.in {
   top: 40%; }
+#view-help-request #content #submit-reply-wrapper {
+  text-align: center; }

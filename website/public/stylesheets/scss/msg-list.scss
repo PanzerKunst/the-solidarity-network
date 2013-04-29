@@ -1,7 +1,12 @@
 @import "common";
 
-#msg-inbox {
+#msg-inbox,
+#sent-messages {
   #content {
+
+    > p {
+      text-align: center;
+    }
 
     // Because .action are floated
     @include clearfix;
@@ -13,7 +18,6 @@
     }
 
     // Inbox messages
-
     #mobile-list {
       .date {
         text-align: right;

@@ -9,8 +9,8 @@ object DbAdmin {
     createTableCountry
     createTableUser
     createTableHelpRequest
-    createTableHelpResponse
-    createTableSubscriptionToHelpResponses
+    createTableHelpReply
+    createTableSubscriptionToHelpReplies
     createTableReferenceRating
     createTableReference
     createTableMessage
@@ -20,8 +20,8 @@ object DbAdmin {
     dropTableMessage
     dropTableReference
     dropTableReferenceRating
-    dropTableSubscriptionToHelpResponses
-    dropTableHelpResponse
+    dropTableSubscriptionToHelpReplies
+    dropTableHelpReply
     dropTableHelpRequest
     dropTableUser
     dropTableCountry
@@ -93,32 +93,32 @@ object DbAdmin {
     }
   }
 
-  private def createTableHelpResponse {
+  private def createTableHelpReply {
     DB.withConnection {
       implicit c =>
 
         val query = """
-        Create table `help_response`(
+        Create table `help_reply`(
           `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
           `request_id` int(10) unsigned NOT NULL,
-          `responder_id` int(10) unsigned NOT NULL,
+          `replier_id` int(10) unsigned NOT NULL,
           `text` text NOT NULL,
           `creation_date` datetime NOT NULL,
           primary key (`id`),
           constraint `fk_request` foreign key (`request_id`) references `help_request`(`id`),
-          constraint `fk_responder` foreign key (`responder_id`) references `user`(`id`)
+          constraint `fk_replier` foreign key (`replier_id`) references `user`(`id`)
         ) ENGINE=InnoDB DEFAULT charset=utf8;"""
 
         SQL(query).executeUpdate()
     }
   }
 
-  private def createTableSubscriptionToHelpResponses {
+  private def createTableSubscriptionToHelpReplies {
     DB.withConnection {
       implicit c =>
 
         val query = """
-        Create table `subscription_to_help_responses`(
+        Create table `subscription_to_help_replies`(
           `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
           `request_id` int(10) unsigned NOT NULL,
           `subscriber_id` int(10) unsigned NOT NULL,
@@ -212,17 +212,17 @@ object DbAdmin {
     }
   }
 
-  private def dropTableSubscriptionToHelpResponses {
+  private def dropTableSubscriptionToHelpReplies {
     DB.withConnection {
       implicit c =>
-        SQL("drop table if exists subscription_to_help_responses;").executeUpdate()
+        SQL("drop table if exists subscription_to_help_replies;").executeUpdate()
     }
   }
 
-  private def dropTableHelpResponse {
+  private def dropTableHelpReply {
     DB.withConnection {
       implicit c =>
-        SQL("drop table if exists help_response;").executeUpdate()
+        SQL("drop table if exists help_reply;").executeUpdate()
     }
   }
 

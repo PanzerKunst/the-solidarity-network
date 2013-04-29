@@ -1,4 +1,4 @@
-CBR.Models.SubscriptionToHelpResponses = new Class({
+CBR.Models.SubscriptionToHelpReplies = new Class({
     Extends: CBR.Models.JsonSerializableModel,
 
     options: {  // Defaults

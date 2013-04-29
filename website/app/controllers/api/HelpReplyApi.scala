@@ -2,25 +2,25 @@ package controllers.api
 
 import services.JsonUtil
 import play.api.mvc.{Action, Controller}
-import database.{HelpResponseDto, HelpRequestDto}
-import models.{HelpResponse, User, HelpRequest}
+import database.{HelpReplyDto, HelpRequestDto}
+import models.{HelpReply, User, HelpRequest}
 import controllers.Application
 import play.api.Logger
 import models.frontend.FrontendHelpRequest
 
-object HelpResponseApi extends Controller {
+object HelpReplyApi extends Controller {
   def create = Action(parse.json) {
     implicit request =>
 
       Application.loggedInUser(session) match {
         case Some(loggedInUser) => {
-          val helpResponse = JsonUtil.deserialize[HelpResponse](request.body.toString)
-          val helpResponseWithUserId = helpResponse.copy(responderId = loggedInUser.id)
-          HelpResponseDto.create(helpResponseWithUserId)
+          val helpReply = JsonUtil.deserialize[HelpReply](request.body.toString)
+          val helpReplyWithUserId = helpReply.copy(replierId = loggedInUser.id)
+          HelpReplyDto.create(helpReplyWithUserId)
           Ok
         }
         case None => {
-          Logger.info("Help response creation attempt while not logged-in")
+          Logger.info("Help reply creation attempt while not logged-in")
           Unauthorized
         }
       }

@@ -13,7 +13,7 @@
       }
     }
 
-    #respond-form,
+    #reply-form,
     #reference-form {
       display: none;
     }
@@ -66,7 +66,7 @@
       }
     }
 
-    #responses {
+    #replies {
       > article {
         // for img, a child
         @include clearfix;
@@ -83,6 +83,10 @@
 
     .modal.fade.in {
       top: 40%;
+    }
+
+    #submit-reply-wrapper {
+      text-align: center;
     }
   }
 }
