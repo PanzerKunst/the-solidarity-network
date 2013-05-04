@@ -43,7 +43,13 @@ object HelpRequestDto {
 
         val query = searchQuery match {
           case Some(sq) =>
-            val processedSearchQuery = DbUtil.backslashQuotes(sq.replaceAll("\\*", "%"))
+            var processedSearchQuery = DbUtil.backslashQuotes(sq.replaceAll("\\*", "%"))
+
+            if (!processedSearchQuery.startsWith("%"))
+              processedSearchQuery = "%" + processedSearchQuery
+
+            if (!processedSearchQuery.endsWith("%"))
+              processedSearchQuery += "%"
 
             """
             select distinct hr.id, hr.title, hr.description, hr.creation_date, hr.expiry_date,
@@ -68,7 +74,7 @@ object HelpRequestDto {
               u.id, u.first_name, u.last_name, u.username, u.email, u.city, u.country_id
             from help_request hr
             inner join user u on u.id = hr.requester_id""" +
-              ownFilteredClause + """
+            ownFilteredClause + """
             order by expiry_date, creation_date
             limit 50;"""
         }
@@ -119,9 +125,9 @@ object HelpRequestDto {
             from help_request hr
             inner join user u on u.id = hr.requester_id
             inner join country c on c.id = u.country_id
-            """ + innerJoinForRepliedBy +
-              DbUtil.generateWhereClause(Some(webFiltersToDbFilters(filters))) +
-              ownFilteredClause + """
+                    """ + innerJoinForRepliedBy +
+          DbUtil.generateWhereClause(Some(webFiltersToDbFilters(filters))) +
+          ownFilteredClause + """
             order by expiry_date, creation_date
             limit 50;"""
 
@@ -211,6 +217,16 @@ object HelpRequestDto {
         val rawFilterValue = webFilters.get(key).get
         val processedFilterValue = rawFilterValue.replaceAll("\\*", "%")
         dbFilters += ("u.username" -> processedFilterValue)
+      }
+      else if (key == "title") {
+        val rawFilterValue = webFilters.get(key).get
+        val processedFilterValue = rawFilterValue.replaceAll("\\*", "%")
+        dbFilters += ("hr.title" -> processedFilterValue)
+      }
+      else if (key == "desc") {
+        val rawFilterValue = webFilters.get(key).get
+        val processedFilterValue = rawFilterValue.replaceAll("\\*", "%")
+        dbFilters += ("hr.description" -> processedFilterValue)
       }
       else if (key == "firstName") {
         val rawFilterValue = webFilters.get(key).get

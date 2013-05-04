@@ -99,6 +99,8 @@ object HelpRequestApi extends Controller {
           // Advanced search
           else {
             var filters: Map[String, String] = Map()
+            filters = getUpdatedFiltersIfQueryStringContains(filters, queryString, "title")
+            filters = getUpdatedFiltersIfQueryStringContains(filters, queryString, "desc")
             filters = getUpdatedFiltersIfQueryStringContains(filters, queryString, "username")
             filters = getUpdatedFiltersIfQueryStringContains(filters, queryString, "firstName")
             filters = getUpdatedFiltersIfQueryStringContains(filters, queryString, "lastName")

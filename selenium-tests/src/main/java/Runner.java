@@ -1,4 +1,5 @@
 import com.opera.core.systems.OperaDriver;
+import models.HelpRequest;
 import models.User;
 import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpPost;
@@ -17,6 +18,8 @@ import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 public class Runner {
     public static final String URL_ROOT = "http://localhost:9000/";
@@ -89,7 +92,7 @@ public class Runner {
 
         User chris = new User("Christophe",
                 "Bram",
-                "cbramdit@gmail.com",
+                "cbramditgmail.com",
                 "blackbird",
                 "tigrou",
                 "Stockholm",
@@ -98,7 +101,9 @@ public class Runner {
         /**
          * Join
          */
-        Join.properFormFill(driver, chris);
+        Join.incorrectEmail(driver, chris);
+        chris.setEmail("cbramdit@gmail.com");
+        Join.properFormFill(driver, chris, true);
 
         /**
          * Login
@@ -108,7 +113,30 @@ public class Runner {
         Login.logout(driver);
         Login.properFormFillEmail(driver, chris);
 
-        SubmitHelpRequest.properFormFill(driver);
+        Calendar yesterday = new GregorianCalendar();
+        yesterday.add(Calendar.DATE, -1);
+
+        HelpRequest helpRequest = new HelpRequest("HR title",
+                "HR desc Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\nExcepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                Runner.yyyymmdd.format(yesterday.getTime()));
+
+        /**
+         * SubmitHelpRequest
+         */
+        SubmitHelpRequest.expiryDateMissing(driver, helpRequest);
+        SubmitHelpRequest.expiryDatePast(driver, helpRequest);
+
+        // In 21 days
+        yesterday.add(Calendar.DATE, 22);
+        helpRequest.setExpiryDate(Runner.yyyymmdd.format(yesterday.getTime()));
+
+        SubmitHelpRequest.expiryDateTooFar(driver, helpRequest);
+
+        // In 7 days
+        yesterday.add(Calendar.DATE, -14);
+        helpRequest.setExpiryDate(Runner.yyyymmdd.format(yesterday.getTime()));
+
+        SubmitHelpRequest.properFormFill(driver, helpRequest);
 
         Login.logout(driver);
 
@@ -120,13 +148,26 @@ public class Runner {
                 "Lille",
                 "2");
 
-        Join.properFormFill(driver, damien);
+        Join.properFormFill(driver, damien, false);
         Login.properFormFillUsername(driver, damien);
 
         /**
          * SearchHelpRequests
          */
-        SearchHelpRequests.clickOnFirstSearchResult(driver);
+        SearchHelpRequests.noResult(driver, false);
+        SearchHelpRequests.generic(driver, helpRequest);
+        SearchHelpRequests.noResult(driver, true);
+        SearchHelpRequests.advancedCity(driver, chris);
+        SearchHelpRequests.noResult(driver, true);
+        SearchHelpRequests.advancedTitle(driver, helpRequest);
+        SearchHelpRequests.noResult(driver, true);
+        SearchHelpRequests.advancedDesc(driver, helpRequest);
+        SearchHelpRequests.noResult(driver, true);
+        SearchHelpRequests.advancedFirstName(driver, chris);
+        SearchHelpRequests.noResult(driver, true);
+        SearchHelpRequests.advancedUsername(driver, chris);
+        SearchHelpRequests.noResult(driver, true);
+        SearchHelpRequests.emptyQueryAndClickOnFirstResult(driver);
 
         /**
          * ReplyToHelpRequest

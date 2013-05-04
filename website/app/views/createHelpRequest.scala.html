@@ -37,13 +37,13 @@
             <label for="expiry-date">Expiry date <span class="mdnz-polyfill placeholder">(yyyy-mm-dd)</span> <span>*</span></label><!--
          --><input id="expiry-date" type="text" placeholder="yyyy-mm-dd"/>
 
-            <p class="field-error" data-check="empty">In order to avoid obsolete requests, an expiry date must be
+            <p class="field-error" data-check="empty" id="error-msg-expiry-date-empty">In order to avoid obsolete requests, an expiry date must be
                 set.</p>
 
-            <p class="field-error" data-check="in-future">Your help request would already be expired... please select a
+            <p class="field-error" data-check="in-future" id="error-msg-expiry-date-in-future">Your help request would already be expired... please select a
                 date in the future.</p>
 
-            <p class="field-error" data-check="in-max-2-weeks">In order to avoid obsolete requests, the maximum expiry
+            <p class="field-error" data-check="in-max-2-weeks" id="error-msg-expiry-date-in-max-2-weeks">In order to avoid obsolete requests, the maximum expiry
                 date is two weeks.<br/>
                 If nobody was able to help you after two weeks, feel free to submit a new request.</p>
         </div>
