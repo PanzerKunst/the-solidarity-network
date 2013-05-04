@@ -138,6 +138,14 @@ public class Runner {
 
         SubmitHelpRequest.properFormFill(driver, helpRequest);
 
+        /**
+         * MyHelpRequests
+         */
+        MyHelpRequests.checkPage(driver, chris);
+
+        /**
+         * Logout
+         */
         Login.logout(driver);
 
         User damien = new User("Damien",
@@ -145,8 +153,8 @@ public class Runner {
                 "panzrkunst@yahoo.fr",
                 "db",
                 "tigrou",
-                "Lille",
-                "2");
+                "Stockholm",
+                "1");
 
         Join.properFormFill(driver, damien, false);
         Login.properFormFillUsername(driver, damien);
@@ -173,6 +181,11 @@ public class Runner {
          * ReplyToHelpRequest
          */
         ReplyToHelpRequest.properFormFill(driver);
+
+        /**
+         * HelpRequestsIRepliedTo
+         */
+        HelpRequestsIRepliedTo.checkPage(driver, damien);
 
         /**
          * WriteReference
@@ -203,9 +216,6 @@ public class Runner {
 
         EditProfile.properFormFill(driver, updatedDamien);
 
-        /**
-         * Logout
-         */
         Login.logout(driver);
 
         // Close the browser
