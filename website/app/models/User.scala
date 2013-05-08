@@ -10,4 +10,6 @@ case class User(id: Option[Long] = None,
                 postCode: Option[String] = None,
                 city: Option[String] = None,
                 countryId: Option[Long] = None,
-                description: Option[String] = None)
+                description: Option[String] = None,
+                isSubscribedToNews: Boolean,
+                subscriptionToNewHelpRequests: String)

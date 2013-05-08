@@ -53,7 +53,7 @@ object HelpRequestDto {
 
             """
             select distinct hr.id, hr.title, hr.description, hr.creation_date, hr.expiry_date,
-              u.id, u.first_name, u.last_name, u.username, u.email, u.city, u.country_id,
+              u.id, u.first_name, u.last_name, u.username, u.email, u.city, u.country_id, u.is_subscribed_to_news, u.subscription_to_new_help_requests,
               c.id, c.name
             from help_request hr
             inner join user u on u.id = hr.requester_id
@@ -71,7 +71,7 @@ object HelpRequestDto {
 
           case None => """
             select hr.id, hr.title, hr.description, hr.creation_date, hr.expiry_date,
-              u.id, u.first_name, u.last_name, u.username, u.email, u.city, u.country_id
+              u.id, u.first_name, u.last_name, u.username, u.email, u.city, u.country_id, u.is_subscribed_to_news, u.subscription_to_new_help_requests
             from help_request hr
             inner join user u on u.id = hr.requester_id""" +
             ownFilteredClause + """
@@ -98,9 +98,11 @@ object HelpRequestDto {
               username = Some(row[String]("username")),
               email = Some(row[String]("email")),
               city = Some(row[String]("city")),
-              countryId = Some(row[Long]("country_id"))
+              countryId = Some(row[Long]("country_id")),
+              isSubscribedToNews = row[Boolean]("is_subscribed_to_news"),
+              subscriptionToNewHelpRequests = row[String]("subscription_to_new_help_requests")
             )
-            )
+          )
         ).toList
     }
   }
@@ -120,7 +122,7 @@ object HelpRequestDto {
 
         val query = """
             select distinct hr.id, hr.title, hr.description, hr.creation_date, hr.expiry_date,
-              u.id, u.first_name, u.last_name, u.username, u.email, u.city, u.country_id,
+              u.id, u.first_name, u.last_name, u.username, u.email, u.city, u.country_id, u.is_subscribed_to_news, u.subscription_to_new_help_requests,
               c.id, c.name
             from help_request hr
             inner join user u on u.id = hr.requester_id
@@ -150,9 +152,11 @@ object HelpRequestDto {
               username = Some(row[String]("username")),
               email = Some(row[String]("email")),
               city = Some(row[String]("city")),
-              countryId = Some(row[Long]("country_id"))
+              countryId = Some(row[Long]("country_id")),
+              isSubscribedToNews = row[Boolean]("is_subscribed_to_news"),
+              subscriptionToNewHelpRequests = row[String]("subscription_to_new_help_requests")
             )
-            )
+          )
         ).toList
     }
   }
@@ -161,7 +165,7 @@ object HelpRequestDto {
     DB.withConnection {
       implicit c =>
 
-        val descriptionForQuery = helpRequest.description.replaceAll("\n", "\\\\n");
+        val descriptionForQuery = helpRequest.description.replaceAll("\n", "\\\\n")
 
         val query = """
                        insert into help_request(requester_id, title, description, creation_date, expiry_date)
@@ -181,7 +185,7 @@ object HelpRequestDto {
     DB.withConnection {
       implicit c =>
 
-        val descriptionForQuery = helpRequest.description.replaceAll("\n", "\\\\n");
+        val descriptionForQuery = helpRequest.description.replaceAll("\n", "\\\\n")
 
         val query = """
                        update help_request set

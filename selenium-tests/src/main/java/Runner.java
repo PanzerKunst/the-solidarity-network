@@ -28,20 +28,20 @@ public class Runner {
 
     public static void main(String[] args) throws IOException {
         testOnDesktop();
-        testOnMobile();
+        // TODO testOnMobile();
     }
 
     private static void testOnDesktop() throws IOException {
-        testInFirefox(new Dimension(820, 1024));
+        // TODO testInFirefox(new Dimension(820, 1024));
         testInChrome(new Dimension(820, 1024));
-        testInIE(new Dimension(820, 1024));
-        testInOpera();
+        /* TODO testInIE(new Dimension(820, 1024));
+        testInOpera(); */
     }
 
     private static void testOnMobile() throws IOException {
         testInFirefox(new Dimension(350, 1024));
-        testInChrome(new Dimension(350, 1024));
-        testInIE(new Dimension(350, 1024));
+        /* TODO testInChrome(new Dimension(350, 1024));
+        testInIE(new Dimension(350, 1024)); */
 
         // TODO No test in Opera, because of:
         // java.lang.UnsupportedOperationException: Not supported in OperaDriver yet
@@ -95,8 +95,8 @@ public class Runner {
                 "cbramditgmail.com",
                 "blackbird",
                 "tigrou",
-                "Stockholm",
-                "1");
+                "Barcelona",
+                "2");
 
         /**
          * Join
@@ -153,11 +153,16 @@ public class Runner {
                 "panzrkunst@yahoo.fr",
                 "db",
                 "tigrou",
-                "Stockholm",
-                "1");
+                "Barcelona",
+                "2");
 
         Join.properFormFill(driver, damien, false);
         Login.properFormFillUsername(driver, damien);
+
+        /**
+         * HelpDashboard
+         */
+        HelpDashboard.helpRequestsNearMe(driver, damien);
 
         /**
          * SearchHelpRequests

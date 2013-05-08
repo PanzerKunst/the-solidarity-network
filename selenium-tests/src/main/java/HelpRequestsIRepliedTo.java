@@ -28,7 +28,7 @@ public class HelpRequestsIRepliedTo extends TestBase {
         driver.findElement(By.cssSelector("a[href='/help-requests?repliedBy=" + user.getUsername() + "']"))
                 .click();
 
-        sleepBecauseSeleniumSucks();
+        sleep();
 
         String cssSelectorOfFirstDisplayedSearchResult = "li[data-id='1']";
 

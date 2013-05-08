@@ -3,8 +3,8 @@ USE thesolidaritynetwork;
 DROP TABLE message;
 DROP TABLE reference;
 DROP TABLE reference_rating;
-DROP TABLE subscription_to_help_responses;
-DROP TABLE help_response;
+DROP TABLE subscription_to_help_replies;
+DROP TABLE help_reply;
 DROP TABLE help_request;
 DROP TABLE USER;
 DROP TABLE country;
@@ -28,6 +28,8 @@ CREATE TABLE `user` (
   `country_id` INT(10) UNSIGNED NOT NULL,
   `description` TEXT DEFAULT NULL,
   `creation_date` DATETIME NOT NULL,
+  `is_subscribed_to_news` BOOLEAN DEFAULT TRUE,
+  `subscription_to_new_help_requests` VARCHAR(45) DEFAULT 'NONE', /* NONE, EACH_NEW_REQUEST, DAILY, WEEKLY */
   PRIMARY KEY (`id`,`username`,`email`) USING BTREE,
   CONSTRAINT `FK_country` FOREIGN KEY (`country_id`) REFERENCES `country` (`id`)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8;
@@ -43,18 +45,18 @@ CREATE TABLE `help_request`(
   CONSTRAINT `fk_requester` FOREIGN KEY (`requester_id`) REFERENCES `user`(`id`)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8;
 
-CREATE TABLE `help_response`(
+CREATE TABLE `help_reply`(
   `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `request_id` INT(10) UNSIGNED NOT NULL,
-  `responder_id` INT(10) UNSIGNED NOT NULL,
+  `replier_id` INT(10) UNSIGNED NOT NULL,
   `text` TEXT NOT NULL,
   `creation_date` DATETIME NOT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `fk_request` FOREIGN KEY (`request_id`) REFERENCES `help_request`(`id`),
-  CONSTRAINT `fk_responder` FOREIGN KEY (`responder_id`) REFERENCES `user`(`id`)
+  CONSTRAINT `fk_replier` FOREIGN KEY (`replier_id`) REFERENCES `user`(`id`)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8;
 
-CREATE TABLE `subscription_to_help_responses`(
+CREATE TABLE `subscription_to_help_replies`(
   `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `request_id` INT(10) UNSIGNED NOT NULL,
   `subscriber_id` INT(10) UNSIGNED NOT NULL,

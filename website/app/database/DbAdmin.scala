@@ -65,6 +65,8 @@ object DbAdmin {
           `country_id` int(10) unsigned NOT NULL,
           `description` text DEFAULT NULL,
           `creation_date` datetime NOT NULL,
+          `is_subscribed_to_news` BOOLEAN DEFAULT TRUE,
+          `subscription_to_new_help_requests` VARCHAR(45) DEFAULT 'NONE', /* NONE, EACH_NEW_REQUEST, DAILY, WEEKLY */
           PRIMARY KEY (`id`,`username`,`email`) USING BTREE,
           CONSTRAINT `FK_country` FOREIGN KEY (`country_id`) REFERENCES `country` (`id`)
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8;"""

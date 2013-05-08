@@ -46,5 +46,21 @@ CBR.Models.User = new Class({
 
     getCountryId: function() {
         return this.options.countryId;
+    },
+
+    getIsSubscribedToNews: function() {
+        return this.options.isSubscribedToNews;
+    },
+
+    setIsSubscribedToNews: function(isSubscribedToNews) {
+        this.options.isSubscribedToNews = isSubscribedToNews;
+    },
+
+    getSubscriptionToNewHelpRequests: function() {
+        return this.options.subscriptionToNewHelpRequests;
+    },
+
+    setSubscriptionToNewHelpRequests: function(subscriptionToNewHelpRequests) {
+        this.options.subscriptionToNewHelpRequests = subscriptionToNewHelpRequests;
     }
 });

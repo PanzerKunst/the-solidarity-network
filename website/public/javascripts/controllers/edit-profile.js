@@ -1,11 +1,16 @@
 CBR.Controllers.EditProfile = new Class({
-    Extends: CBR.Controllers.TemplateController,
+    Extends:CBR.Controllers.TemplateController,
 
-    initialize: function (options) {
+    HELP_REQUESTS_FREQUENCY_NONE:"NONE",
+    HELP_REQUESTS_FREQUENCY_EACH_NEW_REQUEST:"EACH_NEW_REQUEST",
+    HELP_REQUESTS_FREQUENCY_DAILY:"DAILY",
+    HELP_REQUESTS_FREQUENCY_WEEKLY:"WEEKLY",
+
+    initialize:function (options) {
         this.parent(options);
     },
 
-    run: function () {
+    run:function () {
         this.getEl().append(
             Mustache.render(
                 jQuery("#content-template").html(),
@@ -25,15 +30,15 @@ CBR.Controllers.EditProfile = new Class({
         this.$languageSelect.change(jQuery.proxy(this._changeLanguage, this));
     },
 
-    _getLanguageCode: function () {
+    _getLanguageCode:function () {
         return this.options.languageCode;
     },
 
-    _getUser: function () {
+    _getUser:function () {
         return this.options.user;
     },
 
-    initElements: function () {
+    initElements:function () {
         this.parent();
 
         this.$indicationParagraph = jQuery(".indication");
@@ -64,15 +69,24 @@ CBR.Controllers.EditProfile = new Class({
         this.$emailConfirmationField = jQuery("#email-confirmation");
         this.$passwordField = jQuery("#password");
 
+        this.$isSubscribedToNewHelpRequestsCheckbox = jQuery("#is-subscribed-to-new-help-requests");
+
+        this.$newHelpRequestsFrequencyRadios = jQuery("[name='new-help-requests-frequency']");
+        this.$eachNewRequestFrequencyRadio = this.$newHelpRequestsFrequencyRadios.filter("[value='" + this.HELP_REQUESTS_FREQUENCY_EACH_NEW_REQUEST + "']");
+        this.$dailyFrequencyRadio = this.$newHelpRequestsFrequencyRadios.filter("[value='" + this.HELP_REQUESTS_FREQUENCY_DAILY + "']");
+        this.$weeklyFrequencyRadio = this.$newHelpRequestsFrequencyRadios.filter("[value='" + this.HELP_REQUESTS_FREQUENCY_WEEKLY + "']");
+
+        this.$isSubscribedToNewsCheckbox = jQuery("#is-subscribed-to-news");
+
         this.$languageSelect = jQuery("#language");
 
         this.$emailAlreadyRegisteredParagraph = jQuery("#email-already-registered");
         this.$emailsDoNotMatchParagraph = jQuery("#emails-do-not-match");
     },
 
-    _initValidation: function () {
+    _initValidation:function () {
         this.validator = new CBR.Services.Validator({
-            fieldIds: [
+            fieldIds:[
                 "first-name",
                 "last-name",
                 "email",
@@ -88,7 +102,7 @@ CBR.Controllers.EditProfile = new Class({
         this.$emailConfirmationField.blur(jQuery.proxy(this._checkIfEmailConfirmationMatches, this));
     },
 
-    _fillForm: function () {
+    _fillForm:function () {
         this.$firstNameField.val(this._getUser().firstName);
         this.$lastNameField.val(this._getUser().lastName);
         this.$streetAddressField.val(this._getUser().streetAddress);
@@ -99,17 +113,34 @@ CBR.Controllers.EditProfile = new Class({
         this.$descriptionField.val(this._getUser().description);
 
         this.$emailField.val(this._getUser().email);
+
+        if (this._getUser().subscriptionToNewHelpRequests !== this.HELP_REQUESTS_FREQUENCY_NONE) {
+            this.$isSubscribedToNewHelpRequestsCheckbox.prop("checked", true);
+        }
+
+        switch (this._getUser().subscriptionToNewHelpRequests) {
+            case this.HELP_REQUESTS_FREQUENCY_EACH_NEW_REQUEST:
+                this.$eachNewRequestFrequencyRadio.prop("checked", true);
+                break;
+            case this.HELP_REQUESTS_FREQUENCY_DAILY:
+                this.$dailyFrequencyRadio.prop("checked", true);
+                break;
+            case this.HELP_REQUESTS_FREQUENCY_WEEKLY:
+                this.$weeklyFrequencyRadio.prop("checked", true);
+        }
+
+        this.$isSubscribedToNewsCheckbox.prop("checked", this._getUser().isSubscribedToNews);
     },
 
-    _initPictureUpload: function () {
+    _initPictureUpload:function () {
         var _this = this;
 
         var options = {
-            action: this.$changeProfilePic.data("action"),
-            name: 'image',
-            accept: "image/*",
-            autoSubmit: true,
-            onSubmit: function (file, extension) {
+            action:this.$changeProfilePic.data("action"),
+            name:'image',
+            accept:"image/*",
+            autoSubmit:true,
+            onSubmit:function (file, extension) {
                 _this.$wrongExtensionParagraph.slideUpCustom();
                 _this.$uploadFailedParagraph.slideUpCustom();
 
@@ -123,7 +154,7 @@ CBR.Controllers.EditProfile = new Class({
                     return false;
                 }
             },
-            onComplete: function (file, response) {
+            onComplete:function (file, response) {
                 if (file !== "")
                     _this.$profilePic.attr("src", "/files/profile-pic/" + _this._getUser().id + "?isTemp=true&time=" + new Date().getTime());
                 else
@@ -134,16 +165,19 @@ CBR.Controllers.EditProfile = new Class({
         var ajaxUpload = new qq.AjaxUpload(this.$changeProfilePic, options);
     },
 
-    _initEvents: function () {
+    _initEvents:function () {
         this.$showProfileInfo.click(jQuery.proxy(this._activateProfileInfoSection, this));
         this.$showAccountInfo.click(jQuery.proxy(this._activateAccountInfoSection, this));
 
         this.$emailField.keyup(jQuery.proxy(this._toggleEmailConfirmationField, this));
 
+        this.$isSubscribedToNewHelpRequestsCheckbox.change(jQuery.proxy(this._onSubscriptionToNewHelpRequestsChanged, this));
+        this.$newHelpRequestsFrequencyRadios.change(jQuery.proxy(this._onMailingFrequencyChanged, this));
+
         jQuery("form").submit(jQuery.proxy(this._doSave, this));
     },
 
-    _activateProfileInfoSection: function () {
+    _activateProfileInfoSection:function () {
         this.$indicationParagraph.hide();
 
         this.$tabLis.removeClass("active");
@@ -153,7 +187,7 @@ CBR.Controllers.EditProfile = new Class({
         this.$accountInfoSection.hide();
     },
 
-    _activateAccountInfoSection: function () {
+    _activateAccountInfoSection:function () {
         this.$indicationParagraph.hide();
 
         this.$tabLis.removeClass("active");
@@ -163,7 +197,7 @@ CBR.Controllers.EditProfile = new Class({
         this.$profileInfoSection.hide();
     },
 
-    _toggleEmailConfirmationField: function (e) {
+    _toggleEmailConfirmationField:function (e) {
         if (CBR.Services.Keyboard.isPressedKeyText(e)) {
             if (this.$emailField.val().toLowerCase() === this._getUser().email && this.$emailConfirmationWrapper.is(":visible"))
                 this.$emailConfirmationWrapper.slideUpCustom();
@@ -173,7 +207,21 @@ CBR.Controllers.EditProfile = new Class({
         }
     },
 
-    _doSave: function (e) {
+    _onSubscriptionToNewHelpRequestsChanged:function (e) {
+        if (this.$isSubscribedToNewHelpRequestsCheckbox.prop("checked")) {
+            this.$dailyFrequencyRadio.prop("checked", true);
+        } else {
+            this.$newHelpRequestsFrequencyRadios.prop("checked", false);
+        }
+    },
+
+    _onMailingFrequencyChanged:function (e) {
+        if (!this.$isSubscribedToNewHelpRequestsCheckbox.prop("checked")) {
+            this.$isSubscribedToNewHelpRequestsCheckbox.prop("checked", true);
+        }
+    },
+
+    _doSave:function (e) {
         e.preventDefault();
 
         var _this = this;
@@ -181,40 +229,53 @@ CBR.Controllers.EditProfile = new Class({
         if (this._isFormValid() &&
             this._isEmailNotYetRegisteredByAnotherUser() &&
             this._isEmailConfirmationMatching()) {
+
             var user = new CBR.Models.User({
-                firstName: this.$firstNameField.val(),
-                lastName: this.$lastNameField.val(),
-                streetAddress: jQuery("#street-address").val(),
-                postCode: jQuery("#post-code").val(),
-                city: jQuery("#city").val(),
-                countryId: jQuery('#country').val(),
-                description: jQuery('#description').val(),
-                email: this.$emailField.val().toLowerCase()
+                firstName:this.$firstNameField.val(),
+                lastName:this.$lastNameField.val(),
+                streetAddress:jQuery("#street-address").val(),
+                postCode:jQuery("#post-code").val(),
+                city:jQuery("#city").val(),
+                countryId:jQuery('#country').val(),
+                description:jQuery('#description').val(),
+                email:this.$emailField.val().toLowerCase()
             });
 
             var newPassword = this.$passwordField.val();
             if (newPassword !== "")
                 user.setPassword(newPassword);
 
+            var subscriptionToNewHelpRequests = this.HELP_REQUESTS_FREQUENCY_NONE;
+            if (this.$eachNewRequestFrequencyRadio.prop("checked")) {
+                subscriptionToNewHelpRequests = this.HELP_REQUESTS_FREQUENCY_EACH_NEW_REQUEST;
+            } else if (this.$dailyFrequencyRadio.prop("checked")) {
+                subscriptionToNewHelpRequests = this.HELP_REQUESTS_FREQUENCY_DAILY;
+            } else if (this.$weeklyFrequencyRadio.prop("checked")) {
+                subscriptionToNewHelpRequests = this.HELP_REQUESTS_FREQUENCY_WEEKLY;
+            }
+            user.setSubscriptionToNewHelpRequests(subscriptionToNewHelpRequests);
+
+            user.setIsSubscribedToNews(this.$isSubscribedToNewsCheckbox.prop("checked"));
+
             new Request({
-                urlEncoded: false,
-                emulation: false, // Otherwise PUT and DELETE requests are sent as POST
-                headers: { "Content-Type": "application/json" },
-                url: "/api/users",
-                data: CBR.JsonUtil.stringifyModel(user),
-                onSuccess: function (responseText, responseXML) {
+                urlEncoded:false,
+                emulation:false, // Otherwise PUT and DELETE requests are sent as POST
+                headers:{ "Content-Type":"application/json" },
+                url:"/api/users",
+                data:CBR.JsonUtil.stringifyModel(user),
+                onSuccess:function (responseText, responseXML) {
                     jQuery(window).scrollTop(0);
                     _this.$emailConfirmationWrapper.slideUpCustom();
                     _this.$indicationParagraph.slideDownCustom();
                 },
-                onFailure: function (xhr) {
+                onFailure:function (xhr) {
                     alert("AJAX fail :(");
                 }
             }).put();
         }
     },
 
-    _isFormValid: function () {
+    _isFormValid:function () {
         var isValid = this.validator.isValid();
 
         if (!isValid) {
@@ -232,30 +293,30 @@ CBR.Controllers.EditProfile = new Class({
         return isValid;
     },
 
-    _checkIfEmailIsNotYetRegisteredByAnotherUser: function () {
+    _checkIfEmailIsNotYetRegisteredByAnotherUser:function () {
         this.$emailAlreadyRegisteredParagraph.slideUpCustom();
 
         if (this.$emailField.val() !== "") {
             var _this = this;
 
             new Request({
-                urlEncoded: false,
-                headers: { "Content-Type": "application/json" },
-                url: "/api/users/first?email=" + this.$emailField.val().toLowerCase() + "&notId=" + this._getUser().id,
-                onSuccess: function (responseText, responseXML) {
+                urlEncoded:false,
+                headers:{ "Content-Type":"application/json" },
+                url:"/api/users/first?email=" + this.$emailField.val().toLowerCase() + "&notId=" + this._getUser().id,
+                onSuccess:function (responseText, responseXML) {
                     if (this.status !== _this.httpStatusCode.noContent && !_this.validator.isFlaggedInvalid(_this.$emailField)) {
                         _this.validator.flagInvalid(_this.$emailField);
                         _this.$emailAlreadyRegisteredParagraph.slideDownCustom();
                     }
                 },
-                onFailure: function (xhr) {
+                onFailure:function (xhr) {
                     alert("AJAX fail :(");
                 }
             }).get();
         }
     },
 
-    _checkIfEmailConfirmationMatches: function () {
+    _checkIfEmailConfirmationMatches:function () {
         this.$emailsDoNotMatchParagraph.slideUpCustom();
 
         var email = this.$emailField.val();
@@ -270,15 +331,15 @@ CBR.Controllers.EditProfile = new Class({
         }
     },
 
-    _isEmailNotYetRegisteredByAnotherUser: function () {
+    _isEmailNotYetRegisteredByAnotherUser:function () {
         if (this.$emailField.val() === "")
             return true;
 
         var xhr = new Request({
-            urlEncoded: false,
-            headers: { "Content-Type": "application/json" },
-            async: false,
-            url: "/api/users/first?email=" + this.$emailField.val().toLowerCase() + "&notId=" + this._getUser().id
+            urlEncoded:false,
+            headers:{ "Content-Type":"application/json" },
+            async:false,
+            url:"/api/users/first?email=" + this.$emailField.val().toLowerCase() + "&notId=" + this._getUser().id
         }).get();
 
         var isNotRegistered = xhr.status === this.httpStatusCode.noContent;
@@ -293,7 +354,7 @@ CBR.Controllers.EditProfile = new Class({
         return isNotRegistered;
     },
 
-    _isEmailConfirmationMatching: function () {
+    _isEmailConfirmationMatching:function () {
         var email = this.$emailField.val();
         var emailConfirmation = this.$emailConfirmationField.val();
 
@@ -309,7 +370,7 @@ CBR.Controllers.EditProfile = new Class({
         return isMatching;
     },
 
-    _changeLanguage: function (e) {
+    _changeLanguage:function (e) {
         e.preventDefault();
 
         var languageCode = e.currentTarget.value;

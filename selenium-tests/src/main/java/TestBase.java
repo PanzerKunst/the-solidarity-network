@@ -33,6 +33,10 @@ public class TestBase {
         });
     }
 
+    public static void sleep() {
+        sleepBecauseSeleniumSucks(500);
+    }
+
     public static void sleepBecauseSeleniumSucks() {
         sleepBecauseSeleniumSucks(500);
     }

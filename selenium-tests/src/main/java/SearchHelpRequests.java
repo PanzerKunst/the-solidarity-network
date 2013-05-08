@@ -11,26 +11,16 @@ public class SearchHelpRequests extends TestBase {
         if (!isAlreadyAtThatPage) {
             (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
                 public Boolean apply(WebDriver d) {
-                    return d.findElement(By.cssSelector(".action a[href='/help']")).isDisplayed();
+                    return d.findElement(By.cssSelector(".action > a[href='/help-requests']")).isDisplayed();
                 }
             });
+
+            driver.findElement(By.cssSelector(".action > a[href='/help-requests']"))
+                    .click();
 
             if (driver instanceof ChromeDriver) {
                 sleepBecauseSeleniumSucks();
             }
-
-            driver.findElement(By.cssSelector(".action a[href='/help']"))
-                    .click();
-
-            (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
-                public Boolean apply(WebDriver d) {
-                    return d.findElement(By.cssSelector(".action a[href='/help-requests']")).isDisplayed();
-                }
-            });
-            driver.findElement(By.cssSelector(".action a[href='/help-requests']"))
-                    .click();
-
-            sleepBecauseSeleniumSucks();
         }
 
         (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {

@@ -18,6 +18,8 @@ class FrontendUser {
     this.city = user.city.get
     this.country = CountryDto.get(Some(Map("id" -> user.countryId.get.toString))).head
     this.description = user.description
+    this.isSubscribedToNews = user.isSubscribedToNews
+    this.subscriptionToNewHelpRequests = user.subscriptionToNewHelpRequests
   }
 
   @JsonProperty
@@ -52,4 +54,10 @@ class FrontendUser {
 
   @JsonProperty
   var description: Option[String] = None
+
+  @JsonProperty
+  var isSubscribedToNews: Boolean = _
+
+  @JsonProperty
+  var subscriptionToNewHelpRequests: String = _
 }

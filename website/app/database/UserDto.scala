@@ -14,7 +14,7 @@ object UserDto {
       implicit c =>
 
         val query = """
-          select id, first_name, last_name, username, password, email, street_address, post_code, city, country_id, description
+          select id, first_name, last_name, username, password, email, street_address, post_code, city, country_id, description, is_subscribed_to_news, subscription_to_new_help_requests
           from user """ + DbUtil.generateWhereClause(filters) + ";"
 
         Logger.info("UserDto.get():" + query)
@@ -31,7 +31,9 @@ object UserDto {
             postCode = row[Option[String]]("post_code"),
             city = Some(row[String]("city")),
             countryId = Some(row[Long]("country_id")),
-            description = row[Option[String]]("description")
+            description = row[Option[String]]("description"),
+            isSubscribedToNews = row[Boolean]("is_subscribed_to_news"),
+            subscriptionToNewHelpRequests = row[String]("subscription_to_new_help_requests")
           )
         ).toList
     }
@@ -42,7 +44,7 @@ object UserDto {
       implicit c =>
 
         val query = """
-          select id, first_name, last_name, username, password, email, street_address, post_code, city, country_id, description
+          select id, first_name, last_name, username, password, email, street_address, post_code, city, country_id, description, is_subscribed_to_news, subscription_to_new_help_requests
           from user """ + DbUtil.generateWhereClause(filters) +
           """ and id <> """ + DbUtil.backslashQuotes(id) + ";"
 
@@ -60,7 +62,9 @@ object UserDto {
             postCode = row[Option[String]]("post_code"),
             city = Some(row[String]("city")),
             countryId = Some(row[Long]("country_id")),
-            description = row[Option[String]]("description")
+            description = row[Option[String]]("description"),
+            isSubscribedToNews = row[Boolean]("is_subscribed_to_news"),
+            subscriptionToNewHelpRequests = row[String]("subscription_to_new_help_requests")
           )
         ).toList
     }
@@ -123,7 +127,9 @@ object UserDto {
           country_id = """ + user.countryId.get + """,
           street_address = """ + streetAddressForQuery + """,
           post_code = """ + postCodeForQuery + """,
-          description = """ + descriptionForQuery + """
+          description = """ + descriptionForQuery + """,
+          is_subscribed_to_news = """ + user.isSubscribedToNews + """,
+          subscription_to_new_help_requests = """" + user.subscriptionToNewHelpRequests + """"
           where id = """ + user.id.get + """;"""
 
         Logger.info("UserDto.update():" + query)
@@ -137,7 +143,7 @@ object UserDto {
       implicit c =>
 
         val query = """
-            select id, first_name, last_name, username, password, email, street_address, post_code, city, country_id, description
+            select id, first_name, last_name, username, password, email, street_address, post_code, city, country_id, description, is_subscribed_to_news, subscription_to_new_help_requests
             from user
             where (first_name like "%""" + searchQuery + """%"
             or last_name like "%""" + searchQuery + """%"
@@ -159,7 +165,9 @@ object UserDto {
             postCode = row[Option[String]]("post_code"),
             city = Some(row[String]("city")),
             countryId = Some(row[Long]("country_id")),
-            description = row[Option[String]]("description")
+            description = row[Option[String]]("description"),
+            isSubscribedToNews = row[Boolean]("is_subscribed_to_news"),
+            subscriptionToNewHelpRequests = row[String]("subscription_to_new_help_requests")
           )
         ).toList
     }

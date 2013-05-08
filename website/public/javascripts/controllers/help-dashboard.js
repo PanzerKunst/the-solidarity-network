@@ -50,7 +50,7 @@ CBR.Controllers.HelpDashboard = new Class({
 
     _initSearchQuery: function () {
         // Space is separator between params
-        var queryFieldValue = "country=" + this._getUser().country.name + " city=" + this._getUser().city;
+        var queryFieldValue = "country=\"" + this._getUser().country.name + "\" city=\"" + this._getUser().city + "\"";
 
         this.$queryField.val(queryFieldValue);
         this._doSearch();
