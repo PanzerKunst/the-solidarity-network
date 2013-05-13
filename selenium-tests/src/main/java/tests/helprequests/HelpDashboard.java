@@ -1,9 +1,12 @@
+package tests.helprequests;
+
 import models.User;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import tests.TestBase;
 
 public class HelpDashboard extends TestBase {
     public static void helpRequestsNearMe(WebDriver driver, final User user) {
@@ -26,7 +29,7 @@ public class HelpDashboard extends TestBase {
             }
         });
 
-        sleep();
+        TestBase.sleep();
 
         String cssSelectorOfFirstDisplayedSearchResult = "li[data-id='1']";
 

@@ -43,11 +43,11 @@
                     </section>
 
                     {{#title}}
-                    <h3>{{title}}{{^title}}{{text}}{{/title}}</h3>
+                    <h3 class="selenium-property-displayed-title">{{title}}{{^title}}{{text}}{{/title}}</h3>
                     {{/title}}
 
                     {{^title}}
-                    <p>{{text}}</p>
+                    <p class="selenium-property-displayed-title">{{text}}</p>
                     {{/title}}
                 </div>
             </li>
@@ -68,7 +68,7 @@
 
                 <!-- Title -->
                 <td class="main-column">
-                    <p>{{title}}{{^title}}{{text}}{{/title}}</p>
+                    <p class="selenium-property-displayed-title">{{title}}{{^title}}{{text}}{{/title}}</p>
                 </td>
 
                 <!-- Created -->

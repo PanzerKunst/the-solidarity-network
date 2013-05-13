@@ -1,12 +1,14 @@
+package tests.profile;
+
 import models.User;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import tests.TestBase;
 
 public class EditProfile extends TestBase {
 
@@ -34,10 +36,7 @@ public class EditProfile extends TestBase {
         });
     }
 
-    public static void properFormFill(WebDriver driver, final User user) {
-        /**
-         * Profile tab
-         */
+    public static void properProfileTabEdit(WebDriver driver, final User user) {
         driver.findElement(By.id("show-profile-info"))
                 .click();
 
@@ -79,21 +78,34 @@ public class EditProfile extends TestBase {
 
         // On IE there is a problem with the country select2 component when navigating inputting the descriptin too fast
         if (driver instanceof InternetExplorerDriver) {
-            sleepBecauseSeleniumSucks();
+            TestBase.sleepBecauseSeleniumSucks();
         }
 
         driver.findElement(By.id("description"))
                 .sendKeys(user.getDescription());
 
-        sleepBecauseSeleniumSucks();
+        TestBase.sleepBecauseSeleniumSucks();
+
+        driver.findElement(By.tagName("form"))
+                .submit();
 
         /**
-         * Account tab
+         * Checking result
          */
+
+        // Wait for the page to load, check profile tab
+        (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
+            public Boolean apply(WebDriver d) {
+                return checkProfileValuesForUser(d, user);
+            }
+        });
+    }
+
+    public static void properAccountTabEdit(WebDriver driver, final User user) {
         driver.findElement(By.id("show-account-info"))
                 .click();
 
-        sleepBecauseSeleniumSucks();
+        TestBase.sleepBecauseSeleniumSucks();
 
         // Wait for the page to load
         (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
@@ -119,6 +131,16 @@ public class EditProfile extends TestBase {
         driver.findElement(By.id("email-confirmation"))
                 .sendKeys(user.getEmail());
 
+        sleepBecauseSeleniumSucks();
+
+        changeSubscriptionToNewHelpRequests(driver, user);
+
+        /**
+         * Subscription to news
+         */
+        driver.findElement(By.id("is-subscribed-to-news"))
+                .click();
+
         driver.findElement(By.tagName("form"))
                 .submit();
 
@@ -132,22 +154,10 @@ public class EditProfile extends TestBase {
                 WebElement indication = d.findElement(By.cssSelector(".indication"));
 
                 return indication.isDisplayed() &&
-                        indication.getAttribute("innerHTML")
-                                .indexOf("Saved!") > -1 &&
+                        indication.getText().contains("Saved!") &&
                         checkAccountValuesForUser(d, user);
             }
         });
-
-        driver.findElement(By.id("show-profile-info"))
-                .click();
-
-        // Wait for the page to load, check profile tab
-        (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
-            public Boolean apply(WebDriver d) {
-                return checkProfileValuesForUser(d, user);
-            }
-        });
-
     }
 
     private static boolean checkProfileValuesForUser(WebDriver driver, User user) {
@@ -160,6 +170,22 @@ public class EditProfile extends TestBase {
     }
 
     private static boolean checkAccountValuesForUser(WebDriver driver, User user) {
-        return driver.findElement(By.id("email")).getAttribute("value").equals(user.getEmail());
+        boolean isSubscribedToNewHelpRequestsInUI = driver.findElement(By.id("is-subscribed-to-new-help-requests")).getAttribute("checked") != null;
+        boolean isSubscribedToNewsInUI = driver.findElement(By.id("is-subscribed-to-news")).getAttribute("checked") != null;
+
+        return user.isSubscribedToNewHelpRequests() == isSubscribedToNewHelpRequestsInUI &&
+                (!user.isSubscribedToNewHelpRequests() || driver.findElement(By.cssSelector("input[value='" + user.getSubscriptionToNewHelpRequests() + "']")).getAttribute("checked") != null) &&
+                user.getSubscribedToNews() == isSubscribedToNewsInUI &&
+                driver.findElement(By.id("email")).getAttribute("value").equals(user.getEmail());
+    }
+
+    private static void changeSubscriptionToNewHelpRequests(WebDriver driver, User user) {
+        if (user.isSubscribedToNewHelpRequests()) {
+            driver.findElement(By.cssSelector("input[value='" + user.getSubscriptionToNewHelpRequests() + "']"))
+                    .click();
+        } else {
+            driver.findElement(By.id("is-subscribed-to-new-help-requests"))
+                    .click();
+        }
     }
 }

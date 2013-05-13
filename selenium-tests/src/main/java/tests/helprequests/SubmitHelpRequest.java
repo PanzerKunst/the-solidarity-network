@@ -1,12 +1,12 @@
+package tests.helprequests;
+
 import models.HelpRequest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.util.Calendar;
-import java.util.GregorianCalendar;
+import tests.TestBase;
 
 public class SubmitHelpRequest extends TestBase {
     public static void expiryDateMissing(WebDriver driver, HelpRequest helpRequest) {
@@ -17,7 +17,7 @@ public class SubmitHelpRequest extends TestBase {
         });
 
         if (driver instanceof ChromeDriver) {
-            sleepBecauseSeleniumSucks();
+            TestBase.sleepBecauseSeleniumSucks();
         }
 
         driver.findElement(By.cssSelector(".action a[href='/help']"))

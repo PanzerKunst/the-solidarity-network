@@ -1,3 +1,5 @@
+package tests.helprequests;
+
 import models.HelpRequest;
 import models.User;
 import org.openqa.selenium.By;
@@ -5,9 +7,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import tests.TestBase;
 
 public class SearchHelpRequests extends TestBase {
-    public static void noResult(WebDriver driver, boolean isAlreadyAtThatPage) {
+    public static void noResult(WebDriver driver) {
+        boolean isAlreadyAtThatPage = driver.findElement(By.tagName("body")).getAttribute("id").equals("search-help-requests");
+
         if (!isAlreadyAtThatPage) {
             (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
                 public Boolean apply(WebDriver d) {
@@ -19,7 +24,7 @@ public class SearchHelpRequests extends TestBase {
                     .click();
 
             if (driver instanceof ChromeDriver) {
-                sleepBecauseSeleniumSucks();
+                TestBase.sleepBecauseSeleniumSucks();
             }
         }
 
@@ -55,7 +60,7 @@ public class SearchHelpRequests extends TestBase {
         driver.findElement(By.id("search"))
                 .click();
 
-        sleepBecauseSeleniumSucks();
+        TestBase.sleepBecauseSeleniumSucks();
 
         String cssSelectorOfFirstDisplayedSearchResult = "li[data-id='1']";
 
@@ -77,7 +82,7 @@ public class SearchHelpRequests extends TestBase {
         driver.findElement(By.id("search"))
                 .click();
 
-        sleepBecauseSeleniumSucks();
+        TestBase.sleepBecauseSeleniumSucks();
 
         String cssSelectorOfFirstDisplayedSearchResult = "li[data-id='1']";
 
@@ -99,7 +104,7 @@ public class SearchHelpRequests extends TestBase {
         driver.findElement(By.id("search"))
                 .click();
 
-        sleepBecauseSeleniumSucks();
+        TestBase.sleepBecauseSeleniumSucks();
 
         String cssSelectorOfFirstDisplayedSearchResult = "li[data-id='1']";
 
@@ -121,7 +126,7 @@ public class SearchHelpRequests extends TestBase {
         driver.findElement(By.id("search"))
                 .click();
 
-        sleepBecauseSeleniumSucks();
+        TestBase.sleepBecauseSeleniumSucks();
 
         String cssSelectorOfFirstDisplayedSearchResult = "li[data-id='1']";
 
@@ -143,7 +148,7 @@ public class SearchHelpRequests extends TestBase {
         driver.findElement(By.id("search"))
                 .click();
 
-        sleepBecauseSeleniumSucks();
+        TestBase.sleepBecauseSeleniumSucks();
 
         String cssSelectorOfFirstDisplayedSearchResult = "li[data-id='1']";
 
@@ -165,7 +170,7 @@ public class SearchHelpRequests extends TestBase {
         driver.findElement(By.id("search"))
                 .click();
 
-        sleepBecauseSeleniumSucks();
+        TestBase.sleepBecauseSeleniumSucks();
 
         String cssSelectorOfFirstDisplayedSearchResult = "li[data-id='1']";
 
@@ -184,7 +189,7 @@ public class SearchHelpRequests extends TestBase {
         driver.findElement(By.id("search"))
                 .click();
 
-        sleepBecauseSeleniumSucks();
+        TestBase.sleepBecauseSeleniumSucks();
 
         String cssSelectorOfFirstDisplayedSearchResult = "li[data-id='1']";
 
@@ -192,7 +197,7 @@ public class SearchHelpRequests extends TestBase {
             cssSelectorOfFirstDisplayedSearchResult = "tr[data-id='1']";
         }
 
-        sleepBecauseSeleniumSucks(2000);
+        TestBase.sleepBecauseSeleniumSucks(2000);
 
         driver.findElement(By.cssSelector(cssSelectorOfFirstDisplayedSearchResult))
                 .click();

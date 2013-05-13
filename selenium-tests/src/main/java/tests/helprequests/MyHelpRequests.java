@@ -1,18 +1,20 @@
+package tests.helprequests;
+
 import models.User;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import tests.TestBase;
 
 public class MyHelpRequests extends TestBase {
     public static void checkPage(WebDriver driver, final User user) {
 
-        clickOnMobileMenuLinkIfRequired(driver);
+        TestBase.clickOnMobileMenuLinkIfRequired(driver);
 
         if (driver instanceof ChromeDriver) {
-            sleepBecauseSeleniumSucks();
+            TestBase.sleepBecauseSeleniumSucks();
         }
 
         driver.findElements(By.cssSelector("#header-nav > ul > li")).get(1)
@@ -29,7 +31,7 @@ public class MyHelpRequests extends TestBase {
         driver.findElement(By.cssSelector("a[href='/help-requests?username=" + user.getUsername() + "']"))
                 .click();
 
-        sleep();
+        TestBase.sleep();
 
         String cssSelectorOfFirstDisplayedSearchResult = "li[data-id='1']";
 

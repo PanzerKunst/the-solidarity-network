@@ -1,6 +1,11 @@
 package models;
 
 public class User {
+    public static final String NEW_HR_SUBSCRIPTION_FREQUENCY_NONE = "NONE";
+    public static final String NEW_HR_SUBSCRIPTION_FREQUENCY_EACH_NEW_REQUEST = "EACH_NEW_REQUEST";
+    public static final String NEW_HR_SUBSCRIPTION_FREQUENCY_DAILY = "DAILY";
+    public static final String NEW_HR_SUBSCRIPTION_FREQUENCY_WEEKLY = "WEEKLY";
+
     private String firstName;
     private String lastName;
     private String email;
@@ -11,6 +16,8 @@ public class User {
     private String streetAddress;
     private String postCode;
     private String description;
+    private Boolean isSubscribedToNews = true;
+    private String subscriptionToNewHelpRequests = NEW_HR_SUBSCRIPTION_FREQUENCY_WEEKLY;
 
     public User(String firstName,
                 String lastName,
@@ -107,5 +114,25 @@ public class User {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Boolean getSubscribedToNews() {
+        return isSubscribedToNews;
+    }
+
+    public void setSubscribedToNews(Boolean subscribedToNews) {
+        this.isSubscribedToNews = subscribedToNews;
+    }
+
+    public String getSubscriptionToNewHelpRequests() {
+        return subscriptionToNewHelpRequests;
+    }
+
+    public void setSubscriptionToNewHelpRequests(String subscriptionToNewHelpRequests) {
+        this.subscriptionToNewHelpRequests = subscriptionToNewHelpRequests;
+    }
+
+    public boolean isSubscribedToNewHelpRequests() {
+        return subscriptionToNewHelpRequests != NEW_HR_SUBSCRIPTION_FREQUENCY_NONE;
     }
 }

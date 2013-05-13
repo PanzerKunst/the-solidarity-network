@@ -1,4 +1,6 @@
 import com.opera.core.systems.OperaDriver;
+import models.Message;
+import tests.helprequests.*;
 import models.HelpRequest;
 import models.User;
 import org.apache.http.client.methods.HttpDelete;
@@ -13,6 +15,11 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import tests.messages.MsgInbox;
+import tests.messages.SentMessages;
+import tests.messages.WriteMessage;
+import tests.profile.EditProfile;
+import tests.profile.MyProfile;
 
 import java.io.File;
 import java.io.IOException;
@@ -22,26 +29,26 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class Runner {
-    public static final String URL_ROOT = "http://localhost:9000/";
+    public static final String URL_ROOT = "http://192.168.0.4:9000/";
     public static final DateFormat yyyymmdd = new SimpleDateFormat("yyyy-MM-dd");
     private static final DefaultHttpClient httpClient = new DefaultHttpClient();
 
     public static void main(String[] args) throws IOException {
         testOnDesktop();
-        // TODO testOnMobile();
+        testOnMobile();
     }
 
     private static void testOnDesktop() throws IOException {
-        // TODO testInFirefox(new Dimension(820, 1024));
+        testInFirefox(new Dimension(820, 1024));
         testInChrome(new Dimension(820, 1024));
-        /* TODO testInIE(new Dimension(820, 1024));
-        testInOpera(); */
+        testInIE(new Dimension(820, 1024));
+        testInOpera();
     }
 
     private static void testOnMobile() throws IOException {
         testInFirefox(new Dimension(350, 1024));
-        /* TODO testInChrome(new Dimension(350, 1024));
-        testInIE(new Dimension(350, 1024)); */
+        testInChrome(new Dimension(350, 1024));
+        testInIE(new Dimension(350, 1024));
 
         // TODO No test in Opera, because of:
         // java.lang.UnsupportedOperationException: Not supported in OperaDriver yet
@@ -103,7 +110,7 @@ public class Runner {
          */
         Join.incorrectEmail(driver, chris);
         chris.setEmail("cbramdit@gmail.com");
-        Join.properFormFill(driver, chris, true);
+        Join.properFormFill(driver, chris);
 
         /**
          * Login
@@ -156,7 +163,7 @@ public class Runner {
                 "Barcelona",
                 "2");
 
-        Join.properFormFill(driver, damien, false);
+        Join.properFormFill(driver, damien);
         Login.properFormFillUsername(driver, damien);
 
         /**
@@ -167,19 +174,19 @@ public class Runner {
         /**
          * SearchHelpRequests
          */
-        SearchHelpRequests.noResult(driver, false);
+        SearchHelpRequests.noResult(driver);
         SearchHelpRequests.generic(driver, helpRequest);
-        SearchHelpRequests.noResult(driver, true);
+        SearchHelpRequests.noResult(driver);
         SearchHelpRequests.advancedCity(driver, chris);
-        SearchHelpRequests.noResult(driver, true);
+        SearchHelpRequests.noResult(driver);
         SearchHelpRequests.advancedTitle(driver, helpRequest);
-        SearchHelpRequests.noResult(driver, true);
+        SearchHelpRequests.noResult(driver);
         SearchHelpRequests.advancedDesc(driver, helpRequest);
-        SearchHelpRequests.noResult(driver, true);
+        SearchHelpRequests.noResult(driver);
         SearchHelpRequests.advancedFirstName(driver, chris);
-        SearchHelpRequests.noResult(driver, true);
+        SearchHelpRequests.noResult(driver);
         SearchHelpRequests.advancedUsername(driver, chris);
-        SearchHelpRequests.noResult(driver, true);
+        SearchHelpRequests.noResult(driver);
         SearchHelpRequests.emptyQueryAndClickOnFirstResult(driver);
 
         /**
@@ -198,6 +205,16 @@ public class Runner {
         WriteReference.properFormFill(driver, chris, damien);
 
         /**
+         * Write message from profile page
+         */
+        Message msg = new Message("Msg title",
+                "HR desc Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\nExcepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                damien,
+                chris);
+
+        WriteMessage.writeMessageFromProfilePage(driver, msg);
+
+        /**
          * MyProfile
          */
         MyProfile.checkPage(driver, damien);
@@ -211,17 +228,39 @@ public class Runner {
         User updatedDamien = new User("Dämish",
                 "Bram dit Saint-Amand",
                 "jahugan@gmx.de",
-                "damish",
+                "db",
                 "tigrou",
                 "Strasbourg",
                 "1");
         updatedDamien.setStreetAddress("Heleneborgsgatan 6C");
         updatedDamien.setPostCode("11732");
         updatedDamien.setDescription("Bref, un mec normal");
+        updatedDamien.setSubscriptionToNewHelpRequests(User.NEW_HR_SUBSCRIPTION_FREQUENCY_NONE);
+        updatedDamien.setSubscribedToNews(false);
 
-        EditProfile.properFormFill(driver, updatedDamien);
+        EditProfile.properProfileTabEdit(driver, updatedDamien);
+        EditProfile.properAccountTabEdit(driver, updatedDamien);
+
+        /**
+         * Messages
+         */
+        MsgInbox.checkNoMessage(driver);
+
+        WriteMessage.missingRecipient(driver, msg);
+        WriteMessage.missingMessage(driver, msg);
+        WriteMessage.properFormFill(driver, msg);
+
+        SentMessages.checkMessage(driver, msg);
 
         Login.logout(driver);
+
+        Login.properFormFillUsername(driver, chris);
+
+        SentMessages.checkNoMessage(driver);
+
+        // We need to update the sender of the message otherwise the test below will fail
+        msg.setFrom(updatedDamien);
+        MsgInbox.checkMessage(driver, msg);
 
         // Close the browser
         driver.quit();

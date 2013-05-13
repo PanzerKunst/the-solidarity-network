@@ -1,3 +1,5 @@
+package tests.profile;
+
 import models.User;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -5,15 +7,16 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import tests.TestBase;
 
 public class MyProfile extends TestBase {
 
     public static void checkPage(WebDriver driver, final User user) {
 
-        clickOnMobileMenuLinkIfRequired(driver);
+        TestBase.clickOnMobileMenuLinkIfRequired(driver);
 
         if (driver instanceof ChromeDriver) {
-            sleepBecauseSeleniumSucks();
+            TestBase.sleepBecauseSeleniumSucks();
         }
 
         driver.findElement(By.cssSelector("a[href='/home']"))
@@ -35,10 +38,10 @@ public class MyProfile extends TestBase {
                 WebElement h1 = d.findElement(By.tagName("h1"));
                 WebElement textualInfo = d.findElement(By.cssSelector("#textual-info"));
 
-                return h1.getAttribute("innerHTML").indexOf(user.getFirstName()) > -1 &&
-                        h1.getAttribute("innerHTML").indexOf(user.getLastName()) > -1 &&
-                        h1.getAttribute("innerHTML").indexOf(user.getUsername()) > -1 &&
-                        textualInfo.getAttribute("innerHTML").indexOf(user.getCity()) > -1;
+                return h1.getAttribute("innerHTML").contains(user.getFirstName()) &&
+                        h1.getAttribute("innerHTML").contains(user.getLastName()) &&
+                        h1.getAttribute("innerHTML").contains(user.getUsername()) &&
+                        textualInfo.getAttribute("innerHTML").contains(user.getCity());
             }
         });
     }

@@ -5,6 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import tests.TestBase;
 
 public class Join extends TestBase {
     public static void incorrectEmail(WebDriver driver, final User user) {
@@ -58,7 +59,9 @@ public class Join extends TestBase {
         });
     }
 
-    public static void properFormFill(WebDriver driver, final User user, boolean isAlreadyAtThatPage) {
+    public static void properFormFill(WebDriver driver, final User user) {
+        boolean isAlreadyAtThatPage = driver.findElement(By.tagName("body")).getAttribute("id").equals("join");
+
         if (!isAlreadyAtThatPage) {
             if (driver instanceof ChromeDriver) {
                 sleepBecauseSeleniumSucks();

@@ -1,3 +1,6 @@
+package tests;
+
+import models.Message;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,7 +18,7 @@ public class TestBase {
         });
 
         WebElement menuAnchor = driver.findElement(By.cssSelector("#header-nav > span > button"));
-        if (menuAnchor.getAttribute("innerHTML").indexOf("Menu") > -1 &&  // Mobile browser
+        if (menuAnchor.getText().contains("Menu") &&  // Mobile browser
                 !driver.findElement(By.cssSelector("#header-nav > ul")).isDisplayed()) {
 
             if (driver instanceof InternetExplorerDriver) {
@@ -44,9 +47,13 @@ public class TestBase {
     public static void sleepBecauseSeleniumSucks(long millis) {
         try {
             Thread.sleep(millis);
-        }
-        catch (InterruptedException e) {
+        } catch (InterruptedException e) {
             // Nothing
         }
+    }
+
+    public static boolean isDisplayedTitleCorrect(WebElement element, Message msg) {
+        String elementExpectedText = msg.getTitle() != null ? msg.getTitle() : msg.getText().substring(0, 15);
+        return element.getAttribute("innerHTML").contains(elementExpectedText);
     }
 }
