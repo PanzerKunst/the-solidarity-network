@@ -1,7 +1,6 @@
 import com.opera.core.systems.OperaDriver;
-import models.Message;
-import tests.helprequests.*;
 import models.HelpRequest;
+import models.Message;
 import models.User;
 import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpPost;
@@ -15,8 +14,10 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import tests.helprequests.*;
 import tests.messages.MsgInbox;
 import tests.messages.SentMessages;
+import tests.messages.ViewMessage;
 import tests.messages.WriteMessage;
 import tests.profile.EditProfile;
 import tests.profile.MyProfile;
@@ -213,6 +214,7 @@ public class Runner {
                 chris);
 
         WriteMessage.writeMessageFromProfilePage(driver, msg);
+        int unreadMessagesCountForChris = 1;
 
         /**
          * MyProfile
@@ -249,6 +251,7 @@ public class Runner {
         WriteMessage.missingRecipient(driver, msg);
         WriteMessage.missingMessage(driver, msg);
         WriteMessage.properFormFill(driver, msg);
+        unreadMessagesCountForChris++;
 
         SentMessages.checkMessage(driver, msg);
 
@@ -256,11 +259,41 @@ public class Runner {
 
         Login.properFormFillUsername(driver, chris);
 
+        /**
+         * More messages tests
+         */
+        MsgInbox.checkUnreadMessages(driver, unreadMessagesCountForChris);
+
         SentMessages.checkNoMessage(driver);
 
         // We need to update the sender of the message otherwise the test below will fail
         msg.setFrom(updatedDamien);
-        MsgInbox.checkMessage(driver, msg);
+        MsgInbox.checkMessageInList(driver, msg);
+
+        ViewMessage.check(driver, msg);
+        unreadMessagesCountForChris--;
+
+        ViewMessage.submitEmptyReply(driver);
+
+        Message reply = new Message("Re: " + msg.getTitle(),
+                "Reply text",
+                chris,
+                damien);
+
+        ViewMessage.writeReply(driver, reply);
+        int unreadMessagesCountForDamien = 1;
+
+        MsgInbox.checkMessageInList(driver, msg);   // Just to reload the page, so that unreadMessagesCount is updated
+        MsgInbox.checkUnreadMessages(driver, unreadMessagesCountForChris);
+
+        // Logging back to "damien" to check the presence of the message reply
+        Login.logout(driver);
+        Login.properFormFillUsername(driver, damien);
+
+        MsgInbox.checkUnreadMessages(driver, unreadMessagesCountForDamien);
+        MsgInbox.checkMessageInList(driver, reply);
+
+        ViewMessage.checkReply(driver, msg, reply);
 
         // Close the browser
         driver.quit();

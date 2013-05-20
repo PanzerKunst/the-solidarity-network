@@ -1,9 +1,9 @@
-@(user: models.frontend.FrontendUser, messages: List[models.frontend.FrontendMessage])
+@(user: models.frontend.FrontendUser, unreadMessagesCount: Int, messages: List[models.frontend.FrontendMessage])
 @main("Sent messages", "sent-messages") {
 <!--
     Header
 -->
-@nav(Some(user), Some("Sent messages"))
+@nav(Some(user), Some("Sent messages"), unreadMessagesCount)
 
 } {
 <!--

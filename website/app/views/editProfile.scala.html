@@ -1,9 +1,9 @@
-@(countries: List[models.Country], user: models.frontend.FrontendUser)
+@(user: models.frontend.FrontendUser, unreadMessagesCount: Int, countries: List[models.Country])
 @main("Edit profile and account", "edit-profile") {
 <!--
     Header
 -->
-@nav(Some(user), Some("Edit profile and account"))
+@nav(Some(user), Some("Edit profile and account"), unreadMessagesCount)
 
 } {
 <!--

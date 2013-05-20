@@ -1,9 +1,9 @@
-@(user: models.frontend.FrontendUser)
+@(user: models.frontend.FrontendUser, unreadMessagesCount: Int)
 @main("Solidarity Network", "home") {
 <!--
     Header
 -->
-@nav(Some(user), Some("Welcome back, " + user.firstName + "!"))
+@nav(Some(user), Some("Welcome back, " + user.firstName + "!"), unreadMessagesCount)
 
 } {
 <!--

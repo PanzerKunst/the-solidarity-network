@@ -1,9 +1,9 @@
-@(user: models.frontend.FrontendUser, helpRequest: models.frontend.FrontendHelpRequest)
+@(user: models.frontend.FrontendUser, unreadMessagesCount: Int, helpRequest: models.frontend.FrontendHelpRequest)
 @main("Edit a help request", "edit-help-request") {
 <!--
     Header
 -->
-@nav(Some(user), Some("Edit a help request"))
+@nav(Some(user), Some("Edit a help request"), unreadMessagesCount)
 
 } {
 <!--

@@ -34,5 +34,9 @@ CBR.Models.Message = new Class({
 
     getReplyToMessageId: function () {
         return this.options.replyToMessageId;
+    },
+
+    getIsRead: function () {
+        return this.options.isRead;
     }
 });

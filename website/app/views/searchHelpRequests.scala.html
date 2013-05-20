@@ -1,9 +1,9 @@
-@(user: models.frontend.FrontendUser, query: Map[String, String])
+@(user: models.frontend.FrontendUser, unreadMessagesCount: Int, query: Map[String, String])
 @main("Search help requests", "search-help-requests") {
 <!--
     Header
 -->
-@nav(Some(user), Some("Search help requests"))
+@nav(Some(user), Some("Search help requests"), unreadMessagesCount)
 
 } {
 <!--

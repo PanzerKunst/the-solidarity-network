@@ -1,9 +1,9 @@
-@(loggedInUser: models.frontend.FrontendUser, helpRequest: models.frontend.FrontendHelpRequest, isSubscribedToReplies: java.lang.Boolean, helpReplies: List[models.frontend.FrontendHelpReply])
+@(loggedInUser: models.frontend.FrontendUser, unreadMessagesCount: Int, helpRequest: models.frontend.FrontendHelpRequest, isSubscribedToReplies: java.lang.Boolean, helpReplies: List[models.frontend.FrontendHelpReply])
 @main(helpRequest.title, "view-help-request") {
 <!--
     Header
 -->
-@nav(Some(loggedInUser), Some(helpRequest.title))
+@nav(Some(loggedInUser), Some(helpRequest.title), unreadMessagesCount)
 
 } {
 <!--

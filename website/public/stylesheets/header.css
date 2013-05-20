@@ -48,6 +48,8 @@ header {
           position: relative; }
           #header-nav > ul > li > ul {
             position: absolute; } }
+  #header-nav .emphasis {
+    font-weight: bold; }
 
 .sub-nav {
   display: none; }

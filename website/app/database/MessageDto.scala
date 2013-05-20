@@ -16,7 +16,7 @@ object MessageDto {
         val orderForQuery = if (orderIsDesc) "desc" else ""
 
         val query = """
-          select id, from_user_id, to_user_id, title, text, creation_date, reply_to_message_id
+          select id, from_user_id, to_user_id, title, text, creation_date, reply_to_message_id, is_read
           from message """ + DbUtil.generateWhereClause(Some(filters)) + """
           order by creation_date """ + orderForQuery + """;"""
 
@@ -30,7 +30,8 @@ object MessageDto {
             title = row[Option[String]]("title"),
             text = row[String]("text"),
             creationDatetime = Some(row[Date]("creation_date")),
-            replyToMessageId = row[Option[Long]]("reply_to_message_id")
+            replyToMessageId = row[Option[Long]]("reply_to_message_id"),
+            isRead = row[Boolean]("is_read")
           )
         ).toList
     }
@@ -58,6 +59,19 @@ object MessageDto {
         Logger.info("MessageDto.create(): " + query)
 
         SQL(query).executeInsert()
+    }
+  }
+
+  def markAsRead(message: Message) {
+    DB.withConnection {
+      implicit c =>
+
+        val query = """
+            update message
+            set is_read = true
+            where id = """ + message.id.get
+
+        SQL(query).executeUpdate()
     }
   }
 }

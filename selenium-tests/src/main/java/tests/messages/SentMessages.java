@@ -57,13 +57,13 @@ public class SentMessages extends TestBase {
         // Wait for the page to load
         (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
-                String cssSelectorOfFirstDisplayedSearchResult = "li[data-id='1']";
+                String cssSelectorOfFirstDisplayedListItem = "li[data-id]";
 
                 if (d.findElement(By.id("desktop-list")).isDisplayed()) {
-                    cssSelectorOfFirstDisplayedSearchResult = "tr[data-id='1']";
+                    cssSelectorOfFirstDisplayedListItem = "tr[data-id]";
                 }
 
-                return d.findElement(By.cssSelector(cssSelectorOfFirstDisplayedSearchResult)).isDisplayed() &&
+                return d.findElement(By.cssSelector(cssSelectorOfFirstDisplayedListItem)).isDisplayed() &&
                         d.findElement(By.cssSelector("#list-container .username")).getAttribute("innerHTML").equals(msg.getTo().getUsername()) &&
                         d.findElement(By.cssSelector("#list-container .first-name")).getAttribute("innerHTML").equals(msg.getTo().getFirstName()) &&
                         d.findElement(By.cssSelector("#list-container .last-name")).getAttribute("innerHTML").equals(msg.getTo().getLastName()) &&

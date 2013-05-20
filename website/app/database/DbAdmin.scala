@@ -6,34 +6,34 @@ import play.api.Play.current
 import models.User
 
 object DbAdmin {
-  def createTables {
-    createTableCountry
-    createTableUser
-    createTableHelpRequest
-    createTableHelpReply
-    createTableSubscriptionToHelpReplies
-    createTableReferenceRating
-    createTableReference
-    createTableMessage
+  def createTables() {
+    createTableCountry()
+    createTableUser()
+    createTableHelpRequest()
+    createTableHelpReply()
+    createTableSubscriptionToHelpReplies()
+    createTableReferenceRating()
+    createTableReference()
+    createTableMessage()
   }
 
-  def dropTables {
-    dropTableMessage
-    dropTableReference
-    dropTableReferenceRating
-    dropTableSubscriptionToHelpReplies
-    dropTableHelpReply
-    dropTableHelpRequest
-    dropTableUser
-    dropTableCountry
+  def dropTables() {
+    dropTableMessage()
+    dropTableReference()
+    dropTableReferenceRating()
+    dropTableSubscriptionToHelpReplies()
+    dropTableHelpReply()
+    dropTableHelpRequest()
+    dropTableUser()
+    dropTableCountry()
   }
 
-  def initData {
-    initDataCountry
-    initDataReferenceRating
+  def initData() {
+    initDataCountry()
+    initDataReferenceRating()
   }
 
-  private def createTableCountry {
+  private def createTableCountry() {
     DB.withConnection {
       implicit c =>
 
@@ -48,7 +48,7 @@ object DbAdmin {
     }
   }
 
-  private def createTableUser {
+  private def createTableUser() {
     DB.withConnection {
       implicit c =>
 
@@ -76,7 +76,7 @@ object DbAdmin {
     }
   }
 
-  private def createTableHelpRequest {
+  private def createTableHelpRequest() {
     DB.withConnection {
       implicit c =>
 
@@ -96,7 +96,7 @@ object DbAdmin {
     }
   }
 
-  private def createTableHelpReply {
+  private def createTableHelpReply() {
     DB.withConnection {
       implicit c =>
 
@@ -116,7 +116,7 @@ object DbAdmin {
     }
   }
 
-  private def createTableSubscriptionToHelpReplies {
+  private def createTableSubscriptionToHelpReplies() {
     DB.withConnection {
       implicit c =>
 
@@ -134,7 +134,7 @@ object DbAdmin {
     }
   }
 
-  private def createTableReferenceRating {
+  private def createTableReferenceRating() {
     DB.withConnection {
       implicit c =>
 
@@ -149,7 +149,7 @@ object DbAdmin {
     }
   }
 
-  private def createTableReference {
+  private def createTableReference() {
     DB.withConnection {
       implicit c =>
 
@@ -172,7 +172,7 @@ object DbAdmin {
     }
   }
 
-  private def createTableMessage {
+  private def createTableMessage() {
     DB.withConnection {
       implicit c =>
 
@@ -185,6 +185,7 @@ object DbAdmin {
             `text` text NOT NULL,
             `creation_date` datetime NOT NULL,
             `reply_to_message_id` int(10) unsigned DEFAULT NULL,
+            `is_read` BOOLEAN DEFAULT FALSE,
             primary key (`id`),
             constraint `fk_from_user1` foreign key (`from_user_id`) references `user`(`id`),
             constraint `fk_to_user1` foreign key (`to_user_id`) references `user`(`id`)
@@ -194,63 +195,63 @@ object DbAdmin {
     }
   }
 
-  private def dropTableMessage {
+  private def dropTableMessage() {
     DB.withConnection {
       implicit c =>
         SQL("drop table if exists message;").executeUpdate()
     }
   }
 
-  private def dropTableReference {
+  private def dropTableReference() {
     DB.withConnection {
       implicit c =>
         SQL("drop table if exists reference;").executeUpdate()
     }
   }
 
-  private def dropTableReferenceRating {
+  private def dropTableReferenceRating() {
     DB.withConnection {
       implicit c =>
         SQL("drop table if exists reference_rating;").executeUpdate()
     }
   }
 
-  private def dropTableSubscriptionToHelpReplies {
+  private def dropTableSubscriptionToHelpReplies() {
     DB.withConnection {
       implicit c =>
         SQL("drop table if exists subscription_to_help_replies;").executeUpdate()
     }
   }
 
-  private def dropTableHelpReply {
+  private def dropTableHelpReply() {
     DB.withConnection {
       implicit c =>
         SQL("drop table if exists help_reply;").executeUpdate()
     }
   }
 
-  private def dropTableHelpRequest {
+  private def dropTableHelpRequest() {
     DB.withConnection {
       implicit c =>
         SQL("drop table if exists help_request;").executeUpdate()
     }
   }
 
-  private def dropTableUser {
+  private def dropTableUser() {
     DB.withConnection {
       implicit c =>
         SQL("drop table if exists user;").executeUpdate()
     }
   }
 
-  private def dropTableCountry {
+  private def dropTableCountry() {
     DB.withConnection {
       implicit c =>
         SQL("drop table if exists country;").executeUpdate()
     }
   }
 
-  private def initDataCountry {
+  private def initDataCountry() {
     DB.withConnection {
       implicit c =>
         SQL("insert into country(name) values(\"Greece\");").execute()
@@ -259,7 +260,7 @@ object DbAdmin {
     }
   }
 
-  private def initDataReferenceRating {
+  private def initDataReferenceRating() {
     DB.withConnection {
       implicit c =>
         SQL("insert into reference_rating(label) values(\"Negative\");").execute()

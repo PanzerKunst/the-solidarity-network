@@ -8,4 +8,5 @@ case class Message(id: Option[Long] = None,
                    title: Option[String],
                    text: String,
                    creationDatetime: Option[Date],
-                   replyToMessageId: Option[Long])
+                   replyToMessageId: Option[Long],
+                   isRead: Boolean)

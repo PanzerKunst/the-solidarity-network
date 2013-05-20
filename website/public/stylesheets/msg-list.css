@@ -19,3 +19,6 @@
   #msg-inbox #content #mobile-list .date,
   #sent-messages #content #mobile-list .date {
     text-align: right; }
+  #msg-inbox #content .unread,
+  #sent-messages #content .unread {
+    font-weight: bold; }

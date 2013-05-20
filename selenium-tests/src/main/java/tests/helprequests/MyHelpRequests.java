@@ -33,13 +33,13 @@ public class MyHelpRequests extends TestBase {
 
         TestBase.sleep();
 
-        String cssSelectorOfFirstDisplayedSearchResult = "li[data-id='1']";
+        String cssSelectorOfFirstDisplayedListItem = "li[data-id]";
 
         if (driver.findElement(By.id("desktop-list")).isDisplayed()) {
-            cssSelectorOfFirstDisplayedSearchResult = "tr[data-id='1']";
+            cssSelectorOfFirstDisplayedListItem = "tr[data-id]";
         }
 
-        driver.findElement(By.cssSelector(cssSelectorOfFirstDisplayedSearchResult))
+        driver.findElement(By.cssSelector(cssSelectorOfFirstDisplayedListItem))
                 .isDisplayed();
     }
 }

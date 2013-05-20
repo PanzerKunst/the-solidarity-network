@@ -93,6 +93,7 @@ CREATE TABLE `message` (
   `text` TEXT NOT NULL,
   `creation_date` DATETIME NOT NULL,
   `reply_to_message_id` INT(10) UNSIGNED DEFAULT NULL,
+  `is_read` BOOLEAN DEFAULT FALSE,
   PRIMARY KEY (`id`),
   CONSTRAINT `fk_from_user1` FOREIGN KEY (`from_user_id`) REFERENCES `user`(`id`),
   CONSTRAINT `fk_to_user1` FOREIGN KEY (`to_user_id`) REFERENCES `user`(`id`)

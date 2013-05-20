@@ -1,9 +1,9 @@
-@(user: models.frontend.FrontendUser, messages: List[models.frontend.FrontendMessage], from: Option[String])
+@(user: models.frontend.FrontendUser, unreadMessagesCount: Int, messages: List[models.frontend.FrontendMessage], from: Option[String])
 @main("Inbox", "msg-inbox") {
 <!--
     Header
 -->
-@nav(Some(user), Some("Inbox"))
+@nav(Some(user), Some("Inbox"), unreadMessagesCount)
 
 } {
 <!--
@@ -42,7 +42,7 @@
     <section id="list-container">
         <ul id="mobile-list">
             {{#messages}}
-            <li class="clickable" data-id="{{id}}">
+            <li class="clickable {{^isRead}}unread{{/isRead}}" data-id="{{id}}">
                 <div>
                     <img class="profile-pic-thumb" src="/files/profile-pic/{{fromUser.id}}" />
 
@@ -73,7 +73,7 @@
 
         <table id="desktop-list">
             {{#messages}}
-            <tr class="clickable" data-id="{{id}}">
+            <tr class="clickable {{^isRead}}unread{{/isRead}}" data-id="{{id}}">
                 <!-- By -->
                 <td>
                     <img class="profile-pic-thumb" src="/files/profile-pic/{{fromUser.id}}" />

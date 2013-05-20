@@ -1,9 +1,9 @@
-@(frontendUser: models.frontend.FrontendUser, from: Option[String])
+@(frontendUser: models.frontend.FrontendUser, unreadMessagesCount: Int, from: Option[String])
 @main("Help dashboard", "help-dashboard") {
 <!--
     Header
 -->
-@nav(Some(frontendUser), Some("Help dashboard"))
+@nav(Some(frontendUser), Some("Help dashboard"), unreadMessagesCount)
 
 } {
 <!--

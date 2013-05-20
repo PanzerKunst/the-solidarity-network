@@ -1,9 +1,9 @@
-@(user: models.frontend.FrontendUser, message: models.frontend.FrontendMessage, replies: List[models.frontend.FrontendMessage])
+@(user: models.frontend.FrontendUser, unreadMessagesCount: Int, message: models.frontend.FrontendMessage, replies: List[models.frontend.FrontendMessage])
 @main(message.title.getOrElse(null), "view-message") {
 <!--
     Header
 -->
-@nav(Some(user), Some(message.title.getOrElse(null)))
+@nav(Some(user), Some(message.title.getOrElse(null)), unreadMessagesCount)
 
 } {
 <!--
@@ -24,7 +24,7 @@
 
             <p>{{message.creationDatetime}}</p>
 
-            <p>{{{message.text}}}</p>
+            <p class="msg-text">{{{message.text}}}</p>
         </article>
 
         {{#replies}}
@@ -35,7 +35,7 @@
 
             <p>{{creationDatetime}}</p>
 
-            <p>{{{text}}}</p>
+            <p class="msg-text">{{{text}}}</p>
         </article>
         {{/replies}}
     </section>
@@ -46,7 +46,7 @@
             <label for="text">Reply <span>*</span></label><!--
          --><textarea id="text"></textarea>
 
-            <p class="field-error" data-check="empty">;)</p>
+            <p class="field-error" data-check="empty" id="error-msg-empty-text">;)</p>
         </div>
 
         <div id="submit-wrapper">

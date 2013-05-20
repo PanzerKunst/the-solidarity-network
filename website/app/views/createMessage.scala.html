@@ -1,9 +1,9 @@
-@(user: models.frontend.FrontendUser, recipient: Option[String])
+@(user: models.frontend.FrontendUser, unreadMessagesCount: Int, recipient: Option[String])
 @main("Write a message", "create-message") {
 <!--
     Header
 -->
-@nav(Some(user), Some("Write a message"))
+@nav(Some(user), Some("Write a message"), unreadMessagesCount)
 
 } {
 <!--

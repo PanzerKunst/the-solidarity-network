@@ -1,9 +1,9 @@
-@(loggedInUser: models.frontend.FrontendUser, frontendUser: models.frontend.FrontendUser, frontendReferences: List[models.frontend.FrontendReference])
+@(loggedInUser: models.frontend.FrontendUser, unreadMessagesCount: Int, frontendUser: models.frontend.FrontendUser, frontendReferences: List[models.frontend.FrontendReference])
 @main(frontendUser.firstName + " " + frontendUser.lastName + " <" + frontendUser.username + ">", "profile") {
 <!--
     Header
 -->
-@nav(Some(loggedInUser), Some(frontendUser.firstName + " " + frontendUser.lastName + " <" + frontendUser.username + ">"))
+@nav(Some(loggedInUser), Some(frontendUser.firstName + " " + frontendUser.lastName + " <" + frontendUser.username + ">"), unreadMessagesCount)
 
 } {
 <!--

@@ -1,4 +1,4 @@
-@(user: Option[models.frontend.FrontendUser], title: Option[String])
+@(user: Option[models.frontend.FrontendUser], title: Option[String], unreadMessagesCount: Int = 0)
 <nav id="header-nav">
     @if(title.isDefined) {
     <h1>@title.get</h1>
@@ -34,9 +34,17 @@
         </li>
 
         <li>
-            <span>Messages</span>
+            <span>Messages
+                @if(unreadMessagesCount > 0) {
+                <span class="emphasis">(@unreadMessagesCount)</span>
+                }
+            </span>
             <ul class="sub-nav">
-                <li><a href="/messages">Inbox</a></li>
+                <li><a href="/messages">Inbox
+                    @if(unreadMessagesCount > 0) {
+                    (@unreadMessagesCount)
+                    }
+                </a></li>
                 <li><a href="/messages/new">Write a message</a></li>
                 <li><a href="/messages/sent">Sent messages</a></li>
             </ul>

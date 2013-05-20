@@ -17,6 +17,8 @@ class FrontendMessage {
 
     if (message.replyToMessageId.isDefined)
       this.replyToMessage = new FrontendMessage(MessageDto.get(Map("id" -> message.replyToMessageId.get.toString)).head)
+
+    this.isRead = message.isRead
   }
 
   @JsonProperty
@@ -39,4 +41,7 @@ class FrontendMessage {
 
   @JsonProperty
   var replyToMessage: FrontendMessage = _
+
+  @JsonProperty
+  var isRead: Boolean = _
 }

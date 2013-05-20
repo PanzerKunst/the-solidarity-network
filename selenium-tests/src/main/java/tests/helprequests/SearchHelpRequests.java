@@ -62,13 +62,13 @@ public class SearchHelpRequests extends TestBase {
 
         TestBase.sleepBecauseSeleniumSucks();
 
-        String cssSelectorOfFirstDisplayedSearchResult = "li[data-id='1']";
+        String cssSelectorOfFirstDisplayedListItem = "li[data-id]";
 
         if (driver.findElement(By.id("desktop-list")).isDisplayed()) {
-            cssSelectorOfFirstDisplayedSearchResult = "tr[data-id='1']";
+            cssSelectorOfFirstDisplayedListItem = "tr[data-id]";
         }
 
-        driver.findElement(By.cssSelector(cssSelectorOfFirstDisplayedSearchResult))
+        driver.findElement(By.cssSelector(cssSelectorOfFirstDisplayedListItem))
                 .isDisplayed();
     }
 
@@ -84,13 +84,13 @@ public class SearchHelpRequests extends TestBase {
 
         TestBase.sleepBecauseSeleniumSucks();
 
-        String cssSelectorOfFirstDisplayedSearchResult = "li[data-id='1']";
+        String cssSelectorOfFirstDisplayedListItem = "li[data-id]";
 
         if (driver.findElement(By.id("desktop-list")).isDisplayed()) {
-            cssSelectorOfFirstDisplayedSearchResult = "tr[data-id='1']";
+            cssSelectorOfFirstDisplayedListItem = "tr[data-id]";
         }
 
-        driver.findElement(By.cssSelector(cssSelectorOfFirstDisplayedSearchResult))
+        driver.findElement(By.cssSelector(cssSelectorOfFirstDisplayedListItem))
                 .isDisplayed();
     }
 
@@ -106,13 +106,13 @@ public class SearchHelpRequests extends TestBase {
 
         TestBase.sleepBecauseSeleniumSucks();
 
-        String cssSelectorOfFirstDisplayedSearchResult = "li[data-id='1']";
+        String cssSelectorOfFirstDisplayedListItem = "li[data-id]";
 
         if (driver.findElement(By.id("desktop-list")).isDisplayed()) {
-            cssSelectorOfFirstDisplayedSearchResult = "tr[data-id='1']";
+            cssSelectorOfFirstDisplayedListItem = "tr[data-id]";
         }
 
-        driver.findElement(By.cssSelector(cssSelectorOfFirstDisplayedSearchResult))
+        driver.findElement(By.cssSelector(cssSelectorOfFirstDisplayedListItem))
                 .isDisplayed();
     }
 
@@ -128,13 +128,13 @@ public class SearchHelpRequests extends TestBase {
 
         TestBase.sleepBecauseSeleniumSucks();
 
-        String cssSelectorOfFirstDisplayedSearchResult = "li[data-id='1']";
+        String cssSelectorOfFirstDisplayedListItem = "li[data-id]";
 
         if (driver.findElement(By.id("desktop-list")).isDisplayed()) {
-            cssSelectorOfFirstDisplayedSearchResult = "tr[data-id='1']";
+            cssSelectorOfFirstDisplayedListItem = "tr[data-id]";
         }
 
-        driver.findElement(By.cssSelector(cssSelectorOfFirstDisplayedSearchResult))
+        driver.findElement(By.cssSelector(cssSelectorOfFirstDisplayedListItem))
                 .isDisplayed();
     }
 
@@ -150,13 +150,13 @@ public class SearchHelpRequests extends TestBase {
 
         TestBase.sleepBecauseSeleniumSucks();
 
-        String cssSelectorOfFirstDisplayedSearchResult = "li[data-id='1']";
+        String cssSelectorOfFirstDisplayedListItem = "li[data-id]";
 
         if (driver.findElement(By.id("desktop-list")).isDisplayed()) {
-            cssSelectorOfFirstDisplayedSearchResult = "tr[data-id='1']";
+            cssSelectorOfFirstDisplayedListItem = "tr[data-id]";
         }
 
-        driver.findElement(By.cssSelector(cssSelectorOfFirstDisplayedSearchResult))
+        driver.findElement(By.cssSelector(cssSelectorOfFirstDisplayedListItem))
                 .isDisplayed();
     }
 
@@ -172,13 +172,13 @@ public class SearchHelpRequests extends TestBase {
 
         TestBase.sleepBecauseSeleniumSucks();
 
-        String cssSelectorOfFirstDisplayedSearchResult = "li[data-id='1']";
+        String cssSelectorOfFirstDisplayedListItem = "li[data-id]";
 
         if (driver.findElement(By.id("desktop-list")).isDisplayed()) {
-            cssSelectorOfFirstDisplayedSearchResult = "tr[data-id='1']";
+            cssSelectorOfFirstDisplayedListItem = "tr[data-id]";
         }
 
-        driver.findElement(By.cssSelector(cssSelectorOfFirstDisplayedSearchResult))
+        driver.findElement(By.cssSelector(cssSelectorOfFirstDisplayedListItem))
                 .isDisplayed();
     }
 
@@ -191,15 +191,15 @@ public class SearchHelpRequests extends TestBase {
 
         TestBase.sleepBecauseSeleniumSucks();
 
-        String cssSelectorOfFirstDisplayedSearchResult = "li[data-id='1']";
+        String cssSelectorOfFirstDisplayedListItem = "li[data-id]";
 
         if (driver.findElement(By.id("desktop-list")).isDisplayed()) {
-            cssSelectorOfFirstDisplayedSearchResult = "tr[data-id='1']";
+            cssSelectorOfFirstDisplayedListItem = "tr[data-id]";
         }
 
         TestBase.sleepBecauseSeleniumSucks(2000);
 
-        driver.findElement(By.cssSelector(cssSelectorOfFirstDisplayedSearchResult))
+        driver.findElement(By.cssSelector(cssSelectorOfFirstDisplayedListItem))
                 .click();
     }
 }
