@@ -15,9 +15,13 @@ object DbAdmin {
     createTableReferenceRating()
     createTableReference()
     createTableMessage()
+    createTableEmailProcessingHelpRequest()
+    createTableEmailProcessingHelpReply()
   }
 
   def dropTables() {
+    dropTableEmailProcessingHelpReply()
+    dropTableEmailProcessingHelpRequest()
     dropTableMessage()
     dropTableReference()
     dropTableReferenceRating()
@@ -39,7 +43,7 @@ object DbAdmin {
 
         val query = """
         CREATE TABLE `country` (
-          `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+          `id` int unsigned NOT NULL AUTO_INCREMENT,
           `name` varchar(45) NOT NULL,
           PRIMARY KEY (`id`)
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8;"""
@@ -54,7 +58,7 @@ object DbAdmin {
 
         val query = """
         CREATE TABLE `user` (
-          `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+          `id` int unsigned NOT NULL AUTO_INCREMENT,
           `first_name` varchar(45) NOT NULL,
           `last_name` varchar(45) NOT NULL,
           `username` varchar(45) NOT NULL,
@@ -63,7 +67,7 @@ object DbAdmin {
           `street_address` varchar(100) DEFAULT NULL,
           `post_code` varchar(10) DEFAULT NULL,
           `city` varchar(45) NOT NULL,
-          `country_id` int(10) unsigned NOT NULL,
+          `country_id` int unsigned NOT NULL,
           `description` text DEFAULT NULL,
           `creation_date` datetime NOT NULL,
           `is_subscribed_to_news` BOOLEAN DEFAULT TRUE,
@@ -82,8 +86,8 @@ object DbAdmin {
 
         val query = """
         Create table `help_request`(
-          `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-          `requester_id` int(10) unsigned NOT NULL,
+          `id` int unsigned NOT NULL AUTO_INCREMENT,
+          `requester_id` int unsigned NOT NULL,
           `title` varchar(100) NOT NULL,
           `description` text NOT NULL,
           `creation_date` datetime NOT NULL,
@@ -102,9 +106,9 @@ object DbAdmin {
 
         val query = """
         Create table `help_reply`(
-          `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-          `request_id` int(10) unsigned NOT NULL,
-          `replier_id` int(10) unsigned NOT NULL,
+          `id` int unsigned NOT NULL AUTO_INCREMENT,
+          `request_id` int unsigned NOT NULL,
+          `replier_id` int unsigned NOT NULL,
           `text` text NOT NULL,
           `creation_date` datetime NOT NULL,
           primary key (`id`),
@@ -122,9 +126,9 @@ object DbAdmin {
 
         val query = """
         Create table `subscription_to_help_replies`(
-          `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-          `request_id` int(10) unsigned NOT NULL,
-          `subscriber_id` int(10) unsigned NOT NULL,
+          `id` int unsigned NOT NULL AUTO_INCREMENT,
+          `request_id` int unsigned NOT NULL,
+          `subscriber_id` int unsigned NOT NULL,
           primary key (`id`),
           constraint `fk_request1` foreign key (`request_id`) references `help_request`(`id`),
           constraint `fk_subscriber` foreign key (`subscriber_id`) references `user`(`id`)
@@ -140,7 +144,7 @@ object DbAdmin {
 
         val query = """
         Create table `reference_rating` (
-          `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+          `id` int unsigned NOT NULL AUTO_INCREMENT,
           `label` varchar(10) NOT NULL,
           primary key (`id`)
         ) ENGINE=InnoDB DEFAULT charset=utf8;"""
@@ -155,11 +159,11 @@ object DbAdmin {
 
         val query = """
         Create table `reference` (
-          `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-          `from_user_id` int(10) unsigned NOT NULL,
-          `to_user_id` int(10) unsigned NOT NULL,
+          `id` int unsigned NOT NULL AUTO_INCREMENT,
+          `from_user_id` int unsigned NOT NULL,
+          `to_user_id` int unsigned NOT NULL,
           `was_helped` boolean NOT NULL,
-          `rating_id` int(10) unsigned NOT NULL,
+          `rating_id` int unsigned NOT NULL,
           `text` text NOT NULL,
           `creation_date` datetime NOT NULL,
           primary key (`id`),
@@ -178,13 +182,13 @@ object DbAdmin {
 
         val query = """
           Create table `message` (
-            `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-            `from_user_id` int(10) unsigned NOT NULL,
-            `to_user_id` int(10) unsigned NOT NULL,
+            `id` int unsigned NOT NULL AUTO_INCREMENT,
+            `from_user_id` int unsigned NOT NULL,
+            `to_user_id` int unsigned NOT NULL,
             `title` varchar(100) DEFAULT NULL,
             `text` text NOT NULL,
             `creation_date` datetime NOT NULL,
-            `reply_to_message_id` int(10) unsigned DEFAULT NULL,
+            `reply_to_message_id` int unsigned DEFAULT NULL,
             `is_read` BOOLEAN DEFAULT FALSE,
             primary key (`id`),
             constraint `fk_from_user1` foreign key (`from_user_id`) references `user`(`id`),
@@ -192,6 +196,53 @@ object DbAdmin {
           ) ENGINE=InnoDB DEFAULT charset=utf8;"""
 
         SQL(query).executeUpdate()
+    }
+  }
+
+  private def createTableEmailProcessingHelpRequest() {
+    DB.withConnection {
+      implicit c =>
+
+        val query = """
+        CREATE TABLE `email_processing_help_request` (
+          `id` int UNSIGNED NOT NULL AUTO_INCREMENT,
+          `frequency` VARCHAR(45) DEFAULT '""" + User.NEW_HR_SUBSCRIPTION_FREQUENCY_EACH_NEW_REQUEST + """', /* EACH_NEW_REQUEST, DAILY, WEEKLY */
+          `id_of_last_processed_request` int UNSIGNED NOT NULL,
+          PRIMARY KEY (`id`),
+          CONSTRAINT `fk_request2` FOREIGN KEY (`id_of_last_processed_request`) REFERENCES `help_request`(`id`)
+          ) ENGINE=INNODB DEFAULT CHARSET=utf8;"""
+
+        SQL(query).executeUpdate()
+    }
+  }
+
+  private def createTableEmailProcessingHelpReply() {
+    DB.withConnection {
+      implicit c =>
+
+        val query = """
+        CREATE TABLE `email_processing_help_reply` (
+          `id` int UNSIGNED NOT NULL AUTO_INCREMENT,
+          `id_of_last_processed_reply` int UNSIGNED NOT NULL,
+          PRIMARY KEY (`id`),
+          CONSTRAINT `fk_reply` FOREIGN KEY (`id_of_last_processed_reply`) REFERENCES `help_reply`(`id`)
+        ) ENGINE=INNODB DEFAULT CHARSET=utf8;"""
+
+        SQL(query).executeUpdate()
+    }
+  }
+
+  private def dropTableEmailProcessingHelpReply() {
+    DB.withConnection {
+      implicit c =>
+        SQL("drop table if exists email_processing_help_reply;").executeUpdate()
+    }
+  }
+
+  private def dropTableEmailProcessingHelpRequest() {
+    DB.withConnection {
+      implicit c =>
+        SQL("drop table if exists email_processing_help_request;").executeUpdate()
     }
   }
 

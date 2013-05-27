@@ -22,6 +22,28 @@ class FrontendUser {
     this.subscriptionToNewHelpRequests = user.subscriptionToNewHelpRequests
   }
 
+  def this(id: Long,
+           firstName: String,
+           lastName: String,
+           username: String,
+           email: String,
+           city: String,
+           country: Country,
+           isSubscribedToNews: Boolean,
+           subscriptionToNewHelpRequests: String) = {
+    this()
+
+    this.id = id
+    this.firstName = firstName
+    this.lastName = lastName
+    this.username = username
+    this.email = email
+    this.city = city
+    this.country = country
+    this.isSubscribedToNews = isSubscribedToNews
+    this.subscriptionToNewHelpRequests = subscriptionToNewHelpRequests
+  }
+
   @JsonProperty
   var id: Long = _
 

@@ -1,0 +1,25 @@
+<%@ val user: models.frontend.FrontendUser %>
+<%@ val helpRequests: List[models.frontend.FrontendHelpRequest] %>
+
+<p>Dear ${user.firstName},</p>
+<br />
+
+<p>Here are this week's new help requests in your city:</p>
+<br />
+
+<ul>
+#for (hr <- helpRequests)
+    <li>
+        <a href="http://192.168.0.4/help-requests/${hr.id}">
+            <p>${hr.title}</p>
+            <p>${hr.text}</p>
+        </a>
+    </li>
+#end
+</ul>
+
+<p>We hope that you will feel inspired to reply to one of them!</p>
+
+<p>Best regards,</p>
+
+<p>The Team</p>

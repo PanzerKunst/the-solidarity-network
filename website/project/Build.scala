@@ -1,5 +1,4 @@
 import sbt._
-import Keys._
 import play.Project._
 
 object ApplicationBuild extends Build {
@@ -11,9 +10,9 @@ object ApplicationBuild extends Build {
     // Add your project dependencies here,
     jdbc,
     anorm,
-    "mysql" % "mysql-connector-java" % "5.1.24",
+    "mysql" % "mysql-connector-java" % "5.1.25",
     "com.typesafe" %% "play-plugins-mailer" % "2.1.0",
-    "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.2.0"
+    "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.2.1"
   )
 
 

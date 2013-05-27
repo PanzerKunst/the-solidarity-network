@@ -2,3 +2,8 @@ This is your new Play 2.1 application
 =====================================
 
 This file will be packaged with your application, when using `play dist`.
+
+Generate models.jar: jar c
+	> cd d:\Pro\the-solidarity-network\website\target\scala-2.10\classes
+	> del models\models.jar
+	> jar cf models/models.jar models/*

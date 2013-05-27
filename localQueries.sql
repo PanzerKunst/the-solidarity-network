@@ -1,5 +1,7 @@
 USE thesolidaritynetwork;
 
+DROP TABLE email_processing_help_reply;
+DROP TABLE email_processing_help_request;
 DROP TABLE message;
 DROP TABLE reference;
 DROP TABLE reference_rating;
@@ -10,13 +12,13 @@ DROP TABLE USER;
 DROP TABLE country;
 
 CREATE TABLE `country` (
-  `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `user` (
-  `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `first_name` VARCHAR(45) NOT NULL,
   `last_name` VARCHAR(45) NOT NULL,
   `username` VARCHAR(45) NOT NULL,
@@ -25,7 +27,7 @@ CREATE TABLE `user` (
   `street_address` VARCHAR(100) DEFAULT NULL,
   `post_code` VARCHAR(10) DEFAULT NULL,
   `city` VARCHAR(45) NOT NULL,
-  `country_id` INT(10) UNSIGNED NOT NULL,
+  `country_id` INT UNSIGNED NOT NULL,
   `description` TEXT DEFAULT NULL,
   `creation_date` DATETIME NOT NULL,
   `is_subscribed_to_news` BOOLEAN DEFAULT TRUE,
@@ -35,8 +37,8 @@ CREATE TABLE `user` (
 ) ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `help_request`(
-  `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `requester_id` INT(10) UNSIGNED NOT NULL,
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `requester_id` INT UNSIGNED NOT NULL,
   `title` VARCHAR(100) NOT NULL,
   `description` TEXT NOT NULL,
   `creation_date` DATETIME NOT NULL,
@@ -46,9 +48,9 @@ CREATE TABLE `help_request`(
 ) ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `help_reply`(
-  `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `request_id` INT(10) UNSIGNED NOT NULL,
-  `replier_id` INT(10) UNSIGNED NOT NULL,
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `request_id` INT UNSIGNED NOT NULL,
+  `replier_id` INT UNSIGNED NOT NULL,
   `text` TEXT NOT NULL,
   `creation_date` DATETIME NOT NULL,
   PRIMARY KEY (`id`),
@@ -57,26 +59,26 @@ CREATE TABLE `help_reply`(
 ) ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `subscription_to_help_replies`(
-  `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `request_id` INT(10) UNSIGNED NOT NULL,
-  `subscriber_id` INT(10) UNSIGNED NOT NULL,
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `request_id` INT UNSIGNED NOT NULL,
+  `subscriber_id` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `fk_request1` FOREIGN KEY (`request_id`) REFERENCES `help_request`(`id`),
   CONSTRAINT `fk_subscriber` FOREIGN KEY (`subscriber_id`) REFERENCES `user`(`id`)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `reference_rating` (
-  `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `label` VARCHAR(10) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `reference` (
-  `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `from_user_id` INT(10) UNSIGNED NOT NULL,
-  `to_user_id` INT(10) UNSIGNED NOT NULL,
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `from_user_id` INT UNSIGNED NOT NULL,
+  `to_user_id` INT UNSIGNED NOT NULL,
   `was_helped` BOOLEAN NOT NULL,
-  `rating_id` INT(10) UNSIGNED NOT NULL,
+  `rating_id` INT UNSIGNED NOT NULL,
   `text` TEXT NOT NULL,
   `creation_date` DATETIME NOT NULL,
   PRIMARY KEY (`id`),
@@ -86,17 +88,32 @@ CREATE TABLE `reference` (
 ) ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `message` (
-  `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `from_user_id` INT(10) UNSIGNED NOT NULL,
-  `to_user_id` INT(10) UNSIGNED NOT NULL,
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `from_user_id` INT UNSIGNED NOT NULL,
+  `to_user_id` INT UNSIGNED NOT NULL,
   `title` VARCHAR(100) DEFAULT NULL,
   `text` TEXT NOT NULL,
   `creation_date` DATETIME NOT NULL,
-  `reply_to_message_id` INT(10) UNSIGNED DEFAULT NULL,
+  `reply_to_message_id` INT UNSIGNED DEFAULT NULL,
   `is_read` BOOLEAN DEFAULT FALSE,
   PRIMARY KEY (`id`),
   CONSTRAINT `fk_from_user1` FOREIGN KEY (`from_user_id`) REFERENCES `user`(`id`),
   CONSTRAINT `fk_to_user1` FOREIGN KEY (`to_user_id`) REFERENCES `user`(`id`)
+) ENGINE=INNODB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `email_processing_help_request` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `frequency` VARCHAR(45) DEFAULT 'EACH_NEW_REQUEST', /* EACH_NEW_REQUEST, DAILY, WEEKLY */
+  `id_of_last_processed_request` INT UNSIGNED NOT NULL,
+  PRIMARY KEY (`id`),
+  CONSTRAINT `fk_request2` FOREIGN KEY (`id_of_last_processed_request`) REFERENCES `help_request`(`id`)
+) ENGINE=INNODB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `email_processing_help_reply` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id_of_last_processed_reply` INT UNSIGNED NOT NULL,
+  PRIMARY KEY (`id`),
+  CONSTRAINT `fk_reply` FOREIGN KEY (`id_of_last_processed_reply`) REFERENCES `help_reply`(`id`)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 INSERT INTO country(NAME) VALUES("Greece");
