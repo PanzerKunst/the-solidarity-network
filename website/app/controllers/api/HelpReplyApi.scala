@@ -14,7 +14,7 @@ object HelpReplyApi extends Controller {
 
       Application.loggedInUser(session) match {
         case Some(loggedInUser) => {
-          val helpReply = JsonUtil.deserialize[HelpReply](request.body.toString)
+          val helpReply = JsonUtil.deserialize[HelpReply](request.body.toString())
           val helpReplyWithUserId = helpReply.copy(replierId = loggedInUser.id)
           HelpReplyDto.create(helpReplyWithUserId)
           Ok

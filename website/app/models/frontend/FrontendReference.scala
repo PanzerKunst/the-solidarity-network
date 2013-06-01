@@ -1,7 +1,7 @@
 package models.frontend
 
 import models.{ReferenceRating, Reference, User}
-import database.{DbUtil, ReferenceRatingDto, UserDto}
+import db.{DbUtil, ReferenceRatingDto, UserDto}
 import org.codehaus.jackson.annotate.JsonProperty
 
 class FrontendReference {
