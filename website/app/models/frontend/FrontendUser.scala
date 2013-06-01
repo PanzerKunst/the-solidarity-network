@@ -1,8 +1,8 @@
 package models.frontend
 
 import models.{Country, User}
-import database.CountryDto
 import org.codehaus.jackson.annotate.JsonProperty
+import db.CountryDto
 
 class FrontendUser {
   def this(user: User) = {
@@ -20,28 +20,6 @@ class FrontendUser {
     this.description = user.description
     this.isSubscribedToNews = user.isSubscribedToNews
     this.subscriptionToNewHelpRequests = user.subscriptionToNewHelpRequests
-  }
-
-  def this(id: Long,
-           firstName: String,
-           lastName: String,
-           username: String,
-           email: String,
-           city: String,
-           country: Country,
-           isSubscribedToNews: Boolean,
-           subscriptionToNewHelpRequests: String) = {
-    this()
-
-    this.id = id
-    this.firstName = firstName
-    this.lastName = lastName
-    this.username = username
-    this.email = email
-    this.city = city
-    this.country = country
-    this.isSubscribedToNews = isSubscribedToNews
-    this.subscriptionToNewHelpRequests = subscriptionToNewHelpRequests
   }
 
   @JsonProperty

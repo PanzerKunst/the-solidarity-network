@@ -1,8 +1,8 @@
 package models.frontend
 
-import models.{Message, ReferenceRating, Reference, User}
-import database.{MessageDto, DbUtil, ReferenceRatingDto, UserDto}
+import models.Message
 import org.codehaus.jackson.annotate.JsonProperty
+import db.{MessageDto, DbUtil, UserDto}
 
 class FrontendMessage {
   def this(message: Message) = {

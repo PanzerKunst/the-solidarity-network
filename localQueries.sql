@@ -110,9 +110,7 @@ CREATE TABLE `email_processing_help_request` (
 ) ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `email_processing_help_reply` (
-  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `id_of_last_processed_reply` INT UNSIGNED NOT NULL,
-  PRIMARY KEY (`id`),
   CONSTRAINT `fk_reply` FOREIGN KEY (`id_of_last_processed_reply`) REFERENCES `help_reply`(`id`)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8;
 
@@ -154,3 +152,7 @@ SELECT * FROM message;
 DELETE FROM USER WHERE email = "panzrkunst@yahoo.fr";
 
 DELETE FROM message;
+
+SELECT * FROM email_processing_help_request;
+
+DELETE FROM email_processing_help_request;

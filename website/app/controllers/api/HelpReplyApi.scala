@@ -2,7 +2,7 @@ package controllers.api
 
 import services.JsonUtil
 import play.api.mvc.{Action, Controller}
-import database.{HelpReplyDto, HelpRequestDto}
+import db.{HelpReplyDto, HelpRequestDto}
 import models.{HelpReply, User, HelpRequest}
 import controllers.Application
 import play.api.Logger

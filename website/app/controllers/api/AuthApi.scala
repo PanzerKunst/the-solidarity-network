@@ -1,9 +1,9 @@
 package controllers.api
 
 import services.JsonUtil
-import database.UserDto
 import play.api.mvc.{Action, Controller}
 import models.User
+import db.UserDto
 
 object AuthApi extends Controller {
   def authenticate = Action(parse.json) {

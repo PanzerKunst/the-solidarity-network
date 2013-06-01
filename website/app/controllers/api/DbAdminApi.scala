@@ -1,7 +1,7 @@
 package controllers.api
 
-import database.DbAdmin
 import play.api.mvc.{Action, Controller}
+import db.DbAdmin
 
 object DbAdminApi extends Controller {
   def createTables = Action {
@@ -9,8 +9,8 @@ object DbAdminApi extends Controller {
 
       if (request.queryString.contains("key") &&
         request.queryString.get("key").get.head == "OZs:]T@R]u9I4nyqbvNyAMe4hPZaoFsNhiQvGjCh@GErJ7/0wqaVdj8To8MpmE1O") {
-        DbAdmin.createTables
-        DbAdmin.initData
+        DbAdmin.createTables()
+        DbAdmin.initData()
         Ok
       }
       else
@@ -22,7 +22,7 @@ object DbAdminApi extends Controller {
 
       if (request.queryString.contains("key") &&
         request.queryString.get("key").get.head == "OZs:]T@R]u9I4nyqbvNyAMe4hPZaoFsNhiQvGjCh@GErJ7/0wqaVdj8To8MpmE1O") {
-        DbAdmin.dropTables
+        DbAdmin.dropTables()
         Ok
       }
       else

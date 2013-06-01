@@ -2,11 +2,11 @@ package controllers.api
 
 import models.User
 import services.{EmailService, JsonUtil}
-import database.UserDto
 import play.api.mvc.{Action, Controller}
 import play.api.Logger
 import controllers.{FileController, Application}
 import models.frontend.FrontendUser
+import db.UserDto
 
 object UserApi extends Controller {
   def create = Action(parse.json) {

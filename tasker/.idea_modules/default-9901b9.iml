@@ -52,7 +52,7 @@
     <orderEntry type="library" name="SBT: org.fusesource.scalate:scalate-util_2.10:1.6.1" level="project" />
     <orderEntry type="library" name="SBT: org.scala-lang:scala-compiler:2.10.0" level="project" />
     <orderEntry type="library" name="SBT: org.codehaus.jackson:jackson-core-asl:1.9.10" level="project" />
-    <orderEntry type="library" name="models" level="project" />
+    <orderEntry type="library" name="website" level="project" />
   </component>
 </module>
 

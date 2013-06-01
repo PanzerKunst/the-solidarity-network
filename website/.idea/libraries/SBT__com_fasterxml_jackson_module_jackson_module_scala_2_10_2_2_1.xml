@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="SBT: com.fasterxml.jackson.module:jackson-module-scala_2.10:2.2.1">
+    <CLASSES>
+      <root url="jar://D:/ProgramFiles/play-2.1.1/repository/cache/com.fasterxml.jackson.module/jackson-module-scala_2.10/jars/jackson-module-scala_2.10-2.2.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

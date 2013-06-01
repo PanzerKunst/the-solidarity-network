@@ -1,12 +1,12 @@
 package controllers
 
 import play.api.mvc._
-import database._
 import services.I18nService
 import scala.collection.mutable
 import models.frontend._
-import scala.Some
 import models.User
+import db._
+import scala.Some
 
 object Application extends Controller {
 

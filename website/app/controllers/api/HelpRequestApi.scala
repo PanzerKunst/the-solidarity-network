@@ -2,11 +2,11 @@ package controllers.api
 
 import services.JsonUtil
 import play.api.mvc.{Action, Controller}
-import database.{SubscriptionToHelpRepliesDto, HelpRequestDto}
 import models.{SubscriptionToHelpReplies, User, HelpRequest}
 import controllers.Application
 import play.api.Logger
 import models.frontend.FrontendHelpRequest
+import db.{SubscriptionToHelpRepliesDto, HelpRequestDto}
 
 object HelpRequestApi extends Controller {
   def create = Action(parse.json) {

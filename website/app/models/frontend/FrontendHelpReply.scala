@@ -2,7 +2,7 @@ package models.frontend
 
 import models.{HelpReply, User}
 import org.codehaus.jackson.annotate.JsonProperty
-import database.{DbUtil, UserDto}
+import db.{UserDto, DbUtil}
 
 class FrontendHelpReply {
 

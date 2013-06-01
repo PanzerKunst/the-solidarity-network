@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="website">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../website/target/scala-2.10/classes/website.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

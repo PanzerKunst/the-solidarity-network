@@ -1,0 +1,26 @@
+<%@ val subscriber: models.TaskerUser %>
+<%@ val helpRequests: List[models.TaskerHelpRequest] %>
+<%@ val period: String %>
+
+<p>Dear ${subscriber.firstName},</p>
+<br />
+
+<p>Here are ${period}'s new help requests in your city:</p>
+<br />
+
+<ul>
+#for (hr <- helpRequests)
+    <li>
+        <a href="http://192.168.0.4/help-requests/${hr.id}">
+            <p>${hr.title}</p>
+            <p>${hr.description}</p>
+        </a>
+    </li>
+#end
+</ul>
+
+<p>We hope that you will feel inspired to reply to one of them!</p>
+
+<p>Best regards,</p>
+
+<p>Christophe</p>

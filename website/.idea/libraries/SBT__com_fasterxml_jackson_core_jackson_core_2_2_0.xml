@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="SBT: com.fasterxml.jackson.core:jackson-core:2.2.0">
-    <CLASSES>
-      <root url="jar://D:/ProgramFiles/play-2.1.1/repository/cache/com.fasterxml.jackson.core/jackson-core/jars/jackson-core-2.2.0.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

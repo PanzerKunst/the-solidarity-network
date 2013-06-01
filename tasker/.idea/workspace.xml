@@ -2,33 +2,188 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b797e53f-c948-4128-9ed3-068dfd07bfc4" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\tasker\src\main\scala\Runner.scala" afterPath="" />
-      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\tasker\tasker.iml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.gitignore" afterPath="$PROJECT_DIR$/../.gitignore" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\selenium-tests\selenium-tests.iml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\tasker\.idea\libraries\models.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\tasker\src\main\scala\root\EmailService.scala" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\tasker\src\main\scala\root\HelpRequestSubscriptionTasker.scala" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\tasker\src\main\scala\root\Tasker.scala" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__cglib_cglib_nodep_2_1_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__ch_qos_logback_logback_classic_1_0_7.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__ch_qos_logback_logback_core_1_0_7.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__com_cedarsoft_guice_annotations_2_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__com_fasterxml_jackson_core_jackson_annotations_2_2_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__com_fasterxml_jackson_core_jackson_core_2_2_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__com_fasterxml_jackson_core_jackson_databind_2_2_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__com_fasterxml_jackson_module_jackson_module_scala_2_10_2_2_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__com_github_scala_incubator_io_scala_io_core_2_10_0_4_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__com_github_scala_incubator_io_scala_io_file_2_10_0_4_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__com_google_code_findbugs_jsr305_2_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__com_google_guava_guava_13_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__com_h2database_h2_1_3_168.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__com_intellij_annotations_7_0_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__com_jolbox_bonecp_0_7_1_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__com_jsuereth_scala_arm_2_10_1_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__com_ning_async_http_client_1_7_6.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__com_novocode_junit_interface_0_9.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__com_thoughtworks_paranamer_paranamer_2_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__com_typesafe_akka_akka_actor_2_10_2_1_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__com_typesafe_akka_akka_slf4j_2_10_2_1_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__com_typesafe_config_1_0_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__com_typesafe_play_plugins_mailer_2_10_2_1_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__com_typesafe_play_plugins_util_2_10_2_1_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__commons_codec_commons_codec_1_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__commons_codec_commons_codec_1_6.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__commons_collections_commons_collections_3_2_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__commons_io_commons_io_2_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__commons_lang_commons_lang_2_6.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__commons_logging_commons_logging_1_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__io_netty_netty_3_6_3_Final.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__javax_activation_activation_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__javax_mail_mail_1_4_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__javax_servlet_javax_servlet_api_3_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__javax_transaction_jta_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__javax_validation_validation_api_1_0_0_GA.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__joda_time_joda_time_2_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__junit_junit_dep_4_10.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__mysql_mysql_connector_java_5_1_24.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__net_java_dev_jna_jna_3_4_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__net_java_dev_jna_platform_3_4_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__net_sf_ehcache_ehcache_core_2_6_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__net_sourceforge_cssparser_cssparser_0_9_5.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__net_sourceforge_htmlunit_htmlunit_2_9.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__net_sourceforge_htmlunit_htmlunit_core_js_2_9.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__net_sourceforge_nekohtml_nekohtml_1_9_15.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__oauth_signpost_signpost_commonshttp4_1_2_1_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__oauth_signpost_signpost_core_1_2_1_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_apache_commons_commons_email_1_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_apache_commons_commons_exec_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_apache_commons_commons_lang3_3_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_apache_httpcomponents_httpclient_4_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_apache_httpcomponents_httpclient_4_1_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_apache_httpcomponents_httpcore_4_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_apache_httpcomponents_httpcore_4_1_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_apache_httpcomponents_httpmime_4_1_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_codehaus_jackson_jackson_core_asl_1_9_10.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_codehaus_jackson_jackson_mapper_asl_1_9_10.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_easytesting_fest_assert_1_4.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_easytesting_fest_util_1_1_6.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_fluentlenium_fluentlenium_core_0_7_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_fluentlenium_fluentlenium_festassert_0_7_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_hamcrest_hamcrest_core_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_hibernate_hibernate_validator_4_3_0_Final.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_javassist_javassist_3_16_1_GA.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_jboss_logging_jboss_logging_3_1_0_CR2.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_joda_joda_convert_1_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_json_json_20080701.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_ow2_spec_ee_ow2_atinject_1_0_spec_1_0_10.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_reflections_reflections_0_9_8.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_scala_lang_scala_library_2_10_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_scala_lang_scala_reflect_2_10_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_scala_stm_scala_stm_2_10_0_0_6.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_scala_tools_testing_test_interface_0_5.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_seleniumhq_selenium_selenium_android_driver_2_25_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_seleniumhq_selenium_selenium_api_2_25_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_seleniumhq_selenium_selenium_chrome_driver_2_25_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_seleniumhq_selenium_selenium_firefox_driver_2_25_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_seleniumhq_selenium_selenium_htmlunit_driver_2_25_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_seleniumhq_selenium_selenium_ie_driver_2_25_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_seleniumhq_selenium_selenium_iphone_driver_2_25_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_seleniumhq_selenium_selenium_java_2_25_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_seleniumhq_selenium_selenium_remote_driver_2_25_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_seleniumhq_selenium_selenium_safari_driver_2_25_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_seleniumhq_selenium_selenium_support_2_25_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_slf4j_jcl_over_slf4j_1_6_6.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_slf4j_jul_to_slf4j_1_6_6.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_slf4j_slf4j_api_1_7_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_specs2_scalaz_concurrent_2_10_7_0_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_specs2_scalaz_core_2_10_7_0_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_specs2_scalaz_effect_2_10_7_0_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_specs2_specs2_2_10_1_13.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_springframework_spring_beans_3_1_2_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_springframework_spring_context_3_1_2_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_springframework_spring_core_3_1_2_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_w3c_css_sac_1_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_webbitserver_webbit_0_4_6.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_yaml_snakeyaml_1_10.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__play_anorm_2_10_2_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__play_play_2_10_2_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__play_play_exceptions_2_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__play_play_iteratees_2_10_2_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__play_play_java_2_10_2_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__play_play_jdbc_2_10_2_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__play_play_test_2_10_2_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__play_sbt_link_2_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__play_templates_2_10_2_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__tyrex_tyrex_1_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__xalan_serializer_2_7_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__xalan_xalan_2_7_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__xerces_xercesImpl_2_9_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__xml_apis_xml_apis_1_3_04.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../website/app/controllers/Application.scala" afterPath="$PROJECT_DIR$/../website/app/controllers/Application.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../website/app/controllers/api/AuthApi.scala" afterPath="$PROJECT_DIR$/../website/app/controllers/api/AuthApi.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../website/project/Build.scala" afterPath="$PROJECT_DIR$/../website/project/Build.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../website/app/database/DbAdmin.scala" afterPath="$PROJECT_DIR$/../website/app/database/DbAdmin.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../website/app/controllers/api/DbAdminApi.scala" afterPath="$PROJECT_DIR$/../website/app/controllers/api/DbAdminApi.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../website/app/models/frontend/FrontendHelpReply.scala" afterPath="$PROJECT_DIR$/../website/app/models/frontend/FrontendHelpReply.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../website/app/models/frontend/FrontendHelpRequest.scala" afterPath="$PROJECT_DIR$/../website/app/models/frontend/FrontendHelpRequest.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../website/app/models/frontend/FrontendMessage.scala" afterPath="$PROJECT_DIR$/../website/app/models/frontend/FrontendMessage.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../website/app/models/frontend/FrontendReference.scala" afterPath="$PROJECT_DIR$/../website/app/models/frontend/FrontendReference.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../website/app/models/frontend/FrontendUser.scala" afterPath="$PROJECT_DIR$/../website/app/models/frontend/FrontendUser.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../website/app/controllers/api/HelpReplyApi.scala" afterPath="$PROJECT_DIR$/../website/app/controllers/api/HelpReplyApi.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../website/app/controllers/api/HelpRequestApi.scala" afterPath="$PROJECT_DIR$/../website/app/controllers/api/HelpRequestApi.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../website/app/services/JsonUtil.scala" afterPath="$PROJECT_DIR$/../website/app/services/JsonUtil.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../website/app/controllers/api/MessageApi.scala" afterPath="$PROJECT_DIR$/../website/app/controllers/api/MessageApi.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../website/README" afterPath="$PROJECT_DIR$/../website/README" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../selenium-tests/src/main/java/tests/messages/WriteMessage.java" afterPath="$PROJECT_DIR$/../selenium-tests/src/main/java/tests/messages/WriteMessage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.sbt" afterPath="$PROJECT_DIR$/build.sbt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../website/app/controllers/api/ReferenceApi.scala" afterPath="$PROJECT_DIR$/../website/app/controllers/api/ReferenceApi.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../selenium-tests/src/main/java/Runner.java" afterPath="$PROJECT_DIR$/../selenium-tests/src/main/java/Runner.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../website/.idea/libraries/Scala_2_10_0.xml" afterPath="$PROJECT_DIR$/../website/.idea/libraries/Scala_2_10_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../website/.idea/libraries/Scala_2_9_2.xml" afterPath="$PROJECT_DIR$/../website/.idea/libraries/Scala_2_9_2.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../website/app/controllers/api/UserApi.scala" afterPath="$PROJECT_DIR$/../website/app/controllers/api/UserApi.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.conf" afterPath="$PROJECT_DIR$/src/main/resources/application.conf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../website/app/views/emails/confirmRegistrationTemplate.scala.html" afterPath="$PROJECT_DIR$/../website/app/views/emails/confirmRegistrationTemplate.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea_modules/default-9901b9.iml" afterPath="$PROJECT_DIR$/.idea_modules/default-9901b9.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../localQueries.sql" afterPath="$PROJECT_DIR$/../localQueries.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../website/project/plugins.sbt" afterPath="$PROJECT_DIR$/../website/project/plugins.sbt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../website/app/views/emails/newMessageTemplate.scala.html" afterPath="$PROJECT_DIR$/../website/app/views/emails/newMessageTemplate.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../website/.idea_modules/website-build.iml" afterPath="$PROJECT_DIR$/../website/.idea_modules/website-build.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../website/.idea_modules/website.iml" afterPath="$PROJECT_DIR$/../website/.idea_modules/website.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../website/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../website/.idea/workspace.xml" />
+      <change type="MOVED" beforePath="D:\Pro\the-solidarity-network\tasker\src\main\resources\emails\weeklyHelpRequestSubscriptionTemplate.ssp" afterPath="$PROJECT_DIR$/src/main/resources/emails/periodicalHelpRequestSubscriptionTemplate.ssp" />
+      <change type="MOVED" beforePath="D:\Pro\the-solidarity-network\website\app\database\CountryDto.scala" afterPath="$PROJECT_DIR$/../website/app/db/CountryDto.scala" />
+      <change type="MOVED" beforePath="D:\Pro\the-solidarity-network\website\app\database\DbAdmin.scala" afterPath="$PROJECT_DIR$/../website/app/db/DbAdmin.scala" />
+      <change type="MOVED" beforePath="D:\Pro\the-solidarity-network\website\app\database\DbUtil.scala" afterPath="$PROJECT_DIR$/../website/app/db/DbUtil.scala" />
+      <change type="MOVED" beforePath="D:\Pro\the-solidarity-network\website\app\database\HelpReplyDto.scala" afterPath="$PROJECT_DIR$/../website/app/db/HelpReplyDto.scala" />
+      <change type="MOVED" beforePath="D:\Pro\the-solidarity-network\website\app\database\HelpRequestDto.scala" afterPath="$PROJECT_DIR$/../website/app/db/HelpRequestDto.scala" />
+      <change type="MOVED" beforePath="D:\Pro\the-solidarity-network\website\app\database\MessageDto.scala" afterPath="$PROJECT_DIR$/../website/app/db/MessageDto.scala" />
+      <change type="MOVED" beforePath="D:\Pro\the-solidarity-network\website\app\database\ReferenceDto.scala" afterPath="$PROJECT_DIR$/../website/app/db/ReferenceDto.scala" />
+      <change type="MOVED" beforePath="D:\Pro\the-solidarity-network\website\app\database\ReferenceRatingDto.scala" afterPath="$PROJECT_DIR$/../website/app/db/ReferenceRatingDto.scala" />
+      <change type="MOVED" beforePath="D:\Pro\the-solidarity-network\website\app\database\SubscriptionToHelpRepliesDto.scala" afterPath="$PROJECT_DIR$/../website/app/db/SubscriptionToHelpRepliesDto.scala" />
+      <change type="MOVED" beforePath="D:\Pro\the-solidarity-network\website\app\database\UserDto.scala" afterPath="$PROJECT_DIR$/../website/app/db/UserDto.scala" />
     </list>
     <ignored path="tasker.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="b797e53f-c948-4128-9ed3-068dfd07bfc4" time="1369697094594" ignored="false" />
+    <file path="/Dummy.txt" changelist="b797e53f-c948-4128-9ed3-068dfd07bfc4" time="1370073815995" ignored="false" />
     <file path="/hw.scala" changelist="b797e53f-c948-4128-9ed3-068dfd07bfc4" time="1369232604333" ignored="false" />
     <file path="/HW.scala" changelist="b797e53f-c948-4128-9ed3-068dfd07bfc4" time="1369685469691" ignored="false" />
     <file path="/build.sbt" changelist="b797e53f-c948-4128-9ed3-068dfd07bfc4" time="1369696606970" ignored="false" />
-    <file path="/fragment.java" changelist="b797e53f-c948-4128-9ed3-068dfd07bfc4" time="1369690355096" ignored="false" />
-    <file path="/application.conf" changelist="b797e53f-c948-4128-9ed3-068dfd07bfc4" time="1369257854628" ignored="false" />
+    <file path="/fragment.java" changelist="b797e53f-c948-4128-9ed3-068dfd07bfc4" time="1369833058858" ignored="false" />
+    <file path="/application.conf" changelist="b797e53f-c948-4128-9ed3-068dfd07bfc4" time="1370079715726" ignored="false" />
     <file path="/logback.xml" changelist="b797e53f-c948-4128-9ed3-068dfd07bfc4" time="1369258203997" ignored="false" />
-    <file path="/EmailService.scala" changelist="b797e53f-c948-4128-9ed3-068dfd07bfc4" time="1369695647678" ignored="false" />
+    <file path="/EmailService.scala" changelist="b797e53f-c948-4128-9ed3-068dfd07bfc4" time="1369865886488" ignored="false" />
     <file path="/confirmRegistrationTemplate.ssp" changelist="b797e53f-c948-4128-9ed3-068dfd07bfc4" time="1369262451018" ignored="false" />
-    <file path="/a.dummy" changelist="b797e53f-c948-4128-9ed3-068dfd07bfc4" time="1369685334681" ignored="false" />
-    <file path="/HelpRequestSubscriptionTasker.scala" changelist="b797e53f-c948-4128-9ed3-068dfd07bfc4" time="1369697192682" ignored="false" />
-    <file path="/weeklyHelpRequestSubscriptionTemplate.ssp" changelist="b797e53f-c948-4128-9ed3-068dfd07bfc4" time="1369695699429" ignored="false" />
-    <file path="/Tasker.scala" changelist="b797e53f-c948-4128-9ed3-068dfd07bfc4" time="1369696066176" ignored="false" />
+    <file path="/a.dummy" changelist="b797e53f-c948-4128-9ed3-068dfd07bfc4" time="1370075479092" ignored="false" />
+    <file path="/HelpRequestSubscriptionTasker.scala" changelist="b797e53f-c948-4128-9ed3-068dfd07bfc4" time="1370075693832" ignored="false" />
+    <file path="/weeklyHelpRequestSubscriptionTemplate.ssp" changelist="b797e53f-c948-4128-9ed3-068dfd07bfc4" time="1369829341000" ignored="false" />
+    <file path="/Tasker.scala" changelist="b797e53f-c948-4128-9ed3-068dfd07bfc4" time="1370076598348" ignored="false" />
+    <file path="/FrontendHelpRequest.scala" changelist="b797e53f-c948-4128-9ed3-068dfd07bfc4" time="1369828130739" ignored="false" />
+    <file path="/TaskerHelpRequest.scala" changelist="b797e53f-c948-4128-9ed3-068dfd07bfc4" time="1369829003212" ignored="false" />
+    <file path="/EmailServicesWorker.scala" changelist="b797e53f-c948-4128-9ed3-068dfd07bfc4" time="1369832014446" ignored="false" />
+    <file path="/TaskerEmailService.scala" changelist="b797e53f-c948-4128-9ed3-068dfd07bfc4" time="1369870143177" ignored="false" />
+    <file path="/EmailMessage.scala" changelist="b797e53f-c948-4128-9ed3-068dfd07bfc4" time="1369833373573" ignored="false" />
+    <file path="/SmtpConfig.scala" changelist="b797e53f-c948-4128-9ed3-068dfd07bfc4" time="1369835094090" ignored="false" />
+    <file path="/dailyHelpRequestSubscriptionTemplate.ssp" changelist="b797e53f-c948-4128-9ed3-068dfd07bfc4" time="1369862520493" ignored="false" />
+    <file path="/periodicalHelpRequestSubscriptionTemplate.ssp" changelist="b797e53f-c948-4128-9ed3-068dfd07bfc4" time="1369871109457" ignored="false" />
+    <file path="/TaskerQueries.scala" changelist="b797e53f-c948-4128-9ed3-068dfd07bfc4" time="1370079631892" ignored="false" />
+    <file path="/Example.scala" changelist="b797e53f-c948-4128-9ed3-068dfd07bfc4" time="1370075181464" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,24 +198,8 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/src/main/scala/HelpRequestSubscriptionTasker.scala" line="16" class="HelpRequestSubscriptionTasker$$&lt;anonymous&gt;" package="">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </line_breakpoints>
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -106,46 +245,88 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="EmailService.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/EmailService.scala">
+      <file leaf-file-name="TaskerEmailService.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/main/TaskerEmailService.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="42" selection-start="485" selection-end="485" vertical-scroll-proportion="0.0">
+            <state line="39" column="6" selection-start="1490" selection-end="1490" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="weeklyHelpRequestSubscriptionTemplate.ssp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/emails/weeklyHelpRequestSubscriptionTemplate.ssp">
+      <file leaf-file-name="periodicalHelpRequestSubscriptionTemplate.ssp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/emails/periodicalHelpRequestSubscriptionTemplate.ssp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="0" selection-start="152" selection-end="152" vertical-scroll-proportion="0.0">
+            <state line="24" column="0" selection-start="531" selection-end="531" vertical-scroll-proportion="-15.692307">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Tasker.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/Tasker.scala">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/main/Tasker.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="1" selection-start="754" selection-end="754" vertical-scroll-proportion="0.0">
+            <state line="26" column="5" selection-start="839" selection-end="839" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#14#43#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Example.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/Example.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="47" selection-start="343" selection-end="343" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HelpRequestSubscriptionTasker.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/main/HelpRequestSubscriptionTasker.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="93" selection-start="447" selection-end="447" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HelpRequestSubscriptionTasker.scala" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/HelpRequestSubscriptionTasker.scala">
+      <file leaf-file-name="TaskerQueries.scala" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/db/TaskerQueries.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="0" selection-start="376" selection-end="376" vertical-scroll-proportion="0.10169491">
+            <state line="66" column="53" selection-start="2289" selection-end="2289" vertical-scroll-proportion="0.6292835">
+              <folding>
+                <element signature="e#12#45#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SmtpConfig.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/com/raulraja/services/SmtpConfig.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="11" selection-start="318" selection-end="318" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="logback.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/logback.xml">
+      <file leaf-file-name="EmailMessage.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/com/raulraja/services/EmailMessage.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="16" selection-start="447" selection-end="447" vertical-scroll-proportion="0.0">
+            <state line="13" column="11" selection-start="328" selection-end="328" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EmailService.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/com/raulraja/services/EmailService.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="27" column="7" selection-start="938" selection-end="938" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -169,17 +350,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/scala/hw.scala" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.conf" />
-        <option value="$PROJECT_DIR$/src/main/resources/logback.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/emails/confirmRegistrationTemplate.scala.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/emails/confirmRegistrationTemplate.ssp" />
-        <option value="$PROJECT_DIR$/src/main/scala/HW.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/EmailService.scala" />
-        <option value="$PROJECT_DIR$/src/main/resources/emails/weeklyHelpRequestSubscriptionTemplate.ssp" />
-        <option value="$PROJECT_DIR$/src/main/scala/Tasker.scala" />
-        <option value="$PROJECT_DIR$/build.sbt" />
-        <option value="$PROJECT_DIR$/src/main/scala/HelpRequestSubscriptionTasker.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/com/raulraja/services/EmailServicesWorker.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/main/EmailService.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/main/MyEmailService.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/com/raulraja/services/EmailMessage.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/com/raulraja/services/SmtpConfig.scala" />
+        <option value="$PROJECT_DIR$/src/main/resources/emails/dailyHelpRequestSubscriptionTemplate.ssp" />
+        <option value="$PROJECT_DIR$/src/main/scala/com/raulraja/services/EmailService.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/com/47deg/services/EmailMessage.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/main/TaskerEmailService.scala" />
+        <option value="$PROJECT_DIR$/src/main/resources/emails/periodicalHelpRequestSubscriptionTemplate.ssp" />
+        <option value="$PROJECT_DIR$/src/main/scala/Example.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/main/HelpRequestSubscriptionTasker.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/main/Tasker.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/db/TaskerQueries.scala" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.conf" />
       </list>
     </option>
   </component>
@@ -232,17 +418,12 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="tasker" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -274,6 +455,114 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="scala" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Example.scala" />
+              <option name="myItemType" value="org.jetbrains.plugins.scala.components.ScalaDefsProjectViewProvider$ScalaFileTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tasker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tasker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scala" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tasker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tasker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scala" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tasker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tasker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scala" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="db" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tasker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tasker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scala" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -327,6 +616,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -337,17 +627,17 @@
     <property name="options.lastSelected" value="preferences.fileTypes" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../website/target/scala-2.10/classes/models/models.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../website/target/scala-2.10/classes/website.jar!/" />
     <property name="project.structure.side.proportion" value="0.2600297" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
-    <property name="dynamic.classpath" value="false" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="dynamic.classpath" value="false" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -357,7 +647,7 @@
   </component>
   <component name="RunManager" selected="Application.Tasker">
     <configuration default="false" name="Tasker" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="Tasker" />
+      <option name="MAIN_CLASS_NAME" value="main.Tasker" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -373,7 +663,31 @@
         <option name="TRANSPORT" value="0" />
         <option name="LOCAL" value="true" />
       </RunnerSettings>
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="default-9901b9" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
@@ -411,12 +725,14 @@
       <envs />
       <method />
     </configuration>
-    <list size="1">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Application.Tasker" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Main" />
     </list>
     <recent_temporary>
-      <list size="1">
+      <list size="2">
         <item index="0" class="java.lang.String" itemvalue="Application.Tasker" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Main" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="JUnit" default="true" selected="false">
@@ -457,26 +773,46 @@
     <option name="IGNORE_EXTERNALS" value="false" />
     <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
   </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1186" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32911393" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32911393" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32911393" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24493062" sideWeight="0.600779" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24493062" sideWeight="0.6708861" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39922103" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32911393" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32911393" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32911393" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32847425" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -543,99 +879,109 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/scala/Tasker.scala">
+    <entry file="jar://$PROJECT_DIR$/../website/target/scala-2.10/classes/website.jar!/models/frontend/FrontendUser.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="2" column="6" selection-start="78" selection-end="78" vertical-scroll-proportion="0.05629139" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/models/TaskerUser.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="10" selection-start="498" selection-end="498" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/models/TaskerHelpRequest.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="3" selection-start="804" selection-end="804" vertical-scroll-proportion="0.83417934" />
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/com.typesafe/scalalogging-slf4j_2.10/srcs/scalalogging-slf4j_2.10-1.0.1-sources.jar!/com/typesafe/scalalogging/slf4j/Logger.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="87" column="6" selection-start="3294" selection-end="3294" vertical-scroll-proportion="0.33333334" />
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scala-lang/scala-library/srcs/scala-library-2.10.0-sources.jar!/scala/concurrent/duration/Duration.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="546" column="12" selection-start="21530" selection-end="21530" vertical-scroll-proportion="0.33333334" />
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/com.typesafe.akka/akka-actor_2.10/srcs/akka-actor_2.10-2.1.4-sources.jar!/akka/actor/ActorCell.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="424" column="0" selection-start="15232" selection-end="15232" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/raulraja/services/SmtpConfig.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="11" selection-start="318" selection-end="318" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.sbt">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/raulraja/services/EmailMessage.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="383" selection-end="383" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/Tasker.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="13" column="11" selection-start="328" selection-end="328" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/Tasker.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/raulraja/services/EmailService.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="27" column="7" selection-start="938" selection-end="938" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.sbt">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/Example.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="51" selection-start="162" selection-end="162" vertical-scroll-proportion="0.0" />
+        <state line="10" column="47" selection-start="343" selection-end="343" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../website/project/Build.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/emails/periodicalHelpRequestSubscriptionTemplate.ssp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="7" selection-start="43" selection-end="43" vertical-scroll-proportion="0.033966035" />
+        <state line="24" column="0" selection-start="531" selection-end="531" vertical-scroll-proportion="-15.692307">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../website/target/scala-2.10/classes/models/models.jar!/models/Country.class">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/main/TaskerEmailService.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="71" selection-start="15" selection-end="86" vertical-scroll-proportion="0.026645768" />
+        <state line="39" column="6" selection-start="1490" selection-end="1490" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../website/target/scala-2.10/classes/models/models.jar!/models/User.class">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/main/HelpRequestSubscriptionTasker.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="7" selection-start="1018" selection-end="1018" vertical-scroll-proportion="0.09222423" />
+        <state line="15" column="93" selection-start="447" selection-end="447" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/main/Tasker.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="5" selection-start="839" selection-end="839" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#14#43#0" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.conf">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="22" selection-start="397" selection-end="397" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../website/target/scala-2.10/classes/models/models.jar!/models/frontend/FrontendUser.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="295" selection-start="140" selection-end="424" vertical-scroll-proportion="0.05284974" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/logback.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="16" selection-start="447" selection-end="447" vertical-scroll-proportion="0.0">
+        <state line="16" column="22" selection-start="485" selection-end="485" vertical-scroll-proportion="0.423676">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.sbt">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/db/TaskerQueries.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="584" selection-end="584" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/Tasker.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="1" selection-start="754" selection-end="754" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/emails/weeklyHelpRequestSubscriptionTemplate.ssp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="152" selection-end="152" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/EmailService.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="42" selection-start="485" selection-end="485" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/HelpRequestSubscriptionTasker.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="376" selection-end="376" vertical-scroll-proportion="0.10169491">
-          <folding />
+        <state line="66" column="53" selection-start="2289" selection-end="2289" vertical-scroll-proportion="0.6292835">
+          <folding>
+            <element signature="e#12#45#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -704,7 +1050,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>models</last-edited>
+          <last-edited>website</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

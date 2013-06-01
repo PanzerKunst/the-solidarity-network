@@ -2,11 +2,11 @@ package controllers.api
 
 import models.Message
 import services.{EmailService, JsonUtil}
-import database.MessageDto
 import play.api.mvc.{Action, Controller}
 import play.api.Logger
 import controllers.Application
 import models.frontend.FrontendMessage
+import db.MessageDto
 
 object MessageApi extends Controller {
   def create = Action(parse.json) {

@@ -2,7 +2,7 @@ package models.frontend
 
 import models.{User, HelpRequest}
 import org.codehaus.jackson.annotate.JsonProperty
-import database.{DbUtil, UserDto}
+import db.{UserDto, DbUtil}
 
 class FrontendHelpRequest {
 
@@ -19,7 +19,6 @@ class FrontendHelpRequest {
   }
 
   def this(helpRequest: HelpRequest, user: User) = {
-
     this()
 
     this.id = helpRequest.id.get
@@ -48,5 +47,4 @@ class FrontendHelpRequest {
 
   @JsonProperty
   var requester: FrontendUser = _
-
 }

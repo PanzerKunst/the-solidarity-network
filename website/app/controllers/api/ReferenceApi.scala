@@ -2,10 +2,10 @@ package controllers.api
 
 import services.JsonUtil
 import play.api.mvc.{Action, Controller}
-import database.ReferenceDto
 import models.Reference
 import controllers.Application
 import play.api.Logger
+import db.ReferenceDto
 
 object ReferenceApi extends Controller {
   def create = Action(parse.json) {

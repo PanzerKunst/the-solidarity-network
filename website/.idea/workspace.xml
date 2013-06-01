@@ -2,17 +2,161 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3fb03cc9-1f17-446c-8856-60a2545d2342" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\tasker\src\main\scala\Runner.scala" afterPath="" />
-      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\tasker\tasker.iml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\selenium-tests\selenium-tests.iml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\tasker\.idea\libraries\models.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\tasker\src\main\scala\EmailService.scala" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\tasker\src\main\scala\HelpRequestSubscriptionTasker.scala" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\tasker\src\main\scala\Tasker.scala" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__cglib_cglib_nodep_2_1_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__ch_qos_logback_logback_classic_1_0_7.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__ch_qos_logback_logback_core_1_0_7.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__com_cedarsoft_guice_annotations_2_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__com_fasterxml_jackson_core_jackson_annotations_2_2_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__com_fasterxml_jackson_core_jackson_core_2_2_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__com_fasterxml_jackson_core_jackson_databind_2_2_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__com_fasterxml_jackson_module_jackson_module_scala_2_10_2_2_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__com_github_scala_incubator_io_scala_io_core_2_10_0_4_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__com_github_scala_incubator_io_scala_io_file_2_10_0_4_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__com_google_code_findbugs_jsr305_2_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__com_google_guava_guava_13_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__com_h2database_h2_1_3_168.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__com_intellij_annotations_7_0_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__com_jolbox_bonecp_0_7_1_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__com_jsuereth_scala_arm_2_10_1_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__com_ning_async_http_client_1_7_6.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__com_novocode_junit_interface_0_9.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__com_thoughtworks_paranamer_paranamer_2_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__com_typesafe_akka_akka_actor_2_10_2_1_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__com_typesafe_akka_akka_slf4j_2_10_2_1_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__com_typesafe_config_1_0_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__com_typesafe_play_plugins_mailer_2_10_2_1_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__com_typesafe_play_plugins_util_2_10_2_1_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__commons_codec_commons_codec_1_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__commons_codec_commons_codec_1_6.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__commons_collections_commons_collections_3_2_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__commons_io_commons_io_2_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__commons_lang_commons_lang_2_6.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__commons_logging_commons_logging_1_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__io_netty_netty_3_6_3_Final.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__javax_activation_activation_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__javax_mail_mail_1_4_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__javax_servlet_javax_servlet_api_3_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__javax_transaction_jta_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__javax_validation_validation_api_1_0_0_GA.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__joda_time_joda_time_2_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__junit_junit_dep_4_10.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__mysql_mysql_connector_java_5_1_24.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__net_java_dev_jna_jna_3_4_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__net_java_dev_jna_platform_3_4_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__net_sf_ehcache_ehcache_core_2_6_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__net_sourceforge_cssparser_cssparser_0_9_5.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__net_sourceforge_htmlunit_htmlunit_2_9.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__net_sourceforge_htmlunit_htmlunit_core_js_2_9.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__net_sourceforge_nekohtml_nekohtml_1_9_15.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__oauth_signpost_signpost_commonshttp4_1_2_1_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__oauth_signpost_signpost_core_1_2_1_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_apache_commons_commons_email_1_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_apache_commons_commons_exec_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_apache_commons_commons_lang3_3_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_apache_httpcomponents_httpclient_4_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_apache_httpcomponents_httpclient_4_1_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_apache_httpcomponents_httpcore_4_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_apache_httpcomponents_httpcore_4_1_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_apache_httpcomponents_httpmime_4_1_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_codehaus_jackson_jackson_core_asl_1_9_10.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_codehaus_jackson_jackson_mapper_asl_1_9_10.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_easytesting_fest_assert_1_4.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_easytesting_fest_util_1_1_6.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_fluentlenium_fluentlenium_core_0_7_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_fluentlenium_fluentlenium_festassert_0_7_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_hamcrest_hamcrest_core_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_hibernate_hibernate_validator_4_3_0_Final.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_javassist_javassist_3_16_1_GA.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_jboss_logging_jboss_logging_3_1_0_CR2.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_joda_joda_convert_1_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_json_json_20080701.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_ow2_spec_ee_ow2_atinject_1_0_spec_1_0_10.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_reflections_reflections_0_9_8.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_scala_lang_scala_library_2_10_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_scala_lang_scala_reflect_2_10_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_scala_stm_scala_stm_2_10_0_0_6.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_scala_tools_testing_test_interface_0_5.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_seleniumhq_selenium_selenium_android_driver_2_25_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_seleniumhq_selenium_selenium_api_2_25_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_seleniumhq_selenium_selenium_chrome_driver_2_25_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_seleniumhq_selenium_selenium_firefox_driver_2_25_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_seleniumhq_selenium_selenium_htmlunit_driver_2_25_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_seleniumhq_selenium_selenium_ie_driver_2_25_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_seleniumhq_selenium_selenium_iphone_driver_2_25_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_seleniumhq_selenium_selenium_java_2_25_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_seleniumhq_selenium_selenium_remote_driver_2_25_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_seleniumhq_selenium_selenium_safari_driver_2_25_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_seleniumhq_selenium_selenium_support_2_25_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_slf4j_jcl_over_slf4j_1_6_6.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_slf4j_jul_to_slf4j_1_6_6.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_slf4j_slf4j_api_1_7_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_specs2_scalaz_concurrent_2_10_7_0_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_specs2_scalaz_core_2_10_7_0_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_specs2_scalaz_effect_2_10_7_0_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_specs2_specs2_2_10_1_13.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_springframework_spring_beans_3_1_2_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_springframework_spring_context_3_1_2_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_springframework_spring_core_3_1_2_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_w3c_css_sac_1_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_webbitserver_webbit_0_4_6.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__org_yaml_snakeyaml_1_10.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__play_anorm_2_10_2_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__play_play_2_10_2_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__play_play_exceptions_2_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__play_play_iteratees_2_10_2_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__play_play_java_2_10_2_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__play_play_jdbc_2_10_2_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__play_play_test_2_10_2_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__play_sbt_link_2_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__play_templates_2_10_2_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__tyrex_tyrex_1_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__xalan_serializer_2_7_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__xalan_xalan_2_7_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__xerces_xercesImpl_2_9_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Pro\the-solidarity-network\website\.idea\libraries\SBT__xml_apis_xml_apis_1_3_04.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../localQueries.sql" afterPath="$PROJECT_DIR$/../localQueries.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.gitignore" afterPath="$PROJECT_DIR$/../.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../selenium-tests/src/main/java/tests/messages/WriteMessage.java" afterPath="$PROJECT_DIR$/../selenium-tests/src/main/java/tests/messages/WriteMessage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../tasker/build.sbt" afterPath="$PROJECT_DIR$/../tasker/build.sbt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../tasker/src/main/resources/application.conf" afterPath="$PROJECT_DIR$/../tasker/src/main/resources/application.conf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../selenium-tests/src/main/java/Runner.java" afterPath="$PROJECT_DIR$/../selenium-tests/src/main/java/Runner.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../tasker/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../tasker/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../tasker/.idea_modules/default-9901b9.iml" afterPath="$PROJECT_DIR$/../tasker/.idea_modules/default-9901b9.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Scala_2_10_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Scala_2_10_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Scala_2_9_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Scala_2_9_2.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea_modules/website-build.iml" afterPath="$PROJECT_DIR$/.idea_modules/website-build.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea_modules/website.iml" afterPath="$PROJECT_DIR$/.idea_modules/website.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README" afterPath="$PROJECT_DIR$/README" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/DbAdmin.scala" afterPath="$PROJECT_DIR$/app/database/DbAdmin.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Application.scala" afterPath="$PROJECT_DIR$/app/controllers/Application.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/api/AuthApi.scala" afterPath="$PROJECT_DIR$/app/controllers/api/AuthApi.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/api/DbAdminApi.scala" afterPath="$PROJECT_DIR$/app/controllers/api/DbAdminApi.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/api/HelpReplyApi.scala" afterPath="$PROJECT_DIR$/app/controllers/api/HelpReplyApi.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/api/HelpRequestApi.scala" afterPath="$PROJECT_DIR$/app/controllers/api/HelpRequestApi.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/api/MessageApi.scala" afterPath="$PROJECT_DIR$/app/controllers/api/MessageApi.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/api/ReferenceApi.scala" afterPath="$PROJECT_DIR$/app/controllers/api/ReferenceApi.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/api/UserApi.scala" afterPath="$PROJECT_DIR$/app/controllers/api/UserApi.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/frontend/FrontendHelpReply.scala" afterPath="$PROJECT_DIR$/app/models/frontend/FrontendHelpReply.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/frontend/FrontendHelpRequest.scala" afterPath="$PROJECT_DIR$/app/models/frontend/FrontendHelpRequest.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/frontend/FrontendMessage.scala" afterPath="$PROJECT_DIR$/app/models/frontend/FrontendMessage.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/frontend/FrontendReference.scala" afterPath="$PROJECT_DIR$/app/models/frontend/FrontendReference.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/frontend/FrontendUser.scala" afterPath="$PROJECT_DIR$/app/models/frontend/FrontendUser.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/emails/confirmRegistrationTemplate.scala.html" afterPath="$PROJECT_DIR$/app/views/emails/confirmRegistrationTemplate.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/emails/newMessageTemplate.scala.html" afterPath="$PROJECT_DIR$/app/views/emails/newMessageTemplate.scala.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/Build.scala" afterPath="$PROJECT_DIR$/project/Build.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/plugins.sbt" afterPath="$PROJECT_DIR$/project/plugins.sbt" />
+      <change type="MOVED" beforePath="D:\Pro\the-solidarity-network\tasker\src\main\resources\emails\weeklyHelpRequestSubscriptionTemplate.ssp" afterPath="$PROJECT_DIR$/../tasker/src/main/resources/emails/periodicalHelpRequestSubscriptionTemplate.ssp" />
+      <change type="MOVED" beforePath="D:\Pro\the-solidarity-network\website\app\database\CountryDto.scala" afterPath="$PROJECT_DIR$/app/db/CountryDto.scala" />
+      <change type="MOVED" beforePath="D:\Pro\the-solidarity-network\website\app\database\DbAdmin.scala" afterPath="$PROJECT_DIR$/app/db/DbAdmin.scala" />
+      <change type="MOVED" beforePath="D:\Pro\the-solidarity-network\website\app\database\DbUtil.scala" afterPath="$PROJECT_DIR$/app/db/DbUtil.scala" />
+      <change type="MOVED" beforePath="D:\Pro\the-solidarity-network\website\app\database\HelpReplyDto.scala" afterPath="$PROJECT_DIR$/app/db/HelpReplyDto.scala" />
+      <change type="MOVED" beforePath="D:\Pro\the-solidarity-network\website\app\database\HelpRequestDto.scala" afterPath="$PROJECT_DIR$/app/db/HelpRequestDto.scala" />
+      <change type="MOVED" beforePath="D:\Pro\the-solidarity-network\website\app\database\MessageDto.scala" afterPath="$PROJECT_DIR$/app/db/MessageDto.scala" />
+      <change type="MOVED" beforePath="D:\Pro\the-solidarity-network\website\app\database\ReferenceDto.scala" afterPath="$PROJECT_DIR$/app/db/ReferenceDto.scala" />
+      <change type="MOVED" beforePath="D:\Pro\the-solidarity-network\website\app\database\ReferenceRatingDto.scala" afterPath="$PROJECT_DIR$/app/db/ReferenceRatingDto.scala" />
+      <change type="MOVED" beforePath="D:\Pro\the-solidarity-network\website\app\database\SubscriptionToHelpRepliesDto.scala" afterPath="$PROJECT_DIR$/app/db/SubscriptionToHelpRepliesDto.scala" />
+      <change type="MOVED" beforePath="D:\Pro\the-solidarity-network\website\app\database\UserDto.scala" afterPath="$PROJECT_DIR$/app/db/UserDto.scala" />
     </list>
     <ignored path="website.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -70,73 +214,95 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="FrontendHelpRequest.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/frontend/FrontendHelpRequest.scala">
+      <file leaf-file-name="DbAdmin.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/db/DbAdmin.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="10" selection-start="676" selection-end="676" vertical-scroll-proportion="0.0">
+            <state line="18" column="41" selection-start="454" selection-end="454" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="HelpRequestDto.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/database/HelpRequestDto.scala">
+        <entry file="file://$PROJECT_DIR$/app/db/HelpRequestDto.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="140" column="54" selection-start="5675" selection-end="5675" vertical-scroll-proportion="0.0">
+            <state line="202" column="40" selection-start="8022" selection-end="8022" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HelpRequestApi.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/api/HelpRequestApi.scala">
+      <file leaf-file-name="MessageDto.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/db/MessageDto.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="113" column="21" selection-start="4296" selection-end="4296" vertical-scroll-proportion="0.0">
+            <state line="35" column="16" selection-start="1178" selection-end="1178" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FrontendUser.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/frontend/FrontendUser.scala">
+      <file leaf-file-name="FrontendHelpReply.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/frontend/FrontendHelpReply.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="43" selection-start="125" selection-end="125" vertical-scroll-proportion="0.0">
+            <state line="4" column="0" selection-start="107" selection-end="107" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JsonProperty.class" pinned="false" current="true" current-in-tab="true">
-        <entry file="jar://D:/ProgramFiles/play-2.1.1/repository/local/org.codehaus.jackson/jackson-core-asl/1.9.10/jars/jackson-core-asl.jar!/org/codehaus/jackson/annotate/JsonProperty.class">
+      <file leaf-file-name="FrontendReference.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/frontend/FrontendReference.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="18" selection-start="455" selection-end="455" vertical-scroll-proportion="0.19412725">
-              <folding />
+            <state line="9" column="0" selection-start="247" selection-end="247" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#25#73#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.conf" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/conf/application.conf">
+      <file leaf-file-name="HelpReplyApi.scala" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/api/HelpReplyApi.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="24" selection-start="1048" selection-end="1048" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Build.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/project/Build.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="70" selection-start="339" selection-end="405" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="9" column="0" selection-start="274" selection-end="274" vertical-scroll-proportion="0.22972973">
+              <folding>
+                <element signature="e#25#49#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="UserDto.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/database/UserDto.scala">
+        <entry file="file://$PROJECT_DIR$/app/db/UserDto.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="0" selection-start="596" selection-end="596" vertical-scroll-proportion="0.0">
+            <state line="135" column="0" selection-start="5805" selection-end="5805" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DbAdminApi.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/api/DbAdminApi.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="22" selection-start="371" selection-end="371" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Runner.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../selenium-tests/src/main/java/Runner.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="301" column="24" selection-start="10730" selection-end="10730" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Join.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../selenium-tests/src/main/java/Join.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="51" column="0" selection-start="1748" selection-end="1748" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -155,22 +321,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/../selenium-tests/src/main/java/tests/helprequests/SearchHelpRequests.java" />
-        <option value="$PROJECT_DIR$/../selenium-tests/src/main/java/tests/messages/MsgInbox.java" />
-        <option value="$PROJECT_DIR$/../selenium-tests/src/main/java/tests/messages/SentMessages.java" />
-        <option value="$PROJECT_DIR$/../selenium-tests/src/main/java/tests/messages/ViewMessage.java" />
-        <option value="$PROJECT_DIR$/../tasker/app/Runner.scala" />
-        <option value="$PROJECT_DIR$/app/services/EmailService.scala" />
-        <option value="$PROJECT_DIR$/../tasker/src/main/scala/Runner$.java" />
-        <option value="$PROJECT_DIR$/../tasker/build.sbt" />
-        <option value="$PROJECT_DIR$/../tasker/src/main/scala/Runner.scala" />
+        <option value="$PROJECT_DIR$/app/controllers/api/MessageApi.scala" />
+        <option value="$PROJECT_DIR$/app/controllers/api/AuthApi.scala" />
+        <option value="$PROJECT_DIR$/app/controllers/api/ReferenceApi.scala" />
+        <option value="$PROJECT_DIR$/app/models/frontend/FrontendHelpReply.scala" />
+        <option value="$PROJECT_DIR$/app/models/frontend/FrontendMessage.scala" />
         <option value="$PROJECT_DIR$/app/controllers/Application.scala" />
-        <option value="$PROJECT_DIR$/../selenium-tests/src/main/java/Runner.java" />
-        <option value="$PROJECT_DIR$/../selenium-tests/src/main/java/tests/messages/WriteMessage.java" />
-        <option value="$PROJECT_DIR$/app/database/DbAdmin.scala" />
-        <option value="$PROJECT_DIR$/app/controllers/api/HelpRequestApi.scala" />
+        <option value="$PROJECT_DIR$/app/models/frontend/FrontendHelpRequest.scala" />
         <option value="$PROJECT_DIR$/app/models/frontend/FrontendUser.scala" />
-        <option value="$PROJECT_DIR$/project/Build.scala" />
+        <option value="$PROJECT_DIR$/../selenium-tests/src/main/java/Runner.java" />
+        <option value="$PROJECT_DIR$/app/controllers/api/DbAdminApi.scala" />
+        <option value="$PROJECT_DIR$/app/db/DbAdmin.scala" />
+        <option value="$PROJECT_DIR$/app/db/HelpRequestDto.scala" />
+        <option value="$PROJECT_DIR$/app/db/MessageDto.scala" />
+        <option value="$PROJECT_DIR$/app/db/UserDto.scala" />
+        <option value="$PROJECT_DIR$/app/models/frontend/FrontendReference.scala" />
+        <option value="$PROJECT_DIR$/app/controllers/api/HelpReplyApi.scala" />
       </list>
     </option>
   </component>
@@ -240,76 +406,6 @@
               <option name="myItemId" value="website" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SBT: org.codehaus.jackson:jackson-core-asl:1.9.10" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jackson-core-asl.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jackson" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SBT: org.codehaus.jackson:jackson-core-asl:1.9.10" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jackson-core-asl.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jackson" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="annotate" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SBT: org.codehaus.jackson:jackson-core-asl:1.9.10" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jackson-core-asl.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -333,24 +429,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="project" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Build.scala" />
-              <option name="myItemType" value="org.jetbrains.plugins.scala.components.ScalaDefsProjectViewProvider$ScalaFileTreeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -493,7 +571,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
+              <option name="myItemId" value="db" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -501,6 +579,104 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="website" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="selenium-tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="selenium-tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="selenium-tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="selenium-tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -528,21 +704,37 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="project.structure.last.edited" value="Libraries" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="292" />
     <property name="project.structure.proportion" value="0.15" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="292" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="recentsLimit" value="5" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="292" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="options.lastSelected" value="preferences.pluginManager" />
-    <property name="project.structure.side.proportion" value="0.3088578" />
+    <property name="recentsLimit" value="5" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="292" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="967" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="966" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="292" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="291" />
     <property name="GoToClass.includeJavaFiles" value="false" />
-    <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="options.lastSelected" value="org.jetbrains.plugins.scala.compiler.ScalacConfigurable" />
+    <property name="project.structure.side.proportion" value="0.3088578" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="options.searchVisible" value="true" />
     <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
@@ -582,19 +774,6 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-        <option name="SBT.BeforeRunTask" enabled="false" action="test:products" runInCurrentModule="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="Specs2RunConfiguration" factoryName="Specs2">
       <module name="" />
       <setting name="path" value="" />
@@ -610,6 +789,19 @@
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
         <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+        <option name="SBT.BeforeRunTask" enabled="false" action="test:products" runInCurrentModule="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
         <option name="Maven.BeforeRunTask" enabled="false" />
         <option name="SBT.BeforeRunTask" enabled="false" action="test:products" runInCurrentModule="true" />
       </method>
@@ -653,18 +845,6 @@
         <option name="SBT.BeforeRunTask" enabled="false" action="test:products" runInCurrentModule="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
-      <JSDebuggerConfigurationSettings>
-        <option name="engineId" value="embedded" />
-        <option name="fileUrl" />
-      </JSDebuggerConfigurationSettings>
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-        <option name="SBT.BeforeRunTask" enabled="false" action="test:products" runInCurrentModule="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -691,6 +871,18 @@
         <option name="SBT.BeforeRunTask" enabled="false" action="test:products" runInCurrentModule="true" />
       </method>
     </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+        <option name="SBT.BeforeRunTask" enabled="false" action="test:products" runInCurrentModule="true" />
+      </method>
+    </configuration>
     <configuration default="false" name="Play debug" type="Remote" factoryName="Remote">
       <module name="website" />
       <option name="USE_SOCKET_TRANSPORT" value="true" />
@@ -707,8 +899,8 @@
       <method />
     </configuration>
     <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="Remote.Play debug" />
-      <item index="1" class="java.lang.String" itemvalue="Application.Runner" />
+      <item index="0" class="java.lang.String" itemvalue="Application.Runner" />
+      <item index="1" class="java.lang.String" itemvalue="Remote.Play debug" />
     </list>
     <configuration name="&lt;template&gt;" type="TestNG" default="true" selected="false">
       <option name="MAIN_CLASS_NAME" />
@@ -753,25 +945,25 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1186" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35380116" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SBT Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34455445" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34950495" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32651073" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294347" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32651073" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23878205" sideWeight="0.6461988" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2748538" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23504274" sideWeight="0.6734893" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28217822" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35380116" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -836,107 +1028,95 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/emails/confirmRegistrationTemplate.scala.html">
+    <entry file="jar://D:/ProgramFiles/play-2.1.1/repository/local/play/play_2.10/2.1.1/jars/play_2.10.jar!/play/utils/Threads.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="172" selection-end="172" vertical-scroll-proportion="0.10828026" />
+      </provider>
+    </entry>
+    <entry file="jar://D:/ProgramFiles/play-2.1.1/repository/local/play/play-jdbc_2.10/2.1.1/jars/play-jdbc_2.10.jar!/play/api/db/DBApi.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/CountryDto.scala">
+    <entry file="file://$PROJECT_DIR$/app/models/frontend/FrontendHelpRequest.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="36" selection-start="454" selection-end="454" vertical-scroll-proportion="0.39968652" />
+        <state line="21" column="0" selection-start="659" selection-end="659" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/services/EmailService.scala">
+    <entry file="file://$PROJECT_DIR$/app/db/DbUtil.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="35" selection-start="613" selection-end="613" vertical-scroll-proportion="0.0" />
+        <state line="5" column="7" selection-start="76" selection-end="76" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/User.scala">
+    <entry file="file://$PROJECT_DIR$/app/models/frontend/FrontendMessage.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="53" selection-start="564" selection-end="646" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/DbAdmin.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="123" column="23" selection-start="3741" selection-end="3741" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../tasker/build.sbt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="524" selection-end="524" vertical-scroll-proportion="0.22077923">
-          <folding />
-        </state>
+        <state line="25" column="0" selection-start="824" selection-end="824" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/Application.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="151" column="108" selection-start="5261" selection-end="5261" vertical-scroll-proportion="0.6592">
+        <state line="56" column="3" selection-start="1460" selection-end="1460" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/db/DbAdmin.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="41" selection-start="454" selection-end="454" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/db/HelpRequestDto.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="202" column="40" selection-start="8022" selection-end="8022" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/db/UserDto.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="135" column="0" selection-start="5805" selection-end="5805" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/api/DbAdminApi.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="22" selection-start="371" selection-end="371" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../selenium-tests/src/main/java/Runner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="301" column="24" selection-start="10730" selection-end="10730" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../selenium-tests/src/main/java/Join.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="0" selection-start="1748" selection-end="1748" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/db/MessageDto.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="16" selection-start="1178" selection-end="1178" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/api/HelpRequestApi.scala">
+    <entry file="file://$PROJECT_DIR$/app/models/frontend/FrontendHelpReply.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="113" column="21" selection-start="4296" selection-end="4296" vertical-scroll-proportion="0.0">
+        <state line="4" column="0" selection-start="107" selection-end="107" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Country.scala">
+    <entry file="file://$PROJECT_DIR$/app/models/frontend/FrontendReference.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="11" selection-start="27" selection-end="27" vertical-scroll-proportion="0.053291537">
-          <folding />
+        <state line="9" column="0" selection-start="247" selection-end="247" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#25#73#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/HelpRequestDto.scala">
+    <entry file="file://$PROJECT_DIR$/app/controllers/api/HelpReplyApi.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="140" column="54" selection-start="5675" selection-end="5675" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/frontend/FrontendHelpRequest.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="10" selection-start="676" selection-end="676" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/UserDto.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="596" selection-end="596" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conf/application.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="24" selection-start="1048" selection-end="1048" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/Build.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="70" selection-start="339" selection-end="405" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/frontend/FrontendUser.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="43" selection-start="125" selection-end="125" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/ProgramFiles/play-2.1.1/repository/local/org.codehaus.jackson/jackson-core-asl/1.9.10/jars/jackson-core-asl.jar!/org/codehaus/jackson/annotate/JsonProperty.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="18" selection-start="455" selection-end="455" vertical-scroll-proportion="0.19412725">
-          <folding />
+        <state line="9" column="0" selection-start="274" selection-end="274" vertical-scroll-proportion="0.22972973">
+          <folding>
+            <element signature="e#25#49#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -949,7 +1129,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.40115607" />
+                <option value="0.3927739" />
               </list>
             </option>
           </splitter-proportions>
@@ -957,7 +1137,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>Scala</last-edited>
+          <last-edited>Scala (website)|Scala</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -992,11 +1172,11 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>default-9901b9</last-edited>
+          <last-edited>website</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.3088578" />
+                <option value="0.3927739" />
               </list>
             </option>
           </splitter-proportions>
@@ -1015,7 +1195,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Scala 2.9.2</last-edited>
+          <last-edited>Maven: net.sourceforge.cssparser:cssparser:0.9.9</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
