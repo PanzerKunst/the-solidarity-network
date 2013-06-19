@@ -9,46 +9,19 @@
 
       $defaultH2FontSize: $baseFontSize * 2.25;
 
-      h2 {
+      > h2 {
         font-size: 22px;
+
+        text-align: left;
 
         @include desktop {
           font-size: $defaultH2FontSize;
         }
-
-        float: left;
       }
 
-      p {
-        display: none;
+      > p {
         margin-bottom: 0.5em;
       }
-
-      $headerLineHeight: $baseLineHeight * 2;
-      $headerMargins: 10px 0;
-
-      .read-more-button {
-        float: left;
-        text-align: right;
-        width: 1.5em;
-        line-height: $headerLineHeight;
-        margin: $headerMargins;
-      }
-
-      &.expanded {
-        h2 {
-          float: none;
-          margin-left: 0;
-        }
-
-        .read-more-button {
-          display: none;
-        }
-      }
-    }
-
-    > h2 {
-      text-align: center;
     }
 
     .action {
