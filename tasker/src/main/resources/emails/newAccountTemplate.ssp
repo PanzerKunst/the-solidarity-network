@@ -1,0 +1,14 @@
+<%@ val user: models.User %>
+
+<p>Dear ${user.firstName},</p>
+<br/>
+
+<p>We're happy to welcome you to the Help Network!</p>
+<p>What about taking a look at <a href="http://192.168.0.4:9000/help">the active help requests near you</a>, or <a
+        href="http://192.168.0.4:9000/help-requests/new">submitting one</a>? You can also <a
+        href="http://192.168.0.4:9000/my-profile/edit">improve your profile</a>.</p>
+<br/>
+
+<p>Best regards,</p>
+
+<p>Christophe</p>

@@ -18,7 +18,14 @@ object HelpRequestApi extends Controller {
           val helpRequestWithUserId = helpRequest.copy(requesterId = loggedInUser.id)
 
           HelpRequestDto.create(helpRequestWithUserId) match {
-            case Some(id) => Ok(id.toString)
+            case Some(id) =>
+              createSubscriptionToHelpReplies(SubscriptionToHelpReplies(
+                requestId = id,
+                subscriberId = loggedInUser.id
+              )) match {
+                case Left(errorMsg) => InternalServerError(errorMsg)
+                case Right(optionalId) => Ok(id.toString)
+              }
             case None => InternalServerError("Creation of a help request did not return an ID!")
           }
         }
@@ -132,16 +139,13 @@ object HelpRequestApi extends Controller {
           val subscription = JsonUtil.deserialize[SubscriptionToHelpReplies](request.body.toString)
           val subscriptionWithSubscriberId = subscription.copy(subscriberId = loggedInUser.id)
 
-          val filtersMap = Map("request_id" -> subscriptionWithSubscriberId.requestId.toString,
-            "subscriber_id" -> subscriptionWithSubscriberId.subscriberId.get.toString)
-
-          if (SubscriptionToHelpRepliesDto.get(Some(filtersMap)).isEmpty)
-            SubscriptionToHelpRepliesDto.create(subscriptionWithSubscriberId) match {
+          createSubscriptionToHelpReplies(subscriptionWithSubscriberId) match {
+            case Left(errorMsg) => InternalServerError(errorMsg)
+            case Right(optionalId) => optionalId match {
               case Some(id) => Ok(id.toString)
-              case None => InternalServerError("Creation of a subscription to help replies did not return an ID!")
+              case None => Ok // Already subscribed
             }
-          else
-            Ok
+          }
         }
         case None => {
           Logger.info("Attempt to create a subscription to help replies while not logged-in")
@@ -167,6 +171,24 @@ object HelpRequestApi extends Controller {
           Unauthorized
         }
       }
+  }
+
+  private def createSubscriptionToHelpReplies(subscription: SubscriptionToHelpReplies): Either[String, Option[Long]] = {
+    if (!subscription.subscriberId.isDefined) {
+      Left("Could not create subscriptionToHelpReplies: missing attribute 'subscriberId'")
+    }
+    else {
+      val filtersMap = Map("request_id" -> subscription.requestId.toString,
+        "subscriber_id" -> subscription.subscriberId.get.toString)
+
+      if (SubscriptionToHelpRepliesDto.get(Some(filtersMap)).isEmpty)
+        SubscriptionToHelpRepliesDto.create(subscription) match {
+          case Some(id) => Right(Some(id))
+          case None => Left("Creation of a subscription to help replies did not return an ID!")
+        }
+      else
+        Right(None)
+    }
   }
 
   private def getUpdatedFiltersIfQueryStringContains(filters: Map[String, String], queryString: Map[String, Seq[String]], key: String): Map[String, String] = {

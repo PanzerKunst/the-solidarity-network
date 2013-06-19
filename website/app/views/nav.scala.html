@@ -51,6 +51,16 @@
         </li>
         }
 
+        @if(!user.isDefined) {
+        <li>
+            <a href="/login">Login</a>
+        </li>
+
+        <li>
+            <a href="/join">Join</a>
+        </li>
+        }
+
         <li>
             <a href="/forum">Forum</a>
         </li>
@@ -62,16 +72,6 @@
         @if(user.isDefined) {
         <li>
             <a href="/logout">Log out</a>
-        </li>
-
-        } else {
-
-        <li>
-            <a href="/login">Login</a>
-        </li>
-
-        <li>
-            <a href="/join">Join</a>
         </li>
         }
     </ul>

@@ -1,0 +1,14 @@
+<%@ val subscriber: models.TaskerUser %>
+<%@ val reply: models.TaskerHelpReply %>
+<%@ val hr: models.HelpRequest %>
+
+<p>Dear ${subscriber.firstName},</p>
+<br />
+
+<p>${reply.replier.firstName} replied to help request <em>${hr.title}</em>:
+
+<p>${unescape(reply.text)}</p>
+
+<p>Best regards,</p>
+
+<p>Christophe</p>

@@ -2,6 +2,51 @@
 
 #index {
   #content {
+    li {
+      @include clearfix;
+
+      margin-bottom: 1.5em;
+
+      $defaultH2FontSize: $baseFontSize * 2.25;
+
+      h2 {
+        font-size: 22px;
+
+        @include desktop {
+          font-size: $defaultH2FontSize;
+        }
+
+        float: left;
+      }
+
+      p {
+        display: none;
+        margin-bottom: 0.5em;
+      }
+
+      $headerLineHeight: $baseLineHeight * 2;
+      $headerMargins: 10px 0;
+
+      .read-more-button {
+        float: left;
+        text-align: right;
+        width: 1.5em;
+        line-height: $headerLineHeight;
+        margin: $headerMargins;
+      }
+
+      &.expanded {
+        h2 {
+          float: none;
+          margin-left: 0;
+        }
+
+        .read-more-button {
+          display: none;
+        }
+      }
+    }
+
     > h2 {
       text-align: center;
     }

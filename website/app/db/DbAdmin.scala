@@ -17,9 +17,13 @@ object DbAdmin {
     createTableMessage()
     createTableEmailProcessingHelpRequest()
     createTableEmailProcessingHelpReply()
+    createTableEmailProcessingNewAccount()
+    createTableEmailProcessingMessage()
   }
 
   def dropTables() {
+    dropTableEmailProcessingMessage()
+    dropTableEmailProcessingNewAccount()
     dropTableEmailProcessingHelpReply()
     dropTableEmailProcessingHelpRequest()
     dropTableMessage()
@@ -35,6 +39,10 @@ object DbAdmin {
   def initData() {
     initDataCountry()
     initDataReferenceRating()
+    initDataEmailProcessingHelpRequest()
+    initDataEmailProcessingHelpReply()
+    initDataEmailProcessingNewAccount()
+    initDataEmailProcessingMessage()
   }
 
   private def createTableCountry() {
@@ -208,8 +216,8 @@ object DbAdmin {
           `id` int UNSIGNED NOT NULL AUTO_INCREMENT,
           `frequency` VARCHAR(45) DEFAULT '""" + User.NEW_HR_SUBSCRIPTION_FREQUENCY_EACH_NEW_REQUEST + """', /* EACH_NEW_REQUEST, DAILY, WEEKLY */
           `id_of_last_processed_request` int UNSIGNED NOT NULL,
-          PRIMARY KEY (`id`),
-          CONSTRAINT `fk_request2` FOREIGN KEY (`id_of_last_processed_request`) REFERENCES `help_request`(`id`)
+          PRIMARY KEY (`id`)/* ,
+          CONSTRAINT `fk_request2` FOREIGN KEY (`id_of_last_processed_request`) REFERENCES `help_request`(`id`)  We omit this constraint because it prevents deleting some HRs */
           ) ENGINE=INNODB DEFAULT CHARSET=utf8;"""
 
         SQL(query).executeUpdate()
@@ -222,11 +230,50 @@ object DbAdmin {
 
         val query = """
         CREATE TABLE `email_processing_help_reply` (
-          `id_of_last_processed_reply` int UNSIGNED NOT NULL,
-          CONSTRAINT `fk_reply` FOREIGN KEY (`id_of_last_processed_reply`) REFERENCES `help_reply`(`id`)
+          `id_of_last_processed_reply` int UNSIGNED NOT NULL
         ) ENGINE=INNODB DEFAULT CHARSET=utf8;"""
 
         SQL(query).executeUpdate()
+    }
+  }
+
+  private def createTableEmailProcessingNewAccount() {
+    DB.withConnection {
+      implicit c =>
+
+        val query = """
+        CREATE TABLE `email_processing_new_account` (
+          `id_of_last_processed_new_account` int UNSIGNED NOT NULL
+        ) ENGINE=INNODB DEFAULT CHARSET=utf8;"""
+
+        SQL(query).executeUpdate()
+    }
+  }
+
+  private def createTableEmailProcessingMessage() {
+    DB.withConnection {
+      implicit c =>
+
+        val query = """
+        CREATE TABLE `email_processing_message` (
+          `id_of_last_processed_message` int UNSIGNED NOT NULL
+        ) ENGINE=INNODB DEFAULT CHARSET=utf8;"""
+
+        SQL(query).executeUpdate()
+    }
+  }
+
+  private def dropTableEmailProcessingMessage() {
+    DB.withConnection {
+      implicit c =>
+        SQL("drop table if exists email_processing_message;").executeUpdate()
+    }
+  }
+
+  private def dropTableEmailProcessingNewAccount() {
+    DB.withConnection {
+      implicit c =>
+        SQL("drop table if exists email_processing_new_account;").executeUpdate()
     }
   }
 
@@ -316,6 +363,36 @@ object DbAdmin {
         SQL("insert into reference_rating(label) values(\"Neutral\");").execute()
         SQL("insert into reference_rating(label) values(\"Good\");").execute()
         SQL("insert into reference_rating(label) values(\"Great\");").execute()
+    }
+  }
+
+  private def initDataEmailProcessingHelpRequest() {
+    DB.withConnection {
+      implicit c =>
+        SQL("insert into email_processing_help_request(frequency, id_of_last_processed_request) values(\"" + User.NEW_HR_SUBSCRIPTION_FREQUENCY_WEEKLY + "\", 0);").execute()
+        SQL("insert into email_processing_help_request(frequency, id_of_last_processed_request) values(\"" + User.NEW_HR_SUBSCRIPTION_FREQUENCY_DAILY + "\", 0);").execute()
+        SQL("insert into email_processing_help_request(frequency, id_of_last_processed_request) values(\"" + User.NEW_HR_SUBSCRIPTION_FREQUENCY_EACH_NEW_REQUEST + "\", 0);").execute()
+    }
+  }
+
+  private def initDataEmailProcessingHelpReply() {
+    DB.withConnection {
+      implicit c =>
+        SQL("insert into email_processing_help_reply(id_of_last_processed_reply) values(0);").execute()
+    }
+  }
+
+  private def initDataEmailProcessingNewAccount() {
+    DB.withConnection {
+      implicit c =>
+        SQL("insert into email_processing_new_account(id_of_last_processed_new_account) values(0);").execute()
+    }
+  }
+
+  private def initDataEmailProcessingMessage() {
+    DB.withConnection {
+      implicit c =>
+        SQL("insert into email_processing_message(id_of_last_processed_message) values(0);").execute()
     }
   }
 }

@@ -86,11 +86,9 @@
     <orderEntry type="library" name="SBT: tyrex:tyrex:1.0.1" level="project" />
     <orderEntry type="library" name="SBT: play:anorm_2.10:2.1.1" level="project" />
     <orderEntry type="library" name="SBT: mysql:mysql-connector-java:5.1.25" level="project" />
-    <orderEntry type="library" name="SBT: com.typesafe:play-plugins-mailer_2.10:2.1.0" level="project" />
     <orderEntry type="library" name="SBT: org.apache.commons:commons-email:1.2" level="project" />
     <orderEntry type="library" name="SBT: javax.mail:mail:1.4.1" level="project" />
     <orderEntry type="library" name="SBT: javax.activation:activation:1.1" level="project" />
-    <orderEntry type="library" name="SBT: com.typesafe:play-plugins-util_2.10:2.1.0" level="project" />
     <orderEntry type="library" name="SBT: org.ow2.spec.ee:ow2-atinject-1.0-spec:1.0.10" level="project" />
     <orderEntry type="library" name="SBT: com.cedarsoft:guice-annotations:2.0.1" level="project" />
     <orderEntry type="library" name="SBT: com.intellij:annotations:7.0.3" level="project" />
@@ -111,16 +109,12 @@
     <orderEntry type="library" scope="TEST" name="SBT: org.fluentlenium:fluentlenium-festassert:0.7.3" level="project" />
     <orderEntry type="library" scope="TEST" name="SBT: org.fluentlenium:fluentlenium-core:0.7.3" level="project" />
     <orderEntry type="library" scope="TEST" name="SBT: org.seleniumhq.selenium:selenium-java:2.25.0" level="project" />
-    <orderEntry type="library" scope="TEST" name="SBT: org.seleniumhq.selenium:selenium-android-driver:2.25.0" level="project" />
-    <orderEntry type="library" scope="TEST" name="SBT: org.seleniumhq.selenium:selenium-remote-driver:2.25.0" level="project" />
     <orderEntry type="library" scope="TEST" name="SBT: cglib:cglib-nodep:2.1_3" level="project" />
     <orderEntry type="library" scope="TEST" name="SBT: org.json:json:20080701" level="project" />
     <orderEntry type="library" scope="TEST" name="SBT: org.seleniumhq.selenium:selenium-api:2.25.0" level="project" />
     <orderEntry type="library" scope="TEST" name="SBT: org.apache.commons:commons-exec:1.1" level="project" />
     <orderEntry type="library" scope="TEST" name="SBT: net.java.dev.jna:jna:3.4.0" level="project" />
     <orderEntry type="library" scope="TEST" name="SBT: net.java.dev.jna:platform:3.4.0" level="project" />
-    <orderEntry type="library" scope="TEST" name="SBT: org.seleniumhq.selenium:selenium-chrome-driver:2.25.0" level="project" />
-    <orderEntry type="library" scope="TEST" name="SBT: org.seleniumhq.selenium:selenium-htmlunit-driver:2.25.0" level="project" />
     <orderEntry type="library" scope="TEST" name="SBT: net.sourceforge.htmlunit:htmlunit:2.9" level="project" />
     <orderEntry type="library" scope="TEST" name="SBT: xalan:xalan:2.7.1" level="project" />
     <orderEntry type="library" scope="TEST" name="SBT: xalan:serializer:2.7.1" level="project" />
@@ -136,10 +130,8 @@
     <orderEntry type="library" scope="TEST" name="SBT: commons-io:commons-io:2.0.1" level="project" />
     <orderEntry type="library" scope="TEST" name="SBT: org.seleniumhq.selenium:selenium-firefox-driver:2.25.0" level="project" />
     <orderEntry type="library" scope="TEST" name="SBT: org.seleniumhq.selenium:selenium-ie-driver:2.25.0" level="project" />
-    <orderEntry type="library" scope="TEST" name="SBT: org.seleniumhq.selenium:selenium-iphone-driver:2.25.0" level="project" />
     <orderEntry type="library" scope="TEST" name="SBT: org.seleniumhq.selenium:selenium-safari-driver:2.25.0" level="project" />
     <orderEntry type="library" scope="TEST" name="SBT: org.webbitserver:webbit:0.4.6" level="project" />
-    <orderEntry type="library" scope="TEST" name="SBT: org.seleniumhq.selenium:selenium-support:2.25.0" level="project" />
     <orderEntry type="library" scope="TEST" name="SBT: org.easytesting:fest-assert:1.4" level="project" />
     <orderEntry type="library" scope="TEST" name="SBT: org.easytesting:fest-util:1.1.6" level="project" />
   </component>

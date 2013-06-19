@@ -1,12 +1,11 @@
 package controllers.api
 
 import models.Message
-import services.{EmailService, JsonUtil}
 import play.api.mvc.{Action, Controller}
 import play.api.Logger
 import controllers.Application
-import models.frontend.FrontendMessage
 import db.MessageDto
+import services.JsonUtil
 
 object MessageApi extends Controller {
   def create = Action(parse.json) {
@@ -17,10 +16,7 @@ object MessageApi extends Controller {
           val msg = JsonUtil.deserialize[Message](request.body.toString)
           val msgWithUserId = msg.copy(fromUserId = loggedInUser.id)
           MessageDto.create(msgWithUserId) match {
-            case Some(id) =>
-              val createdMessage = MessageDto.get(Map("id" -> id.toString)).head
-              EmailService.newMessage(new FrontendMessage(createdMessage))
-              Ok(id.toString)
+            case Some(id) => Ok(id.toString)
             case None => InternalServerError("Creation of a reference did not return an ID!")
           }
         }

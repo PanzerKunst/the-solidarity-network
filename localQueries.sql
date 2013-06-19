@@ -143,9 +143,9 @@ SELECT * FROM reference;
 
 SELECT * FROM help_request;
 
-SELECT * FROM help_response;
+SELECT * FROM help_reply;
 
-SELECT * FROM subscription_to_help_responses;
+SELECT * FROM subscription_to_help_replies;
 
 SELECT * FROM message;
 
@@ -155,4 +155,6 @@ DELETE FROM message;
 
 SELECT * FROM email_processing_help_request;
 
-DELETE FROM email_processing_help_request;
+SELECT * FROM email_processing_help_reply;
+
+SELECT * FROM email_processing_message;

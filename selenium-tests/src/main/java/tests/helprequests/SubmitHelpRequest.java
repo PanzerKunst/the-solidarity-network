@@ -2,6 +2,7 @@ package tests.helprequests;
 
 import models.HelpRequest;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -28,6 +29,7 @@ public class SubmitHelpRequest extends TestBase {
                 return d.findElement(By.cssSelector(".action a[href='/help-requests/new']")).isDisplayed();
             }
         });
+
         driver.findElement(By.cssSelector(".action a[href='/help-requests/new']"))
                 .click();
 
@@ -92,6 +94,50 @@ public class SubmitHelpRequest extends TestBase {
     }
 
     public static void properFormFill(WebDriver driver, final HelpRequest helpRequest) {
+        boolean isAlreadyAtThatPage = true;
+        try {
+            driver.findElement(By.id("create-help-request"));
+        } catch (NoSuchElementException e) {
+            isAlreadyAtThatPage = false;
+        }
+
+        if (!isAlreadyAtThatPage) {
+            clickOnMobileMenuLinkIfRequired(driver);
+
+            driver.findElements(By.cssSelector("#header-nav > ul > li")).get(1)
+                    .findElement(By.tagName("span"))
+                    .click();
+
+            // Wait for the page to load, and check that the "Submit a help request" link exists
+            (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
+                public Boolean apply(WebDriver d) {
+                    return d.findElement(By.cssSelector("a[href='/help-requests/new']")).isDisplayed();
+                }
+            });
+
+            driver.findElement(By.cssSelector("a[href='/help-requests/new']"))
+                    .click();
+        }
+
+        // Wait for the page to load
+        (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
+            public Boolean apply(WebDriver d) {
+                return d.findElement(By.id("title")).isDisplayed();
+            }
+        });
+
+        driver.findElement(By.id("title"))
+                .clear();
+
+        driver.findElement(By.id("title"))
+                .sendKeys(helpRequest.getTitle());
+
+        driver.findElement(By.id("description"))
+                .clear();
+
+        driver.findElement(By.id("description"))
+                .sendKeys(helpRequest.getDescription());
+
         driver.findElement(By.id("expiry-date"))
                 .clear();
 

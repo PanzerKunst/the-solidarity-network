@@ -5,7 +5,7 @@
 <p>Dear ${subscriber.firstName},</p>
 <br />
 
-<p>Here are ${period}'s new help requests in your city:</p>
+<p>Here are ${period}'s new help requests in ${subscriber.city}:</p>
 <br />
 
 <ul>
@@ -13,7 +13,7 @@
     <li>
         <a href="http://192.168.0.4/help-requests/${hr.id}">
             <p>${hr.title}</p>
-            <p>${hr.description}</p>
+            <p>${unescape(hr.description)}</p>
         </a>
     </li>
 #end

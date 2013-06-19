@@ -15,6 +15,14 @@ public class ReplyToHelpRequest extends TestBase {
 
         (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
+                return d.findElement(By.id("is-subscribing-to-future-replies")).isDisplayed();
+            }
+        });
+        driver.findElement(By.id("is-subscribing-to-future-replies"))
+                .click();
+
+        (new WebDriverWait(driver, 5)).until(new ExpectedCondition<Boolean>() {
+            public Boolean apply(WebDriver d) {
                 return d.findElement(By.id("reply")).isDisplayed();
             }
         });

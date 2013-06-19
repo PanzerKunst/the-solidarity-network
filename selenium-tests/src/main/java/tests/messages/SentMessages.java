@@ -12,6 +12,8 @@ public class SentMessages extends TestBase {
     public static void checkNoMessage(WebDriver driver) {
         clickOnMobileMenuLinkIfRequired(driver);
 
+        sleepBecauseSeleniumSucks();
+
         driver.findElements(By.cssSelector("#header-nav > ul > li")).get(3)
                 .findElement(By.tagName("span"))
                 .click();

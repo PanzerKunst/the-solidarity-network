@@ -129,6 +129,9 @@ public class EditProfile extends TestBase {
         });
 
         driver.findElement(By.id("email-confirmation"))
+                .clear();
+
+        driver.findElement(By.id("email-confirmation"))
                 .sendKeys(user.getEmail());
 
         sleepBecauseSeleniumSucks();
@@ -138,8 +141,10 @@ public class EditProfile extends TestBase {
         /**
          * Subscription to news
          */
-        driver.findElement(By.id("is-subscribed-to-news"))
-                .click();
+        boolean isSubscribedToNewsInUI = driver.findElement(By.id("is-subscribed-to-news")).getAttribute("checked") != null;
+        if (isSubscribedToNewsInUI != user.getSubscribedToNews())
+            driver.findElement(By.id("is-subscribed-to-news"))
+                    .click();
 
         driver.findElement(By.tagName("form"))
                 .submit();

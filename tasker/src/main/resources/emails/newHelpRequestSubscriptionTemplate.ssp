@@ -1,0 +1,15 @@
+<%@ val subscriber: models.TaskerUser %>
+<%@ val hr: models.TaskerHelpRequest %>
+
+<p>Dear ${subscriber.firstName},</p>
+<br />
+
+<p>A new help request has been created in ${subscriber.city}:</p>
+<br />
+
+<p>${hr.title}</p>
+<p>${unescape(hr.description)}</p>
+
+<p>Best regards,</p>
+
+<p>Christophe</p>

@@ -1,0 +1,20 @@
+<%@ val message: models.TaskerMessage %>
+
+<p>Hi ${message.toUser.firstName},</p>
+<br />
+
+<p>${message.fromUser.firstName} ${message.fromUser.lastName} send you a new message:</p>
+
+<hr />
+
+<h1>${message.title}</h1>
+
+<p>${unescape(message.text)}</p>
+
+<hr />
+
+<p>You can reply <a href="http://192.168.0.4:9000/messages/${message.id}">here</a></p>
+
+<p>Best regards,</p>
+
+<p>Christophe</p>

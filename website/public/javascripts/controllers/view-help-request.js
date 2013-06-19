@@ -115,6 +115,11 @@ CBR.Controllers.ViewHelpRequest = new Class({
         // For the parsing by the backend to work
         this._getHelpRequest().requesterId = this._getHelpRequest().requester.id;
 
+        // The object cannot have extra properties
+        if (this._getHelpRequest().requester !== undefined) {
+            delete this._getHelpRequest().requester;
+        }
+
         // Jackson fails to parse "yyyy-MM-dd hh:mm:ss" for datetimes. "yyyy-MM-ddThh:mm:ss" works though.
         this._getHelpRequest().creationDatetime = this._getHelpRequest().creationDatetime.replace(/\s/, "T");
 

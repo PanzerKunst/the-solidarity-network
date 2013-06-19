@@ -1,7 +1,7 @@
 package controllers.api
 
 import models.User
-import services.{EmailService, JsonUtil}
+import services.JsonUtil
 import play.api.mvc.{Action, Controller}
 import play.api.Logger
 import controllers.{FileController, Application}
@@ -14,10 +14,7 @@ object UserApi extends Controller {
 
       val userToCreate = JsonUtil.deserialize[User](request.body.toString)
       UserDto.create(userToCreate) match {
-        case Some(id) =>
-          val createdUser = UserDto.get(Some(Map("id" -> id.toString))).head
-          EmailService.confirmRegistration(new FrontendUser(createdUser))
-          Ok(id.toString)
+        case Some(id) => Ok(id.toString)
         case None => InternalServerError("Creation of a user did not return an ID!")
       }
   }

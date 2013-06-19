@@ -147,8 +147,16 @@ public class Runner {
         SubmitHelpRequest.properFormFill(driver, helpRequest);
 
         /**
-         * MyHelpRequests
+         * DeleteHelpRequest
          */
+        DeleteHelpRequest.deleteUnrepliedRequest(driver, chris, helpRequest);
+
+        // We recreate it
+        SubmitHelpRequest.properFormFill(driver, helpRequest);
+
+        /**
+        * MyHelpRequests
+        */
         MyHelpRequests.checkPage(driver, chris);
 
         /**
@@ -158,7 +166,7 @@ public class Runner {
 
         User damien = new User("Damien",
                 "Bram",
-                "panzrkunst@yahoo.fr",
+                "jashugan@gmx.de",
                 "db",
                 "tigrou",
                 "Barcelona",
@@ -229,11 +237,11 @@ public class Runner {
 
         User updatedDamien = new User("Dämish",
                 "Bram dit Saint-Amand",
-                "jahugan@gmx.de",
+                "panzrkunst@yahoo.fr",
                 "db",
                 "tigrou",
-                "Strasbourg",
-                "1");
+                "Barcelona",
+                "2");
         updatedDamien.setStreetAddress("Heleneborgsgatan 6C");
         updatedDamien.setPostCode("11732");
         updatedDamien.setDescription("Bref, un mec normal");
@@ -241,6 +249,9 @@ public class Runner {
         updatedDamien.setSubscribedToNews(false);
 
         EditProfile.properProfileTabEdit(driver, updatedDamien);
+        EditProfile.properAccountTabEdit(driver, updatedDamien);
+
+        updatedDamien.setSubscriptionToNewHelpRequests(User.NEW_HR_SUBSCRIPTION_FREQUENCY_DAILY);
         EditProfile.properAccountTabEdit(driver, updatedDamien);
 
         /**
@@ -258,6 +269,11 @@ public class Runner {
         Login.logout(driver);
 
         Login.properFormFillUsername(driver, chris);
+
+        /**
+         * DeleteHelpRequest
+         */
+        DeleteHelpRequest.tryDeletingRepliedRequest(driver, chris, helpRequest);
 
         /**
          * More messages tests

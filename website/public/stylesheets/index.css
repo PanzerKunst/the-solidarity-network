@@ -1,3 +1,31 @@
+#index #content li {
+  *zoom: 1;
+  margin-bottom: 1.5em; }
+  #index #content li:before, #index #content li:after {
+    content: " ";
+    display: table; }
+  #index #content li:after {
+    clear: both; }
+  #index #content li h2 {
+    font-size: 22px;
+    float: left; }
+    @media screen and (min-width: 49em) {
+      #index #content li h2 {
+        font-size: 31.5px; } }
+  #index #content li p {
+    display: none;
+    margin-bottom: 0.5em; }
+  #index #content li .read-more-button {
+    float: left;
+    text-align: right;
+    width: 1.5em;
+    line-height: 40px;
+    margin: 10px 0; }
+  #index #content li.expanded h2 {
+    float: none;
+    margin-left: 0; }
+  #index #content li.expanded .read-more-button {
+    display: none; }
 #index #content > h2 {
   text-align: center; }
 @media screen and (min-width: 49em) {
