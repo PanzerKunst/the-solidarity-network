@@ -77,6 +77,7 @@ object DbAdmin {
           `city` varchar(45) NOT NULL,
           `country_id` int unsigned NOT NULL,
           `description` text DEFAULT NULL,
+          `skills_and_interests` text DEFAULT NULL,
           `creation_date` datetime NOT NULL,
           `is_subscribed_to_news` BOOLEAN DEFAULT TRUE,
           `subscription_to_new_help_requests` VARCHAR(45) DEFAULT '""" + User.NEW_HR_SUBSCRIPTION_FREQUENCY_WEEKLY + """', /* NONE, EACH_NEW_REQUEST, DAILY, WEEKLY */

@@ -75,6 +75,9 @@ CBR.Controllers.Profile = new Class({
         if (result.description) {
             result.description = result.description.replace(/\n/g, "<br />");
         }
+        if (result.skillsAndInterests) {
+            result.skillsAndInterests = result.skillsAndInterests.replace(/\n/g, "<br />");
+        }
         return result;
     },
 

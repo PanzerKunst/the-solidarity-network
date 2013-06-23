@@ -30,14 +30,23 @@ form {
 
     > label {
       display: block;
-      width: $labelWidth;
+
+      // Since the label is on top of the field, it can be the same width
+      width: $fieldWidth;
 
       &.mdnz-polyfill {
         display: none;
       }
 
       @include desktop {
+        @include box-sizing(border-box);
+
+        width: $labelWidth;
+
         float: left;
+
+        margin-top: 0.35em;
+        padding-right: 0.4em;
       }
     }
 

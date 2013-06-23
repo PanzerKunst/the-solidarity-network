@@ -46,6 +46,9 @@ public class SubmitHelpRequest extends TestBase {
         driver.findElement(By.id("description"))
                 .sendKeys(helpRequest.getDescription());
 
+        driver.findElement(By.id("expiry-date"))
+                .clear();
+
         driver.findElement(By.tagName("form"))
                 .submit();
 
@@ -59,6 +62,9 @@ public class SubmitHelpRequest extends TestBase {
     }
 
     public static void expiryDatePast(WebDriver driver, HelpRequest helpRequest) {
+        driver.findElement(By.id("expiry-date"))
+                .clear();
+
         driver.findElement(By.id("expiry-date"))
                 .sendKeys(helpRequest.getExpiryDate());
 

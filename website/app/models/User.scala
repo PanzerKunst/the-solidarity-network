@@ -19,6 +19,7 @@ case class User(
                  countryId: Option[Long] = None,
 
                  description: Option[String] = None,
+                 skillsAndInterests: Option[String] = None,
                  isSubscribedToNews: Boolean,
                  subscriptionToNewHelpRequests: String)
 

@@ -63,6 +63,7 @@ CBR.Controllers.EditProfile = new Class({
         this.$uploadFailedParagraph = jQuery("#upload-failed");
 
         this.$descriptionField = jQuery("#description");
+        this.$skillsAndInterestsField = jQuery("#skills-and-interests");
 
         this.$emailField = jQuery("#email");
         this.$emailConfirmationWrapper = jQuery("#email-confirmation-field");
@@ -111,6 +112,7 @@ CBR.Controllers.EditProfile = new Class({
         this.$countryField.select2("val", this._getUser().country.id);
 
         this.$descriptionField.val(this._getUser().description);
+        this.$skillsAndInterestsField.val(this._getUser().skillsAndInterests);
 
         this.$emailField.val(this._getUser().email);
 
@@ -238,6 +240,7 @@ CBR.Controllers.EditProfile = new Class({
                 city:jQuery("#city").val(),
                 countryId:jQuery('#country').val(),
                 description:jQuery('#description').val(),
+                skillsAndInterests:jQuery('#skills-and-interests').val(),
                 email:this.$emailField.val().toLowerCase()
             });
 

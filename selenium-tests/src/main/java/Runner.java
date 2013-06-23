@@ -36,14 +36,14 @@ public class Runner {
 
     public static void main(String[] args) throws IOException {
         testOnDesktop();
-        testOnMobile();
+        // TODO testOnMobile();
     }
 
     private static void testOnDesktop() throws IOException {
         testInFirefox(new Dimension(820, 1024));
-        testInChrome(new Dimension(820, 1024));
+        /* TODO testInChrome(new Dimension(820, 1024));
         testInIE(new Dimension(820, 1024));
-        testInOpera();
+        testInOpera(); */
     }
 
     private static void testOnMobile() throws IOException {

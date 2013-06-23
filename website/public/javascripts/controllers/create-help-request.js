@@ -18,6 +18,16 @@ CBR.Controllers.CreateHelpRequest = new Class({
         this._initEvents();
     },
 
+    initElements: function() {
+        this.parent();
+
+        this.$expiryDateField = jQuery("#expiry-date");
+
+        jQuery(".tooltip-link").tooltip();
+
+        this._initExpiryDate();
+    },
+
     _initValidation: function () {
         this.validator = new CBR.Services.Validator({
             fieldIds: [
@@ -32,6 +42,17 @@ CBR.Controllers.CreateHelpRequest = new Class({
         jQuery("form").submit(jQuery.proxy(this._doCreate, this));
     },
 
+    _initExpiryDate: function() {
+        var inTwoWeeks = new Date();
+        inTwoWeeks.setDate(inTwoWeeks.getDate() + 14);
+
+        var yearToDisplay = inTwoWeeks.getFullYear();
+        var monthToDisplay = (inTwoWeeks.getMonth() + 1).toString().pad(2, "0", "left");
+        var dayToDisplay = inTwoWeeks.getDate().toString().pad(2, "0", "left");
+
+        this.$expiryDateField.val(yearToDisplay + "-" + monthToDisplay + "-" + dayToDisplay);
+    },
+
     _doCreate: function (e) {
         e.preventDefault();
 
@@ -39,7 +60,7 @@ CBR.Controllers.CreateHelpRequest = new Class({
             var helpRequest = new CBR.Models.HelpRequest({
                 title: jQuery("#title").val(),
                 description: jQuery("#description").val(),
-                expiryDate: jQuery("#expiry-date").val()
+                expiryDate: this.$expiryDateField.val()
             });
 
             var _this = this;

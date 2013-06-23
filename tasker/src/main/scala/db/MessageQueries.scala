@@ -30,7 +30,7 @@ object MessageQueries extends Logging {
    * @see https://groups.google.com/forum/?fromgroups=#!topic/play-framework/DXbOAYz-cM0
    * @return
    */
-  def selectNonProcessedMessages(): IndexedSeq[TaskerMessage] = {
+  def selectNonProcessedMessages(): List[TaskerMessage] = {
     implicit val c = ConnectionPool.borrow()
 
     val query = """
@@ -69,7 +69,7 @@ object MessageQueries extends Logging {
       ).toList
 
       if (listOfMessageAndFromUser.isEmpty)
-        IndexedSeq()
+        List()
       else {
         var inClause = ""
         var i = 0
@@ -105,8 +105,7 @@ object MessageQueries extends Logging {
           )
         ).toList
 
-        for (i <- 0 to listOfMessageAndFromUser.length - 1)
-        yield new TaskerMessage(listOfMessageAndFromUser(i)._1, listOfMessageAndFromUser(i)._2, toUsers(i))
+        for (((message, fromUser), toUser) <- listOfMessageAndFromUser.zip(toUsers)) yield new TaskerMessage(message, fromUser, toUser)
       }
     }
     finally {

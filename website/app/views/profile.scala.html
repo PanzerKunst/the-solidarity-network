@@ -25,7 +25,13 @@
         <div id="textual-info">
             <p>Lives in {{user.city}}, {{user.country.name}}</p>
 
+            {{#user.description}}
             <p id="description">{{{user.description}}}</p>
+            {{/user.description}}
+
+            {{#user.skillsAndInterests}}
+            <p id="skills-and-interests">{{{user.skillsAndInterests}}}</p>
+            {{/user.skillsAndInterests}}
 
             <div>
                 @if(loggedInUser.id == frontendUser.id) {

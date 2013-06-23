@@ -14,7 +14,7 @@ object UserDto {
       implicit c =>
 
         val query = """
-          select id, first_name, last_name, username, password, email, street_address, post_code, city, country_id, description, is_subscribed_to_news, subscription_to_new_help_requests
+          select id, first_name, last_name, username, password, email, street_address, post_code, city, country_id, description, skills_and_interests, is_subscribed_to_news, subscription_to_new_help_requests
           from user """ + DbUtil.generateWhereClause(filters) + ";"
 
         Logger.info("UserDto.get():" + query)
@@ -32,6 +32,7 @@ object UserDto {
             city = Some(row[String]("city")),
             countryId = Some(row[Long]("country_id")),
             description = row[Option[String]]("description"),
+            skillsAndInterests = row[Option[String]]("skills_and_interests"),
             isSubscribedToNews = row[Boolean]("is_subscribed_to_news"),
             subscriptionToNewHelpRequests = row[String]("subscription_to_new_help_requests")
           )
@@ -44,7 +45,7 @@ object UserDto {
       implicit c =>
 
         val query = """
-          select id, first_name, last_name, username, password, email, street_address, post_code, city, country_id, description, is_subscribed_to_news, subscription_to_new_help_requests
+          select id, first_name, last_name, username, password, email, street_address, post_code, city, country_id, description, skills_and_interests, is_subscribed_to_news, subscription_to_new_help_requests
           from user """ + DbUtil.generateWhereClause(filters) +
           """ and id <> """ + DbUtil.backslashQuotes(id) + ";"
 
@@ -63,6 +64,7 @@ object UserDto {
             city = Some(row[String]("city")),
             countryId = Some(row[Long]("country_id")),
             description = row[Option[String]]("description"),
+            skillsAndInterests = row[Option[String]]("skills_and_interests"),
             isSubscribedToNews = row[Boolean]("is_subscribed_to_news"),
             subscriptionToNewHelpRequests = row[String]("subscription_to_new_help_requests")
           )
@@ -117,6 +119,10 @@ object UserDto {
         if (user.description.isDefined && user.description.get != "")
           descriptionForQuery = "\"" + DbUtil.backslashQuotes(user.description.get.replaceAll("\n", "\\\\n")) + "\""
 
+        var skillsAndInterestsForQuery = "NULL"
+        if (user.skillsAndInterests.isDefined && user.skillsAndInterests.get != "")
+          skillsAndInterestsForQuery = "\"" + DbUtil.backslashQuotes(user.skillsAndInterests.get.replaceAll("\n", "\\\\n")) + "\""
+
         val query = """
                        update user set
           first_name = """" + DbUtil.backslashQuotes(user.firstName.get) + """",
@@ -128,6 +134,7 @@ object UserDto {
           street_address = """ + streetAddressForQuery + """,
           post_code = """ + postCodeForQuery + """,
           description = """ + descriptionForQuery + """,
+          skills_and_interests = """ + skillsAndInterestsForQuery + """,
           is_subscribed_to_news = """ + user.isSubscribedToNews + """,
           subscription_to_new_help_requests = """" + user.subscriptionToNewHelpRequests + """"
           where id = """ + user.id.get + """;"""
@@ -143,7 +150,7 @@ object UserDto {
       implicit c =>
 
         val query = """
-            select id, first_name, last_name, username, password, email, street_address, post_code, city, country_id, description, is_subscribed_to_news, subscription_to_new_help_requests
+            select id, first_name, last_name, username, password, email, street_address, post_code, city, country_id, description, skills_and_interests, is_subscribed_to_news, subscription_to_new_help_requests
             from user
             where (first_name like "%""" + searchQuery + """%"
             or last_name like "%""" + searchQuery + """%"
@@ -166,6 +173,7 @@ object UserDto {
             city = Some(row[String]("city")),
             countryId = Some(row[Long]("country_id")),
             description = row[Option[String]]("description"),
+            skillsAndInterests = row[Option[String]]("skills_and_interests"),
             isSubscribedToNews = row[Boolean]("is_subscribed_to_news"),
             subscriptionToNewHelpRequests = row[String]("subscription_to_new_help_requests")
           )

@@ -1,19 +1,19 @@
 @import "common";
 
-#join {
+#create-help-request {
   #content {
-    $checkUsernameAvailabilityWidth: 6em;
+    $questionMarkWidth: 2em;
 
     .field,
     fieldset {
       @include desktop {
-        width: $labelWidth + $inputWidth + $checkUsernameAvailabilityWidth;
+        width: $labelWidth + $inputWidth + $questionMarkWidth;
       }
     }
 
-    #check-username-availability {
+    .tooltip-link {
       display: block;
-      width: $checkUsernameAvailabilityWidth;
+      width: $questionMarkWidth;
       float: right;
       text-align: right;
 
@@ -26,23 +26,11 @@
 
         margin-top: 0;
 
-        padding: 0.4em 0 0 0.4em;
+        padding: 0.35em 0 0 0.4em;
 
         // For the padding to be included
         @include box-sizing(border-box)
       }
-    }
-
-    .valid {
-      > #username {
-        border-color: $btnSuccessBackground;
-      }
-    }
-
-    #login-wrapper {
-      margin-left: auto;
-      margin-right: auto;
-      width: 14em;
     }
   }
 }

@@ -23,12 +23,18 @@ form .field {
     float: left; }
   form .field > label {
     display: block;
-    width: 9em; }
+    width: 20em; }
     form .field > label.mdnz-polyfill {
       display: none; }
     @media screen and (min-width: 49em) {
       form .field > label {
-        float: left; } }
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        width: 9em;
+        float: left;
+        margin-top: 0.35em;
+        padding-right: 0.4em; } }
   form .field > input,
   form .field > select,
   form .field > textarea {
