@@ -22,6 +22,10 @@ CBR.Controllers.CreateMessage = new Class({
         this.parent();
 
         this.$recipientField = jQuery("#recipient");
+
+        this.$submit = jQuery(".submit-wrapper > input");
+        this.$submitProgress = this.$submit.siblings(".button-progress");
+
         this._initSelect(this.$recipientField);
     },
 
@@ -92,6 +96,8 @@ CBR.Controllers.CreateMessage = new Class({
         e.preventDefault();
 
         if (this.validator.isValid()) {
+            this.$submit.hide();
+            this.$submitProgress.show();
 
             var message = new CBR.Models.Message({
                 toUserId: this.$recipientField.val(),
@@ -111,7 +117,7 @@ CBR.Controllers.CreateMessage = new Class({
                 url: "/api/messages",
                 data: CBR.JsonUtil.stringifyModel(message),
                 onSuccess: function (responseText, responseXML) {
-                    location.href = "/messages?from=new";
+                    location.href = "/messages/" + responseText;
                 },
                 onFailure: function (xhr) {
                     if (xhr.status === _this.httpStatusCode.unauthorized)

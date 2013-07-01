@@ -29,6 +29,7 @@ CREATE TABLE `user` (
   `city` VARCHAR(45) NOT NULL,
   `country_id` INT UNSIGNED NOT NULL,
   `description` TEXT DEFAULT NULL,
+  `skills_and_interests` TEXT DEFAULT NULL,
   `creation_date` DATETIME NOT NULL,
   `is_subscribed_to_news` BOOLEAN DEFAULT TRUE,
   `subscription_to_new_help_requests` VARCHAR(45) DEFAULT 'NONE', /* NONE, EACH_NEW_REQUEST, DAILY, WEEKLY */

@@ -2,7 +2,7 @@
 
 #join {
   #content {
-    $checkUsernameAvailabilityWidth: 6em;
+    $checkUsernameAvailabilityWidth: 5em;
 
     .field,
     fieldset {
@@ -13,20 +13,17 @@
 
     #check-username-availability {
       display: block;
-      width: $checkUsernameAvailabilityWidth;
       float: right;
       text-align: right;
 
       // To be at the same level as the label
-      margin-top: -4.65em;
+      margin: -6.3em 0 0 0.5em;
 
       @include desktop {
         float: left;
         text-align: left;
 
-        margin-top: 0;
-
-        padding: 0.4em 0 0 0.4em;
+        margin-top: 0.4em;
 
         // For the padding to be included
         @include box-sizing(border-box)
@@ -37,6 +34,10 @@
       > #username {
         border-color: $btnSuccessBackground;
       }
+    }
+
+    .button-progress {
+      width: 90px;
     }
 
     #login-wrapper {

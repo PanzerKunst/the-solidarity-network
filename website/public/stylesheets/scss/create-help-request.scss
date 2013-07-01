@@ -32,5 +32,9 @@
         @include box-sizing(border-box)
       }
     }
+
+    .button-progress {
+      width: 115px;
+    }
   }
 }

@@ -18,6 +18,12 @@
       margin: 0 auto;
     }
 
+    .field {
+      > .button-progress {
+        width: 94px;
+      }
+    }
+
     #account-info {
       display: none;
     }
@@ -46,6 +52,12 @@
       #language,
       #s2id_language {
         width: $selectWidth;
+      }
+    }
+
+    .submit-wrapper {
+      > .button-progress {
+        width: 90px;
       }
     }
   }

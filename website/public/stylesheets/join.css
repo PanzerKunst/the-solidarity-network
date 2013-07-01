@@ -1,24 +1,24 @@
 @media screen and (min-width: 49em) {
   #join #content .field,
   #join #content fieldset {
-    width: 35em; } }
+    width: 34em; } }
 #join #content #check-username-availability {
   display: block;
-  width: 6em;
   float: right;
   text-align: right;
-  margin-top: -4.65em; }
+  margin: -6.3em 0 0 0.5em; }
   @media screen and (min-width: 49em) {
     #join #content #check-username-availability {
       float: left;
       text-align: left;
-      margin-top: 0;
-      padding: 0.4em 0 0 0.4em;
+      margin-top: 0.4em;
       -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;
       box-sizing: border-box; } }
 #join #content .valid > #username {
   border-color: #62c462; }
+#join #content .button-progress {
+  width: 90px; }
 #join #content #login-wrapper {
   margin-left: auto;
   margin-right: auto;

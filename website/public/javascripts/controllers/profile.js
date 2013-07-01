@@ -40,6 +40,9 @@ CBR.Controllers.Profile = new Class({
         this.$referenceInput = jQuery("#reference-text");
 
         this.$expanded = jQuery(".expanded");
+
+        this.$postReference = jQuery("#post-reference");
+        this.$postReferenceProgress = this.$postReference.siblings(".button-progress");
     },
 
     _initValidation: function () {
@@ -55,7 +58,7 @@ CBR.Controllers.Profile = new Class({
     _initEvents: function () {
         this.$writeReference.click(jQuery.proxy(this._toggleReferenceForm, this));
         jQuery("#cancel-reference").click(jQuery.proxy(this._collapseReferenceForm, this));
-        jQuery("#post-reference").click(jQuery.proxy(this._doCreateReference, this));
+        this.$postReference.click(jQuery.proxy(this._doCreateReference, this));
         this.$referenceForm.submit(jQuery.proxy(this._doCreateReference, this));
     },
 
@@ -113,6 +116,9 @@ CBR.Controllers.Profile = new Class({
         e.preventDefault();
 
         if (this.referenceValidator.isValid()) {
+            this.$postReference.hide();
+            this.$postReferenceProgress.show();
+
             var reference = new CBR.Models.Reference({
                 toUserId: this._getUser().id,
                 wasHelped: jQuery("#was-helped").hasClass("active"),

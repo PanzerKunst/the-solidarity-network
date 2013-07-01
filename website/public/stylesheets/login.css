@@ -7,6 +7,8 @@
 #login #content #auth-failed {
   display: none;
   text-align: center; }
+#login #content .button-progress {
+  width: 115px; }
 #login #content #join-wrapper {
   margin-left: auto;
   margin-right: auto;

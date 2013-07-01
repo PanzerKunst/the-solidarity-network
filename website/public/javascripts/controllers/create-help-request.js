@@ -23,6 +23,9 @@ CBR.Controllers.CreateHelpRequest = new Class({
 
         this.$expiryDateField = jQuery("#expiry-date");
 
+        this.$submit = jQuery(".submit-wrapper > input");
+        this.$submitProgress = this.$submit.siblings(".button-progress");
+
         jQuery(".tooltip-link").tooltip();
 
         this._initExpiryDate();
@@ -44,7 +47,7 @@ CBR.Controllers.CreateHelpRequest = new Class({
 
     _initExpiryDate: function() {
         var inTwoWeeks = new Date();
-        inTwoWeeks.setDate(inTwoWeeks.getDate() + 14);
+        inTwoWeeks.setDate(inTwoWeeks.getDate() + 15);
 
         var yearToDisplay = inTwoWeeks.getFullYear();
         var monthToDisplay = (inTwoWeeks.getMonth() + 1).toString().pad(2, "0", "left");
@@ -57,6 +60,9 @@ CBR.Controllers.CreateHelpRequest = new Class({
         e.preventDefault();
 
         if (this.validator.isValid()) {
+            this.$submit.hide();
+            this.$submitProgress.show();
+
             var helpRequest = new CBR.Models.HelpRequest({
                 title: jQuery("#title").val(),
                 description: jQuery("#description").val(),

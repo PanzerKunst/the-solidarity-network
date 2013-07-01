@@ -1,11 +1,11 @@
 CBR.Controllers.HelpDashboard = new Class({
-    Extends: CBR.Controllers.SearchBase,
+    Extends:CBR.Controllers.SearchBase,
 
-    initialize: function (options) {
+    initialize:function (options) {
         this.parent(options);
     },
 
-    run: function () {
+    run:function () {
         this.getEl().append(
             Mustache.render(
                 jQuery("#content-template").html(),
@@ -19,11 +19,11 @@ CBR.Controllers.HelpDashboard = new Class({
         this._initSearchQuery();
     },
 
-    _getUser: function () {
+    _getUser:function () {
         return this.options.user;
     },
 
-    initElements: function () {
+    initElements:function () {
         this.parent();
 
         this.$queryField = jQuery("#query");
@@ -31,24 +31,27 @@ CBR.Controllers.HelpDashboard = new Class({
         this.$searchResultedNothingParagraph = jQuery("#search-returned-nothing");
         this.$searchResultsTemplate = jQuery("#search-results-template");
 
+        this.$submit = jQuery(".submit-wrapper > button");
+        this.$submitProgress = this.$submit.siblings(".button-progress");
+
         // To use correct CSS declaration
         jQuery(this.getEl()).addClass("search-help-requests");
     },
 
-    _initValidation: function () {
+    _initValidation:function () {
         this.validator = new CBR.Services.Validator({
-            fieldIds: [
+            fieldIds:[
                 "query"
             ]
         });
     },
 
-    _initEvents: function () {
+    _initEvents:function () {
         jQuery("#search").click(jQuery.proxy(this._doSearch, this));
         jQuery("form").submit(jQuery.proxy(this._doSearch, this));
     },
 
-    _initSearchQuery: function () {
+    _initSearchQuery:function () {
         // Space is separator between params
         var queryFieldValue = "country=\"" + this._getUser().country.name + "\" city=\"" + this._getUser().city + "\"";
 
@@ -56,11 +59,14 @@ CBR.Controllers.HelpDashboard = new Class({
         this._doSearch();
     },
 
-    _doSearch: function (e) {
+    _doSearch:function (e) {
         if (e !== undefined)
             e.preventDefault();
 
         if (this.validator.isValid()) {
+            this.$submit.hide();
+            this.$submitProgress.show();
+
             var requestData;
             var queryFieldValue = this.$queryField.val();
             if (queryFieldValue !== "")
@@ -69,9 +75,12 @@ CBR.Controllers.HelpDashboard = new Class({
             var _this = this;
 
             new Request({
-                url: "/api/help-requests?isOwnFiltered=true",
-                data: requestData,
-                onSuccess: function (responseText, responseXML) {
+                url:"/api/help-requests?isOwnFiltered=true",
+                data:requestData,
+                onSuccess:function (responseText, responseXML) {
+                    _this.$submitProgress.hide();
+                    _this.$submit.show();
+
                     if (this.status === _this.httpStatusCode.noContent) {
                         _this.$searchResults.html("");
                         _this.$searchResultedNothingParagraph.show();
@@ -80,14 +89,14 @@ CBR.Controllers.HelpDashboard = new Class({
                         _this.$searchResults.html(
                             Mustache.render(
                                 _this.$searchResultsTemplate.html(),
-                                { helpRequests: _this._formatDates(JSON.parse(responseText)) }
+                                { helpRequests:_this._formatDates(JSON.parse(responseText)) }
                             )
                         );
                         _this.$searchResultedNothingParagraph.hide();
                         jQuery(".clickable").click(jQuery.proxy(_this._navigateToHelpRequest));
                     }
                 },
-                onFailure: function (xhr) {
+                onFailure:function (xhr) {
                     if (xhr.status === _this.httpStatusCode.unauthorized)
                         location.replace("/login");
                     else
@@ -97,7 +106,7 @@ CBR.Controllers.HelpDashboard = new Class({
         }
     },
 
-    _navigateToHelpRequest: function (e) {
+    _navigateToHelpRequest:function (e) {
         e.preventDefault();
 
         var helpRequestId = jQuery(e.currentTarget).data("id");
@@ -106,7 +115,7 @@ CBR.Controllers.HelpDashboard = new Class({
             location.href = "/help-requests/" + helpRequestId;
     },
 
-    _formatDates: function (helpRequests) {
+    _formatDates:function (helpRequests) {
         for (var i = 0; i < helpRequests.length; i++) {
             var currentHelpRequest = helpRequests[i];
 

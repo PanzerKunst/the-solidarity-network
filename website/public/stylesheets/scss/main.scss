@@ -93,6 +93,45 @@ textarea {
   display: none;
 }
 
+.button-progress {
+  // Hidden by default
+  display: none;
+
+  // To make the border-radius the same as the button
+  border-radius: $baseBorderRadius;
+
+  $btnHeight: 30px;
+
+  height: $btnHeight;
+
+  margin: 0 auto;
+  vertical-align: middle;
+
+  > .bar {
+    font-size: $baseFontSize;
+
+    padding-top: 5px;
+  }
+
+  &.large {
+    border-radius: $borderRadiusLarge;
+    $btnHeight: 45px;
+
+    $heightDifferenceBetweenProgressGraphicAndBtnLarge: 3px;
+
+    height: $btnHeight - $heightDifferenceBetweenProgressGraphicAndBtnLarge;
+
+    margin-top: $heightDifferenceBetweenProgressGraphicAndBtnLarge / 2;
+    margin-bottom: $heightDifferenceBetweenProgressGraphicAndBtnLarge / 2;
+
+    > .bar {
+      font-size: $fontSizeLarge;
+
+      padding-top: 11px;
+    }
+  }
+}
+
 /* Tables and lists */
 
 #mobile-list,

@@ -31,6 +31,9 @@ CBR.Controllers.SearchHelpRequests = new Class({
         this.$searchResultedNothingParagraph = jQuery("#search-returned-nothing");
         this.$searchResultsTemplate = jQuery("#search-results-template");
 
+        this.$submit = jQuery(".submit-wrapper > button");
+        this.$submitProgress = this.$submit.siblings(".button-progress");
+
         // To use correct CSS declaration
         jQuery(this.getEl()).addClass("search-help-requests");
     },
@@ -66,6 +69,9 @@ CBR.Controllers.SearchHelpRequests = new Class({
             e.preventDefault();
 
         if (this.validator.isValid()) {
+            this.$submit.hide();
+            this.$submitProgress.show();
+
             var requestData;
             var queryFieldValue = this.$queryField.val();
             if (queryFieldValue !== "")
@@ -77,6 +83,9 @@ CBR.Controllers.SearchHelpRequests = new Class({
                 url: "/api/help-requests",
                 data: requestData,
                 onSuccess: function (responseText, responseXML) {
+                    _this.$submitProgress.hide();
+                    _this.$submit.show();
+
                     if (this.status === _this.httpStatusCode.noContent) {
                         _this.$searchResults.html("");
                         _this.$searchResultedNothingParagraph.show();

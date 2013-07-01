@@ -64,7 +64,7 @@
         <div class="field">
             <label for="username">Username <span>*</span></label><!--
          --><input id="username" type="text"/><!--
-         --><a id="check-username-availability">Available?</a>
+         --><button id="check-username-availability" class="btn btn-mini">Available?</button>
 
             <p class="field-error" data-check="empty">Please choose a username, it will identify you to other users.</p>
 
@@ -104,8 +104,12 @@
             </div>
         </fieldset>
 
-        <div id="submit-wrapper">
+        <div class="submit-wrapper">
             <input type="submit" class="btn btn-primary btn-large" value="Join" />
+
+            <div class="progress progress-striped active button-progress large">
+                <div class="bar" style="width: 100%;">Joining</div>
+            </div>
         </div>
     </form>
 

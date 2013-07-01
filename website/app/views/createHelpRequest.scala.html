@@ -35,22 +35,27 @@
 
         <div class="field">
             <label for="expiry-date">Expiry date <span class="mdnz-polyfill placeholder">(yyyy-mm-dd)</span> <span>*</span></label><!--
-         --><input id="expiry-date" type="text" placeholder="yyyy-mm-dd"/><!--
+         --><input id="expiry-date" type="date" /><!--
          --><a class="tooltip-link" data-title="In order to avoid obsolete requests, an expiry date must be set. If nobody was able to help you after it expires, you're welcome to submit a new request." data-trigger="click hover focus">[?]</a>
 
             <p class="field-error" data-check="empty" id="error-msg-expiry-date-empty">In order to avoid obsolete requests, an expiry date must be
-                set.</p>
+                set.<br/>
+                If nobody was able to help you after two weeks, you're welcome to submit a new request.</p>
 
             <p class="field-error" data-check="in-future" id="error-msg-expiry-date-in-future">Your help request would already be expired... please select a
                 date in the future.</p>
 
             <p class="field-error" data-check="in-max-2-weeks" id="error-msg-expiry-date-in-max-2-weeks">In order to avoid obsolete requests, the maximum expiry
                 date is two weeks.<br/>
-                If nobody was able to help you after two weeks, feel free to submit a new request.</p>
+                If nobody was able to help you after two weeks, you're welcome to submit a new request.</p>
         </div>
 
-        <div id="submit-wrapper">
+        <div class="submit-wrapper">
             <input type="submit" class="btn btn-primary btn-large" value="Submit" />
+
+            <div class="progress progress-striped active button-progress large">
+                <div class="bar" style="width: 100%;">Submitting</div>
+            </div>
         </div>
     </form>
 </script>

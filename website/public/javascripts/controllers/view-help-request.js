@@ -11,7 +11,8 @@ CBR.Controllers.ViewHelpRequest = new Class({
                 jQuery("#content-template").html(),
                 {
                     helpRequest: this._generateHelpRequestForTemplate(),
-                    helpReplies: this._generateHelpRepliesForTemplate()
+                    helpReplies: this._generateHelpRepliesForTemplate(),
+                    isSubscribedToReplies: this._getIsSubscribedToReplies()
                 }
             )
         );
@@ -30,8 +31,8 @@ CBR.Controllers.ViewHelpRequest = new Class({
         return this.options.helpReplies;
     },
 
-    _getHelpRequester: function () {
-        return this.options.helpRequest.requester;
+    _getIsSubscribedToReplies: function () {
+        return this.options.isSubscribedToReplies;
     },
 
     initElements: function () {
@@ -44,9 +45,15 @@ CBR.Controllers.ViewHelpRequest = new Class({
 
         this.$expanded = jQuery(".expanded");
 
+        this.$postReply = jQuery("#post-reply");
+        this.$postReplyProgress = this.$postReply.siblings(".button-progress");
+
         this.$modals = jQuery(".modal");
         this.$confirmDeleteModal = jQuery("#confirm-delete-modal");
         this.$deletionImpossibleModal = jQuery("#deletion-impossible-modal");
+
+        this.$confirmDelete = jQuery("#confirm-delete");
+        this.$confirmDeleteProgress = this.$confirmDelete.siblings(".button-progress");
     },
 
     _initValidation: function () {
@@ -61,13 +68,13 @@ CBR.Controllers.ViewHelpRequest = new Class({
         jQuery("#delete").click(jQuery.proxy(this._showModal, this));
         jQuery("#cancel-delete").click(jQuery.proxy(this._hideModals, this));
         jQuery("#close-modal").click(jQuery.proxy(this._hideModals, this));
-        jQuery("#confirm-delete").click(jQuery.proxy(this._doDeleteHelpRequest, this));
+        this.$confirmDelete.click(jQuery.proxy(this._doDeleteHelpRequest, this));
 
         this.$isSubscribingToFutureRepliesCheckbox.change(jQuery.proxy(this._changeSubscriptionToReplies, this));
 
         this.$reply.click(jQuery.proxy(this._toggleReplyForm, this));
         jQuery("#cancel-reply").click(jQuery.proxy(this._collapseReplyForm, this));
-        jQuery("#post-reply").click(jQuery.proxy(this._doCreateReply, this));
+        this.$postReply.click(jQuery.proxy(this._doCreateReply, this));
         this.$replyForm.submit(jQuery.proxy(this._doCreateReply, this));
     },
 
@@ -111,6 +118,9 @@ CBR.Controllers.ViewHelpRequest = new Class({
 
     _doDeleteHelpRequest: function(e) {
         e.preventDefault(e);
+
+        this.$confirmDelete.hide();
+        this.$confirmDeleteProgress.show();
 
         // For the parsing by the backend to work
         this._getHelpRequest().requesterId = this._getHelpRequest().requester.id;
@@ -163,6 +173,9 @@ CBR.Controllers.ViewHelpRequest = new Class({
         e.preventDefault();
 
         if (this.replyValidator.isValid()) {
+            this.$postReply.hide();
+            this.$postReplyProgress.show();
+
             var helpReply = new CBR.Models.HelpReply({
                 requestId: jQuery("#help-request").data("id"),
                 text: jQuery("#reply-text").val()

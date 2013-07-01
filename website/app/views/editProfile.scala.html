@@ -86,6 +86,10 @@
                 <span>Got a better one?</span>
                 <button id="change-profile-pic" data-action="/files/profile-pic" class="btn btn-search"><i class="icon-hand-right"></i>&nbsp;&nbsp;Browse</button>
 
+                <span class="progress progress-striped active button-progress">
+                    <div class="bar" style="width: 100%;">Uploading</div>
+                </span>
+
                 <p class="field-error" id="wrong-extension">Only .png, .jpg and .jpeg extensions are accepted. Please
                     select another image.</p>
 
@@ -93,7 +97,7 @@
             </div>
 
 
-            <h2>About yourself</h2>
+            <h2>About me</h2>
 
             <div class="field">
                 <label for="description">Description</label><!--
@@ -189,8 +193,12 @@
             </div>
         </section>
 
-        <div id="submit-wrapper">
+        <div class="submit-wrapper">
             <input type="submit" class="btn btn-primary btn-large" value="Save" />
+
+            <div class="progress progress-striped active button-progress large">
+                <div class="bar" style="width: 100%;">Saving</div>
+            </div>
         </div>
     </form>
 </script>

@@ -37,7 +37,7 @@
                 @if(loggedInUser.id == frontendUser.id) {
                 <a href="/my-profile/edit" class="btn"><i class="icon-edit"></i>&nbsp;&nbsp;Edit</a>
                 } else {
-                <a href="/messages/new?recipient={{user.username}}" class="btn"><i class="icon-pencil"></i>&nbsp;&nbsp;Write a message</a>
+                <a href="/messages/new?recipient={{user.username}}">Write a message</a>
 
                 <div>
                     <a id="write-reference">Write a reference</a>
@@ -88,6 +88,10 @@
                     <div id="submit-reference-wrapper">
                         <button id="cancel-reference" class="btn btn-inverse">Cancel</button>
                         <button id="post-reference" class="btn btn-primary">Save reference</button>
+
+                        <span class="progress progress-striped active button-progress">
+                            <div class="bar" style="width: 100%;">Saving</div>
+                        </span>
                     </div>
                 </form>
                 }
@@ -113,6 +117,9 @@
             <span class="rating {{rating.id}}"></span>
             <p>{{{text}}}</p>
         </article>
+        {{/references}}
+        {{^references}}
+        <p>No reference yet</p>
         {{/references}}
     </section>
 </script>

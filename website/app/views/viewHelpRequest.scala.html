@@ -23,7 +23,7 @@
         <p>Lives in {{helpRequest.requester.city}}, {{helpRequest.requester.country.name}}</p>
 
         <div>
-            <a href="/users/{{helpRequest.requester.username}}" class="btn"><i class="icon-user"></i>&nbsp;&nbsp;View full profile</a>
+            <a href="/users/{{helpRequest.requester.username}}">View full profile</a>
         </div>
     </section>
 
@@ -65,6 +65,9 @@
                 <p>{{{text}}}</p>
             </article>
             {{/helpReplies}}
+            {{^helpReplies}}
+            <p>No reply yet</p>
+            {{/helpReplies}}
 
             @if(loggedInUser.id != helpRequest.requester.id) {
             <div class="field">
@@ -97,6 +100,10 @@
             <div id="submit-reply-wrapper">
                 <button id="cancel-reply" class="btn btn-inverse">Cancel</button>
                 <button id="post-reply" class="btn btn-primary">Post reply</button>
+
+                <span class="progress progress-striped active button-progress">
+                    <div class="bar" style="width: 100%;">Posting</div>
+                </span>
             </div>
         </form>
         }
@@ -109,6 +116,10 @@
         <div class="modal-footer">
             <button id="cancel-delete" class="btn btn-inverse"><i class="icon-chevron-left icon-white"></i>&nbsp;&nbsp;Cancel</button>
             <button id="confirm-delete" class="btn btn-primary"><i class="icon-chevron-right icon-white"></i>&nbsp;&nbsp;Delete</button>
+
+            <span class="progress progress-striped active button-progress">
+                <div class="bar" style="width: 100%;">Deleting</div>
+            </span>
         </div>
     </div>
 

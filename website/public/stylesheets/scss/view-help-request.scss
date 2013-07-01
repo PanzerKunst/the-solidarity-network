@@ -81,12 +81,23 @@
       }
     }
 
+    #submit-reply-wrapper {
+      text-align: center;
+    }
+
     .modal.fade.in {
       top: 40%;
     }
 
-    #submit-reply-wrapper {
-      text-align: center;
+    .button-progress {
+      width: 89px;
+    }
+
+    .modal-footer {
+      > .button-progress {
+        // Same as second button in Bootstrap modals
+        margin-left: 5px;
+      }
     }
   }
 }

@@ -36,6 +36,8 @@ form {
 
       &.mdnz-polyfill {
         display: none;
+
+        width: $inputWidth;
       }
 
       @include desktop {
@@ -139,7 +141,11 @@ form {
   }
 }
 
-#submit-wrapper {
-  text-align: center;
-  margin-top: 2em;
+.submit-wrapper {
+  padding-top: 2em;
+
+  > input {
+    display: block;
+    margin: auto;
+  }
 }

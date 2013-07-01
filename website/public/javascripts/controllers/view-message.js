@@ -39,6 +39,9 @@ CBR.Controllers.ViewMessage = new Class({
         this.parent();
 
         this.$replyForm = jQuery("form");
+
+        this.$submit = jQuery(".submit-wrapper > input");
+        this.$submitProgress = this.$submit.siblings(".button-progress");
     },
 
     _initValidation: function () {
@@ -98,6 +101,9 @@ CBR.Controllers.ViewMessage = new Class({
         e.preventDefault();
 
         if (this.validator.isValid()) {
+            this.$submit.hide();
+            this.$submitProgress.show();
+
             var originalTitle = this._getMessage().title !== null ? this._getMessage().title : "";
             var replyPrefix = "Re: ";
             var replyTitle = originalTitle.startsWith(replyPrefix) ? originalTitle : replyPrefix + originalTitle;
@@ -122,7 +128,7 @@ CBR.Controllers.ViewMessage = new Class({
                 url: "/api/messages",
                 data: CBR.JsonUtil.stringifyModel(reply),
                 onSuccess: function (responseText, responseXML) {
-                    location.href = "/messages?from=reply";
+                    location.replace("/messages/" + responseText);
                 },
                 onFailure: function (xhr) {
                     if (xhr.status === _this.httpStatusCode.unauthorized)

@@ -25,7 +25,8 @@ form .field {
     display: block;
     width: 20em; }
     form .field > label.mdnz-polyfill {
-      display: none; }
+      display: none;
+      width: 20em; }
     @media screen and (min-width: 49em) {
       form .field > label {
         -webkit-box-sizing: border-box;
@@ -95,6 +96,8 @@ form input[type=submit].hidden {
     .check-or-radio > div > label {
       margin-top: 5px; }
 
-#submit-wrapper {
-  text-align: center;
-  margin-top: 2em; }
+.submit-wrapper {
+  padding-top: 2em; }
+  .submit-wrapper > input {
+    display: block;
+    margin: auto; }

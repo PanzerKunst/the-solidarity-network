@@ -174,15 +174,10 @@ object Application extends Controller {
     implicit request =>
       loggedInUser(session) match {
         case Some(loggedInUser) =>
-          val from = if (request.queryString.contains("from"))
-            Some(request.queryString.get("from").get.head)
-          else
-            None
-
           val inboxMessages = MessageDto.get(Map("to_user_id" -> loggedInUser.id.get.toString))
           val inboxFrontendMessages = for (msg <- inboxMessages) yield new FrontendMessage(msg)
 
-          Ok(views.html.msgInbox(new FrontendUser(loggedInUser), unreadMessagesCount(session), inboxFrontendMessages, from))
+          Ok(views.html.msgInbox(new FrontendUser(loggedInUser), unreadMessagesCount(session), inboxFrontendMessages))
         case None =>
           Redirect(routes.Application.login).withSession(
             session + ("to" -> "messages")

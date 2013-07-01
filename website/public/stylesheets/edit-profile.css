@@ -11,6 +11,8 @@
     float: left; }
 #edit-profile #content #profile-pic {
   margin: 0 auto; }
+#edit-profile #content .field > .button-progress {
+  width: 94px; }
 #edit-profile #content #account-info {
   display: none; }
 #edit-profile #content #email-confirmation-field {
@@ -25,3 +27,5 @@
   #edit-profile #content #language,
   #edit-profile #content #s2id_language {
     width: 16em; } }
+#edit-profile #content .submit-wrapper > .button-progress {
+  width: 90px; }

@@ -10,6 +10,13 @@
 -->
 <h1>The Help Network</h1>
 
+<div class="action line">
+    <a href="/join">Join</a>
+</div>
+<div class="action">
+    <a href="/login">Login</a>
+</div>
+
 <ul>
     <li>
         <h2>Give help, and get help, locally</h2>
@@ -26,7 +33,7 @@
 
         <p>Unless you provide something costly for someone or for a project, try your best to keep money out of it.</p>
 
-        <p>Prefer alternatives such as gifting, <a href="http://en.wikipedia.org/wiki/Alternative_currency">alternative
+        <p>Prefer alternatives such as gifting, <a href="http://en.wikipedia.org/wiki/Alternative_currency" target="_blank">alternative
             currency</a>, or simply do it for free if you can!</p>
     </li>
     <li>
@@ -42,7 +49,7 @@
 
         <p>No VC funding. No advertising.</p>
 
-        <p>And we respect your data: it won't <a href="http://en.wikipedia.org/wiki/PRISM_%28surveillance_program%29">be
+        <p>And we respect your data: it won't <a href="http://en.wikipedia.org/wiki/PRISM_%28surveillance_program%29" target="_blank">be
             shared</a>.</p>
     </li>
 </ul>
@@ -56,6 +63,13 @@
     <a href="/login">Login</a>
 </div>
 
+<div id="website-language-selection">
+    <label for="language-select">Display the website in:</label>
+    <select id="language-select">
+        <option value="eng">English</option>
+    </select>
+</div>
+
 } {
 <!--
     Javascript
@@ -64,6 +78,10 @@
 <script type="text/javascript">
     window.addEvent("domready", function () {
         new CBR.Controllers.NavController().run();
+
+        new CBR.Controllers.Index({
+            el: "#content"
+        }).run();
     });
 </script>
 }

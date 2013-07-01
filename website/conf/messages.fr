@@ -1,4 +1,4 @@
 # Join page
 # ~~~~~
-join.title=Rejoindre le Solidarity Network
+join.title=Rejoindre le Help Network
 join.firstName.label=Prénom

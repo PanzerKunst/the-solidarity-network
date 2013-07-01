@@ -19,6 +19,12 @@
 @media screen and (min-width: 49em) {
   .search-help-requests #query {
     width: 29em; } }
+.search-help-requests .submit-wrapper {
+  padding-top: 0; }
+  .search-help-requests .submit-wrapper > .button-progress {
+    width: 93px;
+    margin-top: 0;
+    margin-bottom: 0; }
 .search-help-requests #mobile-list .dates > div {
   text-align: right; }
   .search-help-requests #mobile-list .dates > div span {

@@ -27,29 +27,28 @@ header {
     #header-nav > ul span {
       cursor: pointer; }
   @media screen and (min-width: 49em) {
-    #header-nav {
-      padding-bottom: 10em; }
-      #header-nav > h1,
-      #header-nav > span {
-        display: none; }
-      #header-nav > ul {
-        *zoom: 1;
-        display: block;
-        background-color: inherit;
-        color: #333333; }
-        #header-nav > ul:before, #header-nav > ul:after {
-          content: " ";
-          display: table; }
-        #header-nav > ul:after {
-          clear: both; }
-        #header-nav > ul > li {
-          width: 14.14286%;
-          float: left;
-          position: relative; }
-          #header-nav > ul > li > ul {
-            position: absolute; } }
+    #header-nav > h1,
+    #header-nav > span {
+      display: none; }
+    #header-nav > ul {
+      *zoom: 1;
+      display: block;
+      background-color: inherit;
+      color: #333333; }
+      #header-nav > ul:before, #header-nav > ul:after {
+        content: " ";
+        display: table; }
+      #header-nav > ul:after {
+        clear: both; }
+      #header-nav > ul > li {
+        width: 14.14286%;
+        float: left;
+        position: relative; }
+        #header-nav > ul > li > ul {
+          position: absolute; } }
   #header-nav .emphasis {
     font-weight: bold; }
 
 .sub-nav {
-  display: none; }
+  display: none;
+  background-color: whitesmoke; }

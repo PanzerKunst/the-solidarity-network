@@ -58,6 +58,7 @@ CBR.Controllers.EditProfile = new Class({
         this.$countryField = jQuery("#country");
 
         this.$changeProfilePic = jQuery("#change-profile-pic");
+        this.$changeProfilePicProgress = this.$changeProfilePic.siblings(".button-progress");
         this.$profilePic = jQuery("#profile-pic");
         this.$wrongExtensionParagraph = jQuery("#wrong-extension");
         this.$uploadFailedParagraph = jQuery("#upload-failed");
@@ -83,6 +84,9 @@ CBR.Controllers.EditProfile = new Class({
 
         this.$emailAlreadyRegisteredParagraph = jQuery("#email-already-registered");
         this.$emailsDoNotMatchParagraph = jQuery("#emails-do-not-match");
+
+        this.$submit = jQuery(".submit-wrapper > input");
+        this.$submitProgress = this.$submit.siblings(".button-progress");
     },
 
     _initValidation:function () {
@@ -109,7 +113,12 @@ CBR.Controllers.EditProfile = new Class({
         this.$streetAddressField.val(this._getUser().streetAddress);
         this.$postCodeField.val(this._getUser().postCode);
         this.$cityField.val(this._getUser().city);
-        this.$countryField.select2("val", this._getUser().country.id);
+
+        if (this.isDesktopBrowser()) {
+            this.$countryField.select2("val", this._getUser().country.id);
+        } else {
+            this.$countryField.val(this._getUser().country.id);
+        }
 
         this.$descriptionField.val(this._getUser().description);
         this.$skillsAndInterestsField.val(this._getUser().skillsAndInterests);
@@ -143,6 +152,9 @@ CBR.Controllers.EditProfile = new Class({
             accept:"image/*",
             autoSubmit:true,
             onSubmit:function (file, extension) {
+                _this.$changeProfilePic.hide();
+                _this.$changeProfilePicProgress.show();
+
                 _this.$wrongExtensionParagraph.slideUpCustom();
                 _this.$uploadFailedParagraph.slideUpCustom();
 
@@ -152,11 +164,17 @@ CBR.Controllers.EditProfile = new Class({
                     lowerCaseExtension !== "jpg" &&
                     lowerCaseExtension !== "jpeg") {
 
+                    _this.$changeProfilePicProgress.hide();
+                    _this.$changeProfilePic.show();
+
                     _this.$wrongExtensionParagraph.slideDownCustom();
                     return false;
                 }
             },
             onComplete:function (file, response) {
+                _this.$changeProfilePicProgress.hide();
+                _this.$changeProfilePic.show();
+
                 if (file !== "")
                     _this.$profilePic.attr("src", "/files/profile-pic/" + _this._getUser().id + "?isTemp=true&time=" + new Date().getTime());
                 else
@@ -232,6 +250,9 @@ CBR.Controllers.EditProfile = new Class({
             this._isEmailNotYetRegisteredByAnotherUser() &&
             this._isEmailConfirmationMatching()) {
 
+            this.$submit.hide();
+            this.$submitProgress.show();
+
             var user = new CBR.Models.User({
                 firstName:this.$firstNameField.val(),
                 lastName:this.$lastNameField.val(),
@@ -270,6 +291,9 @@ CBR.Controllers.EditProfile = new Class({
                     jQuery(window).scrollTop(0);
                     _this.$emailConfirmationWrapper.slideUpCustom();
                     _this.$indicationParagraph.slideDownCustom();
+
+                    _this.$submitProgress.hide();
+                    _this.$submit.show();
                 },
                 onFailure:function (xhr) {
                     alert("AJAX fail :(");

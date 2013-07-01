@@ -57,7 +57,11 @@
   float: left;
   max-width: 4em;
   max-height: 4em; }
-#view-help-request #content .modal.fade.in {
-  top: 40%; }
 #view-help-request #content #submit-reply-wrapper {
   text-align: center; }
+#view-help-request #content .modal.fade.in {
+  top: 40%; }
+#view-help-request #content .button-progress {
+  width: 89px; }
+#view-help-request #content .modal-footer > .button-progress {
+  margin-left: 5px; }

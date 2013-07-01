@@ -39,8 +39,6 @@ header {
   }
 
   @include desktop {
-    padding-bottom: 10em;
-
     > h1,
     > span {
       display: none;
@@ -74,4 +72,5 @@ header {
 
 .sub-nav {
   display: none;
+  background-color: whitesmoke;
 }

@@ -21,7 +21,8 @@ CBR.Controllers.TemplateController = new Class({
     },
 
     initElements: function () {
-        jQuery("select", this.options.el).select2({minimumResultsForSearch: 20});
+        if (this.isDesktopBrowser())
+            jQuery("select", this.options.el).select2({minimumResultsForSearch: 20});
 
         this._applyModernizrRules();
     },
@@ -70,6 +71,10 @@ CBR.Controllers.TemplateController = new Class({
             formattedDatetime += "/" + year;
 
         return formattedDatetime + " " + hour + ":" + minute;
+    },
+
+    isDesktopBrowser: function() {
+        return Modernizr.mq("screen and (min-width: " + CBR.desktopBreakPoint + ")");
     },
 
     _applyModernizrRules: function () {

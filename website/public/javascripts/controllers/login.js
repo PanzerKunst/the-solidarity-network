@@ -32,6 +32,9 @@ CBR.Controllers.Login = new Class({
 
         this.$usernameOrEmail = jQuery("#username-or-email");
         this.$authFailed = jQuery("#auth-failed");
+
+        this.$submit = jQuery(".submit-wrapper > input");
+        this.$submitProgress = this.$submit.siblings(".button-progress");
     },
 
     _initValidation: function () {
@@ -60,6 +63,9 @@ CBR.Controllers.Login = new Class({
         this.$authFailed.slideUpCustom();
 
         if (this.validator.isValid()) {
+            this.$submit.hide();
+            this.$submitProgress.show();
+
             var user = {
                 password: jQuery("#password").val()
             };
@@ -77,9 +83,11 @@ CBR.Controllers.Login = new Class({
                 url: "/api/authenticate",
                 data: CBR.JsonUtil.stringifyModel(user),
                 onSuccess: function (responseText, responseXML) {
-                    if (this.status === _this.httpStatusCode.noContent)
+                    if (this.status === _this.httpStatusCode.noContent) {
+                        _this.$submitProgress.hide();
+                        _this.$submit.show();
                         _this.$authFailed.slideDownCustom();
-                    else if (_this._getTo() === "messages") {
+                    } else if (_this._getTo() === "messages") {
                         location.href = "/messages";
                     }
                     else {

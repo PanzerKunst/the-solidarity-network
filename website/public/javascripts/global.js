@@ -26,3 +26,5 @@ if (typeof String.prototype.startsWith !== 'function') {
         return this.slice(0, str.length) === str;
     };
 }
+
+CBR.desktopBreakPoint = "49em";

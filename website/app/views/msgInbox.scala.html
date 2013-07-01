@@ -1,4 +1,4 @@
-@(user: models.frontend.FrontendUser, unreadMessagesCount: Int, messages: List[models.frontend.FrontendMessage], from: Option[String])
+@(user: models.frontend.FrontendUser, unreadMessagesCount: Int, messages: List[models.frontend.FrontendMessage])
 @main("Inbox", "msg-inbox") {
 <!--
     Header
@@ -10,16 +10,6 @@
     Content
 -->
 <h1>Messages</h1>
-
-@if(from.isDefined) {
-<p class="indication">
-    @if(from.get == "new") {
-        Message sent
-    } else {
-        Reply sent
-    }
-</p>
-}
 
 <div class="action line">
     <a href="/messages/new">Write a message</a>

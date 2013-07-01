@@ -38,6 +38,9 @@ CBR.Controllers.Join = new Class({
         this.$usernameTakenParagraph = jQuery("#username-taken");
         this.$emailAlreadyRegisteredParagraph = jQuery("#email-already-registered");
         this.$emailsDoNotMatchParagraph = jQuery("#emails-do-not-match");
+
+        this.$submit = jQuery(".submit-wrapper > input");
+        this.$submitProgress = this.$submit.siblings(".button-progress");
     },
 
     _initValidation: function () {
@@ -60,6 +63,10 @@ CBR.Controllers.Join = new Class({
     },
 
     _initEvents: function () {
+        jQuery("#check-username-availability").click(function(e) {
+            e.preventDefault();
+        });
+
         jQuery("form").submit(jQuery.proxy(this._doJoin, this));
     },
 
@@ -70,6 +77,10 @@ CBR.Controllers.Join = new Class({
             this._isUsernameAvailable() &&
             this._isEmailNotRegisteredYet() &&
             this._isEmailConfirmationMatching()) {
+
+            this.$submit.hide();
+            this.$submitProgress.show();
+
             var user = new CBR.Models.User({
                 username: this.$usernameField.val(),
                 firstName: jQuery("#first-name").val(),

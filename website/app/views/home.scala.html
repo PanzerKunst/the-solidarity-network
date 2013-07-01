@@ -20,13 +20,6 @@
 <div class="action">
     <a href="/messages">Messages</a>
 </div>
-
-<div id="website-language-selection">
-    <label for="language-select">Display the website in:</label>
-    <select id="language-select">
-        <option value="eng">English</option>
-    </select>
-</div>
 } {
 <!--
     Javascript
@@ -35,8 +28,6 @@
 <script type="text/javascript">
     window.addEvent("domready", function () {
         new CBR.Controllers.NavController().run();
-
-        jQuery("select").select2({minimumResultsForSearch: 20});
     });
 </script>
 }

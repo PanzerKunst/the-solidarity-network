@@ -36,6 +36,17 @@
     }
   }
 
+  .submit-wrapper {
+    padding-top: 0;
+
+    > .button-progress {
+      width: 93px;
+
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
   // Search results
 
   #mobile-list {
